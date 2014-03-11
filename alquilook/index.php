@@ -11,7 +11,7 @@
 		include_once 'plantillas/cabecera.php';
 	?>
 	
-	<!-------------------------------------------------------------------------------------------------------------------------------Carousel -->
+	<!-------------------------------------------------------------------------------------------------------------------------------Carousel-->
     <div id="myCarousel" class="carousel slide">
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -39,11 +39,12 @@
             <span class="icon-next"></span>
         </a>
     </div>
-    <!-------------------------------------------------------------------------------------------------------------------------------Carousel -->
+    <!-------------------------------------------------------------------------------------------------------------------------------Carousel-->
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Vídeo -->
+    <!-------------------------------------------------------------------------------------------------------------------------------Vídeo-->
     <div class="section">
         <div class="container">
+        	<div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
@@ -62,6 +63,37 @@
      </div>           
     
     <!-------------------------------------------------------------------------------------------------------------------------------Vídeo -->
+
+	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
+    <div class="section">
+        <div class="container">
+        	<div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-lg-2 text-center">
+                	<img src="img/propietario.png">
+                </div>     
+                <div class="col-lg-3 text-center">
+                	<hr class="propietario"/>
+                	<h1>soy propietario</h1>
+                		<a class="enlace" href="#"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
+                	<hr class="propietario"/>
+                </div>   
+				<div class="col-lg-2 text-center">        
+                </div>                    
+                <div class="col-lg-2 text-center">
+                	<img src="img/inquilino.png">
+                </div>   
+                 <div class="col-lg-3 text-center">
+                 	<hr class="inquilino"/>
+                	<h1>soy inquilino</h1>
+                		<a class="enlace" href="#"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
+                	<hr class="inquilino"/>
+                </div>  
+                                        	            	
+			</div>
+		</div>
+	</div>	
+	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
 
 	
 	<?php
