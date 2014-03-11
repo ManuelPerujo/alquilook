@@ -155,6 +155,18 @@ ul{
    height:75%;
 }
 
+hr.propietario{
+	color: #e51e50;
+	background-color:#e51e50;
+	height: 1px;
+}
+
+hr.inquilino{
+	color: #ef501e;
+	background-color: #ef501e;
+	height: 1px;
+}
+
 
 html, body {
   height: 100%;
