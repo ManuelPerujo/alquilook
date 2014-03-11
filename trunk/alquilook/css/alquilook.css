@@ -1,0 +1,294 @@
+/* 
+Custom CSS for Alquilook
+by Museographia Espacios Expositivos
+*/
+
+/* 
+    Colores:
+    #e51e50 blooming magenta
+	#ef501e  coral sands 
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------Textos--------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+
+@font-face {
+	font-family: 'Bariol-Light';
+	src: url('fonts/Bariol-Light.eot?') format('eot'), 
+	     url('fonts/Bariol-Light.otf')  format('opentype'),
+	     url('fonts/Bariol-Light.woff') format('woff'), 
+	     url('fonts/Bariol-Light.ttf')  format('truetype'),
+	     url('fonts/Bariol-Light.svg#Bariol-Light') format('svg');
+}
+
+@font-face {
+	font-family: 'Bariol-Regular';
+	src: url('fonts/Bariol-Regular.eot?') format('eot'), 
+	     url('fonts/Bariol-Regular.otf')  format('opentype'),
+	     url('fonts/Bariol-Regular.woff') format('woff'), 
+	     url('fonts/Bariol-Regular.ttf')  format('truetype'),
+	     url('fonts/Bariol-Regular.svg#Bariol-Regular') format('svg');
+}
+
+
+@font-face {
+	font-family: 'RobotoSlab-Thin';
+	src: url('fonts/RobotoSlab-Thin.eot?') format('eot'), 
+	     url('fonts/RobotoSlab-Thin.woff') format('woff'), 
+	     url('fonts/RobotoSlab-Thin.ttf')  format('truetype'),
+	     url('fonts/RobotoSlab-Thin.svg#RobotoSlab-Thin') format('svg');
+}
+
+h1{
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:3em;
+	text-transform:uppercase;	
+	}
+	
+h3{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2em;
+	}
+
+.footer{
+	color:#FFF;
+	font-size:0.95em;
+	font-family: 'Bariol-Regular', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
+	}	
+	
+a.enlacefooter{
+	color:#ffffff;
+	text-decoration: none;
+	cursor: pointer;
+	opacity:1;
+	
+	-webkit-transition: color 0.3s linear 0s;	
+	   -moz-transition: color 0.3s linear 0s;
+		 -o-transition: color 0.3s linear 0s;
+		    transition: color 0.3s linear 0s;
+}
+	
+a.enlacefooter:hover,
+a.enlacefooter:active,
+a.enlacefooter:focus{
+	color:#ffffff;
+	outline: 0;
+	text-decoration:none;
+	opacity:0.66;
+
+}
+
+.videoh1{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:5em;
+	line-height:45px;
+	text-transform:none;
+	color:#e51e50;
+}
+
+.videoh2{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2em;
+	line-height:30px;
+	text-transform:none;
+}
+
+.videop{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.3em;
+	line-height:10px;
+	text-transform:none;
+}
+
+
+ul li.menu{
+	text-transform:uppercase;	
+	font-family: 'Bariol-Regular', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
+	font-size:1.1em;
+	}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------Menu--------------------*/
+a.enlace{
+    color:#e51e50; /* blooming magenta */	
+	text-decoration: none;
+	cursor: pointer;
+	
+	-webkit-transition: color 0.3s linear 0s;	
+	   -moz-transition: color 0.3s linear 0s;
+		 -o-transition: color 0.3s linear 0s;
+		    transition: color 0.3s linear 0s;
+}
+
+a.enlace:hover,
+a.enlace:active,
+a.enlace:focus{
+	color:#ef501e; /* coral sands */	
+	outline: 0;
+	text-decoration:none;
+
+}
+
+ul{
+	list-style:none;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------Menu--------------------*/
+
+.portatil{
+   z-index: -1;
+   position:relative;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+}
+
+.video{
+   z-index:1;
+   position:absolute;
+	top:5%;
+	left:17%;
+   width:66%;
+   height:75%;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 100px;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+ /* body padding for fixed top nav */
+}
+
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.tab-pane {
+  margin-top: 15px;
+}
+
+/* Page Sections */
+.section,
+.section-colored,
+.section-colored2 {
+  padding: 30px 0;
+}
+
+.section-colored {
+  background-color: #e51e50;
+ /* change this to change the background color of a colored section */
+}
+
+.section-colored2 {
+  background-color: #ef501e;
+ /* change this to change the background color of a colored section */
+}
+
+.sidebar {
+  margin-top: 40px;
+}
+
+.sidebar ul {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #cccccc;
+}
+
+.carousel {
+  height:35%;
+}
+
+
+.item,
+.active,
+.carousel-inner {
+  height: 100%;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Social Icons Styles */
+.list-social-icons {
+  margin-bottom: 45px;
+}
+
+.tooltip-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.facebook-link a:hover {
+  color: #3b5998;
+}
+
+.linkedin-link a:hover {
+  color: #007fb1;
+}
+
+.twitter-link a:hover {
+  color: #39a9e0;
+}
+
+.google-plus-link a:hover {
+  color: #d14836;
+}
+
+/* Service Page Styles */
+.service-icon {
+  font-size: 50px;
+}
+
+/* 404 Page Styles */
+.error-404 {
+  font-size: 8em;
+}
+
+/* Pricing Page Styles */
+.price {
+  font-size: 4em;
+}
+
+.price-cents {
+  vertical-align: super;
+  font-size: 50%;
+}
+
+.price-month {
+  font-size: 35%;
+  font-style: italic;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+
+  .carousel {
+    height: 50%;
+ /* increases the carousel height so it looks good on phones */
+  }
+  
+  h1{
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2.1em;
+	text-transform:uppercase;	
+	}
+	
+h3{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.1em;
+	}
+
+}
