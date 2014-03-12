@@ -1,0 +1,83 @@
+drop database IF EXISTS `alquilook`;
+create database alquilook DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, REFERENCES ON alquilook.* TO 'alquilook' IDENTIFIED BY 'alquilook';
+GRANT ALL PRIVILEGES ON alquilook.* TO 'alquilook' IDENTIFIED BY 'alquilook';
+FLUSH PRIVILEGES;
+
+use alquilook;
+
+drop table if exists `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `IdUsuario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Tipo` char(20) NOT NULL,
+  `Usuario` char(30) NOT NULL,
+  `Password` char(30) NOT NULL,
+  `Email` varchar(50),
+  `Nombre` char(50) NOT NULL,
+  `Apellidos` char(50) NOT NULL,
+  `DNI` char(9) NOT NULL,
+  `Telefono` char(9) NOT NULL,
+  `Domicilio` char(50) NOT NULL,
+  `CP` int(5) NOT NULL,
+  `Municipio` char(50) NOT NULL,
+  `Provincia` char(30) NOT NULL,
+  PRIMARY KEY (`IdUsuario`),
+  UNIQUE KEY `Usuario_Unico` (`Usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `propietario`;
+CREATE TABLE IF NOT EXISTS `propietario` (
+  `IdPropietario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(5) unsigned NOT NULL,
+  PRIMARY KEY (`IdPropietario`),
+  UNIQUE KEY `Propietario_Unico` (`IdPropietario`),
+  CONSTRAINT `ID_PROPIETARIO_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `inquilino`;
+CREATE TABLE IF NOT EXISTS `inquilino` (
+  `IdInquilino` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(5) unsigned NOT NULL,
+  PRIMARY KEY (`IdInquilino`),
+  UNIQUE KEY `Inquilino_Unico` (`IdInquilino`),
+  CONSTRAINT `ID_INQUILINO_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `inmueble`;
+CREATE TABLE IF NOT EXISTS `inmueble` (
+  `IdInmueble` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdPropietario` int(5) unsigned NOT NULL,
+  `IdInquilino` int(5) unsigned,
+  `TipoInmueble` char(30) NOT NULL,
+  `Direccion` char(50) NOT NULL,
+  `CP` int(5) NOT NULL,
+  `Municipio` char(30) NOT NULL,
+  `Provincia` char(30) NOT NULL,
+  `NumHabitaciones` int(3) NOT NULL,
+  `NumServicios` int(3) NOT NULL,
+  `Metros` int(5) NOT NULL,
+  PRIMARY KEY (`IdInmueble`),
+  UNIQUE KEY `Inmueble_Unico` (`IdInmueble`),
+  CONSTRAINT `ID_INMUEBLE_FK` FOREIGN KEY (`IdPropietario`) REFERENCES `propietario` (`IdPropietario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `moviliario`;
+CREATE TABLE IF NOT EXISTS `moviliario` (
+  `IdMoviliario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Tipo` char(30) NOT NULL,
+  PRIMARY KEY (`IdMoviliario`),
+  UNIQUE KEY `Moviliario_Unico` (`IdMoviliario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+insert into `moviliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(5,'Cama Individual'),
+				(6,'Cama Doble'),(7,'Mesita Noche'),(8,'Comoda'),(9,'Accesorios Servicio'),
+				(10,'Mueble lavabo'),(11,'Espejo'),(12,'Hidromasaje');
+
+
+
+

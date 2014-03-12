@@ -76,12 +76,14 @@
                 	<hr class="propietario"/>
                 	<h1>soy propietario</h1>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
+ 							<form>	
  								<p class="collapse" id="ingresarpropietario">
  								 	<br/>
    									<input type="text" class="form-control" placeholder="Usuario" /> 
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
-  								</p>                		
+  								</p>
+  							</form>	                		
                 	<hr class="propietario"/>
                 </div>   
 				<div class="col-lg-2 text-center">        
@@ -93,12 +95,14 @@
                  	<hr class="inquilino"/>
                 	<h1>soy inquilino</h1>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
+                			<form>
                 				<p class="collapse" id="ingresarinquilino">
  								 	<br/>
    									<input type="text" class="form-control" placeholder="Usuario" /> 
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
-  								</p>   
+  								</p>
+  							</form>	   
                 	<hr class="inquilino"/>
                 </div>  
                                         	            	
