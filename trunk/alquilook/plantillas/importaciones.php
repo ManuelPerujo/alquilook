@@ -10,7 +10,7 @@ if (basename(getcwd()) == "alquilook"){
     || basename($_SERVER['PHP_SELF']) == "pie.php"){
     $ruta = "../";
 }
-echo basename($_SERVER['HTTP_REFERER']);
+
 ?>
 
 <!DOCTYPE html>
