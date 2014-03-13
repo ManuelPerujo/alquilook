@@ -82,6 +82,8 @@
    									<input type="text" class="form-control" placeholder="Usuario" /> 
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
+    								<br/>
+    								<button type="submit" class="btn btn-primary btn-sm text-left">Vamos allá</button>
   								</p>
   							</form>	                		
                 	<hr class="propietario"/>
@@ -101,6 +103,8 @@
    									<input type="text" class="form-control" placeholder="Usuario" /> 
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
+    								<br/>
+    								<button type="submit" class="btn btn-primary btn-sm text-left">Vamos allá</button>
   								</p>
   							</form>	   
                 	<hr class="inquilino"/>
