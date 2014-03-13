@@ -390,7 +390,7 @@ h6 .small,
 .h6 .small {
   font-weight: normal;
   line-height: 1;
-  color: #999;
+  color: #fafafa;
 }
 h1,
 .h1,
@@ -2077,12 +2077,14 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #e51e50;
   border-color: #e51e50;
+  font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
+  font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
   color: #fff;
   background-color: #ef501e ;
   border-color: #ef501e ;
@@ -2313,7 +2315,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.33;
 }
 .btn-sm {

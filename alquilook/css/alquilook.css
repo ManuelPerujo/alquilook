@@ -9,9 +9,8 @@ by Museographia Espacios Expositivos
 	#ef501e  coral sands 
 */
 
-/*---Canary man, que te gusta un Itaka---*/
 
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------Textos--------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------Textos--------------------*/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
 
@@ -52,6 +51,19 @@ h3{
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;
 	}
+	
+h3.banner{
+	color:#FFFFFF;
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2em;
+	}
+	
+h5.banner{
+	color:#FFFFFF;
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.5em;
+	}
+
 
 .footer{
 	color:#FFF;
@@ -135,7 +147,7 @@ ul{
 	list-style:none;
 }
 
-/*--------------------------------------------------------------------------------------------------------------------------------------------------------Menu--------------------*/
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
 
 .portatil{
    z-index: -1;
@@ -175,14 +187,10 @@ html, body {
 body {
   padding-top: 100px;
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
- /* body padding for fixed top nav */
 }
 
-
-.img-home-portfolio,
-.img-customer,
-.portfolio-item {
-  margin-bottom: 30px;
+.imagen{
+	width: 150px;
 }
 
 .tab-pane {
@@ -193,18 +201,21 @@ body {
 .section,
 .section-colored,
 .section-colored2 {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .section-colored {
   background-color: #e51e50;
- /* change this to change the background color of a colored section */
 }
 
 .section-colored2 {
   background-color: #ef501e;
- /* change this to change the background color of a colored section */
 }
+
+.section-pie {
+  background-color: #ef501e; 
+  padding: 30px 0;
+}  
 
 .sidebar {
   margin-top: 40px;
@@ -286,12 +297,14 @@ body {
 }
 
 
-/* Responsive Styles */
+/*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
-
+  .imagen{
+	width: 75px;
+  }
+	
   .carousel {
     height: 50%;
- /* increases the carousel height so it looks good on phones */
   }
   
   h1{
