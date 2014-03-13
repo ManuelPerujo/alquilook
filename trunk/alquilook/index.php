@@ -70,11 +70,11 @@
         	<div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-lg-2 text-center">
-                	<img src="img/propietario.png">
+                	<img class="imagen" src="img/propietario.png">
                 </div>     
                 <div class="col-lg-3 text-center collapse-group">
                 	<hr class="propietario"/>
-                	<h1>soy propietario</h1>
+                	<h2>SOY PROPIETARIO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 		<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
  							<form>	
@@ -84,7 +84,7 @@
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
     								<br/>
-    								<input type="submit" class="btn btn-primary btn-sm">Vamos allá</input>
+    								<input type="submit" class="btn btn-primary btn-sm"></input>
   								</p>
   							</form>	                		
                 	<hr class="propietario"/>
@@ -92,11 +92,11 @@
 				<div class="col-lg-2 text-center">        
                 </div>                    
                 <div class="col-lg-2 text-center">
-                	<img src="img/inquilino.png">
+                	<img class="imagen" src="img/inquilino.png">
                 </div>   
                  <div class="col-lg-3 text-center collapse-group">
                  	<hr class="inquilino"/>
-                	<h1>soy inquilino</h1>
+                	<h2>SOY INQUILINO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 		<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
                 			<form>
@@ -106,13 +106,14 @@
    									<br/>  									
     								<input type="text" class="form-control" placeholder="Contraseña" />
     								<br/>
-    								<input type="submit" class="btn btn-primary btn-sm">Vamos allá</input>
+    								<input type="submit" class="btn btn-primary btn-sm"></input>
   								</p>
   							</form>	   
                 	<hr class="inquilino"/>
                 </div>  
                                         	            	
 			</div>
+			<div class="row">&nbsp;</div>
 		</div>
 	</div>	
 	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
