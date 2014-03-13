@@ -315,12 +315,25 @@ body {
 /*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
   .imagen{
-	width: 75px;
+	width: 100px;
   }
 	
   .carousel {
     height: 50%;
   }
+  
+h3.banner{
+	color:#FFFFFF;
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.3em;
+	}
+	
+h5.banner{
+	color:#FFFFFF;
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.2em;
+	}  
+  
   
 h1{
 	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;

@@ -11,6 +11,10 @@
 		include_once '../../plantillas/cabecera.php';
 	?>
 	
+	<?php
+		include_once '../../plantillas/banner2.php';
+	?>
+	
 <!-------------------------------------------------------------------------------------------------------------------------------FAQ-->
 
 	 <div class="container">
