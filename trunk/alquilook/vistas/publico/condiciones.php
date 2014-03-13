@@ -20,7 +20,7 @@
 	 <div class="container">
 	 	<div class="row">
 	 		<div class="col-lg-12">
-	 			<h2>Preguntas frecuentes:</h2>
+	 			<h1>Preguntas frecuentes:</h1>
 	 		</div>
 	 	</div>
         <div class="row">
@@ -31,7 +31,7 @@
                         <div class="panel-heading">
                             <h5 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                    				Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    				Me gusta el adobo, tela marinera. ¿Es eso normal?
                   				</a>
                             </h5>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="panel-heading">
                             <h5 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                    				Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    				Paso más tiempo boca-abajo que boca-arriba, ¿eso será que soy bujarra?
                   				</a>
                             </h5>
                         </div>
@@ -67,7 +67,7 @@
                         <div class="panel-heading">
                             <h5 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                    				Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    				La leña marismeña me parece poca cosa, ¿será que me va la marcha con negros trípodes?
                   				</a>
                             </h5>
                         </div>
