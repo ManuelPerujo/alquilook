@@ -70,7 +70,7 @@
         	<div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-lg-2 text-center">
-                	<img class="imagen" src="img/propietario.png">
+                	<img class="imagen img-responsive" src="img/propietario.png">
                 </div>     
                 <div class="col-lg-3 text-center collapse-group">
                 	<hr class="propietario"/>
@@ -92,13 +92,12 @@
 				<div class="col-lg-2 text-center">        
                 </div>                    
                 <div class="col-lg-2 text-center">
-                	<img class="imagen" src="img/inquilino.png">
+                	<img class="imagen img-responsive" src="img/inquilino.png">
                 </div>   
                  <div class="col-lg-3 text-center collapse-group">
                  	<hr class="inquilino"/>
                 	<h2>SOY INQUILINO</h2>
-                		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                		<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
+                		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>
                 			<form>
                 				<p class="collapse" id="ingresarinquilino">
  								 	<br/>
