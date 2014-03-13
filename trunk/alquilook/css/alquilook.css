@@ -49,8 +49,7 @@ h1{
 
 h2{
 	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:2em;
-	text-transform:uppercase;	
+	font-size:2em;	
 	}
 	
 h3{
@@ -58,6 +57,16 @@ h3{
 	font-size:2em;
 	}
 	
+h4{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.3em;
+	}
+	
+h5{
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1em;
+	}	
+
 h3.banner{
 	color:#FFFFFF;
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
