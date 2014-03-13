@@ -1,3 +1,18 @@
+<?php
+
+$ruta = "";
+if (basename(getcwd()) == "alquilook"){
+    $ruta = "";
+}if(basename($_SERVER['PHP_SELF']) == "contacto.php" || basename($_SERVER['PHP_SELF']) == "gracias.php"
+    || basename($_SERVER['PHP_SELF']) == "condiciones.php"){
+    $ruta = "../../";    
+}if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "cabecera.php"
+    || basename($_SERVER['PHP_SELF']) == "pie.php"){
+    $ruta = "../";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +23,7 @@
     <meta name="author" content="">
 
     <title>Alquilook</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo $ruta?>img/favicon.ico">
     
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'>
@@ -16,14 +31,14 @@
 
 
     <!-- CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/alquilook.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
     
     <!-- Javascript-->
-   	<script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/alquilook.js"></script>
+   	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
+    <script src="<?php echo $ruta?>js/bootstrap.js"></script>
+    <script src="<?php echo $ruta?>js/alquilook.js"></script>
 
     
     

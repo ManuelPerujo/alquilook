@@ -1,18 +1,18 @@
 <?php 
 
 	session_start();
-	include_once 'plantillas/importaciones.php';
+	include_once '../../plantillas/importaciones.php';
 	
 
 ?>
 
 <body>
 	<?php
-		include_once 'plantillas/cabecera.php';
+		include_once '../../plantillas/cabecera.php';
 	?>
 	
 	<?php
-		include_once 'plantillas/banner.php';
+		include_once '../../plantillas/banner.php';
 	?>
 <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
 
@@ -66,7 +66,7 @@
 </div>
 
 	<?php
-		include_once 'plantillas/pie.php';
+		include_once '../../plantillas/pie.php';
 	?>
 </body>
 </html>
