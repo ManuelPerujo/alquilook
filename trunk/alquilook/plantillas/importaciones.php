@@ -6,7 +6,7 @@ if (basename(getcwd()) == "alquilook"){
 }if(basename($_SERVER['PHP_SELF']) == "contacto.php" || basename($_SERVER['PHP_SELF']) == "gracias.php"
     || basename($_SERVER['PHP_SELF']) == "condiciones.php"){
     $ruta = "../../";    
-}if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "cabecera.php"
+}if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "banner2.php" || basename($_SERVER['PHP_SELF']) == "cabecera.php"
     || basename($_SERVER['PHP_SELF']) == "pie.php"){
     $ruta = "../";
 }

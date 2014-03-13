@@ -63,7 +63,7 @@ h4{
 	}
 	
 h5{
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
 
@@ -314,9 +314,6 @@ body {
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
-  .imagen{
-	width: 100px;
-  }
 	
   .carousel {
     height: 50%;
