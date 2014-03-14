@@ -10,7 +10,7 @@ use alquilook;
 drop table if exists `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `IdUsuario` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `Tipo` char(20) NOT NULL,
+  `Admin` boolean NOT NULL,
   `Usuario` char(30) NOT NULL,
   `Password` char(30) NOT NULL,
   `Email` varchar(50),
@@ -66,17 +66,95 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
-drop table if exists `moviliario`;
-CREATE TABLE IF NOT EXISTS `moviliario` (
-  `IdMoviliario` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `Tipo` char(30) NOT NULL,
-  PRIMARY KEY (`IdMoviliario`),
-  UNIQUE KEY `Moviliario_Unico` (`IdMoviliario`)
+drop table if exists `salon`;
+CREATE TABLE IF NOT EXISTS `salon` (
+  `IdSalon` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdSalon`),
+  UNIQUE KEY `Salon_Unico` (`IdInmueble`),
+  CONSTRAINT `ID_SALON_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-insert into `moviliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(5,'Cama Individual'),
+
+drop table if exists `cocina`;
+CREATE TABLE IF NOT EXISTS `cocina` (
+  `IdCocina` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdCocina`),
+  UNIQUE KEY `Cocina_Unico` (`IdCocina`),
+  CONSTRAINT `ID_COCINA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `comedor`;
+CREATE TABLE IF NOT EXISTS `comedor` (
+  `IdComedor` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdComedor`),
+  UNIQUE KEY `Comedor_Unico` (`IdComedor`),
+  CONSTRAINT `ID_COMEDOR_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `dormitorio`;
+CREATE TABLE IF NOT EXISTS `dormitorio` (
+  `IdDormitorio` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdDormitorio`),
+  UNIQUE KEY `Dormitorio_Unico` (`IdDormitorio`),
+  CONSTRAINT `ID_DORMITORIO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `aseo`;
+CREATE TABLE IF NOT EXISTS `aseo` (
+  `IdAseo` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdAseo`),
+  UNIQUE KEY `Aseo_Unico` (`IdAseo`),
+  CONSTRAINT `ID_ASEO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `otros`;
+CREATE TABLE IF NOT EXISTS `otros` (
+  `IdOtros` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Nombre` char(30),
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdOtros`),
+  UNIQUE KEY `Otros_Unico` (`IdOtros`),
+  CONSTRAINT `ID_OTROS_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `mobiliario`;
+CREATE TABLE IF NOT EXISTS `mobiliario` (
+  `IdMobiliario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `Tipo` char(30) NOT NULL,
+  PRIMARY KEY (`IdMobiliario`),
+  UNIQUE KEY `Mobiliario_Unico` (`IdMobiliario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+insert into `mobiliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(5,'Cama Individual'),
 				(6,'Cama Doble'),(7,'Mesita Noche'),(8,'Comoda'),(9,'Accesorios Servicio'),
 				(10,'Mueble lavabo'),(11,'Espejo'),(12,'Hidromasaje');
+
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 	session_start();
 	include_once 'plantillas/importaciones.php';
-	
+	include_once 'controladores/control_login.php';
 
 ?>
 
@@ -77,12 +77,12 @@
                 	<h2>SOY PROPIETARIO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 		<a class="enlace" href="#"><i class="fa fa-edit"></i> Registrarse</a>
- 							<form>	
+ 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php">	
  								<p class="collapse" id="ingresarpropietario">
  								 	<br/>
-   									<input type="text" class="form-control" placeholder="Usuario" /> 
+   									<input type="text" class="form-control" name="usario_propietario" placeholder="Usuario" /> 
    									<br/>  									
-    								<input type="text" class="form-control" placeholder="Contraseña" />
+    								<input type="text" class="form-control" name="pass_propietario" placeholder="Contraseña" />
     								<br/>
     								<input type="submit" class="btn btn-primary btn-sm"></input>
   								</p>
@@ -98,12 +98,12 @@
                  	<hr class="inquilino"/>
                 	<h2>SOY INQUILINO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>
-                			<form>
+                			<form method="post" action="<?php echo $ruta?>controladores/control_login.php">
                 				<p class="collapse" id="ingresarinquilino">
  								 	<br/>
-   									<input type="text" class="form-control" placeholder="Usuario" /> 
+   									<input type="text" class="form-control" name="usario_inquilino" placeholder="Usuario" /> 
    									<br/>  									
-    								<input type="text" class="form-control" placeholder="Contraseña" />
+    								<input type="text" class="form-control" name="pass_inquilino" placeholder="Contraseña" />
     								<br/>
     								<input type="submit" class="btn btn-primary btn-sm"></input>
   								</p>
@@ -117,8 +117,14 @@
 	</div>	
 	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
 
-	
+    	
 	<?php
+	   if(isset($_SESSION['IdUsuario_sesion'])){
+	       echo "logeado con exito el usuario con id: ".$_SESSION['IdUsuario_sesion'];    
+	   }else{
+	       echo "no logeado";
+	   }
+	      
 		include_once 'plantillas/pie.php';
 	?>
 </body>
