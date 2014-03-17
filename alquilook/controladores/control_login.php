@@ -5,9 +5,10 @@
     include ("../funciones/core.php");
     include ("../funciones/login.php");
     
-    
+    $usuario; $password;
     $error = true;
-    
+    $id_usuario = null;
+            
     if ($_POST){
         if(isset($_POST['usuario_propietario']) && isset($_POST['pass_propietario'])){
             
@@ -21,19 +22,17 @@
             
         }
         
-        $_SESSION['IdUsuario_sesion'] = control_login($usuario, $password);
+        $id_usuario = control_login($usuario, $password);
         
-        if(isset($_SESSION['IdUsuario_sesion'])){
+        if(isset($id_usuario)){
  
             $error = false;
-            $_SESSION['Usuario'] = $usuario;
-            $id_admin = esAdministrador($_SESSION['IdUsuario_sesion']);
+            $id_admin = esAdministrador($id_usuario);
             
             if(isset($id_admin) && $id_admin != FALSE){
                 
                 $_SESSION['admin'] = "SI";
-                $_SESSION['UsuarioAdmin'] = get_usuario_admin($_SESSION['IdUsuario_sesion']);
-                
+                                
             }else{
                 
                 $_SESSION['admin'] = "NO";
@@ -48,8 +47,10 @@
         
     }
     
+    evalua_login($error, $id_usuario);
+    
     header ("Location: ../index.php");
     
-    //evalua_login($error, $_SESSION['IdUsuario_sesion']);
+    
 
 ?>

@@ -17,9 +17,8 @@ o falso */
             /*PDO::FETCH_ASSOC: devuelve un array cuyos indices son los nombres de los campos del resultado de la consulta */
             $row = $result->fetch(PDO::FETCH_ASSOC);
             return $row['IdUsuario'];
-        }else{
-            return false;
         }
+        
      }catch(PDOException $except){
        echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";  
      }
@@ -38,33 +37,32 @@ function esAdministrador($id_usuario){
                 /* PDO::FETCH_ASSOC: devuelve un array cuyos indices son los nombres de los campos del resultado de la consulta */
                 $row = $result->fetch(PDO::FETCH_ASSOC);
                 return $row['Admin'];
-        }else{
-            return false;
         }
+        
     }catch(PDOException $except){
        echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";  
     }
 }
     
 function evalua_login($error, $id_usuario){
-
-    if($error){
-        /* si la variable error es true, hubo algún error en el login*/ 
-        $_SESSION["errorusuario"]="SI";
-        $_SESSION["autentificado"]="NO";
-        
-        header ("Location: ../index.php");
-        exit();
-    } else {
-        /* usuario y contrasena validos, defino una sesion y guardo datos*/ 
-        $_SESSION["autentificado"]="SI";
-        $_SESSION["IdUsuario"]=$id_usuario; //almacenamos en una variable de sesion el ID del usuario 
-        if (esAdministrador($id_usuario))
-            $_SESSION["administrador"]= "SI";
-        
-        header ("Location: ../index.php");
-        exit();
-    }
+    
+    if($id_usuario != null){
+        if($error){
+            /* si la variable error es true, hubo algún error en el login*/ 
+            $_SESSION["errorusuario"]="SI";
+            $_SESSION["autentificado"]="NO";
+            
+            header ("Location: ../index.php");
+            
+        } else {
+            /* usuario y contrasena validos, defino una sesion y guardo datos*/ 
+            $_SESSION["autentificado"]="SI";
+            $_SESSION["IdUsuario_sesion"]=$id_usuario; //almacenamos en una variable de sesion el ID del usuario 
+                    
+            header ("Location: ../index.php");
+            
+        }
+    }        
 }
 
 function get_usuario_admin($idUsuario){
