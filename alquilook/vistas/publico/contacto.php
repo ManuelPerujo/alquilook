@@ -18,6 +18,7 @@
 
 <div class="container">
       <div class="row">
+      	<div class="col-lg-3"></div>
       	<div class="col-lg-6">
           <h3>Contacte con nosotros o consúltenos cualquier duda</h3>
 			 <form role="form" method="POST" action="formulariocontacto.php">
@@ -42,9 +43,11 @@
               	</div>
             </form>
         </div>  
-        <div class="col-lg-6"></div>  
+        <div class="col-lg-3"></div> 
     </div> 
+    <hr class="propietario"/>
     <div class="row">
+    	<div class="col-lg-3"></div>
     	<div class="col-lg-6">
 	          <h3>¿Dónde estamos?</h3>
 	          <p>
@@ -61,7 +64,7 @@
 	            <li class="tooltip-social google-plus-link"><a href="#google-plus-page" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
 	          </ul>
     	</div>
-    	<div class="col-lg-6"></div>
+    	<div class="col-lg-3"></div>
 	</div>
 </div>
 

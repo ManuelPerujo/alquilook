@@ -59,13 +59,19 @@ h3{
 	
 h4{
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:1.3em;
+	font-size:1.5em;
 	}
 	
 h5{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
+
+h2.banner{
+	color:#FFFFFF;
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2em;	
+	}
 
 h3.banner{
 	color:#FFFFFF;
@@ -194,6 +200,13 @@ hr.inquilino{
 	height: 1px;
 }
 
+hr{
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	height: 1px;
+	width: 50%;
+}
+
 
 html, body {
   height: 100%;
@@ -207,6 +220,11 @@ body {
 .imagen{
 	width: 150px;
 }
+
+.imagenbanner{
+	width: 120px;
+}
+
 
 .tab-pane {
   margin-top: 15px;
@@ -315,9 +333,24 @@ body {
 /*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
 	
-  .carousel {
+.imagen{
+	width: 75px;
+}
+
+.imagenbanner{
+	width: 75px;
+}
+
+
+.carousel {
     height: 50%;
   }
+  
+h2.banner{
+	color:#FFFFFF;
+	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.3em;	
+	}
   
 h3.banner{
 	color:#FFFFFF;
@@ -348,5 +381,10 @@ h3{
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.1em;
 	}
+	
+h4{
+	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.1em;
+	}	
 
 }

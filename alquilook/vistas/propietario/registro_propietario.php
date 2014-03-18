@@ -10,51 +10,40 @@
         include_once '../../plantillas/cabecera.php';
     ?>
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Carousel-->
-    <div id="myCarousel" class="carousel slide">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('<?php echo $ruta?>img/slide.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Alquilar está bien</h1>
-                    <h3>Alquilar con garantías está mejor aún</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('<?php echo $ruta?>img/slide2.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Porque alquilar a lo loco...</h1>
-                    <h3>...es de malitos</h3>
-                </div>
-            </div>
-        </div>
+  <!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
-    <!-------------------------------------------------------------------------------------------------------------------------------Carousel-->
-    
+	 <div class="section-colored">
+        <div class="container">
+            <div class="row">
+            	<div class="col-sm-2 text-center"></div>
+                <div class="col-sm-2 text-center">
+                	<img class="imagenbanner" src="<?php echo $ruta?>img/propietario.png">
+                </div>     
+                <div class="col-sm-4 text-center">
+                	<hr/>
+                	<h2 class="banner">SOY PROPIETARIO</h2>
+                	<hr/>
+                </div> 
+                <div class="col-sm-4"></div>                                                       	            	
+			</div>
+		</div>
+	</div>	
+	<!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
     
 
     <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
     <div class="section">
         <div class="container">
-            <div class="row">&nbsp;</div>
+        	<div class="row">&nbsp;</div>
             <div class="row">
-                
-                <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php">
-                                       
-                        <br/>
+            	<div class="col-md-4 col-sm-4 text-center"></div>
+                <div class="col-md-4 col-sm-4 text-left">
+                	<h4>Crear una cuenta</h4>
+               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php">                                    
                         <input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario" /> 
-                        <br/>                                   
+                        <br/>                                    
                         <input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña" />
-                        <br/>
+                        <br/>  
                         <input type="text" class="form-control" name="email_propietario" placeholder="Email" /> 
                         <br/>                                   
                         <input type="text" class="form-control" name="nombre_propietario" placeholder="Nombre" />
@@ -63,7 +52,7 @@
                         <br/>                                   
                         <input type="text" class="form-control" name="dni_propietario" placeholder="DNI" />
                         <br/>
-                        <input type="text" class="form-control" name="telefono_propietario" placeholder="Telefono" /> 
+                        <input type="text" class="form-control" name="telefono_propietario" placeholder="Teléfono" /> 
                         <br/>                                   
                         <input type="text" class="form-control" name="domicilio_propietario" placeholder="Domicilio" />
                         <br/>
@@ -73,10 +62,14 @@
                         <br/>
                         <input type="text" class="form-control" name="provincia_propietario" placeholder="Provincia" />
                         <br/>
+                        <label>
+      						<input type="checkbox"> Acepto las <a class="enlace" href="<?php echo $ruta?>vistas/publico/condiciones.php">condiciones de Alquilook</a>
+    					</label>
+                        <br/><br/>
                         <input type="submit" class="btn btn-primary btn-sm"></input>
-                    
-                </form> 
-                                                            
+                    </form> 
+                </div>
+                <div class="col-md-4 col-sm-4 text-center"></div>                                            
             </div>
             <div class="row">&nbsp;</div>
         </div>

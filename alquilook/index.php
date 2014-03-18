@@ -69,7 +69,7 @@
         	<div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-lg-2 text-center">
-                	<img class="imagen img-responsive" src="img/propietario.png">
+                	<img class="imagen" src="img/propietario.png">
                 </div>     
                 <div class="col-lg-3 text-center collapse-group">
                 	<hr class="propietario"/>
@@ -91,7 +91,7 @@
 				<div class="col-lg-2 text-center">        
                 </div>                    
                 <div class="col-lg-2 text-center">
-                	<img class="imagen img-responsive" src="img/inquilino.png">
+                	<img class="imagen" src="img/inquilino.png">
                 </div>   
                  <div class="col-lg-3 text-center collapse-group">
                  	<hr class="inquilino"/>
