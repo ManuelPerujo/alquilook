@@ -47,6 +47,11 @@
                     
                     <hr class="propietario"/>
                     
+                    <a class="imagenboton2" href="#"><img class="imagenboton2" src="<?php echo $ruta?>img/salir.png"></a>
+                    <h6 class="columnapropietario">Salir</h6>
+                    
+                    <a class="imagenboton2" href="#"><img class="imagenboton2" src="<?php echo $ruta?>img/mensaje.png"></a>
+                    <h6 class="columnapropietario">Mensajes</h6>
                     
                     
                 </div>
