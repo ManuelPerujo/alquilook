@@ -28,8 +28,8 @@ if (isset($error)) {
     header('Location: contacto.php?e='.urlencode($error)); exit;
 }
 
-$headers = "From: $email_address\r\n"; 
-$headers .= "Reply-To: $email_address\r\n";
+$headers = "From: $email_address\n"; 
+$headers .= "Reply-To: $email_address\n";
 
 
 $email_content = "Name: $name\n";

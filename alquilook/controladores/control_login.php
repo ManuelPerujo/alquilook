@@ -8,15 +8,18 @@
     $usuario; $password;
     $error = true;
     $id_usuario = null;
+    $direccion;
             
     if ($_POST){
         if(isset($_POST['usuario_propietario']) && isset($_POST['pass_propietario'])){
             
+            $direccion = "../vistas/propietario/perfil_propietario.php";
             $usuario = $_POST['usuario_propietario'];
             $password = $_POST['pass_propietario'];
                 
         }if(isset($_POST['usuario_inquilino']) && isset($_POST['pass_inquilino'])){
             
+            $direccion = "../vistas/inquilino/perfil_inquilino.php";
             $usuario = $_POST['usuario_inquilino'];
             $password = $_POST['pass_inquilino'];
             
@@ -49,7 +52,7 @@
     
     evalua_login($error, $id_usuario);
     
-    header ("Location: ../index.php");
+    header ("Location: ".$direccion);
     
     
 
