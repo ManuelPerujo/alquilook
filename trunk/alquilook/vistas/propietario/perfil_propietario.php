@@ -10,7 +10,7 @@
         include_once '../../plantillas/cabecera.php';
     ?>
     
-      <!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
+     <!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
 
 	 <div class="section-colored">
         <div class="container">
@@ -36,10 +36,11 @@
         <div class="container">
             <div class="row">&nbsp;</div>
             <div class="row">
-                <div class="col-lg-3">
-                    
+                <div class="col-xs-3 text-center columnapropietario">
+                   <a class="imagenboton" href=""><img class="imagenboton" src="<?php echo $ruta?>img/mas_inm.png"></a>
+                   <h5>Añadir inmueble</h5>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-xs-9">
                     
                         
                 </div>
