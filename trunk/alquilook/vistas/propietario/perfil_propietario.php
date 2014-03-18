@@ -15,7 +15,7 @@
 	 <div class="section-colored">
         <div class="container">
             <div class="row">
-            	<div class="col-sm-2 text-center"></div>
+            	<div class="col-sm-2"></div>
                 <div class="col-sm-2 text-center">
                 	<img class="imagenbanner" src="<?php echo $ruta?>img/propietario.png">
                 </div>     
@@ -33,20 +33,26 @@
     
     <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
     <div class="section">
-        <div class="container">
-            <div class="row">&nbsp;</div>
-            <div class="row">
-                <div class="col-xs-3 text-center columnapropietario">
-                   <a class="imagenboton" href=""><img class="imagenboton" src="<?php echo $ruta?>img/mas_inm.png"></a>
-                   <h5>Añadir inmueble</h5>
-                </div>
-                <div class="col-xs-9">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-xs-3 text-center columnaizda">
+                	
+                	<br/>	
+                    <a class="imagenboton" href="#"><img class="imagenboton" src="<?php echo $ruta?>img/mas_inm_pro.png"></a>
+                    <h5 class="columnapropietario">Añadir inmueble</h5>
                     
-                        
+                    <br/>	
+                    <a class="imagenboton" href="#"><img class="imagenboton" src="<?php echo $ruta?>img/ver_inm_pro.png"></a>
+                    <h5 class="columnapropietario">Ver inmuebles</h5>
+                    
+                    <hr class="propietario"/>
+                    
+                    
+                    
                 </div>
-                                                                            
+                <div class="col-xs-9 columnadcha">                    
+                </div>                                                                           
             </div>
-            <div class="row">&nbsp;</div>
         </div>
     </div>  
     <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
