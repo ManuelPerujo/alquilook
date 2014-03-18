@@ -20,8 +20,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `Telefono` char(9) NOT NULL,
   `Domicilio` char(50) NOT NULL,
   `CP` int(5) NOT NULL,
-  `Municipio` char(50) NOT NULL,
+  `Poblacion` char(50) NOT NULL,
   `Provincia` char(30) NOT NULL,
+  `CodigoActivacion` int(5) NOT NULL,
+  `UsuarioActivo` boolean NOT NULL,
   PRIMARY KEY (`IdUsuario`),
   UNIQUE KEY `Usuario_Unico` (`Usuario`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;

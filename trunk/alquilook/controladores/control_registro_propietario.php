@@ -20,7 +20,7 @@ include_once("../funciones/core.php");
         $provincia = $_POST["provincia_propietario"];  $poblacion = $_POST["poblacion_propietario"]; 
         
         $error = true;
-  
+        $codigoActivacion = rand(0, 9999);
         $bd = new core();
 
         try{
@@ -38,9 +38,9 @@ include_once("../funciones/core.php");
             }else{
             /*insertamos los datos del nuevo usuario*/
                 $query = "insert into usuarios (IdUsuario, Usuario, Password, Email, Nombre, Apellidos, DNI,
-                                                Telefono, Domicilio, CP, Municipio, Provincia)
+                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
                     values ('', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
-                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia')"; 
+                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
                             
                 $bd->conexion->exec($query);
                 $_SESSION['erroRegistro'] = FALSE;
@@ -50,12 +50,20 @@ include_once("../funciones/core.php");
         }catch(PDOException $except) {
             echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
         }
-        
-
+    
+    $mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
+    $mensaje .= "http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?codigo=".$codigoActivacion; 
+                
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+    $headers .= "From: extension1@us.es\r\n";
+                   
+    mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);
+    
     $_POST = array();
     
     
-    header("Location: ../vistas/propietario/perfil_propietario.php");
+    header("Location: ../vistas/propietario/verificacion_propietario.php");
 
 
 ?>

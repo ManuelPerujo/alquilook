@@ -19,7 +19,12 @@
                     
                 </div>
                 <div class="col-lg-9">
-                    
+                    <?php 
+                        if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == true){
+                            unset($_SESSION['bienvenida']);
+                            echo "<p class='text-justify'>Revise su correo, estamos esperando que verifique su perfil!!</p>";
+                        }
+                    ?>
                         
                 </div>
                                                                             
