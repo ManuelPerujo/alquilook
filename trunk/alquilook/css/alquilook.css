@@ -223,6 +223,10 @@ body {
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+.logo{
+	width: 225px;
+}
+
 .imagen{
 	width: 150px;
 }
