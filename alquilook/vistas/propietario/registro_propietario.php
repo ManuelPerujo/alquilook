@@ -63,7 +63,7 @@
                         <input type="text" class="form-control" name="provincia_propietario" placeholder="Provincia" />
                         <br/>
                         <label>
-      						<input type="checkbox"> Acepto las <a class="enlace" href="<?php echo $ruta?>vistas/publico/condiciones.php">condiciones de Alquilook</a>
+      						<input type="checkbox"> Acepto las <a class="enlace" href="<?php echo $ruta?>vistas/publico/condiciones.php">Condiciones de Alquilook</a>
     					</label>
                         <br/><br/>
                         <input type="submit" class="btn btn-primary btn-sm"></input>
