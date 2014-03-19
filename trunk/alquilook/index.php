@@ -77,8 +77,8 @@
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
                 				
-								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-sign-in'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                					<a class='enlace' href='vistas/propietario/perfil_propietario.php'><i class='fa fa-edit'></i> Mi Perfil</a>";
+								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                					<a class='enlace' href='vistas/propietario/perfil_propietario.php'><i class='fa fa-user'></i> Mi Perfil</a>";
 								
                 			}else{
                 				

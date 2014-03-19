@@ -30,11 +30,10 @@
                     		
                     		unset($_SESSION['erroRegistro']);
                     		echo "<p>
-				 					<h1><i class='fa fa-magic'></i> ERROR DE REGISTRO</h1>
+				 					<h1><i class='fa fa-warning'></i> ALGO HA SALIDO MAL</h1>
 				 					<hr class='propietario'/>
 				 					<h3>Se ha cometido un error durante el registro</h3>
-				 					<h2><i class='fa fa-spinner fa-spin'></i></h2>
-				 					<h5>Por favor vuelva a intentarlo</h5>
+				 					<h5>Por favor, vuelva a intentarlo</h5>
 				 					<a href='../propietario/registro_propietario.php'><button class='btn btn-primary btn-sm'>Registro</button></a>
 				 				</p>";	
 								
@@ -42,10 +41,9 @@
                     		
                             unset($_SESSION['bienvenida']);
                             echo "<p>
-			 					<h1><i class='fa fa-magic'></i> Ya casi está...</h1>
+			 					<h1><i class='fa fa-spinner fa-spin'></i> Ya casi está...</h1>
 			 					<hr class='propietario'/>
 			 					<h3>Sólo falta un paso más...</h3>
-			 					<h2><i class='fa fa-spinner fa-spin'></i></h2>
 			 					<h5>Vaya a su email para verificar su cuenta de Alquilook.</h5>
 			 					</p>";
 								
