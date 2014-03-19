@@ -24,6 +24,8 @@
 				$query2 = "update usuarios set UsuarioActivo = '1' where IdUsuario = '$id_usuario' ";
                 $bd->query($query2);
 				
+				$_SESSION["IdUsuario_sesion"] = $id_usuario;
+				
 				return true;
             }
 
