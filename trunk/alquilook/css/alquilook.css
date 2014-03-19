@@ -181,11 +181,24 @@ ul{
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
-.clear{
-	height:100%;
-	width:100%;
-	background-color:#e51e50;	
+p.mobiliario{
+	line-height:20px;
 }
+
+.selector{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 10px;
+    -moz-padding-end:10px;
+    -webkit-padding-start:10px;
+    -moz-padding-start: 10px;
+    background-color: #e51e50;
+    color: #FFFFFF;
+	
+}
+
 
 .portatil{
    z-index: -1;

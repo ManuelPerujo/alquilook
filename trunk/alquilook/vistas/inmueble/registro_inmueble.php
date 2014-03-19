@@ -32,7 +32,7 @@
 		                	<h3>Añadir inmueble</h3>
 		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
 		                       <label><h6 class="columnapropietario">Tipo de inmueble *&nbsp;&nbsp;</h6></label> 
-			                        <select>
+			                        <select class="selector">
 									  <option>Vivienda</option>
 									  <option>Local comercial</option>
 									  <option>Garaje</option>
@@ -46,7 +46,7 @@
 			                        <input type="text" class="form-control" name="provincia_inmueble" placeholder="Provincia" /> 
 		                        <hr class="inmueble"/>
 		                        <label><h6 class="columnapropietario">Nº de habitaciones *&nbsp;&nbsp;</h6></label> 
-			                        <select>
+			                        <select class="selector">
 									  <option>1</option>
 									  <option>2</option>
 									  <option>3</option>
@@ -55,7 +55,7 @@
 									</select>
 		                        <hr class="inmueble"/> 
 		                        <label><h6 class="columnapropietario">Nº de aseos *&nbsp;&nbsp;</h6></label> 
-			                        <select>
+			                        <select class="selector">
 									  <option>1</option>
 									  <option>2</option>
 									  <option>3</option>
@@ -63,7 +63,11 @@
 		                        <br/>                     
 		                        <small>* Campos obligatorios</small>  
 		                        <br/><br/>
-		                        <button type="submit" class="btn btn-primary btn-sm">Continuar</button>
+		                        <ul class="pagination">
+								  <li class="active"><a href="#">Paso 1</a></li>
+								  <li><a href="#">Paso 2</a></li>
+								  <li><a href="#">Paso 3</a></li>
+								</ul>
 		                    </form>
 		               </div>
 		               
