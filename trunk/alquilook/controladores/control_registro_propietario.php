@@ -49,7 +49,8 @@ include_once("../funciones/core.php");
                                                 Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
                     values ('', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
                             '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
-                            
+                
+								            
                 if($bd->conexion->exec($query)){
                 	$_SESSION['erroRegistro'] = FALSE;
                 	$_SESSION['bienvenida'] = true;
