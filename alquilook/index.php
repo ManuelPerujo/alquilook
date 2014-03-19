@@ -74,6 +74,15 @@
                 <div class="col-lg-3 text-center collapse-group">
                 	<hr class="propietario"/>
                 	<h2>SOY PROPIETARIO</h2>
+                		<?php 
+                			if(isset($_SESSION["IdUsuario_sesion"])){
+                				
+								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-sign-in'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                					<a class='enlace' href='vistas/propietario/perfil_propietario.php'><i class='fa fa-edit'></i> Mi Perfil</a>";
+								
+                			}else{
+                				
+						?>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
  							<form method="post" action="<?php echo $ruta?>controladores/control_login.php">	
@@ -85,8 +94,11 @@
     								<br/>
     								<input type="submit" class="btn btn-primary btn-sm"></input>
   								</p>
-  							</form>	                		
-                	<hr class="propietario"/>
+  							</form>
+  						<?php 
+							} 
+						?>
+					<hr class="propietario"/>
                 </div>   
 				<div class="col-lg-2 text-center">        
                 </div>                    
