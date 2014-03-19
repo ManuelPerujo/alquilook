@@ -1,6 +1,6 @@
 <?php
 
-	function valida_link($codigo, $usuario){
+	function valida_email($codigo, $usuario){
 		
 		$bd = new core();
 		
@@ -34,7 +34,6 @@
         }
 		
 	}
-
 
 	function valida_propietario($usuario,$codigo){
 				

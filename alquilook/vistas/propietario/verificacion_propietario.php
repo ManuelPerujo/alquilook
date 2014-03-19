@@ -51,7 +51,7 @@
 								
                         	$codigo = $_GET['var1']; $usuario = $_GET['var2'];
 							
-							if(valida_link($codigo, $usuario) && valida_propietario($usuario, $codigo)){
+							if(valida_email($codigo, $usuario) && valida_propietario($usuario, $codigo)){
 							
 	                        	unset($_GET);
 								echo "<p>
