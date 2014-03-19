@@ -20,7 +20,15 @@ include_once("../funciones/core.php");
         $provincia = $_POST["provincia_propietario"];  $poblacion = $_POST["poblacion_propietario"]; 
         
         $error = true;
+		
         $codigoActivacion = rand(0, 9999);
+		$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
+	    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario; 
+	                
+	    $headers = "MIME-Version: 1.0\r\n";
+	    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+	    $headers .= "From: canario@alquilook.com\r\n";
+		
         $bd = new core();
 
         try{
@@ -42,28 +50,28 @@ include_once("../funciones/core.php");
                     values ('', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
                             '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
                             
-                $bd->conexion->exec($query);
-                $_SESSION['erroRegistro'] = FALSE;
-                $_SESSION['bienvenida'] = true;
+                if($bd->conexion->exec($query)){
+                	$_SESSION['erroRegistro'] = FALSE;
+                	$_SESSION['bienvenida'] = true;
+					
+					mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);	
+                }
+                
             }
 
         }catch(PDOException $except) {
             echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
         }
     
-    $mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
-    $mensaje .= "http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?codigo=".$codigoActivacion; 
-                
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: extension1@us.es\r\n";
+    
                    
-    mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);
-    
-    $_POST = array();
-    
+    unset($_POST);
     
     header("Location: ../vistas/propietario/verificacion_propietario.php");
+
+
+
+
 
 
 ?>
