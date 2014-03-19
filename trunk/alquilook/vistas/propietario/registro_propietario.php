@@ -71,7 +71,7 @@
     					</div>
     					
                         <br/><br/>
-                        <input type="submit" class="btn btn-primary btn-sm"></input>
+                        <button type="submit" class="btn btn-primary btn-sm">Seguir</button>
                     </form> 
                 </div>
                 <div class="col-md-4 col-xs-2 text-center"></div>                                            

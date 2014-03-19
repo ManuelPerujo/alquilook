@@ -181,6 +181,11 @@ ul{
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
+.clear{
+	height:100%;
+	width:100%;
+	background-color:#e51e50;	
+}
 
 .portatil{
    z-index: -1;
@@ -215,11 +220,11 @@ hr.inquilino{
 }
 
 hr.inmueble{
-	color: #e51e50;
-	background-color:#e51e50;
+	color: #FFFFFF;
+	background-color:#FFFFFF;
 	height: 1px;
 	width:100%;
-	text-align: left;
+	margin:5px;
 }
 
 
