@@ -204,19 +204,21 @@ hr.propietario{
 	color: #e51e50;
 	background-color:#e51e50;
 	height: 1px;
+	width:50%;
 }
 
 hr.inquilino{
 	color: #ef501e;
 	background-color: #ef501e;
 	height: 1px;
+	width:50%;
 }
 
 hr{
 	color: #FFFFFF;
 	background-color: #FFFFFF;
 	height: 1px;
-	width: 50%;
+	width: 33%;
 }
 
 
@@ -445,12 +447,12 @@ h2{
 	
 h3{
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:1.1em;
+	font-size:1.3em;
 	}
 	
 h4{
 	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:1.1em;
+	font-size:1.3em;
 	}	
 	
 h5{

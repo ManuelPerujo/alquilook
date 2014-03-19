@@ -21,12 +21,15 @@
 	 	
 <!-------------------------------------------------------------------------------------------------------------------------------condiciones-->	 	
 	 	<div class="row">
-	 		<div class="col-lg-12">
-	 			<h1>Condiciones</h1>
+	 		<div class="col-lg-2 col-xs-1"></div>
+	 		<div class="col-lg-8 col-xs-10">
+	 			<h3>Condiciones</h3>
 	 		</div>
+	 		<div class="col-lg-2 col-xs-1"></div>
 	 	</div>
         <div class="row">
-            <div class="col-lg-12">
+        	<div class="col-lg-2 col-xs-1"></div>
+            <div class="col-lg-8 col-xs-10">
                 <div class="panel-group" id="accordion">
                 	
                     <div class="panel panel-default">
@@ -86,17 +89,21 @@
                    
                 </div>
             </div>
+            <div class="col-lg-2 col-xs-1"></div>
         </div>
 <!-------------------------------------------------------------------------------------------------------------------------------Condiciones-->	       
-        <hr class="inquilino" />
+        <br/>
 <!-------------------------------------------------------------------------------------------------------------------------------FAQ-->	        
         <div class="row">
-	 		<div class="col-lg-12">
-	 			<h1>Preguntas frecuentes</h1>
+	 		<div class="col-lg-2 col-xs-1"></div>
+	 		<div class="col-lg-8 col-xs-10">
+	 			<h3>Preguntas frecuentes</h3>
 	 		</div>
+	 		<div class="col-lg-2 col-xs-1"></div>
 	 	</div>
         <div class="row">
-            <div class="col-lg-12">
+           <div class="col-lg-2 col-xs-1"></div>
+	 		<div class="col-lg-8 col-xs-10">
                 <div class="panel-group" id="accordion">
                 	
                     <div class="panel panel-default">
@@ -156,6 +163,7 @@
                    
                 </div>
             </div>
+            <div class="col-lg-2 col-xs-1"></div>
         </div>
 <!-------------------------------------------------------------------------------------------------------------------------------FAQ-->	     
     </div>

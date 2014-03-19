@@ -10,26 +10,9 @@
         include_once '../../plantillas/cabecera.php';
     ?>
     
-  <!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
-
-	 <div class="section-colored">
-        <div class="container">
-            <div class="row">
-            	<div class="col-sm-2 text-center"></div>
-                <div class="col-sm-2 text-center">
-                	<img class="imagenbanner" src="<?php echo $ruta?>img/propietario.png">
-                </div>     
-                <div class="col-sm-4 text-center">
-                	<hr/>
-                	<h2 class="banner">SOY PROPIETARIO</h2>
-                	<hr/>
-                </div> 
-                <div class="col-sm-4"></div>                                                       	            	
-			</div>
-		</div>
-	</div>	
-	<!-------------------------------------------------------------------------------------------------------------------------------Banner propietario--------------------->
-    
+     <?php
+        include_once '../../plantillas/banner_pro.php';
+    ?>      
 
     <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
     <div class="section">
@@ -73,15 +56,15 @@
 					              <h5 class="modal-title">CONDICIONES DE USO DE ALQUILOOK:</h5>
 					            </div>
 					            <div class="modal-body">
-					            	<p>1. Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
-					            	</p>  
-					            	<p>2. Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.tur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
-					            	</p> 
-					            	<p>3. Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
-					            	</p>  					            	
+					            	<p><small>1. Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+					            	</small></p>  
+					            	<p><small>2. Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.tur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+					            	</small></p> 
+					            	<p><small>3. Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+					            	</small></p>  					            	
 					            </div>
 					            <div class="modal-footer">
-					              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+					              <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cerrar</button>
 					          </div>
 					        </div>
 					      </div>
