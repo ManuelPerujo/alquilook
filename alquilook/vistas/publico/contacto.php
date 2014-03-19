@@ -23,11 +23,11 @@
           <h3>Contacte con nosotros o consúltenos cualquier duda</h3>
 			 <form role="form" method="POST" action="formulariocontacto.php">
 	            <div class="row">
-		              <div class="form-group col-lg-4">
+		              <div class="form-group col-lg-4 col-sm-4">
 		                <label for="input1">Nombre</label>
 		                <input type="text" name="contact_name" class="form-control" id="input1">
 		              </div>
-		              <div class="form-group col-lg-4">
+		              <div class="form-group col-lg-4 col-sm-4">
 		                <label for="input2">Email</label>
 		                <input type="email" name="contact_email" class="form-control" id="input2">
 		              </div>
