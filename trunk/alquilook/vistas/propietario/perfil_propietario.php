@@ -1,15 +1,12 @@
 <?php 
-
     session_start();
-    include_once '../../plantillas/importaciones.php';
-    
+    include_once '../../plantillas/importaciones.php';    
 ?>
 
 <body>
     <?php
         include_once '../../plantillas/cabecera.php';
-    ?>
-    
+    ?>   
     <?php
         include_once '../../plantillas/banner_pro.php';
     ?>  
@@ -41,9 +38,7 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-9 columnadcha"> 
-                	<h1>Hola Juan.</h1>  
-                	<h3>Bienvenido a Alquilook.</h3>  
-                	<h5>Haga click en Añadir inmueble para iniciar su actividad gay.</h5>               
+                	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
