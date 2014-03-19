@@ -9,8 +9,9 @@ if (basename(getcwd()) == "alquilook"){
     || basename($_SERVER['PHP_SELF']) == "perfil_propietario.php" || basename($_SERVER['PHP_SELF']) == "verificacion_propietario.php"){
 
     $ruta = "../../";    
-}if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "banner2.php" || basename($_SERVER['PHP_SELF']) == "cabecera.php"
-    || basename($_SERVER['PHP_SELF']) == "pie.php"){
+}if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "banner2.php" || 
+	basename($_SERVER['PHP_SELF']) == "banner_pro.php" || basename($_SERVER['PHP_SELF']) == "banner_inq.php" || 
+	basename($_SERVER['PHP_SELF']) == "cabecera.php" || basename($_SERVER['PHP_SELF']) == "pie.php"){
     $ruta = "../";
 }
 
