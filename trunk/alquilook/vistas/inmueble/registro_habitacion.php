@@ -29,47 +29,33 @@
                 <div class="col-xs-9 columnadcha">
                 	<div class="row-fluid">
                 		<div class="col-sm-5 text-left">
-		                	<h3>Añadir Inmueble</h3>
+		                	<h3>Características de habitación</h3>
 		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
-		                       <label><h6 class="columnapropietario">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
+		                       <label><h6 class="columnapropietario">Tipo de habitación&nbsp;&nbsp;</h6></label> 
 			                        <select>
-									  <option>Vivienda *</option>
-									  <option>Local comercial *</option>
-									  <option>Garaje *</option>
-									  <option>Finca rústica *</option>
-									  <option>Habitación con gloryhole *</option>
+									  <option>Salón</option>
+									  <option>Cocina</option>
+									  <option>Comedor</option>
+									  <option>Dormitorio</option>
+									  <option>Aseo</option>
+									  <option>Otros</option>
 									</select>
-		                        <hr class="inmueble"/> 
-		                        <label><h6 class="columnapropietario">Dirección&nbsp;&nbsp;</h6></label><br/>                                   
-			                        <input type="password" class="form-control" name="calle_inmueble" placeholder="Calle y número *" />
-			                        <input type="text" class="form-control" name="municipio_inmueble" placeholder="Municipio *" />                                   
-			                        <input type="text" class="form-control" name="cp_inmueble" placeholder="Código postal *" />
-			                        <input type="text" class="form-control" name="provincia_inmueble" placeholder="Provincia *" /> 
-		                        <hr class="inmueble"/>
-		                        <label><h6 class="columnapropietario">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
-			                        <select>
-									  <option>1 *</option>
-									  <option>2 *</option>
-									  <option>3 *</option>
-									  <option>4 *</option>
-									  <option>5 *</option>
-									</select>
-		                        <hr class="inmueble"/> 
-		                        <label><h6 class="columnapropietario">Nº de aseos&nbsp;&nbsp;</h6></label> 
-			                        <select>
-									  <option>1 *</option>
-									  <option>2 *</option>
-									  <option>3 *</option>
-									</select>  
-		                        <br/>                     
-		                        <small>* Campos obligatorios</small>   					   					    					
+								<br />	
+		                        <label><h6 class="columnapropietario">Mobiliario&nbsp;&nbsp;</h6></label><br/>                                   
+			                        <input type="checkbox"><small> Sofá</small>
+			                    <hr class="inmueble"/>    
+			                    <h5 class="pull-right"><i class="fa fa-plus-circle"></i> Añadir habitación</h5>
+			                    <hr class="inmueble"/> 
 		                        <br/><br/>
-		                        <button type="submit" class="btn btn-primary btn-sm">Continuar</button>
+		                        <button type="submit" class="btn btn-primary btn-sm">Finalizar</button>
 		                        <br/><br/>
 		                    </form>
 		               </div>
 		               
-		               <div class="col-sm-7 text-left"></div>    	              
+		               
+		               <div class="col-sm-7">
+		               
+		               </div>    	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
