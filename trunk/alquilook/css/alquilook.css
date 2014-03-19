@@ -214,6 +214,15 @@ hr.inquilino{
 	width:50%;
 }
 
+hr.inmueble{
+	color: #e51e50;
+	background-color:#e51e50;
+	height: 1px;
+	width:100%;
+	text-align: left;
+}
+
+
 hr{
 	color: #FFFFFF;
 	background-color: #FFFFFF;
