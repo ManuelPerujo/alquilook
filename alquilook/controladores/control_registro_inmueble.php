@@ -43,20 +43,21 @@ include_once("../funciones/registro.php");
             }else{
             /*insertamos los datos del nuevo usuario*/
                 $query = "insert into inmueble (IdInmueble, IdPropietario, IdInquilino, TipoInmueble, Direccion, CP,
-                								Municipo,Provincia,NumHabitaciones,NumServicios,Metros)
-                    values ('', '$id_usuario', '', '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
+                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
+                    values ('', '$id_usuario', null, '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
                             '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
                 
 								            
                 if($bd->conexion->exec($query)){
                 	
                 	$_SESSION['erroRegistro'] = FALSE;
+					$_SESSION['identifica_inmueble'] = $direccion;
                 	
 					unset($_POST);
-    				echo $direccion;
-    				//header("Location: ../vistas/inmueble/registro_habitacion.php");
     				
-    				$_SESSION['identifica_inmueble'] = $direccion;	
+    				header("Location: ../vistas/inmueble/registro_habitacion.php");
+    				
+    					
                 }
                 
             }
