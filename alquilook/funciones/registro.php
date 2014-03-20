@@ -68,7 +68,14 @@
 		
 	}
 
-
+	function valida_direccion($arrayDireccion){
+		
+		$cadena = implode(" ",$arrayDireccion);
+		
+		$cadena = strtolower($cadena);
+		
+		return $cadena;
+	}
 
 
 
