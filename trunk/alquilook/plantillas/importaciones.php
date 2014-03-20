@@ -21,7 +21,7 @@ if (basename(getcwd()) == "alquilook"){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -47,6 +47,16 @@ if (basename(getcwd()) == "alquilook"){
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
 
+    
+    <!--      Ajax      -->
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 </head> 

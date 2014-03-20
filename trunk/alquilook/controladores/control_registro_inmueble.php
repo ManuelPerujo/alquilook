@@ -8,17 +8,22 @@ if(!$_POST){
 }
 
 include_once("../funciones/core.php");
+include_once("../funciones/registro.php");
 //include ("funciones/validacion_datos.php");
 
 
         
         extract($_POST);
         
-        $tipoInmueble = $_POST["TipoInmueble"];  $direccionInmueble = $_POST["Direccion"];
-        $cp = $_POST["CP"]; $poblacionInmueble = $_POST["Municipio"]; 
-        $provinciaInmueble = $_POST["Provincia"]; $numHabitaciones = $_POST["NumHabitaciones"];
-        $NumServicios = $_POST["NumServicios"];  $metrosInmueble = $_POST["Metros"]; 
-        
+        $tipoInmueble = $_POST["tipoInmueble"];
+		$direccionInmueble = array(1=>$_POST['via_inmueble'], 2=>$_POST['nombre_inmueble'], 3=>$_POST['num_inmueble'], 4=>$_POST['piso_inmueble']);
+        $cp = $_POST["cp_inmueble"]; $poblacionInmueble = $_POST["municipio_inmueble"]; 
+        $provinciaInmueble = $_POST["provincia_inmueble"]; $numHabitaciones = $_POST["numero_habitaciones"];
+        $numServicios = $_POST["numero_aseos"];  $metrosInmueble = $_POST["metros_inmueble"]; 
+		
+		$direccion = valida_direccion($direccionInmueble);
+        $id_usuario = $_SESSION["IdUsuario_sesion"];
+				
         $error = true;
 				
         $bd = new core();
@@ -28,7 +33,7 @@ include_once("../funciones/core.php");
             $bd->ConectaBD();
      
             /*comprobamos que no existe el inmueble en la bd */
-            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
+            $query = "select * from inmueble where Direccion = '$direccion' ";
 
             $result = $bd->conexion->query($query);
       
@@ -37,17 +42,21 @@ include_once("../funciones/core.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
-                $query = "insert into usuarios (IdUsuario, Usuario, Password, Email, Nombre, Apellidos, DNI,
-                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
-                    values ('', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
-                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
+                $query = "insert into inmueble (IdInmueble, IdPropietario, IdInquilino, TipoInmueble, Direccion, CP,
+                								Municipo,Provincia,NumHabitaciones,NumServicios,Metros)
+                    values ('', '$id_usuario', '', '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
+                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
                 
 								            
                 if($bd->conexion->exec($query)){
+                	
                 	$_SESSION['erroRegistro'] = FALSE;
-                	$_SESSION['bienvenida'] = true;
-					
-					mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);	
+                	
+					unset($_POST);
+    				echo $direccion;
+    				//header("Location: ../vistas/inmueble/registro_habitacion.php");
+    				
+    				$_SESSION['identifica_inmueble'] = $direccion;	
                 }
                 
             }
@@ -58,9 +67,7 @@ include_once("../funciones/core.php");
     
     
                    
-    unset($_POST);
     
-    header("Location: ../vistas/propietario/verificacion_propietario.php");
 
 
 
