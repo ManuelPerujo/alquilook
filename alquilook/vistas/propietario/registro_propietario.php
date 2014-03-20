@@ -51,9 +51,7 @@
 					              <h5 class="modal-title">Revise sus datos antes de continuar:</h5>
 					            </div>
 					            <div class="modal-body">
-					            	<p><small>1. Lorem ipsum ad his scripta blandit partiendo.</small></p>  
-					            	<p><small>2. Blandit incorrupte quaerendum in quo, nibh impedit id vis.</small></p> 
-					            	<p><small>3. Lorem ipsum ad his scripta blandit partiendo, eum fastidii.</small></p>  					            	
+					            	<p>¿Te gusta el adobo? Pues vamos al lío...</p>  					            	
 					            </div>
 					            <div class="modal-footer">
 					            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>

@@ -65,16 +65,9 @@ h4{
 h5{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.2em;
-	}	
-	
-h5.columnapropietario{
-	color:#e51e50 ;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:1.2em;
-	}	
+	}		
 
-h6.columnapropietario{
-	color:#e51e50 ;
+h6{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
@@ -97,6 +90,13 @@ h5.banner{
 	font-size:1.5em;
 	}
 
+.magenta{
+	color:#e51e50 !important;
+}
+
+.coral{
+	color:#ef501e !important;
+}
 
 .footer{
 	color:#FFF;
@@ -228,14 +228,14 @@ hr.propietario{
 	color: #e51e50;
 	background-color:#e51e50;
 	height: 1px;
-	width:50%;
+	width:100%;
 }
 
 hr.inquilino{
 	color: #ef501e;
 	background-color: #ef501e;
 	height: 1px;
-	width:50%;
+	width:100%;
 }
 
 hr.inmueble{
@@ -251,7 +251,7 @@ hr{
 	color: #FFFFFF;
 	background-color: #FFFFFF;
 	height: 1px;
-	width: 33%;
+	width: 100%;
 }
 
 html, body {

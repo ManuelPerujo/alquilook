@@ -53,7 +53,7 @@
 										</a>	
 									</label>
 									<p class="collapse" id="mostrarmobiliario">
-										
+										fgsfgwe
 									</p>
 								</div>			
 								
