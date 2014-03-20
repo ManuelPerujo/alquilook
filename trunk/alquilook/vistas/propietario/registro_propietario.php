@@ -37,7 +37,7 @@
                         <small>* Campos obligatorios</small>
                         <br/><br/>
                         <label>
-      						<input type="checkbox"> Acepto las <a href="#" class="enlace">Condiciones de Alquilook.</a>
+      						<input type="checkbox"> Acepto las <a href="#" target="_blank" class="enlace">Condiciones de Alquilook.</a>
     					</label>
     					<br/><br/>
     					<a data-toggle="modal" href="#myModal" class="enlace">

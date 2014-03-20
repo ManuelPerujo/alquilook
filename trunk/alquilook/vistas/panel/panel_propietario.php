@@ -16,7 +16,7 @@
 
 <div class="col-xs-3 text-center columnaizda">
                 	<br/>
-                	<h5><i class="fa fa-user"></i> Hola <?php echo $usuario ?></h5>
+                	<h6><i class="fa fa-user"></i> Hola <?php echo $usuario ?></h6>
                 	<hr/>
                 	               		
                     <a class="imagenboton" href="<?php echo $ruta?>vistas/inmueble/registro_inmueble.php"><img class="imagenboton" src="<?php echo $ruta?>img/mas_inm.png"></a>
@@ -32,5 +32,6 @@
                     <h6>Salir</h6>
                     
                     <a class="imagenboton2" href="#"><img class="imagenboton2" src="<?php echo $ruta?>img/mensaje.png"></a>
-                    <h6>Mensajes</h6>               
+                    <h6>Mensajes</h6>  
+                    <br/>             
 </div>
