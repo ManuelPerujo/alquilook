@@ -44,6 +44,7 @@
     <div class="section">
         <div class="container">
         	<div class="row">&nbsp;</div>
+        	<br/><br/><br/>
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
@@ -67,6 +68,7 @@
     <div class="section">
         <div class="container">
         	<div class="row">&nbsp;</div>
+        	<br/><br/><br/>
             <div class="row">
                 <div class="col-lg-2 text-center">
                 	<img class="imagen" src="img/propietario.png">
@@ -89,7 +91,6 @@
  								<p class="collapse" id="ingresarpropietario">
  								 	<br/>
    									<input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario" /> 
-   									<br/>  									
     								<input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña" />
     								<br/>
     								<input type="submit" class="btn btn-primary btn-sm"></input>
@@ -113,7 +114,6 @@
                 				<p class="collapse" id="ingresarinquilino">
  								 	<br/>
    									<input type="text" class="form-control" name="usuario_inquilino" placeholder="Usuario" /> 
-   									<br/>  									
     								<input type="password" class="form-control" name="pass_inquilino" placeholder="Contraseña" />
     								<br/>
     								<input type="submit" class="btn btn-primary btn-sm"></input>
@@ -123,6 +123,7 @@
                 </div>  
                                         	            	
 			</div>
+			<br/><br/>
 			<div class="row">&nbsp;</div>
 		</div>
 	</div>	
