@@ -30,22 +30,22 @@
                 	<div class="row-fluid">
                 		<div class="col-sm-5">
 		                	<h3>Añadir inmueble</h3>
-		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
+		               		 <form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">  		               		 	                                 
 		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
-									  <option value="vivienda">Vivienda</option>
-									  <option value="local_comercial">Local comercial</option>
-									  <option value="garaje">Garaje</option>
-									  <option value="finca_rustica">Finca rústica</option>
+									  <option value="Vivienda">Vivienda</option>
+									  <option value="Local_comercial">Local comercial</option>
+									  <option value="Garaje">Garaje</option>
+									  <option value="Finca Rustica">Finca rústica</option>
 									</select>
 		                        <hr class="inmueble"/> 
-		                        <label><h6 class="magenta">Dirección&nbsp;&nbsp;</h6></label>
-									<select class="selector" name="tipo_via">
-									  <option value="1">Calle</option>
-									  <option value="2">Avenida</option>
-									  <option value="3">Camino</option>
-									  <option value="4">Pasaje</option>
-									  <option value="5">Plaza</option>
+		                        <label><h6 class="columnapropietario">Dirección&nbsp;&nbsp;</h6></label><br/>
+		                        	<select class="selector" name="via_inmueble">
+									  <option value="Calle">Calle</option>
+									  <option value="Avenida">Avenida</option>
+									  <option value="Camino">Camino</option>
+									  <option value="Pasaje">Pasaje</option>
+									  <option value="Plaza">Plaza</option>
 									</select>
 									<br/><br/>  
 									<input type="text" class="form-control" name="nombre_inmueble" placeholder="Nombre" />                               
