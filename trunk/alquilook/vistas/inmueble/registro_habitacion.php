@@ -27,10 +27,11 @@
     			
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-9 columnadcha">
-                	<div class="row-fluid">
-                		<div class="col-sm-5 text-left collapse-group">
+                	<div class="row-fluid">	
+                		<div class="col-sm-5">
 		                	<h3>Características de habitación</h3>
 		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
+		                       <!--------------------------------------------------------Insertar habitacion----------------------->
 		                       <label><h6 class="columnapropietario">Tipo de habitación&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector">
 										  <option>Salón</option>
@@ -41,288 +42,37 @@
 										  <option>Otros</option>
 									</select>
 								<br />	
+								
 								<hr class="inmueble"/> 
-		                        <label>
-		                        	<h6 class="columnapropietario">
-		                        		<a class="enlace" data-toggle="collapse" data-target="#vermobiliario">
-		                        			<i class="fa fa-pencil"></i> Incluir mobiliario&nbsp;&nbsp;
-		                        		</a>
-		                        	</h6>
-		                        </label>
-		                        	<div class="collapse" id="vermobiliario">                                
-				                        <p class="mobiliario pull-left">
-					                        	Sofá
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Mesa
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Silla
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>	
-												Cuadro
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>
-					                        	Cama individual
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Cama doble
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												
-											</p>	
-											<p class="pull-right">
-												Mesita de noche
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>	
-												Cómoda
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Accesorios Aseo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Mueble lavabo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Espejo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Hidromasaje
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>			
-											</p>		
-										</div>
+								<div class="collapse-group">
+									<label>
+										<a class="enlace" data-toggle="collapse" data-target="#mostrarmobiliario">
+											<h6 class="columnapropietario">
+												<i class="fa fa-pencil"></i> Insertar mobiliario&nbsp;&nbsp;
+											</h6>
+										</a>	
+									</label>
+									<p class="collapse" id="mostrarmobiliario">
 										
-										<hr class="inmueble"/> 
-		                        <label>
-		                        	<h6 class="columnapropietario">
-		                        		<a class="enlace" data-toggle="collapse" data-target="#verelectrodomesticos">
-		                        			<i class="fa fa-pencil"></i> Incluir electrodomésticos&nbsp;&nbsp;
-		                        		</a>
-		                        	</h6>
-		                        </label>
-		                        	<div class="collapse" id="verelectrodomesticos">                                
-				                        <p class="mobiliario pull-left">
-					                        	Sofá
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Mesa
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Silla
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>	
-												Cuadro
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>
-					                        	Cama individual
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												Cama doble
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>
-												
-											</p>	
-											<p class="pull-right">
-												Mesita de noche
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>
-												<br/>	
-												Cómoda
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Accesorios Aseo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Mueble lavabo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Espejo
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>	
-												<br/>	
-												Hidromasaje
-						                        	<select class="selector">
-													  <option>0</option>	
-													  <option>1</option>
-													  <option>2</option>
-													  <option>3</option>
-													  <option>4</option>
-													  <option>5</option>
-													</select>			
-											</p>		
-										</div>
-												
-		                        <br/><br/>
-		                        <ul class="pagination">
-								  <li><a href="#">Paso 1</a></li>
-								  <li class="active"><a href="#">Paso 2</a></li>
-								  <li><a href="#">Paso 3</a></li>
-								</ul>
+									</p>
+								</div>			
+								
+								<!--------------------------------------------------------Insertar habitacion----------------------->
+								<br/>
+		                        <div class="btn-group btn-group-justified">
+							        <a  href="#" class="btn btn-primary btn-sm">Atrás</a>
+							        <a  href="#" type="submit" class="btn btn-primary btn-sm">Continuar</a>
+							    </div>					
 		                    </form>
+		                    <ul class="pagination pagination-sm">
+								  <li><a>1</a></li>
+								  <li class="active"><a>2</a></li>
+								  <li><a>3</a></li>
+							</ul>
+		                    <br/>
 		               </div>
 		               
-		               
 		               <div class="col-sm-7">
-		               
 		               </div>    	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          

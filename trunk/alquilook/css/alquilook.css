@@ -181,6 +181,12 @@ ul{
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
+
+body,html{
+ height:100%;
+}
+
+
 p.mobiliario{
 	line-height:20px;
 }
@@ -256,6 +262,8 @@ body {
   padding-top: 100px;
   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
+
+
 
 .logo{
 	width: 225px;

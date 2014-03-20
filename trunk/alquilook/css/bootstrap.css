@@ -2079,6 +2079,8 @@ fieldset[disabled] .btn-default.active {
   background-color: #e51e50;
   border-color: #e51e50;
   font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+  	opacity: 1.0;
+	filter:alpha(opacity=100);
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2087,8 +2089,10 @@ fieldset[disabled] .btn-default.active {
 .open .dropdown-toggle.btn-primary {
   font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
   color: #fff;
-  background-color: #ef501e ;
-  border-color: #ef501e ;
+  background-color: #e51e50 ;
+  border-color: #e51e50 ;
+  	opacity: 0.8;
+	filter:alpha(opacity=80);
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2110,8 +2114,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #afafaf;
-  border-color: #AFAFAF;
+  background-color: #ea7f9d;
+  border-color: #ea7f9d;
 }
 .btn-primary .badge {
   color: #e51e50;
