@@ -26,90 +26,93 @@
     			?> 
     			
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-xs-9 columnadcha">
+                <div class="col-xs-9">
                 	<div class="row-fluid">	
-                		<div class="col-sm-5">
+                		<div class="col-xs-9">
 		                	<h3>Características de habitación</h3>
-		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
+		               		 <form class="form-group text-left" method="post" action="">  		               		 	                                 
 		                       <!--------------------------------------------------------Insertar habitacion----------------------->
-		                       <label><h6 class="magenta">Tipo de habitación&nbsp;&nbsp;</h6></label> 
-			                        <select class="selector">
-										  <option>Salón</option>
-										  <option>Cocina</option>
-										  <option>Comedor</option>
-										  <option>Dormitorio</option>
-										  <option>Aseo</option>
-										  <option>Otros</option>
-									</select>
-								<br />	
-								<!--------------------------------------------------------Añadir Mobiliario------------------------------------------->
-								<div class="panel-group" id="accordion">
-					                    <div class="panel panel-default">
-					                        <div class="panel-heading">
-					                            <p class="panel-title">
-					                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-					                    				<i class="fa fa-archive"> Añadir Mobiliario</i>
-					                  				</a>
-					                            </p>
-					                        </div>
-					                        <div id="collapse1" class="panel-collapse collapse">
-					                            <div class="panel-body">
-					                            	<p class="mobiliario">
-					                                	Sofás&nbsp;&nbsp;
-									                        <select class="selector">
-																  <option>0</option>
-																  <option>1</option>
-																  <option>2</option>
-																  <option>3</option>
-																  <option>4</option>
-																  <option>5</option>
-															</select>
-															<br />
-														Sofás&nbsp;&nbsp;
-									                        <select class="selector">
-																  <option>0</option>
-																  <option>1</option>
-																  <option>2</option>
-																  <option>3</option>
-																  <option>4</option>
-																  <option>5</option>
-															</select>
-															<br />
-														Sofás&nbsp;&nbsp;
-									                        <select class="selector">
-																  <option>0</option>
-																  <option>1</option>
-																  <option>2</option>
-																  <option>3</option>
-																  <option>4</option>
-																  <option>5</option>
-															</select>
-															<br />
-													</p>		
-					                            </div>
-					                        </div>
-					                    </div>
-					             <!--------------------------------------------------------Fin Añadir Mobiliario-------------------------------------------> 
-					             
-					             <!--------------------------------------------------------Añadir Electrodomésticos------------------------------------------->      
-					                    <div class="panel panel-default">
-					                        <div class="panel-heading">
-					                            <h6 class="panel-title">
-					                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-					                    				<i class="fa fa-cutlery"> Añadir Electrodomésticos</i>
-					                  				</a>
-					                            </h6>
-					                        </div>
-					                        <div id="collapse2" class="panel-collapse collapse">
-					                            <div class="panel-body">
-					                                Anim pariatur cliche reprele VHS.
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>	
-								<!--------------------------------------------------------Fin Añadir Electrodomésticos------------------------------------------->
-								
+		                       <div class="row columnadcha">
+		                       		<div class="row">			
+										  <div class="col-xs-12">
+										  	 <label><h6 class="magenta">Elija el tipo de habitación&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="tipoInmueble">
+												  <option value="">Gloryhole</option>
+												  <option value="">Local comercial</option>
+												  <option value="">Garaje</option>
+												  <option value="">Finca rústica</option>
+												</select>
+										  </div>
+									</div>
+									<hr class="inmueble"/>
+									<!--------------------------------------------------------Añadir mobiliario----------------------->	
+									<div class="row">  
+										  <div class="col-xs-12 collapse-group">
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil"></i> Añadir mobiliario</a>
+										  </div>
+									</div>
+									<div class="row collapse" id="ingresarmobiliario"> 	  
+										  <div class="col-xs-4">
+										  	<label><h6 class="magenta">Sofá&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+											<br/>	
+											<label><h6 class="magenta">Mesa&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+											<br/>	
+											<label><h6 class="magenta">Silla&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+										  </div>
+										  <div class="col-xs-4 pull-left">
+										  	
+										  </div>
+										  <div class="col-xs-4 pull-left">
+										  
+										  </div>
+									</div>
+									<!--------------------------------------------------------Fin Añadir mobiliario----------------------->	
+									<hr class="inmueble"/>
+									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
+									<div class="row">  
+										  <div class="col-xs-12 collapse-group">
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil"></i> Añadir electrodomésticos</a>
+										  </div>
+									</div>
+									<div class="row collapse" id="ingresarelectrodomesticos"> 	  
+										  <div class="col-xs-4 pull-left">
+										  	<label><h6 class="magenta">Sofá&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+										  </div>
+										  <div class="col-xs-4 pull-left">
+										  	<label><h6 class="magenta">Mesa&nbsp;&nbsp;</h6></label> 
+						                        <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+										  </div>
+										  <div class="col-xs-4 pull-left">
+										  	<label><h6 class="magenta">Tipo de habitación&nbsp;&nbsp;</h6></label> 
+						                       <select class="selector" name="">
+						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+												</select>
+										  </div>
+									</div>
+									<!--------------------------------------------------------Fin Añadir electrodomesticos----------------------->		  
+								</div>
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
+		                        <br/>
 		                        <a data-toggle="modal" href="#myModal" class="enlace">
 		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
 		    					</a>    					   					
@@ -133,9 +136,7 @@
 		                    </form>
 		                    <br/>
 		               </div>
-		               
-		               <div class="col-sm-7">
-		               </div>    	              
+		               <div class="col-xs-3">fdasfwe</div>              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>

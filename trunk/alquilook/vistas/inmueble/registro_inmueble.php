@@ -26,7 +26,7 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-xs-9 columnadcha">
+                <div class="col-xs-9">
                 	<div class="row-fluid">
                 		<div class="col-sm-5">
 		                	<h3>Añadir inmueble</h3>
