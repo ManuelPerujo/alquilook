@@ -2,15 +2,14 @@
 	include_once '../../funciones/usuarios.php';
 	include_once '../../funciones/core.php';
 	
-	/*
+	
 	$id_usuario = $_SESSION["IdUsuario_sesion"];
 	$datos = array(1=>'Usuario');
 	
 	$row = get_dato_usuario($id_usuario, $datos);
 	
 	$usuario = $row['Usuario'];
-	 * 
-	 */
+	
 	
 ?>
 
