@@ -92,8 +92,7 @@
  								 	<br/>
    									<input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario" /> 
     								<input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña" />
-    								<br/>
-    								<input type="submit" class="btn btn-primary btn-sm"></input>
+    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
   								</p>
   							</form>
   						<?php 
@@ -115,8 +114,7 @@
  								 	<br/>
    									<input type="text" class="form-control" name="usuario_inquilino" placeholder="Usuario" /> 
     								<input type="password" class="form-control" name="pass_inquilino" placeholder="Contraseña" />
-    								<br/>
-    								<input type="submit" class="btn btn-primary btn-sm"></input>
+    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
   								</p>
   							</form>	   
                 	<hr class="inquilino"/>

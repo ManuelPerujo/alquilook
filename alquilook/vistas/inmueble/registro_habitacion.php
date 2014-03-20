@@ -32,7 +32,7 @@
 		                	<h3>Características de habitación</h3>
 		               		 <form class="form-inline text-left" method="post" action="">  		               		 	                                 
 		                       <!--------------------------------------------------------Insertar habitacion----------------------->
-		                       <label><h6 class="columnapropietario">Tipo de habitación&nbsp;&nbsp;</h6></label> 
+		                       <label><h6 class="magenta">Tipo de habitación&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector">
 										  <option>Salón</option>
 										  <option>Cocina</option>
@@ -42,33 +42,95 @@
 										  <option>Otros</option>
 									</select>
 								<br />	
+								<!--------------------------------------------------------Añadir Mobiliario------------------------------------------->
+								<div class="panel-group" id="accordion">
+					                    <div class="panel panel-default">
+					                        <div class="panel-heading">
+					                            <p class="panel-title">
+					                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+					                    				<i class="fa fa-archive"> Añadir Mobiliario</i>
+					                  				</a>
+					                            </p>
+					                        </div>
+					                        <div id="collapse1" class="panel-collapse collapse">
+					                            <div class="panel-body">
+					                            	<p class="mobiliario">
+					                                	Sofás&nbsp;&nbsp;
+									                        <select class="selector">
+																  <option>0</option>
+																  <option>1</option>
+																  <option>2</option>
+																  <option>3</option>
+																  <option>4</option>
+																  <option>5</option>
+															</select>
+															<br />
+														Sofás&nbsp;&nbsp;
+									                        <select class="selector">
+																  <option>0</option>
+																  <option>1</option>
+																  <option>2</option>
+																  <option>3</option>
+																  <option>4</option>
+																  <option>5</option>
+															</select>
+															<br />
+														Sofás&nbsp;&nbsp;
+									                        <select class="selector">
+																  <option>0</option>
+																  <option>1</option>
+																  <option>2</option>
+																  <option>3</option>
+																  <option>4</option>
+																  <option>5</option>
+															</select>
+															<br />
+													</p>		
+					                            </div>
+					                        </div>
+					                    </div>
+					             <!--------------------------------------------------------Fin Añadir Mobiliario-------------------------------------------> 
+					             
+					             <!--------------------------------------------------------Añadir Electrodomésticos------------------------------------------->      
+					                    <div class="panel panel-default">
+					                        <div class="panel-heading">
+					                            <h6 class="panel-title">
+					                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+					                    				<i class="fa fa-cutlery"> Añadir Electrodomésticos</i>
+					                  				</a>
+					                            </h6>
+					                        </div>
+					                        <div id="collapse2" class="panel-collapse collapse">
+					                            <div class="panel-body">
+					                                Anim pariatur cliche reprele VHS.
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>	
+								<!--------------------------------------------------------Fin Añadir Electrodomésticos------------------------------------------->
 								
-								<hr class="inmueble"/> 
-								<div class="collapse-group">
-									<label>
-										<a class="enlace" data-toggle="collapse" data-target="#mostrarmobiliario">
-											<h6 class="columnapropietario">
-												<i class="fa fa-pencil"></i> Insertar mobiliario&nbsp;&nbsp;
-											</h6>
-										</a>	
-									</label>
-									<p class="collapse" id="mostrarmobiliario">
-										fgsfgwe
-									</p>
-								</div>			
-								
-								<!--------------------------------------------------------Insertar habitacion----------------------->
-								<br/>
-		                        <div class="btn-group btn-group-justified">
-							        <a  href="#" class="btn btn-primary btn-sm">Atrás</a>
-							        <a  href="#" type="submit" class="btn btn-primary btn-sm">Continuar</a>
-							    </div>					
+								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
+		                        <a data-toggle="modal" href="#myModal" class="enlace">
+		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
+		    					</a>    					   					
+							    <div class="modal fade" id="myModal">
+							        <div class="modal-dialog">
+							          <div class="modal-content">
+							            <div class="modal-header">
+							              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							              <h5 class="modal-title">Revise sus datos antes de continuar:</h5>
+							            </div>
+							            <div class="modal-body">
+							            	<p>¿Te gusta el adobo? Pues vamos al lío...</p>  					            	
+							            </div>
+							            <div class="modal-footer">
+							            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
+							              <button type="submit" class="btn btn-primary btn-sm">Aceptar</button>
+							          </div>
+							        </div>
+							      </div>
+		    					</div>								
 		                    </form>
-		                    <ul class="pagination pagination-sm">
-								  <li><a>1</a></li>
-								  <li class="active"><a>2</a></li>
-								  <li><a>3</a></li>
-							</ul>
 		                    <br/>
 		               </div>
 		               
