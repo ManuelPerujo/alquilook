@@ -318,7 +318,9 @@ a.imagenboton2:focus{
 }
 
 .columnadcha{
-	background-color: #FFFFFF;
+	background-color: #e2e2e2;
+	padding:5px 10px;
+	border-bottom: 5px solid #FFFFFF; 
 }
 
 .tab-pane {
