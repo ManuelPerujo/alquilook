@@ -39,7 +39,7 @@
 									  <option value="Finca Rustica">Finca rústica</option>
 									</select>
 		                        <hr class="inmueble"/> 
-		                        <label><h6 class="columnapropietario">Dirección&nbsp;&nbsp;</h6></label><br/>
+		                        <label><h6 class="magenta">Dirección&nbsp;&nbsp;</h6></label>
 		                        	<select class="selector" name="via_inmueble">
 									  <option value="Calle">Calle</option>
 									  <option value="Avenida">Avenida</option>
@@ -47,7 +47,7 @@
 									  <option value="Pasaje">Pasaje</option>
 									  <option value="Plaza">Plaza</option>
 									</select>
-									<br/><br/>  
+									<br/>  
 									<input type="text" class="form-control" name="nombre_inmueble" placeholder="Nombre" />                               
 			                        <input type="text" class="form-control" name="num_inmueble" placeholder="Número" />
 			                        <input type="text" class="form-control" name="piso_inmueble" placeholder="Piso / Puerta" />
@@ -73,7 +73,7 @@
 									  <option value="2">2</option>
 									  <option value="3">3</option>
 									</select>  
-		                        <br/>
+		                        <br/><br/>
 		    					<a data-toggle="modal" href="#myModal" class="enlace">
 		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
 		    					</a>    					   					
@@ -95,12 +95,6 @@
 							      </div>
 		    					</div>				
 		                    </form>
-		                    
-		                    <ul class="pagination pagination-sm">
-								  <li class="active"><a>1</a></li>
-								  <li><a>2</a></li>
-								  <li><a>3</a></li>
-							</ul>
 		               </div>
 		               
 		               <div class="col-sm-7 text-left"></div>    	              
