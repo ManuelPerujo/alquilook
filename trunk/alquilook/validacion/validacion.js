@@ -44,7 +44,7 @@ function validacion_login_inquilino(){
 	return true;
 }
 
-function validacion_registro(){
+function validacion_registro_propietario(){
 	
 	//aceptamos como nombre y apellidos combinaciones de letras y espacios
 	var nombre = document.getElementById("nombre").value;

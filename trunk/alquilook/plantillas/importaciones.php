@@ -35,8 +35,7 @@ if (basename(getcwd()) == "alquilook"){
     <!--   Cargar Validacion   -->
     
     <?php 
-    	if(basename($_SERVER['PHP_SELF']) == "index.php" ){
-    		
+    	if(basename($_SERVER['PHP_SELF']) == "index.php" || basename($_SERVER['PHP_SELF']) == "registro_propietario.php"){
     ?>
     
     	<script language="javascript" type="text/javascript" src="<?php echo $ruta?>validacion/validacion.js"></script>
