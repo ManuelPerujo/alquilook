@@ -28,8 +28,18 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-9">
                 	<div class="row-fluid">
-                		<div class="col-sm-5">
-		                	<h3>Añadir inmueble</h3>
+                		<div class="col-sm-8">
+                			<div class="row-fluid">
+			                	<div class="col-sm-12">
+			                		<h3><i class="fa fa-cogs"></i> Crear inmueble<small class="magenta"> (Paso 1 de 3)</small></h3>
+			                	</div>
+			                	<div class="col-sm-12 text-left alert alert-success alert-dismissable">
+				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		 							<strong><i class="fa fa-exclamation-circle"></i></strong> 
+		 							Siga 3 sencillos pasos para crear su inmueble con sus características y su inquilino.
+			                	</div>
+		                	<div class="row-fluid">
+		                	<div class="col-sm-12">
 		               		 <form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">  		               		 	                                 
 		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
@@ -95,9 +105,12 @@
 							      </div>
 		    					</div>				
 		                    </form>
+		                    </div>
+		                    </div>
+		               </div>
 		               </div>
 		               
-		               <div class="col-sm-7 text-left"></div>    	              
+		               <div class="col-sm-4"></div>    	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>

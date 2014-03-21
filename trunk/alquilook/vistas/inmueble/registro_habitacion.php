@@ -29,7 +29,7 @@
                 <div class="col-xs-9">
                 	<div class="row-fluid">	
                 		<div class="col-sm-8">
-		                	<h3>Características de habitación</h3>
+		                	<h3><i class="fa fa-cogs"></i> Crear habitaciones<small class="magenta"> (Paso 2 de 3)</small></h3>
 		               		 <form class="form-group text-left" method="post" action="">  		               		 	                                 
 		                       <!--------------------------------------------------------Insertar habitacion----------------------->
 		                       <div class="row columnadcha">
@@ -50,7 +50,7 @@
 									<!--------------------------------------------------------Añadir mobiliario----------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-archive"></i> Añadir mobiliario</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Añadir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
@@ -138,7 +138,7 @@
 											<hr class="inmueble"/>
 											<div class="col-xs-12">
 												<label>Observaciones</label><br/>
-												<textarea></textarea>
+												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
 											</div>	
 										</div>		  
 									</div>
@@ -147,7 +147,7 @@
 									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-cutlery"></i> Añadir electrodomésticos</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Añadir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
@@ -235,7 +235,7 @@
 											<hr class="inmueble"/>
 											<div class="col-xs-12">
 												<label>Observaciones</label><br/>
-												<textarea></textarea>
+												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
 											</div>	
 										</div>		  
 									</div>
@@ -267,15 +267,15 @@
 		                    </form>
 		                    <br/>
 		               </div>
-		               <div class="col-sm-4"></div>              
+		               <div class="col-sm-4">
+		               	
+		               </div>              
                 </div> 
-                <div class="row-fluid">	
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
         </div>
     </div>  
     <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    </div>
     </div>
     
    <?php
