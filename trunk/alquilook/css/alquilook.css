@@ -204,8 +204,8 @@ p.mobiliario{
     -moz-padding-end:10px;
     -webkit-padding-start:10px;
     -moz-padding-start: 10px;
-    background-color: #e51e50;
-    color: #FFFFFF;
+    border: 1px #e51e50 solid;
+    color: #e51e50;
 	
 }
 
