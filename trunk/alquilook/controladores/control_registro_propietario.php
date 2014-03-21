@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!$_POST){
+if(!$_POST || count($_POST) == 0){
 
     echo "no pasa POST";
     exit();
