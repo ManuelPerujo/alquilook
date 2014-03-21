@@ -4470,9 +4470,9 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert-success {
-  color: #3c763d;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+  color: #999999;
+  background-color: #f5f5f5;
+  border-color: #999999;
 }
 .alert-success hr {
   border-top-color: #c9e2b3;

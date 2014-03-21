@@ -10,7 +10,6 @@
 	
 	$usuario = $row['Usuario'];
 	
-	
 ?>
 
 
