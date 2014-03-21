@@ -35,9 +35,10 @@
 			                	</div>
 			                	<div class="col-sm-12 text-left alert alert-success alert-dismissable">
 				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		 							<strong><i class="fa fa-exclamation-circle"></i></strong> 
+		 							<strong><i class="fa fa-exclamation-circle fa-lg"></i></strong> 
 		 							Siga 3 sencillos pasos para crear su inmueble con sus características y su inquilino.
 			                	</div>
+			                </div>	
 		                	<div class="row-fluid">
 		                	<div class="col-sm-12">
 		               		 <form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">  		               		 	                                 
@@ -84,38 +85,19 @@
 									  <option value="3">3</option>
 									</select>  
 		                        <br/><br/>
-		    					<a data-toggle="modal" href="#myModal" class="enlace">
-		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
-		    					</a>    					   					
-							    <div class="modal fade" id="myModal">
-							        <div class="modal-dialog">
-							          <div class="modal-content">
-							            <div class="modal-header">
-							              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							              <h5 class="modal-title">Revise sus datos antes de continuar:</h5>
-							            </div>
-							            <div class="modal-body">
-							            	<p>¿Te gusta el adobo? Pues vamos al lío...</p>  					            	
-							            </div>
-							            <div class="modal-footer">
-							            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
-							              <button type="submit" class="btn btn-primary btn-sm">Aceptar</button>
-							          </div>
-							        </div>
-							      </div>
-		    					</div>				
+		    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
 		                    </form>
+		                    <br/><br/>
 		                    </div>
 		                    </div>
 		               </div>
-		               </div>
-		               
 		               <div class="col-sm-4"></div>    	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
         </div>
-    </div>  
+    </div> 
+    </div> 
     <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
     
     
