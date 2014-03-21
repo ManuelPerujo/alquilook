@@ -39,7 +39,7 @@
 		
 		$id_usuario = control_login($usuario, $password);
 	        
-		if(isset($id_usuario) && $id_usuario != null){
+		if(isset($id_usuario) && $id_usuario != null && $id_usuario != FALSE){
 		 
 			$error = false;
 		    $id_admin = esAdministrador($id_usuario);
@@ -53,17 +53,17 @@
 		    	$_SESSION['admin'] = "NO";
 		                
 		    }
+			
+			evalua_login($error, $id_usuario);
+	    
+	    	header ("Location: ".$direccion);
 		            
 		}else{
 		            
-			$error = true;
+			header("Location: ../index.php");
 		            
 		}
 	    
-	    evalua_login($error, $id_usuario);
-	    
-	    header ("Location: ".$direccion);	
-		
 	}
     
     

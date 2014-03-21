@@ -32,6 +32,19 @@ if (basename(getcwd()) == "alquilook"){
     <title>Alquilook</title>
     <link rel="shortcut icon" href="<?php echo $ruta?>img/favicon.ico">
     
+    <!--   Cargar Validacion   -->
+    
+    <?php 
+    	if(basename($_SERVER['PHP_SELF']) == "index.php" ){
+    		
+    ?>
+    
+    	<script language="javascript" type="text/javascript" src="<?php echo $ruta?>validacion/validacion.js"></script>
+    
+    <?php 
+		}
+    ?>
+    
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:200' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -51,8 +64,14 @@ if (basename(getcwd()) == "alquilook"){
     <!--      Ajax      -->
     
     
-    
-    
+    <!--   Alertas por error   -->
+    <?php 
+    	if(isset($_SESSION["error_log"]) && $_SESSION["error_log"] == TRUE){
+    		unset($_SESSION["error_log"]);
+    		$message = "Usuario/Contraseña erroneos";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+    	}
+    ?>
     
     
     

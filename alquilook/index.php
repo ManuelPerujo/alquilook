@@ -87,11 +87,11 @@
 						?>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
- 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php">	
+ 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
  								<p class="collapse" id="ingresarpropietario">
  								 	<br/>
-   									<input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario" /> 
-    								<input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña" />
+   									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
+    								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
   								</p>
   							</form>
@@ -109,11 +109,11 @@
                  	<hr class="inquilino"/>
                 	<h2>SOY INQUILINO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>
-                			<form method="post" action="<?php echo $ruta?>controladores/control_login.php">
-                				<p class="collapse" id="ingresarinquilino">
+                			<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_inquilino();">	
+ 								<p class="collapse" id="ingresarinquilino">
  								 	<br/>
-   									<input type="text" class="form-control" name="usuario_inquilino" placeholder="Usuario" /> 
-    								<input type="password" class="form-control" name="pass_inquilino" placeholder="Contraseña" />
+   									<input type="text" class="form-control" id="usuario2" name="usuario_inquilino" placeholder="Usuario" /> 
+    								<input type="password" class="form-control" id="password2" name="pass_inquilino" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
   								</p>
   							</form>	   

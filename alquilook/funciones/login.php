@@ -17,6 +17,9 @@ o falso */
             /*PDO::FETCH_ASSOC: devuelve un array cuyos indices son los nombres de los campos del resultado de la consulta */
             $row = $result->fetch(PDO::FETCH_ASSOC);
             return $row['IdUsuario'];
+        }else{
+        	$_SESSION["error_log"] = TRUE;
+        	return FALSE;
         }
         
      }catch(PDOException $except){
