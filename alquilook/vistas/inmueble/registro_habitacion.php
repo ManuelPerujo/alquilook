@@ -50,11 +50,20 @@
 									<!--------------------------------------------------------Añadir mobiliario----------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Añadir mobiliario</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
 										  <br/>	 	
+										  <div class="row">
+										  		<div class="col-sm-1"></div>
+										  		<div class="col-sm-10 text-left alert alert-success alert-dismissable">
+								               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						 							<strong><i class="fa fa-exclamation-circle fa-lg"></i></strong>
+						 							Si va a alquilar el inmueble vacío, simplemente deje todo tal y como está...
+			                					</div>
+			                					<div class="col-sm-1"></div>
+										  </div>
 										  <div class="row-fluid">  
 											  <div class="col-md-4">
 											  	<label>Sofá&nbsp;&nbsp;</label> 
@@ -147,11 +156,20 @@
 									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Añadir electrodomésticos</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
 										  <br/>	
+										  <div class="row">
+										  		<div class="col-sm-1"></div>
+										  		<div class="col-sm-10 text-left alert alert-success alert-dismissable">
+								               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						 							<strong><i class="fa fa-exclamation-circle fa-lg"></i></strong>
+						 							Si va a alquilar el inmueble vacío, simplemente deje todo tal y como está...
+			                					</div>
+			                					<div class="col-sm-1"></div>
+										  </div>
 										  <div class="row-fluid">	  
 											  <div class="col-md-4">
 											  	<label>Televisión&nbsp;&nbsp;</label> 
@@ -244,26 +262,9 @@
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
 		                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir habitación</button>
-		                        <a data-toggle="modal" href="#myModal" class="enlace">
-		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
-		    					</a>    					   					
-							    <div class="modal fade" id="myModal">
-							        <div class="modal-dialog">
-							          <div class="modal-content">
-							            <div class="modal-header">
-							              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							              <h5 class="modal-title">Revise sus datos antes de continuar:</h5>
-							            </div>
-							            <div class="modal-body">
-							            	<p>¿Te gusta el adobo? Pues vamos al lío...</p>  					            	
-							            </div>
-							            <div class="modal-footer">
-							            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
-							              <button type="submit" class="btn btn-primary btn-sm">Aceptar</button>
-							          </div>
-							        </div>
-							      </div>
-		    					</div>								
+		                        <button type="submit" class="btn btn-primary btn-sm">Continuar</button>
+		                          					   					
+							    							
 		                    </form>
 		                    <br/>
 		               </div>
