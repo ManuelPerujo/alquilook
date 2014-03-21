@@ -28,7 +28,7 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-9">
                 	<div class="row-fluid">	
-                		<div class="col-xs-9">
+                		<div class="col-sm-8">
 		                	<h3>Características de habitación</h3>
 		               		 <form class="form-group text-left" method="post" action="">  		               		 	                                 
 		                       <!--------------------------------------------------------Insertar habitacion----------------------->
@@ -37,10 +37,12 @@
 										  <div class="col-xs-12">
 										  	 <label><h6 class="magenta">Elija el tipo de habitación&nbsp;&nbsp;</h6></label> 
 						                        <select class="selector" name="tipoInmueble">
-												  <option value="">Gloryhole</option>
-												  <option value="">Local comercial</option>
-												  <option value="">Garaje</option>
-												  <option value="">Finca rústica</option>
+												  <option value="">Salón</option>
+												  <option value="">Cocina</option>
+												  <option value="">Comedor</option>
+												  <option value="">Dormitorio</option>
+												  <option value="">Aseo</option>
+												  <option value="">Otros</option>
 												</select>
 										  </div>
 									</div>
@@ -48,71 +50,200 @@
 									<!--------------------------------------------------------Añadir mobiliario----------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil"></i> Añadir mobiliario</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-archive"></i> Añadir mobiliario</a>
 										  </div>
 									</div>
-									<div class="row collapse" id="ingresarmobiliario"> 	  
-										  <div class="col-xs-4">
-										  	<label><h6 class="magenta">Sofá&nbsp;&nbsp;</h6></label> 
-						                        <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-											<br/>	
-											<label><h6 class="magenta">Mesa&nbsp;&nbsp;</h6></label> 
-						                        <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-											<br/>	
-											<label><h6 class="magenta">Silla&nbsp;&nbsp;</h6></label> 
-						                        <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-										  </div>
-										  <div class="col-xs-4 pull-left">
-										  	
-										  </div>
-										  <div class="col-xs-4 pull-left">
-										  
-										  </div>
+									<div class="row collapse" id="ingresarmobiliario">
+										  <br/>	 	
+										  <div class="row-fluid">  
+											  <div class="col-md-4">
+											  	<label>Sofá&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Mesa&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Silla&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Cuadro&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+											  
+											  <div class="col-md-4">
+											  	<label>Cama individual&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Cama doble&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Mesita de noche&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Cómoda&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+											  
+											   <div class="col-md-4">
+											  	<label>Accesorios de aseo&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Mueble de lavabo&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Espejo&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Hidromasaje&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+										</div>
+										<div class="row-fluid">
+											<hr class="inmueble"/>
+											<div class="col-xs-12">
+												<label>Observaciones</label><br/>
+												<textarea></textarea>
+											</div>	
+										</div>		  
 									</div>
 									<!--------------------------------------------------------Fin Añadir mobiliario----------------------->	
 									<hr class="inmueble"/>
 									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil"></i> Añadir electrodomésticos</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-cutlery"></i> Añadir electrodomésticos</a>
 										  </div>
 									</div>
-									<div class="row collapse" id="ingresarelectrodomesticos"> 	  
-										  <div class="col-xs-4 pull-left">
-										  	<label><h6 class="magenta">Sofá&nbsp;&nbsp;</h6></label> 
-						                        <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-										  </div>
-										  <div class="col-xs-4 pull-left">
-										  	<label><h6 class="magenta">Mesa&nbsp;&nbsp;</h6></label> 
-						                        <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-										  </div>
-										  <div class="col-xs-4 pull-left">
-										  	<label><h6 class="magenta">Tipo de habitación&nbsp;&nbsp;</h6></label> 
-						                       <select class="selector" name="">
-						                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
-													<option value="3">3</option><option value="4">4</option><option value="5">5</option>
-												</select>
-										  </div>
+									<div class="row collapse" id="ingresarelectrodomesticos"> 
+										  <br/>	
+										  <div class="row-fluid">	  
+											  <div class="col-md-4">
+											  	<label>Televisión&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>DVD/Blu-ray&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Equipo música&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Frigorífico&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+											  
+											  <div class="col-md-4">
+											  	<label>Vitrocerámica&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Horno&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Microondas&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Lavadora&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+											  
+											   <div class="col-md-4">
+											  	<label>Secadora&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Lavavajillas&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+												<br/>	
+												<label>Aspiradora&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+													<br/>	
+												<label>Termo/Calentador&nbsp;&nbsp;</label> 
+							                        <select class="selector" name="">
+							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
+													</select>
+											  </div>
+										</div>
+										<div class="row-fluid">
+											<hr class="inmueble"/>
+											<div class="col-xs-12">
+												<label>Observaciones</label><br/>
+												<textarea></textarea>
+											</div>	
+										</div>		  
 									</div>
 									<!--------------------------------------------------------Fin Añadir electrodomesticos----------------------->		  
 								</div>
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
+		                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir habitación</button>
 		                        <a data-toggle="modal" href="#myModal" class="enlace">
 		    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
 		    					</a>    					   					
@@ -136,7 +267,7 @@
 		                    </form>
 		                    <br/>
 		               </div>
-		               <div class="col-xs-3">fdasfwe</div>              
+		               <div class="col-sm-4"></div>              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
