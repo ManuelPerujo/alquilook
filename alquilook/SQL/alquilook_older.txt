@@ -68,16 +68,76 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
-drop table if exists `estancia`;
-CREATE TABLE IF NOT EXISTS `estancia` (
-  `IdEstancia` int(5) unsigned NOT NULL AUTO_INCREMENT,
+drop table if exists `salon`;
+CREATE TABLE IF NOT EXISTS `salon` (
+  `IdSalon` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `IdInmueble` int(5) unsigned NOT NULL,
   `IdMobiliario` int(5) unsigned NOT NULL,
-  `Tipo` char(30) NOT NULL,
   `Cantidad` int(3) NOT NULL,
-  PRIMARY KEY (`IdEstancia`),
-  UNIQUE KEY `Estancia_Unica` (`IdInmueble`),
-  CONSTRAINT `ID_ESTANCIA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+  PRIMARY KEY (`IdSalon`),
+  UNIQUE KEY `Salon_Unico` (`IdInmueble`),
+  CONSTRAINT `ID_SALON_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `cocina`;
+CREATE TABLE IF NOT EXISTS `cocina` (
+  `IdCocina` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdCocina`),
+  UNIQUE KEY `Cocina_Unico` (`IdCocina`),
+  CONSTRAINT `ID_COCINA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `comedor`;
+CREATE TABLE IF NOT EXISTS `comedor` (
+  `IdComedor` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdComedor`),
+  UNIQUE KEY `Comedor_Unico` (`IdComedor`),
+  CONSTRAINT `ID_COMEDOR_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `dormitorio`;
+CREATE TABLE IF NOT EXISTS `dormitorio` (
+  `IdDormitorio` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdDormitorio`),
+  UNIQUE KEY `Dormitorio_Unico` (`IdDormitorio`),
+  CONSTRAINT `ID_DORMITORIO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `aseo`;
+CREATE TABLE IF NOT EXISTS `aseo` (
+  `IdAseo` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdAseo`),
+  UNIQUE KEY `Aseo_Unico` (`IdAseo`),
+  CONSTRAINT `ID_ASEO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `otros`;
+CREATE TABLE IF NOT EXISTS `otros` (
+  `IdOtros` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Nombre` char(30),
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdOtros`),
+  UNIQUE KEY `Otros_Unico` (`IdOtros`),
+  CONSTRAINT `ID_OTROS_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
@@ -107,16 +167,7 @@ insert into `electrodomesticos` values (1,'Television'),(2,'Dvd'),(3,'Equipo de 
 				(10,'Secadora'),(11,'Aspiradora'),(12,'Termo/Calentador');
 
 
-drop table if exists `observaciones_inmueble`;
-CREATE TABLE IF NOT EXISTS `observaciones_inmueble` (
-  `IdObservaciones` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `IdInmueble` int(5) unsigned NOT NULL,
-  `IdEstancia` int(5) unsigned NOT NULL,
-  `Observacion` TEXT NOT NULL,
-  PRIMARY KEY (`IdObservaciones`),
-  UNIQUE KEY `Observacion_Unica` (`IdEstancia`),
-  CONSTRAINT `ID_OBSERVACION_FK` FOREIGN KEY (`IdEstancia`) REFERENCES `estancia` (`IdEstancia`) ON DELETE CASCADE
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
 
 
