@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `mobiliario` (
 
 insert into `mobiliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(5,'Cama Individual'),
 				(6,'Cama Doble'),(7,'Mesita Noche'),(8,'Comoda'),(9,'Accesorios Servicio'),
-				(10,'Mueble lavabo'),(11,'Espejo'),(12,'Hidromasaje');
+				(10,'Mueble Aseo'),(11,'Espejo'),(12,'Hidromasaje');
 				
 				
 drop table if exists `electrodomesticos`;
@@ -102,9 +102,9 @@ CREATE TABLE IF NOT EXISTS `electrodomesticos` (
   UNIQUE KEY `Electrodomesticos_Unico` (`IdElectrodomesticos`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-insert into `electrodomesticos` values (1,'Television'),(2,'Dvd'),(3,'Equipo de sonido'),(4,'Frigorifico'),(5,'Vitroceramica'),
+insert into `electrodomesticos` values (1,'Television'),(2,'Dvd'),(3,'Equipo Sonido'),(4,'Frigorifico'),(5,'Vitroceramica'),
 				(6,'Horno'),(7,'Microondas'),(8,'Lavadora'),(9,'Lavavajillas'),
-				(10,'Secadora'),(11,'Aspiradora'),(12,'Termo/Calentador');
+				(10,'Secadora'),(11,'Aspiradora'),(12,'Termo');
 
 
 drop table if exists `observaciones_inmueble`;
