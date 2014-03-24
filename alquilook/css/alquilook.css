@@ -306,8 +306,8 @@ a.imagenboton:focus,
 a.imagenboton2:hover,
 a.imagenboton2:active,
 a.imagenboton2:focus{
-	opacity: 0.90;
-	filter:alpha(opacity=90); 
+	opacity: 0.80;
+	filter:alpha(opacity=80); 
 	-moz-transform:scale(1.2); 
 	-webkit-transform:scale(1.2);
 	-o-transform:scale(1.2);	
