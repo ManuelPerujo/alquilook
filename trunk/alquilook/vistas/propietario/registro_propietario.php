@@ -37,12 +37,9 @@
                         <small>* Campos obligatorios</small>
                         <br/><br/>
                         <label>
-      						<input type="checkbox"> Acepto las <a href="../publico/condiciones.php" target="_blank" class="enlace">Condiciones de Alquilook.</a>
+      						<input type="checkbox"> Acepto las <a data-toggle="modal" href="#myModal" target="_blank" class="enlace">Condiciones de Alquilook.</a>
     					</label>
-    					<br/><br/>
-    					<a data-toggle="modal" href="#myModal" class="enlace">
-    					<button type="button" class="btn btn-primary btn-sm">Continuar</button>
-    					</a>    					   					
+    					<br/><br/>				   					
 					    <div class="modal fade" id="myModal">
 					        <div class="modal-dialog">
 					          <div class="modal-content">
@@ -51,15 +48,17 @@
 					              <h5 class="modal-title">Revise sus datos antes de continuar:</h5>
 					            </div>
 					            <div class="modal-body">
-					            	<p>¿Te gusta el adobo? Pues vamos al lío...</p>  					            	
+					            	<p><small>1. ¿A ti en la claridad de la mañana, que te gusta más, los churritos o las porritas?</small> </p> 
+									<p><small>2. ¿Te gusta más el adobo? Pues vamos al lío...</small> </p> 	
+									<p><small>3. ¿Tienes las papilas gustativas anuladas de tanto beber Viakal?</small> </p> 				            	
 					            </div>
 					            <div class="modal-footer">
-					            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
-					              <button type="submit" class="btn btn-primary btn-sm">Aceptar</button>
+					            	<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Aceptar</button>
 					          </div>
 					        </div>
 					      </div>
     					</div>
+    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
                     </form> 
                 </div>
                 <div class="col-md-4 col-xs-2 text-center"></div>                                            
