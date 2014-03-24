@@ -28,17 +28,17 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-9">
                 	<div class="row-fluid">	
-                	    <div class="col-sm-8">
+                	    <div class="col-sm-12">
 		                	<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>		               		 	                                 
-		                        <!--------------------------------------------------------Tablas inmuebles----------------------->
+		                        <!--------------------------------------------------------Tablas inmuebles---------------------------->
 		                        <div class="row columnadcha">
-		                       		  dfsdf
+		                       		<div class="col-sm-4">
+		                       		</div>	
 								</div>
+								
 								<!-------------------------------------------------------- Fin Tablas inmuebles----------------------->
 		                      
-		                </div>
-		                <div class="col-sm-4">
-		                </div>              
+		                </div>            
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
