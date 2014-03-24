@@ -23,7 +23,7 @@
                     
                     <br/>	
                     <a class="imagenboton" href="#"><img class="imagenboton" src="<?php echo $ruta?>img/ver_inm.png"></a>
-                    <h5>Ver inmuebles</h5>
+                    <h5>Tus inmuebles</h5>
                     
                     <hr/>
                     
