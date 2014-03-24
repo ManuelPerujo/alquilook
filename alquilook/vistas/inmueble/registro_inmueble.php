@@ -26,7 +26,7 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-xs-9">
+                <div class="col-xs-10">
                 	<div class="row-fluid">
                 		<div class="col-sm-8">
                 			<div class="row-fluid">

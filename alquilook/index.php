@@ -71,7 +71,7 @@
         	<br/><br/><br/>
             <div class="row">
                 <div class="col-lg-2 text-center">
-                	<img class="imagen" src="img/propietario.png">
+                	<img class="imagen magenta-bg img-circle" src="img/banner/propietario.png">
                 </div>     
                 <div class="col-lg-3 text-center collapse-group">
                 	<hr class="propietario"/>
@@ -103,7 +103,7 @@
 				<div class="col-lg-2 text-center">        
                 </div>                    
                 <div class="col-lg-2 text-center">
-                	<img class="imagen" src="img/inquilino.png">
+                	<img class="imagen coral-bg img-circle" src="img/banner/inquilino.png">
                 </div>   
                  <div class="col-lg-3 text-center collapse-group">
                  	<hr class="inquilino"/>
