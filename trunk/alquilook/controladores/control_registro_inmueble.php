@@ -55,7 +55,7 @@ include_once("../funciones/registro.php");
                 	
 					unset($_POST);
     				
-    				header("Location: ../vistas/inmueble/registro_habitacion.php");
+    				header("Location: ../vistas/inmueble/registro_estancia.php");
     				
     					
                 }
