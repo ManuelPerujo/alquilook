@@ -111,6 +111,7 @@
 				
 		$bd = new core();
 		
+		
 		try{
             
             $bd->ConectaBD();
@@ -120,15 +121,16 @@
             $result = $bd->query($query);
       
             if($result->rowCount() == 0) {
-                $_SESSION['erroRegistro'] = $error;
+                
+				return null;
                 
             }else{
             
                 $row = $result->fetch(PDO::FETCH_ASSOC);
 				
-				$id_mobiliario = $row['IdMobiliario'];
+				$id_item = $row['IdMobiliario'];
 								
-				return $id_mobiliario;
+				return $id_item;
             }
 
         }catch(PDOException $except) {
@@ -136,7 +138,7 @@
         }	
 		
 	}
-	
+
 	function crea_estancia($IdInmueble ,$arrayEstancia, $tipoEstancia){
 		
 		$query = "insert into estancia (IdEstancia, IdInmueble, IdMobiliario, Tipo, Cantidad) values ";
@@ -158,17 +160,17 @@
 					$count2++;
 	                if($count2 < $count1){
 	                            
-	                	$idMobiliario = get_IdMobiliario($key);
+	                	$idItem = get_IdMobiliario($key);
 						$cantidad = $value;
 						
-						$query .= "('', '$IdInmueble','$idMobiliario', '$tipoEstancia','$cantidad'), ";	            
+						$query .= "('', '$IdInmueble','$idItem', '$tipoEstancia','$cantidad'), ";	            
 	                        
 	                }if($count2 == $count1){
 	                        
-	                    $idMobiliario = get_IdMobiliario($key);
-						$cantidad = $value;
+	                    $idItem = get_IdMobiliario($key);
+	                    $cantidad = $value;
 					
-						$query .= "('', '$IdInmueble','$idMobiliario', '$tipoEstancia','$cantidad') ";
+						$query .= "('', '$IdInmueble','$idItem', '$tipoEstancia','$cantidad') ";
 	                        
 	                }	
 					
