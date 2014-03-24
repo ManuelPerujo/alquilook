@@ -63,12 +63,12 @@ h4{
 	}
 	
 h5{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.2em;
 	}		
 
 h6{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
 
@@ -89,14 +89,6 @@ h5.banner{
 	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.5em;
 	}
-
-.magenta{
-	color:#e51e50 !important;
-}
-
-.coral{
-	color:#ef501e !important;
-}
 
 .footer{
 	color:#FFF;
@@ -142,7 +134,7 @@ a.enlacefooter:focus{
 }
 
 .videop{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.3em;
 	line-height:10px;
 	text-transform:none;
@@ -182,6 +174,40 @@ a.enlace:focus{
 
 ul{
 	list-style:none;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------Colores--------------------*/
+.red { background-color: #e74c3c; color:#FFFFFF;}
+.red2 {  background-color: #c0392b; color:#FFFFFF;}
+.blue {  background-color: #3498db; color:#FFFFFF;}
+.blue2 {  background-color: #2980b9; color:#FFFFFF;}
+.green {  background-color: #2ecc71; color:#FFFFFF;}
+.green2 {  background-color: #27ae60; color:#FFFFFF;}
+.yellow {  background-color: #f1c40f; color:#FFFFFF;}
+.yellow2 {  background-color: #f39c12; color:#FFFFFF;}
+.orange {  background-color: #e67e22; color:#FFFFFF;}
+.orange2 {  background-color: #d35400; color:#FFFFFF;}
+.teal {  background-color: #1abc9c; color:#FFFFFF;}
+.teal2 {  background-color: #16a085; color:#FFFFFF;}
+.purple {  background-color: #9b59b6; color:#FFFFFF;}
+.purple2 {  background-color: #8e44ad; color:#FFFFFF;}
+.steel-grey {  background-color: #34495e; color:#FFFFFF;}
+.steel-grey2 {  background-color: #2c3e50; color:#FFFFFF;}
+
+.magenta{
+	color:#e51e50 !important;
+}
+
+.magenta-bg{
+	background-color: #e51e50;
+}
+
+.coral{
+	color:#ef501e !important;
+}
+
+.coral-bg{
+	background-color: #ef501e;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
@@ -264,7 +290,7 @@ html, body {
 
 body {
   padding-top: 100px;
-  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family:'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 
@@ -278,7 +304,7 @@ body {
 }
 
 .imagenbanner{
-	width: 120px;
+	width: 125px;
 	float: left !important;
 }
 
@@ -294,9 +320,6 @@ a.imagenboton,
 a.imagenboton2{
 	opacity: 1.0;
 	filter:alpha(opacity=100);
-	-moz-transition:-moz-transform 0.2s ease-in; 
-	-webkit-transition:-webkit-transform 0.2s ease-in; 
-	-o-transition:-o-transform 0.1s ease-in;
 
 }
 
@@ -306,20 +329,17 @@ a.imagenboton:focus,
 a.imagenboton2:hover,
 a.imagenboton2:active,
 a.imagenboton2:focus{
-	opacity: 0.80;
-	filter:alpha(opacity=80); 
-	-moz-transform:scale(1.2); 
-	-webkit-transform:scale(1.2);
-	-o-transform:scale(1.2);	
+	opacity: 0.90;
+	filter:alpha(opacity=90);	
 }
 
 .columnaizda{
-	background-color: #f5f5f5;
+	background-color: #FFFFFF;
 }
 
 .columnadcha{
 	background-color: #f5f5f5;
-	padding:5px 10px;
+	padding:10px;
 	border-bottom: 10px solid #FFFFFF; 
 }
 
@@ -495,19 +515,19 @@ h4{
 	}	
 	
 h5{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:'Lato',  "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
 
 h5.columnapropietario{
 	color:#e51e50 ;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:'Lato',  "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
 
 h6.columnapropietario{
 	color:#e51e50 ;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:0.9em;
 	}	
 

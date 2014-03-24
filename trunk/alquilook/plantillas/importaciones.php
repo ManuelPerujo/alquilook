@@ -48,6 +48,7 @@ if (basename(getcwd()) == "alquilook"){
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:200' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
 
 
     <!-- CSS -->
