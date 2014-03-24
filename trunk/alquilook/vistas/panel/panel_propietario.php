@@ -36,19 +36,21 @@
             </div>
         </div>  
         
-        <div class="row">
-        	<div class="col-xs-12"> 
-        			<br/> 
-                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2 coral-bg" src="<?php echo $ruta?>img/botones/salir.png"></a>
-                    <h6>Salir</h6>
-            </div>
-        </div> 
-        
+    	<br/>  
+    	      
         <div class="row">
         	<div class="col-xs-12"> 
         			<br/> 
                     <a class="imagenboton2" href="#"><img class="imagenboton2 coral-bg" src="<?php echo $ruta?>img/botones/mensaje.png"></a>
                     <h6>Mensajes</h6>  
+            </div>
+        </div> 
+        
+         <div class="row">
+        	<div class="col-xs-12"> 
+        			<br/> 
+                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2 coral-bg" src="<?php echo $ruta?>img/botones/salir.png"></a>
+                    <h6>Salir</h6>
             </div>
         </div>              
 </div>
