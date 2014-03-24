@@ -50,7 +50,7 @@ include_once("../funciones/registro.php");
             /*insertamos los datos de la nueva estancia*/
                         
             $query = crea_estancia($IdInmueble, $arrayEstancia, $tipoEstancia);
-                                
+            //echo $query;                    
     		$bd->query($query);	
     					
             header("Location: ../vistas/inmueble/registro_estancia.php");    
