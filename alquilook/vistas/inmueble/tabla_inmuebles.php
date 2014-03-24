@@ -31,7 +31,7 @@
                 	    <div class="col-sm-12">
 		                	<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>		               		 	                                 
 		                        <!--------------------------------------------------------Tablas inmuebles---------------------------->
-		                        <div class="row columnadcha">
+		                        <div class="row">
 		                       		<div class="col-sm-6 media">
 										  <a class="pull-left" href="#">
 										    <img class="imagenbanner magenta-bg" src="<?php echo $ruta?>img/botones/inmueble.png">
@@ -42,26 +42,43 @@
 										    <p>4 habitacfsdciones</p>
 										  </div>
 		                       		</div>	
-		                       		<div class="col-sm-2 text-center">
-		                       			<img class="imagenboton2 magenta-bg" src="<?php echo $ruta?>img/botones/contrato.png">
-		                       			<h6>Ver contrato</h6>
+		                       		<div class="col-sm-2 magenta-bg text-center">
+		                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/contrato.png">
+		                       			Ver contrato
 		                       		</div>
 		                       		<div class="col-sm-2 text-center">
-		                       			<img class="imagenboton2 steel-grey2" src="<?php echo $ruta?>img/botones/luz.png">
-		                       			<h6>Electricidad</h6>
-		                       			<hr class="inmueble"/>
-		                       			<img class="imagenboton2 steel-grey2" src="<?php echo $ruta?>img/botones/agua.png">
-		                       			<h6>Agua</h6>
-		                       			<hr class="inmueble"/>
-		                       			<img class="imagenboton2 steel-grey2" src="<?php echo $ruta?>img/botones/gas.png">
-		                       			<h6>Gas</h6>
+		                       			 <div class="row">
+		                       				<div class="col-sm-12 steel-grey2 text-center">
+				                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/luz.png">
+				                       			Luz
+				                       		</div>
+				                       	</div>
+				                       	<div class="row">
+		                       				<div class="col-sm-12 steel-grey2 text-center">		
+				                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/agua.png">
+				                       			Agua
+				                       		</div>
+				                       	</div>
+				                       	<div class="row">
+		                       				<div class="col-sm-12 steel-grey2 text-center">		
+				                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/gas.png">
+				                       			Gas
+				                       		</div>
+				                       	</div>		
 		                       		</div>
 		                       		<div class="col-sm-2 text-center">
-		                       			<img class="imagenboton2 steel-grey2" src="<?php echo $ruta?>img/botones/incidencias.png">
-		                       			<h6>Crear incidencia</h6>
-		                       			<hr class="inmueble"/>
-		                       			<img class="imagenboton2 steel-grey2" src="<?php echo $ruta?>img/botones/historial.png">
-		                       			<h6>Ver incidencias</h6>
+		                       			<div class="row">
+		                       				<div class="col-sm-12 orange2 text-center">
+				                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/incidencias.png">
+				                       			Crear incidencia
+				                       		</div>
+				                       	</div>
+				                       	<div class="row">
+		                       				<div class="col-sm-12 orange2 text-center">		
+				                       			<img class="imagenboton2" src="<?php echo $ruta?>img/botones/historial.png">
+				                       			Ver incidencias
+				                       		</div>
+				                       	</div>		
 		                       		</div>
 								</div>
 								
