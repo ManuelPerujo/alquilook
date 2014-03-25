@@ -146,6 +146,13 @@ ul li.menu{
 	font-family: 'Bariol-Regular', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
 	font-size:1.1em;
 	}
+	
+p.ficha{
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1em;
+	line-height:14px;
+	text-transform:none;
+}	
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------Menu--------------------*/
 a.enlace{
@@ -451,6 +458,14 @@ a.imagenboton2:focus{
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
+	
+p.ficha{
+	text-align:center;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:0.8em;
+	line-height:12px;
+	text-transform:none;
+}		
 	
 .imagen{
 	width: 100px;
