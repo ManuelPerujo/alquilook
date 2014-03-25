@@ -1,4 +1,4 @@
-   <div class="section-pie">
+   <div class="section-pie coral-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 text-center footer">

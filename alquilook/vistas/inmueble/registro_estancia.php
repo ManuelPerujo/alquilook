@@ -64,7 +64,6 @@
 												</select>
 										  </div>
 									</div>
-									<hr class="inmueble"/>
 									<!--------------------------------------------------------Añadir mobiliario----------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
@@ -162,7 +161,6 @@
 											  </div>
 										</div>
 										<div class="row-fluid">
-											<hr class="inmueble"/>
 											<div class="col-xs-12">
 												<label>Observaciones</label><br/>
 												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
@@ -170,7 +168,6 @@
 										</div>		  
 									</div>
 									<!--------------------------------------------------------Fin Añadir mobiliario----------------------->	
-									<hr class="inmueble"/>
 									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
@@ -268,7 +265,6 @@
 											  </div>
 										</div>
 										<div class="row-fluid">
-											<hr class="inmueble"/>
 											<div class="col-xs-12">
 												<label>Observaciones</label><br/>
 												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
