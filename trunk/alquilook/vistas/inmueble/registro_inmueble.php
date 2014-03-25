@@ -49,7 +49,7 @@
 									  <option value="Garaje">Garaje</option>
 									  <option value="Finca Rustica">Finca rústica</option>
 									</select>
-		                        <hr class="inmueble"/> 
+		                        <br/> 
 		                        <label><h6 class="magenta">Dirección&nbsp;&nbsp;</h6></label>
 		                        	<select class="selector" name="via_inmueble">
 									  <option value="Calle">Calle</option>
@@ -65,10 +65,10 @@
 			                        <input type="text" class="form-control" name="municipio_inmueble" placeholder="Municipio" />                                   
 			                        <input type="text" class="form-control" name="cp_inmueble" placeholder="Código postal" />
 			                        <input type="text" class="form-control" name="provincia_inmueble" placeholder="Provincia" /> 
-		                        <hr class="inmueble"/>
+		                         <br/>
 		                        <label><h6 class="magenta">Nº de metros&nbsp;&nbsp;</h6></label> 
 			                        <input type="text" class="form-control" name="metros_inmueble" placeholder="Metros" />
-		                        <hr class="inmueble"/>
+		                         <br/>
 		                        <label><h6 class="magenta">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_habitaciones">
 									  <option value="1">1</option>
@@ -77,7 +77,7 @@
 									  <option value="4">4</option>
 									  <option value="5">5</option>
 									</select>
-		                        <hr class="inmueble"/> 
+		                         <br/>
 		                        <label><h6 class="magenta">Nº de aseos&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_aseos">
 									  <option value="1">1</option>
