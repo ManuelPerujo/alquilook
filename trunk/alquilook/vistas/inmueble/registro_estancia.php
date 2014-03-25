@@ -30,8 +30,26 @@
                 	<div class="row-fluid">	
                 		<div class="col-sm-8">
 		                	<h3><i class="fa fa-cogs"></i> Crear habitaciones<small class="magenta"> (Paso 2 de 3)</small></h3>
-		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php">  		               		 	                                 
-		                       <!--------------------------------------------------------Insertar habitacion----------------------->
+		                	
+		                	 <!--------------------------------------------------------Estancia insertada----------------------->
+		                	<div class="row">
+		                		<div class="col-sm-6">
+				                	<div class="panel panel-default">
+									  <div class="panel-heading">
+									  	<a href="#"><button type="button" class="close" aria-hidden="true">&times;</button></a>
+									    <h5 class="panel-title magenta"> <i class="fa fa-info"></i> Dormitorio # 1</h5>
+									  </div>
+									  <div class="panel-body">
+										<p>Sofá = 2</p>
+										<p>Mesa = 2</p>
+										<p>Gloryhole = 2</p>
+									  </div>
+									</div>
+								</div>			                	
+		                	</div>
+		                	<!--------------------------------------------------------Estancia insertada----------------------->
+		                	<!--------------------------------------------------------Insertar habitacion----------------------->
+		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php">  
 		                       <div class="row columnadcha">
 		                       		<div class="row">			
 										  <div class="col-xs-12">
@@ -259,13 +277,12 @@
 									</div>
 									<!--------------------------------------------------------Fin Añadir electrodomesticos----------------------->		  
 								</div>
-								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
+								
 		                        <br/>
 		                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir habitación</button>
 		                        <button type="submit" class="btn btn-primary btn-sm">Continuar</button>
-		                          					   					
-							    							
 		                    </form>
+		                    <!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                    <br/>
 		               </div>
 		               <div class="col-sm-4">
