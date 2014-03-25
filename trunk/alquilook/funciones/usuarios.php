@@ -30,8 +30,6 @@
 		
 	}
 
-
-
 	function filtros_consulta($arrayFiltro){
      
         $texto = null;
