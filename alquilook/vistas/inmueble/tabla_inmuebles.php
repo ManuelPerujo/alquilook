@@ -95,51 +95,50 @@
 								</div>
 							</div>			
 							<!-------------------------------------------------------- Fin Tablas inmuebles----------------------->
-							
+							<hr class="inmueble"/>
 							<!-------------------------------------------------------- Contenido desplegable----------------------->
 		                    <div class="row">
                 	    		<div class="col-xs-12">	  
 				                    <div id="luz" class="collapse">
-				                      		 <div class="row blue2 img-rounded lineaabajo">
+				                      		 <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/luz.png">
+							                      		<img class="imagenbanner2 blue2 img-circle" src="<?php echo $ruta?>img/botones/luz.png">
 							                        	<h5>Recibos de Electricidad</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">
-							                        	<a class="enlacefooter" href="#" target="_blank"><p class="ficha2">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
+							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	            
 				                     		</div>
 				                     </div>		
 				                     <div id="agua" class="collapse">
-				                            <div class="row steel-grey img-rounded lineaabajo">
+				                            <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
+							                      		<img class="imagenbanner2 steel-grey img-circle" src="<?php echo $ruta?>img/botones/agua.png">
 							                        	<h5>Recibos de Agua</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">	
-							                        	<a class="enlacefooter" href="#" target="_blank"><p class="ficha2">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
+							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	            
 				                     		</div>
 				                     </div>
 				                     <div id="gas" class="collapse">
-				                            <div class="row orange2 img-rounded lineaabajo">
+				                            <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">	
+							                      		<img class="imagenbanner2 orange2 img-circle" src="<?php echo $ruta?>img/botones/gas.png">	
 							                        	<h5>Recibos de Gas</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">	
-							                        	<a class="enlacefooter" href="#" target="_blank"><p class="ficha2">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
+							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	            
 				                     		</div>
 				                     </div>
 				                      <div id="incidencia" class="collapse">
-				                      		 <div class="row red2 img-rounded lineaabajo">
+				                      		 <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">	
+							                      		<img class="imagenbanner2 red2 img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">	
 							                        	<h5>Crear incidencia</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">	
-							                 			<br/>
 														     <div class="panel-group" id="accordion">
 																	<div class="panel panel-default">
 																		<div class="panel-heading">

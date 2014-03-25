@@ -270,7 +270,8 @@ p.mobiliario{
 }
 
 .lineaabajo{
-	border-bottom: #FFFFFF solid 1px;
+	padding:5px 0 0 0;
+	border-bottom: #c8c8c8 solid 1px;
 	
 }
 
@@ -428,13 +429,14 @@ a.imagenboton2:focus{
 }  
 
 .sidebar {
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom:10px;
 }
 
 .sidebar ul {
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid #cccccc;
+  border: 1px solid #c8c8c8;
 }
 
 .carousel {
