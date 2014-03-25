@@ -37,7 +37,7 @@
 				                	<div class="panel panel-default">
 									  <div class="panel-heading">
 									  	<a href="#"><button type="button" class="close" aria-hidden="true">&times;</button></a>
-									    <h5 class="panel-title magenta"> <i class="fa fa-info"></i> Dormitorio # 1</h5>
+									    <h5 class="panel-title magenta"> <i class="fa fa-archive"></i> Dormitorio # 1</h5>
 									  </div>
 									  <div class="panel-body">
 										<p>Sofá = 2</p>
