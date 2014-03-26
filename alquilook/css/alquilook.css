@@ -387,6 +387,7 @@ body {
 	width: 150px;
 }
 
+
 .imagenbanner{
 	width: 125px;
 	float: left !important;
@@ -394,6 +395,9 @@ body {
 
 .imagenbanner2{
 	width: 75px;
+	border-radius: 50%;
+	border: #e51e50 1px solid;
+	background-color: #f5f5f5;
 }
 
 .imagenboton{

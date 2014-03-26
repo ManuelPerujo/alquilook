@@ -57,19 +57,19 @@
 				                       	<div class="row-fluid iconosmovil text-center">
 				                       		<div class="col-xs-4 col-sm-2 text-center">
 				                       			<a class="enlace2" data-toggle="collapse" data-target="#luz">
-                    								<img class="imagenboton3 blue2  img-rounded" src="<?php echo $ruta?>img/botones/luz.png">
+                    								<img class="imagenboton3 magenta-bg  img-rounded" src="<?php echo $ruta?>img/botones/luz.png">
 						                       		<p class="ficha">Electricidad</p>
 						                       	</a>	
 						                    </div>
 						                    <div class="col-xs-4 col-sm-2 text-center">	
 						                       	<a class="enlace2" data-toggle="collapse" data-target="#agua">
-							                       	<img class="imagenboton3 steel-grey img-rounded" src="<?php echo $ruta?>img/botones/agua.png">
+							                       	<img class="imagenboton3 magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/agua.png">
 							                       	<p class="ficha">Agua</p>
 							                    </a>   	
 						                    </div>
 						                    <div class="col-xs-4 col-sm-2 text-center">	
 						                    	<a class="enlace2" data-toggle="collapse" data-target="#gas">
-							                       	<img class="imagenboton3 orange2 img-rounded" src="<?php echo $ruta?>img/botones/gas.png">
+							                       	<img class="imagenboton3 magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/gas.png">
 							                       	<p class="ficha">Gas</p>
 							                    </a>   		
 				                       		</div>
@@ -81,13 +81,13 @@
 				                       		</div>
 				                       		<div class="col-xs-4 col-sm-2 text-center">
 				                       			<a class="enlace2" data-toggle="collapse"  data-target="#incidencia">
-							                       	<img class="imagenboton3  red2 img-rounded" src="<?php echo $ruta?>img/botones/incidencias.png">
+							                       	<img class="imagenboton3 magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/incidencias.png">
 							                       	<p class="ficha">Crear incidencia</p>
 							                    </a>   	
 						                    </div>
 						                    <div class="col-xs-4 col-sm-2 text-center">	
 						                    	<a class="enlace2" data-toggle="collapse" data-target="#historial">
-							                       	<img class="imagenboton3 red img-rounded" src="<?php echo $ruta?>img/botones/historial.png">
+							                       	<img class="imagenboton3 magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/historial.png">
 							                       	<p class="ficha">Ver incidencias</p>
 							                    </a>   	
 				                       		</div>
@@ -102,7 +102,7 @@
 				                    <div id="luz" class="collapse">
 				                      		 <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2 blue2 img-circle" src="<?php echo $ruta?>img/botones/luz.png">
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/luz.png">
 							                        	<h5>Recibos de Electricidad</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">
@@ -113,7 +113,7 @@
 				                     <div id="agua" class="collapse">
 				                            <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2 steel-grey img-circle" src="<?php echo $ruta?>img/botones/agua.png">
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
 							                        	<h5>Recibos de Agua</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">	
@@ -124,7 +124,7 @@
 				                     <div id="gas" class="collapse">
 				                            <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2 orange2 img-circle" src="<?php echo $ruta?>img/botones/gas.png">	
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">	
 							                        	<h5>Recibos de Gas</h5>
 							                 		</div>  
 							                 		<div class="col-xs-6">	
@@ -135,7 +135,7 @@
 				                      <div id="incidencia" class="collapse">
 				                      		 <div class="row lineaabajo">
                 	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2 red2 img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">	
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">	
 							                        	<h5>Crear incidencia</h5>
 							                 		</div>
 							                 		<div class="col-xs-6">	
