@@ -271,7 +271,7 @@
 								
 		                        <br/>
 		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir habitación</button>
-		                        <button type="button" class="btn btn-primary btn-sm">Continuar</button>
+		                        <a type="button" href="../inquilino/registro_inquilino.php" class="btn btn-primary btn-sm">Continuar</a>
 		                    </form>
 		                    <!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                    <br/>
