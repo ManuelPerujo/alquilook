@@ -41,10 +41,10 @@
 				                        <div class="row-fluid">
 				                       		<div class="col-sm-6 media">
 												  <a class="pull-left">
-												    <img class="imagenbanner magenta-bg img-circle" src="<?php echo $ruta?>img/botones/inmueble.png">
+												    <img class="imagenbanner magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/inmueble.png">
 												  </a>
 												  <div class="media-body">
-												    <h4 class="media-heading">Ronda / Calle Juan Tenorio</h4>
+												    <h5 class="media-heading">Ronda / Calle Juan Tenorio</h5>
 												    <hr class="grissimple"/>
 												    <small>Vivienda</small>
 												    <hr class="grissimple"/>
@@ -101,10 +101,12 @@
                 	    		<div class="col-xs-12">	  
 				                    <div id="luz" class="collapse">
 				                      		 <div class="row lineaabajo">
-                	    							<div class="col-xs-6 text-center">	  
+                	    							<div class="col-xs-2 text-right">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/luz.png">
-							                        	<h5>Recibos de Electricidad</h5>
 							                 		</div>  
+							                 		<div class="col-xs-4 text-left">
+							                 			<p class="ficha"><h5>Recibos de Electricidad</h5></p>
+							                 		</div>
 							                 		<div class="col-xs-6">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	            
@@ -112,31 +114,37 @@
 				                     </div>		
 				                     <div id="agua" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-xs-6 text-center">	  
+                	    							<div class="col-xs-2 text-right">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
-							                        	<h5>Recibos de Agua</h5>
 							                 		</div>  
-							                 		<div class="col-xs-6">	
+							                 		<div class="col-xs-4 text-left">
+							                 			<p class="ficha"><h5>Recibos de Agua</h5></p>
+							                 		</div>
+							                 		<div class="col-xs-6">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
-							                 		</div>	            
+							                 		</div>	                        
 				                     		</div>
 				                     </div>
 				                     <div id="gas" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">	
-							                        	<h5>Recibos de Gas</h5>
+                	    							<div class="col-xs-2 text-right">	  
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">
 							                 		</div>  
-							                 		<div class="col-xs-6">	
+							                 		<div class="col-xs-4 text-left">
+							                 			<p class="ficha"><h5>Recibos de Gas</h5></p>
+							                 		</div>
+							                 		<div class="col-xs-6">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
-							                 		</div>	            
+							                 		</div>		            
 				                     		</div>
 				                     </div>
 				                      <div id="incidencia" class="collapse">
 				                      		 <div class="row lineaabajo">
-                	    							<div class="col-xs-6 text-center">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">	
-							                        	<h5>Crear incidencia</h5>
+                	    							<div class="col-xs-2 text-right">	  
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">
+							                 		</div>  
+							                 		<div class="col-xs-4 text-left">
+							                 			<p class="ficha"><h5>Crear incidencia</h5></p>
 							                 		</div>
 							                 		<div class="col-xs-6">	
 														     <div class="panel-group" id="accordion">
