@@ -241,16 +241,18 @@
 		$listaId = urldecode($listaId);
 		
 		$mensaje = "	<div class='row'>
+
 		                		<div class='col-sm-6'>
 				                	<div class='alert alert-success alert-dismissable'>
-									  	<button type='button' class='close' data-dismiss='alert' aria-hidden='true' href='../../controladores/control_borrar_estancia.php?id=".$listaId."'>&times;</button>
+									  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$listaId."'>&times;</a>
 									    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
 									  <p class='ficha'>".
+
 									  $elementos."
-									  </p>
-									</div>
-								</div>			                	
-		                	</div>";
+								  </p>
+								</div>
+							</div>			                	
+		                </div>";
 		
 		return $mensaje;		
 	}
