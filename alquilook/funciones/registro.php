@@ -77,7 +77,7 @@
 		return $cadena;
 	}
 
-	function get_IdInmueble($direccion){
+	function get_IdInmueble($direccion, $tipoInmueble){
 		
 		$bd = new core();
 		
@@ -85,7 +85,7 @@
             
             $bd->ConectaBD();
      
-            $query = "select IdInmueble from inmueble where Direccion = '$direccion' ";
+            $query = "select IdInmueble from inmueble where Direccion = '$direccion' and TipoInmueble = '$tipoInmueble'";
 
             $result = $bd->query($query);
       
@@ -110,8 +110,7 @@
 	function get_IdMobiliario($nombre){
 				
 		$bd = new core();
-		
-		
+				
 		try{
             
             $bd->ConectaBD();
@@ -139,6 +138,37 @@
 		
 	}
 
+	function get_mobiliario($IdMobiliario){
+		
+		$bd = new core();
+				
+		try{
+            
+            $bd->ConectaBD();
+     
+            $query = "select Tipo from mobiliario where IdMobiliario = '$IdMobiliario' ";
+
+            $result = $bd->query($query);
+      
+            if($result->rowCount() == 0) {
+                
+				return null;
+                
+            }else{
+            
+                $row = $result->fetch(PDO::FETCH_ASSOC);
+				
+				$item = $row['Tipo'];
+								
+				return $item;
+            }
+
+        }catch(PDOException $except) {
+            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
+        }
+		
+	}
+
 	function crea_estancia($IdInmueble ,$arrayEstancia, $tipoEstancia){
 		
 		$query = "insert into estancia (IdEstancia, IdInmueble, IdMobiliario, Tipo, Cantidad) values ";
@@ -150,6 +180,8 @@
 				$count1++;
 			}
 		}
+		
+		$_SESSION['registros_insertados'] = $count1;
 		
 		if($count1 != 0){
 			
@@ -188,7 +220,42 @@
 		return $query;
 	}
 
-
+	function get_estancia($arrayEstancia){
+		
+		$elementos = null;
+		$estancia = null;
+		$arrayIdEstancias = array();
+		
+		foreach ($arrayEstancia as $key => $value) {
+			
+			array_push($arrayIdEstancias, $value['IdEstancia']);
+				
+			$estancia = $value['Tipo'];
+			
+			$mobiliario = get_mobiliario($value['IdMobiliario']);
+						
+			$elementos .= "<p>".$mobiliario." = ".$value['Cantidad']."</p>";
+		}
+		
+		$listaId = serialize($arrayIdEstancias);
+		$listaId = urldecode($listaId);
+		
+		$mensaje = "	<div class='row'>
+		                		<div class='col-sm-6'>
+				                	<div class='panel panel-default'>
+									  <div class='panel-heading'>
+									  	<a href='../../controladores/control_borrar_estancia.php?id=".$listaId."'><button type='button' class='close' aria-hidden='true'>&times;</button></a>
+									    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
+									  </div>
+									  <div class='panel-body'>".
+									  $elementos."
+									  </div>
+									</div>
+								</div>			                	
+		                	</div>";
+		
+		return $mensaje;		
+	}
 
 
 ?>

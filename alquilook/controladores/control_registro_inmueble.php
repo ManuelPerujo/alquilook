@@ -33,12 +33,12 @@ include_once("../funciones/registro.php");
             $bd->ConectaBD();
      
             /*comprobamos que no existe el inmueble en la bd */
-            $query = "select * from inmueble where Direccion = '$direccion' ";
+            $query = "select * from inmueble where Direccion = '$direccion' and TipoInmueble = '$tipoInmueble' ";
 
             $result = $bd->conexion->query($query);
       
             if($result->rowCount()>0) {
-                $_SESSION['erroRegistro'] = $error;
+                header("Location: ../vistas/inmueble/registro_inmueble.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
@@ -51,7 +51,9 @@ include_once("../funciones/registro.php");
                 if($bd->conexion->exec($query)){
                 	
                 	$_SESSION['erroRegistro'] = FALSE;
-					$_SESSION['identifica_inmueble'] = $direccion;
+					$_SESSION['identifica_inmueble_direccion'] = $direccion;
+					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
+					$_SESSION['array_estancias'] = array();
                 	
 					unset($_POST);
     				
