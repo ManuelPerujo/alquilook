@@ -242,9 +242,9 @@
 		
 		$mensaje = "	<div class='row'>
 		                		<div class='col-sm-6'>
-				                	<div class='panel panel-default'>
+				                	<div class='panel panel-default alert-dismissable'>
 									  <div class='panel-heading'>
-									  	<a href='../../controladores/control_borrar_estancia.php?id=".$listaId."'><button type='button' class='close' aria-hidden='true'>&times;</button></a>
+									  	<a href='../../controladores/control_borrar_estancia.php?id=".$listaId."'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button></a>
 									    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
 									  </div>
 									  <div class='panel-body'>".
