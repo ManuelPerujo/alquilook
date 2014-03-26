@@ -41,11 +41,11 @@
 									</div>
 									<div class="row-fluid">  
 											  <div class="col-sm-6">
-											  			<input type="text" class="form-control" name="nombre_propietario" placeholder="Nombre *" />
-								                        <input type="text" class="form-control" name="apellidos_propietario" placeholder="Apellidos *" /> 
-								                        <input type="text" class="form-control" name="dni_propietario" placeholder="DNI *" />
-								                        <input type="text" class="form-control" name="email_propietario" placeholder="Email *" /> 
-								                        <input type="text" class="form-control" name="telefono_propietario" placeholder="Teléfono *" /> 
+											  			<input type="text" class="form-control" name="nombre_inquilino" placeholder="Nombre *" />
+								                        <input type="text" class="form-control" name="apellidos_inquilino" placeholder="Apellidos *" /> 
+								                        <input type="text" class="form-control" name="dni_inquilino" placeholder="DNI *" />
+								                        <input type="text" class="form-control" name="email_inquilino" placeholder="Email *" /> 
+								                        <input type="text" class="form-control" name="telefono_inquilino" placeholder="Teléfono *" /> 
                         								<small>* Campos obligatorios</small>
 											  </div>
 									</div>  
@@ -55,8 +55,8 @@
 								
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
-		                        <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir inquilino</button>
-		                        <button type="submit" class="btn btn-primary btn-sm">Finalizar</button>
+		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir inquilino</button>
+		                        <a  class="btn btn-primary btn-sm">Finalizar</a>
 		                        								
 		                    </form>
 		                    <br/>
