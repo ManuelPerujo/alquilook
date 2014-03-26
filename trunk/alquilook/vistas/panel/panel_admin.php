@@ -1,6 +1,7 @@
-<div class="col-sm-2 col-xs-4 fondogris">
+<div class="col-sm-2 col-xs-4">
 		<div class="row">
-        	<div class="col-xs-12 magenta">
+			<br/>
+        	<div class="col-xs-12 text-center">
                 	<span class="glyphicon glyphicon-user"></span></i> Buenos días <?php echo $usuario ?></h6>
             </div>
         </div>

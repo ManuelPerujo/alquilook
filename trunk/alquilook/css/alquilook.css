@@ -131,6 +131,7 @@ p.ficha{
 	font-size:1em;
 	line-height:14px;
 	text-transform:none;
+	padding:3px;
 }	
 
 p.ficha2{
@@ -138,7 +139,7 @@ p.ficha2{
 	font-size:1em;
 	line-height:14px;
 	text-transform:none;
-	padding: 5px;
+	padding: 7px;
 }	
 
 
@@ -281,6 +282,11 @@ body,html{
  height:100%;
 }
 
+.mayusculas{
+	text-transform:uppercase;
+	
+}
+
 p.mobiliario{
 	line-height:25px;
 }
@@ -394,9 +400,9 @@ body {
 }
 
 .imagenbanner2{
-	width: 75px;
-	border-radius: 50%;
-	border: #e51e50 1px solid;
+	margin: 0 0 7px 0;
+	width: 50px;
+	border-radius: 6%;
 	background-color: #f5f5f5;
 }
 

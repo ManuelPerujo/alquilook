@@ -22,7 +22,40 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-8columnadcha">
-                	
+                	<h3 class="page-header"><i class="fa fa-envelope"></i> Mensajes:</h3>
+	                	<div class="media lineaabajo">
+	                		  <br/>
+							  <a class="pull-left" href="#">
+							    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/banner/inquilino.png">
+							  </a>
+							  <div class="media-body">
+								  	<a type="button" class="close enlace" data-dismiss="alert" aria-hidden="true">&times;</a>
+								    <h5 class="media-heading">Juan Pérez</h5>
+								    <h6 class="media-heading magenta">18 / 04 / 14</h6>
+								    <p class="mayusculas">Asunto: Llevo 3 días intentándolo y aún no puedo registrarme en alquilook</p>
+								    <hr class="grissimple"/>
+								    <p class="ficha">
+								    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
+								    </p>
+							  </div>
+						</div>
+						<div class="media lineaabajo">
+	                		  <br/>
+							  <a class="pull-left" href="#">
+							    	<img class="imagenboton2 magenta-bg img-circle" src="<?php echo $ruta?>img/banner/propietario.png">
+							  </a>
+							  <div class="media-body">
+								  	<a type="button" class="close enlace" data-dismiss="alert" aria-hidden="true">&times;</a>
+								    <h5 class="media-heading">María Gómez</h5>
+								    <h6 class="media-heading magenta">03 / 08 / 14</h6>
+								    <p class="mayusculas">Asunto: Quiero abrir un gloryhole en la puerta del salón...</p>
+								    <hr class="grissimple"/>
+								    <p class="ficha">
+								    Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
+								    </p>
+							  </div>
+						</div>
+                	<br/>
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
