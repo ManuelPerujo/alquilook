@@ -34,7 +34,7 @@
 		                			<h3><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Tus inmuebles</h3>
 		                		</div>
 		                	</div>
-		                	<hr class="inmueble"/><br/>
+		                	<hr class="grisdoble"/><br/>
 		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
 		                	<div class="row">
                 	    		<div class="col-xs-12">	
@@ -45,9 +45,9 @@
 												  </a>
 												  <div class="media-body">
 												    <h4 class="media-heading">Ronda / Calle Juan Tenorio</h4>
-												    <hr class="inmueble"/>
+												    <hr class="grissimple"/>
 												    <small>Vivienda</small>
-												    <hr class="inmueble"/>
+												    <hr class="grissimple"/>
 												    <p class="ficha">25 metros</p>
 												    <p class="ficha">4 habitaciones / 1 aseo</p>
 												    <p class="ficha"><span class="glyphicon glyphicon-user"></span> Inquilino: Juan Mata</p>
@@ -95,7 +95,7 @@
 								</div>
 							</div>			
 							<!-------------------------------------------------------- Fin Tablas inmuebles----------------------->
-							<hr class="inmueble"/>
+							<hr class="grisdoble"/>
 							<!-------------------------------------------------------- Contenido desplegable----------------------->
 		                    <div class="row">
                 	    		<div class="col-xs-12">	  
@@ -137,7 +137,7 @@
                 	    							<div class="col-xs-6 text-center">	  
 							                      		<img class="imagenbanner2 red2 img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">	
 							                        	<h5>Crear incidencia</h5>
-							                 		</div>  
+							                 		</div>
 							                 		<div class="col-xs-6">	
 														     <div class="panel-group" id="accordion">
 																	<div class="panel panel-default">
@@ -161,7 +161,7 @@
 																		<div class="panel-heading">
 																		     <h6 class="panel-title">
 																		         <a class="enlace2"  data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-																			        <span class="glyphicon glyphicon-user"></span> Incidencias de inquilino
+																			        <span class="glyphicon glyphicon-user"></span> Cambios de inquilino
 																			    </a>
 																			 </h6>
 																		</div>
@@ -184,7 +184,7 @@
 																		<div class="panel-heading">
 																		     <h6 class="panel-title">
 																		        <a class="enlace2"  data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-																		          <span class="glyphicon glyphicon-file"></span>Incidencias de contrato
+																		          <span class="glyphicon glyphicon-file"></span>Modificación de contrato
 																		        </a>
 																		     </h6>
 																		</div>

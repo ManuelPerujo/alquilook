@@ -33,7 +33,7 @@
 		               		<form method="post" action="">
 		               			
 		               			<!--------------------------------------------------------Añadir inqulino----------------------->	 	
-		                       <div class="row columnadcha">
+		                       <div class="row fondogris">
 									<div class="row">  
 										  <div class="col-xs-12">
 										  	 <label><h6 class="magenta">Datos del inquilino&nbsp;&nbsp;</h6></label>

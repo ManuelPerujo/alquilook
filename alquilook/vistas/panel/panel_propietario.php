@@ -43,7 +43,7 @@
             </div>
         </div>  
         
-    	<hr class="inmueble"/>  
+    	<hr class="grissimple"/>  
     	      
         <div class="row">
         	<div class="col-xs-12"> 

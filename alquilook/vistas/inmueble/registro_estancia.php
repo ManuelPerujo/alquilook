@@ -50,7 +50,7 @@
 		                	<!--------------------------------------------------------Estancia insertada----------------------->
 		                	<!--------------------------------------------------------Insertar habitacion----------------------->
 		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php">  
-		                       <div class="row columnadcha">
+		                       <div class="row fondogris">
 		                       		<div class="row">			
 										  <div class="col-xs-12">
 										  	 <label><h6 class="magenta">Elija el tipo de habitación&nbsp;&nbsp;</h6></label> 
