@@ -26,6 +26,9 @@
                 	<h3><i class="fa fa-envelope"></i> Incidencias:</h3>
 			                	<table class="table-hover">
 								    <tbody>
+								    	<hr class="grisdoble"/>
+								    	<h2>Mensajes No Leídos</h2>
+								    	<hr class="grisdoble"/>
 								        <tr>
 								            <td>
 								            	<img class="imagenboton2 magenta-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">
@@ -36,13 +39,15 @@
 											    <p class="ficha">
 											    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
 											    </p>
-											    <hr class="grissimple"/>
 											</td>
 								            <td>
 								            	<a type="button" class="enlace close">&times;</a>
 								            </td>
 								        </tr>
-								         <tr>
+								        <hr class="grisdoble"/>
+								    	<h2>Mensajes Leídos</h2>
+								    	<hr class="grisdoble"/>
+								        <tr>
 								            <td>
 								            	<img class="imagenboton2 magenta-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">
 								            	<h5>María Hidalgo</h5>
@@ -52,7 +57,6 @@
 											    <p class="ficha">
 											    Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
 											    </p>
-											    <hr class="grissimple"/>
 											</td>
 								            <td>
 								            	<a type="button" class="enlace close">&times;</a>
