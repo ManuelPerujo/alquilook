@@ -2,7 +2,8 @@
 
     session_start();
     include_once '../../plantillas/importaciones.php';
-    
+    include_once '../../funciones/core.php';
+	include_once '../../funciones/registro.php';
 ?>
 
 <body>
@@ -30,7 +31,24 @@
                 	<div class="row-fluid">	
                 		<div class="col-sm-8">
 		                	<h3><i class="fa fa-cogs"></i> Crear inquilinos<small class="magenta"> (Paso 3 de 3)</small></h3>
-		               		<form method="post" action="">
+		               		<form method="post" action="../../controladores/control_registro_inquilino.php">
+		               			
+		               			<!--------------------------------------------------------Inqulino insertado----------------------->
+		               			<?php
+		                				                	 
+			                		if(!empty($_SESSION['ArrayIdInquilino'])){
+			                			
+										foreach ($_SESSION['ArrayIdInquilino'] as $key => $value) {
+												
+											echo get_inquilino($value);
+											
+										}				
+										
+																												
+									}
+									
+			                	?>
+		               			<!--------------------------------------------------------Inqulino insertado----------------------->
 		               			
 		               			<!--------------------------------------------------------Añadir inqulino----------------------->	 	
 		                       <div class="row fondogris">
@@ -56,7 +74,7 @@
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
 		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir inquilino</button>
-		                        <a  class="btn btn-primary btn-sm">Finalizar</a>
+		                        <a   href="../inmueble/tabla_inmuebles.php" class="btn btn-primary btn-sm">Finalizar</a>
 		                        								
 		                    </form>
 		                    <br/>

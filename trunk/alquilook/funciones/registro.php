@@ -234,8 +234,15 @@
 		
 		$elementos = null;
 		$estancia = get_tipoEstancia($IdEstancia);
-		
+				
 		$bd = new core();
+		
+		$query2 = "select Observacion from observaciones_estancia where IdEstancia = '$IdEstancia'";
+		
+		$result2 = $bd->query($query2);
+		$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		$observaciones = $row2['Observacion'];
 		
 		$query = "select IdMobiliario,Cantidad from articulo where IdEstancia = '$IdEstancia'";
 			
@@ -260,9 +267,9 @@
 										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$IdEstancia."'>&times;</a>
 										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
 										  <p class='ficha'>".
-	
 										  $elementos."
-									  </p>
+									  	  </p>
+									  <p class='ficha'><b> Observaciones: </b>".$observaciones."</p>
 									</div>
 								</div>			                	
 			                </div>";
@@ -272,5 +279,73 @@
 		}		
 	}
 
+	function get_inquilino($idUsuario){
+		
+		$elementos = null;
+						
+		$bd = new core();
+						
+		$query = "select Nombre,Apellidos,DNI,Email,Telefono from usuarios where IdUsuario = '$idUsuario'";
+			
+		$result = $bd->query($query); 
+		
+		if($result->rowCount() != 0){
+		
+			$row = $result->fetch(PDO::FETCH_ASSOC);
+				
+			foreach ($row as $key => $value) {
+				                                                
+	            $elementos .= "<p><b>".$key."</b> : ".$value."</p>";
+				
+			}
+							
+			$mensaje = "	<div class='row'>
+	
+			                		<div class='col-sm-6'>
+					                	<div class='alert alert-success alert-dismissable'>
+										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$idUsuario."'>&times;</a>
+										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i>Datos de Usuario</h5>
+										  <p class='ficha'>".
+										  $elementos."
+									  	  </p>
+									</div>
+								</div>			                	
+			                </div>";
+			
+			return $mensaje;
+			
+		}
+		
+	}
 
+	function get_usuarioYcontraseña_inquilino($nombre,$apellidos){
+		
+		$datos = array();
+		
+		$usuario = null;
+		
+		$usuario .= substr($nombre,0,3);
+		$usuario .= substr($apellidos, 0,3);
+		
+		$longitud = 8;
+		$contraseña = substr( md5(microtime()), 1, $longitud);
+		
+		array_push($datos,$usuario,$contraseña);
+		
+		return $datos;
+	}	
+
+	function get_lastId($query){
+			
+		$bd = new core();	
+				
+		$query2 = 'SELECT LAST_INSERT_ID()';	
+			
+		$bd->queryNoDesconecta($query);
+        $result = $bd->queryDesconecta($query2);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+
+		return $row['LAST_INSERT_ID()'];	
+			
+	}
 ?>

@@ -54,6 +54,7 @@ include_once("../funciones/registro.php");
 					$_SESSION['identifica_inmueble_direccion'] = $direccion;
 					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
 					$_SESSION['ArrayIdEstancia'] = array();
+					$_SESSION['ArrayIdInquilino'] = array();
                 						
 					unset($_POST);
     				

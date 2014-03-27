@@ -40,7 +40,7 @@ include_once("../funciones/registro.php");
 							   'Frigorifico'=>$frigorifico, 'Vitroceramica'=>$vitroceramica, 'Horno'=>$horno, 'Microondas'=>$microondas,
 							   'Lavadora'=>$lavadora, 'Secadora'=>$secadora, 'Lavavajillas'=>$lavavajillas, 'Aspiradora'=>$aspiradora, 'Termo'=>$termo);
 		
-		$observaciones = $_POST['observaciones'];
+		$observaciones = $_POST['observacion'];
 						
         $bd = new core();
 
@@ -66,7 +66,9 @@ include_once("../funciones/registro.php");
 			$bd->query($query3);
 			
 			$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
-					  values ('','$IdInmueble','$idEstancia','$observaciones')";
+					  values ('','$IdInmueble','$IdEstancia','$observacion')";
+			
+			echo $query4.$observaciones;
 					  
 			$bd->query($query4);
 			
