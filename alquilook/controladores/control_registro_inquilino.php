@@ -41,6 +41,8 @@ include_once("../funciones/registro.php");
 			$bd->query($query2.$query3);
 			
             array_push($_SESSION['ArrayIdInquilino'],$idInquilino);
+			
+			unset($_POST);
 			            			
             header("Location: ../vistas/inquilino/registro_inquilino.php");    
                 

@@ -55,13 +55,13 @@ include_once("../funciones/registro.php");
 					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
 					$_SESSION['ArrayIdEstancia'] = array();
 					$_SESSION['ArrayIdInquilino'] = array();
-                						
+                	$_SESSION['registro_terminado'] = FALSE;
+										
 					unset($_POST);
     				
     				header("Location: ../vistas/inmueble/registro_estancia.php");
     				
-    					
-                }
+    			}
                 
             }
 
