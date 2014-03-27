@@ -4,7 +4,8 @@
     include_once '../../plantillas/importaciones.php';
 	include_once '../../plantillas/cabecera.php';
     include_once '../../plantillas/banner_pro.php';
-    
+    include_once '../../funciones/registro.php';
+	include_once '../../funciones/core.php';
 ?>
 
 <body>
@@ -30,14 +31,15 @@
 
 		                	<?php
 		                				                	 
-		                		if(isset($_SESSION['isEstancia']) && $_SESSION['isEstancia'] == TRUE){
+		                		if(!empty($_SESSION['ArrayIdEstancia'])){
 		                			
-									foreach ($_SESSION['array_estancias'] as $key => $value) {
+									foreach ($_SESSION['ArrayIdEstancia'] as $key => $value) {
+											
+										echo get_estancia($value);
 										
-										echo $value;
-										
-									}
+									}				
 									
+																											
 								}
 								
 		                	?>
@@ -262,7 +264,7 @@
 										<div class="row-fluid">
 											<div class="col-xs-12">
 												<label>Observaciones</label><br/>
-												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
+												<textarea name="observaciones" placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
 											</div>	
 										</div>		  
 									</div>
@@ -271,7 +273,8 @@
 								
 		                        <br/>
 
-		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir habitación</button>
+		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir estancia</button>
+
 		                        &nbsp;&nbsp;&nbsp;
 		                        <a type="button" href="../inquilino/registro_inquilino.php" class="btn btn-primary btn-sm">Continuar</a>
 		                    </form>

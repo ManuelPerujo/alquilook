@@ -74,6 +74,29 @@
 
     }
     
+	function queryNoDesconecta($q){
+        $this->ConectaBD();
+        try {
+            $consulta= $this->conexion->query($q);
+            return $consulta;
+        }catch (PDOException $error) {
+            echo 'PHP PDO Error ' . strval($error->getCode()) . ' Ha habido un error en la consulta a la BD. Archivo: ' . $error->getFile() . 'Linea ' . strval($error->getLine()) ;
+        }
+
+    }
     
+	function queryDesconecta($q){
+        try {
+            $consulta= $this->conexion->query($q);
+			$this->DesconectaBD();
+            return $consulta;
+        }catch (PDOException $error) {
+            echo 'PHP PDO Error ' . strval($error->getCode()) . ' Ha habido un error en la consulta a la BD. Archivo: ' . $error->getFile() . 'Linea ' . strval($error->getLine()) ;
+        }
+
+    }
+	
+	
+	
  }
 ?>

@@ -42,19 +42,19 @@ include_once("../funciones/registro.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
-                $query = "insert into inmueble (IdInmueble, IdPropietario, IdInquilino, TipoInmueble, Direccion, CP,
+                $query2 = "insert into inmueble (IdInmueble, IdPropietario, IdInquilino, TipoInmueble, Direccion, CP,
                 								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
                     values ('', '$id_usuario', null, '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
                             '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
                 
 								            
-                if($bd->conexion->exec($query)){
+                if($bd->query($query2)){
                 	
                 	$_SESSION['erroRegistro'] = FALSE;
 					$_SESSION['identifica_inmueble_direccion'] = $direccion;
 					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
-					$_SESSION['array_estancias'] = array();
-                	
+					$_SESSION['ArrayIdEstancia'] = array();
+                						
 					unset($_POST);
     				
     				header("Location: ../vistas/inmueble/registro_estancia.php");

@@ -70,14 +70,25 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 
 drop table if exists `estancia`;
 CREATE TABLE IF NOT EXISTS `estancia` (
-  `IdEstancia` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdEstancia` int(5) unsigned NOT NULL AUTO_INCREMENT,	
   `IdInmueble` int(5) unsigned NOT NULL,
-  `IdMobiliario` int(5) unsigned NOT NULL,
   `Tipo` char(30) NOT NULL,
-  `Cantidad` int(3) NOT NULL,
   PRIMARY KEY (`IdEstancia`),
   UNIQUE KEY `Estancia_Unica` (`IdEstancia`),
   CONSTRAINT `ID_ESTANCIA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `articulo`;
+CREATE TABLE IF NOT EXISTS `articulo` (
+  `IdArticulo` int(5) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdEstancia` int(5) unsigned NOT NULL,
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdMobiliario` int(5) unsigned NOT NULL,
+  `Cantidad` int(3) NOT NULL,
+  PRIMARY KEY (`IdArticulo`),
+  UNIQUE KEY `Articulo_Unico` (`IdArticulo`),
+  CONSTRAINT `ID_ARTICULO_FK` FOREIGN KEY (`IdEstancia`) REFERENCES `estancia` (`IdEstancia`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
@@ -96,12 +107,13 @@ insert into `mobiliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(
 				(22,'Secadora'),(23,'Aspiradora'),(24,'Termo');
 				
 
-drop table if exists `observaciones_inmueble`;
-CREATE TABLE IF NOT EXISTS `observaciones_inmueble` (
+drop table if exists `observaciones_estancia`;
+CREATE TABLE IF NOT EXISTS `observaciones_estancia` (
   `IdObservaciones` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `IdInmueble` int(5) unsigned NOT NULL,
   `IdEstancia` int(5) unsigned NOT NULL,
-  `Observacion` TEXT NOT NULL,
+  `Tipo` char(30) NOT NULL,
+  `Observacion` TEXT,
   PRIMARY KEY (`IdObservaciones`),
   UNIQUE KEY `Observacion_Unica` (`IdEstancia`),
   CONSTRAINT `ID_OBSERVACION_FK` FOREIGN KEY (`IdEstancia`) REFERENCES `estancia` (`IdEstancia`) ON DELETE CASCADE
