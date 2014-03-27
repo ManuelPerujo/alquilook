@@ -13,92 +13,72 @@ by Museographia Espacios Expositivos
 /*--------------------------------------------------------------------------------------------------------------------------Textos--------------------*/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-
-@font-face {
-	font-family: 'Bariol-Light';
-	src: url('fonts/Bariol-Light.eot?') format('eot'), 
-	     url('fonts/Bariol-Light.otf')  format('opentype'),
-	     url('fonts/Bariol-Light.woff') format('woff'), 
-	     url('fonts/Bariol-Light.ttf')  format('truetype'),
-	     url('fonts/Bariol-Light.svg#Bariol-Light') format('svg');
-}
-
-@font-face {
-	font-family: 'Bariol-Regular';
-	src: url('fonts/Bariol-Regular.eot?') format('eot'), 
-	     url('fonts/Bariol-Regular.otf')  format('opentype'),
-	     url('fonts/Bariol-Regular.woff') format('woff'), 
-	     url('fonts/Bariol-Regular.ttf')  format('truetype'),
-	     url('fonts/Bariol-Regular.svg#Bariol-Regular') format('svg');
-}
-
-
-@font-face {
-	font-family: 'RobotoSlab-Thin';
-	src: url('fonts/RobotoSlab-Thin.eot?') format('eot'), 
-	     url('fonts/RobotoSlab-Thin.woff') format('woff'), 
-	     url('fonts/RobotoSlab-Thin.ttf')  format('truetype'),
-	     url('fonts/RobotoSlab-Thin.svg#RobotoSlab-Thin') format('svg');
-}
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
 
 h1{
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:3em;
-	text-transform:uppercase;	
+	font-weight: 100; 
 	}
 
 h2{
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;	
+	font-weight: 100; 
 	}
 	
 h3{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:2em;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:1.7em;
 	}
 	
 h4{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.3em;
 	}
 	
 h5{
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.2em;
+	font-weight: 400;
 	}		
 
 h6{
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
+	font-weight: 400;
 	}	
 
 h2.banner{
 	color:#FFFFFF;
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;	
+	font-weight: 100;
 	}
 
 h3.banner{
 	color:#FFFFFF;
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;
 	}
 	
 h5.banner{
 	color:#FFFFFF;
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.5em;
+	font-weight: 400;
 	}
 
 .footer{
 	color:#FFF;
 	font-size:0.95em;
-	font-family: 'Bariol-Regular', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
+	font-weight: 400;
 	}	
 	
 
 .videoh1{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:5em;
 	line-height:45px;
 	text-transform:none;
@@ -106,7 +86,7 @@ h5.banner{
 }
 
 .videoh2{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;
 	line-height:30px;
 	text-transform:none;
@@ -117,13 +97,15 @@ h5.banner{
 	font-size:1.3em;
 	line-height:10px;
 	text-transform:none;
+	font-weight: 400;
 }
 
 
 ul li.menu{
 	text-transform:uppercase;	
-	font-family: 'Bariol-Regular', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important; 
 	font-size:1.1em;
+	font-weight: 400;
 	}
 	
 p.ficha{
@@ -132,6 +114,7 @@ p.ficha{
 	line-height:14px;
 	text-transform:none;
 	padding:3px;
+	font-weight: 400;
 }	
 
 p.ficha2{
@@ -140,6 +123,7 @@ p.ficha2{
 	line-height:14px;
 	text-transform:none;
 	padding: 7px;
+	font-weight: 400;
 }	
 
 
@@ -368,7 +352,7 @@ hr.grisdoble {
 hr{
 	color: #FFFFFF;
 	background-color: #FFFFFF;
-	height: 1px;
+	height:0,5px;
 	width: 50%;
 }
 
@@ -533,6 +517,7 @@ p.ficha{
 	font-size:0.8em;
 	line-height:12px;
 	text-transform:none;
+	font-weight: 400;
 }		
 
 p.ficha2{
@@ -542,6 +527,7 @@ p.ficha2{
 	line-height:12px;
 	text-transform:none;
 	padding: 5px;
+	font-weight: 400;
 }	
 	
 .imagen{
@@ -573,60 +559,57 @@ p.ficha2{
   
 h2.banner{
 	color:#FFFFFF;
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.3em;	
+	font-weight: 400;
 	}
   
 h3.banner{
 	color:#FFFFFF;
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.3em;
 	}
 	
 h5.banner{
 	color:#FFFFFF;
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.2em;
+	font-weight: 400;
 	}  
   
   
 h1{
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2.1em;
-	text-transform:uppercase;	
+	font-weight: 400;	
 	}
 	
 h2{
-	font-family: 'Bariol-Light', 'Varela Round', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.5em;
-	text-transform:uppercase;	
+	font-weight: 400;	
 	}
 	
 h3{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family: 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1.3em;
 	}
 	
 h4{
-	font-family: 'RobotoSlab-Thin', 'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-family:  'Roboto Slab',"Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
 	}	
 	
 h5{
 	font-family:'Lato',  "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
+	font-weight: 400;
 	}	
-
-h5.columnapropietario{
-	color:#e51e50 ;
-	font-family:'Lato',  "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:1em;
-	}	
-
-h6.columnapropietario{
-	color:#e51e50 ;
-	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:0.9em;
+	
+h6{
+	font-family:'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:0.7em;
+	font-weight: 400;
 	}	
 
 
