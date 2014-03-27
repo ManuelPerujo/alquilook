@@ -16,16 +16,18 @@
         <div class="carousel-inner">
             <div class="item active">
                 <div class="fill" style="background-image:url('img/slide.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Alquilar está bien</h1>
-                    <h3>Alquilar con garantías está mejor aún</h3>
+                <div class="carousel-caption vcentro">
+                	<div class="vcentro-item">
+                		    <h1 class="slider">¿Te mola, coleguita?</h1>
+                    		<h3>Tengo el pito lleno de arena, pero me da igual porque me voy y me pongo fino filipino con el rubito ese de allí..</h3>
+                	</div>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('img/slide2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1>Porque alquilar a lo loco...</h1>
-                    <h3>...es de malitos</h3>
+                    <h1 class="slider">Porque alquilar a lo loco...</h1>
+                    <h3>...es de malitos y de ansiosos carapanes de la vida...</h3>
                 </div>
             </div>
         </div>
