@@ -8,11 +8,23 @@
 		exit();
 	}
 	
-	$idEstancia = $_GET['id'];
+	
 			
 	$bd = new core();
 	
-	$query = "delete from estancia where IdEstancia = '$idEstancia'";	
+	if(basename($_SERVER['HTTP_REFERER']) == 'registro_estancia.php'){
+		
+		$idEstancia = $_GET['id'];
+		$query = "delete from estancia where IdEstancia = '$idEstancia'";	
+		
+	}if(basename($_SERVER['HTTP_REFERER']) == 'registro_inquilino.php'){
+		
+		$idUsuario = $_GET['id'];
+		$query = "delete from usuarios where IdUsuario = '$idUsuario'";
+		
+	}
+	
+		
 	$bd->query($query);
 	    
     header("Location: ".$_SERVER['HTTP_REFERER']);

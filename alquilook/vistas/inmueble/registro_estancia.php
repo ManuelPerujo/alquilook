@@ -261,7 +261,7 @@
 									<div class="row-fluid">
 											<div class="col-xs-12">
 												Observaciones<br/>
-												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
+												<textarea name="observacion" placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
 											</div>	
 									</div>			  
 								</div>
