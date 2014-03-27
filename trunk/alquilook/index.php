@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
-                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/A7Js3veybt0" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/VDhe2ZI0tEw" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg-6 col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
