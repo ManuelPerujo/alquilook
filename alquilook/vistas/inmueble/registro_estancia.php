@@ -24,7 +24,7 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
-                		<div class="col-sm-8">
+                		<div class="col-sm-8 col-xs-12">
 		                	<h3><i class="fa fa-cogs"></i> Crear habitaciones<small class="magenta"> (Paso 2 de 3)</small></h3>
 		                	
 		                	 <!--------------------------------------------------------Estancia insertada----------------------->
@@ -61,6 +61,7 @@
 												</select>
 										  </div>
 									</div>
+									<hr class="formulario" />
 									<!--------------------------------------------------------Añadir mobiliario----------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
@@ -68,7 +69,6 @@
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
-										  <br/>	 	
 										  <div class="row">
 										  		<div class="col-sm-1"></div>
 										  		<div class="col-sm-10 text-left alert alert-success alert-dismissable">
@@ -156,15 +156,10 @@
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
-										</div>
-										<div class="row-fluid">
-											<div class="col-xs-12">
-												<label>Observaciones</label><br/>
-												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
-											</div>	
-										</div>		  
+										</div>	  
 									</div>
 									<!--------------------------------------------------------Fin Añadir mobiliario----------------------->	
+									<hr class="formulario" />
 									<!--------------------------------------------------------Añadir electrodomesticos---------------------->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
@@ -172,7 +167,6 @@
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
-										  <br/>	
 										  <div class="row">
 										  		<div class="col-sm-1"></div>
 										  		<div class="col-sm-10 text-left alert alert-success alert-dismissable">
@@ -261,14 +255,15 @@
 													</select>
 											  </div>
 										</div>
-										<div class="row-fluid">
-											<div class="col-xs-12">
-												<label>Observaciones</label><br/>
-												<textarea name="observaciones" placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
-											</div>	
-										</div>		  
 									</div>
-									<!--------------------------------------------------------Fin Añadir electrodomesticos----------------------->		  
+									<!--------------------------------------------------------Fin Añadir electrodomesticos----------------------->	
+									<hr class="formulario" />
+									<div class="row-fluid">
+											<div class="col-xs-12">
+												Observaciones<br/>
+												<textarea placeholder="Díganos cualquier cosita que se nos haya escapado"></textarea>
+											</div>	
+									</div>			  
 								</div>
 								
 		                        <br/>
