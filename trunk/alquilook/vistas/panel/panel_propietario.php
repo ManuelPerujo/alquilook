@@ -19,7 +19,7 @@
 ?>
 
 
-<div class="col-xs-2 text-center fondogris">
+<div class="col-xs-2 text-center">
 		<br/>
 		<div class="row">
         	<div class="col-xs-12">

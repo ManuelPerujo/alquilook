@@ -1,4 +1,4 @@
-	 <div class="section-colored magenta-bg">
+	 <div class="section-colored steel-grey2">
         <div class="container">
             <div class="row">
             	<div class="col-sm-2"></div>

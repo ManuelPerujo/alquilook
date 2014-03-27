@@ -18,7 +18,9 @@ if (basename(getcwd()) == "alquilook"){
 }if(basename($_SERVER['PHP_SELF']) == "banner.php" || basename($_SERVER['PHP_SELF']) == "banner2.php" || 
 	basename($_SERVER['PHP_SELF']) == "banner_pro.php" || basename($_SERVER['PHP_SELF']) == "banner_inq.php" || 
 	basename($_SERVER['PHP_SELF']) == "cabecera.php" || basename($_SERVER['PHP_SELF']) == "banner_admin.php" || 
-	basename($_SERVER['PHP_SELF']) == "pie.php" || basename($_SERVER['PHP_SELF']) == "cabecera_admin.php"){
+	basename($_SERVER['PHP_SELF']) == "pie.php" || basename($_SERVER['PHP_SELF']) == "cabecera_admin.php" ||
+	basename($_SERVER['PHP_SELF']) == "pie_admin.php"
+	){
     $ruta = "../";
 }
 
@@ -49,9 +51,9 @@ if (basename(getcwd()) == "alquilook"){
     ?>
     
     <!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:200' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'>
 
 
     <!-- CSS -->

@@ -45,7 +45,7 @@
         </div>  
         <div class="col-lg-2 col-xs-1"></div>
     </div> 
-    <hr class="propietario"/>
+    <hr class="grissimple"/>
     <div class="row">
     	<div class="col-lg-2 col-xs-1"></div>
 	 	<div class="col-lg-8 col-xs-10">

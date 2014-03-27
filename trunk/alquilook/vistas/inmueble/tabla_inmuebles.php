@@ -101,52 +101,52 @@
                 	    		<div class="col-xs-12">	  
 				                    <div id="luz" class="collapse">
 				                      		 <div class="row lineaabajo">
-                	    							<div class="col-xs-2 text-right">	  
+                	    							<div class="col-sm-1">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/luz.png">
 							                 		</div>  
-							                 		<div class="col-xs-4 text-left">
+							                 		<div class="col-sm-3">
 							                 			<p class="ficha"><h5>Recibos de Electricidad</h5></p>
 							                 		</div>
-							                 		<div class="col-xs-6">
+							                 		<div class="col-sm-8 col-xs-12">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	            
 				                     		</div>
 				                     </div>		
 				                     <div id="agua" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-xs-2 text-right">	  
+                	    							<div class="col-sm-1">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
 							                 		</div>  
-							                 		<div class="col-xs-4 text-left">
+							                 		<div class="col-sm-3">
 							                 			<p class="ficha"><h5>Recibos de Agua</h5></p>
 							                 		</div>
-							                 		<div class="col-xs-6">
+							                 		<div class="col-sm-8 col-xs-12">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>	                        
 				                     		</div>
 				                     </div>
 				                     <div id="gas" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-xs-2 text-right">	  
+                	    							<div class="col-sm-1">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">
 							                 		</div>  
-							                 		<div class="col-xs-4 text-left">
+							                 		<div class="col-sm-3">
 							                 			<p class="ficha"><h5>Recibos de Gas</h5></p>
 							                 		</div>
-							                 		<div class="col-xs-6">
+							                 		<div class="col-sm-8 col-xs-12">
 							                        	<a class="enlace2" href="#" target="_blank"><p class="ficha">Mar / Abr 2014&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text-o"></i></p></a>
 							                 		</div>		            
 				                     		</div>
 				                     </div>
 				                      <div id="incidencia" class="collapse">
 				                      		 <div class="row lineaabajo">
-                	    							<div class="col-xs-2 text-right">	  
+                	    							<div class="col-sm-1">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">
 							                 		</div>  
-							                 		<div class="col-xs-4 text-left">
+							                 		<div class="col-sm-3">
 							                 			<p class="ficha"><h5>Crear incidencia</h5></p>
 							                 		</div>
-							                 		<div class="col-xs-6">	
+							                 		<div class="col-sm-8 col-xs-12">	
 														     <div class="panel-group" id="accordion">
 																	<div class="panel panel-default">
 																		<div class="panel-heading">
@@ -177,11 +177,11 @@
 																		     <div class="panel-body negro">
 																		     	<form class="form-group text-left" method="post" action="">
 																		     		<input type="radio" name="radiogroup" value="option1" />
-                																	Baja de inquilino actual<br/>
+                																	Baja de inquilino<br/>
                 																	<input type="radio" name="radiogroup" value="option2" />
-               																		Alta de nuevo inquilino<br/>
+               																		Añadir inquilino<br/>
                																		<input type="radio" name="radiogroup" value="option3" />
-                																	Otros<br/><br/>
+                																	Modificar datos de inquilino<br/><br/>
 																					<textarea placeholder="Descripción de incidencia"></textarea><br/><br/>
 																					<button type="submit" class="btn btn-default btn-sm">Enviar</button>
 																		     	</form>	
@@ -192,7 +192,7 @@
 																		<div class="panel-heading">
 																		     <h6 class="panel-title">
 																		        <a class="enlace2"  data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-																		          <span class="glyphicon glyphicon-file"></span>Modificación de contrato
+																		          <span class="glyphicon glyphicon-file"></span>Cambios de contrato
 																		        </a>
 																		     </h6>
 																		</div>
@@ -200,11 +200,9 @@
 																		      <div class="panel-body negro">
 																		     	<form class="form-group text-left" method="post" action="">
 																		     		<input type="radio" name="radiogroup" value="option1" />
-                																	Me han abierto un gloryhole en el portal<br/>
-                																	<input type="radio" name="radiogroup" value="option2" />
-               																		He perdido la ilusión por vivir<br/>
+                																	Modificación de contrato<br/>
                																		<input type="radio" name="radiogroup" value="option3" />
-                																	Otros<br/><br/>
+                																	Darse de baja en Alquilook<br/><br/>
 																					<textarea placeholder="Descripción de incidencia"></textarea><br/><br/>
 																					<button type="submit" class="btn btn-default btn-sm">Enviar</button>
 																		     	</form>	
