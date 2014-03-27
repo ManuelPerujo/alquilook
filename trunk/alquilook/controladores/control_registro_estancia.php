@@ -34,11 +34,13 @@ include_once("../funciones/registro.php");
         $_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);
 		$IdInmueble = $_SESSION["IdInmueble"];
 		
-		$arrayEstancia = array('Sofa'=>$sofa, 'Mesa'=>$mesa, 'Silla'=>$silla, 'Cuadro'=>$cuadro, 'Cama Individual'=>$camaInd, 'Cama Doble'=>$camaDoble,
+		$arrayArticulos = array('Sofa'=>$sofa, 'Mesa'=>$mesa, 'Silla'=>$silla, 'Cuadro'=>$cuadro, 'Cama Individual'=>$camaInd, 'Cama Doble'=>$camaDoble,
 							   'Mesita Noche'=>$mesitaNoche, 'Comoda'=>$comoda, 'Accesorio Servicio'=>$accesorioAseo, 'Mueble Aseo'=>$muebleAseo,
 							   'Espejo'=>$espejo, 'Hidromasaje'=>$hidromasaje, 'Television'=>$television, 'Dvd'=>$dvd, 'Equipo Sonido'=>$equipoMusica,
 							   'Frigorifico'=>$frigorifico, 'Vitroceramica'=>$vitroceramica, 'Horno'=>$horno, 'Microondas'=>$microondas,
 							   'Lavadora'=>$lavadora, 'Secadora'=>$secadora, 'Lavavajillas'=>$lavavajillas, 'Aspiradora'=>$aspiradora, 'Termo'=>$termo);
+		
+		$observaciones = $_POST['observaciones'];
 						
         $bd = new core();
 
@@ -47,34 +49,27 @@ include_once("../funciones/registro.php");
             $bd->ConectaBD();
                  
             /*insertamos los datos de la nueva estancia*/
-                        
-            $query = crea_estancia($IdInmueble, $arrayEstancia, $tipoEstancia);
+            
+            $query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
+			$query2 = 'SELECT LAST_INSERT_ID()';
+			// $bd->query($query3);
+            $bd->queryNoDesconecta($query1);
+            $result = $bd->queryDesconecta($query2);
+            $row = $result->fetch(PDO::FETCH_ASSOC);
+
+			$IdEstancia = $row['LAST_INSERT_ID()'];
+            
+            array_push($_SESSION['ArrayIdEstancia'],$IdEstancia);
 			
-			$bd->query($query);
+            $query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
 			
-			$limit = $_SESSION['registros_insertados'];
-			$query2 = "select IdEstancia,IdMobiliario,Tipo,Cantidad from estancia order by IdEstancia desc limit $limit";
+			$bd->query($query3);
 			
-			$result = $bd->query($query2); 
-			$row = $result->fetchAll(PDO::FETCH_ASSOC);
+			$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
+					  values ('','$IdInmueble','$idEstancia','$observaciones')";
+					  
+			$bd->query($query4);
 			
-						
-			if(count($row) != 0){
-				
-				$_SESSION['isEstancia'] = TRUE;
-				
-				$_SESSION['numEstancia'] = rand(0, 1000);
-								
-				$nombre = "estancia".$_SESSION['numEstancia'];
-				
-				$_SESSION[$nombre] = get_estancia($row);
-				
-				array_push($_SESSION['array_estancias'], $_SESSION[$nombre]);
-				
-			}	
-    		
-			
-						
             header("Location: ../vistas/inmueble/registro_estancia.php");    
                 
             

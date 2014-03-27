@@ -169,23 +169,33 @@
 		
 	}
 
-	function crea_estancia($IdInmueble ,$arrayEstancia, $tipoEstancia){
+	function get_tipoEstancia($idEstancia){
 		
-		$query = "insert into estancia (IdEstancia, IdInmueble, IdMobiliario, Tipo, Cantidad) values ";
+		$bd = new core();
+		
+		$query = "select Tipo from estancia where IdEstancia = '$idEstancia'";
+		$result = $bd->query($query);
+		
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['Tipo'];
+	}
+
+	function crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos){
+		
+		$query = "insert into articulo (IdArticulo, IdEstancia, IdInmueble, IdMobiliario, Cantidad) values ";
 		$count1 = 0;
 		$count2 = 0;
 		
-		foreach ($arrayEstancia as $key1 => $value1) {
+		foreach ($arrayArticulos as $key1 => $value1) {
 			if($value1 != 0){
 				$count1++;
 			}
 		}
 		
-		$_SESSION['registros_insertados'] = $count1;
-		
 		if($count1 != 0){
 			
-			foreach ($arrayEstancia as $key => $value) {
+			foreach ($arrayArticulos as $key => $value) {
 				
 				if($value != 0){
 						
@@ -195,14 +205,14 @@
 	                	$idItem = get_IdMobiliario($key);
 						$cantidad = $value;
 						
-						$query .= "('', '$IdInmueble','$idItem', '$tipoEstancia','$cantidad'), ";	            
+						$query .= "('', '$IdEstancia','$IdInmueble', '$idItem','$cantidad'), ";	            
 	                        
 	                }if($count2 == $count1){
 	                        
 	                    $idItem = get_IdMobiliario($key);
 	                    $cantidad = $value;
 					
-						$query .= "('', '$IdInmueble','$idItem', '$tipoEstancia','$cantidad') ";
+						$query .= "('', '$IdEstancia','$IdInmueble', '$idItem','$cantidad') ";
 	                        
 	                }	
 					
@@ -220,41 +230,46 @@
 		return $query;
 	}
 
-	function get_estancia($arrayEstancia){
+	function get_estancia($IdEstancia){
 		
 		$elementos = null;
-		$estancia = null;
-		$arrayIdEstancias = array();
+		$estancia = get_tipoEstancia($IdEstancia);
 		
-		foreach ($arrayEstancia as $key => $value) {
+		$bd = new core();
+		
+		$query = "select IdMobiliario,Cantidad from articulo where IdEstancia = '$IdEstancia'";
 			
-			array_push($arrayIdEstancias, $value['IdEstancia']);
+		$result = $bd->query($query); 
+		
+		if($result->rowCount() != 0){
+		
+			$row = $result->fetchAll(PDO::FETCH_ASSOC);
 				
-			$estancia = $value['Tipo'];
+			foreach ($row as $key => $value) {
 			
-			$mobiliario = get_mobiliario($value['IdMobiliario']);
-						
-			$elementos .= "<p>".$mobiliario." = ".$value['Cantidad']."</p>";
-		}
-		
-		$listaId = serialize($arrayIdEstancias);
-		$listaId = urldecode($listaId);
-		
-		$mensaje = "	<div class='row'>
-
-		                		<div class='col-sm-6'>
-				                	<div class='alert alert-success alert-dismissable'>
-									  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$listaId."'>&times;</a>
-									    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
-									  <p class='ficha'>".
-
-									  $elementos."
-								  </p>
-								</div>
-							</div>			                	
-		                </div>";
-		
-		return $mensaje;		
+				$mobiliario = get_mobiliario($value['IdMobiliario']);
+	                                                
+	            $elementos .= "<p>".$mobiliario." = ".$value['Cantidad']."</p>";
+				
+			}
+							
+			$mensaje = "	<div class='row'>
+	
+			                		<div class='col-sm-6'>
+					                	<div class='alert alert-success alert-dismissable'>
+										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$IdEstancia."'>&times;</a>
+										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> ".$estancia."</h5>
+										  <p class='ficha'>".
+	
+										  $elementos."
+									  </p>
+									</div>
+								</div>			                	
+			                </div>";
+			
+			return $mensaje;
+			
+		}		
 	}
 
 
