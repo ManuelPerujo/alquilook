@@ -9,11 +9,14 @@
 		<div class="row">
         	<div class="col-xs-12">
 		        <div class="list-group">
+		        	  <a href="#" class="list-group-item">
+							<i class="fa fa-group"></i> Usuarios
+					  </a>
 					  <a href="#" class="list-group-item">
 						    <span class="badge">0</span>
 							<i class="fa fa-bell"></i> Altas nuevas
 					  </a>
-					  <a href="#" class="list-group-item active">
+					  <a href="#" class="list-group-item">
 						  	<span class="badge">3</span>
 							<i class="fa fa-envelope"></i> Mensajes
 					  </a>

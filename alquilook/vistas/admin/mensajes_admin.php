@@ -21,7 +21,7 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-sm-10 col-xs-8columnadcha">
+                <div class="col-sm-10 col-xs-8">
                 		<h3><i class="fa fa-envelope"></i> Mensajes:</h3>
                 		
                 		<!--------------------------------------------------------Banner de mensajes nuevos----------------------->
