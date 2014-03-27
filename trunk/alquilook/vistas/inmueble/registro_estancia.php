@@ -38,8 +38,7 @@
 										echo get_estancia($value);
 										
 									}				
-									
-																											
+																																			
 								}
 								
 		                	?>

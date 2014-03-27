@@ -51,14 +51,8 @@ include_once("../funciones/registro.php");
             /*insertamos los datos de la nueva estancia*/
             
             $query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
-			$query2 = 'SELECT LAST_INSERT_ID()';
-			// $bd->query($query3);
-            $bd->queryNoDesconecta($query1);
-            $result = $bd->queryDesconecta($query2);
-            $row = $result->fetch(PDO::FETCH_ASSOC);
-
-			$IdEstancia = $row['LAST_INSERT_ID()'];
-            
+			$IdEstancia = get_lastId($query1);
+			            
             array_push($_SESSION['ArrayIdEstancia'],$IdEstancia);
 			
             $query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
@@ -68,12 +62,11 @@ include_once("../funciones/registro.php");
 			$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
 					  values ('','$IdInmueble','$IdEstancia','$observacion')";
 			
-			echo $query4.$observaciones;
-					  
 			$bd->query($query4);
 			
+			unset($_POST);
+			
             header("Location: ../vistas/inmueble/registro_estancia.php");    
-                
             
 
         }catch(PDOException $except) {
