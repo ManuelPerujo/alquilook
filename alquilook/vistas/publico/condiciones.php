@@ -35,7 +35,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                     				Me gusta el adobo, tela marinera. ¿Es eso normal?
                   				</a>
                             </h5>
@@ -53,7 +53,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                     				Paso más tiempo boca-abajo que boca-arriba, ¿eso será que soy bujarra?
                   				</a>
                             </h5>
@@ -71,7 +71,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                     				La leña marismeña me parece poca cosa, ¿será que me va la marcha con negros trípodes?
                   				</a>
                             </h5>
@@ -92,7 +92,7 @@
             <div class="col-lg-2 col-xs-1"></div>
         </div>
 <!-------------------------------------------------------------------------------------------------------------------------------Condiciones-->	       
-        <br/>
+        <hr class="grissimple"/>
 <!-------------------------------------------------------------------------------------------------------------------------------FAQ-->	        
         <div class="row">
 	 		<div class="col-lg-2 col-xs-1"></div>
@@ -109,7 +109,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                     				Me gusta el adobo, tela marinera. ¿Es eso normal?
                   				</a>
                             </h5>
@@ -127,7 +127,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
                     				Paso más tiempo boca-abajo que boca-arriba, ¿eso será que soy bujarra?
                   				</a>
                             </h5>
@@ -145,7 +145,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h5 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                     				La leña marismeña me parece poca cosa, ¿será que me va la marcha con negros trípodes?
                   				</a>
                             </h5>
