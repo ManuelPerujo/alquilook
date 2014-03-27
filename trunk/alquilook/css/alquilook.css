@@ -49,6 +49,13 @@ h6{
 	font-weight: 400;
 	}	
 
+h1.slider{
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:4em;
+	font-weight: 400; 
+	}
+	
+
 h2.banner{
 	color:#FFFFFF;
 	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
@@ -262,6 +269,7 @@ ul{
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
 
+
 body,html{
  height:100%;
 }
@@ -440,7 +448,7 @@ body {
 
 
 .carousel {
-  height:50%;
+  height:350px;
 }
 
 
@@ -512,6 +520,21 @@ body {
 /*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
 @media (max-width: 767px) {
 
+.carousel-caption {
+  position: absolute;
+  background-color:rgba(255,255,255,0.5);
+  width: 80%;
+  padding: 0 10px;
+  margin-top: 5%;
+  top:1px;
+  right: 10%;
+  left: 10%;
+}
+.carousel {
+    height:200px;
+  }
+  
+
 .iconosmovil{
 	padding:10px 0;
 	
@@ -558,12 +581,12 @@ p.ficha2{
 	width: 45px;
 }
 
-
-
-.carousel {
-    height: 50%;
-  }
-  
+h1.slider{
+	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+	font-size:2em;
+	font-weight: 400; 
+	}
+	
 h2.banner{
 	color:#FFFFFF;
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
