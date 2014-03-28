@@ -173,6 +173,7 @@ legend {
 textarea {
   overflow: auto;
   width:66%;
+  height:100px; 
 }
 optgroup {
   font-weight: bold;
@@ -5561,7 +5562,7 @@ button.close {
 }
 .carousel-caption {
   position: absolute;
-  background-color:rgba(255,255,255,0.75);
+  background-color:#FFFFFF;
   width: 30%;
   padding: 0 10px;
   margin-top:3%;

@@ -31,7 +31,7 @@
                 	    <div class="col-sm-12">
                 	    	<div class="row">
                 	    		<div class="col-sm-12">
-		                			<h3><span class="glyphicon glyphicon-folder-open"></span>&nbsp; Tus inmuebles</h3>
+		                			<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>
 		                		</div>
 		                	</div>
 		                	<hr class="grisdoble"/><br/>
@@ -50,7 +50,7 @@
 												    <hr class="grissimple"/>
 												    <p class="ficha">25 metros</p>
 												    <p class="ficha">4 habitaciones / 1 aseo</p>
-												    <p class="ficha"><span class="glyphicon glyphicon-user"></span> Inquilino: Juan Mata</p>
+												    <p class="ficha"><i class="fa fa-user"></i> Inquilino: Juan Mata</p>
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -138,7 +138,7 @@
 							                 		</div>		            
 				                     		</div>
 				                     </div>
-				                      <div id="incidencia" class="collapse">
+				                     <div id="incidencia" class="collapse">
 				                      		 <div class="row lineaabajo">
                 	    							<div class="col-sm-1">	  
 							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">
@@ -169,7 +169,7 @@
 																		<div class="panel-heading">
 																		     <h6 class="panel-title">
 																		         <a class="enlace2"  data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-																			        <span class="glyphicon glyphicon-user"></span> Cambios de inquilino
+																			        <i class="fa fa-user"></i> Cambios de inquilino
 																			    </a>
 																			 </h6>
 																		</div>
@@ -209,8 +209,7 @@
 																		     </div>
 																		   </div>
 																	</div>
-															</div>
-											                            
+															</div>     
 							                 		</div> 	            
 				                     		</div>
 				                     </div>		

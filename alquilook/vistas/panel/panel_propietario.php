@@ -23,7 +23,7 @@
 		<br/>
 		<div class="row">
         	<div class="col-xs-12">
-                	<span class="glyphicon glyphicon-user"></span></i> Hola <?php echo $usuario ?></h6>
+                	<i class="fa fa-user"></i> Hola <?php echo $usuario ?></h6>
             </div>
         </div>
         

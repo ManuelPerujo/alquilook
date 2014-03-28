@@ -21,7 +21,7 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-sm-10 col-xs-8">
+                <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-envelope"></i> Mensajes:</h3>
                 		
                 		<!--------------------------------------------------------Banner de mensajes nuevos----------------------->
@@ -47,8 +47,23 @@
 								    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
 								    </p>
 							  </div>
-							  <br />
+							  <div class="text-center">
+								 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">
+								 		<i class="fa fa-comment"></i> Responder
+								    </a>
+							 </div>	
+							 <br/>
+							 <div id="responder" class="collapse">
+							 		<form class="form-group  text-center" method="post" action="">
+							 			<textarea name="" placeholder="Escriba aquí su mensaje..."></textarea>
+							 			<br/>
+							 			<a type="submit" class="btn btn-default btn-sm">Enviar</a>
+							 		</form>
+							 </div>
+							 <br/>
 						</div>
+						
+						
 						
 						<!--------------------------------------------------------Banner de mensajes leídos----------------------->
 						<div class="alert alert-success alert-dismissable">
@@ -73,7 +88,20 @@
 								    Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
 								    </p>
 							  </div>
-							  <br />
+							  <div class="text-center">
+								 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder2">
+								 		<i class="fa fa-comment"></i> Responder
+								    </a>
+							 </div>	
+							 <br/>
+							 <div id="responder2" class="collapse">
+							 		<form class="form-group  text-center" method="post" action="">
+							 			<textarea name="" placeholder="Escriba aquí su mensaje..."></textarea>
+							 			<br/>
+							 			<a type="submit" class="btn btn-default btn-sm">Enviar</a>
+							 		</form>
+							 </div>
+							 <br/>
 						</div>
                 	<br/>
                 </div> 

@@ -21,7 +21,7 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-sm-10 col-xs-8">
+                <div class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-group"></i> Usuarios</h3>    
 					   <table class="table table-striped table-hover">
 						   <thead>
