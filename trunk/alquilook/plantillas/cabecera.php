@@ -16,7 +16,7 @@
 
                     <li class="menu"><a href="<?php echo $ruta?>vistas/publico/condiciones.php"><i class="fa fa-briefcase"></i> Condiciones</a></li>
 
-                    <li class="menu"><a href="<?php echo $ruta?>vistas/publico/contacto.php"><i class="fa fa-user"></i> Contacto</a></li>
+                    <li class="menu"><a href="<?php echo $ruta?>vistas/publico/contacto.php"><i class="fa fa-phone"></i> Contacto</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

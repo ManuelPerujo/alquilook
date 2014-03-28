@@ -1,8 +1,8 @@
-<div class="col-sm-2 col-xs-4">
+<div class="col-sm-2 col-xs-12">
 		<div class="row">
 			<br/>
         	<div class="col-xs-12 text-center">
-                	<span class="glyphicon glyphicon-user"></span></i> Hola <?php echo $usuario ?></h6>
+                	<i class="fa fa-user"></i> Hola <?php echo $usuario ?></h6>
             </div>
         </div>
         <br/>
@@ -17,20 +17,20 @@
 							<i class="fa fa-bell"></i> Altas nuevas
 					  </a>
 					  <a href="#" class="list-group-item">
-						  	<span class="badge">3</span>
-							<i class="fa fa-envelope"></i> Mensajes
-					  </a>
-					  <a href="#" class="list-group-item">
 						  	<span class="badge">86</span>
 							<i class="fa fa-warning"></i> Incidencias
 					  </a>
 					  <a href="#" class="list-group-item">
 						  	<span class="badge">2</span>
-							<i class="fa fa-user"></i> Inc. Inqulinos
+							<i class="fa fa-user"></i> Inc. Inquilinos
 					  </a>
 					  <a href="#" class="list-group-item">
 						  	<span class="badge">5</span>
 							<i class="fa fa-file"></i> Inc. Contratos
+					  </a>
+					   <a href="#" class="list-group-item">
+						  	<span class="badge">3</span>
+							<i class="fa fa-envelope"></i> Mensajes
 					  </a>
 				</div>
 			</div>
