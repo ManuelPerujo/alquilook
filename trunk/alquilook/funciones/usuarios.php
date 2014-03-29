@@ -77,7 +77,7 @@
 		
 		$bd = new core();
 		
-		$query = "SELECT propietario.IdPropietario FROM usuarios INNER JOIN propietario WHERE usuarios.IdUsuario = propietario.IdUsuario";
+		$query = "SELECT propietario.IdPropietario FROM usuarios INNER JOIN propietario WHERE usuarios.IdUsuario = '$idUsuario'";
 		$result = $bd->query($query);
 		
 		$row = $result->fetch(PDO::FETCH_ASSOC);
@@ -85,6 +85,7 @@
 		return $row['IdPropietario'];
 		
 	}
-
+	
+	
 
 ?>

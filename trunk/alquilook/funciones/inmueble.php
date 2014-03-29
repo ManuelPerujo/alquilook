@@ -17,74 +17,137 @@
 		
 		foreach ($row as $key => $value) {
 			
-			foreach ($value as $key2 => $value2) {
+			$idInquilino = get_IdInmuebleToInquilino($value['IdInquilino']);
+			
+			$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where inquilino.IdUsuario = '$idInquilino' ";
+			$result2 = $bd->query($query2);
+			$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+			
+			echo $query2;
+			echo $idInquilino;
+			print_r($row2);
+				
+			$colapse = get_colapse();
+			$facturaAgua = get_facturas_agua($value['IdInmueble']);
+			$facturaLuz = get_facturas_luz($value['IdInmueble']);
+			$facturaGas = get_facturas_gas($value['IdInmueble']);
 				
 				$inmueble = "<div class='row'>
                 	    		<div class='col-xs-12'>	
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenbanner magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/inmueble.png'>
+												    <img class='imagenbanner magenta-bg img-rounded' src='../../img/botones/inmueble.png'>
 												  </a>
 												  <div class='media-body'>
-												    <h5 class='media-heading'>".$key2['Direccion']."</h5>
+												    <h5 class='media-heading'>".$value['Direccion']."</h5>
 												    <hr class='grissimple'/>
-												    <small>".$key2['TipoInmueble']."</small>
+												    <small>".$value['TipoInmueble']."</small>
 												    <hr class='grissimple'/>
-												    <p class='ficha'>".$key2['Metros']."</p>
-												    <p class='ficha'>".$key2['NumHabitaciones']." habitaciones / ".$key2['NumServicios']." aseo</p>
-												    <p class='ficha'><span class='glyphicon glyphicon-user'></span> Inquilino: Juan Mata</p>
+												    <p class='ficha'>".$value['Metros']."</p>
+												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
+												    <p class='ficha'><span class='glyphicon glyphicon-user'></span> Inquilino: ".$row2['Nombre']." ".$row2['Apellidos']."</p>
 												  </div>
 				                       		</div>	
 				                       	</div>	
-				                       	<div class='row-fluid iconosmovil text-center'>
-				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz'>
-                    								<img class='imagenboton3 magenta-bg  img-rounded' src='<?php echo $ruta?>img/botones/luz.png'>
-						                       		<p class='ficha'>Electricidad</p>
-						                       	</a>	
-						                    </div>
-						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua'>
-							                       	<img class='imagenboton3 magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/agua.png'>
-							                       	<p class='ficha'>Agua</p>
-							                    </a>   	
-						                    </div>
-						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas'>
-							                       	<img class='imagenboton3 magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/gas.png'>
-							                       	<p class='ficha'>Gas</p>
-							                    </a>   		
-				                       		</div>
-				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' href='' target='_blank'>
-				                       				<img class='imagenboton3 magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/contrato.png'>
-				                       				<p class='ficha'>Contrato</p>
-				                       			</a>	
-				                       		</div>
-				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia'>
-							                       	<img class='imagenboton3 magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/incidencias.png'>
-							                       	<p class='ficha'>Crear incidencia</p>
-							                    </a>   	
-						                    </div>
-						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#historial'>
-							                       	<img class='imagenboton3 magenta-bg img-rounded' src='<?php echo $ruta?>img/botones/historial.png'>
-							                       	<p class='ficha'>Ver incidencias</p>
-							                    </a>   	
-				                       		</div>
-										</div>
+				                       	
+										".$colapse."
+										
 								</div>
-						</div>";
+						</div>
+						<hr class='grisdoble'/>
+							
+		                    <div class='row'>
+                	    		<div class='col-xs-12'>	  
+				                    ".$facturaLuz
+				                    .$facturaAgua
+				                    .$facturaGas
+				                    ."<div id='incidencia' class='collapse'>
+				                      		 <div class='row lineaabajo'>
+                	    							<div class='col-sm-1'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/incidencias.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3'>
+							                 			<p class='ficha'><h5>Crear incidencia</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>	
+														     <div class='panel-group' id='accordion'>
+																	<div class='panel panel-default'>
+																		<div class='panel-heading'>
+																		     <h6 class='panel-title'>
+																		        <a class='enlace2' data-toggle='collapse' data-parent='#accordion' href='#collapseOne'>
+																		           <i class='fa fa-warning'></i> Incidencias varias
+																		        </a>
+																		      </h6>
+																		</div>
+																		<div id='collapseOne' class='panel-collapse collapse'>
+																		     <div class='panel-body negro'>
+																		     	<form class='form-group text-left' method='post' action=''>
+																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																		     	</form>	
+																		     </div>
+																		</div>
+																	</div>
+																	<div class='panel panel-default'>
+																		<div class='panel-heading'>
+																		     <h6 class='panel-title'>
+																		         <a class='enlace2'  data-toggle='collapse' data-parent='#accordion' href='#collapseTwo'>
+																			        <i class='fa fa-user'></i> Cambios de inquilino
+																			    </a>
+																			 </h6>
+																		</div>
+																		<div id='collapseTwo' class='panel-collapse collapse'>
+																		     <div class='panel-body negro'>
+																		     	<form class='form-group text-left' method='post' action=''>
+																		     		<input type='radio' name='radiogroup' value='option1' />
+                																	Baja de inquilino<br/>
+                																	<input type='radio' name='radiogroup' value='option2' />
+               																		Añadir inquilino<br/>
+               																		<input type='radio' name='radiogroup' value='option3' />
+                																	Modificar datos de inquilino<br/><br/>
+																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																		     	</form>	
+																		     </div>
+																		</div>
+																	</div>
+																	<div class='panel panel-default'>
+																		<div class='panel-heading'>
+																		     <h6 class='panel-title'>
+																		        <a class='enlace2'  data-toggle='collapse' data-parent='#accordion' href='#collapseThree'>
+																		          <span class='glyphicon glyphicon-file'></span>Cambios de contrato
+																		        </a>
+																		     </h6>
+																		</div>
+																		    <div id='collapseThree' class='panel-collapse collapse'>
+																		      <div class='panel-body negro'>
+																		     	<form class='form-group text-left' method='post' action=''>
+																		     		<input type='radio' name='radiogroup' value='option1' />
+                																	Modificación de contrato<br/>
+               																		<input type='radio' name='radiogroup' value='option3' />
+                																	Darse de baja en Alquilook<br/><br/>
+																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																		     	</form>	
+																		     </div>
+																		   </div>
+																	</div>
+															</div>     
+							                 		</div> 	            
+				                     		</div>
+				                     </div>		
+		                    	</div>
+		                    </div>"  ;
+		                    
+		                    array_push($arrayInmuebles,$inmueble);
 				
-			}
+			
 			 
 		}
 		
-		
-		
-		
+		return $arrayInmuebles;
+			
 	}
 
 	function get_inquilino_inmueble($idInmueble){
@@ -100,13 +163,193 @@
 		
 	}
 
+	function get_facturas_agua($idInmueble){
+			
+		$elementos = null;	
+			
+		$facturasAgua = "<div id='agua' class='collapse'>
+				                            <div class='row lineaabajo'>
+                	    							<div class='col-sm-1'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/agua.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3'>
+							                 			<p class='ficha'><h5>Recibos de Agua</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>".
+							                        	$elementos
+							                 		."</div>	                        
+				                     		</div>
+				              </div>";		
+		$bd = new core();
+		
+		$query = "select * from factura where IdInmueble = '$idInmueble' and Tipo = 'Agua'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$fecha = get_fecha_compuesta($value['FechaEntrada'], $value['FechaSalida']);
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+			
+		}
+		
+		return $facturasAgua;	
+		
+	}
 
+	function get_facturas_luz($idInmueble){
+		
+		$elementos = null;	
+			
+		$facturasLuz = "<div id='luz' class='collapse'>
+				                            <div class='row lineaabajo'>
+                	    							<div class='col-sm-1'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/luz.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3'>
+							                 			<p class='ficha'><h5>Recibos de Luz</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>".
+							                        	$elementos
+							                 		."</div>	                        
+				                     		</div>
+				              </div>";		
+		$bd = new core();
+		
+		$query = "select * from factura where IdInmueble = '$idInmueble' and Tipo = 'Luz'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$fecha = get_fecha_compuesta($value['FechaEntrada'], $value['FechaSalida']);
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+			
+		}
+		
+		return $facturasLuz;
+		
+	}
 
+	function get_facturas_gas($idInmueble){
+		
+		$elementos = null;	
+			
+		$facturasGas = "<div id='gas' class='collapse'>
+				                            <div class='row lineaabajo'>
+                	    							<div class='col-sm-1'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/gas.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3'>
+							                 			<p class='ficha'><h5>Recibos de Gas</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>".
+							                        	$elementos
+							                 		."</div>	                        
+				                     		</div>
+				              </div>";		
+		$bd = new core();
+		
+		$query = "select * from factura where IdInmueble = '$idInmueble' and Tipo = 'Gas'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$fecha = get_fecha_compuesta($value['FechaEntrada'], $value['FechaSalida']);
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+			
+		}
+		
+		return $facturasGas;
+		
+	}
 
+	function get_colapse(){
+			
+		$mensaje = "<div class='row-fluid iconosmovil text-center'>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz'>
+                    								<img class='imagenboton3 magenta-bg  img-rounded' src='../../img/botones/luz.png'>
+						                       		<p class='ficha'>Electricidad</p>
+						                       	</a>	
+						                    </div>
+						                    <div class='col-xs-4 col-sm-2 text-center'>	
+						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua'>
+							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/agua.png'>
+							                       	<p class='ficha'>Agua</p>
+							                    </a>   	
+						                    </div>
+						                    <div class='col-xs-4 col-sm-2 text-center'>	
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas'>
+							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/gas.png'>
+							                       	<p class='ficha'>Gas</p>
+							                    </a>   		
+				                       		</div>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       			<a class='enlace2' href='' target='_blank'>
+				                       				<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/contrato.png'>
+				                       				<p class='ficha'>Contrato</p>
+				                       			</a>	
+				                       		</div>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia'>
+							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/incidencias.png'>
+							                       	<p class='ficha'>Crear incidencia</p>
+							                    </a>   	
+						                    </div>
+						                    <div class='col-xs-4 col-sm-2 text-center'>	
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#historial'>
+							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/historial.png'>
+							                       	<p class='ficha'>Ver incidencias</p>
+							                    </a>   	
+				                       		</div>
+										</div>";
+											
+		return $mensaje;
+		
+	}
 
+	function get_fecha_compuesta($fechaInicial,$fechaFinal){
+				
+		$format = "YY ([ \t.-])* m";	
+				
+		$fecha1 = date($format,$fechaInicial);	
+		$fecha2 = date($format,$fechaFinal);
+		
+		$fecha = $fecha1.'/'.$fecha2;
+		
+		return $fecha;
+		
+	}
 
-
-
+	function get_IdInmuebleToInquilino($idInquilino){
+		
+		$bd = new core();
+		
+		$query = "SELECT inquilino.IdInquilino FROM Inmueble INNER JOIN inquilino WHERE inmueble.IdInquilino = '$idInquilino'";
+		$result = $bd->query($query);
+		
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['IdPropietario'];
+		
+	}
 
 
 

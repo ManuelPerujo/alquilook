@@ -42,7 +42,7 @@ include_once("../funciones/registro.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
-                $query2 = "insert into inmueble (IdInmueble, IdPropietario, IdInquilino, TipoInmueble, Direccion, CP,
+                $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, Direccion, CP,
                 								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
                     values ('', '$id_usuario', null, '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
                             '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
@@ -54,7 +54,8 @@ include_once("../funciones/registro.php");
 					$_SESSION['identifica_inmueble_direccion'] = $direccion;
 					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
 					$_SESSION['ArrayIdEstancia'] = array();
-					$_SESSION['ArrayIdInquilino'] = array();
+					$_SESSION['ArrayIdInquilino'] = null;
+					$_SESSION['ArrayIdUsuario'] = array();
                 	$_SESSION['registro_terminado'] = FALSE;
 										
 					unset($_POST);
