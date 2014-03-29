@@ -13,20 +13,25 @@
 		$result = $bd->query($query);
 		$row = $result->fetchAll(PDO::FETCH_ASSOC);
 		
-		
+		$inquilinos = null;
 		
 		foreach ($row as $key => $value) {
 			
-			$idInquilino = get_IdInmuebleToInquilino($value['IdInquilino']);
+			$arrayIdInquilino = explode("-", $value['ArrayIdInquilino']);
 			
-			$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where inquilino.IdUsuario = '$idInquilino' ";
-			$result2 = $bd->query($query2);
-			$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+			$arrayIdUsuario = get_IdInquilinoToUsuario($arrayIdInquilino);
 			
-			echo $query2;
-			echo $idInquilino;
-			print_r($row2);
+			foreach ($arrayIdUsuario as $key2 => $value2) {
+			
+				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' ";
+				$result2 = $bd->query($query2);
+				$row2 = $result2->fetch(PDO::FETCH_ASSOC);
 				
+				$inquilinos .= "<p class='ficha'><span class='glyphicon glyphicon-user'></span> Inquilino: ".$row2['Nombre']." ".$row2['Apellidos']."</p>";
+			}
+			
+			
+										
 			$colapse = get_colapse();
 			$facturaAgua = get_facturas_agua($value['IdInmueble']);
 			$facturaLuz = get_facturas_luz($value['IdInmueble']);
@@ -46,7 +51,7 @@
 												    <hr class='grissimple'/>
 												    <p class='ficha'>".$value['Metros']."</p>
 												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
-												    <p class='ficha'><span class='glyphicon glyphicon-user'></span> Inquilino: ".$row2['Nombre']." ".$row2['Apellidos']."</p>
+												    ".$inquilinos."
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -338,17 +343,24 @@
 		
 	}
 
-	function get_IdInmuebleToInquilino($idInquilino){
-		
+	function get_IdInquilinoToUsuario($arrayIdInquilino){
+				
+		$arrayId = array();	
+						
 		$bd = new core();
+						
+		foreach ($arrayIdInquilino as $key => $value) {
+				
+			$query = "SELECT IdUsuario FROM inquilino WHERE IdInquilino = '$value'";
+			$result = $bd->query($query);
+						
+			$row = $result->fetch(PDO::FETCH_ASSOC);
+			
+			array_push($arrayId,$row['IdUsuario']) ;
+			
+		}
 		
-		$query = "SELECT inquilino.IdInquilino FROM Inmueble INNER JOIN inquilino WHERE inmueble.IdInquilino = '$idInquilino'";
-		$result = $bd->query($query);
-		
-		$row = $result->fetch(PDO::FETCH_ASSOC);
-		
-		return $row['IdPropietario'];
-		
+		return $arrayId;
 	}
 
 
