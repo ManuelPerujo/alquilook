@@ -74,7 +74,7 @@
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
 		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir inquilino</button>
-		                        <a   href="../inmueble/tabla_inmuebles.php" class="btn btn-primary btn-sm">Finalizar</a>
+		                        <a   href="../../controladores/control_fin_registro.php" class="btn btn-primary btn-sm">Finalizar</a>
 		                        								
 		                    </form>
 		                    <br/>
