@@ -248,7 +248,7 @@
 			
 		$result = $bd->query($query); 
 		
-		if($result->rowCount() != 0){
+		if($result->rowCount() != 0 || $result2->rowCount() != 0){
 		
 			$row = $result->fetchAll(PDO::FETCH_ASSOC);
 				
@@ -348,4 +348,25 @@
 		return $row['LAST_INSERT_ID()'];	
 			
 	}
+
+	function get_inmuebleTieneInquilino($idInmueble){
+			
+		$bd = new core();
+		
+		$query = "select ArrayIdInquilino from inmueble where IdInmueble = '$idInmueble'";
+		$resutl = $bd->query($query);
+		
+		if($resutl->rowCount() != 0){
+					
+			return true;	
+			
+		}else{
+				
+			return false;	
+			
+		}	
+		
+	}
+	
+
 ?>

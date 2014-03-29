@@ -34,18 +34,37 @@
 		                		if(!empty($_SESSION['ArrayIdEstancia'])){
 		                			
 									foreach ($_SESSION['ArrayIdEstancia'] as $key => $value) {
+										
 											
 										echo get_estancia($value);
 										
 									}				
-																																			
+									
+									unset($_SESSION['ArrayIdEstancia']);																										
 								}
 								
-		                	?>
-
+		                	 
+		               			
+		               				if(isset($_SESSION['errorEstancia']) && $_SESSION['errorEstancia'] = TRUE){
+										
+										unset($_SESSION['errorEstancia']);
+											
+		               					echo "<div class='row'>
+										  		<div class='col-sm-1'></div>
+										  		<div class='col-sm-10 text-left alert alert-success alert-dismissable'>
+								               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+						 							<strong><i class='fa fa-exclamation-circle fa-lg'></i></strong>
+						 							Para añadir una estancia debe completar los datos
+			                					</div>
+			                					<div class='col-sm-1'></div>
+										  </div>";
+										
+		               				}
+		               			
+		               		?>
 		                	<!--------------------------------------------------------Estancia insertada----------------------->
 		                	<!--------------------------------------------------------Insertar habitacion----------------------->
-		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php">  
+		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php?estancia=TRUE">  
 		                       <div class="row fondogris">
 		                       		<div class="row">			
 										  <div class="col-xs-12">
@@ -267,10 +286,10 @@
 								
 		                        <br/>
 
-		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir estancia</button>
+		                        <button name="submit" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir estancia</button>
 
 		                        &nbsp;&nbsp;&nbsp;
-		                        <a type="button" href="../inquilino/registro_inquilino.php" class="btn btn-primary btn-sm">Continuar</a>
+		                        <a type="button" href="../../controladores/control_registro_estancia.php?estancia=FALSE" class="btn btn-primary btn-sm">Continuar</a>
 		                    </form>
 		                    <!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                    <br/>

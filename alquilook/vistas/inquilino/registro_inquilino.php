@@ -31,24 +31,45 @@
                 	<div class="row-fluid">	
                 		<div class="col-sm-8">
 		                	<h3><i class="fa fa-cogs"></i> Crear inquilinos<small class="magenta"> (Paso 3 de 3)</small></h3>
-		               		<form method="post" action="../../controladores/control_registro_inquilino.php">
+		                	<?php 
+		               			
+		               				if(isset($_SESSION['errorInquilino']) && $_SESSION['errorInquilino'] == TRUE){
+										
+										unset($_SESSION['errorInquilino']);
+											
+		               					echo "<div class='row'>
+										  		<div class='col-sm-1'></div>
+										  		<div class='col-sm-10 text-left alert alert-success alert-dismissable'>
+								               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+						 							<strong><i class='fa fa-exclamation-circle fa-lg'></i></strong>
+						 							Debe añadir al menos un inquilino para finalizar el registro
+			                					</div>
+			                					<div class='col-sm-1'></div>
+										  </div>";
+										
+		               				}
+		               			
+		               		?>
+		               		<form method="post" action="../../controladores/control_registro_inquilino.php?inq=TRUE">
 		               			
 		               			<!--------------------------------------------------------Inqulino insertado----------------------->
 		               			<?php
 		                				                	 
-			                		if(!empty($_SESSION['ArrayIdInquilino'])){
+			                		if(!empty($_SESSION['ArrayIdUsuario'])){
 			                			
-										foreach ($_SESSION['ArrayIdInquilino'] as $key => $value) {
+										foreach ($_SESSION['ArrayIdUsuario'] as $key => $value) {
 												
 											echo get_inquilino($value);
 											
 										}				
 										
-																												
+																											
 									}
 									
 			                	?>
 		               			<!--------------------------------------------------------Inqulino insertado----------------------->
+		               			
+		               			
 		               			
 		               			<!--------------------------------------------------------Añadir inqulino----------------------->	 	
 		                       <div class="row fondogris">
@@ -74,7 +95,7 @@
 								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
 		                        <br/>
 		                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Añadir inquilino</button>
-		                        <a   href="../../controladores/control_fin_registro.php" class="btn btn-primary btn-sm">Finalizar</a>
+		                        <a   href="../../controladores/control_registro_inquilino.php?inq=FALSE" class="btn btn-primary btn-sm">Finalizar</a>
 		                        								
 		                    </form>
 		                    <br/>

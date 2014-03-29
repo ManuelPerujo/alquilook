@@ -53,7 +53,7 @@ drop table if exists `inmueble`;
 CREATE TABLE IF NOT EXISTS `inmueble` (
   `IdInmueble` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `IdPropietario` int(5) unsigned NOT NULL,
-  `IdInquilino` int(5) unsigned,
+  `ArrayIdInquilino` varchar(30),
   `TipoInmueble` char(30) NOT NULL,
   `Direccion` char(50) NOT NULL,
   `CP` int(5) NOT NULL,
@@ -116,6 +116,34 @@ CREATE TABLE IF NOT EXISTS `observaciones_estancia` (
   PRIMARY KEY (`IdObservaciones`),
   UNIQUE KEY `Observacion_Unica` (`IdEstancia`),
   CONSTRAINT `ID_OBSERVACION_FK` FOREIGN KEY (`IdEstancia`) REFERENCES `estancia` (`IdEstancia`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `factura`;
+CREATE TABLE IF NOT EXISTS `factura` (
+  `IdFactura` int(5) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `Tipo` char(30) NOT NULL,
+  `FechaEntrada` DATE NOT NULL,
+  `FechaSalida` DATE NOT NULL,
+  `Direccion_Contenido` TEXT NOT NULL,
+  PRIMARY KEY (`IdFactura`),
+  UNIQUE KEY `Factura_Unica` (`IdFactura`),
+  CONSTRAINT `ID_FACTURA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+drop table if exists `incidencia`;
+CREATE TABLE IF NOT EXISTS `incidencia` (
+  `IdIncidencia` int(5) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(5) unsigned NOT NULL,
+  `Tipo` char(30) NOT NULL,
+  `SubTipo` char(30),
+  `Fecha` DATE NOT NULL,
+  `Contenido` TEXT NOT NULL,
+  PRIMARY KEY (`IdIncidencia`),
+  UNIQUE KEY `Incidencia_Unica` (`IdIncidencia`),
+  CONSTRAINT `ID_INCIDENCIA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
