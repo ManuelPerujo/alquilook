@@ -2,6 +2,9 @@
 
     session_start();
     include_once '../../plantillas/importaciones.php';
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/inmueble.php';
+	include_once '../../funciones/usuarios.php';
     
 ?>
 
@@ -36,6 +39,11 @@
 		                	</div>
 		                	<hr class="grisdoble"/><br/>
 		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
+		                	<?php 
+		                		$id_usuario = $_SESSION["IdUsuario_sesion"];
+		                		get_inmueble_datos($id_usuario);
+		                	?>
+		                	
 		                	<div class="row">
                 	    		<div class="col-xs-12">	
 				                        <div class="row-fluid">
