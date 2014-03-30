@@ -78,16 +78,16 @@
 							                 			<p class='ficha'><h5>Crear incidencia</h5></p>
 							                 		</div>
 							                 		<div class='col-sm-8 col-xs-12'>	
-														     <div class='panel-group' id='accordion'>
+														     <div class='panel-group' id='accordion".$count."'>
 																	<div class='panel panel-default'>
 																		<div class='panel-heading'>
 																		     <h6 class='panel-title'>
-																		        <a class='enlace2' data-toggle='collapse' data-parent='#accordion' href='#collapseOne'>
+																		        <a class='enlace2' data-toggle='collapse' data-parent='#accordion".$count."' href='#collapseOne".$count."'>
 																		           <i class='fa fa-warning'></i> Incidencias varias
 																		        </a>
 																		      </h6>
 																		</div>
-																		<div id='collapseOne' class='panel-collapse collapse'>
+																		<div id='collapseOne".$count."' class='panel-collapse collapse'>
 																		     <div class='panel-body negro'>
 																		     	<form class='form-group text-left' method='post' action=''>
 																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
@@ -99,12 +99,12 @@
 																	<div class='panel panel-default'>
 																		<div class='panel-heading'>
 																		     <h6 class='panel-title'>
-																		         <a class='enlace2'  data-toggle='collapse' data-parent='#accordion' href='#collapseTwo'>
+																		         <a class='enlace2'  data-toggle='collapse' data-parent='#accordion".$count."' href='#collapseTwo".$count."'>
 																			        <i class='fa fa-user'></i> Cambios de inquilino
 																			    </a>
 																			 </h6>
 																		</div>
-																		<div id='collapseTwo' class='panel-collapse collapse'>
+																		<div id='collapseTwo".$count."' class='panel-collapse collapse'>
 																		     <div class='panel-body negro'>
 																		     	<form class='form-group text-left' method='post' action=''>
 																		     		<input type='radio' name='radiogroup' value='option1' />
@@ -122,12 +122,12 @@
 																	<div class='panel panel-default'>
 																		<div class='panel-heading'>
 																		     <h6 class='panel-title'>
-																		        <a class='enlace2'  data-toggle='collapse' data-parent='#accordion' href='#collapseThree'>
+																		        <a class='enlace2'  data-toggle='collapse' data-parent='#accordion".$count."' href='#collapseThree".$count."'>
 																		          <span class='glyphicon glyphicon-file'></span>Cambios de contrato
 																		        </a>
 																		     </h6>
 																		</div>
-																		    <div id='collapseThree' class='panel-collapse collapse'>
+																		    <div id='collapseThree".$count."' class='panel-collapse collapse'>
 																		      <div class='panel-body negro'>
 																		     	<form class='form-group text-left' method='post' action=''>
 																		     		<input type='radio' name='radiogroup' value='option1' />
