@@ -14,28 +14,30 @@
 		$row = $result->fetchAll(PDO::FETCH_ASSOC);
 		
 		$inquilinos = null;
+		$count = null;
 		
 		foreach ($row as $key => $value) {
 			
-			$arrayIdInquilino = explode("-", $value['ArrayIdInquilino']);
+			$count++;
 			
+			$arrayIdInquilino = explode("-", $value['ArrayIdInquilino'],-1);
+						
 			$arrayIdUsuario = get_IdInquilinoToUsuario($arrayIdInquilino);
 			
 			foreach ($arrayIdUsuario as $key2 => $value2) {
-			
-				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' ";
+				
+				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' limit 1";
 				$result2 = $bd->query($query2);
 				$row2 = $result2->fetch(PDO::FETCH_ASSOC);
 				
 				$inquilinos .= "<p class='ficha'><span class='glyphicon glyphicon-user'></span> Inquilino: ".$row2['Nombre']." ".$row2['Apellidos']."</p>";
 			}
 			
-			
-										
-			$colapse = get_colapse();
-			$facturaAgua = get_facturas_agua($value['IdInmueble']);
-			$facturaLuz = get_facturas_luz($value['IdInmueble']);
-			$facturaGas = get_facturas_gas($value['IdInmueble']);
+													
+			$colapse = get_colapse($count);
+			$facturaAgua = get_facturas_agua($value['IdInmueble'],$count);
+			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
+			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
 				
 				$inmueble = "<div class='row'>
                 	    		<div class='col-xs-12'>	
@@ -67,7 +69,7 @@
 				                    ".$facturaLuz
 				                    .$facturaAgua
 				                    .$facturaGas
-				                    ."<div id='incidencia' class='collapse'>
+				                    ."<div id='incidencia".$count."' class='collapse'>
 				                      		 <div class='row lineaabajo'>
                 	    							<div class='col-sm-1'>	  
 							                      		<img class='imagenbanner2' src='../../img/botones/incidencias.png'>
@@ -146,11 +148,12 @@
 		                    </div>"  ;
 		                    
 		                    array_push($arrayInmuebles,$inmueble);
-				
+							$inquilinos = null;
 			
 			 
 		}
 		
+		$arrayIdInquilino = null;
 		return $arrayInmuebles;
 			
 	}
@@ -168,11 +171,11 @@
 		
 	}
 
-	function get_facturas_agua($idInmueble){
+	function get_facturas_agua($idInmueble,$count){
 			
 		$elementos = null;	
 			
-		$facturasAgua = "<div id='agua' class='collapse'>
+		$facturasAgua = "<div id='agua".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1'>	  
 							                      		<img class='imagenbanner2' src='../../img/botones/agua.png'>
@@ -207,11 +210,11 @@
 		
 	}
 
-	function get_facturas_luz($idInmueble){
+	function get_facturas_luz($idInmueble,$count){
 		
 		$elementos = null;	
 			
-		$facturasLuz = "<div id='luz' class='collapse'>
+		$facturasLuz = "<div id='luz".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1'>	  
 							                      		<img class='imagenbanner2' src='../../img/botones/luz.png'>
@@ -246,11 +249,11 @@
 		
 	}
 
-	function get_facturas_gas($idInmueble){
+	function get_facturas_gas($idInmueble,$count){
 		
 		$elementos = null;	
 			
-		$facturasGas = "<div id='gas' class='collapse'>
+		$facturasGas = "<div id='gas".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1'>	  
 							                      		<img class='imagenbanner2' src='../../img/botones/gas.png'>
@@ -285,23 +288,23 @@
 		
 	}
 
-	function get_colapse(){
+	function get_colapse($count){
 			
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz'>
+				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
                     								<img class='imagenboton3 magenta-bg  img-rounded' src='../../img/botones/luz.png'>
 						                       		<p class='ficha'>Electricidad</p>
 						                       	</a>	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua'>
+						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
 							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/agua.png'>
 							                       	<p class='ficha'>Agua</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas'>
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
 							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/gas.png'>
 							                       	<p class='ficha'>Gas</p>
 							                    </a>   		
@@ -313,13 +316,13 @@
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia'>
+				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia".$count."'>
 							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/incidencias.png'>
 							                       	<p class='ficha'>Crear incidencia</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#historial'>
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#historial".$count."'>
 							                       	<img class='imagenboton3 magenta-bg img-rounded' src='../../img/botones/historial.png'>
 							                       	<p class='ficha'>Ver incidencias</p>
 							                    </a>   	

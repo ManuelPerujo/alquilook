@@ -48,7 +48,7 @@
 									foreach ($arrayInmuebles as $key => $value) {
 										
 										echo $value;
-										
+										unset($arrayInmuebles);
 									}
 									
 		                			
