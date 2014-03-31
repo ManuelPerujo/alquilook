@@ -110,8 +110,6 @@
 													 			<label>Subir nuevo recibo</label>
 													            <input type="file" />
 													            <br/>
-													            <hr class="grissimple"/>
-													            <br/>
 													            <label>Periodo de factura</label><br/>
 													            <input type="date" /> &nbsp;&nbsp;&nbsp; <input type="date" />
 													 			<br/><br/>
