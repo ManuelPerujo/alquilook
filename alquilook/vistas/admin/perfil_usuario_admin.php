@@ -106,11 +106,17 @@
 							                 				<p class="ficha"><h5>Recibos de Luz</h5></p>
 							                 			</div>
 							                 			<div class="col-sm-8 col-xs-12">
-								                 			<form class="form-group  text-left" method="post" action="">
+								                 			<form class="form-inline  text-left" method="post" action="">
 													 			<label>Subir nuevo recibo</label>
 													            <input type="file" />
-													 			<br/>
+													            <br/>
+													            <hr class="grissimple"/>
+													            <br/>
+													            <label>Periodo de factura</label><br/>
+													            <input type="date" /> &nbsp;&nbsp;&nbsp; <input type="date" />
+													 			<br/><br/>
 													 			<a type="submit" class="btn btn-default btn-sm">Subir</a>
+													 			<br/><br/>
 													 		</form>
 													 	</div>
 													 </div>	
