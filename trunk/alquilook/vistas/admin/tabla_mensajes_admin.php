@@ -24,6 +24,31 @@
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-envelope"></i> Mensajes:</h3>
                 		
+                	  <table class="table table-striped table-hover">
+						   <thead>
+							      <tr> 
+								        <th>Tipo</th>
+								        <th>Nombre</th>
+								        <th>Nombre</th>
+								        <th>Apellido</th>
+								        <th>DNI</th>
+							      </tr>
+						    </thead>
+						    <tbody>
+								  <tr>
+									    <td><img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/banner/inquilino.png"></td>
+									    <td>Juan Hidalgo</td>
+									    <td>Juan</td>
+									    <td>Hidalgo</td>
+									    <td>45889663L</td>
+								  </tr>
+								 
+							</tbody> 
+						</table>
+                		
+                		
+                		
+                		
                 		<!--------------------------------------------------------Banner de mensajes nuevos----------------------->
                 		<div class="alert alert-info alert-dismissable">
 				               		<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
