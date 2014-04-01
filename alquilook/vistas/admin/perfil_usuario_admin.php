@@ -111,7 +111,7 @@
 													            <input type="file" />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
-													            <input type="date" /> &nbsp;&nbsp;&nbsp; <input type="date" />
+													            <input type="month"/> &nbsp;&nbsp;&nbsp; <input type="month"/>
 													 			<br/><br/>
 													 			<a type="submit" class="btn btn-default btn-sm">Subir</a>
 													 			<br/><br/>

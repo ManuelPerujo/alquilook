@@ -15,13 +15,13 @@
 		                	 <div class="login-panel panel panel-default">
 		                	 	<img class="login" src="<?php echo $ruta?>img/logo.png"/></a>
 		                   		<div class="panel-body">
-			                        <form role="form">
+			                        <form role="form" method="post" action="../../controladores/control_login.php" onsubmit="validacion_login_admin();">
 			                            <fieldset>
 			                                <div class="form-group">
-			                                    <input class="form-control" placeholder="Email" name="email" type="email" autofocus>
+			                                    <input class="form-control" id="usuario_admin" placeholder="Usuario" name="usuario_admin" type="text" autofocus>
 			                                </div>
 			                                <div class="form-group">
-			                                    <input class="form-control" placeholder="Contraseña" name="password" type="password" value="">
+			                                    <input class="form-control" id="pass_admin" placeholder="Contraseña" name="pass_admin" type="password" value="">
 			                                </div>
 			                                <button type="submit" class="btn btn-primary btn-sm">Entrar</button>
 			                            </fieldset>
