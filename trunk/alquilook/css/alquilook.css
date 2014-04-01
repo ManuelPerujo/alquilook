@@ -407,6 +407,7 @@ body {
 	background-color: #f5f5f5;
 }
 
+
 .imagenboton{
 	width: 75px;
 }
@@ -416,7 +417,8 @@ body {
 }
 
 .imagenboton3{
-	height:50px;
+	width: 40px;
+	height: 40px;
 }
 
 
@@ -584,6 +586,11 @@ p.ficha2{
 
 .imagenboton2{
 	width: 45px;
+}
+
+.imagenboton3{
+	width:30px;
+	height: 30px;
 }
 
 h1.slider{

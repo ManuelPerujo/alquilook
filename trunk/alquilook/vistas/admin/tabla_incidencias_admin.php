@@ -22,62 +22,39 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
-                	
-                	<h3><i class="fa fa-warning"></i> Incidencias:</h3>
+                		<h3><i class="fa fa-warning"></i> Incidencias:</h3>
                 		
-                		<!--------------------------------------------------------Banner de mensajes nuevos----------------------->
-                		<div class="alert alert-info alert-dismissable">
-				               		<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-		 							<h2><i class="fa fa-inbox fa-lg"></i> Incidencias nuevas</h2>
-		 							<br />
-			            </div>
-                		<!--------------------------------------------------------Banner de mensajes nuevos----------------------->
+                	  <table class="table table-striped table-hover">
+						   <thead>
+							      <tr> 
+								        <th></th>
+								        <th>Estado</th>
+								        <th>Nombre</th>
+								        <th>Asunto</th>
+								        <th>Fecha</th>
+								        <th>Tipo</th>
+								        <th><i class="fa fa-cog"></i></th>
+							      </tr>
+						    </thead>
+						    <tbody>
+								  <tr>
+									    <td><img class="imagenboton3 coral-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png"></td>
+									    <td><h5><i class="fa fa-check"></i> <i class="fa fa-times"></i> </h5></td>
+									    <td><h5>Juan Pérez</h5></td>
+								    	<td><h6 class="mayusculas">Me pica el pito...</h6></td>
+									    <td><h6>18 / 05 / 2014</h6></td>
+									    <td><h5>Propietario</h5></td>
+									    <td>
+									    	<h5>
+									    		<a class="enlace" href="">
+								 					<i class="fa fa-trash-o"></i>
+								 				</a>
+								 			</h5>	
+								    	</td>
+								  </tr>
+							</tbody> 
+						</table>
                 		
-	                	<div class="media lineaabajo">
-	                		  <br/>
-							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/banner/inquilino.png">
-							  </a>
-							  <div class="media-body">
-								  	<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-								    <h5 class="media-heading">Juan Pérez</h5>
-								    <h6 class="media-heading">18 / 04 / 14</h6>
-								    <p class="mayusculas">Asunto: Llevo 3 días intentándolo y aún no puedo registrarme en alquilook</p>
-								    <hr class="grissimple"/>
-								    <p class="ficha">
-								    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
-								    </p>
-							  </div>
-							  <br />
-						</div>
-						
-						<!--------------------------------------------------------Banner de mensajes leídos----------------------->
-						<div class="alert alert-success alert-dismissable">
-				               		<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-		 							<h2><i class="fa fa-info-circle fa-lg"></i> Incidencias leídas</h2>
-		 							<br />
-			            </div>
-                		<!--------------------------------------------------------Banner de mensajes leídos----------------------->
-						
-						<div class="media lineaabajo">
-	                		  <br/>
-							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 magenta-bg img-circle" src="<?php echo $ruta?>img/banner/propietario.png">
-							  </a>
-							  <div class="media-body">
-								  	<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-								    <h5 class="media-heading">María Gómez</h5>
-								    <h6 class="media-heading">03 / 08 / 14</h6>
-								    <p class="mayusculas">Asunto: Quiero abrir un gloryhole en la puerta del salón...</p>
-								    <hr class="grissimple"/>
-								    <p class="ficha">
-								    Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
-								    </p>
-							  </div>
-							  <br />
-						</div>
-                	<br/>
-                	
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
