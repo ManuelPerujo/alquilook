@@ -9,7 +9,7 @@
 		$idPropietario = get_IdPropietario($idUsuario);
 		
 		$query = "select * from inmueble where IdPropietario = '$idPropietario'";
-		
+				
 		$result = $bd->query($query);
 		$row = $result->fetchAll(PDO::FETCH_ASSOC);
 		
@@ -145,7 +145,8 @@
 				                     		</div>
 				                     </div>		
 		                    	</div>
-		                    </div>"  ;
+		                    </div>
+		                    <br>"  ;
 		                    
 		                    array_push($arrayInmuebles,$inmueble);
 							$inquilinos = null;

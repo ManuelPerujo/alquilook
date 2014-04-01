@@ -1,3 +1,25 @@
+<?php 
+
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/usuarios.php';
+
+	if(isset($_SESSION["IdUsuario_sesion"]) && !empty($_SESSION["IdUsuario_sesion"])){
+		
+		$id_usuario = $_SESSION["IdUsuario_sesion"];
+		$datos = array(1=>'Usuario');
+		
+		$row = get_dato_usuario($id_usuario, $datos);
+		
+		$usuario = $row['Usuario'];
+		
+	}else{
+		$usuario = null;
+	}
+
+?>
+
+
+
 <div class="col-sm-2 col-xs-12">
 		<div class="row">
 			<br/>

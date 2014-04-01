@@ -1,3 +1,4 @@
+
 function validacion_login_propietario(){
 
 	var nombre_usuario = document.getElementById("usuario1").value;
@@ -36,6 +37,29 @@ function validacion_login_inquilino(){
 	}
 
 	var contrasena = document.getElementById("password2").value;
+	if(contrasena == ""){
+  		alert("Introduzca su contraseña");
+  		return false;
+	}
+
+	return true;
+}
+
+function validacion_login_admin(){
+
+	var nombre_usuario = document.getElementById("usuario_admin").value;
+	var filtro_nombre = /^([A-Za-z0-9_\-ñÑ]+)$/;
+	if(nombre_usuario == "") {
+  		alert("Introduzca su usuario");
+  		return false;
+	} else {
+		if (!filtro_nombre.test(nombre_usuario)){
+			alert("Su nombre no es correcto, vuelva a intentarlo");
+			return false;
+		}
+	}
+
+	var contrasena = document.getElementById("pass_admin").value;
 	if(contrasena == ""){
   		alert("Introduzca su contraseña");
   		return false;
