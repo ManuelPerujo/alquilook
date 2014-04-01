@@ -54,7 +54,7 @@
 										  		<div class='col-sm-10 text-left alert alert-success alert-dismissable'>
 								               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 						 							<strong><i class='fa fa-exclamation-circle fa-lg'></i></strong>
-						 							Para añadir una estancia debe completar los datos
+						 							Para añadir una estancia debe completar los datos.
 			                					</div>
 			                					<div class='col-sm-1'></div>
 										  </div>";

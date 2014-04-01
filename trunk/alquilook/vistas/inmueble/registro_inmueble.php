@@ -31,7 +31,7 @@
                 		<div class="col-sm-8">
                 			<div class="row-fluid">
 			                	<div class="col-sm-12">
-			                		<h3><i class="fa fa-cogs"></i> Crear inmueble<small class="magenta"> (Paso 1 de 3)</small></h3>
+			                		<h3><i class="fa fa-cogs"></i> Crear inmueble - (Paso 1 de 3)</h3>
 			                	</div>
 			                	<div class="col-sm-12 text-left alert alert-success alert-dismissable">
 				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
