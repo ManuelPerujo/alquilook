@@ -1,6 +1,9 @@
 <?php 
     session_start();
-    include_once '../../plantillas/importaciones.php';    
+    include_once '../../plantillas/importaciones.php';
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/admin.php';
+	include_once '../../funciones/inmueble.php';    
 ?>
 
 <body>
@@ -30,12 +33,29 @@
 		            
 		            <!-------------------------------------------------------- Contenido fijo----------------------->
 		            <hr class="grisdoble"/><br/>
+		            
+		            <?php
+		                		if(isset($_GET["IdUsuario"])){
+		                			
+									$id_usuario = $_GET["IdUsuario"];
+									$arrayInmuebles = get_inmueble_datos_admin($id_usuario);
+									
+									foreach ($arrayInmuebles as $key => $value) {
+										
+										echo $value;
+										unset($arrayInmuebles);
+									}
+									
+		                		} 
+		                		
+		            ?>
+		            
                 	<div class="row">
                 	    		<div class="col-xs-12">	
 				                        <div class="row-fluid">
 				                       		<div class="col-sm-6 media">
 												  <a class="pull-left">
-												    <img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/banner/propietario.png">
+												    <img class="imagenboton steel-grey2 img-rounded" src="<?php echo $ruta?>img/banner/propietario.png">
 												  </a>
 												  <div class="media-body">
 												    <h5 class="media-heading">C/ Calavera, 18. 29400 Ronda (Málaga)</h5>

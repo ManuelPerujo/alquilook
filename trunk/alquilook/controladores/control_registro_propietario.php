@@ -45,9 +45,9 @@ include_once("../funciones/core.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
-                $query = "insert into usuarios (IdUsuario, Usuario, Password, Email, Nombre, Apellidos, DNI,
+                $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
                                                 Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
-                    values ('', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
+                    values ('', '0', 'Propietario', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
                             '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
                 
 								            

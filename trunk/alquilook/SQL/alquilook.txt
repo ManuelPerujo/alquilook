@@ -11,6 +11,7 @@ drop table if exists `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `IdUsuario` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `Admin` boolean NOT NULL,
+  `Tipo` varchar(30),
   `Usuario` char(30) NOT NULL,
   `Password` varchar(30) NOT NULL,
   `Email` varchar(50),
