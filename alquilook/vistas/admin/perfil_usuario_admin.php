@@ -38,7 +38,7 @@
 												    <img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/banner/propietario.png">
 												  </a>
 												  <div class="media-body">
-												    <h5 class="media-heading">Madurito_Guasón46</h5>
+												    <h5 class="media-heading">C/ Calavera, 18. 29400 Ronda (Málaga)</h5>
 												    <hr class="grissimple"/>
 												    <small class="mayusculas">Propietario</small>
 												    <hr class="grissimple"/>
@@ -46,7 +46,6 @@
 												    <p class="ficha">25887996R</p>
 												    <p class="ficha"><a class="enlace" href="mailto:">juanperez@gmail.com</a></p>
 												    <p class="ficha">689 256 458</p>
-													<p class="ficha">C/ Calavera, 18. 29400 Ronda (Málaga)</p>
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -76,15 +75,15 @@
 				                       			</a>	
 				                       		</div>
 				                       		<div class="col-xs-4 col-sm-2 text-center">
-				                       			<a class="enlace2" data-toggle="collapse"  data-target="#incidencia">
-							                       	<img class="imagenboton3 steel-grey2 img-rounded" src="<?php echo $ruta?>img/botones/incidencias.png">
-							                       	<p class="ficha">Crear incidencia</p>
+				                       			<a class="enlace2" data-toggle="collapse"  data-target="#mensaje">
+							                       	<img class="imagenboton3 steel-grey2 img-rounded" src="<?php echo $ruta?>img/botones/mensaje.png">
+							                       	<p class="ficha">Mensaje</p>
 							                    </a>   	
 						                    </div>
 						                    <div class="col-xs-4 col-sm-2 text-center">	
-						                    	<a class="enlace2" data-toggle="collapse" data-target="#historial">
-							                       	<img class="imagenboton3 steel-grey2 img-rounded" src="<?php echo $ruta?>img/botones/historial.png">
-							                       	<p class="ficha">Ver incidencias</p>
+						                    	<a class="enlace2" data-toggle="collapse" data-target="#opciones">
+							                       	<img class="imagenboton3 steel-grey2 img-rounded" src="<?php echo $ruta?>img/botones/opciones.png">
+							                       	<p class="ficha">Opciones</p>
 							                    </a>   	
 				                       		</div>
 										</div>
@@ -123,32 +122,12 @@
 								                        	<table class="table table-striped table-hover">
 																   <thead>
 																	      <tr> 
-																		        <th><i class="fa fa-bars"></i></th>
 																		        <th>Fecha</th>
 																		        <th>Opciones</th>
 																	      </tr>
 																    </thead>
 																    <tbody>
 																		  <tr>
-																			    <td>1</td>
-																			    <td>04/05/2014 - 04/06/2014</td>
-																			    <td>
-																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
-																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																			    	<a href="" class="enlace"><i class="fa fa-trash-o"></i></a>
-																				</td>
-																		  </tr>
-																		  <tr>
-																			    <td>1</td>
-																			    <td>04/05/2014 - 04/06/2014</td>
-																			    <td>
-																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
-																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																			    	<a href="" class="enlace"><i class="fa fa-trash-o"></i></a>
-																				</td>
-																		  </tr>
-																		  <tr>
-																			    <td>1</td>
 																			    <td>04/05/2014 - 04/06/2014</td>
 																			    <td>
 																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
@@ -163,34 +142,175 @@
 				                     </div>		
 				                     <div id="agua" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-sm-1">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
-							                 		</div>  
-							                 		<div class="col-sm-3">
-							                 			<p class="ficha"><h5>Recibos de Agua</h5></p>
-							                 		</div>                      
+							                 		<div class="col-xs-12">
+							                      		<div class="col-sm-1">	  
+							                      			<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/agua.png">
+							                 			</div>  
+							                 			<div class="col-sm-3">
+							                 				<p class="ficha"><h5>Recibos de Agua</h5></p>
+							                 			</div>
+							                 			<div class="col-sm-8 col-xs-12">
+								                 			<form class="form-inline  text-left" method="post" action="">
+													 			<label>Subir nuevo recibo</label>
+													            <input type="file" />
+													            <br/>
+													            <label>Periodo de factura</label><br/>
+													            <input type="month"/> &nbsp;&nbsp;&nbsp; <input type="month"/>
+													 			<br/><br/>
+													 			<a type="submit" class="btn btn-default btn-sm">Subir</a>
+													 			<br/><br/>
+													 		</form>
+													 	</div>
+													 </div>	
+													 <div class="col-xs-12">
+													 		<hr class="grissimple"/>
+								                        	<table class="table table-striped table-hover">
+																   <thead>
+																	      <tr> 
+																		        <th>Fecha</th>
+																		        <th>Opciones</th>
+																	      </tr>
+																    </thead>
+																    <tbody>
+																		  <tr>
+																			    <td>04/05/2014 - 04/06/2014</td>
+																			    <td>
+																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
+																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																			    	<a href="" class="enlace"><i class="fa fa-trash-o"></i></a>
+																				</td>
+																		  </tr>
+																	</tbody> 
+															</table>
+							                 		</div>	            
 				                     		</div>
 				                     </div>
 				                     <div id="gas" class="collapse">
 				                            <div class="row lineaabajo">
-                	    							<div class="col-sm-1">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">
-							                 		</div>  
-							                 		<div class="col-sm-3">
-							                 			<p class="ficha"><h5>Recibos de Gas</h5></p>
+							                 		<div class="col-xs-12">
+							                      		<div class="col-sm-1">	  
+							                      			<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/gas.png">
+							                 			</div>  
+							                 			<div class="col-sm-3">
+							                 				<p class="ficha"><h5>Recibos de Gas</h5></p>
+							                 			</div>
+							                 			<div class="col-sm-8 col-xs-12">
+								                 			<form class="form-inline  text-left" method="post" action="">
+													 			<label>Subir nuevo recibo</label>
+													            <input type="file" />
+													            <br/>
+													            <label>Periodo de factura</label><br/>
+													            <input type="month"/> &nbsp;&nbsp;&nbsp; <input type="month"/>
+													 			<br/><br/>
+													 			<a type="submit" class="btn btn-default btn-sm">Subir</a>
+													 			<br/><br/>
+													 		</form>
+													 	</div>
+													 </div>	
+													 <div class="col-xs-12">
+													 		<hr class="grissimple"/>
+								                        	<table class="table table-striped table-hover">
+																   <thead>
+																	      <tr> 
+																		        <th>Fecha</th>
+																		        <th>Opciones</th>
+																	      </tr>
+																    </thead>
+																    <tbody>
+																		  <tr>
+																			    <td>04/05/2014 - 04/06/2014</td>
+																			    <td>
+																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
+																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																			    	<a href="" class="enlace"><i class="fa fa-trash-o"></i></a>
+																				</td>
+																		  </tr>
+																	</tbody> 
+															</table>
 							                 		</div>	            
 				                     		</div>
 				                     </div>
-				                     <div id="incidencia" class="collapse">
+				                     <div id="contrato" class="collapse">
+				                      		 <div class="row lineaabajo">
+							                 		<div class="col-xs-12">
+							                      		<div class="col-sm-1">	  
+							                      			<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/contrato.png">
+							                 			</div>  
+							                 			<div class="col-sm-3">
+							                 				<p class="ficha"><h5>Contrato</h5></p>
+							                 			</div>
+							                 			<div class="col-sm-8 col-xs-12">
+								                 			<form class="form-inline  text-left" method="post" action="">
+													 			<label>Añadir contrato</label>
+													            <input type="file" />
+													            <br/>
+													 			<a type="submit" class="btn btn-default btn-sm">Subir</a>
+													 			<br/><br/>
+													 		</form>
+													 	</div>
+													 </div>	
+													 <div class="col-xs-12">
+													 		<hr class="grissimple"/>
+								                        	<table class="table table-striped table-hover">
+																   <thead>
+																	      <tr> 
+																		        <th>Fecha</th>
+																		        <th>Opciones</th>
+																	      </tr>
+																    </thead>
+																    <tbody>
+																		  <tr>
+																			    <td>04/05/2014 - 04/06/2015</td>
+																			    <td>
+																			    	<a href="" target="_blank" class="enlace"><i class="fa fa-eye"></i></a>
+																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																			    	<a href="" class="enlace"><i class="fa fa-trash-o"></i></a>
+																				</td>
+																		  </tr>
+																	</tbody> 
+															</table>
+							                 		</div>	            
+				                     		</div>
+				                     </div>	
+				                     <div id="mensaje" class="collapse">
 				                      		 <div class="row lineaabajo">
                 	    							<div class="col-sm-1">	  
-							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/incidencias.png">
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/mensaje.png">
 							                 		</div>  
 							                 		<div class="col-sm-3">
-							                 			<p class="ficha"><h5>Crear incidencia</h5></p>
-							                 		</div>          
+							                 			<p class="ficha"><h5>Crear mensaje</h5></p>
+								                 			
+							                 		</div> 
+							                 		<div class="col-xs-12">
+							                 			<form class="form-group  text-center" method="post" action="">
+													 			<textarea name="" placeholder="Escriba aquí su mensaje..."></textarea>
+													 			<br/>
+													 			<a type="submit" class="btn btn-default btn-sm">Enviar</a>
+													 	</form>
+							                 		</div>         
 				                     		</div>
-				                     </div>		
+				                     </div>	
+				                     <div id="opciones" class="collapse">
+				                      		 <div class="row lineaabajo">
+                	    							<div class="col-sm-1">	  
+							                      		<img class="imagenbanner2" src="<?php echo $ruta?>img/botones/opciones.png">
+							                 		</div>  
+							                 		<div class="col-sm-3">
+							                 			<p class="ficha"><h5>Opciones</h5></p>
+								                 			
+							                 		</div> 
+							                 		<div class="col-sm-8 text-center">
+							                 				<p></p>
+							                 				<a class="btn btn-default btn-sm" href="<?php echo $ruta?>vistas/admin/editar_usuario_admin.php">
+							                 					<i class="fa fa-user"></i> Editar Usuario
+							                 				</a>
+							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							                 				<a class="btn btn-default btn-sm" href="<?php echo $ruta?>vistas/admin/editar_inmueble_admin.php">
+							                 					<i class="fa fa-home"></i> Editar Inmueble
+							                 				</a>
+							                 		</div>         
+				                     		</div>
+				                     </div>			
 		                    	</div>
 		                    </div>  
 		                    <!-------------------------------------------------------- Contenido desplegable----------------------->

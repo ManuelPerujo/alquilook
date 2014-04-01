@@ -21,39 +21,41 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-sm-10 col-xs-12">
-                	<h3><i class="fa fa-group"></i> Usuarios</h3>    
+                <div id="users" class="col-sm-10 col-xs-12">
+                	<h3><i class="fa fa-group"></i> Usuarios</h3> 
+                	   <input class="search" placeholder="Search" />
+						  <button class="btn btn-default btn-sm" data-sort="nombre">
+						    Sort by name
+						  </button>
 					   <table class="table table-striped table-hover">
-						   <thead>
-							      <tr> 
-								        <th><i class="fa fa-bars"></i></th>
-								        <th>Tipo</th>
-								        <th>Nombre</th>
-								        <th>Apellido</th>
-								        <th>DNI</th>
-							      </tr>
-						    </thead>
-						    <tbody>
+						    <tbody class="list">
 								  <tr>
 									    <td>1</td>
-									    <td>Propietario</td>
-									    <td>Juan</td>
-									    <td>Hidalgo</td>
-									    <td>45889663L</td>
+									    <td class="tipo">Propietario</td>
+									    <td class="nombre">Juan</td>
+									    <td class="apellido">Hidalgo</td>
+									    <td class="dni">45889663L</td>
 								  </tr>
 								   <tr>
 									    <td>2</td>
-									    <td>Inquilino</td>
-									    <td>Luis</td>
-									    <td>Suárez</td>
-									    <td>25669663L</td>
+									    <td class="tipo">Inquilino</td>
+									    <td class="nombre">Luis</td>
+									    <td class="apellido">Suárez</td>
+									    <td class="dni">25669663L</td>
 								  </tr>
 								   <tr>
 									    <td>3</td>
-									    <td>Propietario</td>
-									    <td>Pedro</td>
-									    <td>García</td>
-									    <td>96454663L</td>
+									    <td class="tipo">Propietario</td>
+									    <td class="nombre">Pedro</td>
+									    <td class="apellido">García</td>
+									    <td class="dni">96454663L</td>
+								  </tr>
+								   <tr>
+									    <td>4</td>
+									    <td class="tipo">Inqulino</td>
+									    <td class="nombre">Pablo</td>
+									    <td class="apellido">Gomez</td>
+									    <td class="dni">66324663L</td>
 								  </tr>
 							</tbody> 
 					</table>

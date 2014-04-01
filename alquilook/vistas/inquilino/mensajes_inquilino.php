@@ -8,7 +8,7 @@
         include_once '../../plantillas/cabecera.php';
     ?>   
     <?php
-        include_once '../../plantillas/banner_pro.php';
+        include_once '../../plantillas/banner_inq.php';
     ?>  
     
     <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
@@ -17,7 +17,7 @@
             <div class="row-fluid">
             	
 				<?php
-        			include_once '../panel/panel_propietario.php';
+        			include_once '../panel/panel_inquilino.php';
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
