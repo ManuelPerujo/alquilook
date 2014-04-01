@@ -25,10 +25,6 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div id="users" class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-group"></i> Usuarios</h3> 
-                	   <input class="search" placeholder="Search" />
-						  <button class="btn btn-default btn-sm" data-sort="nombre">
-						    Sort by name
-						  </button>
 				   
                 	<?php 
                         $tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
