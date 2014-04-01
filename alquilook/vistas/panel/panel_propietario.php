@@ -49,7 +49,8 @@
         	<div class="col-xs-12"> 
         			<br/> 
                     <a class="imagenboton2" href="#"><img class="imagenboton2 coral-bg img-rounded" src="<?php echo $ruta?>img/botones/mensaje.png"></a>
-                    <h6>Mensajes</h6>  
+                    <br/>
+                    <h6>Mensajes <span class="badge">3</span></h6>
             </div>
         </div> 
         
