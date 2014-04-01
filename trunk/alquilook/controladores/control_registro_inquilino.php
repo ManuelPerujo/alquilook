@@ -43,8 +43,7 @@ include_once '../funciones/usuarios.php';
 				$idUsuario = get_lastId($query);
 	            $_SESSION['ArrayIdUsuario'] [] = $idUsuario;
 				
-				print_r($_SESSION['ArrayIdUsuario']);
-				$query2 = "insert into inquilino (IdInquilino,IdUsuario) values ('','$idUsuario');";
+				$query2 = "insert into inquilino (IdInquilino,IdUsuario,IdInmueble) values ('','$idUsuario', '$IdInmueble');";
 				
 				$idInquilino = get_lastId($query2);
 			    $_SESSION['ArrayIdInquilino'].= $idInquilino."-";

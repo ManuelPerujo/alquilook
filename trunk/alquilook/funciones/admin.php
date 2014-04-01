@@ -157,15 +157,26 @@
         return $texto;    
     }
 	
-	function get_inmueble_datos_admin($idUsuario){
+	function get_inmueble_datos_admin($idUsuario, $tipo){
 		
 		$arrayInmuebles = array();
 		
 		$bd = new core();
 		
-		$idPropietario = get_IdPropietario($idUsuario);
+		if($tipo == "Propietario"){
+			
+			$idPropietario = get_IdPropietario($idUsuario);
 		
-		$query = "select * from inmueble where IdPropietario = '$idPropietario'";
+			$query = "select * from inmueble where IdPropietario = '$idPropietario'";	
+			
+		}if($tipo == "Inquilino"){
+			
+			$idInmueble = get_IdInmuebleFromInquilino($idUsuario);
+			
+			$query = "select * from inmueble where IdInmueble = '$idInmueble'";
+			
+		}
+		
 				
 		$result = $bd->query($query);
 		$row = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -178,6 +189,8 @@
 			$count++;
 			
 			$arrayIdInquilino = explode("-", $value['ArrayIdInquilino'],-1);
+			
+			print_r($arrayIdInquilino);
 						
 			$arrayIdUsuario = get_IdInquilinoToUsuario($arrayIdInquilino);
 			
@@ -361,5 +374,33 @@
 		
 	}
 	
+	function get_IdInmuebleFromInquilino($idUsuario){
+			
+		$bd = new core();
+		
+		$query = "select inquilino.IdInmueble from inquilino inner join usuarios where inquilino.IdUsuario = '$idUsuario'";	
+		$result = $bd->query($query);
+		
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['IdInmueble'];
+	}
+
+	function up_factura_agua_admin($idInmueble){
+		
+	}
 	
+	function up_factura_luz_admin($idInmueble){
+		
+	}
+	
+	function up_factura_gas_admin($idInmueble){
+		
+	}
+	
+	
+	
+	
+	
+		
 ?>	
