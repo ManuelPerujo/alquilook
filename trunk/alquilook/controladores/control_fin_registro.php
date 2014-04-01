@@ -8,6 +8,6 @@
     unset($_SESSION['registro_terminado']);
 	unset($_SESSION['ArrayIdUsuario']);
 	
-	header("Location: ../vistas/inmueble/tabla_inmuebles.php");
+	header("Location: ../vistas/inmueble/tabla_inmuebles_pro.php");
 
 ?>

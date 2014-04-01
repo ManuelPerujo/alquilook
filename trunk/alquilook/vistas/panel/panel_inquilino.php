@@ -28,17 +28,9 @@
         </div>
         
         <div class="row">
-        	<div class="col-xs-12">
-        			<br/>       	               		
-                    <a class="imagenboton" href="<?php echo $ruta?>vistas/inmueble/registro_inmueble.php"><img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/mas_inm.png"></a>
-                    <h6>Añadir inmueble</h6>
-            </div>
-        </div>  
-                 
-        <div class="row">
         	<div class="col-xs-12"> 
         			<br/>            	
-                    <a class="imagenboton" href="<?php echo $ruta?>vistas/inmueble/tabla_inmuebles_pro.php"><img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/ver_inm.png"></a>
+                    <a class="imagenboton" href="<?php echo $ruta?>vistas/inmueble/tabla_inmuebles_inq.php"><img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/ver_inm.png"></a>
                     <h6>Tus inmuebles</h6>
             </div>
         </div>  
