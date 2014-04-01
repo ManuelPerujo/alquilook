@@ -44,6 +44,7 @@ drop table if exists `inquilino`;
 CREATE TABLE IF NOT EXISTS `inquilino` (
   `IdInquilino` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `IdUsuario` int(5) unsigned NOT NULL,
+  `IdInmueble` int(5) unsigned NOT NULL,
   PRIMARY KEY (`IdInquilino`),
   UNIQUE KEY `Inquilino_Unico` (`IdInquilino`),
   CONSTRAINT `ID_INQUILINO_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
