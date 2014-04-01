@@ -1,6 +1,8 @@
 <?php 
     session_start();
-    include_once '../../plantillas/importaciones.php';    
+    include_once '../../plantillas/importaciones.php';
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/admin.php';    
 ?>
 
 <body>
@@ -27,39 +29,15 @@
 						  <button class="btn btn-default btn-sm" data-sort="nombre">
 						    Sort by name
 						  </button>
-					   <table class="table table-striped table-hover">
-						    <tbody class="list">
-								  <tr>
-									    <td>1</td>
-									    <td class="tipo">Propietario</td>
-									    <td class="nombre">Juan</td>
-									    <td class="apellido">Hidalgo</td>
-									    <td class="dni">45889663L</td>
-								  </tr>
-								   <tr>
-									    <td>2</td>
-									    <td class="tipo">Inquilino</td>
-									    <td class="nombre">Luis</td>
-									    <td class="apellido">Suárez</td>
-									    <td class="dni">25669663L</td>
-								  </tr>
-								   <tr>
-									    <td>3</td>
-									    <td class="tipo">Propietario</td>
-									    <td class="nombre">Pedro</td>
-									    <td class="apellido">García</td>
-									    <td class="dni">96454663L</td>
-								  </tr>
-								   <tr>
-									    <td>4</td>
-									    <td class="tipo">Inqulino</td>
-									    <td class="nombre">Pablo</td>
-									    <td class="apellido">Gomez</td>
-									    <td class="dni">66324663L</td>
-								  </tr>
-							</tbody> 
-					</table>
-                	
+				   
+                	<?php 
+                        $tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
+                        $filtro = array('UsuarioActivo' => '1', 'Admin' => '0');
+                        $arrayOrden = array(1 => 'Nombre', 2=> 'asc');
+                        $arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE);  
+                        get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden)
+                    ?>
+
                 	
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          

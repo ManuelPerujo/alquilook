@@ -31,7 +31,7 @@
 		<div class="row">
         	<div class="col-xs-12">
 		        <div class="list-group">
-		        	  <a href="#" class="list-group-item">
+		        	  <a href="<?php echo $ruta ?>vistas/admin/tabla_usuarios_admin.php" class="list-group-item">
 							<i class="fa fa-group"></i> Usuarios
 					  </a>
 					  <a href="#" class="list-group-item">
