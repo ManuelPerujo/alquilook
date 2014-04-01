@@ -16,6 +16,7 @@ if (basename(getcwd()) == "alquilook"){
 	|| basename($_SERVER['PHP_SELF']) == "mensaje_admin.php" || basename($_SERVER['PHP_SELF']) == "incidencia_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inq.php" || basename($_SERVER['PHP_SELF']) == "mensajes_inquilino.php"
 	|| basename($_SERVER['PHP_SELF']) == "editar_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "editar_inmueble_admin.php"
+	|| basename($_SERVER['PHP_SELF']) == "editar_estancia_admin.php" || basename($_SERVER['PHP_SELF']) == "editar_inquilino_admin.php"
 	){
 
     $ruta = "../../";    

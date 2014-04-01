@@ -31,13 +31,12 @@
 		            </div>
 		            <hr class="grisdoble"/>
 		            <div class="row">
-                	    		<div class="col-xs-12 text-center">
+                	    		<div class="col-xs-12">
 		                			<h4><i class="fa fa-pencil"></i> Editar usuario</h4>
 		                		</div>
 		            </div>
 		           <div class="row">
-		            	<div class="col-md-4 col-xs-2 text-center"></div>
-		                <div class="col-md-4 col-xs-8 text-center">
+		                <div class="col-sm-5 col-xs-12">
 		               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" onsubmit="validacion_registro_propietario();">                                    
 		                        <input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario *" />                                    
 		                        <input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña *" />
@@ -57,9 +56,8 @@
 		    					<a class="btn btn-default btn-sm" href="<?php echo $ruta?>vistas/admin/perfil_usuario_admin.php">Volver al perfil</a>
 		                    </form> 
 		                    <br/>
-		                </div>
-		                <div class="col-md-4 col-xs-2 text-center"></div>                                            
-            </div>
+		                </div>                                           
+            		</div>
                 	
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
