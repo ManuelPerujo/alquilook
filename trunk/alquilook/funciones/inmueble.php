@@ -39,7 +39,8 @@
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
 				
-				$inmueble = "<div class='row'>
+				$inmueble = "<hr class='grisdoble'/><br/>
+							 <div class='row'>
                 	    		<div class='col-xs-12'>	
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>

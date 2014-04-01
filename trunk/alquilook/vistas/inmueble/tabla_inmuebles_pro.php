@@ -37,7 +37,6 @@
 		                			<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>
 		                		</div>
 		                	</div>
-		                	<hr class="grisdoble"/><br/>
 		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
 		                	<?php
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
