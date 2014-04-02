@@ -430,14 +430,16 @@
 							                 				<p class='ficha'><h5>Recibos de Agua</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
-								                 			<form class='form-inline  text-left' method='post' action=''>
+								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_agua.php'>
 													 			<label>Subir nuevo recibo</label>
-													            <input type='file' />
+													            <input type='file' name='userfile' />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
-													            <input type='month'/> &nbsp;&nbsp;&nbsp; <input type='month'/>
+													            <input type='date' name='fechaInicio'/> &nbsp;&nbsp;&nbsp; <input type='date' name='fechaFinal' />
 													 			<br/><br/>
-													 			<a type='submit' class='btn btn-default btn-sm'>Subir</a>
+													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
+													 			<input type='hidden' name='MAX_FILE_SIZE' value='3000' />
+													 			<input type='submit' class='btn btn-default btn-sm' value='Subir'/>
 													 			<br/><br/>
 													 		</form>
 													 	</div>

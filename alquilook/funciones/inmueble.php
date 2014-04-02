@@ -175,8 +175,29 @@
 
 	function get_facturas_agua($idInmueble,$count){
 			
-		$elementos = null;	
+		$facturasAgua = null;
 			
+		$elementos = null;	
+				
+		$bd = new core();
+		
+		$query = "select * from factura where IdInmueble = '$idInmueble' and Tipo = 'Agua'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$fecha = $value['FechaEntrada']." / ".$value['FechaSalida'];
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+			
+					
+		}
+		
 		$facturasAgua = "<div id='agua".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1'>	  
@@ -189,24 +210,7 @@
 							                        	$elementos
 							                 		."</div>	                        
 				                     		</div>
-				              </div>";		
-		$bd = new core();
-		
-		$query = "select * from factura where IdInmueble = '$idInmueble' and Tipo = 'Agua'";
-		
-		$result = $bd->query($query);
-		
-		$row = $result->fetchAll(PDO::FETCH_ASSOC);
-		
-		foreach ($row as $key => $value) {
-				
-			$fecha = get_fecha_compuesta($value['FechaEntrada'], $value['FechaSalida']);
-			$direccion = $value['Direccion_Contenido'];
-					
-			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
-							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
-			
-		}
+				              </div>";
 		
 		return $facturasAgua;	
 		
