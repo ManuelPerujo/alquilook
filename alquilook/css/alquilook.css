@@ -5,8 +5,8 @@ by Museographia Espacios Expositivos
 
 /* 
     Colores:
-    #e51e50 blooming magenta
-	#ef501e  coral sands 
+    #e51e50 blooming magenta (Version más saturada: #e72e45)
+	#ef501e  coral sands (Version más saturada: #d15627)
 */
 
 
@@ -94,7 +94,7 @@ p{
 	font-size:5em;
 	line-height:45px;
 	text-transform:none;
-	color:#e51e50;
+	color:#e72e45;
 }
 
 .videoh2{
@@ -141,7 +141,7 @@ p.ficha2{
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------Links--------------------*/
 a.enlace{
-    color:#e51e50; /* blooming magenta */
+    color:#e72e45; /* blooming magenta */
    	opacity: 1.0;
 	filter:alpha(opacity=100);	
 	text-decoration: none;
@@ -156,7 +156,7 @@ a.enlace{
 a.enlace:hover,
 a.enlace:active,
 a.enlace:focus{
-	color:#e51e50; /* coral sands */
+	color:#e72e45; /* coral sands */
 	opacity: 0.8;
 	filter:alpha(opacity=80);		
 	outline: 0;
@@ -255,20 +255,20 @@ ul{
 
 
 .magenta{
-	color:#e51e50 !important;
+	color:#e72e45 !important;
 }
 
 .magenta-bg{
-	background-color: #e51e50;
+	background-color: #e72e45;
 	color:#FFFFFF;
 }
 
 .coral{
-	color:#ef501e !important;
+	color:#d15627 !important;
 }
 
 .coral-bg{
-	background-color: #ef501e;
+	background-color: #d15627;
 	color:#FFFFFF;
 }
 
@@ -308,8 +308,8 @@ p.mobiliario{
     -moz-padding-end:10px;
     -webkit-padding-start:10px;
     -moz-padding-start: 10px;
-    border: 1px #e51e50 solid;
-    color: #e51e50;
+    border: 1px #e72e45 solid;
+    color: #e72e45;
 	
 }
 
@@ -333,15 +333,15 @@ p.mobiliario{
 }
 
 hr.propietario{
-	color: #e51e50;
-	background-color:#e51e50;
+	color: #e72e45;
+	background-color:#e72e45;
 	height: 1px;
 	width:100%;
 }
 
 hr.inquilino{
-	color: #ef501e;
-	background-color: #ef501e;
+	color: #d15627;
+	background-color: #d15627;
 	height: 1px;
 	width:100%;
 }
