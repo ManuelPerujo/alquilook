@@ -6,7 +6,7 @@ by Museographia Espacios Expositivos
 /* 
     Colores:
     #e51e50 blooming magenta (Version más saturada: #e72e45)
-	#ef501e  coral sands (Version más saturada: #d15627)
+	#ef501e  coral sands
 */
 
 
@@ -264,11 +264,11 @@ ul{
 }
 
 .coral{
-	color:#d15627 !important;
+	color:#ef501e !important;
 }
 
 .coral-bg{
-	background-color: #d15627;
+	background-color: #ef501e;
 	color:#FFFFFF;
 }
 
@@ -340,8 +340,8 @@ hr.propietario{
 }
 
 hr.inquilino{
-	color: #d15627;
-	background-color: #d15627;
+	color: #ef501e;
+	background-color: #ef501e;
 	height: 1px;
 	width:100%;
 }
