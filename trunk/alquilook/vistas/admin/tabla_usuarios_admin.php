@@ -31,7 +31,10 @@
                         $filtro = array('UsuarioActivo' => '1', 'Admin' => '0');
                         $arrayOrden = array(1 => 'Nombre', 2=> 'asc');
                         $arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE);  
-                        get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden)
+                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+						
+						echo $mensaje;
+						
                     ?>
 
                 	
