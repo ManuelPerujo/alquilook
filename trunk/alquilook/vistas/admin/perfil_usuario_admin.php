@@ -30,6 +30,37 @@
 		                			<h3><i class="fa fa-bars"></i> Ficha usuario e inmueble</h3>
 		                		</div>
 		            </div>
+		            		                  
+		            <?php
+		            	
+			            if(isset($_SESSION['up_exito'])){
+											
+							if($_SESSION['up_exito'] == TRUE){
+								
+								echo "<div class='row'>
+								  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+								       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;El archivo se subió con éxito!</h5>
+				                		</div>
+									  </div>";
+								
+							}if($_SESSION['up_exito'] == FALSE){
+								
+								echo "<div class='row'>
+								  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+								       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 				<h5><i class='fa fa-thumbs-down fa-lg'></i> &nbsp;&nbsp;Fallo al subir archivo. Compruebe que ha insertado las fechas</h5>
+				                		</div>
+									  </div>";
+								
+							}				
+							
+							unset($_SESSION['up_exito']);
+											
+			            }
+		            ?>
+					
+		            
 		            
 		            <div class="row fondogris">
                 	<div class="col-xs-12">	
