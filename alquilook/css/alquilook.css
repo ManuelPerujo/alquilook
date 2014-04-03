@@ -75,11 +75,7 @@ h5.banner{
 	font-size:1.5em;
 	font-weight: 400;
 	}
-	
-p{
-	font-size:16px;
 
-}	
 
 .footer{
 	color:#FFF;
@@ -110,6 +106,7 @@ p{
 	line-height:10px;
 	text-transform:none;
 	font-weight: 400;
+	color: #666666;
 }
 
 
@@ -120,6 +117,14 @@ ul li.menu{
 	font-weight: 400;
 	}
 	
+	
+p{
+	font-size:16px;
+	color: #666666;
+
+}	
+
+	
 p.ficha{
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
@@ -127,6 +132,7 @@ p.ficha{
 	text-transform:none;
 	padding:3px;
 	font-weight: 400;
+	color: #666666;
 }	
 
 p.ficha2{
@@ -136,7 +142,16 @@ p.ficha2{
 	text-transform:none;
 	padding: 7px;
 	font-weight: 400;
+	color: #666666;
 }	
+
+
+
+p.mobiliario{
+	line-height:25px;
+	color: #666666;
+}
+
 
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------Links--------------------*/
@@ -165,7 +180,7 @@ a.enlace:focus{
 }
 
 a.enlace2{
-	color:#000000;
+	color: #666666;
    	opacity: 1.0;
 	filter:alpha(opacity=100);	
 	text-decoration: none;
@@ -180,7 +195,7 @@ a.enlace2{
 a.enlace2:hover,
 a.enlace2:active,
 a.enlace2:focus{
-	color:#000000;
+	color: #666666;
 	opacity: 0.8;
 	filter:alpha(opacity=80);		
 	outline: 0;
@@ -280,15 +295,10 @@ body,html{
 }
 
 .mayusculas{
-	text-transform:uppercase;
+	text-transform: uppercase !important;
 	
 }
 
-
-
-p.mobiliario{
-	line-height:25px;
-}
 
 .lineaabajo{
 	padding:5px 0 0 0;
@@ -351,7 +361,7 @@ hr.grissimple{
 	height: 1px; 
 	border-top: 1px dashed #c8c8c8;  
 	width:100%;
-	margin:3px;
+	margin:5px 0;
 	}
 	
 hr.grisdoble {
@@ -360,7 +370,7 @@ hr.grisdoble {
 	border-top: 1px dashed #c8c8c8; 
 	border-bottom: 1px dashed #c8c8c8;
 	width:100%;
-	margin:3px;
+	margin:10px 0;
 	}
 
 hr.formulario {
@@ -459,7 +469,7 @@ body {
 
 
 .carousel {
-  height:350px;
+  height:450px;
 }
 
 
@@ -528,12 +538,16 @@ body {
 }
 
 
-/*-------------------------------------------------------------------------------------------------------------------------------------------Móviles-----------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+ * -----------------------------------------------------------------------------------------------------------------------------------------
+ * -----------------------------------------------------------------------------------------------------------------------------------------
+ * ----------------------------------------------------------------------------------------------------------------------Móviles-----------*/
+
 @media (max-width: 767px) {
 
 .carousel-caption {
   position: absolute;
-  width: 80%;
+  width: 30%;
   color: #FFFFFF;
   padding: 0 10px;
   margin-top: 5%;
@@ -559,6 +573,7 @@ p.ficha{
 	line-height:14px;
 	text-transform:none;
 	font-weight: 400;
+	color: #666666;
 }		
 
 p.ficha2{
@@ -569,6 +584,7 @@ p.ficha2{
 	text-transform:none;
 	padding: 5px;
 	font-weight: 400;
+	color: #666666;
 }	
 	
 .imagen{
