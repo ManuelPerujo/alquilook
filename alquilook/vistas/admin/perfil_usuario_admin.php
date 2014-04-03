@@ -62,7 +62,7 @@
 					
 		            
 		            
-		            <div class="row fondogris">
+		            <div class="row">
                 	<div class="col-xs-12">	
 		            
 		            <!-------------------------------------------------------- Contenido fijo  PROPIETARIO----------------------->

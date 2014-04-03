@@ -9,7 +9,7 @@ use alquilook;
 
 drop table if exists `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `IdUsuario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `Admin` boolean NOT NULL,
   `Tipo` varchar(30),
   `Usuario` char(30) NOT NULL,
@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 drop table if exists `propietario`;
 CREATE TABLE IF NOT EXISTS `propietario` (
-  `IdPropietario` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `IdUsuario` int(5) unsigned NOT NULL,
+  `IdPropietario` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(6) unsigned NOT NULL,
   PRIMARY KEY (`IdPropietario`),
   UNIQUE KEY `Propietario_Unico` (`IdPropietario`),
   CONSTRAINT `ID_PROPIETARIO_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
@@ -42,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `propietario` (
 
 drop table if exists `inquilino`;
 CREATE TABLE IF NOT EXISTS `inquilino` (
-  `IdInquilino` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `IdUsuario` int(5) unsigned NOT NULL,
-  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdInquilino` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(6) unsigned NOT NULL,
+  `IdInmueble` int(6) unsigned NOT NULL,
   PRIMARY KEY (`IdInquilino`),
   UNIQUE KEY `Inquilino_Unico` (`IdInquilino`),
   CONSTRAINT `ID_INQUILINO_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `inquilino` (
 
 drop table if exists `inmueble`;
 CREATE TABLE IF NOT EXISTS `inmueble` (
-  `IdInmueble` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `IdPropietario` int(5) unsigned NOT NULL,
+  `IdInmueble` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdPropietario` int(6) unsigned NOT NULL,
   `ArrayIdInquilino` varchar(30),
   `TipoInmueble` char(30) NOT NULL,
   `Direccion` char(50) NOT NULL,
@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 
 drop table if exists `estancia`;
 CREATE TABLE IF NOT EXISTS `estancia` (
-  `IdEstancia` int(5) unsigned NOT NULL AUTO_INCREMENT,	
-  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdEstancia` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
   `Tipo` char(30) NOT NULL,
   PRIMARY KEY (`IdEstancia`),
   UNIQUE KEY `Estancia_Unica` (`IdEstancia`),
@@ -83,10 +83,10 @@ CREATE TABLE IF NOT EXISTS `estancia` (
 
 drop table if exists `articulo`;
 CREATE TABLE IF NOT EXISTS `articulo` (
-  `IdArticulo` int(5) unsigned NOT NULL AUTO_INCREMENT,	
-  `IdEstancia` int(5) unsigned NOT NULL,
-  `IdInmueble` int(5) unsigned NOT NULL,
-  `IdMobiliario` int(5) unsigned NOT NULL,
+  `IdArticulo` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdEstancia` int(6) unsigned NOT NULL,
+  `IdInmueble` int(6) unsigned NOT NULL,
+  `IdMobiliario` int(6) unsigned NOT NULL,
   `Cantidad` int(3) NOT NULL,
   PRIMARY KEY (`IdArticulo`),
   UNIQUE KEY `Articulo_Unico` (`IdArticulo`),
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
 
 drop table if exists `mobiliario`;
 CREATE TABLE IF NOT EXISTS `mobiliario` (
-  `IdMobiliario` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `IdMobiliario` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `Tipo` char(30) NOT NULL,
   PRIMARY KEY (`IdMobiliario`),
   UNIQUE KEY `Mobiliario_Unico` (`IdMobiliario`)
@@ -111,9 +111,9 @@ insert into `mobiliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(
 
 drop table if exists `observaciones_estancia`;
 CREATE TABLE IF NOT EXISTS `observaciones_estancia` (
-  `IdObservaciones` int(5) unsigned NOT NULL AUTO_INCREMENT,
-  `IdInmueble` int(5) unsigned NOT NULL,
-  `IdEstancia` int(5) unsigned NOT NULL,
+  `IdObservaciones` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdInmueble` int(6) unsigned NOT NULL,
+  `IdEstancia` int(6) unsigned NOT NULL,
   `Observacion` TEXT,
   PRIMARY KEY (`IdObservaciones`),
   UNIQUE KEY `Observacion_Unica` (`IdEstancia`),
@@ -123,8 +123,8 @@ CREATE TABLE IF NOT EXISTS `observaciones_estancia` (
 
 drop table if exists `factura`;
 CREATE TABLE IF NOT EXISTS `factura` (
-  `IdFactura` int(5) unsigned NOT NULL AUTO_INCREMENT,	
-  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdFactura` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
   `Tipo` char(30) NOT NULL,
   `FechaEntrada` DATE NOT NULL,
   `FechaSalida` DATE NOT NULL,
@@ -137,18 +137,45 @@ CREATE TABLE IF NOT EXISTS `factura` (
 
 drop table if exists `incidencia`;
 CREATE TABLE IF NOT EXISTS `incidencia` (
-  `IdIncidencia` int(5) unsigned NOT NULL AUTO_INCREMENT,	
-  `IdInmueble` int(5) unsigned NOT NULL,
+  `IdIncidencia` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
   `Tipo` char(30) NOT NULL,
   `SubTipo` char(30),
   `Fecha` DATE NOT NULL,
   `Contenido` TEXT NOT NULL,
+  `Direccion_Contenido` TEXT NOT NULL,
+  `Estado` boolean NOT NULL,
   PRIMARY KEY (`IdIncidencia`),
   UNIQUE KEY `Incidencia_Unica` (`IdIncidencia`),
   CONSTRAINT `ID_INCIDENCIA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `contrato`;
+CREATE TABLE IF NOT EXISTS `contrato` (
+  `IdContrato` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
+  `Fecha` DATE NOT NULL,
+  `Direccion_Contenido` TEXT NOT NULL,
+  `Estado` boolean NOT NULL,
+  PRIMARY KEY (`IdContrato`),
+  UNIQUE KEY `Contrato_Unico` (`IdContrato`),
+  CONSTRAINT `ID_CONTRATO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+
+drop table if exists `mensaje`;
+CREATE TABLE IF NOT EXISTS `mensaje` (
+  `IdMensaje` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdUsuario` int(6) unsigned NOT NULL,
+  `IdDestinatario` int(6),
+  `Fecha` DATE NOT NULL,
+  `Titulo` TEXT NOT NULL,
+  `Contenido` TEXT NOT NULL,
+  `Estado` boolean NOT NULL,
+  PRIMARY KEY (`IdMensaje`),
+  UNIQUE KEY `Mensaje_Unico` (`IdMensaje`),
+  CONSTRAINT `ID_MENSAJE_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
