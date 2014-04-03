@@ -97,6 +97,103 @@
         
     }        
     
+    function get_tablas_combinada_filtros_y_opciones($tabla1,$tabla2,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden){
+    		
+    	$filtro = filtros_consulta_tabla($arrayFiltro);
+        $orden = orden_consulta($arrayOrden);
+        
+        echo "<table class='table table-striped table-hover'>";
+        echo "<thead><tr>";
+                       
+        foreach ($arrayAtributos as $key => $value) {
+            echo "<th>$value</th>";
+        }
+        
+        if($arrayOpciones['opciones'] == TRUE){
+            echo "<th>Opciones</th>";    
+        }
+        
+        echo "</tr><thead>";
+        
+        $bd = new core();
+        $bd->ConectaBD();
+        
+        $seleccion = implode(",", $arrayAtributos);
+        
+        if(count($arrayFiltro) != 0){
+            $query1 = "select $idTabla from $tabla1 inner join $tabla2 where $filtro";
+        }else{
+            $query1 = "select $idTabla from $tabla1 inner join $tabla2";    
+        }
+        
+        if(count($arrayOrden) != 0){
+            $query1.= " ".$orden; 
+        }
+                    
+        $result = $bd->query($query1);
+        
+        if($result->rowCount() != 0) {
+            /*PDO::FETCH_ASSOC: devuelve un array cuyos indices son los nombres de los campos del resultado de la consulta*/ 
+            $row = $result->fetchAll(PDO::FETCH_ASSOC);
+            
+            foreach ($row as $key ) {
+                $selector = $key[$idTabla];        
+                $query2 = "select $seleccion from $tabla1 where $idTabla = '$selector' ";
+                $result2 = $bd->query($query2);
+                       
+                if($result2->rowCount() != 0){
+                    $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+                }
+                        
+                echo "<tbody><tr>";
+                  
+                $direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector;
+                
+                if(basename($_SERVER['PHP_SELF']) == ""){
+                    foreach ($row2 as $key => $value2) {
+                        $contenido = wordwrap($value2, 12);                            
+                        echo "<td>$contenido</td>";
+                    }
+                }else{
+                    foreach ($row2 as $key => $value2) {
+                        $contenido = wordwrap($value2, 12);                            
+                        echo "<td><a class='enlace2' href=$direccion>$contenido</a></td>";                
+                    }
+                }          
+                
+                
+                if($arrayOpciones['opciones'] == TRUE){
+                    echo "<td>";
+                    if($arrayOpciones['borrar'] == TRUE){
+                        $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
+                        echo "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' /></a>";    
+                    }if($arrayOpciones['modificar'] == TRUE){
+                        $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
+                        echo "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' /></a>";    
+                    }if($arrayOpciones['responder'] == TRUE){
+                        $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
+                        echo "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                    }if($arrayOpciones['pagar'] == TRUE){
+                        
+                    }if($arrayOpciones['amistad'] == TRUE){
+                        $direccion4 = '../sesion/control_amistad.php?id='.$selector;
+                        echo "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                    }if($arrayOpciones['ver_mas'] == TRUE){
+                        echo "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' /></button>";
+                    }
+                    
+                    echo "</td>";
+                                  
+                }
+                echo "</tr><tbody>";
+                    
+            }
+        }
+          
+        echo "</table>";	
+    	
+    }
+	
     function filtros_consulta_tabla($arrayFiltro){
      
         $texto = null;
@@ -110,7 +207,7 @@
                 
                 foreach ($tmp as $key2 => $value2) {
                     
-                    $tmp2 = $value2." = ".$value;
+                    $tmp2 = $value2." = '".$value."'";
                     $texto .= $tmp2;
                         
                 }
@@ -123,12 +220,12 @@
                     $count++;
                     if($count < count($arrayFiltro)){
                             
-                        $tmp2 = $value2."=".$value;
+                        $tmp2 = $value2."= '".$value."'";
                         $texto .= $tmp2.$tmp3;            
                         
                     }if($count == count($arrayFiltro)){
                         
-                        $tmp2 = $value2."=".$value;
+                        $tmp2 = $value2."= '".$value."'";
                         $texto .= $tmp2;
                         
                     }
@@ -366,7 +463,7 @@
 							                    </a>   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' href='' target='_blank'>
+				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
 				                       				<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/contrato.png'>
 				                       				<p class='ficha'>Contrato</p>
 				                       			</a>	
@@ -420,6 +517,12 @@
 	
 	function up_factura_agua_admin($idInmueble, $count){
 				
+		$tabla1 = 'factura'; $tabla2 = 'inmueble'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
+		$arrayFiltro = array('inmueble.IdInmueble' => $idInmueble, 'factura.Tipo' => 'agua');
+		$arrayOrden = array(1 => 'factura.FechaEntrada', 2=> 'desc');
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE);	
+		$tabla = get_tablas_combinada_filtros_y_opciones($tabla1,$tabla2,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);
+				
 		$mensaje = "<div id='agua".$count."' class='collapse'>
 				                            <div class='row'>
 							                 		<div class='col-xs-12'>
@@ -443,26 +546,11 @@
 													 			<br/><br/>
 													 		</form>
 													 	</div>
-													 </div>	
-													 <div class='col-xs-12'>
-								                        	<table class='table table-striped table-hover'>
-																   <thead>
-																	      <tr> 
-																		        <th>Fecha</th>
-																		        <th>Opciones</th>
-																	      </tr>
-																    </thead>
-																    <tbody>
-																		  <tr>
-																			    <td>04/05/2014 - 04/06/2014</td>
-																			    <td>
-																			    	<a href='' target='_blank' class='enlace2'><i class='fa fa-eye'></i></a>
-																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																			    	<a href='' class='enlace2'><i class='fa fa-trash-o'></i></a>
-																				</td>
-																		  </tr>
-																	</tbody> 
-															</table>
+													 </div>". 
+								                        	$tabla
+										                    ."	
+													 <div class='col-sm-10 col-xs-12'>
+								                        	
 							                 		</div>	            
 				                     		</div>
 				                     </div>";	
@@ -483,14 +571,16 @@
 							                 				<p class='ficha'><h5>Recibos de Luz</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
-								                 			<form class='form-inline  text-left' method='post' action=''>
+								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_luz.php'>
 													 			<label>Subir nuevo recibo</label>
-													            <input type='file' />
+													            <input type='file' name='userfile' />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
-													            <input type='month'/> &nbsp;&nbsp;&nbsp; <input type='month'/>
+													            <input type='date' name='fechaInicio'/> &nbsp;&nbsp;&nbsp; <input type='date' name='fechaFinal' />
 													 			<br/><br/>
-													 			<a type='submit' class='btn btn-default btn-sm'>Subir</a>
+													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
+													 			<input type='hidden' name='MAX_FILE_SIZE' value='3000' />
+													 			<input type='submit' class='btn btn-default btn-sm' value='Subir'/>
 													 			<br/><br/>
 													 		</form>
 													 	</div>
@@ -534,14 +624,16 @@
 							                 				<p class='ficha'><h5>Recibos de Gas</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
-								                 			<form class='form-inline  text-left' method='post' action=''>
+								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_gas.php'>
 													 			<label>Subir nuevo recibo</label>
-													            <input type='file' />
+													            <input type='file' name='userfile' />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
-													            <input type='month'/> &nbsp;&nbsp;&nbsp; <input type='month'/>
+													            <input type='date' name='fechaInicio'/> &nbsp;&nbsp;&nbsp; <input type='date' name='fechaFinal' />
 													 			<br/><br/>
-													 			<a type='submit' class='btn btn-default btn-sm'>Subir</a>
+													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
+													 			<input type='hidden' name='MAX_FILE_SIZE' value='3000' />
+													 			<input type='submit' class='btn btn-default btn-sm' value='Subir'/>
 													 			<br/><br/>
 													 		</form>
 													 	</div>
