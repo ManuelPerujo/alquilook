@@ -17,7 +17,7 @@
             <div class="item active">
                 <div class="fill" style="background-image:url('img/slide.jpg');"></div>
                 <div class="carousel-caption">
-                	<h1 class="slider">Seguro<br/>de impagos<br/>incluido</h1>
+                	<h1 class="slider">Alquilook<br/>trabaja<br/>por ti</h1>
                 </div>
             </div>
             <div class="item">

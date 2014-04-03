@@ -5563,11 +5563,11 @@ button.close {
 .carousel-caption {
   position: absolute;
   color: #FFFFFF;
-  width: 80%;
+  width: 70%;
   padding: 0 10px;
-  margin-top:3%;
+  margin-top:5%;
   top:1px;
-  right: 10%;
+  right: 20%;
   left: 10%;
 }
 
