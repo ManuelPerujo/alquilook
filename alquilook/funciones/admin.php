@@ -51,8 +51,18 @@
                 }
                         
                 $mensaje .= "<tr>";
+                
+                if(basename($_SERVER['PHP_SELF']) == 'perfil_usuario_admin.php'){
+                			
+                	$direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector;		
+                	
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_usuarios_admin.php'){
+                	
+					$direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector."&tipo=".$row2['Tipo'];
+					
+                }
                   
-                $direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector;
+                
                 
                 if(basename($_SERVER['PHP_SELF']) == ""){
                     foreach ($row2 as $key => $value2) {
