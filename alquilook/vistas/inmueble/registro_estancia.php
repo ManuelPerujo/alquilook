@@ -35,21 +35,19 @@
 		                			
 									foreach ($_SESSION['ArrayIdEstancia'] as $key => $value) {
 										
-											
 										echo get_estancia($value);
 										
 									}				
 									
-									unset($_SESSION['ArrayIdEstancia']);																										
 								}
 								
 		                	 
 		               			
-		               				if(isset($_SESSION['errorEstancia']) && $_SESSION['errorEstancia'] = TRUE){
+		               				if(isset($_SESSION['errorEstancia']) && $_SESSION['errorEstancia'] == TRUE){
 										
 										unset($_SESSION['errorEstancia']);
-											
-		               					echo "<div class='row'>
+										
+										echo "<div class='row'>
 										  		<div class='col-sm-1'></div>
 										  		<div class='col-sm-10 text-left alert alert-success alert-dismissable'>
 								               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -100,25 +98,25 @@
 											  <div class="col-md-4">
 											  	<label>Sofá&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="sofa">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Mesa&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="mesa">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Silla&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="silla">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Cuadro&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="cuadro">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
@@ -126,25 +124,25 @@
 											  <div class="col-md-4">
 											  	<label>Cama individual&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="camaIndividual">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Cama doble&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="camaDoble">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Mesita de noche&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="mesitaNoche">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Cómoda&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="comoda">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
@@ -152,25 +150,25 @@
 											   <div class="col-md-4">
 											  	<label>Accesorios de aseo&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="accesoriosAseo">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Mueble de lavabo&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="muebleAseo">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Espejo&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="espejo">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Hidromasaje&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="hidromasaje">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
@@ -198,25 +196,25 @@
 											  <div class="col-md-4">
 											  	<label>Televisión&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="television">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>DVD/Blu-ray&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="dvd">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Equipo música&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="equipoMusica">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Frigorífico&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="frigorifico">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
@@ -224,25 +222,25 @@
 											  <div class="col-md-4">
 											  	<label>Vitrocerámica&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="vitroceramica">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Horno&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="horno">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Microondas&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="microondas">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Lavadora&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="lavadora">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>
@@ -250,25 +248,25 @@
 											   <div class="col-md-4">
 											  	<label>Secadora&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="secadora">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Lavavajillas&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="lavavajillas">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 												<br/>	
 												<label>Aspiradora&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="aspiradora">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 													<br/>	
 												<label>Termo/Calentador&nbsp;&nbsp;</label> 
 							                        <select class="selector" name="termo">
-							                        	<option value="0">0</option><option value="1">1</option><option value="2">2</option>
+							                        	<option >0</option><option value="1">1</option><option value="2">2</option>
 														<option value="3">3</option><option value="4">4</option><option value="5">5</option>
 													</select>
 											  </div>

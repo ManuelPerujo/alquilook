@@ -7,7 +7,8 @@ include_once("../funciones/usuarios.php");
 
 
 if($_GET['estancia'] == 'TRUE'){
-$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);	
+									
+			$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);	
 		        
 	        extract($_POST);
 	        
@@ -44,33 +45,82 @@ $_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccio
 	            $bd->ConectaBD();
 	                 
 	            /*insertamos los datos de la nueva estancia*/
-	            if(count($arrayArticulos) != 0 && !empty($arrayArticulos)){
-	            	
-					$query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
-					$IdEstancia = get_lastId($query1);
-					            
-		            array_push($_SESSION['ArrayIdEstancia'],$IdEstancia);
-					
-		            $query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
-					
-					$bd->query($query3);
-					
-	            }
 	            
-				if(count($observaciones) != 0 && !empty($observaciones)){
+	            $_SESSION['errorEstancia'] = TRUE;
+	            
+				$arrayVacio = null;
 					
-					$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
-						  values ('','$IdInmueble','$IdEstancia','$observacion')";
-				
-					$bd->query($query4);	
+				foreach ($arrayArticulos as $key => $value) {
+					
+					if($value != 0){
+						
+						$arrayVacio = FALSE;
+						break;
+						
+					}else{
+						$arrayVacio = TRUE;
+					}
 					
 				}
+	            print_r($arrayArticulos);
 				
+				echo "arrayVacio: ".$arrayVacio;
 				
-				unset($_POST);
+				echo "observaciones: ".empty($observaciones);
 				
+				echo "error: ".$_SESSION['errorEstancia'];
+															
+				if($arrayVacio != TRUE && !empty($observaciones)){
+								
+					$query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
+					$IdEstancia = get_lastId($query1);
+						
+					$_SESSION['ArrayIdEstancia'][] = $IdEstancia;
+						
+					$query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
+						
+					$bd->query($query3);
+						
+					$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
+							  values ('','$IdInmueble','$IdEstancia','$observacion')";
 				
-	            header("Location: ../vistas/inmueble/registro_estancia.php");    
+					$bd->query($query4);
+						
+					unset($_SESSION['errorEstancia']);
+							
+				}if($arrayVacio != TRUE && empty($observaciones)){
+								
+					$query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
+					$IdEstancia = get_lastId($query1);
+						
+					$_SESSION['ArrayIdEstancia'][] = $IdEstancia;
+						
+					$query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
+					
+					$bd->query($query3);
+						
+					unset($_SESSION['errorEstancia']);
+							
+				}if($arrayVacio == TRUE && !empty($observaciones)){
+								
+					$query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
+					$IdEstancia = get_lastId($query1);
+						
+					$_SESSION['ArrayIdEstancia'][] = $IdEstancia;
+						
+					$query4 = "insert into observaciones_estancia (IdObservaciones, IdInmueble, IdEstancia, Observacion)
+							  values ('','$IdInmueble','$IdEstancia','$observacion')";
+				
+					$bd->query($query4);
+						
+					unset($_SESSION['errorEstancia']);
+							
+				}
+					
+				
+	            unset($_POST);
+				
+				header("Location: ../vistas/inmueble/registro_estancia.php");    
 	            
 	
 	        }catch(PDOException $except) {
