@@ -17,19 +17,19 @@
             <div class="item active">
                 <div class="fill" style="background-image:url('img/slide.jpg');"></div>
                 <div class="carousel-caption">
-                	<h1 class="slider">Alquilook<br/>trabaja<br/>por ti</h1>
+                	<h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('img/slide2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1 class="slider">Realizamos<br/>las reparaciones<br/>de tu hogar</h1>
+                    <h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
                 </div>
             </div>
              <div class="item">
                 <div class="fill" style="background-image:url('img/slide3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1 class="slider">Gestionamos<br/>los pagos<br/>de suministros</h1>
+                    <h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
                 </div>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
-                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/VDhe2ZI0tEw" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/gx1wGzQEsvM" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg-6 col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
