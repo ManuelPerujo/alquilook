@@ -21,9 +21,7 @@
 				 values ('','$idInmueble','agua','$fechaEntrada','$fechaSalida','$direccion')";
 		
 		$bd->query($query);		 
-		
-		
-		
+				
 		$_SESSION['up_exito'] = TRUE;
 		
 	}if(empty($fechaEntrada) || empty($fechaSalida)){

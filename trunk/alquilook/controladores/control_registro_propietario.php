@@ -14,6 +14,8 @@ include_once("../funciones/core.php");
         
         extract($_POST);
         
+		$aceptaCondiciones = $_POST['aceptaCondiciones'];
+		
         $usuario = $_POST["usuario_propietario"];  $pass = $_POST["pass_propietario"];  $email = $_POST["email_propietario"];
         $nombre = $_POST["nombre_propietario"]; $apellidos = $_POST["apellidos_propietario"]; $dni = $_POST["dni_propietario"];
         $telefono = $_POST["telefono_propietario"]; $domicilio = $_POST["domicilio_propietario"];  $cp = $_POST["cp_propietario"];
@@ -31,44 +33,57 @@ include_once("../funciones/core.php");
 		
         $bd = new core();
 
-        try{
+		if($aceptaCondiciones == 'ok'){
+			
+			try{
             
-            $bd->ConectaBD();
-     
-            /*comprobamos que no existe el usuario en la bd */
-            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
+	            $bd->ConectaBD();
+	     
+	            /*comprobamos que no existe el usuario en la bd */
+	            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
+	
+	            $result = $bd->conexion->query($query);
+	      
+	            if($result->rowCount()>0) {
+	                $_SESSION['erroRegistro'] = $error;
+	                
+	            }else{
+	            /*insertamos los datos del nuevo usuario*/
+	                $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
+	                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
+	                    values ('', '0', 'Propietario', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
+	                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
+	                
+									            
+	                if($bd->conexion->exec($query)){
+	                	$_SESSION['erroRegistro'] = FALSE;
+	                	$_SESSION['bienvenida'] = true;
+						
+						mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);	
+	                }
+	                
+	            }
+	
+	        }catch(PDOException $except) {
+	            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
+	        }	
+			
+			unset($_POST);
+    
+    		header("Location: ../vistas/propietario/verificacion_propietario.php");
+			
+		}
 
-            $result = $bd->conexion->query($query);
-      
-            if($result->rowCount()>0) {
-                $_SESSION['erroRegistro'] = $error;
-                
-            }else{
-            /*insertamos los datos del nuevo usuario*/
-                $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
-                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
-                    values ('', '0', 'Propietario', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
-                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
-                
-								            
-                if($bd->conexion->exec($query)){
-                	$_SESSION['erroRegistro'] = FALSE;
-                	$_SESSION['bienvenida'] = true;
-					
-					mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);	
-                }
-                
-            }
-
-        }catch(PDOException $except) {
-            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
+        if($aceptaCondiciones != 'ok'){
+        		
+        			
+        	header("Location: ../vistas/propietario/registro_propietario.php");	
+        	
         }
     
     
                    
-    unset($_POST);
     
-    header("Location: ../vistas/propietario/verificacion_propietario.php");
 
 
 
