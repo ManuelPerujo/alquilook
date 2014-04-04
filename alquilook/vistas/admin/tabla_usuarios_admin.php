@@ -25,7 +25,7 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div id="users" class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-group"></i> Usuarios</h3> 
-				   
+				    <hr class="grisdoble"/>
                 	<?php 
                         $tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
                         $filtro = array('UsuarioActivo' => '1', 'Admin' => '0');

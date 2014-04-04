@@ -34,21 +34,21 @@
 		        	  <a href="<?php echo $ruta ?>vistas/admin/tabla_usuarios_admin.php" class="list-group-item">
 							<i class="fa fa-group"></i> Usuarios
 					  </a>
-					  <a href="#" class="list-group-item">
+					  <a href="<?php echo $ruta ?>vistas/admin/tabla_altasnuevas_admin.php" class="list-group-item">
 						    <span class="badge">0</span>
 							<i class="fa fa-bell"></i> Altas nuevas
 					  </a>
 					  <a href="#" class="list-group-item">
-						  	<span class="badge">86</span>
+						  	<span class="badge">6</span>
 							<i class="fa fa-warning"></i> Incidencias
 					  </a>
 					  <a href="#" class="list-group-item">
 						  	<span class="badge">2</span>
-							<i class="fa fa-user"></i> Inc. Inquilinos
+							<i class="fa fa-key"></i> Inc. Inquilinos
 					  </a>
 					  <a href="#" class="list-group-item">
 						  	<span class="badge">5</span>
-							<i class="fa fa-file"></i> Inc. Contratos
+							<i class="fa fa-gavel"></i> Inc. Contratos
 					  </a>
 					   <a href="#" class="list-group-item">
 						  	<span class="badge">3</span>

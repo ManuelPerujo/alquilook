@@ -30,9 +30,9 @@
                         <input type="text" class="form-control" name="apellidos_propietario" placeholder="Apellidos *" /> 
                         <input type="text" class="form-control" name="dni_propietario" placeholder="DNI *" />
                         <input type="text" class="form-control" name="telefono_propietario" placeholder="Teléfono *" /> 
-                        <input type="text" class="form-control" name="domicilio_propietario" placeholder="Domicilio *" />
+                        <input type="text" class="form-control" name="domicilio_propietario" placeholder="Domicilio del propietario *" />
                         <input type="text" class="form-control" name="cp_propietario" placeholder="CP *" /> 
-                        <input type="text" class="form-control" name="poblacion_propietario" placeholder="Poblacion *" />
+                        <input type="text" class="form-control" name="poblacion_propietario" placeholder="Población *" />
                         <input type="text" class="form-control" name="provincia_propietario" placeholder="Provincia *" />                       
                         <small>* Campos obligatorios</small>
                         <br/><br/>

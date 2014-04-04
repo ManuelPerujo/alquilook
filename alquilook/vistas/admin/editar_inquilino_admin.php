@@ -26,10 +26,10 @@
                <div class="col-sm-10 col-xs-12">
                 	<div class="row">
                 	    		<div class="col-sm-12">
-		                			<h3><i class="fa fa-user"></i> Perfil usuario</h3>
+		                			<h3><i class="fa fa-home"></i> Inqulinos</h3>
+		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
-		            <hr class="grisdoble"/>
 		            <div class="row">
                 	    		<div class="col-xs-12">
 		                			<h4><i class="fa fa-pencil"></i> Editar inquilinos - (Paso 3 de 3)</h4>

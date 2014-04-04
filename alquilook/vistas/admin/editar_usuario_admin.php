@@ -27,9 +27,9 @@
                 	<div class="row">
                 	    		<div class="col-sm-12">
 		                			<h3><i class="fa fa-user"></i> Perfil usuario</h3>
+		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
-		            <hr class="grisdoble"/>
 		            <div class="row">
                 	    		<div class="col-xs-12">
 		                			<h4><i class="fa fa-pencil"></i> Editar usuario</h4>
