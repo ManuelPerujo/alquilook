@@ -22,7 +22,7 @@
             	<div class="col-md-4 col-xs-2 text-center"></div>
                 <div class="col-md-4 col-xs-8 text-left">
                 	<h4>Crear una cuenta</h4>
-               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" onsubmit="validacion_registro_propietario();">                                    
+               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" >                                    
                         <input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario *" />                                    
                         <input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña *" />
                         <input type="email" class="form-control" name="email_propietario" placeholder="Email *" /> 

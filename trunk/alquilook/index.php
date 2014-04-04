@@ -84,7 +84,7 @@
                 			if(isset($_SESSION["IdUsuario_sesion"])){
                 				
 								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                					<a class='enlace' href='vistas/propietario/perfil_propietario.php'><i class='fa fa-user'></i> Mi Perfil</a>";
+                					<a class='enlace' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
 								
                 			}else{
                 				

@@ -25,7 +25,7 @@
 	 			<div class="col-lg-8 col-xs-10 text-center">
 	 				
 	 								
-                    <?php
+                    <?php 
                     	if(isset($_SESSION['erroRegistro']) && $_SESSION['erroRegistro'] == true){
                     		
                     		unset($_SESSION['erroRegistro']);
@@ -51,6 +51,12 @@
 								
                         	$codigo = $_GET['var1']; $usuario = $_GET['var2'];
 							
+							if($_GET['bienvenida'] == '1'){
+										
+								$_SESSION['bienvenida'] = TRUE;	
+								
+							}
+							
 							if(valida_email($codigo, $usuario) && valida_propietario($usuario, $codigo)){
 							
 	                        	unset($_GET);
@@ -58,12 +64,26 @@
 					 					<h1><i class='fa fa-thumbs-up'></i> ENHORABUENA</h1>
 					 					<hr class='propietario'/>
 					 					<h3>Se ha registrado correctamente</h3>	 					
-					 					<h5>Haga click a continuación para ir a su panel de Propietario</h5>
-					 					<a href='perfil_propietario.php'><button class='btn btn-primary btn-sm'>Mi perfil</button></a>
+					 					<h5>Haga click a continuación para ir a su panel de propietario.</h5>
+					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-sm'>Mi panel</button></a>
 					 					
 					 				</p>";
 					 		}		
+                        }if(isset($_SESSION['nuevo_inmueble']) && $_SESSION['nuevo_inmueble'] == TRUE){
+                        			
+                        	unset($_SESSION['nuevo_inmueble']);	
+                        	echo "<p>
+					 					<h1><i class='fa fa-thumbs-up'></i> ENHORABUENA</h1>
+					 					<hr class='propietario'/>
+					 					<h3>Ha registrado correctamente su inmueble e inquilino/os</h3>	 					
+					 					<h5>Estamos generando su contrato. En breve contactaremos con usted.</h5>
+					 					<h5>Mientras, puede acceder al panel de propietario para ver su inmueble.</h5>
+					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-sm'>Mi panel</button></a>
+					 					
+					 				</p>";
+							
                         }
+                        
                     ?>
                         
                 </div>

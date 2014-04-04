@@ -52,7 +52,7 @@
 												    <hr class='grissimple'/>
 												    <small>".$value['TipoInmueble']."</small>
 												    <hr class='grissimple'/>
-												    <p class='ficha'>".$value['Metros']."</p>
+												    <p class='ficha'>".$value['Metros']." metros</p>
 												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
 												    ".$inquilinos."
 												  </div>
