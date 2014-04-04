@@ -38,6 +38,24 @@
 		                		</div>
 		                	</div>
 		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
+		                	<?php 
+		                	
+		                		if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == TRUE){
+		                			
+									echo "<div class='row'>
+					                		<br />
+					                		<div class='col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable'>
+									               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 							<h3><i class='fa fa-info-circle fa-lg'></i> Para comenzar, haga click en 'Añadir inmueble'</h3>
+								            </div>
+								        </div>";
+										
+									unset($_SESSION['bienvenida']);	 
+									
+		                		}
+		                	
+		                	?>
+		                			                		                	
 		                	<?php
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
 		                			

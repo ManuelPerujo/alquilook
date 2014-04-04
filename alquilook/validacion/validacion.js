@@ -72,7 +72,7 @@ function validacion_registro_propietario(){
 	
 	//aceptamos como nombre y apellidos combinaciones de letras y espacios
 	var nombre = document.getElementById("nombre").value;
-	var filtro_nombre = /^([A-Za-z0-9ñÑ\sáéíóú]+)$/;
+	var filtro_nombre = /^([A-Za-z0-9ñÑáéíóúÁÉÍÓÚ\s]+)$/;
 	if(nombre == "") {
   		alert("Introduce tu nombre");
   		return false;

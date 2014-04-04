@@ -25,7 +25,7 @@ include_once("../funciones/core.php");
 		
         $codigoActivacion = rand(0, 9999);
 		$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
-	    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario; 
+	    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
 	                
 	    $headers = "MIME-Version: 1.0\r\n";
 	    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
@@ -59,7 +59,7 @@ include_once("../funciones/core.php");
 	                	$_SESSION['erroRegistro'] = FALSE;
 	                	$_SESSION['bienvenida'] = true;
 						
-						mail($email, 'Mensaje confirmacion perfil usuario', $mensaje, $headers);	
+						mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
 	                }
 	                
 	            }

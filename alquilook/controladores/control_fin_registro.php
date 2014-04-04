@@ -1,5 +1,7 @@
 <?php 
-
+	
+	session_start();
+	
 	unset($_SESSION['erroRegistro']);
 	unset($_SESSION['identifica_inmueble_direccion']);
 	unset($_SESSION['identifica_inmueble_tipo']);
@@ -8,6 +10,8 @@
     unset($_SESSION['registro_terminado']);
 	unset($_SESSION['ArrayIdUsuario']);
 	
-	header("Location: ../vistas/inmueble/tabla_inmuebles_pro.php");
+	$_SESSION['nuevo_inmueble'] = TRUE;
+		
+	header("Location: ../vistas/propietario/verificacion_propietario.php");
 
 ?>
