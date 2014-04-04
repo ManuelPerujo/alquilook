@@ -27,7 +27,8 @@
                		<div class="col-sm-10 col-xs-12">
                 	<div class="row">
                 	    		<div class="col-sm-12">
-		                			<h3><i class="fa fa-bars"></i> Ficha usuario e inmueble</h3>
+		                			<h3><i class="fa fa-group"></i> Usuario e inmueble</h3>
+		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
 		            		                  

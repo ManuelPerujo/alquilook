@@ -23,8 +23,9 @@
     			?> 
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
-                <div id="users" class="col-sm-10 col-xs-12">
-                	<h3><i class="fa fa-file-text"></i> Altas nuevas</h3> 
+                <div id="" class="col-sm-10 col-xs-12">
+                	<h3><i class="fa fa-bell"></i> Altas nuevas</h3> 
+                	<hr class="grisdoble"/>
                 	
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
