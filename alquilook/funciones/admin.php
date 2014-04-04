@@ -442,7 +442,7 @@
 				                    ."		
 		                    	</div>
 		                    </div>
-		                    <hr class='formulario'/><br/>"
+		                    <br/><br/>"
 		                    .$inquilinos;
 		                    
 		                    array_push($arrayInmuebles,$inmueble);
