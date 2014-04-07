@@ -67,8 +67,7 @@
                     }
                 }else{
                     foreach ($row2 as $key => $value2) {
-                    	
-						$direccion = $row2['Direccion_Contenido'];
+                    							
                         $contenido = wordwrap($value2, 12);                            
                         $mensaje .= "<td><a class='enlace2' href=$direccion>$contenido</a></td>";                
                     }
@@ -700,6 +699,8 @@
 	}
 
 	function send_mensaje_propietario($idInmueble, $count){
+				
+		$idUsuario = $_GET['IdUsuario'];	
 			
 		$mensaje = "<div id='mensaje".$count."' class='collapse'>
 				                      		 <div class='row'>
@@ -711,10 +712,12 @@
 								                 			
 							                 		</div> 
 							                 		<div class='col-xs-12'>
-							                 			<form class='form-group  text-center' method='post' action='../../controladores/control_manda_mensaje.php'>
-							                 					<input type='hidden' name='idInmueble' value='$idInmueble' />
+							                 			<form class='form-group  text-left' method='post' action='../../controladores/control_manda_mensaje.php'>
+							                 					<input type='hidden' name='idUsuario' value='$idUsuario' />
+							                 					<input size='80' type='text' name='titulo' placeholder='Asunto'/> 
+							                 					<br/><br/>
 													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
-													 			<br/>
+													 			<br/><br/>
 													 			<a type='submit' class='btn btn-default btn-sm'>Enviar</a>
 													 	</form>
 							                 		</div>         

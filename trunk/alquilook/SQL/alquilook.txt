@@ -169,7 +169,6 @@ drop table if exists `mensaje`;
 CREATE TABLE IF NOT EXISTS `mensaje` (
   `IdMensaje` int(6) unsigned NOT NULL AUTO_INCREMENT,	
   `IdUsuario` int(6) unsigned NOT NULL,
-  `IdDestinatario` int(6),
   `Fecha` DATE NOT NULL,
   `Titulo` TEXT NOT NULL,
   `Contenido` TEXT NOT NULL,
