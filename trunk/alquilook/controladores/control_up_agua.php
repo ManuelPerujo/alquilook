@@ -4,7 +4,7 @@
 	include_once'../funciones/core.php';
 	
 
-	$uploaddir = '../documentos/facturasGas/';
+	$uploaddir = '../documentos/facturasAgua/';
 	$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 	
 	$idInmueble = $_POST['idInmueble'];

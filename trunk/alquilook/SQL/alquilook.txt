@@ -155,7 +155,8 @@ drop table if exists `contrato`;
 CREATE TABLE IF NOT EXISTS `contrato` (
   `IdContrato` int(6) unsigned NOT NULL AUTO_INCREMENT,	
   `IdInmueble` int(6) unsigned NOT NULL,
-  `Fecha` DATE NOT NULL,
+  `FechaEntrada` DATE NOT NULL,
+  `FechaSalida` DATE NOT NULL,
   `Direccion_Contenido` TEXT NOT NULL,
   `Estado` boolean NOT NULL,
   PRIMARY KEY (`IdContrato`),

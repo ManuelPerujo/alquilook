@@ -1,0 +1,25 @@
+﻿USE alquilook;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+INSERT INTO `usuarios` (`IdUsuario`, `Admin`, `Tipo`, `Usuario`, `Password`, `Email`, `Nombre`, `Apellidos`, `DNI`, `Telefono`, `Domicilio`, `CP`, `Poblacion`, `Provincia`, `CodigoActivacion`, `UsuarioActivo`) VALUES
+(1, 0, 'Propietario', 'fran', 'fran', 'fnavarrofalcon@gmail.com', 'Francisco Jesús', 'Navarro Falcón', '30228587D', '646033444', 'dasdasd', 14523, 'Sevilla', 'Sevilla', 8706, 1),
+(2, 0, 'Inquilino', 'kualum', '93026415', 'kuala@lumpur.es', 'kuala', 'lumpur', '23907645T', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1),
+(3, 1, 'Admin', 'admin', 'admin', 'admin@admin.es', 'administrator', 'de la pradera', '21345678K', '123456789', 'ayyy gorrionse', 12345, 'sevilla', 'sevilla', 1, 1);
+
+INSERT INTO `inquilino` (`IdInquilino`, `IdUsuario`, `IdInmueble`) VALUES
+(1, 2, 1);
+
+INSERT INTO `propietario` (`IdPropietario`, `IdUsuario`) VALUES
+(1, 1);
+
+INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
+(1, 1, '1-', 'Vivienda', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500);
+
+INSERT INTO `factura` (`IdFactura`, `IdInmueble`, `Tipo`, `FechaEntrada`, `FechaSalida`, `Direccion_Contenido`) VALUES
+(1, 1, 'luz', '2014-04-01', '2014-06-06', '../../documentos/facturasGas/prueba1.png');
+
+
+
+
+
