@@ -7,7 +7,7 @@
         $filtro = filtros_consulta_tabla($arrayFiltro);
         $orden = orden_consulta($arrayOrden);
         
-        $mensaje .= "<table class='table table-striped table-hover'>";
+        $mensaje .= "<table id='myTable' class='tablesorter table table-striped table-hover'>";
         $mensaje .= "<tr>";
                        
         foreach ($arrayAtributos as $key => $value) {

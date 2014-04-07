@@ -71,6 +71,7 @@ if (basename(getcwd()) == "alquilook"){
    	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
+    <script src="<?php echo $ruta?>js/jquery.tablesorter.min.js"></script>
 
     
     <!--      Ajax      -->
