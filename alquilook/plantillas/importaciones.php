@@ -87,7 +87,7 @@ if (basename(getcwd()) == "alquilook"){
     ?>
     
     <script type="text/javascript">
-    
+
 		$(document).ready(function(){
 			$(function(){
 				$("#myTable").tablesorter();
@@ -95,7 +95,6 @@ if (basename(getcwd()) == "alquilook"){
 		});
 		
 	</script>
-    
     
     
     
