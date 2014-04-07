@@ -4,13 +4,6 @@
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/admin.php';    
 ?>
-<script>
-	$(document).ready(function(){
-	$(function(){
-	$("#myTable").tablesorter();
-	});
-	});
-</script>
 
 <body>
     <?php

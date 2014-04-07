@@ -8,7 +8,7 @@
         $orden = orden_consulta($arrayOrden);
         
         $mensaje .= "<table id='myTable' class='tablesorter table table-striped table-hover'>";
-        $mensaje .= "<tr>";
+        $mensaje .= "<thead><tr>";
                        
         foreach ($arrayAtributos as $key => $value) {
             $mensaje .= "<th>$value</th>";
@@ -18,7 +18,7 @@
             $mensaje .= "<th>Opciones</th>";    
         }
         
-        $mensaje .= "</tr>";
+        $mensaje .= "</tr></thead>";
         
         $bd = new core();
         $bd->ConectaBD();
@@ -50,13 +50,9 @@
                     $row2 = $result2->fetch(PDO::FETCH_ASSOC);
                 }
                         
-                $mensaje .= "<tr>";
+                $mensaje .= "<tbody><tr>";
                 
-                if(basename($_SERVER['PHP_SELF']) == 'perfil_usuario_admin.php'){
-                			
-                	$direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector;		
-                	
-                }if(basename($_SERVER['PHP_SELF']) == 'tabla_usuarios_admin.php'){
+                if(basename($_SERVER['PHP_SELF']) == 'tabla_usuarios_admin.php'){
                 	
 					$direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector."&tipo=".$row2['Tipo'];
 					
@@ -64,13 +60,15 @@
                   
                 
                 
-                if(basename($_SERVER['PHP_SELF']) == ""){
+                if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php"){
                     foreach ($row2 as $key => $value2) {
                         $contenido = wordwrap($value2, 12);                            
                         $mensaje .= "<td>$contenido</td>";
                     }
                 }else{
                     foreach ($row2 as $key => $value2) {
+                    	
+						$direccion = $row2['Direccion_Contenido'];
                         $contenido = wordwrap($value2, 12);                            
                         $mensaje .= "<td><a class='enlace2' href=$direccion>$contenido</a></td>";                
                     }
@@ -88,19 +86,20 @@
                         $direccion4 = '../sesion/control_amistad.php?id='.$selector;
                         $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
-                        $mensaje .= "<a href='$direccion' target='_blank' title='ver mas'><i class='fa fa-eye'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                    	$direccionVer = '../../controladores/control_ver_mas.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
+                        $mensaje .= "<a href=$direccionVer  title='ver mas' target='_blank'><i class='fa fa-eye'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
                         $mensaje .= "<a href=$direccion2 title='editar'><i class='fa fa-pencil'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";    
                     }if($arrayOpciones['borrar'] == TRUE){
-                        $direccion1 = '../sesion/control_erase.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccion1 title='eliminar'><i class='fa fa-trash-o'></i></a>";    
+                        $direccionBorrar = '../../controladores/control_borrar_item.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
+                        $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
                     }
                     
                     $mensaje .= "</td>";
                                   
                 }
-                $mensaje .= "</tr>";
+                $mensaje .= "</tr></tbody>";
                     
             }
         }
@@ -537,7 +536,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'agua');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);
 				
 		$mensaje = "<div id='agua".$count."' class='collapse'>
@@ -579,7 +578,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'luz');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
 				
 		$mensaje = "<div id='luz".$count."' class='collapse'>
@@ -621,7 +620,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'gas');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);
 				
 		$mensaje = "<div id='gas".$count."' class='collapse'>
@@ -660,6 +659,12 @@
 			
 	function up_contrato($idInmueble, $count){
 				
+		$tabla = 'contrato'; $idTabla = 'IdContrato'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
+		$arrayFiltro = array('IdInmueble' => $idInmueble);
+		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
+				
 		$mensaje = "<div id='contrato".$count."' class='collapse'>
 				                      		 <div class='row'>
 							                 		<div class='col-xs-12'>
@@ -685,24 +690,7 @@
 													 	</div>
 													 </div>	
 													 <div class='col-xs-12'>
-								                        	<table class='table table-striped table-hover'>
-																   <thead>
-																	      <tr> 
-																		        <th>Fecha</th>
-																		        <th>Opciones</th>
-																	      </tr>
-																    </thead>
-																    <tbody>
-																		  <tr>
-																			    <td>04/05/2014 - 04/06/2015</td>
-																			    <td>
-																			    	<a href='' target='_blank' class='enlace2'><i class='fa fa-eye'></i></a>
-																			    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																			    	<a href='' class='enlace2'><i class='fa fa-trash-o'></i></a>
-																				</td>
-																		  </tr>
-																	</tbody> 
-															</table>
+								                        	".$mensajeTabla."
 							                 		</div>	            
 				                     		</div>
 				                     </div>	";	
@@ -723,8 +711,9 @@
 								                 			
 							                 		</div> 
 							                 		<div class='col-xs-12'>
-							                 			<form class='form-group  text-center' method='post' action=''>
-													 			<textarea name='' placeholder='Escriba aquí su mensaje...'></textarea>
+							                 			<form class='form-group  text-center' method='post' action='../../controladores/control_manda_mensaje.php'>
+							                 					<input type='hidden' name='idInmueble' value='$idInmueble' />
+													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
 													 			<br/>
 													 			<a type='submit' class='btn btn-default btn-sm'>Enviar</a>
 													 	</form>

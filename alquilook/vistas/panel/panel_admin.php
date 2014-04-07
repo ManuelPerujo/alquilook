@@ -38,11 +38,11 @@
 						    <span class="badge">0</span>
 							<i class="fa fa-bell"></i> Altas nuevas
 					  </a>
-					  <a href="#" class="list-group-item">
+					  <a href="<?php echo $ruta ?>vistas/admin/tabla_incidencias_admin.php" class="list-group-item">
 						  	<span class="badge">6</span>
 							<i class="fa fa-warning"></i> Incidencias
 					  </a>
-					  <a href="#" class="list-group-item">
+					  <a href="" class="list-group-item">
 						  	<span class="badge">2</span>
 							<i class="fa fa-key"></i> Inc. Inquilinos
 					  </a>

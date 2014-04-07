@@ -17,8 +17,8 @@
 			    				
 		$bd = new core();
 		
-		$query = "insert into factura (IdFactura,IdInmueble,Tipo,FechaEntrada,FechaSalida,Direccion_Contenido)
-				 values ('','$idInmueble','agua','$fechaEntrada','$fechaSalida','$direccion')";
+		$query = "insert into contrato (IdContrato,IdInmueble,FechaEntrada,FechaSalida,Direccion_Contenido,Estado)
+				 values ('','$idInmueble','$fechaEntrada','$fechaSalida','$direccion', '0')";
 		
 		$bd->query($query);		 
 				
