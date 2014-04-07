@@ -5,6 +5,14 @@
 	include_once '../../funciones/admin.php';    
 ?>
 
+<script>
+	$(document).ready(function(){
+	$(function(){
+	$("#myTable").tablesorter();
+	});
+	});
+</script>
+
 <body>
     <?php
         include_once '../../plantillas/cabecera_admin.php';
