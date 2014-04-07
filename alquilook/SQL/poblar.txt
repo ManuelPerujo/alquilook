@@ -16,8 +16,7 @@ INSERT INTO `propietario` (`IdPropietario`, `IdUsuario`) VALUES
 INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
 (1, 1, '1-', 'Vivienda', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500);
 
-INSERT INTO `factura` (`IdFactura`, `IdInmueble`, `Tipo`, `FechaEntrada`, `FechaSalida`, `Direccion_Contenido`) VALUES
-(1, 1, 'luz', '2014-04-01', '2014-06-06', '../../documentos/facturasGas/prueba1.png');
+
 
 
 
