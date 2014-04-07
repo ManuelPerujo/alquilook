@@ -21,27 +21,33 @@
       	<div class="col-lg-2 col-xs-1"></div>
 	 	<div class="col-lg-8 col-xs-10">
           <h3>Contacte con nosotros o consúltenos cualquier duda</h3>
-			 <form role="form" method="POST" action="formulariocontacto.php">
+          
+             <form role="form" method="POST" action="contact-form-submission.php">
 	            <div class="row">
-		              <div class="form-group col-lg-4 col-sm-4">
-		                <label for="input1">Nombre</label>
-		                <input type="text" name="contact_name" class="form-control" id="input1">
-		              </div>
-		              <div class="form-group col-lg-4 col-sm-4">
-		                <label for="input2">Email</label>
-		                <input type="email" name="contact_email" class="form-control" id="input2">
-		              </div>
-		              <div class="clearfix"></div>
-		              <div class="form-group col-lg-12">
-		                <label for="input3">Mensaje</label>
-		                <textarea name="contact_message" class="form-control" rows="6" id="input3"></textarea>
-		              </div>
-		              <div class="form-group col-lg-12">
-		                <input type="hidden" name="save" value="contact">
-		                <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
-		              </div>
-              	</div>
+	              <div class="form-group col-lg-4">
+	                <label for="input1">Nombre</label>
+	                <input type="text" name="contact_name" class="form-control" id="input1">
+	              </div>
+	              <div class="form-group col-lg-4">
+	                <label for="input2">Email</label>
+	                <input type="email" name="contact_email" class="form-control" id="input2">
+	              </div>
+	              <div class="form-group col-lg-4">
+	                <label for="input3">Teléfono</label>
+	                <input type="phone" name="contact_phone" class="form-control" id="input3">
+	              </div>
+	              <div class="clearfix"></div>
+	              <div class="form-group col-lg-12">
+	                <label for="input4">Mensaje</label>
+	                <textarea name="contact_message" class="form-control" rows="6" id="input4"></textarea>
+	              </div>
+	              <div class="form-group col-lg-12">
+	                <input type="hidden" name="save" value="contacto">
+	                <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+	              </div>
+              </div>
             </form>
+          
         </div>  
         <div class="col-lg-2 col-xs-1"></div>
     </div> 
