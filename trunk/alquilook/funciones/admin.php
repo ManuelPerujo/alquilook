@@ -312,6 +312,8 @@
 			foreach ($arrayIdUsuario as $key2 => $value2) {
 					
 				$count2++;
+				$send_mensaje_inquilino = send_mensaje_inquilino($value2, $count2);
+				
 				
 				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' limit 1";
 				$result2 = $bd->query($query2);
@@ -351,24 +353,7 @@
 							<!-------------------------------------------------------- Contenido desplegable INQUILINO----------------------->
 		                    <div class='row'>
                 	    		<div class='col-xs-12'>	  
-				                    <div id='mensaje2".$count2."' class='collapse'>
-				                      		 <div class='row'>
-                	    							<div class='col-sm-1'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/mensaje.png'>
-							                 		</div>  
-							                 		<div class='col-sm-3'>
-							                 			<p class='ficha'><h5>Escribir a inquilino</h5></p>
-								                 			
-							                 		</div> 
-							                 		<div class='col-xs-12'>
-							                 			<form class='form-group  text-center' method='post' action=''>
-													 			<textarea name='' placeholder='Escriba aquí su mensaje...'></textarea>
-													 			<br/>
-													 			<a type='submit' class='btn btn-default btn-sm'>Enviar</a>
-													 	</form>
-							                 		</div>         
-				                     		</div>
-				                     </div>	
+				                    ".$send_mensaje_inquilino."	
 				                     <div id='opciones2".$count2."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1'>	  
@@ -400,7 +385,7 @@
 			$facturaLuz = up_factura_luz_admin($value['IdInmueble'],$count);
 			$facturaGas = up_factura_gas_admin($value['IdInmueble'],$count);
 			$contrato = up_contrato($value['IdInmueble'], $count);
-			$sendMensaje = send_mensaje_propietario($value['IdInmueble'], $count);
+			$send_mensaje_propietario = send_mensaje_propietario($value['IdInmueble'], $count);
 			$opciones = opciones($value['IdInmueble'], $count);
 			
 				
@@ -435,7 +420,7 @@
 				                    .$facturaAgua
 				                    .$facturaGas
 				                    .$contrato
-				                    .$sendMensaje
+				                    .$send_mensaje_propietario
 				                    .$opciones
 				                    ."		
 		                    	</div>
@@ -528,6 +513,24 @@
 		$row4 = $result4->fetch(PDO::FETCH_ASSOC);	
 		
 		return $row4;
+	}
+	
+	function get_IdUsuarioPropietarioFromInmueble($idInmueble){
+				
+		$bd = new core();
+		
+		$query = "select IdPropietario from inmueble where IdInmueble = '$idInmueble'";
+		$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idPropietario = $row['IdPropietario'];
+		
+		$query2 = "select IdUsuario from propietario where IdPropietario = '$idPropietario'";	
+		$result2 = $bd->query($query2);
+		$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		return $row2['IdUsuario'];
+		
 	}
 	
 	function up_factura_agua_admin($idInmueble, $count){
@@ -700,8 +703,19 @@
 
 	function send_mensaje_propietario($idInmueble, $count){
 				
-		$idUsuario = $_GET['IdUsuario'];	
+		$idUsuario = null;	
+				
+		if($_GET['tipo'] == 'Propietario'){
+					
+			$idUsuario = $_GET['IdUsuario'];
 			
+		}if($_GET['tipo'] == 'Inquilino'){
+				
+			$idUsuario = get_IdUsuarioPropietarioFromInmueble($idInmueble);	
+			
+		}	
+				
+				
 		$mensaje = "<div id='mensaje".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1'>	  
@@ -713,12 +727,13 @@
 							                 		</div> 
 							                 		<div class='col-xs-12'>
 							                 			<form class='form-group  text-left' method='post' action='../../controladores/control_manda_mensaje.php'>
-							                 					<input type='hidden' name='idUsuario' value='$idUsuario' />
+							                 					<input type='hidden' name='idUsuarioPropietario' value='$idUsuario' />
+							                 					<input type='hidden' name='tipo' value='propietario' />
 							                 					<input size='80' type='text' name='titulo' placeholder='Asunto'/> 
 							                 					<br/><br/>
 													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
 													 			<br/><br/>
-													 			<a type='submit' class='btn btn-default btn-sm'>Enviar</a>
+													 			<input type='submit' class='btn btn-default btn-sm' value='Enviar'/>
 													 	</form>
 							                 		</div>         
 				                     		</div>
@@ -727,7 +742,40 @@
 		return $mensaje;
 		
 	}
+
+	function send_mensaje_inquilino($idInquilino, $count){
+				
 		
+		$mensaje = "<div id='mensaje2".$count."' class='collapse'>
+				                      		 <div class='row'>
+                	    							<div class='col-sm-1'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/mensaje.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3'>
+							                 			<p class='ficha'><h5>Escribir a inquilino</h5></p>
+								                 			
+							                 		</div> 
+							                 		<div class='col-xs-12'>
+							                 			<form class='form-group  text-left' method='post' action='../../controladores/control_manda_mensaje.php'>
+							                 					<input type='hidden' name='idUsuarioInquilino' value='$idInquilino' />
+							                 					<input type='hidden' name='tipo' value='inquilino' />
+							                 					<input size='80' type='text' name='titulo' placeholder='Asunto'/> 
+							                 					<br/><br/>
+													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
+													 			<br/><br/>
+													 			<input type='submit' class='btn btn-default btn-sm' value='Enviar'/>
+													 	</form>
+							                 		</div>         
+				                     		</div>
+				                     </div>";
+				                     
+				                     
+				                     	
+		
+		return $mensaje;
+		
+	}
+			
 	function opciones($idInmueble, $count){
 			
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
@@ -760,5 +808,146 @@
 		
 	}
 	
+	function modifica_usuario(){
+                 
+        $_SESSION['select_update'] = null;
+        $_SESSION['update'] = TRUE;     
+                    
+        $usuario = $_SESSION['Usuario'];
+        $email = $_SESSION['Email'];
+        $nombre = $_SESSION['Nombre'];
+        $apellidos = $_SESSION['Apellidos'];
+        $dni = $_SESSION['DNI'];
+        $fechaNacimiento = $_SESSION['FechaNacimiento'];
+        $telefono = $_SESSION['Telefono'];
+        $domicilio = $_SESSION['Domicilio'];
+        $cp = $_SESSION['CP'];
+        $poblacion = $_SESSION['Poblacion'];
+        $provincia = $_SESSION['Provincia'];
+        $profesion = $_SESSION['Profesion'];
+        $diagnostico = $_SESSION['Diagnostico'];
+        $fechaDiagnostico = $_SESSION['FechaDiagnostico'];
+        $centroDiagnostico = $_SESSION['CentroDiagnostico'];
+        $doctor = $_SESSION['Doctor'];
+        $grado = $_SESSION['GradoMinusvalia'];    
+        
+                echo "
+                <div id='modifica_usuario'>
+                
+                    <h2>Modifique los Datos de Usuarios</h2>
+                    
+                    <div id='formulario_registro'>
+                        
+                        <form class='registro' action='../sesion/control_set_usuario.php'  method='post'> 
+                            
+                            <div id='usuario_'>
+                                
+                                <div id='name_datos_usuario'><p>Datos Usuario</p></div>
+                                
+                                <div id='datos_usuario'>
+                                    
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Usuario:</strong></label>
+                                        <input type='text' class='contact_input' id='usuario' name='usuario' value='$usuario'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Email:</strong></label>
+                                        <input type='text' class='contact_input' id='email' name='email' value='$email'/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div id='personales'>
+                            
+                                <div id='name_datos_personales'><p>Datos Personales</p></div>
+                                
+                                <div id='datos_personales'>
+                                    
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Nombre:</strong></label>
+                                        <input type='text' class='contact_input' id='nombre' name='nombre' value='$nombre'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Apellidos:</strong></label>
+                                        <input type='text' class='contact_input' id='apellidos' name='apellidos' value='$apellidos'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>DNI:</strong></label>
+                                        <input type='text' class='contact_input' id='dni' name='dni' value='$dni'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Fecha de Nacimiento:</strong></label>
+                                        <input type='date' class='contact_input' id='fecha_nacimiento' name='fecha_nacimiento' value='$fechaNacimiento'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Telefono:</strong></label>
+                                        <input type='text' class='contact_input' id='telefono' name='telefono' value='$telefono'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Domicilio:</strong></label>
+                                        <input type='text' class='contact_input' id='domicilio' name='domicilio' value='$domicilio'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>CP:</strong></label>
+                                        <input type='text' class='contact_input' id='cp' name='cp' value='$cp'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Poblacion:</strong></label>
+                                        <input type='text' class='contact_input' id='poblacion' name='poblacion' value='$poblacion'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Provincia:</strong></label>
+                                        <input type='text' class='contact_input' id='provincia' name='provincia' value='$provincia'/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div id='medicos'>
+                            
+                                <div id='name_datos_medicos'><p>Datos de Interes</p></div>
+                                
+                                <div id='datos_medicos'>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Profesion:</strong></label>
+                                        <input type='text' class='contact_input' id='profesion' name='profesion' value='$profesion'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Diagnostico:</strong></label>
+                                        <input type='text' class='contact_input' id='diagnostico' name='diagnostico' value='$diagnostico'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Año de diagnostico:</strong></label>
+                                        <input type='date' class='contact_input' id='anyo_diag' name='anyo_diag' value='$fechaDiagnostico'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Centro de diagnostico:</strong></label>
+                                        <input type='text' class='contact_input' id='centro_diag' name='centro_diag' value='$centroDiagnostico'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Doctor que le trata:</strong></label>
+                                        <input type='text' class='contact_input' id='doctor' name='doctor' value='$doctor'/>
+                                    </div>
+                                    <div class='form_row_registro'>
+                                        <label class='contact'><strong>Grado de minusvalia:</strong></label>
+                                        <input type='text' class='contact_input' id='grado' name='grado' value='$grado'/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div id='submit'>
+                                <div id='submit_registro'>
+                                    <input type='submit' class='register' id='boton' value='Registrar' /> 
+                                </div>
+                            </div>
+                            
+                            <div style='float: left; width: 600px;'  class='clear'></div>
+                            
+                            
+                        </form>
+                    </div>";        
+    }
 		
 ?>	
