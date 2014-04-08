@@ -49,10 +49,9 @@ h6{
 	font-weight: 400;
 	}	
 
-h1.slider{
-	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
+.slider{
 	font-size:5em;
-	font-weight: 300; 
+	line-height: 70px;
 	}
 	
 
@@ -618,10 +617,9 @@ p.ficha2{
 	height: 30px;
 }
 
-h1.slider{
-	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:30px;
-	font-weight: 100; 
+.slider{
+	font-size:24px;
+	line-height: 15px;
 	}
 	
 h2.banner{
