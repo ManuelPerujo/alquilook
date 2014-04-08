@@ -1,32 +1,39 @@
 <?php
+
 	session_start();
 	
 	include_once'../funciones/core.php';
 	
-
+	$tipo = $_POST['tipo'];
 	
+	$idUsuario = null;
 	
+	if($tipo == 'propietario'){
 		
-	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile) && !empty($fechaEntrada) && !empty($fechaSalida)) {
-			    				
-		$bd = new core();
+		$idUsuario = $_POST['idUsuarioPropietario'];	
 		
-		$query = "insert into factura (IdFactura,IdInmueble,Tipo,FechaEntrada,FechaSalida,Direccion_Contenido)
-				 values ('','$idInmueble','agua','$fechaEntrada','$fechaSalida','$direccion')";
+	}if($tipo == 'inquilino'){
 		
-		$bd->query($query);		 
-		
-		
-		
-		$_SESSION['up_exito'] = TRUE;
-		
-	}if(empty($fechaEntrada) || empty($fechaSalida)){
-		
-		$_SESSION['up_exito'] = FALSE;
+		$idUsuario = $_POST['idUsuarioInquilino'];	
 		
 	}
 	
-	$direccion = $_SERVER['HTTP_REFERER'];
-
-	header("Location: ".$direccion);
+	
+	$titulo = $_POST['titulo'];
+	$contenido = $_POST['contenido'];
+	
+	
+	
+	$localtime_assoc = getdate(); $año = $localtime_assoc['year']; $mes = $localtime_assoc['mon']; $dia = $localtime_assoc['mday'];
+	$fechaMensaje = $año.'-'.$mes.'-'.$dia;
+	
+	$bd = new core();
+	
+	$query = "insert into mensaje (IdMensaje, IdUsuario, Fecha, Titulo, Contenido, Estado) 
+			 values ('','$idUsuario','$fechaMensaje','$titulo','$contenido','0')";	
+	
+	$bd->query($query);
+	
+	header("Location: ".$_SERVER['HTTP_REFERER']);
+	
 ?>
