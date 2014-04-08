@@ -314,7 +314,7 @@
 				$count2++;
 				$send_mensaje_inquilino = send_mensaje_inquilino($value2, $count2);
 				
-				
+								
 				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' limit 1";
 				$result2 = $bd->query($query2);
 				$row2 = $result2->fetch(PDO::FETCH_ASSOC);
@@ -365,7 +365,7 @@
 							                 		</div> 
 							                 		<div class='col-sm-8 text-center'>
 							                 				<p></p>
-							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php'>
+							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$value2."&tipo=Inquilino'>
 							                 					<i class='fa fa-user'></i> Editar Inquilino
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -776,7 +776,10 @@
 		
 	}
 			
-	function opciones($idInmueble, $count){
+	function opciones($count){
+			
+		$idUsuario = $_GET['IdUsuario'];
+		$tipo = $_GET['tipo'];	
 			
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
 				                      		 <div class='row'>
@@ -789,7 +792,7 @@
 							                 		</div> 
 							                 		<div class='col-sm-8 text-center'>
 							                 				<p></p>
-							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php'>
+							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$idUsuario."&tipo=Propietario'>
 							                 					<i class='fa fa-user'></i> Editar Propietario
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -808,146 +811,80 @@
 		
 	}
 	
-	function modifica_usuario(){
-                 
-        $_SESSION['select_update'] = null;
-        $_SESSION['update'] = TRUE;     
-                    
-        $usuario = $_SESSION['Usuario'];
-        $email = $_SESSION['Email'];
-        $nombre = $_SESSION['Nombre'];
-        $apellidos = $_SESSION['Apellidos'];
-        $dni = $_SESSION['DNI'];
-        $fechaNacimiento = $_SESSION['FechaNacimiento'];
-        $telefono = $_SESSION['Telefono'];
-        $domicilio = $_SESSION['Domicilio'];
-        $cp = $_SESSION['CP'];
-        $poblacion = $_SESSION['Poblacion'];
-        $provincia = $_SESSION['Provincia'];
-        $profesion = $_SESSION['Profesion'];
-        $diagnostico = $_SESSION['Diagnostico'];
-        $fechaDiagnostico = $_SESSION['FechaDiagnostico'];
-        $centroDiagnostico = $_SESSION['CentroDiagnostico'];
-        $doctor = $_SESSION['Doctor'];
-        $grado = $_SESSION['GradoMinusvalia'];    
-        
-                echo "
-                <div id='modifica_usuario'>
-                
-                    <h2>Modifique los Datos de Usuarios</h2>
-                    
-                    <div id='formulario_registro'>
-                        
-                        <form class='registro' action='../sesion/control_set_usuario.php'  method='post'> 
-                            
-                            <div id='usuario_'>
-                                
-                                <div id='name_datos_usuario'><p>Datos Usuario</p></div>
-                                
-                                <div id='datos_usuario'>
-                                    
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Usuario:</strong></label>
-                                        <input type='text' class='contact_input' id='usuario' name='usuario' value='$usuario'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Email:</strong></label>
-                                        <input type='text' class='contact_input' id='email' name='email' value='$email'/>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div id='personales'>
-                            
-                                <div id='name_datos_personales'><p>Datos Personales</p></div>
-                                
-                                <div id='datos_personales'>
-                                    
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Nombre:</strong></label>
-                                        <input type='text' class='contact_input' id='nombre' name='nombre' value='$nombre'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Apellidos:</strong></label>
-                                        <input type='text' class='contact_input' id='apellidos' name='apellidos' value='$apellidos'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>DNI:</strong></label>
-                                        <input type='text' class='contact_input' id='dni' name='dni' value='$dni'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Fecha de Nacimiento:</strong></label>
-                                        <input type='date' class='contact_input' id='fecha_nacimiento' name='fecha_nacimiento' value='$fechaNacimiento'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Telefono:</strong></label>
-                                        <input type='text' class='contact_input' id='telefono' name='telefono' value='$telefono'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Domicilio:</strong></label>
-                                        <input type='text' class='contact_input' id='domicilio' name='domicilio' value='$domicilio'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>CP:</strong></label>
-                                        <input type='text' class='contact_input' id='cp' name='cp' value='$cp'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Poblacion:</strong></label>
-                                        <input type='text' class='contact_input' id='poblacion' name='poblacion' value='$poblacion'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Provincia:</strong></label>
-                                        <input type='text' class='contact_input' id='provincia' name='provincia' value='$provincia'/>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div id='medicos'>
-                            
-                                <div id='name_datos_medicos'><p>Datos de Interes</p></div>
-                                
-                                <div id='datos_medicos'>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Profesion:</strong></label>
-                                        <input type='text' class='contact_input' id='profesion' name='profesion' value='$profesion'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Diagnostico:</strong></label>
-                                        <input type='text' class='contact_input' id='diagnostico' name='diagnostico' value='$diagnostico'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Año de diagnostico:</strong></label>
-                                        <input type='date' class='contact_input' id='anyo_diag' name='anyo_diag' value='$fechaDiagnostico'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Centro de diagnostico:</strong></label>
-                                        <input type='text' class='contact_input' id='centro_diag' name='centro_diag' value='$centroDiagnostico'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Doctor que le trata:</strong></label>
-                                        <input type='text' class='contact_input' id='doctor' name='doctor' value='$doctor'/>
-                                    </div>
-                                    <div class='form_row_registro'>
-                                        <label class='contact'><strong>Grado de minusvalia:</strong></label>
-                                        <input type='text' class='contact_input' id='grado' name='grado' value='$grado'/>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            
-                            <div id='submit'>
-                                <div id='submit_registro'>
-                                    <input type='submit' class='register' id='boton' value='Registrar' /> 
-                                </div>
-                            </div>
-                            
-                            <div style='float: left; width: 600px;'  class='clear'></div>
-                            
-                            
-                        </form>
-                    </div>";        
+	function modifica_propietario(){
+    	 		
+    	$idUsuario = $_GET['idUsuario'];
+    	
+    	$bd = new core();
+    	
+    	$query = "select * from usuarios where IdUsuario = '$idUsuario'";
+		$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+    	    	    				
+    	$direccion = $_SERVER['HTTP_REFERER'];
+    	
+    	$email = $row['Email'];	$nombre = $row['Nombre']; $apellidos = $row['Apellidos']; $dni = $row['DNI'];
+    	$telefono = $row['Telefono']; $domicilio = $row['Domicilio']; $cp = $row['CP']; $poblacion = $row['Poblacion']; $provincia = $row['Provincia'];
+    	    		 
+    	$mensaje = "<form method='post' action='../../controladores/control_set_propietario.php' >
+    							<input type='hidden' name='idUsuario' value='$idUsuario' />
+    							<input type='hidden' name='direccion' value='$direccion' />                                    
+		                        <input type='email' class='form-control' value='$email' name='email_propietario' placeholder='Email *' /> 
+		                        <input type='text' class='form-control' value='$nombre' id='nombre' name='nombre_propietario' placeholder='Nombre *' />
+		                        <input type='text' class='form-control' value='$apellidos' name='apellidos_propietario' placeholder='Apellidos *' /> 
+		                        <input type='text' class='form-control' value='$dni' name='dni_propietario' placeholder='DNI *' />
+		                        <input type='text' class='form-control' value='$telefono' name='telefono_propietario' placeholder='Teléfono *' /> 
+		                        <input type='text' class='form-control' value='$domicilio' name='domicilio_propietario' placeholder='Domicilio *' />
+		                        <input type='text' class='form-control' value='$cp' name='cp_propietario' placeholder='CP *' /> 
+		                        <input type='text' class='form-control' value='$poblacion' name='poblacion_propietario' placeholder='Poblacion *' />
+		                        <input type='text' class='form-control' value='$provincia' name='provincia_propietario' placeholder='Provincia *' />                       
+		                        <small>* Campos obligatorios</small>
+		                        <br/><br/>
+		    					<input type='submit' class='btn btn-default btn-sm' value='Guardar' />
+		    					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    		</form>";
+		    		
+		return $mensaje;    			
+    	  	
     }
-		
+
+	function modifica_inquilino(){
+    		
+    	$idUsuario = $_GET['idUsuario']; 		
+    	    	
+    	$bd = new core();
+    	
+    	$query = "select * from usuarios where IdUsuario = '$idUsuario'";
+		$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+    	    	    				
+    	$direccion = $_SERVER['HTTP_REFERER'];
+    	
+    	$email = $row['Email'];	$nombre = $row['Nombre']; $apellidos = $row['Apellidos']; $dni = $row['DNI'];
+    	$telefono = $row['Telefono'];
+    	    		 
+    	$mensaje = "<form method='post' action='../../controladores/control_set_inquilino.php' >
+    							<input type='hidden' name='idUsuario' value='$idUsuario' />
+    							<input type='hidden' name='direccion' value='$direccion' />                                    
+		                        <input type='email' class='form-control' value='$email' name='email_propietario' placeholder='Email *' /> 
+		                        <input type='text' class='form-control' value='$nombre' id='nombre' name='nombre_propietario' placeholder='Nombre *' />
+		                        <input type='text' class='form-control' value='$apellidos' name='apellidos_propietario' placeholder='Apellidos *' /> 
+		                        <input type='text' class='form-control' value='$dni' name='dni_propietario' placeholder='DNI *' />
+		                        <input type='text' class='form-control' value='$telefono' name='telefono_propietario' placeholder='Teléfono *' /> 
+		                        <small>* Campos obligatorios</small>
+		                        <br/><br/>
+		    					<input type='submit' class='btn btn-default btn-sm' value='Guardar' />
+		    					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    		</form>";
+		    		
+		return $mensaje;    			
+    	  	
+    }    
+    
+    
+    
+    
+    
+    
+    		
 ?>	
