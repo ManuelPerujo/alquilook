@@ -5569,6 +5569,7 @@ button.close {
   top:1px;
   right: 20%;
   left: 10%;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, .7);
 }
 
 

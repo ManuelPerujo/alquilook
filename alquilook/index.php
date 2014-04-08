@@ -17,19 +17,25 @@
             <div class="item active">
                 <div class="fill" style="background-image:url('img/slide.jpg');"></div>
                 <div class="carousel-caption">
-                	<h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
+                	<h3 class="slider">Gestiona</h3>
+                    <h3 class="slider">Alquilook</h3>
+                    <h3 class="slider">desde tu móvil</h3>
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('img/slide2.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
+                    <h3 class="slider">El pago y cobro</h3>
+                    <h3 class="slider">de suministros</h3>
+                    <h3 class="slider">es tarea nuestra</h3>
                 </div>
             </div>
-             <div class="item">
+            <div class="item">
                 <div class="fill" style="background-image:url('img/slide3.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1 class="slider">Texto e<br/>imágenes<br/>provisionales</h1>
+                    <h3 class="slider">Asegúrate</h3>
+                    <h3 class="slider">el cobro de tus</h3>
+                    <h3 class="slider">alquileres</h3>
                 </div>
             </div>
         </div>
