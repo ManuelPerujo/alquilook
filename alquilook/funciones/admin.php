@@ -776,7 +776,7 @@
 		
 	}
 			
-	function opciones($count){
+	function opciones($idInmueble, $count){
 			
 		$idUsuario = $_GET['IdUsuario'];
 		$tipo = $_GET['tipo'];	
@@ -796,7 +796,7 @@
 							                 					<i class='fa fa-user'></i> Editar Propietario
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href=''>
+							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_inmueble_admin.php?idInmueble=".$idInmueble."'>
 							                 					<i class='fa fa-home'></i> Editar Inmueble
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -881,9 +881,88 @@
     	  	
     }    
     
+    function modifica_inmueble(){
+    	 		
+    	$idInmueble = $_GET['idInmueble'];
+    					
+    	$bd = new core();
+    	
+    	$query = "select * from inmueble where IdInmueble = '$idInmueble'";
+		$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+    	    	    				
+    	    	
+    	$tipo = $row['TipoInmueble']; $direccion = $row['Direccion']; $cp = $row['CP'];
+    	$poblacion = $row['Municipio']; $provincia = $row['Provincia'];
+    	$numHabitacion = $row['NumHabitaciones']; $numAseos = $row['NumServicios']; $metros = $row['Metros']; 
+    	    		 
+    	$mensaje = "<form class='form-inline text-left' method='post' action='../../controladores/control_set_inmueble.php'>  		               		 	                                 
+		                       <label><h6>Tipo de inmueble&nbsp;&nbsp;</h6></label> 
+			                        <select class='selector' name='tipoInmueble' value='$tipo'>
+									  <option value='Vivienda'>Vivienda</option>
+									  <option value='Local_comercial'>Local comercial</option>
+									  <option value='Garaje'>Garaje</option>
+									  <option value='Finca Rustica'>Finca rústica</option>
+									</select>
+		                        <br/> 
+		                        <label><h6>Dirección&nbsp;&nbsp;</h6></label>
+		                         <br/>  
+									<input type='text' class='form-control' name='direccion' placeholder='Direccion' value='$direccion' />
+			                        <input type='text' class='form-control' name='municipio_inmueble' placeholder='Municipio' value='$poblacion' />                                   
+			                        <input type='text' class='form-control' name='cp_inmueble' placeholder='Código postal' value='$cp' />
+			                        <input type='text' class='form-control' name='provincia_inmueble' placeholder='Provincia' value='$provincia' /> 
+		                         <br/>
+		                        <label><h6>Nº de metros&nbsp;&nbsp;</h6></label> 
+			                        <input type='text' class='form-control' name='metros_inmueble' placeholder='Metros' value='$metros' />
+		                         <br/>
+		                        <label><h6>Nº de habitaciones&nbsp;&nbsp;</h6></label> 
+			                        <select class='selector' name='numero_habitaciones'>
+			                          <option selected >$numHabitacion</option>
+			                          <option value='0'>0</option>	
+									  <option value='1'>1</option>
+									  <option value='2'>2</option>
+									  <option value='3'>3</option>
+									  <option value='4'>4</option>
+									  <option value='5'>5</option>
+									</select>
+		                         <br/>
+		                        <label><h6>Nº de aseos&nbsp;&nbsp;</h6></label> 
+			                        <select class='selector' name='numero_aseos'>
+			                          <option selected >$numAseos</option>
+			                          <option value='0'>0</option>
+									  <option value='1'>1</option>
+									  <option value='2'>2</option>
+									  <option value='3'>3</option>
+									</select>  
+		                        <br/><br/>
+		                        <input type='hidden' class='btn btn-default btn-sm' name='idInmueble' value='$idInmueble' />
+		    					<input type='submit' class='btn btn-default btn-sm' value='Continuar' />
+		                    </form>";
+		    		
+		return $mensaje;    			
+    	  	
+    } 
     
-    
-    
+    function modifica_estancia(){
+    	 		
+    	$idInmueble = $_GET['idInmueble'];
+    	$mensaje = null;
+		
+    	$bd = new core();
+    	
+    	$query = "select IdEstancia from estancia where IdInmueble = '$idInmueble'";
+		$result = $bd->query($query);
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+    	    	    				
+    	foreach ($row as $key => $value) {
+					
+			$mensaje .= get_estancia($value['IdEstancia']);	
+			
+		}    	
+    	  
+        return $mensaje;
+        	  	
+    }
     
     
     		

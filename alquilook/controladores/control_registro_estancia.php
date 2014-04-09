@@ -7,9 +7,20 @@ include_once("../funciones/usuarios.php");
 
 
 if($_GET['estancia'] == 'TRUE'){
-									
-			$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);	
-		        
+			
+			if(substr(basename($_SERVER['HTTP_REFERER']), 0,25) == 'editar_estancia_admin.php'){
+				
+				$IdInmueble = $_GET['idInmueble'];
+				
+			}else{
+				
+				$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);	
+		    	$IdInmueble = $_SESSION["IdInmueble"];	
+				
+			}						
+			
+			
+			    
 	        extract($_POST);
 	        
 	        $tipoEstancia = $_POST["tipoEstancia"];
@@ -27,9 +38,7 @@ if($_GET['estancia'] == 'TRUE'){
 			$frigorifico = $_POST["frigorifico"]; $vitroceramica = $_POST["vitroceramica"]; $horno = $_POST["horno"];
 	        $microondas = $_POST["microondas"]; $lavadora = $_POST["lavadora"]; $secadora = $_POST["secadora"];
 	        $lavavajillas = $_POST["lavavajillas"]; $aspiradora = $_POST["aspiradora"]; $termo = $_POST["termo"];
-					
-	        $IdInmueble = $_SESSION["IdInmueble"];
-			
+				        			
 			$arrayArticulos = array('Sofa'=>$sofa, 'Mesa'=>$mesa, 'Silla'=>$silla, 'Cuadro'=>$cuadro, 'Cama Individual'=>$camaInd, 'Cama Doble'=>$camaDoble,
 								   'Mesita Noche'=>$mesitaNoche, 'Comoda'=>$comoda, 'Accesorio Servicio'=>$accesorioAseo, 'Mueble Aseo'=>$muebleAseo,
 								   'Espejo'=>$espejo, 'Hidromasaje'=>$hidromasaje, 'Television'=>$television, 'Dvd'=>$dvd, 'Equipo Sonido'=>$equipoMusica,
@@ -62,14 +71,8 @@ if($_GET['estancia'] == 'TRUE'){
 					}
 					
 				}
-	            print_r($arrayArticulos);
-				
-				echo "arrayVacio: ".$arrayVacio;
-				
-				echo "observaciones: ".empty($observaciones);
-				
-				echo "error: ".$_SESSION['errorEstancia'];
-															
+	            				
+																			
 				if($arrayVacio != TRUE && !empty($observaciones)){
 								
 					$query1 = "insert into estancia (IdEstancia, IdInmueble, Tipo) values ('','$IdInmueble','$tipoEstancia') ";
@@ -98,6 +101,8 @@ if($_GET['estancia'] == 'TRUE'){
 					$query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
 					
 					$bd->query($query3);
+					
+					echo $query1;
 						
 					unset($_SESSION['errorEstancia']);
 							
@@ -120,7 +125,17 @@ if($_GET['estancia'] == 'TRUE'){
 				
 	            unset($_POST);
 				
-				header("Location: ../vistas/inmueble/registro_estancia.php");    
+				if(substr(basename($_SERVER['HTTP_REFERER']), 0,25) == 'editar_estancia_admin.php'){
+						
+					header("Location: ".$_SERVER['HTTP_REFERER']);	
+					
+				}else{
+					
+					header("Location: ../vistas/inmueble/registro_estancia.php");
+					
+				}
+				
+				    
 	            
 	
 	        }catch(PDOException $except) {

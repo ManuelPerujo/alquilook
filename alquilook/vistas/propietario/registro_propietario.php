@@ -59,7 +59,7 @@
 					        </div>
 					      </div>
     					</div>
-    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
+    					<input type="submit" class="btn btn-primary btn-sm" value="Continuar" />
                     </form> 
                 </div>
                 <div class="col-md-4 col-xs-2 text-center"></div>                                            
