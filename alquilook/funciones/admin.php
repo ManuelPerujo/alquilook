@@ -369,7 +369,7 @@
 							                 					<i class='fa fa-user'></i> Editar Inquilino
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href=''>
+							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."'>
 							                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
 							                 				</a>
 							                 		</div>         
@@ -779,8 +779,7 @@
 	function opciones($idInmueble, $count){
 			
 		$idUsuario = $_GET['IdUsuario'];
-		$tipo = $_GET['tipo'];	
-			
+					
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1'>	  
@@ -800,7 +799,7 @@
 							                 					<i class='fa fa-home'></i> Editar Inmueble
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href=''>
+							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario'>
 							                 					<i class='fa fa-trash-o'></i> Borrar Propietario
 							                 				</a>
 							                 		</div>         

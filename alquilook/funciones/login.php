@@ -9,7 +9,7 @@ o falso */
      try{
          
         $bd->ConectaBD();
-        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password'";
+        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and UsuarioActivo = '1'";
     
         $result = $bd->query($query);
     
