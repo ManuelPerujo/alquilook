@@ -10,8 +10,7 @@
 						|&nbsp;&nbsp;&nbsp;<a class="enlaceblanco" href="condiciones.html#privacidad"><i class="fa fa-umbrella"></i>&nbsp;POLÍTICA DE PRIVACIDAD</a>
         </div>
     </div>
-	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '8d9ffc87-8570-4c0f-b805-91a608a190cf', f: true }); done = true; } }; })();</script>
-
+	
 </body>
 
 </html>

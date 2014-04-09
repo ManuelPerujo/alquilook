@@ -32,20 +32,20 @@ if (isset($error)) {
     header('Location: contacto.php?e='.urlencode($error)); exit;
 }
 
-$headers = "From: $email_address\r\n"; 
+$headers = "De: $email_address\r\n"; 
 $headers .= "Reply-To: $email_address\r\n";
 
 // write the email content
-$email_content = "Name: $name\n";
-$email_content .= "Email Address: $email_address\n";
-$email_content .= "Phone Number: $phone\n";
-$email_content .= "Message:\n\n$message";
+$email_content = "Nombre: $name\n";
+$email_content .= "Email: $email_address\n";
+$email_content .= "Teléfono: $phone\n";
+$email_content .= "Mensaje:\n$message";
 	
 // send the email
 //ENTER YOUR INFORMATION BELOW FOR THE FORM TO WORK!
 mail ('info@alquilook.com', 'Alquilook - Mensaje desde la web', $email_content, $headers);
 	
 // send the user back to the form
-header('Location: contacto.html?s='.urlencode('Gracias por escribirnos..')); exit;
+header('Location: gracias.php?s='.urlencode('Gracias por escribirnos..')); exit;
 
 ?>

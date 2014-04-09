@@ -11,13 +11,14 @@ if (basename(getcwd()) == "alquilook"){
 	|| basename($_SERVER['PHP_SELF']) == "panel_propietario.php" || basename($_SERVER['PHP_SELF']) == "panel_inquilino.php" 
 	|| basename($_SERVER['PHP_SELF']) == "registro_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_pro.php"
 	|| basename($_SERVER['PHP_SELF']) == "perfil_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_mensajes_admin.php"
-	|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_admin.php" || basename($_SERVER['PHP_SELF']) == "mensajes_propietario.php"
+	|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_admin.php" || basename($_SERVER['PHP_SELF']) == "mensaje_propietario.php"
 	|| basename($_SERVER['PHP_SELF']) == "tabla_usuarios_admin.php" || basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "mensaje_admin.php" || basename($_SERVER['PHP_SELF']) == "incidencia_admin.php"
-	|| basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inq.php" || basename($_SERVER['PHP_SELF']) == "mensajes_inquilino.php"
+	|| basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inq.php" || basename($_SERVER['PHP_SELF']) == "mensaje_inquilino.php"
 	|| basename($_SERVER['PHP_SELF']) == "editar_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "editar_inmueble_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "editar_estancia_admin.php" || basename($_SERVER['PHP_SELF']) == "editar_inquilino_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "tabla_altasnuevas_admin.php" || basename($_SERVER['PHP_SELF']) == "altanueva_admin.php"
+	|| basename($_SERVER['PHP_SELF']) == "tabla_mensajes_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_mensajes_propietario.php"
 	){
 
     $ruta = "../../";    
