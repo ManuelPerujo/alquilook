@@ -8,6 +8,7 @@ if(!$_POST || count($_POST) == 0){
 }
 
 include_once("../funciones/core.php");
+require_once("Mail.php");
 //include ("funciones/validacion_datos.php");
 
 
@@ -26,6 +27,7 @@ include_once("../funciones/core.php");
         $codigoActivacion = rand(0, 9999);
 						
 		$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
+
 	    $mensaje .= 'www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
 	                
 	    $headers = "MIME-Version: 1.0\r\n";
