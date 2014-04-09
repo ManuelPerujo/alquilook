@@ -53,7 +53,7 @@
 						                        <li class="list-group-item">5 min. de gloryhole</li>
 						                        <li class="list-group-item">100 grs. de adobo</li>
 						                        <li class="list-group-item">100 MB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="1" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
@@ -73,7 +73,7 @@
 						                       <li class="list-group-item">10 min. de gloryhole</li>
 						                        <li class="list-group-item">250 grs. de adobo</li>
 						                        <li class="list-group-item">300 MB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="2" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
@@ -93,7 +93,7 @@
 						                        <li class="list-group-item">15 min. de gloryhole</li>
 						                        <li class="list-group-item">500 grs. de adobo</li>
 						                        <li class="list-group-item">1 GB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="3" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
