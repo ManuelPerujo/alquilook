@@ -24,21 +24,15 @@ include_once("../funciones/core.php");
         $error = true;
 		
         $codigoActivacion = rand(0, 9999);
-		
-		
-		$host = "mail.alquilook.com";  // The name of your mail server. (Commonly mail.yourdomain.com if your mail is hosted with HostMySite)
-		$username = "info@alquilook.com";  // A valid email address you have setup 
-		$from_address = "info@alquilook.com";  // If your mail is hosted with HostMySite this has to match the email address above 
-		$password = "Alquilook2014";  // Password for the above email address
-		$reply_to = "info@alquilook.com";  //Enter the email you want customers to reply to
-				
+						
 		$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
-	    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
-	    		
-		$auth = array('host' => $host, 'auth' => true, 'username' => $username, 'password' => $password);
-		$headers = array('From' => $from_address, 'To' => $email, 'Subject' => 'Alquilook: Confirmación registro de usuario', 'Reply-To' => $reply_to);
-
-		$bd = new core();
+	    $mensaje .= 'www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
+	                
+	    $headers = "MIME-Version: 1.0\r\n";
+	    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+	    $headers .= "From: info@alquilook.com\r\n";
+		
+        $bd = new core();
 
 		if($aceptaCondiciones == 'ok'){
 			
@@ -66,9 +60,7 @@ include_once("../funciones/core.php");
 	                	$_SESSION['erroRegistro'] = FALSE;
 	                	$_SESSION['bienvenida'] = true;
 						
-						// This section send the email
-						$smtp = Mail::factory('smtp', $auth);
-						$mail = $smtp->send($email, $headers, $email_message);	
+						mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
 	                }
 	                
 	            }
