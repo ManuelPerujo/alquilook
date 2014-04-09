@@ -27,18 +27,80 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
-                	<div class="row-fluid">
-                		<div class="col-sm-8">
-                			<div class="row-fluid">
-			                	<div class="col-sm-12">
-			                		<h3><i class="fa fa-cogs"></i> Crear inmueble - (Paso 1 de 3)</h3>
-			                	</div>
-			                	<div class="col-sm-12 text-left alert alert-success alert-dismissable">
-				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		 							<strong><i class="fa fa-exclamation-circle fa-lg"></i></strong> 
-		 							Siga 3 sencillos pasos para crear su inmueble con sus características y su inquilino.
-			                	</div>
-			                </div>	
+                		<h3><i class="fa fa-cogs"></i> Tipo de contrato y datos de su inmueble (Paso 1 de 3)</h3>
+                			<div class="row">
+                				<div class="col-sm-6">
+									<div class="text-left alert alert-success alert-dismissable">
+						               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				 							<h4><i class="fa fa-info-circle fa-lg"></i> Elija la modalidad de contrato que más le interese<br/> y registre su inmueble e inquilino en 3 sencillos pasos.</h4>
+				                	</div>
+				                </div>
+				            </div>
+				            <div class="row">   	
+			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">	
+			                		<div class="col-sm-3">
+						                <div class="panel panel-default text-center">
+						                    <div class="panel-heading mayusculas">
+						                        <strong><i class="fa fa-star"></i> Básico</strong>
+						                    </div>
+						                    <div class="panel-body">
+						                        <h3 class="panel-title price">5
+						                            <span class="price-cents">%</span>
+						                            <span class="price-month">mes</span>
+						                        </h3>
+						                    </div>
+						                    <ul class="list-group">
+						                        <li class="list-group-item">5 min. de gloryhole</li>
+						                        <li class="list-group-item">100 grs. de adobo</li>
+						                        <li class="list-group-item">100 MB para youporn.com</li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="1" />&nbsp;&nbsp; Acepto</h4></li>
+						                    </ul>
+						                </div>
+			            			</div>
+			                		<div class="col-sm-3">
+						                <div class="panel panel-default text-center">
+						                    <div class="panel-heading mayusculas">
+						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i> Medio</strong>
+						                    </div>
+						                    <div class="panel-body">
+						                        <h3 class="panel-title price">7
+						                            <span class="price-cents">%</span>
+						                            <span class="price-month">mes</span>
+						                        </h3>
+						                    </div>
+						                    <ul class="list-group">
+						                       <li class="list-group-item">10 min. de gloryhole</li>
+						                        <li class="list-group-item">250 grs. de adobo</li>
+						                        <li class="list-group-item">300 MB para youporn.com</li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="2" />&nbsp;&nbsp; Acepto</h4></li>
+						                    </ul>
+						                </div>
+			            			</div>
+			                		<div class="col-sm-3">
+						                <div class="panel panel-default text-center">
+						                    <div class="panel-heading mayusculas">
+						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Premium</strong>
+						                    </div>
+						                    <div class="panel-body">
+						                        <h3 class="panel-title price">10
+						                            <span class="price-cents">%</span>
+						                            <span class="price-month">mes</span>
+						                        </h3>
+						                    </div>
+						                    <ul class="list-group">
+						                        <li class="list-group-item">15 min. de gloryhole</li>
+						                        <li class="list-group-item">500 grs. de adobo</li>
+						                        <li class="list-group-item">1 GB para youporn.com</li>
+						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="3" />&nbsp;&nbsp; Acepto</h4></li>
+						                    </ul>
+						                </div>
+			            			</div>
+			            		</form>	
+                	</div>
+                	<br/>	
 		                	<div class="row-fluid">
 		                	<div class="col-sm-12">
 		               		 <form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">  		               		 	                                 
@@ -89,9 +151,7 @@
 		                    </form>
 		                    <br/><br/>
 		                    </div>
-		                    </div>
-		               </div>
-		               <div class="col-sm-4"></div>    	              
+		                    </div>  	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
