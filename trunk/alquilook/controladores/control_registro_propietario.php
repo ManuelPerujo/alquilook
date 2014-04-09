@@ -8,7 +8,6 @@ if(!$_POST || count($_POST) == 0){
 }
 
 include_once("../funciones/core.php");
-require_once("Mail.php");
 //include ("funciones/validacion_datos.php");
 
 
@@ -52,13 +51,13 @@ require_once("Mail.php");
 	                
 	            }else{
 	            /*insertamos los datos del nuevo usuario*/
-	                $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
+	                $query2 = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
 	                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
 	                    values ('', '0', 'Propietario', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
 	                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
 	                
 									            
-	                if($bd->conexion->exec($query)){
+	                if($bd->conexion->exec($query2)){
 	                	$_SESSION['erroRegistro'] = FALSE;
 	                	$_SESSION['bienvenida'] = true;
 						
@@ -79,7 +78,6 @@ require_once("Mail.php");
 
         if($aceptaCondiciones != 'ok'){
         		
-        			
         	header("Location: ../vistas/propietario/registro_propietario.php");	
         	
         }
