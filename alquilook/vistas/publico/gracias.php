@@ -21,9 +21,11 @@
       	<div class="col-lg-2 col-xs-1"></div>
 	 	<div class="col-lg-8 col-xs-10">
           <h3>Gracias. Su mensaje ha sido enviado correctamente.</h3>
+          <a href="contacto.php" class="btn btn-primary btn-sm">Volver</a>
         </div>  
         <div class="col-lg-2 col-xs-1"></div>
     </div> 
+    <br/>
     <hr class="grissimple"/>
     <div class="row">
     	<div class="col-lg-2 col-xs-1"></div>
