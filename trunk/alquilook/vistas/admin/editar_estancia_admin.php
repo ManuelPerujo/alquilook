@@ -2,7 +2,8 @@
     session_start();
     include_once '../../plantillas/importaciones.php';
 	include_once '../../funciones/core.php';
-	include_once '../../funciones/admin.php';    
+	include_once '../../funciones/admin.php';
+	include_once '../../funciones/registro.php';    
 ?>
 
 <body>
@@ -32,12 +33,26 @@
 		            </div>
 		            <div class="row">
                 	    		<div class="col-xs-12">
-		                			<h4><i class="fa fa-pencil"></i> Editar habitaciones - (Paso 2 de 3)</h4>
+		                			<h4><i class="fa fa-pencil"></i> Editar habitaciones - (Paso 2 de 2)</h4>
 		                		</div>
 		            </div>
+		            
+		            <?php 
+		            	if(isset($_GET['idInmueble'])){
+		            		
+							$idInmueble = $_GET['idInmueble'];
+							
+							echo modifica_estancia();	
+							
+														
+		            	}
+		            	
+		            
+		            ?>
+		            
 		           <div class="row-fluid">
 		                	<div class="col-sm-8">
-		               		<form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php?estancia=TRUE">  
+		               		<form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php?estancia=TRUE&idInmueble=<?php echo $idInmueble; ?>">  
 		                       <div class="row">
 		                       		<div class="row">			
 										  <div class="col-xs-12">
@@ -238,7 +253,14 @@
 
 		                        <button name="submit" type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus-circle"></i> Añadir estancia</button>
 		                        &nbsp;&nbsp;&nbsp;
-		                        <a type="button" href="../../controladores/control_registro_estancia.php?estancia=FALSE" class="btn btn-default btn-sm">Continuar</a>
+		                        <?php
+		                         
+		                        	$direccion = null;
+		                        	$direccion = $_SESSION['direccion'];
+																										
+		                        ?>
+		                        
+		                        <a type="button" href="<?php echo $direccion; ?>" class="btn btn-default btn-sm">Finalizar</a>
 		                    </form>
 		                    <br/>
 		                    </div>

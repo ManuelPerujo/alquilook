@@ -8,11 +8,10 @@
 		exit();
 	}
 	
-	
-			
+				
 	$bd = new core();
 	
-	if(basename($_SERVER['HTTP_REFERER']) == 'registro_estancia.php'){
+	if(basename($_SERVER['HTTP_REFERER']) == 'registro_estancia.php' || substr(basename($_SERVER['HTTP_REFERER']), 0,25) == 'editar_estancia_admin.php'){
 		
 		$idEstancia = $_GET['id'];
 		$query = "delete from estancia where IdEstancia = '$idEstancia'";	

@@ -69,6 +69,10 @@
 		            <!-------------------------------------------------------- Contenido fijo  PROPIETARIO----------------------->
 		             
 		            <?php
+		            					            				            			
+		            			$direccion = $_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING'];
+								$_SESSION['direccion'] = $direccion;
+		            
 		                		if(isset($_GET["IdUsuario"])){
 		                			
 									$tipo = $_GET['tipo'];
