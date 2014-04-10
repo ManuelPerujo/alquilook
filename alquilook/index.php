@@ -50,7 +50,7 @@
     <!-------------------------------------------------------------------------------------------------------------------------------Carousel------->
     
     
-    <div class="responsive-slider-parallax" data-spy="responsive-slider" data-parallax="true" data-parallax-direction="1">
+    <div class="responsive-slider-parallax" data-spy="responsive-slider" data-autoplay="true" data-parallax="true" data-parallax-direction="1">
       <div class="slides-container" data-group="slides">
         <ul>
           <li>
@@ -58,8 +58,8 @@
               <div class="container">
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h2>Responsive slider</h2>
-                    <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">With one to one swipe movement!</div>
+                    <h3 class="slider">Responsive<br/>slider</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
                   <div class="caption img-html5" data-animate="slideAppearLeftToRight" data-delay="200">
                     <img src="img/html5.png">
@@ -76,29 +76,32 @@
               <div class="container">
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h2>Twitter Boostrap</h2>
-                    <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">Compatible!</div>
+                    <h3 class="slider">Responsive<br/>slider</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
-                  <div class="caption img-bootstrap" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/bootstrap.png">
+                  <div class="caption img-html5" data-animate="slideAppearUpToDown" data-delay="200">
+                    <img src="img/html5.png">
                   </div>
-                  <div class="caption img-twitter" data-animate="slideAppearUpToDown">
-                    <img src="img/twitter.png">
+                  <div class="caption img-css3" data-animate="slideAppearDownToUp">
+                    <img src="img/css3.png">
                   </div>
                 </div>
               </div>
             </div>
           </li>
-          <li>
+           <li>
             <div class="slide-body" data-group="slide">
               <div class="container">
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h2>Custom animations</h2>
-                    <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">For any caption you use!</div>
+                    <h3 class="slider">Responsive<br/>slider</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
-                  <div class="caption img-jquery" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/jquery.png">
+                  <div class="caption img-html5" data-animate="slideAppearDownToUp" data-delay="200">
+                    <img src="img/html5.png">
+                  </div>
+                  <div class="caption img-css3" data-animate="slideAppearUpToDown">
+                    <img src="img/css3.png">
                   </div>
                 </div>
               </div>
@@ -237,6 +240,7 @@
     <script src="js_slider/jquery.js"></script>
     <script src="js_slider/jquery.event.move.js"></script>
     <script src="js_slider/responsive-slider.js"></script>
+
        
 </body>
 </html>

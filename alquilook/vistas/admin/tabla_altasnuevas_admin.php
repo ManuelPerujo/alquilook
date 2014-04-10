@@ -25,9 +25,8 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div id="" class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-bell"></i> Altas nuevas</h3> 
-                	<hr class="grisdoble"/>
                 	
-		                	<table id="myTable" class="table table-hover table-striped tablesorter">
+		                	<table id="table_id" class="table table-hover table-striped">
 								<thead>
 									<tr>
 										<th>Tipo</th>
