@@ -23,8 +23,9 @@ h1{
 
 h2{
 	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
-	font-size:2em;	
+	font-size:1.7em;	
 	font-weight: 300; 
+	line-height: 25px;
 	}
 	
 h3{
@@ -60,6 +61,7 @@ h2.banner{
 	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:2em;	
 	font-weight: 300;
+	padding:10px 0 0 0;
 	}
 
 h3.banner{
@@ -296,6 +298,10 @@ body,html{
 .mayusculas{
 	text-transform: uppercase !important;
 	
+}
+
+.arriba{
+	padding:15px 0 0 0;
 }
 
 
@@ -627,6 +633,7 @@ h2.banner{
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:20px;	
 	font-weight: 400;
+	padding:0;
 	}
   
 h3.banner{
@@ -652,7 +659,7 @@ h1{
 h2{
 	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:20px;
-	font-weight: 400;	
+	font-weight: 300;	
 	}
 	
 h3{

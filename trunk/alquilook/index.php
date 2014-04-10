@@ -53,12 +53,11 @@
     <!-------------------------------------------------------------------------------------------------------------------------------Vídeo-->
     <div class="section">
         <div class="container">
-        	<div class="row">&nbsp;</div>
         	<br/><br/><br/>
             <div class="row">
                 <div class="col-lg-6 col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
-                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/gx1wGzQEsvM" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/I9ix0ECNuyE" frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="col-lg-6 col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
@@ -77,14 +76,12 @@
 	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
     <div class="section">
         <div class="container">
-        	<div class="row">&nbsp;</div>
         	<br/><br/><br/>
             <div class="row">
-                <div class="col-lg-2 text-center">
+            	<!---------------------------------------------------------------------------------------------Propietario-->
+                    
+                <div class="col-lg-4 text-center collapse-group">
                 	<img class="imagen magenta-bg img-circle" src="img/botones/propietario.png">
-                </div>     
-                <div class="col-lg-3 text-center collapse-group">
-                	<hr class="propietario"/>
                 	<h2>SOY PROPIETARIO</h2>
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
@@ -95,7 +92,7 @@
                 			}else{
                 				
 						?>
-                		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a><br/>
                 		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
  							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
  								<p class="collapse" id="ingresarpropietario">
@@ -108,15 +105,13 @@
   						<?php 
 							} 
 						?>
-					<hr class="propietario"/>
+                <br/><br/><br/>
                 </div>   
-				<div class="col-lg-2 text-center">        
-                </div>                    
-                <div class="col-lg-2 text-center">
-                	<img class="imagen coral-bg img-circle" src="img/botones/inquilino.png">
-                </div>   
-                 <div class="col-lg-3 text-center collapse-group">
-                 	<hr class="inquilino"/>
+                <!---------------------------------------------------------------------------------------------Propietario-->
+                
+                <!---------------------------------------------------------------------------------------------Inquilino-->
+				<div class="col-lg-4 text-center collapse-group">
+                 	<img class="imagen coral-bg img-circle" src="img/botones/inquilino.png">
                 	<h2>SOY INQUILINO</h2>
                 		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>
                 			<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_inquilino();">	
@@ -127,12 +122,42 @@
     								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
   								</p>
   							</form>	   
-                	<hr class="inquilino"/>
+                <br/><br/><br/>
                 </div>  
-                                        	            	
+                <!---------------------------------------------------------------------------------------------Inquilino-->
+                
+                
+                <!---------------------------------------------------------------------------------------------Inmobiliaria-->
+                <div class="col-lg-4 text-center collapse-group">
+                	<img class="imagen magenta-bg img-circle" src="img/botones/inmobiliaria.png">
+                	<h2>SOY INMOBILIARIA</h2>
+                		<?php 
+                			if(isset($_SESSION["IdUsuario_sesion"])){
+                				
+								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                					<a class='enlace' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
+								
+                			}else{
+                				
+						?>
+                		<a class="enlace" data-toggle="collapse" data-target="#ingresarinmobiliaria"><i class="fa fa-sign-in"></i> Ingresar</a><br/>
+                		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+ 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
+ 								<p class="collapse" id="ingresarinmobiliaria">
+ 								 	<br/>
+   									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
+    								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
+    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
+  								</p>
+  							</form>
+  						<?php 
+							} 
+						?>
+				<br/><br/><br/>
+                </div>   
+                <!---------------------------------------------------------------------------------------------Inmobiliaria-->    
+                                   	            	
 			</div>
-			<br/><br/>
-			<div class="row">&nbsp;</div>
 		</div>
 	</div>	
 	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
