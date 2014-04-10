@@ -15,7 +15,9 @@ include_once("../funciones/registro.php");
         
         extract($_POST);
         
-        $tipoInmueble = $_POST["tipoInmueble"];
+		print_r($_POST);
+		
+        $tipoInmueble = $_POST["tipoInmueble"]; $tipoContrato = $_POST['tipoContrato'];
 		$direccionInmueble = array(1=>$_POST['via_inmueble'], 2=>$_POST['nombre_inmueble'], 3=>$_POST['num_inmueble'], 4=>$_POST['piso_inmueble']);
         $cp = $_POST["cp_inmueble"]; $poblacionInmueble = $_POST["municipio_inmueble"]; 
         $provinciaInmueble = $_POST["provincia_inmueble"]; $numHabitaciones = $_POST["numero_habitaciones"];
@@ -42,12 +44,12 @@ include_once("../funciones/registro.php");
                 
             }else{
             /*insertamos los datos del nuevo usuario*/
-                $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, Direccion, CP,
+                $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
                 								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
-                    values ('', '$id_usuario', null, '$tipoInmueble', '$direccion', '$cp', '$poblacionInmueble',
+                    values ('', '$id_usuario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
                             '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
                 
-								            
+				echo $query2;				            
                 if($bd->query($query2)){
                 	
                 	$_SESSION['erroRegistro'] = FALSE;
@@ -60,7 +62,7 @@ include_once("../funciones/registro.php");
 										
 					unset($_POST);
     				
-    				header("Location: ../vistas/inmueble/registro_estancia.php");
+    				// header("Location: ../vistas/inmueble/registro_estancia.php");
     				
     			}
                 

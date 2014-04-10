@@ -54,7 +54,7 @@
 						                        <li class="list-group-item">100 grs. de adobo</li>
 						                        <li class="list-group-item">100 MB para youporn.com</li>
 						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="1" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Básico" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -74,7 +74,7 @@
 						                        <li class="list-group-item">250 grs. de adobo</li>
 						                        <li class="list-group-item">300 MB para youporn.com</li>
 						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="2" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Medio" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -94,7 +94,7 @@
 						                        <li class="list-group-item">500 grs. de adobo</li>
 						                        <li class="list-group-item">1 GB para youporn.com</li>
 						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="radiogroup" value="3" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Premium" />&nbsp;&nbsp; Acepto</h4></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -129,6 +129,7 @@
 		                         <br/>
 		                        <label><h6 class="magenta">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_habitaciones">
+			                          <option value="0">0</option>	
 									  <option value="1">1</option>
 									  <option value="2">2</option>
 									  <option value="3">3</option>
@@ -138,6 +139,7 @@
 		                         <br/>
 		                        <label><h6 class="magenta">Nº de aseos&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_aseos">
+			                          <option value="0">0</option>
 									  <option value="1">1</option>
 									  <option value="2">2</option>
 									  <option value="3">3</option>

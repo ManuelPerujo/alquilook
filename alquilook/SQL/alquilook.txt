@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `IdPropietario` int(6) unsigned NOT NULL,
   `ArrayIdInquilino` varchar(30),
   `TipoInmueble` char(30) NOT NULL,
+  `TipoContrato` char(30) NOT NULL,
   `Direccion` char(50) NOT NULL,
   `CP` int(5) NOT NULL,
   `Municipio` char(30) NOT NULL,

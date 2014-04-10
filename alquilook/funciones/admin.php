@@ -369,7 +369,7 @@
 							                 					<i class='fa fa-user'></i> Editar Inquilino
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."'>
+							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."&tipo=Inquilino'>
 							                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
 							                 				</a>
 							                 		</div>         
@@ -799,7 +799,7 @@
 							                 					<i class='fa fa-home'></i> Editar Inmueble
 							                 				</a>
 							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario'>
+							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
 							                 					<i class='fa fa-trash-o'></i> Borrar Propietario
 							                 				</a>
 							                 		</div>         
@@ -963,6 +963,28 @@
         	  	
     }
     
-    
+    function get_arrayInquilinosFromInmueble($idInmueble){
+    			
+    	$arrayIdInquilinos = array();	
+    	
+    	$bd = new core();
+    	
+    	$query = "select ArrayIdInquilino from inmueble where IdInmueble = '$idInmueble'";
+    	
+    	$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$arrayIdInquilinos = explode("-", $row['ArrayIdInquilino'],-1);
+		
+		return $arrayIdInquilinos;
+    }
+   
+   
+   
+   
+   
+   
+   
+   
     		
 ?>	
