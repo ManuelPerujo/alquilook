@@ -26,7 +26,7 @@
 	                	<div class="media">
 	                		  <br/>
 							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 steel-grey2 img-circle" src="<?php echo $ruta?>img/banner/admin.png">
+							    	<img class="imagenboton2 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/admin.png">
 							  </a>
 							  <div class="media-body">
 								  	<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>

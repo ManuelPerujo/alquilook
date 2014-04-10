@@ -98,12 +98,8 @@
 						                    </ul>
 						                </div>
 			            			</div>
-			            		</form>	
-                	</div>
-                	<br/>	
-		                	<div class="row-fluid">
-		                	<div class="col-sm-12">
-		               		 <form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">  		               		 	                                 
+                			<br/>	
+		                	<div class="col-sm-12">		               		 	                                 
 		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
 									  <option value="Vivienda">Vivienda</option>
@@ -150,7 +146,6 @@
 		    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
 		                    </form>
 		                    <br/><br/>
-		                    </div>
 		                    </div>  	              
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
