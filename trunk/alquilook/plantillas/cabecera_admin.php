@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo $ruta?>index.php"><img class="logo" src="<?php echo $ruta?>img/logo.png"/></a>
+                <a class="navbar-brand" href="<?php echo $ruta?>vistas/admin/tabla_usuarios_admin.php"><img class="logo" src="<?php echo $ruta?>img/logo.png"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

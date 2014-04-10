@@ -13,8 +13,8 @@ INSERT INTO `inquilino` (`IdInquilino`, `IdUsuario`, `IdInmueble`) VALUES
 INSERT INTO `propietario` (`IdPropietario`, `IdUsuario`) VALUES
 (1, 1);
 
-INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
-(1, 1, '1-', 'Vivienda', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500);
+INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `TipoContrato`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
+(1, 1, '1-', 'Vivienda', 'Basico', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500);
 
 
 
