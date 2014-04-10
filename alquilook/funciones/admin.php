@@ -139,7 +139,7 @@
         }else{
             $query1 = "select $idTabla from $tabla1 inner join $tabla2";    
         }
-        
+        	
         if(count($arrayOrden) != 0){
             $query1.= " ".$orden; 
         }
@@ -152,7 +152,7 @@
             
             foreach ($row as $key ) {
                 $selector = $key[$idTabla];        
-                $query2 = "select $seleccion from $tabla1 where $idTabla = '$selector' ";
+                $query2 = "select $seleccion from $tabla1 inner join $tabla2 where $idTabla = '$selector' ";
                 $result2 = $bd->query($query2);
                        
                 if($result2->rowCount() != 0){
@@ -162,6 +162,108 @@
                 $mensaje .= "<tbody><tr>";
                   
                 $direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector;
+                
+                if(basename($_SERVER['PHP_SELF']) == ""){
+                    foreach ($row2 as $key => $value2) {
+                        $contenido = wordwrap($value2, 12);                            
+                        $mensaje .= "<td>$contenido</td>";
+                    }
+                }else{
+                    foreach ($row2 as $key => $value2) {
+                        $contenido = wordwrap($value2, 12);                            
+                        $mensaje .= "<td><a class='enlace2' href=$direccion>$contenido</a></td>";                
+                    }
+                }          
+                
+                
+                if($arrayOpciones['opciones'] == TRUE){
+                    $mensaje .= "<td>";
+                    if($arrayOpciones['borrar'] == TRUE){
+                        $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
+                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' /></a>";    
+                    }if($arrayOpciones['modificar'] == TRUE){
+                        $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
+                        $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' /></a>";    
+                    }if($arrayOpciones['responder'] == TRUE){
+                        $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
+                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                    }if($arrayOpciones['pagar'] == TRUE){
+                        
+                    }if($arrayOpciones['amistad'] == TRUE){
+                        $direccion4 = '../sesion/control_amistad.php?id='.$selector;
+                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                    }if($arrayOpciones['ver_mas'] == TRUE){
+                        $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' /></button>";
+                    }
+                    
+                    $mensaje .= "</td>";
+                                  
+                }
+                $mensaje .= "</tr><tbody>";
+                    
+            }
+        }
+          
+        $mensaje .= "</table>";	
+    	
+		return $mensaje;
+    }
+
+	function get_tablaIncidencias_combinada_filtros_y_opciones($tabla1,$tabla2,$idTabla,$arrayAtributos,$arrayOpciones,$arrayOrden){
+    		
+    	$orden = orden_consulta($arrayOrden);
+        
+		$mensaje = null;
+		
+        $mensaje .= "<table class='table table-striped table-hover'>";
+        $mensaje .= "<thead><tr>";
+                       
+        foreach ($arrayAtributos as $key => $value) {
+            $mensaje .= "<th>$value</th>";
+        }
+        
+        if($arrayOpciones['opciones'] == TRUE){
+            $mensaje .= "<th>Opciones</th>";    
+        }
+        
+        $mensaje .= "</tr><thead>";
+        
+        $bd = new core();
+        $bd->ConectaBD();
+        
+        $seleccion = implode(",", $arrayAtributos);
+        
+        
+        $query1 = "select $idTabla from $tabla1 inner join $tabla2 where incidencia.Estado =  '0'
+					  and incidencia.IdInmueble = inmueble.IdInmueble";
+        
+                
+        if(count($arrayOrden) != 0){
+            $query1.= " ".$orden; 
+        }
+                    
+        $result = $bd->query($query1);
+        
+        if($result->rowCount() != 0) {
+            /*PDO::FETCH_ASSOC: devuelve un array cuyos indices son los nombres de los campos del resultado de la consulta*/ 
+            $row = $result->fetchAll(PDO::FETCH_ASSOC);
+            
+			$id = explode(".", $idTabla);
+									
+            foreach ($row as $key ) {
+            	
+                $selector = $key[$id[1]];        
+                $query2 = "select $seleccion from $tabla1 inner join $tabla2 where $idTabla = '$selector' ";
+                $result2 = $bd->query($query2);
+                
+								   
+                if($result2->rowCount() != 0){
+                    $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+                }
+                        
+                $mensaje .= "<tbody><tr>";
+                  
+                $direccion =  "../../controladores/control_datos_contrato.php?$id[1]=".$selector;
                 
                 if(basename($_SERVER['PHP_SELF']) == ""){
                     foreach ($row2 as $key => $value2) {
@@ -324,7 +426,7 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenboton2 steel-grey2 img-rounded' src='../../img/banner/inquilino.png'>
+												    <img class='imagenboton2 img-rounded' src='../../img/botones/inquilino.png'>
 												  </a>
 												  <div class='media-body'>
 												   <h5 class='media-heading'><small class='negro mayusculas'>Inquilino:</small></h5>
@@ -394,10 +496,12 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenboton steel-grey2 img-rounded' src='../../img/banner/propietario.png'>
+												    <img class='imagenboton img-rounded' src='../../img/botones/propietario.png'>
 												  </a>
 												  <div class='media-body'>
 												    <h4 class='media-heading'>".$value['Direccion']." (".$value['Provincia'].")</h4>
+												    <h5 class='media-heading'><small class='negro'>Tipo Contrato: </small>".$value['TipoContrato']."</h5>
+												    <h6 class='media-heading'>".$value['Metros']." metros | ".$value['NumHabitaciones']." Habitaciones | ".$value['NumServicios']." Aseos</h6>
 												    <hr class='formulario'/>
 												    <h5 class='media-heading'><small class='negro mayusculas'>Propietario</small>: ".$row4['Nombre']." ".$row4['Apellidos']."</h5>
 												    <hr class='formulario'/>

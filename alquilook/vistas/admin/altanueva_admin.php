@@ -28,7 +28,7 @@
 	                		<hr class="grisdoble"/>
 							<div class="row">
 								<div class="col-xs-2">   	
-					                <img class="imagenboton steel-grey2 img-circle" src="<?php echo $ruta?>img/banner/propietario.png">
+					                <img class="imagenboton img-circle" src="<?php echo $ruta?>img/botones/propietario.png">
 		                		 </div>
 	                			<div class="col-xs-5">   	
 					                	<h5 class="media-heading mayusculas">Propietario:</h5>
@@ -56,7 +56,7 @@
 	        				<hr class="grissimple"/>
 	                		<div class="row">
 								<div class="col-xs-2">   	
-					                <img class="imagenboton steel-grey2 img-circle" src="<?php echo $ruta?>img/banner/inquilino.png">
+					                <img class="imagenboton img-circle" src="<?php echo $ruta?>img/botones/inquilino.png">
 		                		 </div>
 	                			<div class="col-xs-5">   	
 					                	<h5 class="media-heading mayusculas">inquilino:</h5>

@@ -15,7 +15,6 @@ include_once("../funciones/registro.php");
         
         extract($_POST);
         
-		print_r($_POST);
 		
         $tipoInmueble = $_POST["tipoInmueble"]; $tipoContrato = $_POST['tipoContrato'];
 		$direccionInmueble = array(1=>$_POST['via_inmueble'], 2=>$_POST['nombre_inmueble'], 3=>$_POST['num_inmueble'], 4=>$_POST['piso_inmueble']);
@@ -62,7 +61,7 @@ include_once("../funciones/registro.php");
 										
 					unset($_POST);
     				
-    				// header("Location: ../vistas/inmueble/registro_estancia.php");
+    				header("Location: ../vistas/inmueble/registro_estancia.php");
     				
     			}
                 

@@ -26,25 +26,19 @@
                 <div id="" class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-bell"></i> Altas nuevas</h3> 
                 	
-		                	<table id="table_id" class="table table-hover table-striped">
-								<thead>
-									<tr>
-										<th>Tipo</th>
-										<th>Nombre</th>
-										<th>Fecha</th>
-										<th>Estado</th>
-									</tr>
-								</thead>
-								<tbody> 
-									 <tr><td>Propietario</td><td>Aaron</td><td>13-10-2010</td><td>Sí</td></tr>
-									 <tr><td>Inqulino</td><td>Juan</td><td>1-10-2012</td><td>Sí</td></tr>
-									 <tr><td>Inqulino</td><td>Pedro</td><td>1-10-2012</td><td>Sí</td></tr>
-									 <tr><td>Propietario</td><td>Jesús</td><td>10-7-2011</td><td>Sí</td></tr>
-									 <tr><td>Propietario</td><td>David</td><td>28-8-2010</td><td>No</td></tr>
-									 <tr><td>Inqulino</td><td>Lucas</td><td>28-8-2010</td><td>No</td></tr>
-									 <tr><td>Inqulino</td><td>Antonio</td><td>17-6-2011</td><td>No</td></tr>
-								</tbody>
-							</table>
+
+		            <?php 
+		            	
+		            	$tabla1 = 'incidencia'; $tabla2 = 'inmueble'; $idTabla = 'inmueble.IdInmueble'; 
+		            	$arrayAtributos = array(1=>'Fecha', 2=>'Direccion', 3=>'Provincia', 4=>'Municipio');
+						$arrayOrden = array(1 => 'incidencia.Fecha', 2=> 'asc');
+						$arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE);
+		            	$mensaje = get_tablaIncidencias_combinada_filtros_y_opciones($tabla1, $tabla2, $idTabla, $arrayAtributos, $arrayOpciones, $arrayOrden);
+
+						echo $mensaje;
+		            
+		            ?>    	
+
                 	
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
