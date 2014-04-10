@@ -66,9 +66,11 @@ if (basename(getcwd()) == "alquilook"){
     <!-- CSS -->
     <link href="<?php echo $ruta?>css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/responsive-slider-parallax.css" rel="stylesheet">
     <link href="<?php echo $ruta?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
     
     <!-- Javascript-->
+    
    	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
@@ -95,7 +97,16 @@ if (basename(getcwd()) == "alquilook"){
 			});
 		});
 		
+		$( document ).ready( function() {
+	  $('.responsive-slider').responsiveSlider({
+	    autoplay: true,
+	    interval: 5000,
+	    transitionTime: 300,
+	    touch: true
+	  });
+	});
 	</script>
+	 
     
     
     
