@@ -74,7 +74,6 @@ if (basename(getcwd()) == "alquilook"){
    	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
-    <script src="<?php echo $ruta?>js/jquery.tablesorter.min.js"></script>
 
     
     <!--      Ajax      -->
@@ -89,22 +88,25 @@ if (basename(getcwd()) == "alquilook"){
     	}
     ?>
     
-    <script type="text/javascript">
-
-		$(document).ready(function(){
-			$(function(){
-				$("#myTable").tablesorter();
-			});
-		});
+       
+     <script type="text/javascript">
 		
 		$( document ).ready( function() {
-	  $('.responsive-slider').responsiveSlider({
-	    autoplay: true,
-	    interval: 5000,
-	    transitionTime: 300,
-	    touch: true
-	  });
-	});
+		  $('.responsive-slider').responsiveSlider({
+		    autoplay: true,
+		    interval: 5000,
+    		transitionTime: 300
+		  });
+		});
+		
+		
+		$(document).ready(function() {
+			$('#example').dataTable( {
+				"bProcessing": true,
+				"bServerSide": true,
+				"sAjaxSource": "js/server_processing.php"
+			} );
+		} );
 	</script>
 	 
     
