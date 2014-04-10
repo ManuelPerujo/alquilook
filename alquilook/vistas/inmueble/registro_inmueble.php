@@ -29,10 +29,10 @@
                 <div class="col-xs-10">
                 		<h3><i class="fa fa-cogs"></i> Tipo de contrato y datos de su inmueble (Paso 1 de 3)</h3>
                 			<div class="row">
-                				<div class="col-sm-6">
+                				<div class="col-sm-9">
 									<div class="text-left alert alert-success alert-dismissable">
 						               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				 							<h4><i class="fa fa-info-circle fa-lg"></i> Elija la modalidad de contrato que más le interese<br/> y registre su inmueble e inquilino en 3 sencillos pasos.</h4>
+				 							<h4><i class="fa fa-info-circle fa-lg"></i> Elija la modalidad de contrato que más le interese y registre su inmueble e inquilino en 3 sencillos pasos.</h4>
 				                	</div>
 				                </div>
 				            </div>
