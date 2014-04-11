@@ -160,19 +160,6 @@
 			
 	}
 
-	function get_inquilino_inmueble($idInmueble){
-			
-		$bd = new core();
-		
-		$query = "select IdInquilino from inmueble where IdInmueble = '$idInmueble'";
-		
-		$result = $bd->query($query);
-		$row = $result->fetch(PDO::FETCH_ASSOC);
-		
-		$query2 = "";
-		
-	}
-
 	function get_facturas_agua($idInmueble,$count){
 			
 		$facturasAgua = null;
