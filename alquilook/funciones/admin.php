@@ -56,6 +56,10 @@
                 	
 					$direccion =  "../admin/perfil_usuario_admin.php?$idTabla=".$selector."&tipo=".$row2['Tipo'];
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_mensajes_propietario.php'){
+                	
+					$direccion =  "../../vistas/propietario/mensaje_propietario.php?$idTabla=".$selector;
+					
                 }
                   
                 
@@ -1242,11 +1246,9 @@
 				
 				$mensaje .= "Observaciones:";
 					
-				foreach ($row2 as $key2 => $value2) {
-				
-					$mensaje .= "<p class='ficha'>".$value2['Observacion']."</p>";
+				$mensaje .= "<p class='ficha'>".$row2['Observacion']."</p>";
 					
-				}		
+						
 				
 			}
 		
@@ -1259,7 +1261,7 @@
 		
     }
    
-   
+    
    
    
    

@@ -1,6 +1,8 @@
 <?php 
     session_start();
-    include_once '../../plantillas/importaciones.php';    
+    include_once '../../plantillas/importaciones.php';
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/admin.php';    
 ?>
 
 <body>
@@ -23,34 +25,19 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
                 		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
-	                	<table class="table table-striped table-hover">
-						   <thead>
-							      <tr> 
-								        <th></th>
-								        <th>Estado</th>
-								        <th>Remitente</th>
-								        <th>Asunto</th>
-								        <th>Fecha</th>
-								        <th><i class="fa fa-cog"></i></th>
-							      </tr>
-						    </thead>
-						    <tbody>
-								  <tr>
-									    <td><img class="imagenboton3 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/admin.png"></td>
-									    <td><h5><i class="fa fa-eye"></i> <i class="fa fa-envelope"></i> </h5></td>
-									    <td><h5>Administrador</h5></td>
-								    	<td><h6 class="mayusculas">Me pica el pito...</h6></td>
-									    <td><h6>18 / 05 / 2014</h6></td>
-									    <td>
-									    	<h5>
-									    		<a class="enlace" href="">
-								 					<i class="fa fa-trash-o"></i>
-								 				</a>
-								 			</h5>	
-								    	</td>
-								  </tr>
-							</tbody> 
-						</table>
+	                	<?php 
+                	
+                		$idUsuario = $_SESSION['IdUsuario_sesion'];
+                	
+                		$tabla = 'mensaje'; $idTabla = 'IdMensaje'; $arrayAtributos = array(1=>'Fecha',2=>'Titulo',3=>'Contenido');
+                        $filtro = array('IdUsuario' => $idUsuario);
+                        $arrayOrden = array(1 => 'Fecha', 2=> 'asc');
+                        $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE);  
+                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+						
+						echo $mensaje;
+                	
+                	?>
                 	<br/>
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          

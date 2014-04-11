@@ -50,7 +50,7 @@
 						  	<span class="badge">5</span>
 							<i class="fa fa-gavel"></i> Inc. Contratos
 					  </a>
-					   <a href="#" class="list-group-item">
+					   <a href="<?php echo $ruta ?>vistas/admin/tabla_mensajes_admin.php" class="list-group-item">
 						  	<span class="badge">3</span>
 							<i class="fa fa-envelope"></i> Mensajes
 					  </a>
