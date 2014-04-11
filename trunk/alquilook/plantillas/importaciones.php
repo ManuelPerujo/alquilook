@@ -88,7 +88,8 @@ if (basename(getcwd()) == "alquilook"){
     	}
     ?>
     
-       
+  	<!--   Slider   -->
+  	     
      <script type="text/javascript">
 		
 		$( document ).ready( function() {
@@ -98,17 +99,24 @@ if (basename(getcwd()) == "alquilook"){
     		transitionTime: 300
 		  });
 		});
+	
+	 </script>
+	
 		
+	
+	<!--   Slider   -->
+		
+	<script type="text/javascript">	
 		
 		$(document).ready(function() {
-			$('#example').dataTable( {
+			$('#busqueda').dataTable( {
 				"bProcessing": true,
 				"bServerSide": true,
-				"sAjaxSource": "js/server_processing.php"
+				"sAjaxSource": "<?php echo $ruta?>js/server_processing.php"
 			} );
 		} );
+	
 	</script>
-	 
     
     
     

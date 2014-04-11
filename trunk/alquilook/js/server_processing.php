@@ -15,17 +15,16 @@
 	$aColumns = array( 'engine', 'browser', 'platform', 'version', 'grade' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "id";
+	$sIndexColumn = "IdUsuario";
 	
 	/* DB table to use */
-	$sTable = "ajax";
+	$sTable = "usuarios";
 	
 	/* Database connection information */
-	$gaSql['user']       = "";
-	$gaSql['password']   = "";
-	$gaSql['db']         = "";
-	$gaSql['server']     = "localhost";
-	
+	$gaSql['user']       = "alquilook";
+	$gaSql['password']   = "alquilook";
+	$gaSql['db']         = "alquilook";
+	$gaSql['server']     = "127.0.0.1";
 	
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * If you just want to use the basic configuration for DataTables with PHP server-side, there is

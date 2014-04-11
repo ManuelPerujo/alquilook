@@ -7,7 +7,7 @@
         $filtro = filtros_consulta_tabla($arrayFiltro);
         $orden = orden_consulta($arrayOrden);
         
-        $mensaje .= "<table id='myTable' class='tablesorter table table-striped table-hover'>";
+        $mensaje .= "<table id='busqueda' class='table table-striped table-hover'>";
         $mensaje .= "<thead><tr>";
                        
         foreach ($arrayAtributos as $key => $value) {
@@ -215,7 +215,7 @@
         
 		$mensaje = null;
 		
-        $mensaje .= "<table class='table table-striped table-hover'>";
+        $mensaje .= "<table class='table table-striped table-hover' id='busqueda'>";
         $mensaje .= "<thead><tr>";
                        
         foreach ($arrayAtributos as $key => $value) {
@@ -263,7 +263,7 @@
                         
                 $mensaje .= "<tbody><tr>";
                   
-                $direccion =  "../../controladores/control_datos_contrato.php?$id[1]=".$selector;
+                $direccion =  "../../vistas/admin/altanueva_admin.php?$id[1]=".$selector;
                 
                 if(basename($_SERVER['PHP_SELF']) == ""){
                     foreach ($row2 as $key => $value2) {
@@ -1083,8 +1083,181 @@
 		return $arrayIdInquilinos;
     }
    
+	function get_datosUsuario_from_IdInmueble($idInmueble){
+		
+		$idUsuario = get_IdUsuarioPropietarioFromInmueble($idInmueble);
+		
+		$mensaje = null;
+		
+		$bd = new core();
+		
+		$query = "select * from usuarios where IdUsuario = '$idUsuario'";
+		$result = $bd->query($query);
+		
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$mensaje = "<div class='col-xs-5'>   	
+					                	<h5 class='media-heading mayusculas'>Propietario:</h5>
+						                	Nombre y apellidos:
+						                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
+						                	DNI:
+						                	<p class='ficha mayusculas'>".$row['DNI']."</p>
+						                	Domicilio:
+						                	<p class='ficha mayusculas'>".$row['Domicilio']."</p>
+						                	CP:
+						                	<p class='ficha mayusculas'>".$row['CP']."</p>
+						                	Población:
+						                	<p class='ficha mayusculas'>".$row['Poblacion']."</p>
+						                	Provincia:
+						                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
+		                		 </div>
+		                		 <div class='col-xs-5'>	
+					                	<h5 class='media-heading'>Datos de contacto:</h5>
+						                	Email:
+						                	<p class='ficha'>".$row['Email']."</p>
+						                	Teléfono:
+						                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+		                		 </div>";
+		
+		return $mensaje;
+		
+	}   
    
+    function get_datosInquilinos_from_IdInmueble($idInmueble){
+    		
+    	$mensaje = null;
+    	
+    	$idUsuario = null;
+    	
+    	$arrayInquilinos = get_arrayInquilinosFromInmueble($idInmueble);
+    	
+    	$arrayUsuarios = get_IdInquilinoToUsuario($arrayInquilinos);
+    	
+    	$bd = new core();	
+    	
+    	foreach ($arrayUsuarios as $key => $value) {
+				
+			$idUsuario = $value;	
+					
+			$query = "select * from usuarios where IdUsuario = '$idUsuario'";	
+			
+			$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+			
+			$mensaje .= "<hr class='grissimple'/>
+	                		<div class='row'>
+								<div class='col-xs-2'>   	
+					                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png'>
+		                		 </div>
+	                			<div class='col-xs-5'>   	
+					                	<h5 class='media-heading mayusculas'>inquilino:</h5>
+						                	Nombre y apellidos:
+						                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
+						                	DNI:
+						                	<p class='ficha mayusculas'>".$row['DNI']."</p>
+		                		 </div>
+		                		 <div class='col-xs-5'>	
+					                	<h5 class='media-heading'>Datos de contacto:</h5>
+						                	Email:
+						                	<p class='ficha'>".$row['Email']."</p>
+						                	Teléfono:
+						                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+		                		 </div>
+	        				</div>";
+		}
+
+		return $mensaje;
+    	
+    }
    
+    function get_datosInmueble($idInmueble){
+    		
+    	$mensaje = null;
+    	
+    	$bd = new core();
+    	
+    	$query = "select * from inmueble where IdInmueble = '$idInmueble'";
+    	
+    	$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);	
+    	
+		$mensaje = "<div class='col-xs-5'>   	
+					                	<h5 class='media-heading mayusculas'>inmueble:</h5>
+						                	Tipo de inmueble:
+						                	<p class='ficha mayusculas'>".$row['TipoInmueble']."</p>
+						                	Dirección Inmueble:
+						                	<p class='ficha mayusculas'>".$row['Direccion']."</p>
+						                	Municipio:
+						                	<p class='ficha mayusculas'>".$row['Municipio']."</p>
+						                	CP:
+						                	<p class='ficha mayusculas'>".$row['CP']."</p>
+						                	Provincia:
+						                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
+						                	Nº de metros:
+						                	<p class='ficha mayusculas'>".$row['Metros']."</p>
+						                	Nº de habitaciones:
+						                	<p class='ficha mayusculas'>".$row['NumHabitaciones']."</p>
+						                	Nº de aseos:
+						                	<p class='ficha mayusculas'>".$row['NumServicios']."</p>
+		                		 </div>";
+		
+		return $mensaje;
+		
+    }
+   
+    function get_datosEstancias_from_IdInmueble($idInmueble){
+    			
+    	$mensaje = null;
+    	
+		$bd = new core();
+		
+		$query = "select * from estancia where IdInmueble = '$idInmueble'";	
+    	
+		$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+			
+			$idEstancia = $value['IdEstancia'];
+			
+			$mensaje .= "<div class='fondogris'>
+							<p class='ficha mayusculas'>".$value['Tipo']."</p>";
+			
+			$query1 = "select * from articulo where IdEstancia = '$idEstancia' and IdInmueble = '$idInmueble'";
+			$result1 = $bd->query($query1); $row1 = $result1->fetchAll(PDO::FETCH_ASSOC);
+			
+			if($result1->rowCount() != 0){
+						
+				foreach ($row1 as $key1 => $value1) {
+					
+					$mobiliario = get_mobiliario($value1['IdMobiliario']);
+							
+					$mensaje .= "<p class='ficha'>".$mobiliario." = ".$value1['Cantidad']."</p>";	
+					
+				}		
+				
+			}
+									
+			$query2 = "select * from observaciones_estancia where IdEstancia = '$idEstancia' and IdInmueble = '$idInmueble'";
+			$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+									
+			if($result2->rowCount() != 0){
+				
+				$mensaje .= "Observaciones:";
+					
+				foreach ($row2 as $key2 => $value2) {
+				
+					$mensaje .= "<p class='ficha'>".$value2['Observacion']."</p>";
+					
+				}		
+				
+			}
+		
+			$mensaje .= "</div>";
+					
+		}
+
+		
+		return $mensaje;
+		
+    }
    
    
    
