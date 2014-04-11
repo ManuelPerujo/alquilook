@@ -9,6 +9,7 @@ if(!$_POST){
 
 include_once("../funciones/core.php");
 include_once("../funciones/registro.php");
+include_once('../funciones/usuarios.php');
 //include ("funciones/validacion_datos.php");
 
 
@@ -24,6 +25,7 @@ include_once("../funciones/registro.php");
 		
 		$direccion = valida_direccion($direccionInmueble);
         $id_usuario = $_SESSION["IdUsuario_sesion"];
+		$idPropietario = get_IdPropietario($id_usuario);
 				
         $error = true;
 				
@@ -45,7 +47,7 @@ include_once("../funciones/registro.php");
             /*insertamos los datos del nuevo usuario*/
                 $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
                 								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
-                    values ('', '$id_usuario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
+                    values ('', '$idPropietario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
                             '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
                 
 				echo $query2;				            

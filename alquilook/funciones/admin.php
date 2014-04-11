@@ -648,10 +648,10 @@
 		$mensaje = "<div id='agua".$count."' class='collapse'>
 				                            <div class='row'>
 							                 		<div class='col-xs-12'>
-							                      		<div class='col-sm-1'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/agua.png'>
+							                      		<div class='col-sm-1 col-xs-3'>	  
+							                      			<img class='imagenbanner2' src='../../img/botones/agua2.png'>
 							                 			</div>  
-							                 			<div class='col-sm-3'>
+							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Recibos de Agua</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
@@ -690,11 +690,11 @@
 		$mensaje = "<div id='luz".$count."' class='collapse'>
 				                      		 <div class='row'>
 							                 		<div class='col-xs-12'>
-							                      		<div class='col-sm-1'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/luz.png'>
+							                      		<div class='col-sm-1 col-xs-3'>	  
+							                      			<img class='imagenbanner2' src='../../img/botones/luz2.png'>
 							                 			</div>  
-							                 			<div class='col-sm-3'>
-							                 				<p class='ficha'><h5>Recibos de Luz</h5></p>
+							                 			<div class='col-sm-3 col-xs-9'>
+							                 				<p class='ficha'><h5>Recibos de Electricidad</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
 								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_luz.php'>
@@ -732,10 +732,10 @@
 		$mensaje = "<div id='gas".$count."' class='collapse'>
 				                            <div class='row'>
 							                 		<div class='col-xs-12'>
-							                      		<div class='col-sm-1'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/gas.png'>
+							                      		<div class='col-sm-1 col-xs-3'>	  
+							                      			<img class='imagenbanner2' src='../../img/botones/gas2.png'>
 							                 			</div>  
-							                 			<div class='col-sm-3'>
+							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Recibos de Gas</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
@@ -774,10 +774,10 @@
 		$mensaje = "<div id='contrato".$count."' class='collapse'>
 				                      		 <div class='row'>
 							                 		<div class='col-xs-12'>
-							                      		<div class='col-sm-1'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/contrato.png'>
+							                      		<div class='col-sm-1 col-xs-3'>	  
+							                      			<img class='imagenbanner2' src='../../img/botones/contrato2.png'>
 							                 			</div>  
-							                 			<div class='col-sm-3'>
+							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Contrato</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
@@ -822,18 +822,18 @@
 				
 		$mensaje = "<div id='mensaje".$count."' class='collapse'>
 				                      		 <div class='row'>
-                	    							<div class='col-sm-1'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/mensaje.png'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png'>
 							                 		</div>  
-							                 		<div class='col-sm-3'>
+							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Escribir a propietario</h5></p>
 								                 			
 							                 		</div> 
-							                 		<div class='col-xs-12'>
+							                 		<div class='col-sm-8 col-xs-12'>
 							                 			<form class='form-group  text-left' method='post' action='../../controladores/control_manda_mensaje.php'>
 							                 					<input type='hidden' name='idUsuarioPropietario' value='$idUsuario' />
 							                 					<input type='hidden' name='tipo' value='propietario' />
-							                 					<input size='80' type='text' name='titulo' placeholder='Asunto'/> 
+							                 					<input type='text' name='titulo' placeholder='Asunto'/> 
 							                 					<br/><br/>
 													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
 													 			<br/><br/>
@@ -853,7 +853,7 @@
 		$mensaje = "<div id='mensaje2".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/mensaje.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png'>
 							                 		</div>  
 							                 		<div class='col-sm-3'>
 							                 			<p class='ficha'><h5>Escribir a inquilino</h5></p>
@@ -886,14 +886,14 @@
 					
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
 				                      		 <div class='row'>
-                	    							<div class='col-sm-1'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/opciones.png'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png'>
 							                 		</div>  
-							                 		<div class='col-sm-3'>
+							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Opciones</h5></p>
 								                 			
 							                 		</div> 
-							                 		<div class='col-sm-8 text-center'>
+							                 		<div class='col-sm-8 col-xs-12 text-center'>
 							                 				<p></p>
 							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$idUsuario."&tipo=Propietario'>
 							                 					<i class='fa fa-user'></i> Editar Propietario
