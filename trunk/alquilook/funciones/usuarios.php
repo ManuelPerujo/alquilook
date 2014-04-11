@@ -86,6 +86,29 @@
 		
 	}
 	
-	
+	function get_mensaje($idMensaje){
+		
+		$mensaje = null;
+		
+		$bd = new core();
+		
+		$query = "select * from mensaje where IdMensaje = '$idMensaje' ";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$mensaje = "<div class='media-body'>
+								  	<a type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</a>
+								    <h5 class='media-heading'>Administrador</h5>
+								    <h6 class='media-heading'>".$row['Fecha']."</h6>
+								    <p class='mayusculas'>Asunto: ".$row['Titulo']."</p>
+								    <hr class='grissimple'/>
+								    <p class='ficha2'>
+								    ".$row['Contenido']."
+								    </p>
+							  </div>";
+							  
+		return $mensaje;					  
+		
+	}
 
 ?>
