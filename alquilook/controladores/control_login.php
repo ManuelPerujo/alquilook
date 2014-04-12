@@ -16,7 +16,7 @@
         if(isset($_POST['usuario_propietario']) && !empty($_POST['usuario_propietario'])
 		   && isset($_POST['pass_propietario']) && !empty($_POST['pass_propietario'])){
             
-            $direccion = "../vistas/propietario/perfil_propietario.php";
+            $direccion = "../vistas/inmueble/tabla_inmuebles_pro.php";
             $usuario = $_POST['usuario_propietario'];
             $password = $_POST['pass_propietario'];
                 

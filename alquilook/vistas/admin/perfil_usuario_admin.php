@@ -28,7 +28,6 @@
                 	<div class="row">
                 	    		<div class="col-sm-12">
 		                			<h3><i class="fa fa-group"></i> Usuario e inmueble</h3>
-		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
 		            		                  

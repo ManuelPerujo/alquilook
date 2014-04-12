@@ -7,7 +7,7 @@
         $filtro = filtros_consulta_tabla($arrayFiltro);
         $orden = orden_consulta($arrayOrden);
         
-        $mensaje .= "<table id='busqueda' class='table table-striped table-hover'>";
+        $mensaje .= "<table class='table table-striped table-hover'>";
         $mensaje .= "<thead><tr>";
                        
         foreach ($arrayAtributos as $key => $value) {
@@ -425,10 +425,10 @@
 				$result2 = $bd->query($query2);
 				$row2 = $result2->fetch(PDO::FETCH_ASSOC);
 				
-				$inquilinos .= "<div class='row'>
+				$inquilinos .= "<div class='row fondogris'>
                 	    		<div class='col-xs-12'>	
 				                        <div class='row-fluid'>
-				                       		<div class='col-sm-6 media'>
+				                       		<div class='col-xs-6  media'>
 												  <a class='pull-left'>
 												    <img class='imagenboton2 img-rounded' src='../../img/botones/inquilino.png'>
 												  </a>
@@ -439,45 +439,46 @@
 				                       		</div>	
 				                       	</div>	
 				                       	<div class='row-fluid iconosmovil text-center'>
-				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       		<div class='col-xs-3 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#mensaje2".$count2."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/mensaje.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png'>
 							                       	<p class='ficha'>Mensaje</p>
 							                    </a>   	
 						                    </div>
-						                    <div class='col-xs-4 col-sm-2 text-center'>	
+						                    <div class='col-xs-3 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#opciones2".$count2."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/opciones.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/opciones.png'>
 							                       	<p class='ficha'>Opciones</p>
 							                    </a>   	
 				                       		</div>
 										</div>
 								</div>
-							</div>	 
-					  		<!-------------------------------------------------------- Contenido fijo INQUILINO----------------------->
-
-							<!-------------------------------------------------------- Contenido desplegable INQUILINO----------------------->
-		                    <div class='row'>
+							
                 	    		<div class='col-xs-12'>	  
 				                    ".$send_mensaje_inquilino."	
 				                     <div id='opciones2".$count2."' class='collapse'>
 				                      		 <div class='row'>
-                	    							<div class='col-sm-1'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/opciones.png'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png'>
 							                 		</div>  
-							                 		<div class='col-sm-3'>
+							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Opciones</h5></p>
 								                 			
 							                 		</div> 
-							                 		<div class='col-sm-8 text-center'>
-							                 				<p></p>
-							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$value2."&tipo=Inquilino'>
-							                 					<i class='fa fa-user'></i> Editar Inquilino
-							                 				</a>
-							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."&tipo=Inquilino'>
-							                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
-							                 				</a>
+							                 		<div class='col-sm-8 col-xs-12 text-center'>
+							                 			<br/>
+							                 				<div class='row'>
+                	    										<div class='col-xs-6'>	
+									                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$value2."&tipo=Inquilino'>
+									                 					<i class='fa fa-user'></i> Editar Inquilino
+									                 				</a>
+									                 			</div>	
+									                 			<div class='col-xs-6'>
+									                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."&tipo=Inquilino'>
+									                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
+									                 				</a>
+									                 			</div>         
+				                     						</div>	
 							                 		</div>         
 				                     		</div>
 				                     </div>			
@@ -533,7 +534,7 @@
 				                    ."		
 		                    	</div>
 		                    </div>
-		                    <br/><br/>"
+		                    "
 		                    .$inquilinos;
 		                    
 		                    array_push($arrayInmuebles,$inmueble);
@@ -856,18 +857,18 @@
 		
 		$mensaje = "<div id='mensaje2".$count."' class='collapse'>
 				                      		 <div class='row'>
-                	    							<div class='col-sm-1'>	  
+                	    							<div class='col-sm-1 col-xs-3'>	  
 							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png'>
 							                 		</div>  
-							                 		<div class='col-sm-3'>
+							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Escribir a inquilino</h5></p>
 								                 			
 							                 		</div> 
-							                 		<div class='col-xs-12'>
+							                 		<div class='col-sm-8 col-xs-12'>
 							                 			<form class='form-group  text-left' method='post' action='../../controladores/control_manda_mensaje.php'>
 							                 					<input type='hidden' name='idUsuarioInquilino' value='$idInquilino' />
 							                 					<input type='hidden' name='tipo' value='inquilino' />
-							                 					<input size='80' type='text' name='titulo' placeholder='Asunto'/> 
+							                 					<input type='text' name='titulo' placeholder='Asunto'/> 
 							                 					<br/><br/>
 													 			<textarea name='contenido' placeholder='Escriba aquí su mensaje...'></textarea>
 													 			<br/><br/>
@@ -898,18 +899,34 @@
 								                 			
 							                 		</div> 
 							                 		<div class='col-sm-8 col-xs-12 text-center'>
-							                 				<p></p>
-							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$idUsuario."&tipo=Propietario'>
-							                 					<i class='fa fa-user'></i> Editar Propietario
-							                 				</a>
-							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_inmueble_admin.php?idInmueble=".$idInmueble."'>
-							                 					<i class='fa fa-home'></i> Editar Inmueble
-							                 				</a>
-							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
-							                 					<i class='fa fa-trash-o'></i> Borrar Propietario
-							                 				</a>
+							                 				<div class='row'>
+							                 					<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_usuario_admin.php?idUsuario=".$idUsuario."&tipo=Propietario'>
+									                 					<i class='fa fa-user'></i> Editar<br/>Propietario
+									                 				</a>
+								                 				</div>
+								                 				<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/editar_inmueble_admin.php?idInmueble=".$idInmueble."'>
+									                 					<i class='fa fa-home'></i> Editar<br/>Inmueble
+									                 				</a>
+								                 				</div>
+								                 				<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
+									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Propietario
+									                 				</a>
+								                 				</div>
+								                 				<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' href='#'>
+									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Inmueble
+									                 				</a>
+								                 				</div>
+								                 				<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' href='#'>
+									                 					<i class='fa fa-key'></i> Añadir<br/>Inqulino
+									                 				</a>
+								                 				</div>
+								                 				<br/><br/><br/>
+							                 				</div> 
 							                 		</div>         
 				                     		</div>
 				                     </div>";	
