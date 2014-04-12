@@ -61,11 +61,11 @@
                     <h3 class="slider">Responsive<br/>slider</h3>
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
-                  <div class="caption img-html5" data-animate="slideAppearLeftToRight" data-delay="200">
-                    <img src="img/html5.png">
+                  <div class="caption img-bigscreen" data-animate="slideAppearLeftToRight" data-delay="200">
+                    <img src="img/bigscreen.png">
                   </div>
-                  <div class="caption img-css3" data-animate="slideAppearLeftToRight">
-                    <img src="img/css3.png">
+                  <div class="caption img-smallscreen" data-animate="slideAppearLeftToRight">
+                    <img src="img/smallscreen.png">
                   </div>
                 </div>
               </div>
@@ -79,11 +79,11 @@
                     <h3 class="slider">Responsive<br/>slider</h3>
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
-                  <div class="caption img-html5" data-animate="slideAppearUpToDown" data-delay="200">
-                    <img src="img/html5.png">
+                  <div class="caption img-bigscreen" data-animate="slideAppearUpToDown" data-delay="200">
+                    <img src="img/bigscreen.png">
                   </div>
-                  <div class="caption img-css3" data-animate="slideAppearDownToUp">
-                    <img src="img/css3.png">
+                  <div class="caption img-smallscreen" data-animate="slideAppearDownToUp">
+                    <img src="img/smallscreen.png">
                   </div>
                 </div>
               </div>
@@ -97,11 +97,11 @@
                     <h3 class="slider">Responsive<br/>slider</h3>
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
                   </div>
-                  <div class="caption img-html5" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/html5.png">
+                  <div class="caption img-bigscreen" data-animate="slideAppearDownToUp" data-delay="200">
+                    <img src="img/bigscreen.png">
                   </div>
-                  <div class="caption img-css3" data-animate="slideAppearUpToDown">
-                    <img src="img/css3.png">
+                  <div class="caption img-smallscreen" data-animate="slideAppearUpToDown">
+                    <img src="img/smallscreen.png">
                   </div>
                 </div>
               </div>
@@ -145,84 +145,97 @@
 	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
     <div class="section">
         <div class="container">
-        	<br/><br/><br/>
+        	<br/><br/><br/><br/>
             <div class="row">
             	<!---------------------------------------------------------------------------------------------Propietario-->
                     
                 <div class="col-lg-4 text-center collapse-group">
-                	<img class="imagen magenta-bg img-circle" src="img/botones/propietario.png">
-                	<h2>SOY PROPIETARIO</h2>
+                	<img class="imagen" src="img/botones/propietario.png">
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario"><h2>SOY PROPIETARIO</h2></a>
+                		
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
                 				
-								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                					<a class='enlace' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
+								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
+									<br/>
+                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
 								
                 			}else{
                 				
 						?>
-                		<a class="enlace" data-toggle="collapse" data-target="#ingresarpropietario"><i class="fa fa-sign-in"></i> Ingresar</a><br/>
-                		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+                		
  							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
  								<p class="collapse" id="ingresarpropietario">
- 								 	<br/>
    									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
+    								<button type="submit" class="btn btn-primary">Entrar</button>
+    								<br/><br/>
+    								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+    								<br/>
+    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
   								</p>
   							</form>
+  						
   						<?php 
 							} 
 						?>
-                <br/><br/><br/>
+						
+                <br/><br/>                
                 </div>   
                 <!---------------------------------------------------------------------------------------------Propietario-->
                 
                 <!---------------------------------------------------------------------------------------------Inquilino-->
 				<div class="col-lg-4 text-center collapse-group">
-                 	<img class="imagen coral-bg img-circle" src="img/botones/inquilino.png">
-                	<h2>SOY INQUILINO</h2>
-                		<a class="enlace" data-toggle="collapse" data-target="#ingresarinquilino"><i class="fa fa-sign-in"></i> Ingresar</a>
+                 	<img class="imagen" src="img/botones/inquilino.png">
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino"><h2>SOY INQUILINO</h2></a>
+                		
                 			<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_inquilino();">	
  								<p class="collapse" id="ingresarinquilino">
- 								 	<br/>
    									<input type="text" class="form-control" id="usuario2" name="usuario_inquilino" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password2" name="pass_inquilino" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
+    								<br/><br/>
+    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
   								</p>
   							</form>	   
-                <br/><br/><br/>
+                <br/><br/>
                 </div>  
                 <!---------------------------------------------------------------------------------------------Inquilino-->
                 
                 
                 <!---------------------------------------------------------------------------------------------Inmobiliaria-->
                 <div class="col-lg-4 text-center collapse-group">
-                	<img class="imagen magenta-bg img-circle" src="img/botones/inmobiliaria.png">
-                	<h2>SOY INMOBILIARIA</h2>
+                	<img class="imagen" src="img/botones/inmobiliaria.png">
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria"><h2>SOY INMOBILIARIA</h2></a>
+                		
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
                 				
-								echo "<a class='enlace' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                					<a class='enlace' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
+								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
+									<br/>
+                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
 								
                 			}else{
                 				
 						?>
-                		<a class="enlace" data-toggle="collapse" data-target="#ingresarinmobiliaria"><i class="fa fa-sign-in"></i> Ingresar</a><br/>
-                		<a class="enlace" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+                		
  							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
  								<p class="collapse" id="ingresarinmobiliaria">
- 								 	<br/>
    									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
+    								<button type="submit" class="btn btn-primary">Entrar</button>
+    								<br/><br/>
+    								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+    								<br/>
+    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
   								</p>
   							</form>
+  						
   						<?php 
 							} 
 						?>
-				<br/><br/><br/>
+						
+                <br/><br/>                
                 </div>   
                 <!---------------------------------------------------------------------------------------------Inmobiliaria-->    
                                    	            	

@@ -23,7 +23,6 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-warning"></i> Incidencias:</h3>
-                		<hr class="grisdoble"/>
                 		
                 	  <table class="table table-striped table-hover">
 						   <thead>
@@ -39,7 +38,7 @@
 						    </thead>
 						    <tbody>
 								  <tr>
-									    <td><img class="imagenboton3 coral-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png"></td>
+									    <td><img class="imagenboton3" src="<?php echo $ruta?>img/botones/incidencias.png"></td>
 									    <td><h5><i class="fa fa-check"></i> <i class="fa fa-times"></i> </h5></td>
 									    <td><h5>Juan Pérez</h5></td>
 								    	<td><h6 class="mayusculas">Me pica el pito...</h6></td>

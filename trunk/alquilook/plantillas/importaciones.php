@@ -74,6 +74,7 @@ if (basename(getcwd()) == "alquilook"){
    	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
+    <script src="<?php echo $ruta?>js/jquery.dataTables.js"></script>
 
     
     <!--      Ajax      -->
@@ -115,6 +116,23 @@ if (basename(getcwd()) == "alquilook"){
 				"sAjaxSource": "<?php echo $ruta?>js/server_processing.php"
 			} );
 		} );
+		
+		// Get data from { "data": [...] }
+$(document).ready( function() {
+  var oTable = $('#busqueda').dataTable( {
+    "sAjaxSource": "sources/data.txt",
+    "sAjaxDataProp": "data"
+  } );
+} );
+ 
+ 
+// Get data from { "data": { "inner": [...] } }
+$(document).ready( function() {
+  var oTable = $('#busqueda').dataTable( {
+    "sAjaxSource": "sources/data.txt",
+    "sAjaxDataProp": "data.inner"
+  } );
+} );
 	
 	</script>
     
