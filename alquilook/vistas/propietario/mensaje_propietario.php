@@ -3,7 +3,8 @@
     session_start();
     include_once '../../plantillas/importaciones.php';
 	include_once '../../funciones/core.php';
-	include_once '../../funciones/usuarios.php';   
+	include_once '../../funciones/usuarios.php';
+	include_once '../../funciones/admin.php';   
 	 
 ?>
 
@@ -36,22 +37,29 @@
 							  		
 							  		$idMensaje = $_GET['IdMensaje'];
 							  		
+									up_mensaje_leido($idMensaje);
+									
 							  		$mensaje = get_mensaje($idMensaje);
 									
-									echo $mensaje;	
+									echo $mensaje;
 							  
 							  ?>
 							  <div class="text-center">
 								 	<a class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#responder">
 								 		<i class="fa fa-comment"></i> Responder
 								    </a>
+								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <a class="btn btn-default btn-sm" href="../../controladores/control_borrar_mensaje.php?idMensaje=<?php echo $idMensaje; ?>&tipo=propietario">
+								 		<i class="fa fa-trash-o"></i> Borrar
+								    </a>
 							 </div>	
 							 <br/>
 							 <div id="responder" class="collapse">
-							 		<form class="form-group  text-center" method="post" action="">
-							 			<textarea class="" name="" placeholder="Escriba aquí su mensaje..."></textarea>
+							 		<form class="form-group  text-center" method="post" action="../../controladores/control_responde_mensaje.php">
+							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
-							 			<a type="submit" class="btn btn-primary btn-sm">Enviar</a>
+							 			<input type="submit" class="btn btn-primary btn-sm" value="Enviar" />
 							 		</form>
 							 </div>
 							 <br/>

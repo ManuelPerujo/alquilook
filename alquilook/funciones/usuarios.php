@@ -92,13 +92,26 @@
 		
 		$bd = new core();
 		
+		$remitente = "<h5 class='media-heading'>Administrador</h5>";
+		
 		$query = "select * from mensaje where IdMensaje = '$idMensaje' ";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
+		if(basename($_SERVER['PHP_SELF']) == 'mensaje_admin.php'){
+			
+			$idUsuario = $row['IdRemitente'];
+			
+			$query2 = "select Nombre,Apellidos from usuarios where IdUsuario = '$idUsuario'";
+			
+			$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+			
+			$remitente = "<h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>";
+			
+		}
+		
 		$mensaje = "<div class='media-body'>
-								  	<a type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</a>
-								    <h5 class='media-heading'>Administrador</h5>
+								  	".$remitente."
 								    <h6 class='media-heading'>".$row['Fecha']."</h6>
 								    <p class='mayusculas'>Asunto: ".$row['Titulo']."</p>
 								    <hr class='grissimple'/>
@@ -111,4 +124,20 @@
 		
 	}
 
+	function get_rowDatos_from_IdMensaje($idMensaje){
+		
+		$bd = new core();
+		
+		$query = "select Titulo, IdRemitente from mensaje where IdMensaje = '$idMensaje'";	
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row;
+		
+	}
+	
+	
+	
+	
+	
 ?>

@@ -14,23 +14,29 @@
 		
 		$id = $_GET['id'];
 		
-		/* Averiguo la ruta del archivo para eliminar tanto de la base de datos como de los archivos */
-		
-		$query = "select Direccion_Contenido from $tabla where $idTabla = '$id' ";
-		
-		$result = $bd->query($query);
-		
-		$row = $result->fetch(PDO::FETCH_ASSOC);
-		
-		$direccion = "alquilook/".$row['Direccion_Contenido'];
-		
-		/* Procedemos a borrar */
-		
-		if(file_exists($direccion)){
+		if(basename($_SERVER['HTTP_REFERER']) == 'tabla_usuarios_admin.php?'.$_SERVER['QUERY_STRING']){
 			
-			unlink($direccion);
+			/* Averiguo la ruta del archivo para eliminar tanto de la base de datos como de los archivos */
+		
+			$query = "select Direccion_Contenido from $tabla where $idTabla = '$id' ";
+			
+			$result = $bd->query($query);
+			
+			$row = $result->fetch(PDO::FETCH_ASSOC);
+			
+			$direccion = "alquilook/".$row['Direccion_Contenido'];
+			
+			/* Procedemos a borrar */
+			
+			if(file_exists($direccion)){
+				
+				unlink($direccion);
+				
+			}	
 			
 		}
+		
+		
 		
 		$query2 = "delete from $tabla where $idTabla = '$id' ";
 		
