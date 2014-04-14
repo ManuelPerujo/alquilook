@@ -60,6 +60,10 @@
                 	
 					$direccion =  "../../vistas/propietario/mensaje_propietario.php?$idTabla=".$selector;
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_mensajes_admin.php'){
+                	
+					$direccion =  "../../vistas/admin/mensaje_admin.php?$idTabla=".$selector;
+					
                 }
                   
                 
@@ -927,6 +931,10 @@
 								                 				</div>
 								                 				<br/><br/><br/>
 							                 				</div> 
+							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
+							                 					<i class='fa fa-trash-o'></i> Añadir Inquilino
+							                 				</a>
 							                 		</div>         
 				                     		</div>
 				                     </div>";	
@@ -1278,9 +1286,38 @@
 		
     }
    
-    
+    function get_mensajes_nuevos($idUsuario){
+    		
+    	$numero = null;
+    	
+    	$bd = new core();
+    	
+		$query = "select * from mensaje where IdUsuario = '$idUsuario' and Estado = '0'";
+		
+		$result = $bd->query($query);
+		
+		$numero = $result->rowCount();	
+    	
+		return $numero;
+    }
    
-   
+    function up_mensaje_leido($idMensaje){
+    	
+		$bd = new core();
+		
+		$query = "select Estado from mensaje where IdMensaje = '$idMensaje'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		if($row['Estado'] == 0){
+					
+			$query2 = "update mensaje set Estado='1' where IdMensaje = '$idMensaje'";
+			
+			$bd->query($query2);	
+			
+		}
+		
+    }
    
     		
 ?>	

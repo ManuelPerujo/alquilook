@@ -2,6 +2,7 @@
 
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/usuarios.php';
+	include_once '../../funciones/admin.php';
 
 	if(isset($_SESSION["IdUsuario_sesion"]) && !empty($_SESSION["IdUsuario_sesion"])){
 		
@@ -15,6 +16,8 @@
 	}else{
 		$usuario = null;
 	}
+
+	$numeroMensajes = get_mensajes_nuevos($id_usuario);
 
 ?>
 
@@ -51,7 +54,7 @@
 							<i class="fa fa-gavel"></i> Inc. Contratos
 					  </a>
 					   <a href="<?php echo $ruta ?>vistas/admin/tabla_mensajes_admin.php" class="list-group-item">
-						  	<span class="badge">3</span>
+						  	<span class="badge"><?php echo $numeroMensajes; ?></span>
 							<i class="fa fa-envelope"></i> Mensajes
 					  </a>
 				</div>

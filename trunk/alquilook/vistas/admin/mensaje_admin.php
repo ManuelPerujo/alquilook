@@ -30,30 +30,33 @@
 							  <a class="pull-left" href="#">
 							    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/banner/inquilino.png">
 							  </a>
-							  <div class="media-body">
-								    <h5 class="media-heading">Juan Pérez</h5>
-								    <h6 class="media-heading">18 / 04 / 14</h6>
-								    <p class="mayusculas">Asunto: Llevo 3 días intentándolo y aún no puedo registrarme en alquilook</p>
-								    <hr class="grissimple"/>
-								    <p class="ficha">
-								    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
-								    </p>
-							  </div>
+							  <?php 
+							  		
+							  		$idMensaje = $_GET['IdMensaje'];
+							  		
+									up_mensaje_leido($idMensaje);
+									
+							  		$mensaje = get_mensaje($idMensaje);
+									
+									echo $mensaje;
+							  
+							  ?>
 							  <div class="text-center">
 								 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">
 								 		<i class="fa fa-comment"></i> Responder
 								    </a>
 								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								    <a class="btn btn-default btn-sm" href="<?php echo $ruta?>vistas/admin/tabla_mensajes_admin.php">
+								    <a class="btn btn-default btn-sm" href="../../controladores/control_borrar_mensaje.php?idMensaje=<?php echo $idMensaje; ?>&tipo=admin">
 								 		<i class="fa fa-trash-o"></i> Borrar
 								    </a>
 							 </div>	
 							 <br/>
 							 <div id="responder" class="collapse">
-							 		<form class="form-group  text-center" method="post" action="">
-							 			<textarea name="" placeholder="Escriba aquí su mensaje..."></textarea>
+							 		<form class="form-group  text-center" method="post" action="../../controladores/control_responde_mensaje.php">
+							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
-							 			<a type="submit" class="btn btn-default btn-sm">Enviar</a>
+							 			<input type="submit" class="btn btn-primary btn-sm" value="Enviar" />
 							 		</form>
 							 </div>
 							 <br/>
