@@ -19,6 +19,7 @@ if (basename(getcwd()) == "alquilook"){
 	|| basename($_SERVER['PHP_SELF']) == "editar_estancia_admin.php" || basename($_SERVER['PHP_SELF']) == "editar_inquilino_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "tabla_altasnuevas_admin.php" || basename($_SERVER['PHP_SELF']) == "altanueva_admin.php"
 	|| basename($_SERVER['PHP_SELF']) == "tabla_mensajes_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_mensajes_propietario.php"
+	|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php"
 	){
 
     $ruta = "../../";    
@@ -106,36 +107,7 @@ if (basename(getcwd()) == "alquilook"){
 		
 	
 	<!--   Slider   -->
-		
-	<script type="text/javascript">	
-		
-		$(document).ready(function() {
-			$('#busqueda').dataTable( {
-				"bProcessing": true,
-				"bServerSide": true,
-				"sAjaxSource": "<?php echo $ruta?>js/server_processing.php"
-			} );
-		} );
-		
-		// Get data from { "data": [...] }
-$(document).ready( function() {
-  var oTable = $('#busqueda').dataTable( {
-    "sAjaxSource": "sources/data.txt",
-    "sAjaxDataProp": "data"
-  } );
-} );
- 
- 
-// Get data from { "data": { "inner": [...] } }
-$(document).ready( function() {
-  var oTable = $('#busqueda').dataTable( {
-    "sAjaxSource": "sources/data.txt",
-    "sAjaxDataProp": "data.inner"
-  } );
-} );
-	
-	</script>
-    
+		 
     
     
 </head> 
