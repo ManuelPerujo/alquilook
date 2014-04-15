@@ -29,6 +29,8 @@
                 <?php 
                 	
                 	$idInmueble = $_GET['IdInmueble'];
+					
+					up_incidencia_atendida($idInmueble);
                 	
                 	$datosUsuario = get_datosUsuario_from_IdInmueble($idInmueble);
                 	

@@ -1,6 +1,10 @@
-<?php 
+<?php
+ 
     session_start();
-    include_once '../../plantillas/importaciones.php';    
+    include_once '../../plantillas/importaciones.php';
+	include_once '../../funciones/core.php';
+	include_once '../../funciones/admin.php';	
+	    
 ?>
 
 <body>
@@ -31,15 +35,17 @@
 											  <a class="pull-left" href="#">
 											    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">
 											  </a>
-											  <div class="media-body">
-												    <h5 class="media-heading">Juan Pérez</h5>
-												    <h6 class="media-heading">18 / 04 / 14</h6>
-												    <p class="mayusculas">Asunto: Llevo 3 días intentándolo y aún no puedo registrarme en alquilook</p>
-												    <hr class="grissimple"/>
-												    <p class="ficha">
-												    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
-												    </p>
-											  </div>
+											  <?php 
+							  		
+											  		$idIncidencia = $_GET['IdIncidencia'];
+											  		
+													up_incidencia_atendida($idIncidencia);
+													
+											  		$incidencia = get_incidencias($idIncidencia);
+													
+													echo $incidencia;
+											  
+											  ?>
 											  <div class="text-center">
 											  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">

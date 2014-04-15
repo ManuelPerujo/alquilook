@@ -64,6 +64,18 @@
                 	
 					$direccion =  "../../vistas/admin/mensaje_admin.php?$idTabla=".$selector;
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_incidencias_admin.php'){
+                	
+					$direccion =  "../../vistas/admin/incidencia_admin.php?$idTabla=".$selector;
+					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_incidencias_inquilino.php'){
+                	
+					$direccion =  "../../vistas/admin/incidencia_admin.php?$idTabla=".$selector;
+					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_incidencias_contrato.php'){
+                	
+					$direccion =  "../../vistas/admin/incidencia_admin.php?$idTabla=".$selector;
+					
                 }
                   
                 
@@ -256,8 +268,8 @@
         $seleccion = implode(",", $arrayAtributos);
         
         
-        $query1 = "select $idTabla from $tabla1 inner join $tabla2 where incidencia.Estado =  '0'
-					  and incidencia.IdInmueble = inmueble.IdInmueble";
+        $query1 = "select $idTabla from $tabla1 inner join $tabla2 where incidencia.IdInmueble = inmueble.IdInmueble
+        		  and incidencia.Tipo = 'altaNueva'";
         
                 
         if(count($arrayOrden) != 0){
@@ -318,6 +330,20 @@
                         $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
                         $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' /></button>";
+                    }if($arrayOpciones['visto'] == TRUE){
+                    	
+						$boleean = alta_atendida($selector);
+						
+						if($boleean == 0){
+							
+							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-bell'></i>";
+							
+						}if($boleean == 1){
+									
+							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-eye'></i>";	
+							
+						}
+						
                     }
                     
                     $mensaje .= "</td>";
@@ -1315,7 +1341,7 @@
 		return $numero;
     }
     
-	function get_incidencias_nuevas($subtipo){
+	function get_NumeroIncidencias_nuevas($subtipo){
     		
     	$numero = null;
     	
@@ -1329,6 +1355,36 @@
     	
 		return $numero;
     }
+	
+	function get_incidencias($idIncidencia){
+		
+		$mensaje = null;
+		
+		$bd = new core();
+		
+		$query = "select * from incidencia where IdIncidencia = '$idIncidencia'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idUsuario = get_IdUsuarioPropietarioFromInmueble($row['IdInmueble']);
+		
+		$query2 = "select Nombre,Apellidos from usuarios where IdUsuario = '$idUsuario'";
+		
+		$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		$mensaje = "<div class='media-body'>
+					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
+					    <h6 class='media-heading'>".$row['Fecha']."</h6>
+					    <p class='mayusculas'>Tipo: ".$row['Tipo']."</p>
+					    <hr class='grissimple'/>
+					    <p class='ficha'>
+					    ".$row['Contenido']."
+					    </p>
+ 				  </div>";
+ 				  
+ 		return $mensaje;		  
+		
+	}
 	
     function up_mensaje_leido($idMensaje){
     	
@@ -1348,6 +1404,24 @@
 		
     }
    
+    function up_incidencia_atendida($idInmueble){
+    	
+		$bd = new core();
+		
+		$query = "select Estado from incidencia where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		if($row['Estado'] == 0){
+					
+			$query2 = "update incidencia set Estado='1' where IdInmueble = '$idInmueble' ";
+			
+			$bd->query($query2);	
+			
+		}
+		
+    }
+   
     function is_leido($idMensaje){
     	
 		$bd = new core();
@@ -1360,7 +1434,17 @@
 		
     }
 	
-	
+	function alta_atendida($idInmueble){
+		
+		$bd = new core();
+		
+		$query = "select Estado from incidencia where IdInmueble = '$idInmueble' and Tipo = 'altaNueva'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['Estado'];
+		
+	}
 	
 	
 	

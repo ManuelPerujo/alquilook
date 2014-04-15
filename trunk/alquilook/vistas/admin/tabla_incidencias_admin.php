@@ -24,36 +24,18 @@
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-warning"></i> Incidencias:</h3>
                 		
-                	  <table class="table table-striped table-hover">
-						   <thead>
-							      <tr> 
-								        <th></th>
-								        <th>Estado</th>
-								        <th>Nombre</th>
-								        <th>Asunto</th>
-								        <th>Fecha</th>
-								        <th>Tipo</th>
-								        <th><i class="fa fa-cog"></i></th>
-							      </tr>
-						    </thead>
-						    <tbody>
-								  <tr>
-									    <td><img class="imagenboton3" src="<?php echo $ruta?>img/botones/incidencias.png"></td>
-									    <td><h5><i class="fa fa-check"></i> <i class="fa fa-times"></i> </h5></td>
-									    <td><h5>Juan Pérez</h5></td>
-								    	<td><h6 class="mayusculas">Me pica el pito...</h6></td>
-									    <td><h6>18 / 05 / 2014</h6></td>
-									    <td><h5>Propietario</h5></td>
-									    <td>
-									    	<h5>
-									    		<a class="enlace" href="">
-								 					<i class="fa fa-trash-o"></i>
-								 				</a>
-								 			</h5>	
-								    	</td>
-								  </tr>
-							</tbody> 
-						</table>
+                	  <?php 
+                	
+                		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Contenido');
+                        $filtro = array('Tipo' => 'IncidenciasVarias');
+                        $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
+                        $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
+                                               'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);  
+                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+						
+						echo $mensaje;
+                	
+                	?>
                 		
                 </div> 
                 <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
