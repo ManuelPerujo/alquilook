@@ -29,6 +29,7 @@
     			?> 
     			
                 <!--------------------------------------------------------Columna Dcha----------------------->
+                
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
                 	    <div class="col-sm-12">
@@ -52,9 +53,24 @@
 										
 									unset($_SESSION['bienvenida']);	 
 									
-		                		}
-		                	
-		                	?>
+		                		}if(isset($_SESSION['up_exito'])){
+											
+									if($_SESSION['up_exito'] == TRUE){
+								
+										echo "<div class='row'>
+										  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+										       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+									 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Incidencia registrada!</h5>
+						                		</div>
+											  </div>";
+									
+										unset($_SESSION['up_exito']);
+								
+									}
+		
+								}                
+				
+                			?>
 		                			                		                	
 		                	<?php
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
