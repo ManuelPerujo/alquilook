@@ -22,6 +22,7 @@
         			include_once '../panel/panel_admin.php';
     			?> 
                 
+                
                <!--------------------------------------------------------Columna Dcha----------------------->
                <div class="col-sm-10 col-xs-12">
                 	<div class="row">
