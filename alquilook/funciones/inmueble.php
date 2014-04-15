@@ -135,9 +135,9 @@
 																		      <div class='panel-body negro'>
 																		     	<form class='form-group text-left' method='post' action='../../controladores/control_up_cambios_contrato.php'>
 																		     		<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
-																		     		<input type='radio' name='radiogroup' value='Modificación de contrato' />
+																		     		<input type='radio' name='subtipo' value='Modificación de contrato' />
                 																	Modificación de contrato<br/>
-               																		<input type='radio' name='radiogroup' value='Darse de baja en Alquilook' />
+               																		<input type='radio' name='subtipo' value='Darse de baja en Alquilook' />
                 																	Darse de baja en Alquilook<br/><br/>
 																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
 																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />
