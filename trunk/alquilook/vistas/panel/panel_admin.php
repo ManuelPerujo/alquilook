@@ -18,7 +18,12 @@
 	}
 
 	$numeroMensajes = get_mensajes_nuevos($id_usuario);
-
+	
+	$numeroIncidenciasVarias = get_incidencias_nuevas('IncidenciasVarias');
+	$numeroIncidenciasCambioInquilino = get_incidencias_nuevas('IncidenciasCambioInquilino');
+	$numeroIncidenciasCambioContrato = get_incidencias_nuevas('IncidenciasCambioContrato');
+	$numeroIncidenciasAltaNueva = get_incidencias_nuevas('altaNueva');
+	
 ?>
 
 
@@ -38,19 +43,19 @@
 							<i class="fa fa-group"></i> Usuarios
 					  </a>
 					  <a href="<?php echo $ruta ?>vistas/admin/tabla_altasnuevas_admin.php" class="list-group-item">
-						    <span class="badge">0</span>
+						    <span class="badge"><?php echo $numeroIncidenciasAltaNueva; ?></span>
 							<i class="fa fa-bell"></i> Altas nuevas
 					  </a>
 					  <a href="<?php echo $ruta ?>vistas/admin/tabla_incidencias_admin.php" class="list-group-item">
-						  	<span class="badge">6</span>
+						  	<span class="badge"><?php echo $numeroIncidenciasVarias; ?></span>
 							<i class="fa fa-warning"></i> Incidencias
 					  </a>
 					  <a href="" class="list-group-item">
-						  	<span class="badge">2</span>
+						  	<span class="badge"><?php echo $numeroIncidenciasCambioInquilino; ?></span>
 							<i class="fa fa-key"></i> Inc. Inquilinos
 					  </a>
 					  <a href="#" class="list-group-item">
-						  	<span class="badge">5</span>
+						  	<span class="badge"><?php echo $numeroIncidenciasCambioContrato; ?></span>
 							<i class="fa fa-gavel"></i> Inc. Contratos
 					  </a>
 					   <a href="<?php echo $ruta ?>vistas/admin/tabla_mensajes_admin.php" class="list-group-item">

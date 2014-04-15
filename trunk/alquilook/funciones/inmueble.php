@@ -90,9 +90,11 @@
 																		</div>
 																		<div id='collapseOne".$count."' class='panel-collapse collapse'>
 																		     <div class='panel-body negro'>
-																		     	<form class='form-group text-left' method='post' action=''>
-																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
-																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																		     	<form class='form-group text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_incidencias_varias.php'>
+																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<input type='file' name='userfile' /><br/>
+																					<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
+																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />
 																		     	</form>	
 																		     </div>
 																		</div>
@@ -107,15 +109,16 @@
 																		</div>
 																		<div id='collapseTwo".$count."' class='panel-collapse collapse'>
 																		     <div class='panel-body negro'>
-																		     	<form class='form-group text-left' method='post' action=''>
-																		     		<input type='radio' name='radiogroup' value='option1' />
+																		     	<form class='form-group text-left' method='post' action='../../controladores/control_up_cambios_inquilino.php'>
+																		     		<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
+																		     		<input type='radio' name='subtipo' value='Baja de inquilino' />
                 																	Baja de inquilino<br/>
-                																	<input type='radio' name='radiogroup' value='option2' />
+                																	<input type='radio' name='subtipo' value='Añadir inquilino' />
                																		Añadir inquilino<br/>
-               																		<input type='radio' name='radiogroup' value='option3' />
+               																		<input type='radio' name='subtipo' value='Modificar datos de inquilino' />
                 																	Modificar datos de inquilino<br/><br/>
-																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
-																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />
 																		     	</form>	
 																		     </div>
 																		</div>
@@ -130,13 +133,14 @@
 																		</div>
 																		    <div id='collapseThree".$count."' class='panel-collapse collapse'>
 																		      <div class='panel-body negro'>
-																		     	<form class='form-group text-left' method='post' action=''>
-																		     		<input type='radio' name='radiogroup' value='option1' />
+																		     	<form class='form-group text-left' method='post' action='../../controladores/control_up_cambios_contrato.php'>
+																		     		<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
+																		     		<input type='radio' name='radiogroup' value='Modificación de contrato' />
                 																	Modificación de contrato<br/>
-               																		<input type='radio' name='radiogroup' value='option3' />
+               																		<input type='radio' name='radiogroup' value='Darse de baja en Alquilook' />
                 																	Darse de baja en Alquilook<br/><br/>
-																					<textarea placeholder='Descripción de incidencia'></textarea><br/><br/>
-																					<button type='submit' class='btn btn-default btn-sm'>Enviar</button>
+																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />
 																		     	</form>	
 																		     </div>
 																		   </div>

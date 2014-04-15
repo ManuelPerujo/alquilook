@@ -101,6 +101,20 @@
                     }if($arrayOpciones['borrar'] == TRUE){
                         $direccionBorrar = '../../controladores/control_borrar_item.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
                         $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
+                    }if($arrayOpciones['visto'] == TRUE){
+                    	
+						$boleean = is_leido($selector);
+						
+						if($boleean == 0){
+							
+							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-envelope'></i>";
+							
+						}if($boleean == 1){
+									
+							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-eye'></i>";	
+							
+						}
+						
                     }
                     
                     $mensaje .= "</td>";
@@ -651,7 +665,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'agua');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);
 				
 		$mensaje = "<div id='agua".$count."' class='collapse'>
@@ -693,7 +707,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'luz');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
 				
 		$mensaje = "<div id='luz".$count."' class='collapse'>
@@ -735,7 +749,7 @@
 		$tabla = 'factura'; $idTabla = 'IdFactura'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble, 'Tipo' => 'gas');
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);
 				
 		$mensaje = "<div id='gas".$count."' class='collapse'>
@@ -777,7 +791,7 @@
 		$tabla = 'contrato'; $idTabla = 'IdContrato'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble);
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
-		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE);	
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
 		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
 				
 		$mensaje = "<div id='contrato".$count."' class='collapse'>
@@ -1300,7 +1314,22 @@
     	
 		return $numero;
     }
-   
+    
+	function get_incidencias_nuevas($subtipo){
+    		
+    	$numero = null;
+    	
+    	$bd = new core();
+    	
+		$query = "select * from incidencia where Estado = '0' and Tipo = '$subtipo'";
+		
+		$result = $bd->query($query);
+		
+		$numero = $result->rowCount();	
+    	
+		return $numero;
+    }
+	
     function up_mensaje_leido($idMensaje){
     	
 		$bd = new core();
@@ -1319,5 +1348,24 @@
 		
     }
    
-    		
+    function is_leido($idMensaje){
+    	
+		$bd = new core();
+		
+		$query = "select Estado from mensaje where IdMensaje = '$idMensaje'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['Estado'];
+		
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+			
 ?>	
