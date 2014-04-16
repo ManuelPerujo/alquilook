@@ -42,7 +42,7 @@
         			<br/> 
                     <a class="imagenboton2" href="#"><img class="imagenboton2 coral-bg img-rounded" src="<?php echo $ruta?>img/botones/mensaje.png"></a>
                     <br/>
-                    <h6>Mensajes <span class="badge">3</span></h6>
+                    <h6>Mensajes <span class="badge"></span></h6>
             </div>
         </div> 
         

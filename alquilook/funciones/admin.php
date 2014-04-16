@@ -257,7 +257,7 @@
         }
         
         if($arrayOpciones['opciones'] == TRUE){
-            $mensaje .= "<th>Opciones</th>";    
+            $mensaje .= "<th>Estado</th>";    
         }
         
         $mensaje .= "</tr><thead>";
@@ -971,10 +971,6 @@
 								                 				</div>
 								                 				<br/><br/><br/>
 							                 				</div> 
-							                 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
-							                 					<i class='fa fa-trash-o'></i> Añadir Inquilino
-							                 				</a>
 							                 		</div>         
 				                     		</div>
 				                     </div>";	
