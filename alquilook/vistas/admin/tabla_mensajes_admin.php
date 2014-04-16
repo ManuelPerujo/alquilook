@@ -27,7 +27,6 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-envelope"></i> Mensajes:</h3>
-                		<hr class="grisdoble"/>
                 	
                 	<?php 
                 	
