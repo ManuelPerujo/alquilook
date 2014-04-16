@@ -39,7 +39,7 @@
 							  		
 											  		$idIncidencia = $_GET['IdIncidencia'];
 											  		
-													up_incidencia_atendida($idIncidencia);
+													up_incidencia_atendida2($idIncidencia);
 													
 											  		$incidencia = get_incidencias($idIncidencia);
 													
