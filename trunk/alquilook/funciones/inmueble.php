@@ -34,7 +34,7 @@
 			}
 			
 													
-			$colapse = get_colapse($count);
+			$colapse = get_colapse($value['IdInmueble'], $count);
 			$facturaAgua = get_facturas_agua($value['IdInmueble'],$count);
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
@@ -291,7 +291,9 @@
 		
 	}
 
-	function get_colapse($count){
+	function get_colapse($idInmueble,$count){
+		
+		$direccion = get_contrato($idInmueble);
 			
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
@@ -313,7 +315,7 @@
 							                    </a>   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' href='' target='_blank'>
+				                       			<a class='enlace2' href='".$direccion."' target='_blank'>
 				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
 				                       				<p class='ficha'>Contrato</p>
 				                       			</a>	
@@ -369,7 +371,17 @@
 		return $arrayId;
 	}
 
-
+	function get_contrato($idInmueble){
+		
+		$bd = new core();
+		
+		$query = "select Direccion_Contenido from contrato where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['Direccion_Contenido'];	
+		
+	}
 
 
 

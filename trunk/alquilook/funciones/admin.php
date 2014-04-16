@@ -115,7 +115,7 @@
                         $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
                     }if($arrayOpciones['visto'] == TRUE){
                     	
-						$boleean = is_leido($selector);
+						$boleean = is_leido($tabla, $idTabla, $selector);
 						
 						if($boleean == 0){
 							
@@ -1422,11 +1422,29 @@
 		
     }
    
-    function is_leido($idMensaje){
+    function up_incidencia_atendida2($idIncidencia){
+    			
+    	$bd = new core();
+		
+		$query = "select Estado from incidencia where IdIncidencia = '$idIncidencia'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		if($row['Estado'] == 0){
+					
+			$query2 = "update incidencia set Estado='1' where IdIncidencia = '$idIncidencia' ";
+			
+			$bd->query($query2);	
+			
+		}	
+    	
+    }
+   
+    function is_leido($tabla, $idTabla, $selector){
     	
 		$bd = new core();
 		
-		$query = "select Estado from mensaje where IdMensaje = '$idMensaje'";
+		$query = "select Estado from $tabla where $idTabla = '$selector'";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
