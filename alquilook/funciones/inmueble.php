@@ -76,7 +76,7 @@
 							                      		<img class='imagenbanner2' src='../../img/botones/incidencias2.png'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
-							                 			<p class='ficha'><h5>Crear incidencia</h5></p>
+							                 			<p class='ficha'><h5>Crear incidencias</h5></p>
 							                 		</div>
 							                 		<div class='col-sm-8 col-xs-12'>	
 														     <div class='panel-group' id='accordion".$count."'>
@@ -103,7 +103,7 @@
 																		<div class='panel-heading'>
 																		     <h6 class='panel-title'>
 																		         <a class='enlace2'  data-toggle='collapse' data-parent='#accordion".$count."' href='#collapseTwo".$count."'>
-																			        <i class='fa fa-user'></i> Cambios de inquilino
+																			        <i class='fa fa-key'></i> Cambios de inquilino
 																			    </a>
 																			 </h6>
 																		</div>
@@ -127,7 +127,7 @@
 																		<div class='panel-heading'>
 																		     <h6 class='panel-title'>
 																		        <a class='enlace2'  data-toggle='collapse' data-parent='#accordion".$count."' href='#collapseThree".$count."'>
-																		          <span class='glyphicon glyphicon-file'></span>Cambios de contrato
+																		          <i class='fa fa-gavel'></i> Cambios de contrato
 																		        </a>
 																		     </h6>
 																		</div>
@@ -148,6 +148,32 @@
 															</div>     
 							                 		</div> 	            
 				                     		</div>
+				                     		<div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/historial2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Historial de incidencias</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>
+								                 					<table class='table table-striped table-hover'>
+																		   <thead>
+																			      <tr> 
+																				        <th>Fecha</th>
+																				        <th>Tipo</th>
+																				        <th>Estado</th>
+																			      </tr>
+																		    </thead>
+																		    <tbody>
+																				  <tr>
+																					    <td>18 / 05 / 2014</td>
+																					    <td>Me pica el serele</td>
+																					    <td>Pendiente</td>
+																				  </tr>
+																			</tbody> 
+																	</table>
+							                 		</div>
+							                </div> 
 				                     </div>		
 		                    	</div>
 		                    </div>
@@ -323,13 +349,13 @@
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia".$count."'>
 							                       	<img class='imagenboton3' src='../../img/botones/incidencias.png'>
-							                       	<p class='ficha'>Crear incidencia</p>
+							                       	<p class='ficha'>Incidencias</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#historial".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/historial.png'>
-							                       	<p class='ficha'>Ver incidencias</p>
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#galeria".$count."'>
+							                       	<img class='imagenboton3' src='../../img/botones/galeria.png'>
+							                       	<p class='ficha'>Ladyboys</p>
 							                    </a>   	
 				                       		</div>
 										</div>";

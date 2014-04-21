@@ -23,12 +23,10 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-envelope"></i> Mensaje:</h3>
-                		<hr class="grisdoble"/>
-                		
 	                	<div class="media">
 	                		  <br/>
 							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/banner/inquilino.png">
+							    	<img class="imagenboton2" src="<?php echo $ruta?>img/botones/inquilino.png">
 							  </a>
 							  <?php 
 							  		
