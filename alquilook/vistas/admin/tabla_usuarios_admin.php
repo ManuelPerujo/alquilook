@@ -25,7 +25,26 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div id="users" class="col-sm-10 col-xs-12">
                 	<h3><i class="fa fa-group"></i> Usuarios</h3> 
-                	<?php 
+                	<?php
+                		
+                		if(isset($_SESSION['borrado_inmueble'])){
+                			
+							if($_SESSION['borrado_inmueble'] == TRUE){
+								
+								unset($_SESSION['borrado_inmueble']);
+								
+								echo "<div class='row'>
+								  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+								       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;El inmueble se elimino con éxito!</h5>
+				                		</div>
+									  </div>";
+								
+							}	
+							
+                		}
+                		
+                	 
                         $tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
                         $filtro = array('UsuarioActivo' => '1', 'Admin' => '0');
                         $arrayOrden = array(1 => 'Nombre', 2=> 'asc');

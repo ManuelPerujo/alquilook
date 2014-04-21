@@ -40,6 +40,16 @@ CREATE TABLE IF NOT EXISTS `propietario` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `inmobiliaria`;
+CREATE TABLE IF NOT EXISTS `inmobiliaria` (
+  `IdInmobiliaria` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(6) unsigned NOT NULL,
+  PRIMARY KEY (`IdInmobiliaria`),
+  UNIQUE KEY `Inmobiliaria_Unica` (`IdInmobiliaria`),
+  CONSTRAINT `ID_INMOBILIARIA_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
 drop table if exists `inquilino`;
 CREATE TABLE IF NOT EXISTS `inquilino` (
   `IdInquilino` int(6) unsigned NOT NULL AUTO_INCREMENT,
