@@ -27,13 +27,12 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-warning"></i> Incidencia:</h3>
-                		<hr class="grisdoble"/>
                 			<div class="row">
                 				<div class="col-xs-12">
 		                				<div class="media">
 					                		  <br/>
 											  <a class="pull-left" href="#">
-											    	<img class="imagenboton2 coral-bg img-circle" src="<?php echo $ruta?>img/botones/incidencias.png">
+											    	<img class="imagenboton2" src="<?php echo $ruta?>img/botones/incidencias.png">
 											  </a>
 											  <?php 
 							  		
@@ -46,28 +45,10 @@
 													echo $incidencia;
 											  
 											  ?>
-											  <div class="text-center">
-											  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">
-												 		<i class="fa fa-comment"></i> Responder
-												    </a>
-												    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												    <a class="btn btn-default btn-sm" href="<?php echo $ruta?>vistas/admin/tabla_incidencias_admin.php">
-												 		<i class="fa fa-trash-o"></i> Borrar
-												    </a>
-											 </div>	
-											 <br/>
-											 <div id="responder" class="collapse">
-											 		<form class="form-group  text-center" method="post" action="">
-											 			<textarea name="" placeholder="Escriba aquí su mensaje..."></textarea>
-											 			<br/>
-											 			<a type="submit" class="btn btn-default btn-sm">Enviar</a>
-											 		</form>
-											 </div>
+											  
 										</div>
 								</div>
-							</div>	
-                			<hr class="grisdoble" />
+							</div>
                 			<br />
 							<div class="row">
 								<div class="col-sm-5 col-xs-3"></div>
@@ -77,8 +58,8 @@
 									    </a>
 										<br/>
 										<div id="gestionar" class="collapse">
-										 		<form class="form-group  text-center" method="post" action="">
-										 			<div class="radio">
+										 		<form class="form-group" method="post" action="">
+										 				<div class="radio">
 														  <label>
 															    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
 															    Pendiente
@@ -86,11 +67,17 @@
 														</div>
 														<div class="radio">
 														  <label>
-															    <input type="radio" name="opciones" id="opciones_2" value="opcion_2">
+															    <input type="radio" name="opciones" id="opciones_2" value="opcion_2" checked>
+															    En trámite
+														  </label>
+														</div>
+														<div class="radio">
+														  <label>
+															    <input type="radio" name="opciones" id="opciones_3" value="opcion_3" checked>
 															    Solucionado
 														  </label>
-													</div>
-													<a type="submit" class="btn btn-default btn-lg">OK</a>
+														</div>
+													<a type="submit" class="btn btn-default btn-sm">OK</a>
 										 		</form>
 									 	</div>
 						    	 </div>

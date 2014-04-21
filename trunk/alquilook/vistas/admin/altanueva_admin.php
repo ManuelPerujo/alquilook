@@ -56,7 +56,7 @@
 	        				<hr class="grissimple"/>
 	                		<div class="row">
 								<div class="col-xs-2">   	
-					                <img class="imagenboton steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/inmueble.png">
+					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmueble.png">
 		                		 </div>
 	                			 <?php echo $datosInmueble; ?>
 		                		 <div class="col-xs-5">	

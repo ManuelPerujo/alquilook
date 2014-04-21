@@ -36,7 +36,7 @@
 						    </thead>
 						    <tbody>
 								  <tr>
-									    <td><img class="imagenboton3 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/admin.png"></td>
+									    <td><img class="imagenboton3" src="<?php echo $ruta?>img/botones/admin.png"></td>
 									    <td><h5><i class="fa fa-eye"></i> <i class="fa fa-envelope"></i> </h5></td>
 									    <td><h5>Administrador</h5></td>
 								    	<td><h6 class="mayusculas">Me pica el pito...</h6></td>
