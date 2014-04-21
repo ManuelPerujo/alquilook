@@ -960,12 +960,12 @@
 									                 				</a>
 								                 				</div>
 								                 				<div class='col-xs-2'>
-									                 				<a class='btn btn-default btn-sm' href='#'>
+									                 				<a class='btn btn-default btn-sm' href='../../controladores/control_borrar_inmueble.php?idInmueble=".$idInmueble."'>
 									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Inmueble
 									                 				</a>
 								                 				</div>
 								                 				<div class='col-xs-2'>
-									                 				<a class='btn btn-default btn-sm' href='#'>
+									                 				<a class='btn btn-default btn-sm' href='../../vistas/admin/anadir_inquilino_admin.php?idInmueble=".$idInmueble."'>
 									                 					<i class='fa fa-key'></i> Añadir<br/>Inqulino
 									                 				</a>
 								                 				</div>

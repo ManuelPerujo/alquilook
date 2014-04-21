@@ -20,6 +20,11 @@
             	
 				<?php
         			include_once '../panel/panel_admin.php';
+					
+					$IdInmueble = $_GET['idInmueble'];
+					
+					$direccion = $_SERVER['HTTP_REFERER'];
+					
     			?> 
                 
                 
@@ -33,7 +38,9 @@
 		            </div>
 		            <div class="row">
 		                <div class="col-sm-5 col-xs-12">
-		               		 <form method="post" action="../../controladores/control_registro_inquilino.php?inq=TRUE">
+		               		 <form method="post" action="../../controladores/control_add_inquilino.php">
+		               		 	<input type="hidden" value="<?php echo $direccion; ?>" name="direccion" />
+		               		 	<input type="hidden" value="<?php echo $IdInmueble; ?>" name="idInmueble" />
 			               		<input type="text" class="form-control" name="nombre_inquilino" placeholder="Nombre *" />
 								<input type="text" class="form-control" name="apellidos_inquilino" placeholder="Apellidos *" /> 
 								<input type="text" class="form-control" name="dni_inquilino" placeholder="DNI *" />
