@@ -80,7 +80,7 @@
                   
                 
                 
-                if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php"){
+                if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_pro.php"){
                     foreach ($row2 as $key => $value2) {
                         $contenido = wordwrap($value2, 12);                            
                         $mensaje .= "<td>$contenido</td>";

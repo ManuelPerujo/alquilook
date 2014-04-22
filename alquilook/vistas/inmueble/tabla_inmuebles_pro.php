@@ -5,6 +5,7 @@
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/inmueble.php';
 	include_once '../../funciones/usuarios.php';
+	include_once '../../funciones/admin.php';
     
 ?>
 
