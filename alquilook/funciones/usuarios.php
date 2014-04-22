@@ -92,7 +92,7 @@
 		
 		$bd = new core();
 		
-		$remitente = "<h5 class='media-heading'>Administrador</h5>";
+		$remitente = "<h5 class='media-heading'>Alquilook</h5>";
 		
 		$query = "select * from mensaje where IdMensaje = '$idMensaje' ";
 		

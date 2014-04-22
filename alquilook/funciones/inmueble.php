@@ -91,7 +91,9 @@
 																		<div id='collapseOne".$count."' class='panel-collapse collapse'>
 																		     <div class='panel-body negro'>
 																		     	<form class='form-group text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_incidencias_varias.php'>
+																					<input type='text' name='' placeholder='Asunto'/><br/><br/>
 																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
+																					<i class='fa fa-paperclip'></i> Adjuntar un archivo:
 																					<input type='file' name='userfile' /><br/>
 																					<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
 																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />
@@ -343,7 +345,7 @@
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' href='".$direccion."' target='_blank'>
 				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
-				                       				<p class='ficha'>Contrato</p>
+				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>

@@ -25,6 +25,23 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
                 		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
+                		<hr class="grissimple">
+                		<div class="text-left">
+								 	<a class="enlace2" data-toggle="collapse" data-target="#responder">
+								 		<i class="fa fa-pencil"></i> Nuevo mensaje
+								    </a>
+						</div>
+						<div id="responder" class="collapse">
+									<br/>
+							 		<form class="form-group  text-left" method="post" action="../../controladores/control_responde_mensaje.php">
+							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
+							 			<br/>
+							 			<input type="submit" class="btn btn-default" value="Enviar" />
+							 		</form>
+						</div>
+						<hr class="grissimple">
+                		
 	                	<?php 
                 	
                 		$idUsuario = $_SESSION['IdUsuario_sesion'];
