@@ -19,8 +19,8 @@
 	
 	$bd = new core();
 		
-	$query = "insert into incidencia (IdIncidencia,IdInmueble,Tipo,SubTipo,Fecha,Contenido,Direccion_Contenido,Estado)
-				values ('','$IdInmueble','IncidenciasVarias','null','$fechaMensaje','$contenido','$direccion','0')";
+	$query = "insert into incidencia (IdIncidencia,IdInmueble,Tipo,SubTipo,Fecha,Contenido,Direccion_Contenido,Estado,EstadoIncidencia)
+				values ('','$IdInmueble','IncidenciasVarias','null','$fechaMensaje','$contenido','$direccion','0','pendiente')";
 		
 	echo $query;
 				

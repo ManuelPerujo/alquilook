@@ -38,6 +38,7 @@
 			$facturaAgua = get_facturas_agua($value['IdInmueble'],$count);
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
+			$historialIncidencias = get_tabla_historial_incidencias($value['IdInmueble']);
 				
 				$inmueble = "<hr class='grisdoble'/><br/>
 							 <div class='row'>
@@ -150,32 +151,7 @@
 															</div>     
 							                 		</div> 	            
 				                     		</div>
-				                     		<div class='row lineaabajo'>
-                	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/historial2.png'>
-							                 		</div>  
-							                 		<div class='col-sm-3 col-xs-9'>
-							                 			<p class='ficha'><h5>Historial de incidencias</h5></p>
-							                 		</div>
-							                 		<div class='col-sm-8 col-xs-12'>
-								                 					<table class='table table-striped table-hover'>
-																		   <thead>
-																			      <tr> 
-																				        <th>Fecha</th>
-																				        <th>Tipo</th>
-																				        <th>Estado</th>
-																			      </tr>
-																		    </thead>
-																		    <tbody>
-																				  <tr>
-																					    <td>18 / 05 / 2014</td>
-																					    <td>Me pica el serele</td>
-																					    <td>Pendiente</td>
-																				  </tr>
-																			</tbody> 
-																	</table>
-							                 		</div>
-							                </div> 
+				                     		".$historialIncidencias." 
 				                     </div>		
 		                    	</div>
 		                    </div>
@@ -412,7 +388,33 @@
 	}
 
 
-
+	function get_tabla_historial_incidencias($idInmueble){
+		
+		$bd = new core();
+		
+		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'EstadoIncidencia');
+        $filtro = array('IdInmueble' => $idInmueble);
+        $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
+        $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
+                         'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);
+						   
+        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+				
+		$mensaje2 = "<div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/historial2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Historial de incidencias</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>
+							                 		".$mensaje."
+							                 		</div>
+							                </div>";
+											
+		return $mensaje2;									
+		
+	}
 
 
 

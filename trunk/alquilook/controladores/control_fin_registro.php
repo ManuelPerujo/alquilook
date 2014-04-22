@@ -20,8 +20,8 @@
 	
 	$bd = new core();
 	
-	$query = "insert into incidencia (IdIncidencia,IdInmueble,Tipo,SubTipo,Fecha,Contenido,Direccion_Contenido,Estado)
-			values ('','$IdInmueble','altaNueva','null','$fechaMensaje','null','null','0')";
+	$query = "insert into incidencia (IdIncidencia,IdInmueble,Tipo,SubTipo,Fecha,Contenido,Direccion_Contenido,Estado,EstadoIncidencia)
+			values ('','$IdInmueble','altaNueva','null','$fechaMensaje','null','null','0','null')";
 			
 	$bd->query($query);		
 	
