@@ -206,6 +206,33 @@ a.enlace2:focus{
 
 }
 
+a.enlace3{
+	color: #666666;
+   	opacity: 1.0;
+	filter:alpha(opacity=100);	
+	text-decoration: none;
+	cursor: pointer;
+	
+	-webkit-transition: color 0.3s linear 0s;	
+	   -moz-transition: color 0.3s linear 0s;
+		 -o-transition: color 0.3s linear 0s;
+		    transition: color 0.3s linear 0s;
+}
+
+a.enlace3:hover,
+a.enlace3:active,
+a.enlace3:focus{
+	color: #666666;
+	opacity: 0.8;
+	filter:alpha(opacity=80);		
+	outline: 0;
+	text-decoration:none;
+	
+	 -webkit-transform: scale(1.1); 
+
+}
+
+
 a.enlaceblanco{
 	color:#ffffff;
 	text-decoration: none;

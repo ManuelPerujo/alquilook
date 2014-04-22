@@ -32,7 +32,7 @@
         <div class="row">
         	<div class="col-xs-12">
         			<br/>       	               		
-                    <a class="imagenboton" href="<?php echo $ruta; ?>vistas/inmueble/registro_inmueble.php"><img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/mas_inm.png"></a>
+                    <a class="imagenboton" href="<?php echo $ruta; ?>vistas/inmueble/registro_inmueble.php"><img class="imagenboton" src="<?php echo $ruta?>img/botones/mas_inm.png"></a>
                     <h6>Añadir inmueble</h6>
             </div>
         </div>  
@@ -40,17 +40,25 @@
         <div class="row">
         	<div class="col-xs-12"> 
         			<br/>            	
-                    <a class="imagenboton" href="<?php echo $ruta; ?>vistas/inmueble/tabla_inmuebles_pro.php"><img class="imagenboton magenta-bg img-rounded" src="<?php echo $ruta?>img/botones/ver_inm.png"></a>
+                    <a class="imagenboton" href="<?php echo $ruta; ?>vistas/inmueble/tabla_inmuebles_pro.php"><img class="imagenboton" src="<?php echo $ruta?>img/botones/ver_inm.png"></a>
                     <h6>Tus inmuebles</h6>
             </div>
         </div>  
         
-    	<br/>  
+    	
+    	<div class="row">
+        	<div class="col-xs-12"> 
+        			<br/> 
+                    <a class="imagenboton2" href="<?php echo $ruta; ?>vistas/propietario/tabla_notificaciones_propietario.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/notificaciones.png"></a>
+                    <br/>
+                    <h6>Notificaciones <span class="badge"></span></h6>
+            </div>
+        </div> 
     	      
         <div class="row">
         	<div class="col-xs-12"> 
         			<br/> 
-                    <a class="imagenboton2" href="<?php echo $ruta; ?>vistas/propietario/tabla_mensajes_propietario.php"><img class="imagenboton2 coral-bg img-rounded" src="<?php echo $ruta?>img/botones/mensaje.png"></a>
+                    <a class="imagenboton2" href="<?php echo $ruta; ?>vistas/propietario/tabla_mensajes_propietario.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/mensaje.png"></a>
                     <br/>
                     <h6>Mensajes <span class="badge"><?php echo $numeroMensajes; ?></span></h6>
             </div>
@@ -59,7 +67,7 @@
          <div class="row">
         	<div class="col-xs-12"> 
         			<br/> 
-                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2 coral-bg img-rounded" src="<?php echo $ruta?>img/botones/salir.png"></a>
+                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/salir.png"></a>
                     <h6>Salir</h6>
             </div>
         </div>              

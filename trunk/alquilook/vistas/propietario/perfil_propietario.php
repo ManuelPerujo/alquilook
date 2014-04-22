@@ -24,18 +24,7 @@
                 <div class="col-xs-10 columnadcha">
                 	
                 	
-                	<!-----------------------------------------------------------------------------------Para comenzar---------------------->             
-                	<div class="row">
-                		<br />
-                		<div class="col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable">
-				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		 							<h3><i class="fa fa-info-circle fa-lg"></i> Para comenzar, haga click en "Añadir inmueble"</h3>
-			            </div>
-			        </div>  
-			    	<!-----------------------------------------------------------------------------------Para comenzar---------------------->
-
-
-					<!-----------------------------------------------------------------------------------Registro con éxito---------------------->             
+                	<!-----------------------------------------------------------------------------------Registro con éxito---------------------->             
                 	<div class="row">
                 		<br />
                 		<div class="col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable">
@@ -47,6 +36,19 @@
 			        </div>  
 			    	<!-----------------------------------------------------------------------------------Registro con éxito---------------------->
 
+                	
+                	<!-----------------------------------------------------------------------------------Para comenzar---------------------->             
+                	<div class="row">
+                		<br />
+                		<div class="col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable">
+				               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		 							<h3><i class="fa fa-info-circle fa-lg"></i> Para comenzar, haga click en "Añadir inmueble"</h3>
+			            </div>
+			        </div>  
+			    	<!-----------------------------------------------------------------------------------Para comenzar---------------------->
+
+
+					
 			 
 			  
 			    </div> 

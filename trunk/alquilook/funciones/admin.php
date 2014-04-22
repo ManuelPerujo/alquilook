@@ -618,7 +618,7 @@
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
 				                       				<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/contrato.png'>
-				                       				<p class='ficha'>Contrato</p>
+				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
@@ -827,7 +827,7 @@
 							                      			<img class='imagenbanner2' src='../../img/botones/contrato2.png'>
 							                 			</div>  
 							                 			<div class='col-sm-3 col-xs-9'>
-							                 				<p class='ficha'><h5>Contrato</h5></p>
+							                 				<p class='ficha'><h5>Documentos</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
 								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_contrato.php'>
