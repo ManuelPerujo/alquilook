@@ -4,28 +4,41 @@
 	
 	include_once '../funciones/core.php';
 	include_once '../funciones/usuarios.php';
-
-	$idMensaje = $_POST['idMensaje'];
 	
-	$row = get_rowDatos_from_IdMensaje($idMensaje);
+	$bd = new core();
 	
-	$idUsuario = $row['IdRemitente'];
-	$titulo = $row['Titulo'];
+	$idConversacion = $_POST['idConversacion'];
 	
+	$idUltimoMensaje = get_last_IdMensaje_from_conversacion($idConversacion);
+	
+	$query2 = "update mensaje set Estado = '1' where IdMensaje = '$idUltimoMensaje'";
+	
+	$bd->query($query2);
+	
+	$idDestinatario = get_IdRemitente_mensaje($idUltimoMensaje);
+			
 	$idRemitente = $_SESSION['IdUsuario_sesion'];
 	
+	if($idDestinatario == $idRemitente){
+		
+		$query3 = "select IdRemitente,IdDestinatario from mensaje where IdMensaje = '$idUltimoMensaje'";
+		
+		$result = $bd->query($query3); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idDestinatario = $row['IdDestinatario']; $idRemitente = $row['IdRemitente'];
+		
+	}
+		
 	$localtime_assoc = getdate(); $año = $localtime_assoc['year']; $mes = $localtime_assoc['mon']; $dia = $localtime_assoc['mday'];
 	$fechaMensaje = $año.'-'.$mes.'-'.$dia;
 	
 	$contenido = $_POST['contenido'];
 	
-	$bd = new core();
+	$query = "insert into mensaje (IdMensaje, IdConversacion, IdRemitente, IdDestinatario, Fecha, Contenido, Estado) 
+			 values ('','$idConversacion','$idRemitente','$idDestinatario','$fechaMensaje','$contenido','0')";
 	
-	$query = "insert into mensaje (IdMensaje, IdUsuario, IdRemitente, Fecha, Titulo, Contenido, Estado) 
-			 values ('','$idUsuario','$idRemitente','$fechaMensaje','$titulo','$contenido','0')";
-
 	$bd->query($query);
-	
+			
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 
 

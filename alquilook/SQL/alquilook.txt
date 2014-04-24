@@ -177,18 +177,31 @@ CREATE TABLE IF NOT EXISTS `contrato` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `conversacion`;
+CREATE TABLE IF NOT EXISTS `conversacion` (
+  `IdConversacion` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdUsuario` int(6) unsigned NOT NULL,
+  `Titulo` TEXT NOT NULL,
+  `FechaInicio` DATE NOT NULL,
+  `Estado` boolean NOT NULL,
+  PRIMARY KEY (`IdConversacion`),
+  UNIQUE KEY `Conversacion_Unica` (`IdConversacion`),
+  CONSTRAINT `ID_CONVERSACION_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
 drop table if exists `mensaje`;
 CREATE TABLE IF NOT EXISTS `mensaje` (
-  `IdMensaje` int(6) unsigned NOT NULL AUTO_INCREMENT,	
-  `IdUsuario` int(6) unsigned NOT NULL,
+  `IdMensaje` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdConversacion` int(6) unsigned NOT NULL,	
   `IdRemitente` int(6) unsigned NOT NULL,
+  `IdDestinatario` int(6) unsigned NOT NULL,
   `Fecha` DATE NOT NULL,
-  `Titulo` TEXT NOT NULL,
   `Contenido` TEXT NOT NULL,
   `Estado` boolean NOT NULL,
   PRIMARY KEY (`IdMensaje`),
   UNIQUE KEY `Mensaje_Unico` (`IdMensaje`),
-  CONSTRAINT `ID_MENSAJE_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+  CONSTRAINT `ID_MENSAJE_FK` FOREIGN KEY (`IdConversacion`) REFERENCES `conversacion` (`IdConversacion`) ON DELETE CASCADE
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 

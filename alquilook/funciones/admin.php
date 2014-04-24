@@ -1324,16 +1324,16 @@
    
     function get_mensajes_nuevos($idUsuario){
     		
-    	$numero = null;
+    	$numero = 0;
     	
     	$bd = new core();
     	
-		$query = "select * from mensaje where IdUsuario = '$idUsuario' and Estado = '0'";
+		$query2 = "select * from conversacion where Estado = '0'";
 		
-		$result = $bd->query($query);
+		$result2 = $bd->query($query2); $row = $result2->fetchAll(PDO::FETCH_ASSOC);
 		
-		$numero = $result->rowCount();	
-    	
+		$numero = $result2->rowCount();
+		
 		return $numero;
     }
     
@@ -1382,17 +1382,17 @@
 		
 	}
 	
-    function up_mensaje_leido($idMensaje){
+    function up_mensaje_leido($idConversacion){
     	
 		$bd = new core();
 		
-		$query = "select Estado from mensaje where IdMensaje = '$idMensaje'";
+		$query = "select Estado from conversacion where IdConversacion = '$idConversacion'";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
 		if($row['Estado'] == 0){
 					
-			$query2 = "update mensaje set Estado='1' where IdMensaje = '$idMensaje'";
+			$query2 = "update conversacion set Estado='1' where IdConversacion = '$idConversacion'";
 			
 			$bd->query($query2);	
 			
@@ -1460,7 +1460,17 @@
 		
 	}
 	
-	
+	function get_idAdmin(){
+		
+		$bd = new core();
+		
+		$query = "select IdUsuario from usuarios where Tipo = 'Admin' and Usuario = 'admin'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['IdUsuario'];
+		
+	}
 	
 	
 	

@@ -32,9 +32,9 @@
                 	
                 		$idUsuario = $_SESSION['IdUsuario_sesion'];
                 	
-                		$tabla = 'mensaje'; $idTabla = 'IdMensaje'; $arrayAtributos = array(1=>'Fecha',2=>'Titulo',3=>'Contenido');
-                        $filtro = array('IdUsuario' => $idUsuario);
-                        $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
+                		$tabla = 'conversacion'; $idTabla = 'IdConversacion'; $arrayAtributos = array(1=>'FechaInicio',2=>'Titulo');
+                        $filtro = array();
+                        $arrayOrden = array(1 => 'FechaInicio', 2=> 'desc');
                         $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
                                                'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);  
                         $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);

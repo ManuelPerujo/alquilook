@@ -22,20 +22,50 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
-                		<h3><i class="fa fa-envelope"></i> Mensaje:</h3>
+                		<h3><i class="fa fa-envelope"></i> Conversaci&oacute;n:</h3>
 	                	<div class="media">
 	                		  <br/>
-							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2" src="<?php echo $ruta?>img/botones/inquilino.png">
-							  </a>
+							  
 							  <?php 
 							  		
-							  		$idMensaje = $_GET['IdMensaje'];
+							  		$bd = new core();
 							  		
-									up_mensaje_leido($idMensaje);
+							  		$idConversacion = $_GET['IdConversacion'];
 									
-							  		$mensaje = get_mensaje($idMensaje);
+									$query2 = "select Titulo from conversacion where IdConversacion = '$idConversacion'";
 									
+									$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+									
+									$titulo = $row2['Titulo'];
+									
+									$query = "select IdMensaje from mensaje where IdConversacion = '$idConversacion'";
+									
+									$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+									
+									$mensaje = null; $count=null;
+									
+									foreach ($row as $key => $value) {
+										
+										$idMensaje = $value['IdMensaje']; $count++;
+										
+										$mensaje .= get_mensaje($idMensaje,$count,$titulo);	
+										
+									}
+									
+									if(basename($_SERVER['HTTP_REFERER']) == 'control_responde_mensaje.php'){
+										
+										$query3 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
+	
+										$bd->query($query3);
+										
+									}else{
+										
+										up_mensaje_leido($idConversacion);	
+										
+									}
+									
+									
+																  										
 									echo $mensaje;
 							  
 							  ?>
@@ -44,14 +74,12 @@
 								 		<i class="fa fa-comment"></i> Responder
 								    </a>
 								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								    <a class="btn btn-default btn-sm" href="../../controladores/control_borrar_mensaje.php?idMensaje=<?php echo $idMensaje; ?>&tipo=admin">
-								 		<i class="fa fa-trash-o"></i> Borrar
-								    </a>
+								   
 							 </div>	
 							 <br/>
 							 <div id="responder" class="collapse">
 							 		<form class="form-group  text-center" method="post" action="../../controladores/control_responde_mensaje.php">
-							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 			<input type="hidden" value="<?php echo $idConversacion; ?>" name="idConversacion" />
 							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
 							 			<input type="submit" class="btn btn-primary btn-sm" value="Enviar" />

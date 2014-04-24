@@ -86,56 +86,80 @@
 		
 	}
 	
-	function get_mensaje($idMensaje){
+	function get_mensaje($idMensaje,$count,$titulo){
 		
 		$mensaje = null;
 		
 		$bd = new core();
-		
-		$remitente = "<h5 class='media-heading'>Alquilook</h5>";
-		
+						
 		$query = "select * from mensaje where IdMensaje = '$idMensaje' ";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		if(basename($_SERVER['PHP_SELF']) == 'mensaje_admin.php'){
+		$idUsuario = $row['IdRemitente'];
 			
-			$idUsuario = $row['IdRemitente'];
+		$query2 = "select Nombre,Apellidos,Tipo from usuarios where IdUsuario = '$idUsuario'";
 			
-			$query2 = "select Nombre,Apellidos from usuarios where IdUsuario = '$idUsuario'";
+		$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		if($row2['Tipo'] == 'Admin'){
 			
-			$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+			$destinatario = "De: ALQUILOOK";
 			
-			$remitente = "<h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>";
+		}else{
+			
+			$destinatario = "De: ".$row2['Nombre']." ".$row2['Apellidos'];	
 			
 		}
-		
-		$mensaje = "<div class='media-body'>
-								  	".$remitente."
-								    <h6 class='media-heading'>".$row['Fecha']."</h6>
-								    <p class='mayusculas'>Asunto: ".$row['Titulo']."</p>
-								    <hr class='grissimple'/>
-								    <p class='ficha2'>
-								    ".$row['Contenido']."
-								    </p>
-							  </div>";
+							
+		$mensaje = "<div class='col-xs-12'>	
+						<div class='panel-group' id='accordion".$count."'>
+							<div class='panel panel-default'>
+								<div class='panel-heading'>
+								     <h6 class='panel-title'>
+						             <a class='enlace3 mayusculas' data-toggle='collapse' data-parent='#accordion".$count."' href='#collapse".$count."'>
+							         <img class='imagenboton2 steel-grey2 img-circle' src='../../img/botones/propietario.png'>
+									 &nbsp;&nbsp;&nbsp;
+									 ".$destinatario." &nbsp;&nbsp;|&nbsp;&nbsp; Asunto: " .$titulo." &nbsp;&nbsp;|&nbsp;&nbsp; ".$row['Fecha']."
+									 </a>
+									 </h6>
+								</div>
+								<div id='collapse".$count."' class='panel-collapse collapse'>
+									<div class='panel-body'>
+								   		<p class='ficha'>".$row['Contenido']."</p>
+									</div>
+								</div>
+							</div>
+						</div>       
+					</div>";
 							  
 		return $mensaje;					  
 		
 	}
 
-	function get_rowDatos_from_IdMensaje($idMensaje){
-		
+	function get_last_IdMensaje_from_conversacion($idConversacion){
+				
 		$bd = new core();
 		
-		$query = "select Titulo, IdRemitente from mensaje where IdMensaje = '$idMensaje'";	
+		$query = "select IdMensaje from mensaje where IdConversacion = '$idConversacion' order by IdMensaje desc limit 1";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		return $row;
+		return $row['IdMensaje'];	
+		
+	}	
+	
+	function get_IdRemitente_mensaje($idMensaje){
+		
+		$bd = new core();
+		
+		$query = "select IdRemitente from mensaje where IdMensaje = '$idMensaje'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['IdRemitente'];
 		
 	}
-	
 	
 	
 	

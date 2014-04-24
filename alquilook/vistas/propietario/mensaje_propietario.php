@@ -27,62 +27,64 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
-                		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
+                		<h3><i class="fa fa-envelope-o"></i> Conversaci&oacute;n:</h3>
 	                	<div class="media">
 	                		  <br/>
-							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/admin.png">
-							  </a>
+							  
 							  <?php 
 							  		
-							  		$idMensaje = $_GET['IdMensaje'];
+							  		$idConversacion = $_GET['IdConversacion'];
 							  		
-									up_mensaje_leido($idMensaje);
+									$bd = new core();
 									
-							  		$mensaje = get_mensaje($idMensaje);
+									$query2 = "select Titulo from conversacion where IdConversacion = '$idConversacion'";
 									
+									$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+									
+									$titulo = $row2['Titulo'];
+									
+									$query = "select IdMensaje from mensaje where IdConversacion = '$idConversacion'";
+									
+									$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+									
+									$mensaje = null; $count=null;
+									
+									foreach ($row as $key => $value) {
+										
+										$idMensaje = $value['IdMensaje']; $count++;
+										
+										$mensaje .= get_mensaje($idMensaje,$count,$titulo);	
+										
+									}
+									
+									if(basename($_SERVER['HTTP_REFERER']) == 'control_responde_mensaje.php'){
+										
+										$query3 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
+	
+										$bd->query($query3);
+										
+									}else{
+										
+										up_mensaje_leido($idConversacion);	
+										
+									}
+																  										
 									echo $mensaje;
 							  
 							  ?>
 							  
-							  
-							  <div class="col-xs-12">	
-										<div class="panel-group" id="accordion".$count."">
-												<div class="panel panel-default">
-																		<div class="panel-heading">
-																		     <h6 class="panel-title">
-																		        <a class="enlace3 mayusculas" data-toggle="collapse" data-parent="#accordion".$count."" href="#collapse".$count."">
-																		        	<img class="imagenboton2 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/propietario.png">
-																			     	&nbsp;&nbsp;&nbsp;
-																			           Usuario / Fecha / Asunto: Me pica to lo gordo
-																		        </a>
-																		     </h6>
-																		</div>
-																		<div id="collapse".$count."" class="panel-collapse collapse">
-																		     <div class="panel-body">
-																		     	<p class="ficha">Cuerpo del mensaje</p>
-																		     </div>
-																		</div>
-												</div>
-										</div>       
-							  </div> 	
-							  
-							  
-							  
-							  
+							  							  
 							  <div class="text-center">
 								 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">
 								 		<i class="fa fa-comment"></i> Responder
 								    </a>
 								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								    <a class="btn btn-default btn-sm" href="../../controladores/control_borrar_mensaje.php?idMensaje=<?php echo $idMensaje; ?>&tipo=propietario">
-								 		<i class="fa fa-trash-o"></i> Borrar conversación
-								    </a>
+								    
 							 </div>	
 							 <br/>
 							 <div id="responder" class="collapse">
 							 		<form class="form-group  text-center" method="post" action="../../controladores/control_responde_mensaje.php">
-							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 			<input type="hidden" value="<?php echo $idConversacion; ?>" name="idConversacion" />
 							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
 							 			<input type="submit" class="btn btn-default btn-sm" value="Enviar" />

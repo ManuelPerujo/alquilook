@@ -3,20 +3,34 @@
 	session_start();
 	
 	include_once'../funciones/core.php';
+	include_once'../funciones/registro.php';
+	include_once'../funciones/admin.php';
 	
-	$tipo = $_POST['tipo'];
+		
+	$bd = new core();
 	
-	$idUsuario = null;
+	$idDestinatario = null;
 	
-	if($tipo == 'propietario'){
+	if(isset($_POST['idUsuarioInquilino'])){
 		
-		$idUsuario = $_POST['idUsuarioPropietario'];	
+		$idUsuario = $_SESSION['IdUsuario_sesion'];;
 		
-	}if($tipo == 'inquilino'){
+		$idDestinatario = $_POST['idUsuarioInquilino'];
 		
-		$idUsuario = $_POST['idUsuarioInquilino'];	
+	}if(isset($_POST['idUsuarioPropietario'])){
+		
+		$idUsuario = $_SESSION['IdUsuario_sesion'];;
+		
+		$idDestinatario = $_POST['idUsuarioPropietario'];
+		
+	}else{
+		
+		$idUsuario = $_SESSION['IdUsuario_sesion'];
+		
+		$idDestinatario = get_idAdmin();	
 		
 	}
+	
 	
 	
 	$titulo = $_POST['titulo'];
@@ -27,10 +41,12 @@
 	$localtime_assoc = getdate(); $año = $localtime_assoc['year']; $mes = $localtime_assoc['mon']; $dia = $localtime_assoc['mday'];
 	$fechaMensaje = $año.'-'.$mes.'-'.$dia;
 	
-	$bd = new core();
+	$query2 = "insert into conversacion (IdConversacion,IdUsuario,Titulo,FechaInicio,Estado) values ('','$idUsuario','$titulo','$fechaMensaje','0')";
 	
-	$query = "insert into mensaje (IdMensaje, IdUsuario, IdRemitente, Fecha, Titulo, Contenido, Estado) 
-			 values ('','$idUsuario','$idRemitente','$fechaMensaje','$titulo','$contenido','0')";	
+	$idConversacion = get_lastId($query2);
+		
+	$query = "insert into mensaje (IdMensaje, IdConversacion, IdRemitente, IdDestinatario, Fecha, Contenido, Estado) 
+			 values ('','$idConversacion','$idRemitente','$idDestinatario','$fechaMensaje','$contenido','0')";	
 	
 	$bd->query($query);
 	
