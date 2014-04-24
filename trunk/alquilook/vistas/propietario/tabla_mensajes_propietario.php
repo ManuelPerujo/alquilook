@@ -33,8 +33,8 @@
 						</div>
 						<div id="responder" class="collapse">
 									<br/>
-							 		<form class="form-group  text-left" method="post" action="../../controladores/control_responde_mensaje.php">
-							 			<input type="hidden" value="<?php echo $idMensaje; ?>" name="idMensaje" />
+							 		<form class="form-group  text-left" method="post" action="../../controladores/control_manda_mensaje.php">
+							 			<input type="text" placeholder="Asunto" name="titulo" /><br/><br/>
 							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
 							 			<input type="submit" class="btn btn-default" value="Enviar" />
@@ -46,10 +46,10 @@
                 	
                 		$idUsuario = $_SESSION['IdUsuario_sesion'];
                 	
-                		$tabla = 'mensaje'; $idTabla = 'IdMensaje'; $arrayAtributos = array(1=>'Fecha',2=>'Titulo',3=>'Contenido');
+                		$tabla = 'conversacion'; $idTabla = 'IdConversacion'; $arrayAtributos = array(1=>'FechaInicio',2=>'Titulo');
                         $filtro = array('IdUsuario' => $idUsuario);
-                        $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
-                        $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
+                        $arrayOrden = array(1 => 'FechaInicio', 2=> 'desc');
+                        $arrayOpciones = array('opciones' => TRUE, 'borrar' => FALSE, 'modificar' => FALSE, 'responder' => FALSE,
                                                'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);  
                         $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
 						
