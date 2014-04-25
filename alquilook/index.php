@@ -223,10 +223,10 @@
                 				
 						?>
                 		
- 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
+ 							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" >	
  								<p class="collapse" id="ingresarinmobiliaria">
-   									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
-    								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
+   									<input type="text" class="form-control" id="usuario3" name="usuario_inmobiliaria" placeholder="Usuario" /> 
+    								<input type="password" class="form-control" id="password3" name="pass_inmobiliaria" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-primary">Entrar</button>
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>

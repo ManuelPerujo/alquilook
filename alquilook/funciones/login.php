@@ -9,7 +9,7 @@ o falso */
      try{
          
         $bd->ConectaBD();
-        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and UsuarioActivo = '1'";
+        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and UsuarioActivo = '1' and not Tipo = 'Admin'";
     
         $result = $bd->query($query);
     
@@ -36,7 +36,7 @@ o falso */
      try{
          
         $bd->ConectaBD();
-        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and Admin = '1'";
+        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and Admin = '1' and Tipo = 'Admin'";
     
         $result = $bd->query($query);
     
@@ -74,7 +74,7 @@ function esAdministrador($id_usuario){
     }
 }
     
-function evalua_login($error, $id_usuario){
+function evalua_login($error, $id_usuario,$tipo){
     
     if($id_usuario != null){
         if($error){
@@ -96,7 +96,7 @@ function evalua_login($error, $id_usuario){
             /* usuario y contrasena validos, defino una sesion y guardo datos*/ 
             $_SESSION["autentificado"]="SI";
             $_SESSION["IdUsuario_sesion"]=$id_usuario; //almacenamos en una variable de sesion el ID del usuario 
-                        
+            $_SESSION["tipo"] = $tipo;            
         }
     }        
 }
