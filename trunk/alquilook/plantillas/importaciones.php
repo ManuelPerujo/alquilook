@@ -20,6 +20,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "tabla_altasnuevas_admin.php" || basename($_SERVER['PHP_SELF']) == "altanueva_admin.php"
 		|| basename($_SERVER['PHP_SELF']) == "tabla_mensajes_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_mensajes_propietario.php"
 		|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_incidencias_contrato.php"
+		|| basename($_SERVER['PHP_SELF']) == "actualizar.php" || basename($_SERVER['PHP_SELF']) == "recordar.php"
 		|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php")
 	{
 

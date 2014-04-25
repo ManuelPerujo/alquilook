@@ -1,3 +1,40 @@
+<?php
+
+function getBrowser($userAgent) {
+$browsers = array(
+'Internet Explorer 8' => '(MSIE 8\.[0-9]+)',
+'Internet Explorer 7' => '(MSIE 7\.[0-9]+)',
+'Internet Explorer 6' => '(MSIE 6\.[0-9]+)',
+'Internet Explorer 5' => '(MSIE 5\.[0-9]+)',
+);
+
+foreach($browsers as $browser=>$pattern) {
+if(eregi($pattern, $userAgent)) {
+return $browser;
+}
+}
+return 'Unknown';
+}
+$browser= getBrowser($_SERVER['HTTP_USER_AGENT']);
+switch($browser){
+case 'Internet Explorer 8':
+header('vistas/error/actualizar.php');
+break;
+case 'Internet Explorer 7':
+header('vistas/error/actualizar.php');
+break;
+case 'Internet Explorer 6':
+header('vistas/error/actualizar.php');
+break;
+case 'Internet Explorer 5':
+header('vistas/error/actualizar.php');
+break;
+
+}
+?>
+
+
+
 <?php 
 
 	session_start();
@@ -150,8 +187,10 @@
             	<!---------------------------------------------------------------------------------------------Propietario-->
                     
                 <div class="col-lg-4 text-center collapse-group">
-                	<img class="imagen" src="img/botones/propietario.png">
-                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario"><h2>SOY PROPIETARIO</h2></a>
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario">
+                			<img class="imagen" src="img/botones/propietario.png">
+                			<h2>SOY PROPIETARIO</h2>
+                		</a>
                 		
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
@@ -172,7 +211,7 @@
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
     								<br/>
-    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
+    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
   								</p>
   							</form>
   						
@@ -186,16 +225,17 @@
                 
                 <!---------------------------------------------------------------------------------------------Inquilino-->
 				<div class="col-lg-4 text-center collapse-group">
-                 	<img class="imagen" src="img/botones/inquilino.png">
-                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino"><h2>SOY INQUILINO</h2></a>
-                		
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino">
+                			<img class="imagen" src="img/botones/inquilino.png">
+                			<h2>SOY INQUILINO</h2>
+                		</a>
                 			<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_inquilino();">	
  								<p class="collapse" id="ingresarinquilino">
    									<input type="text" class="form-control" id="usuario2" name="usuario_inquilino" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password2" name="pass_inquilino" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
     								<br/><br/>
-    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
+    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
   								</p>
   							</form>	   
                 <br/><br/>
@@ -205,9 +245,10 @@
                 
                 <!---------------------------------------------------------------------------------------------Inmobiliaria-->
                 <div class="col-lg-4 text-center collapse-group">
-                	<img class="imagen" src="img/botones/inmobiliaria.png">
-                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria"><h2>SOY INMOBILIARIA</h2></a>
-                		
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria">
+                			<img class="imagen" src="img/botones/inmobiliaria.png">
+                			<h2>SOY INMOBILIARIA</h2>
+                		</a>
                 		<?php 
                 			if(isset($_SESSION["IdUsuario_sesion"])){
                 				
@@ -227,7 +268,7 @@
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
     								<br/>
-    								<a class="enlace2" href="#"><i class="fa fa-question-circle"></i> ¿Ha olvidado su contraseña?</a>
+    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
   								</p>
   							</form>
   						
