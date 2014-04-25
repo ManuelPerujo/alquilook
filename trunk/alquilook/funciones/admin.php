@@ -76,6 +76,10 @@
                 	
 					$direccion =  "../../vistas/admin/incidencia_admin.php?$idTabla=".$selector;
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_propietario.php'){
+                	
+					$direccion =  "../../vistas/admin/notificacion.php?$idTabla=".$selector;
+					
                 }
                   
                 

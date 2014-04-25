@@ -190,6 +190,20 @@ CREATE TABLE IF NOT EXISTS `conversacion` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `notificacion`;
+CREATE TABLE IF NOT EXISTS `notificacion` (
+  `IdNotificacion` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `IdUsuario` int(6) unsigned NOT NULL,	
+  `IdItem` int(6) unsigned NOT NULL,
+  `Tipo` char(30) NOT NULL,
+  `Fecha` DATE NOT NULL,
+  `Estado` boolean NOT NULL,
+  PRIMARY KEY (`IdNotificacion`),
+  UNIQUE KEY `Notificacion_Unica` (`IdNotificacion`),
+  CONSTRAINT `ID_NOTIFICACION_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
 drop table if exists `mensaje`;
 CREATE TABLE IF NOT EXISTS `mensaje` (
   `IdMensaje` int(6) unsigned NOT NULL AUTO_INCREMENT,
