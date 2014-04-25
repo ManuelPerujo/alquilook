@@ -1,36 +1,36 @@
 <?php
 
-function getBrowser($userAgent) {
-$browsers = array(
-'Internet Explorer 8' => '(MSIE 8\.[0-9]+)',
-'Internet Explorer 7' => '(MSIE 7\.[0-9]+)',
-'Internet Explorer 6' => '(MSIE 6\.[0-9]+)',
-'Internet Explorer 5' => '(MSIE 5\.[0-9]+)',
-);
-
-foreach($browsers as $browser=>$pattern) {
-if(eregi($pattern, $userAgent)) {
-return $browser;
-}
-}
-return 'Unknown';
-}
-$browser= getBrowser($_SERVER['HTTP_USER_AGENT']);
-switch($browser){
-case 'Internet Explorer 8':
-header('vistas/error/actualizar.php');
-break;
-case 'Internet Explorer 7':
-header('vistas/error/actualizar.php');
-break;
-case 'Internet Explorer 6':
-header('vistas/error/actualizar.php');
-break;
-case 'Internet Explorer 5':
-header('vistas/error/actualizar.php');
-break;
-
-}
+	function getBrowser($userAgent) {
+		$browsers = array('Internet Explorer 8' => '(MSIE 8\.[0-9]+)',
+						  'Internet Explorer 7' => '(MSIE 7\.[0-9]+)',
+						  'Internet Explorer 6' => '(MSIE 6\.[0-9]+)',
+						  'Internet Explorer 5' => '(MSIE 5\.[0-9]+)');
+	
+		foreach($browsers as $browser=>$pattern) {
+			if(eregi($pattern, $userAgent)) {
+				return $browser;
+			}
+		}
+		return 'Unknown';
+	}
+	
+	$browser= getBrowser($_SERVER['HTTP_USER_AGENT']);
+	
+	switch($browser){
+		case 'Internet Explorer 8':
+			header('vistas/error/actualizar.php');
+			break;
+		case 'Internet Explorer 7':
+			header('vistas/error/actualizar.php');
+			break;
+		case 'Internet Explorer 6':
+			header('vistas/error/actualizar.php');
+			break;
+		case 'Internet Explorer 5':
+			header('vistas/error/actualizar.php');
+			break;
+	
+	}
 ?>
 
 
