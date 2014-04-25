@@ -1345,7 +1345,7 @@
 			$idConversacion = $value['IdConversacion'];
 		
 			$query2 = "select * from mensaje where IdConversacion = '$idConversacion' and Estado = '0' and IdDestinatario = '$idUsuario'";
-			echo $query2;
+			
 			$result2 = $bd->query($query2); 
 			
 			$numero += $result2->rowCount();	
