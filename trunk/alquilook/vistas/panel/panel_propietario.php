@@ -49,7 +49,7 @@
     	<div class="row">
         	<div class="col-xs-12"> 
         			<br/> 
-                    <a class="imagenboton2" href="<?php echo $ruta; ?>vistas/propietario/tabla_notificaciones_propietario.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/notificaciones.png"></a>
+                    <a class="imagenboton2" href="#"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/notificaciones.png"></a>
                     <br/>
                     <h6>Notificaciones <span class="badge"></span></h6>
             </div>

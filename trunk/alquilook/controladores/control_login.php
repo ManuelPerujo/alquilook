@@ -9,7 +9,7 @@
     $error = true;
     $id_usuario = null;
     $direccion;
-    
+    $tipo = null;
 	
 	        
     if ($_POST && !empty($_POST)){
@@ -19,19 +19,30 @@
             $direccion = "../vistas/inmueble/tabla_inmuebles_pro.php";
             $usuario = $_POST['usuario_propietario'];
             $password = $_POST['pass_propietario'];
-                
+            $tipo = "propietario";
+			    
         }if(isset($_POST['usuario_inquilino']) && !empty($_POST['usuario_inquilino'])
 		    && isset($_POST['pass_inquilino']) && !empty($_POST['pass_inquilino'])){
             
-            $direccion = "../vistas/inquilino/perfil_inquilino.php";
+            $direccion = "../vistas/inmueble/tabla_inmuebles_inq.php";
             $usuario = $_POST['usuario_inquilino'];
             $password = $_POST['pass_inquilino'];
+            $tipo = "inquilino";
             
         }if(isset($_POST['usuario_admin']) && !empty($_POST['usuario_admin'])
            && !empty($_POST['pass_admin']) && isset($_POST['pass_admin'])){
 				
         	$usuario = $_POST['usuario_admin'];
             $password = $_POST['pass_admin'];
+			$tipo = "admin";
+			
+        }if(isset($_POST['usuario_inmobiliaria']) && !empty($_POST['usuario_inmobiliaria'])
+           && !empty($_POST['pass_inmobiliaria']) && isset($_POST['pass_inmobiliaria'])){
+			
+			$direccion = "../vistas/inquilino/tabla_inmuebles_pro.php";	
+        	$usuario = $_POST['usuario_inmobiliaria'];
+            $password = $_POST['pass_inmobiliaria'];
+			$tipo = "inmobiliaria";
 			
         }else{
         				
@@ -75,7 +86,7 @@
 		        $direccion = "../vistas/admin/tabla_usuarios_admin.php";                        
 		    }
 			
-			evalua_login($error, $id_usuario);
+			evalua_login($error, $id_usuario,$tipo);
 	    
 	    	header ("Location: ".$direccion);
 		            
