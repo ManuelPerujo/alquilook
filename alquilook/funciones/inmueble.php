@@ -387,7 +387,6 @@
 		
 	}
 
-
 	function get_tabla_historial_incidencias($idInmueble){
 		
 		$bd = new core();

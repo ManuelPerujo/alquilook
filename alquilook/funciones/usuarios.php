@@ -161,7 +161,74 @@
 		
 	}
 	
+	function get_IdInmuebles_por_Usuario($idUsuario,$tipo){
+			
+		$bd = new core();
+		
+		$idInmueble = null;
+		
+		if($tipo == 'propietario'){
+			
+			$idInmueble = array();
+				
+			$idPropietario = get_IdPropietario($idUsuario);
+				
+			$query = "select IdInmueble from inmueble where IdPropietario = '$idPropietario'";
+			
+			$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+			
+			foreach ($row as $key => $value) {
+				
+				$id = $value['IdInmueble'];
+				
+				$idInmueble [] = $id;
+				
+			}
+			
+			return $idInmueble;
+			
+		}if($tipo == 'inquilino'){
+				
+			$idInmueble = get_IdInmuebleFromInquilino($idUsuario);
+			
+			return $idInmueble;
+				
+		}
+		
+	}
+	
+	function get_IdUsuariosInquilinos_por_inmueble($idInmueble){
+		
+		$bd = new core();
+		
+		$IdUsuarios = array();
+		
+		$query = "select IdUsuario from inquilino where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+			
+			$id = $value['IdUsuario'];
+			
+			$IdUsuarios [] = $id;
+			
+		}
+		
+		return $IdUsuarios;
+		
+	}
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
 ?>
