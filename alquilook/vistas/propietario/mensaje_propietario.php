@@ -57,7 +57,9 @@
 										
 									}
 									
-									if(basename($_SERVER['HTTP_REFERER']) == 'control_responde_mensaje.php'){
+									if(isset($_SESSION['mensaje_nuevo']) && $_SESSION['mensaje_nuevo'] == TRUE){
+												
+										unset($_SESSION['mensaje_nuevo']);	
 										
 										$query3 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
 	
