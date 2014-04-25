@@ -11,9 +11,11 @@
 	
 	$idUltimoMensaje = get_last_IdMensaje_from_conversacion($idConversacion);
 	
-	$query2 = "update mensaje set Estado = '1' where IdMensaje = '$idUltimoMensaje'";
+	$query4 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
 	
-	$bd->query($query2);
+	$query2 = "update mensaje set Estado = '0' where IdMensaje = '$idUltimoMensaje'";
+	
+	$bd->query($query2); $bd->query($query4);
 	
 	$idDestinatario = get_IdRemitente_mensaje($idUltimoMensaje);
 			
@@ -38,6 +40,8 @@
 			 values ('','$idConversacion','$idRemitente','$idDestinatario','$fechaMensaje','$contenido','0')";
 	
 	$bd->query($query);
+	
+	$_SESSION['mensaje_nuevo'] = TRUE;
 			
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 

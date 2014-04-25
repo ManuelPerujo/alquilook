@@ -1324,16 +1324,34 @@
    
     function get_mensajes_nuevos($idUsuario){
     		
-    	$numero = 0;
+    	$numero = 0; $idConversacion = null;
     	
     	$bd = new core();
     	
-		$query2 = "select * from conversacion where Estado = '0'";
+    	if(isset($_SESSION['admin']) && $_SESSION['admin'] == TRUE){
+    		
+			$query = "select IdConversacion from conversacion";
+			
+    	}else{
+    		
+			$query = "select IdConversacion from conversacion where IdUsuario = '$idUsuario'";			
+			
+    	}
 		
-		$result2 = $bd->query($query2); $row = $result2->fetchAll(PDO::FETCH_ASSOC);
+		$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
 		
-		$numero = $result2->rowCount();
+		foreach ($row as $key => $value) {
+			
+			$idConversacion = $value['IdConversacion'];
 		
+			$query2 = "select * from mensaje where IdConversacion = '$idConversacion' and Estado = '0' and IdDestinatario = '$idUsuario'";
+			echo $query2;
+			$result2 = $bd->query($query2); 
+			
+			$numero += $result2->rowCount();	
+			
+		}
+						
 		return $numero;
     }
     
@@ -1392,9 +1410,27 @@
 		
 		if($row['Estado'] == 0){
 					
-			$query2 = "update conversacion set Estado='1' where IdConversacion = '$idConversacion'";
+			$query2 = "update conversacion set Estado = '1' where IdConversacion = '$idConversacion'";
 			
 			$bd->query($query2);	
+			
+		}
+		
+		$query3 = "select Estado,IdMensaje from mensaje where IdConversacion = '$idConversacion' ";
+		
+		$result2 = $bd->query($query3); $row2 = $result2->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row2 as $key => $value) {
+					
+			if($value['Estado'] == 0){
+						
+				$idMensaje = $value['IdMensaje'];	
+				
+				$query4 = "update mensaje set Estado = '1' where IdMensaje = '$idMensaje'";
+				
+				$bd->query($query4);
+				
+			}	
 			
 		}
 		
