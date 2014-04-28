@@ -219,7 +219,17 @@
 		
 	}
 	
-	
+	function get_numero_notificaciones($idUsuario){
+		
+		$bd = new core();
+		
+		$query = "select IdNotificacion from notificacion where IdUsuario = '$idUsuario' and Estado = '0'";
+		
+		$result = $bd->query($query);
+		
+		return $result->rowCount();
+		
+	}
 	
 	
 	
