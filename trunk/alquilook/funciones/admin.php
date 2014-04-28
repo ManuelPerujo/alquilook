@@ -561,6 +561,11 @@
 												    <p class='ficha'>".$row4['DNI']."</p>
 												    <p class='ficha'><a class='enlace2' href='mailto:'>".$row4['Email']."</a></p>
 												    <p class='ficha'>".$row4['Telefono']."</p>
+												    <hr class='formulario'/>
+												    	<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action=''>
+													 			<label><i class='fa fa-camera'></i> Subir fotografías</label>
+													            <input type='file' name='userfile' />
+													 	</form>
 												  </div>
 				                       		</div>	
 				                       	</div>	
