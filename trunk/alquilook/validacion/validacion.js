@@ -70,9 +70,39 @@ function validacion_login_admin(){
 
 function validacion_registro_propietario(){
 	
+	var nombre_usuario = document.getElementById("usuario").value;
+	var filtro_nombre = /^([A-Za-z0-9_\-ñÑ]+)$/;
+	if(nombre_usuario == "") {
+  		alert("Introduzca su usuario");
+  		return false;
+	} else {
+		if (!filtro_nombre.test(nombre_usuario)){
+			alert("Su nombre no es correcto, vuelva a intentarlo");
+			return false;
+		}
+	}
+	
+	var contrasena = document.getElementById("pass").value;
+	if(contrasena == ""){
+  		alert("Introduzca su contraseña");
+  		return false;
+	}
+	
 	//aceptamos como nombre y apellidos combinaciones de letras y espacios
 	var nombre = document.getElementById("nombre").value;
-	var filtro_nombre = /^([A-Za-z0-9ñÑáéíóúÁÉÍÓÚ\s]+)$/;
+	var filtro_nombre = /^([A-Za-zñÑáéíóúÁÉÍÓÚ\s]+)$/;
+	if(nombre == "") {
+  		alert("Introduce tu nombre");
+  		return false;
+	} else {
+		if (!filtro_nombre.test(nombre)){
+			alert("Tu nombre no es correcto");
+			return false;
+		}
+	}
+	
+	var nombre = document.getElementById("apellidos").value;
+	var filtro_nombre = /^([A-Za-zñÑáéíóúÁÉÍÓÚ\s]+)$/;
 	if(nombre == "") {
   		alert("Introduce tu nombre");
   		return false;
@@ -101,21 +131,7 @@ function validacion_registro_propietario(){
 	}
 
     
-        var pass = document.getElementById("pass").value;
-        if(pass == ""){
-                alert("Introduce tu password");
-                return false;
-        }
-        var pass2 = document.getElementById("repita_pass").value;
-        if(pass2 == "") {
-		alert("Vuelva a escribir su password");
-		return false;
-	} else {
-		if ( pass != pass2){
-			alert("Ha fallado la verificacion del password");
-                        return false;
-                }
-        }
+       
 
 	return true;
 }
