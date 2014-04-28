@@ -350,7 +350,7 @@
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#galeria".$count."'>
 							                       	<img class='imagenboton3' src='../../img/botones/galeria.png'>
-							                       	<p class='ficha'>Ladyboys</p>
+							                       	<p class='ficha'>Galería</p>
 							                    </a>   	
 				                       		</div>
 										</div>";
@@ -436,15 +436,30 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ?>
+
+
+<!--
+	
+										<div id='galeria".$count."' class='collapse'>
+				                      		 <div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Galería de imágenes</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>	
+														     <div class='panel-group' id='accordion".$count."'>
+																	<div class="row">
+														                        <a href="src de la imagen" data-toggle="lightbox" data-gallery="multiimages" class="col-xs-2">
+														                                    <img src="src de la imagen" class="img-responsive">
+														                        </a>
+														                       
+														             </div>
+															</div>     
+							                 		</div> 	            
+				                     		  </div>
+				                     	</div>	
+	
+-->
