@@ -2,6 +2,7 @@
 	include_once '../../funciones/usuarios.php';
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/admin.php';
+	include_once '../../funciones/usuarios.php';
 	
 	if(isset($_SESSION["IdUsuario_sesion"]) && !empty($_SESSION["IdUsuario_sesion"])){
 		
@@ -17,6 +18,7 @@
 	}
 	
 	$numeroMensajes = get_mensajes_nuevos($id_usuario);
+	$numeroNotificaciones = get_numero_notificaciones($id_usuario);
 	
 ?>
 
@@ -51,7 +53,7 @@
         			<br/> 
                     <a class="imagenboton2" href="<?php echo $ruta; ?>vistas/propietario/tabla_notificaciones_propietario.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/notificaciones.png"></a>
                     <br/>
-                    <h6>Notificaciones <span class="badge"></span></h6>
+                    <h6>Notificaciones <span class="badge"><?php echo $numeroNotificaciones; ?></span></h6>
             </div>
         </div> 
     	      

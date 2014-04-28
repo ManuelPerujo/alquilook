@@ -83,7 +83,9 @@
                 }if(basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_propietario.php' 
                     || basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_inquilino.php'){
                 	
-					$direccion =  get_Item_from_notificacion($selector)." target='_blanck'";
+					$direccionURL =  get_Item_from_notificacion($selector);
+					
+					$direccion = "../../controladores/control_notificacion_leida.php?item=".$direccionURL."&id=".$selector." target='_blanck'";
 					
                 }
                   
