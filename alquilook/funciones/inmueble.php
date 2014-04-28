@@ -1,17 +1,34 @@
 <?php 
 
-	function get_inmueble_datos($idUsuario){
+	function get_inmueble_datos($idUsuario,$tipo){
 		
 		$arrayInmuebles = array();
 		
 		$bd = new core();
 		
-		$idPropietario = get_IdPropietario($idUsuario);
+		if($tipo == 'propietario'){
+			
+			$idPropietario = get_IdPropietario($idUsuario);
 		
-		$query = "select * from inmueble where IdPropietario = '$idPropietario'";
+			$query = "select * from inmueble where IdPropietario = '$idPropietario'";
 				
-		$result = $bd->query($query);
-		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+			$result = $bd->query($query);
+			$row = $result->fetchAll(PDO::FETCH_ASSOC);	
+			
+		}if($tipo == 'inquilino'){
+			
+			$query = "select IdInmueble from inquilino where IdUsuario = '$idUsuario'";
+			
+			$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+			
+			$idInmueble = $row['IdInmueble'];
+			
+			$query11 = "select * from inmueble where IdInmueble = '$idInmueble'";
+			
+			$result11 = $bd->query($query11); $row = $result11->fetchAll(PDO::FETCH_ASSOC);
+			
+		}
+		
 		
 		$inquilinos = null;
 		$count = null;

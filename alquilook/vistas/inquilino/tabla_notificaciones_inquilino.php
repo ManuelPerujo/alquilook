@@ -47,7 +47,7 @@
 		                			
 									$id_usuario = $_SESSION["IdUsuario_sesion"];
 									
-									$tabla = 'notificacion'; $idTabla = 'IdNotificacion'; $arrayAtributos = array(1=>'Tipo', 2=>'Fecha');
+									$tabla = 'notificacion'; $idTabla = 'IdNotificacion'; $arrayAtributos = array(1=>'Contenido', 2=>'Fecha');
 			                        $filtro = array('IdUsuario' => $id_usuario);
 			                        $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
 			                        $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,

@@ -49,8 +49,8 @@
 			
 			$idUsuario = $value;
 			
-			$query2 = "insert into notificacion (IdNotificacion,IdUsuario,IdItem,Tipo,Fecha,Estado)
-				  values ('','$idUsuario','$idItem','factura luz', '$fechaNotificacion','0')";	
+			$query2 = "insert into notificacion (IdNotificacion,IdUsuario,IdItem,Tipo,Contenido,Fecha,Estado)
+				  values ('','$idUsuario','$idItem','factura','Nueva Factura de Luz', '$fechaNotificacion','0')";	
 			
 			$bd->query($query2);
 			

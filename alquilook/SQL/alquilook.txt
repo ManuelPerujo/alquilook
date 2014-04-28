@@ -196,6 +196,7 @@ CREATE TABLE IF NOT EXISTS `notificacion` (
   `IdUsuario` int(6) unsigned NOT NULL,	
   `IdItem` int(6) unsigned NOT NULL,
   `Tipo` char(30) NOT NULL,
+  `Contenido` char(80) NOT NULL,
   `Fecha` DATE NOT NULL,
   `Estado` boolean NOT NULL,
   PRIMARY KEY (`IdNotificacion`),

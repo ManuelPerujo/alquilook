@@ -22,33 +22,68 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
-                		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
+                		<h3><i class="fa fa-envelope-o"></i> Conversaci&oacute;n:</h3>
 	                	<div class="media">
 	                		  <br/>
-							  <a class="pull-left" href="#">
-							    	<img class="imagenboton2 steel-grey2 img-circle" src="<?php echo $ruta?>img/botones/admin.png">
-							  </a>
-							  <div class="media-body">
-								  	<a type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-								    <h5 class="media-heading">Administrador</h5>
-								    <h6 class="media-heading">18 / 04 / 14</h6>
-								    <p class="mayusculas">Asunto: Llevo 3 días intentándolo y aún no puedo registrarme en alquilook</p>
-								    <hr class="grissimple"/>
-								    <p class="ficha2">
-								    Blandit incorrupte quaerendum in quo, nibh impedit id vis, vel no nullam semper audiam. Ei populo graeci consulatu mei, has ea stet modus phaedrum. Inani oblique ne has, duo et veritus detraxit. Tota ludus oratio ea mel, offendit persequeris ei vim. Eos dicat oratio partem ut, id cum ignota senserit intellegat. Sit inani ubique graecis ad, quando graecis liberavisse et cum, dicit option eruditi at duo.
-								    </p>
-							  </div>
+							  <?php 
+							  		
+							  		$idConversacion = $_GET['IdConversacion'];
+							  		
+									$bd = new core();
+									
+									$query2 = "select Titulo from conversacion where IdConversacion = '$idConversacion'";
+									
+									$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+									
+									$titulo = $row2['Titulo'];
+									
+									$query = "select IdMensaje from mensaje where IdConversacion = '$idConversacion'";
+									
+									$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+									
+									$mensaje = null; $count=null;
+									
+									foreach ($row as $key => $value) {
+										
+										$idMensaje = $value['IdMensaje']; $count++;
+										
+										$mensaje .= get_mensaje($idMensaje,$count,$titulo);	
+										
+									}
+									
+									if(isset($_SESSION['mensaje_nuevo']) && $_SESSION['mensaje_nuevo'] == TRUE){
+												
+										unset($_SESSION['mensaje_nuevo']);	
+										
+										$query3 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
+	
+										$bd->query($query3);
+										
+									}else{
+										
+										up_mensaje_leido($idConversacion);	
+										
+									}
+																  										
+									echo $mensaje;
+							  
+							  ?>
+							  
+							  							  
 							  <div class="text-center">
-								 	<a class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#responder">
+								 	<a class="btn btn-default btn-sm" data-toggle="collapse" data-target="#responder">
 								 		<i class="fa fa-comment"></i> Responder
 								    </a>
+								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    
 							 </div>	
 							 <br/>
 							 <div id="responder" class="collapse">
-							 		<form class="form-group  text-center" method="post" action="">
-							 			<textarea class="" name="" placeholder="Escriba aquí su mensaje..."></textarea>
+							 		<form class="form-group  text-center" method="post" action="../../controladores/control_responde_mensaje.php">
+							 			<input type="hidden" value="<?php echo $idConversacion; ?>" name="idConversacion" />
+							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
-							 			<a type="submit" class="btn btn-primary btn-sm">Enviar</a>
+							 			<input type="submit" class="btn btn-default btn-sm" value="Enviar" />
 							 		</form>
 							 </div>
 							 <br/>
