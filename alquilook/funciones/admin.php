@@ -837,7 +837,7 @@
 			
 	function up_contrato($idInmueble, $count){
 				
-		$tabla = 'contrato'; $idTabla = 'IdContrato'; $arrayAtributos = array(1=>'FechaEntrada',2=>'FechaSalida');
+		$tabla = 'documento'; $idTabla = 'IdDocumento'; $arrayAtributos = array(1=>'Titulo',2=>'FechaEntrada',3=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble);
 		$arrayOrden = array(1 => 'FechaEntrada', 2=> 'desc');
 		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
@@ -853,8 +853,11 @@
 							                 				<p class='ficha'><h5>Documentos</h5></p>
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
-								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_contrato.php'>
-													 			<label>Subir nuevo recibo</label>
+								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_documento.php'>
+													 			<label>Nombre del archivo</label><br/>
+													            <input type='text' name='titulo' placeholder='Nombre del archivo'/>
+													            <br/><br/>
+													            <label>Subir nuevo recibo</label>
 													            <input type='file' name='userfile' />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
