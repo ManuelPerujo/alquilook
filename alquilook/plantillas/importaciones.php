@@ -22,7 +22,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_incidencias_contrato.php"
 		|| basename($_SERVER['PHP_SELF']) == "actualizar.php" || basename($_SERVER['PHP_SELF']) == "recordar.php"
 		|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php"
-		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php")
+		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php" || basename($_SERVER['PHP_SELF']) == "test.php")
 	{
 
   	  $ruta = "../../";   
@@ -73,13 +73,19 @@
     <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet">
     <link href="<?php echo $ruta?>css/responsive-slider-parallax.css" rel="stylesheet">
     <link href="<?php echo $ruta?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/dark.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/ekko-lightbox.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/ekko-lightbox.min.css" rel="stylesheet">
     
     <!-- Javascript-->
     
    	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
     <script src="<?php echo $ruta?>js/bootstrap.js"></script>
+    <script src="<?php echo $ruta?>js/bootstrap.min.js"></script>
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
-    <script src="<?php echo $ruta?>js/jquery.dataTables.js"></script>
+    <script src="<?php echo $ruta?>js/ekko-lightbox.js"></script>
+    <script src="<?php echo $ruta?>js/ekko-lightbox.min.js"></script>
+    <script src="<?php echo $ruta?>js/responsive-slider.js"></script>
 
     
     <!--      Ajax      -->
@@ -105,8 +111,13 @@
     		transitionTime: 300
 		  });
 		});
-
 		
+		 $(document).ready(function ($) {
+				$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+					event.preventDefault();
+					return $(this).ekkoLightbox();
+				});
+			});
 	 </script>
 		
 			

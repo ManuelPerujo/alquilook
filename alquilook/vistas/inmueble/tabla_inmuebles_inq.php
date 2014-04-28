@@ -102,7 +102,11 @@
     
    <?php
         include_once '../../plantillas/pie.php';
-    ?>        
+    ?>      
     
+      
+    <script src="js_slider/responsive-slider.js"></script>
+
+   
 </body>
 </html>
