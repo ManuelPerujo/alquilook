@@ -314,7 +314,7 @@
 
 	function get_colapse($idInmueble,$count){
 		
-		$direccion = get_contrato($idInmueble);
+		$direccion = get_documento($idInmueble);
 			
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
@@ -392,11 +392,11 @@
 		return $arrayId;
 	}
 
-	function get_contrato($idInmueble){
+	function get_documento($idInmueble){
 		
 		$bd = new core();
 		
-		$query = "select Direccion_Contenido from contrato where IdInmueble = '$idInmueble'";
+		$query = "select Direccion_Contenido from documento where IdInmueble = '$idInmueble'";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		

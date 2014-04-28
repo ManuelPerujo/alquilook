@@ -16,6 +16,7 @@
 	
 	$idUsuarios = array();
 	
+	$titulo = $_POST['titulo'];
 	$fechaEntrada = $_POST['fechaInicio'];
 	$fechaSalida = $_POST['fechaFinal'];
 	$direccion = "../".$uploadfile;
@@ -40,8 +41,8 @@
 			    				
 		$bd = new core();
 		
-		$query = "insert into contrato (IdContrato,IdInmueble,FechaEntrada,FechaSalida,Direccion_Contenido,Estado)
-				 values ('','$idInmueble','$fechaEntrada','$fechaSalida','$direccion', '0')";
+		$query = "insert into documento (IdDocumento,IdInmueble,Titulo,FechaEntrada,FechaSalida,Direccion_Contenido,Estado)
+				 values ('','$idInmueble','$titulo','$fechaEntrada','$fechaSalida','$direccion', '0')";
 		
 		$idItem = get_lastId($query);		 
 		
@@ -50,7 +51,7 @@
 			$idUsuario = $value;
 			
 			$query2 = "insert into notificacion (IdNotificacion,IdUsuario,IdItem,Tipo,Contenido,Fecha,Estado)
-				  values ('','$idUsuario','$idItem','contrato','Su Nuevo Contrato Ha Sido Registrado', '$fechaNotificacion','0')";	
+				  values ('','$idUsuario','$idItem','documento','Su Nuevo Contrato Ha Sido Registrado', '$fechaNotificacion','0')";	
 			
 			$bd->query($query2);
 			

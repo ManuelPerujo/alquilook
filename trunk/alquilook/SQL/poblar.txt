@@ -21,11 +21,6 @@ INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `Tipo
 (2, 1, '2-', 'Local_comercial', 'Medio', 'calle balbosa 234 2b', 41019, 'sevilla', 'sevilla', 2, 1, 120);
 
 
-
-INSERT INTO `contrato` (`IdContrato`, `IdInmueble`, `FechaEntrada`, `FechaSalida`, `Direccion_Contenido`, `Estado`) VALUES
-(1, 1, '2014-04-03', '2014-06-12', '../../documentos/contratos/prueba1.png', 0);
-
-
 INSERT INTO `incidencia` (`IdIncidencia`, `IdInmueble`, `Tipo`, `SubTipo`, `Fecha`, `Contenido`, `Direccion_Contenido`, `Estado`) VALUES
 (1, 1, 'IncidenciasVarias', 'null', '2014-04-15', 'se me ha estropeado el orto', '../../documentos/fotosIncidencias/prueba1.png', 1),
 (2, 1, 'IncidenciasVarias', 'null', '2014-04-15', 'ay ay ay hace mi gato', '../../documentos/fotosIncidencias/prueba1.png', 1),
