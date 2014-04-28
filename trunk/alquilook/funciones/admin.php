@@ -60,6 +60,10 @@
                 	
 					$direccion =  "../../vistas/propietario/mensaje_propietario.php?$idTabla=".$selector;
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_mensajes_inquilino.php'){
+                	
+					$direccion =  "../../vistas/inquilino/mensaje_inquilino.php?$idTabla=".$selector;
+					
                 }if(basename($_SERVER['PHP_SELF']) == 'tabla_mensajes_admin.php'){
                 	
 					$direccion =  "../../vistas/admin/mensaje_admin.php?$idTabla=".$selector;
@@ -76,25 +80,33 @@
                 	
 					$direccion =  "../../vistas/admin/incidencia_admin.php?$idTabla=".$selector;
 					
-                }if(basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_propietario.php'){
+                }if(basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_propietario.php' 
+                    || basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_inquilino.php'){
                 	
-					$direccion =  "../../vistas/admin/notificacion.php?$idTabla=".$selector;
+					$direccion =  get_Item_from_notificacion($selector)." target='_blanck'";
 					
                 }
                   
                 
-                
-                if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_pro.php"){
+                if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_pro.php"
+				  || basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inq.php"){
+				  	
                     foreach ($row2 as $key => $value2) {
+                    	
                         $contenido = wordwrap($value2, 12);                            
                         $mensaje .= "<td>$contenido</td>";
+						
                     }
+					
                 }else{
+                	
                     foreach ($row2 as $key => $value2) {
                     							
                         $contenido = wordwrap($value2, 12);                            
-                        $mensaje .= "<td><a class='enlace2' href=$direccion>$contenido</a></td>";                
+                        $mensaje .= "<td><a class='enlace2' href=$direccion>$contenido</a></td>";
+                                        
                     }
+                    
                 }          
                 
                 
@@ -1516,6 +1528,29 @@
 		return $row['IdUsuario'];
 		
 	}
+	
+	
+	function get_Item_from_notificacion($idNotificacion){
+		
+		$bd = new core();
+		
+		$query = "select IdItem,Tipo from notificacion where IdNotificacion = '$idNotificacion'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);	
+		
+		$tabla = $row['Tipo']; $idItem = $row['IdItem'];
+		
+		$idTabla = "Id".ucfirst($tabla);
+		
+		$query2 = "select Direccion_Contenido from $tabla where $idTabla = '$idItem'";
+		
+		$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		return $row2['Direccion_Contenido'];
+	}
+	
+	
+	
 	
 	
 	

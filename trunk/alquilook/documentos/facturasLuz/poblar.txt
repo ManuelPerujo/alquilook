@@ -1,0 +1,50 @@
+﻿USE `alquilook`;
+
+INSERT INTO `usuarios` (`IdUsuario`, `Admin`, `Tipo`, `Usuario`, `Password`, `Email`, `Nombre`, `Apellidos`, `DNI`, `Telefono`, `Domicilio`, `CP`, `Poblacion`, `Provincia`, `CodigoActivacion`, `UsuarioActivo`) VALUES
+(1, 0, 'Propietario', 'fran', 'fran', 'fnavarrofalcon@gmail.com', 'Francisco JesÃºs', 'Navarro FalcÃ³n', '30228587D', '646033444', 'dasdasd', 14523, 'Sevilla', 'Sevilla', 8706, 1),
+(2, 0, 'Inquilino', 'kualum', '93026415', 'kuala@lumpur.es', 'kuala', 'lumpur', '23907645T', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1),
+(3, 1, 'Admin', 'admin', 'admin', 'admin@admin.es', 'administrator', 'de la pradera', '21345678K', '123456789', 'ayyy gorrionse', 12345, 'sevilla', 'sevilla', 1, 1),
+(4, 0, 'Inquilino', 'peplum', '67f89bd7', 'pepito@gmail.com', 'pepito', 'lumpur', '12345678P', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1);
+
+
+INSERT INTO `propietario` (`IdPropietario`, `IdUsuario`) VALUES
+(1, 1);
+
+
+INSERT INTO `inquilino` (`IdInquilino`, `IdUsuario`, `IdInmueble`) VALUES
+(1, 2, 1),
+(2, 4, 2);
+
+
+INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `TipoContrato`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
+(1, 1, '1-', 'Vivienda', 'Basico', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500),
+(2, 1, '2-', 'Local_comercial', 'Medio', 'calle balbosa 234 2b', 41019, 'sevilla', 'sevilla', 2, 1, 120);
+
+
+
+INSERT INTO `contrato` (`IdContrato`, `IdInmueble`, `FechaEntrada`, `FechaSalida`, `Direccion_Contenido`, `Estado`) VALUES
+(1, 1, '2014-04-03', '2014-06-12', '../../documentos/contratos/prueba1.png', 0);
+
+
+INSERT INTO `incidencia` (`IdIncidencia`, `IdInmueble`, `Tipo`, `SubTipo`, `Fecha`, `Contenido`, `Direccion_Contenido`, `Estado`) VALUES
+(1, 1, 'IncidenciasVarias', 'null', '2014-04-15', 'se me ha estropeado el orto', '../../documentos/fotosIncidencias/prueba1.png', 1),
+(2, 1, 'IncidenciasVarias', 'null', '2014-04-15', 'ay ay ay hace mi gato', '../../documentos/fotosIncidencias/prueba1.png', 1),
+(3, 1, 'IncidenciasCambioInquilino', 'Baja de inquilino', '2014-04-15', 'asdas sadas ds', 'null', 1),
+(4, 1, 'IncidenciasCambioContrato', '', '2014-04-15', 'el glory hole que me habeis puesto de la cocina al baÃ±o del vecino no me convence', 'null', 1),
+(5, 1, 'IncidenciasCambioContrato', '', '2014-04-15', 'sadasdasda', 'null', 1),
+(6, 1, 'IncidenciasCambioContrato', '', '2014-04-15', 'dasdadasdas', 'null', 1),
+(7, 1, 'IncidenciasCambioContrato', 'Darse de baja en Alquilook', '2014-04-15', 'dasdasdasd', 'null', 1),
+(8, 1, 'IncidenciasCambioContrato', 'ModificaciÃ³n de contrato', '2014-04-15', 'dasdasddd', 'null', 1),
+(9, 2, 'altaNueva', 'null', '2014-04-15', 'null', 'null', 1),
+(10, 2, 'IncidenciasVarias', 'null', '2014-04-16', 'fsdfasfda sadasda', '../../documentos/fotosIncidencias/', 1),
+(11, 1, 'IncidenciasCambioInquilino', 'AÃ±adir inquilino', '2014-04-16', 'sdad asdas ghewe', 'null', 0),
+(12, 2, 'IncidenciasCambioContrato', 'Darse de baja en Alquilook', '2014-04-16', 'dasdas adasdqwe asd ', 'null', 0);
+
+
+
+
+
+
+
+
+
