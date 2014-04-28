@@ -23,18 +23,18 @@
             	<div class="col-md-4 col-xs-2 text-center"></div>
                 <div class="col-md-4 col-xs-8 text-left">
                 	<h4>Crear una cuenta</h4>
-               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" >                                    
-                        <input type="text" class="form-control" name="usuario_propietario" placeholder="Usuario *" />                                    
-                        <input type="password" class="form-control" name="pass_propietario" placeholder="Contraseña *" />
-                        <input type="email" class="form-control" name="email_propietario" placeholder="Email *" /> 
+               		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" onsubmit="validacion_registro_propietario();" >                                    
+                        <input type="text" class="form-control" id="usuario" name="usuario_propietario" placeholder="Usuario *" />                                    
+                        <input type="password" class="form-control" id="pass" name="pass_propietario" placeholder="Contraseña *" />
+                        <input type="email" class="form-control" id="email" name="email_propietario" placeholder="Email *" /> 
                         <input type="text" class="form-control" id="nombre" name="nombre_propietario" placeholder="Nombre *" />
-                        <input type="text" class="form-control" name="apellidos_propietario" placeholder="Apellidos *" /> 
-                        <input type="text" class="form-control" name="dni_propietario" placeholder="DNI *" />
-                        <input type="text" class="form-control" name="telefono_propietario" placeholder="Teléfono *" /> 
-                        <input type="text" class="form-control" name="domicilio_propietario" placeholder="Domicilio del propietario *" />
-                        <input type="text" class="form-control" name="cp_propietario" placeholder="CP *" /> 
-                        <input type="text" class="form-control" name="poblacion_propietario" placeholder="Población *" />
-                        <input type="text" class="form-control" name="provincia_propietario" placeholder="Provincia *" />                       
+                        <input type="text" class="form-control" id="apellidos" name="apellidos_propietario" placeholder="Apellidos *" /> 
+                        <input type="text" class="form-control" id="dni" name="dni_propietario" placeholder="DNI *" />
+                        <input type="tel" class="form-control" id="telefono" name="telefono_propietario" placeholder="Teléfono *" /> 
+                        <input type="text" class="form-control" id="domicilio" name="domicilio_propietario" placeholder="Domicilio del propietario *" />
+                        <input type="text" class="form-control" id="cp" name="cp_propietario" placeholder="CP *" /> 
+                        <input type="text" class="form-control" id="poblacion" name="poblacion_propietario" placeholder="Población *" />
+                        <input type="text" class="form-control" id="provincia" name="provincia_propietario" placeholder="Provincia *" />                       
                         <small>* Campos obligatorios</small>
                         <br/><br/>
                         <label>
