@@ -163,6 +163,18 @@ CREATE TABLE IF NOT EXISTS `incidencia` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `foto`;
+CREATE TABLE IF NOT EXISTS `foto` (
+  `IdFoto` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
+  `Nombre` char(40) NOT NULL,
+  `Direccion_Contenido` char(80) NOT NULL,
+  PRIMARY KEY (`IdFoto`),
+  UNIQUE KEY `Foto_Unica` (`IdFoto`),
+  CONSTRAINT `ID_FOTO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
 drop table if exists `documento`;
 CREATE TABLE IF NOT EXISTS `documento` (
   `IdDocumento` int(6) unsigned NOT NULL AUTO_INCREMENT,	
