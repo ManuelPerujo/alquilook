@@ -622,38 +622,44 @@
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
-                    								<img class='imagenboton3 steel-grey2  img-rounded' src='../../img/botones/luz.png'>
+                    								<img class='imagenboton3' src='../../img/botones/luz.png'>
 						                       		<p class='ficha'>Electricidad</p>
 						                       	</a>	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/agua.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/agua.png'>
 							                       	<p class='ficha'>Agua</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/gas.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/gas.png'>
 							                       	<p class='ficha'>Gas</p>
 							                    </a>   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
-				                       				<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/contrato.png'>
+				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
 				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#mensaje".$count."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/mensaje.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png'>
 							                       	<p class='ficha'>Mensaje</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#opciones".$count."'>
-							                       	<img class='imagenboton3 steel-grey2 img-rounded' src='../../img/botones/opciones.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/opciones.png'>
 							                       	<p class='ficha'>Opciones</p>
+							                    </a>   	
+				                       		</div>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>	
+						                    	<a class='enlace2' data-toggle='collapse' data-target='#galeria".$count."'>
+							                       	<img class='imagenboton3' src='../../img/botones/galeria.png'>
+							                       	<p class='ficha'>Galería</p>
 							                    </a>   	
 				                       		</div>
 										</div>";
@@ -1562,3 +1568,37 @@
 	
 			
 ?>	
+
+
+
+
+
+
+<!--
+	
+
+
+									<div id='galeria".$count."' class='collapse'>
+				                      		 <div class='row'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Galería</h5></p>
+								                 			
+							                 		</div> 
+							                 		<div class='col-sm-8 col-xs-12 text-center'>
+							                 				<div class='row'>
+							                 					Aquí va la tablichi
+							                 				</div> 
+							                 		</div>         
+				                     		</div>
+				                     </div>
+				                    
+				                    
+				                    
+				                    
+				                    
+
+
+-->
