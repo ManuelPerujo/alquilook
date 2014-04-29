@@ -553,7 +553,8 @@
 			$facturaAgua = up_factura_agua_admin($value['IdInmueble'],$count);
 			$facturaLuz = up_factura_luz_admin($value['IdInmueble'],$count);
 			$facturaGas = up_factura_gas_admin($value['IdInmueble'],$count);
-			$contrato = up_contrato($value['IdInmueble'], $count);
+			$contrato = up_documento($value['IdInmueble'], $count);
+			$fotos = up_fotos($value['IdInmueble'], $count);
 			$send_mensaje_propietario = send_mensaje_propietario($value['IdInmueble'], $count);
 			$opciones = opciones($value['IdInmueble'], $count);
 			
@@ -575,11 +576,6 @@
 												    <p class='ficha'>".$row4['DNI']."</p>
 												    <p class='ficha'><a class='enlace2' href='mailto:'>".$row4['Email']."</a></p>
 												    <p class='ficha'>".$row4['Telefono']."</p>
-												    <hr class='formulario'/>
-												    	<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action=''>
-													 			<label><i class='fa fa-camera'></i> Subir fotografías</label>
-													            <input type='file' name='userfile' />
-													 	</form>
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -598,6 +594,7 @@
 				                    .$contrato
 				                    .$send_mensaje_propietario
 				                    .$opciones
+				                    .$fotos
 				                    ."		
 		                    	</div>
 		                    </div>
@@ -841,7 +838,7 @@
 		
 	}
 			
-	function up_contrato($idInmueble, $count){
+	function up_documento($idInmueble, $count){
 				
 		$tabla = 'documento'; $idTabla = 'IdDocumento'; $arrayAtributos = array(1=>'Titulo',2=>'FechaEntrada',3=>'FechaSalida');
 		$arrayFiltro = array('IdInmueble' => $idInmueble);
@@ -886,6 +883,40 @@
 		
 	}
 
+	function up_fotos($idInmueble, $count){
+				
+		$tabla = 'foto'; $idTabla = 'IdFoto'; $arrayAtributos = array(1=>'Nombre');
+		$arrayFiltro = array('IdInmueble' => $idInmueble);
+		$arrayOrden = array(1 => 'Nombre', 2=> 'desc');
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
+		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
+				
+		$mensaje = "<div id='galeria".$count."' class='collapse'>
+				                      		 <div class='row'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Galería</h5></p>
+							                 		</div> 
+							                 		<div class='col-sm-8 col-xs-12 text-center'>
+							                 				<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_fotos.php'>
+													 			<label>Subir fotografías</label>
+													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
+													            <input type='file' name='userfile' /><br>
+													            <input type='submit' class='btn btn-default btn-sm' value='Subir'/>
+													 		</form><br>
+							                 		</div>         
+				                     		</div>
+				                     		<div class='row'>
+							                	".$mensajeTabla."
+							                </div>
+				                     </div>	";	
+		
+		return $mensaje;
+		
+	}
+	
 	function send_mensaje_propietario($idInmueble, $count){
 				
 		$idUsuario = null;	
@@ -1574,31 +1605,3 @@
 
 
 
-<!--
-	
-
-
-									<div id='galeria".$count."' class='collapse'>
-				                      		 <div class='row'>
-                	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
-							                 		</div>  
-							                 		<div class='col-sm-3 col-xs-9'>
-							                 			<p class='ficha'><h5>Galería</h5></p>
-								                 			
-							                 		</div> 
-							                 		<div class='col-sm-8 col-xs-12 text-center'>
-							                 				<div class='row'>
-							                 					Aquí va la tablichi
-							                 				</div> 
-							                 		</div>         
-				                     		</div>
-				                     </div>
-				                    
-				                    
-				                    
-				                    
-				                    
-
-
--->
