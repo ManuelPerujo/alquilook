@@ -55,6 +55,7 @@
 			$facturaAgua = get_facturas_agua($value['IdInmueble'],$count);
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
+			$documentos = get_documentos($value['IdInmueble'], $count);
 			$historialIncidencias = get_tabla_historial_incidencias($value['IdInmueble']);
 				
 				$inmueble = "<hr class='grisdoble'/><br/>
@@ -88,6 +89,7 @@
 				                    ".$facturaLuz
 				                    .$facturaAgua
 				                    .$facturaGas
+				                    .$documentos
 				                    ."<div id='incidencia".$count."' class='collapse'>
 				                      		 <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
@@ -312,10 +314,51 @@
 		
 	}
 
-	function get_colapse($idInmueble,$count){
+	function get_documentos($idInmueble,$count){
 		
-		$direccion = get_documento($idInmueble);
+		$documentos = null;
+		
+		$elementos = null;	
+						
+		$bd = new core();
+		
+		$query = "select * from documento where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$titulo = $value['Titulo'];	
+			$fecha = $value['FechaEntrada']." / ".$value['FechaSalida'];
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$titulo."&nbsp;&nbsp;&nbsp;(".$fecha.")&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
 			
+		}
+		
+		$documento = "<div id='documento".$count."' class='collapse'>
+				                            <div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/contrato2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Documentos</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>".
+							                        	$elementos
+							                 		."</div>	                        
+				                     		</div>
+				              </div>";
+		
+		return $documento;
+		
+	}
+
+	function get_colapse($idInmueble,$count){
+							
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
@@ -336,7 +379,7 @@
 							                    </a>   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' href='".$direccion."' target='_blank'>
+				                       			<a class='enlace2' data-toggle='collapse' data-target='#documento".$count."'>
 				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
 				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
@@ -392,7 +435,7 @@
 		return $arrayId;
 	}
 
-	function get_documento($idInmueble){
+	function get_direccion_documento($idInmueble){
 		
 		$bd = new core();
 		
