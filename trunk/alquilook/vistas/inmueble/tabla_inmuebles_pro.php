@@ -106,7 +106,7 @@
     ?>        
     
     
-    <script src="js_slider/responsive-slider.js"></script>
+    
 
    
 </body>

@@ -56,6 +56,7 @@
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
 			$documentos = get_documentos($value['IdInmueble'], $count);
+			$galeria = get_galeria($value['IdInmueble'], $count);
 			$historialIncidencias = get_tabla_historial_incidencias($value['IdInmueble']);
 				
 				$inmueble = "<hr class='grisdoble'/><br/>
@@ -171,7 +172,8 @@
 							                 		</div> 	            
 				                     		</div>
 				                     		".$historialIncidencias." 
-				                     </div>		
+				                     </div>
+				                     ".$galeria."		
 		                    	</div>
 		                    </div>
 		                    <br>"  ;
@@ -354,6 +356,52 @@
 				              </div>";
 		
 		return $documento;
+		
+	}
+
+	function get_galeria($idInmueble,$count){
+		
+		$galeria = null;
+		
+		$elementos = null;	
+						
+		$bd = new core();
+		
+		$query = "select * from foto where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a href='$direccion' data-toggle='lightbox' class='col-xs-2'>
+							 <img src='$direccion' class='img-responsive'>
+						   </a>";	
+			
+		}
+		
+		$galeria = "<div id='galeria".$count."' class='collapse'>
+				                      		 <div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Galería de imágenes</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>	
+														     <div class='panel-group' id='accordion".$count."'>
+																	<div class='row'>
+														             ".$elementos."           
+														             </div>
+															</div>     
+							                 		</div> 	            
+				                     		  </div>
+				                     	</div>";
+		
+		return $galeria;
 		
 	}
 
