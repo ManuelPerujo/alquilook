@@ -85,8 +85,7 @@
     <script src="<?php echo $ruta?>js/alquilook.js"></script>
     <script src="<?php echo $ruta?>js/ekko-lightbox.js"></script>
     <script src="<?php echo $ruta?>js/ekko-lightbox.min.js"></script>
-    <script src="<?php echo $ruta?>js/responsive-slider.js"></script>
-
+    <script src="<?php echo $ruta?>/js_slider/responsive-slider.js"></script>
     
     <!--      Ajax      -->
     
