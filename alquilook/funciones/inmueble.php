@@ -6,7 +6,7 @@
 		
 		$bd = new core();
 		
-		if($tipo == 'propietario'){
+		if($tipo == 'Propietario'){
 			
 			$idPropietario = get_IdPropietario($idUsuario);
 		
@@ -15,7 +15,7 @@
 			$result = $bd->query($query);
 			$row = $result->fetchAll(PDO::FETCH_ASSOC);	
 			
-		}if($tipo == 'inquilino'){
+		}if($tipo == 'Inquilino'){
 			
 			$query = "select IdInmueble from inquilino where IdUsuario = '$idUsuario'";
 			

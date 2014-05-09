@@ -27,7 +27,7 @@ include_once("../funciones/core.php");
 						
 		$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
 
-	    $mensaje .= 'www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
+	    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
 	                
 	    $headers = "MIME-Version: 1.0\r\n";
 	    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
