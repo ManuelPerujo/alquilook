@@ -74,7 +74,9 @@
                 			?>
 		                			                		                	
 		                	<?php
+		                	
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
+		                				
 		                			
 									$id_usuario = $_SESSION["IdUsuario_sesion"];
 									$arrayInmuebles = get_inmueble_datos($id_usuario,$_SESSION['tipo']);

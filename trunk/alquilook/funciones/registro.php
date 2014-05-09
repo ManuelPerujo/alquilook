@@ -44,7 +44,7 @@
             $bd->ConectaBD();
      
             /*comprobamos que no existe el usuario en la bd */
-            $query = "select IdUsuario from usuarios where Usuario = '$usuario' and CodigoActivacion = '$codigo' ";
+            $query = "select IdUsuario,Tipo from usuarios where Usuario = '$usuario' and CodigoActivacion = '$codigo' ";
 
             $result = $bd->query($query);
       
@@ -58,6 +58,8 @@
 				$id_usuario = $row['IdUsuario'];
 				$query2 = "insert into propietario (IdPropietario, IdUsuario) values ('', $id_usuario)";
                 $bd->query($query2);
+				
+				$_SESSION['tipo'] = $row['Tipo'];
 				
 				return true;
             }
