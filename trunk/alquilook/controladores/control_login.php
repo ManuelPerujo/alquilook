@@ -19,7 +19,7 @@
             $direccion = "../vistas/inmueble/tabla_inmuebles_pro.php";
             $usuario = $_POST['usuario_propietario'];
             $password = $_POST['pass_propietario'];
-            $tipo = "propietario";
+            $tipo = "Propietario";
 			    
         }if(isset($_POST['usuario_inquilino']) && !empty($_POST['usuario_inquilino'])
 		    && isset($_POST['pass_inquilino']) && !empty($_POST['pass_inquilino'])){
@@ -27,14 +27,14 @@
             $direccion = "../vistas/inmueble/tabla_inmuebles_inq.php";
             $usuario = $_POST['usuario_inquilino'];
             $password = $_POST['pass_inquilino'];
-            $tipo = "inquilino";
+            $tipo = "Inquilino";
             
         }if(isset($_POST['usuario_admin']) && !empty($_POST['usuario_admin'])
            && !empty($_POST['pass_admin']) && isset($_POST['pass_admin'])){
 				
         	$usuario = $_POST['usuario_admin'];
             $password = $_POST['pass_admin'];
-			$tipo = "admin";
+			$tipo = "Admin";
 			
         }if(isset($_POST['usuario_inmobiliaria']) && !empty($_POST['usuario_inmobiliaria'])
            && !empty($_POST['pass_inmobiliaria']) && isset($_POST['pass_inmobiliaria'])){
@@ -42,7 +42,7 @@
 			$direccion = "../vistas/inquilino/tabla_inmuebles_pro.php";	
         	$usuario = $_POST['usuario_inmobiliaria'];
             $password = $_POST['pass_inmobiliaria'];
-			$tipo = "inmobiliaria";
+			$tipo = "Inmobiliaria";
 			
         }else{
         				
