@@ -56,7 +56,7 @@
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Básico" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
@@ -79,7 +79,7 @@
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Medio" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
@@ -102,7 +102,7 @@
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Premium" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
