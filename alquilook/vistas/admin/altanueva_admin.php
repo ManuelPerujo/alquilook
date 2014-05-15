@@ -17,7 +17,7 @@
         include_once '../../plantillas/banner_admin.php';
     ?>  
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+    <!--  Panel Propietario  -->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -28,13 +28,15 @@
                 
                 <?php 
                 	
+                	$pdf = false;
+                	
                 	$idInmueble = $_GET['IdInmueble'];
 					
 					up_incidencia_atendida($idInmueble);
                 	
-                	$datosUsuario = get_datosUsuario_from_IdInmueble($idInmueble);
+                	$datosUsuario = get_datosUsuario_from_IdInmueble($idInmueble,$pdf);
                 	
-					$datosInquilinos = get_datosInquilinos_from_IdInmueble($idInmueble);
+					$datosInquilinos = get_datosInquilinos_from_IdInmueble($idInmueble,$pdf);
 					
 					$datosInmueble = get_datosInmueble($idInmueble);
 					
@@ -68,7 +70,7 @@
 	        				</div>	
 	        				<div class="row">
 								<div class="col-xs-12 text-center">
-									<a href="" class="btn btn-default btn-lg"><i class="fa fa-file-text"></i> Generar Contrato PDF</a>	
+									<a href="../../fpdf/pdf_contrato.php?id=<?php echo $idInmueble; ?>" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-file-text"></i> Generar Contrato PDF</a>	
 				        			<br/><br/>
 								</div>
 							</div>		

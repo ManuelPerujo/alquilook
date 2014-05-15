@@ -17,7 +17,7 @@
 
 	echo $direccion;
 	
-	//header("Location: ".$direccion);
+	header("Location: ".$direccion);
 
 
 

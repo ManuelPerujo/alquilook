@@ -72,6 +72,7 @@
 												    <hr class='grissimple'/>
 												    <small>".$value['TipoInmueble']."</small>
 												    <hr class='grissimple'/>
+												    <p class='ficha'>Tipo de contrato: ".$value['TipoContrato']."</p>
 												    <p class='ficha'>".$value['Metros']." metros</p>
 												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
 												    ".$inquilinos."
@@ -406,25 +407,50 @@
 	}
 
 	function get_colapse($idInmueble,$count){
+			
+		$suministros = get_permiso_suministros($idInmueble);
+		
+		$luz = "<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
+                 	<img class='imagenboton3' src='../../img/botones/luz.png'>
+					<p class='ficha'>Electricidad</p>
+				</a>";
+		
+		$agua = "<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
+					<img class='imagenboton3' src='../../img/botones/agua.png'>
+					<p class='ficha'>Agua</p>
+				</a>";
+		
+		$gas = "<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
+					<img class='imagenboton3' src='../../img/botones/gas.png'>
+					<p class='ficha'>Gas</p>
+				</a>";						                       	
+		
+		if($suministros['Luz'] == 0){
+					
+			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png'>
+					<p class='ficha'>Electricidad</p>";	
+			
+		}if($suministros['Agua'] == 0){
+					
+			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png'>
+					<p class='ficha'>Agua</p>";	
+			
+		}if($suministros['Gas'] == 0){
+					
+			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png'>
+					<p class='ficha'>Gas</p>";	
+			
+		}
 							
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
-                    								<img class='imagenboton3' src='../../img/botones/luz.png'>
-						                       		<p class='ficha'>Electricidad</p>
-						                       	</a>	
+				                       			".$luz."	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/agua.png'>
-							                       	<p class='ficha'>Agua</p>
-							                    </a>   	
+						                       	".$agua."   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/gas.png'>
-							                       	<p class='ficha'>Gas</p>
-							                    </a>   		
+						                    	".$gas."   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse' data-target='#documento".$count."'>
@@ -523,34 +549,28 @@
 		
 	}
 
+	function get_permiso_suministros($idInmueble){
+		
+		$bd = new core();
+		
+		$suministros = array();
+		
+		$query = "select Agua,Luz,Gas from inmueble where IdInmueble = '$idInmueble'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+			
+			$suministros[$key] = $value;
+			
+		}
+		
+		return $suministros;
+		
+	}
+
 
 
 
 
 ?>
-
-
-<!--
-	
-										<div id='galeria".$count."' class='collapse'>
-				                      		 <div class='row lineaabajo'>
-                	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
-							                 		</div>  
-							                 		<div class='col-sm-3 col-xs-9'>
-							                 			<p class='ficha'><h5>Galería de imágenes</h5></p>
-							                 		</div>
-							                 		<div class='col-sm-8 col-xs-12'>	
-														     <div class='panel-group' id='accordion".$count."'>
-																	<div class="row">
-														                        <a href="src de la imagen" data-toggle="lightbox" data-gallery="multiimages" class="col-xs-2">
-														                                    <img src="src de la imagen" class="img-responsive">
-														                        </a>
-														                       
-														             </div>
-															</div>     
-							                 		</div> 	            
-				                     		  </div>
-				                     	</div>	
-	
--->
