@@ -22,7 +22,7 @@
                 <div class="wrapper">
               	  <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="300" data-length="300">
                     <h3 class="slider">Alquilook<br/>gestiona tu alquiler</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="500" data-length="300"><h2>Alquilar no siempre es fáci.<br/>Nosotros te ayudamos.<br/>No te compliques la vida.</h2></div><br />
+                    <div data-animate="slideAppearLeftToRight" data-delay="500" data-length="300"><h2>Alquilar no siempre es fácil.<br/>Nosotros te ayudamos.<br/>No te compliques la vida.</h2></div><br />
                   </div> 
                   <div class="caption img-1" data-animate="slideAppearLeftToRight" data-delay="500">
                     <img src="img/1.png">
@@ -107,20 +107,19 @@
     
     
     <div class="section">
-        <div class="container">
-        	<br/><br/><br/>
+        <div class="container arriba2">
             <div class="row">
-                <div class="col-lg-6 col-md-6 text-center">
+                <div class="col-md-6 text-center">
                     	<img src="img/portatil.png" class="portatil">
                         <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/I9ix0ECNuyE" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="col-lg-6 col-md-6 text-left">
+                <div class="col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
-                    <h1 class="videoh1">45 segundos</h1>
+                    <h1 class="videoh1">75 segundos</h1>
                     <h2 class="videoh2">cómo funciona alquilook.com</h2>
-                    <p class="videop"><i class="fa fa-check"></i> Sed iusto nihil populo an</p>
-                    <p class="videop"><i class="fa fa-check"></i> At has veri feugait placerat</p>
-                    <p class="videop"><i class="fa fa-check"></i> Sint faqete perfectus vel</p>
+                    <p class="videop"><i class="fa fa-check"></i> Tranqulidad para el propietario</p>
+                    <p class="videop"><i class="fa fa-check"></i> Facilidades para el inqulino</p>
+                    <p class="videop"><i class="fa fa-check"></i> Gestión online para todos</p>
                 </div>
             </div>
         </div>
@@ -128,11 +127,10 @@
     
    
     <div class="section">
-        <div class="container">
-        	<br/><br/><br/><br/>
+        <div class="container arriba2">
             <div class="row">
             	
-                <div class="col-lg-4 text-center collapse-group">
+                <div class="col-sm-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario">
                 			<img class="imagen" src="img/botones/propietario.png">
                 			<h2>SOY PROPIETARIO</h2>
@@ -169,7 +167,7 @@
                 </div>   
                 
                 
-				<div class="col-lg-4 text-center collapse-group">
+				<div class="col-sm-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino">
                 			<img class="imagen" src="img/botones/inquilino.png">
                 			<h2>SOY INQUILINO</h2>
@@ -187,8 +185,8 @@
                 </div>  
               
               
-                <div class="col-lg-4 text-center collapse-group">
-                		<a class="enlace2">
+                <div class="col-sm-4 text-center collapse-group">
+                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria">
                 			<img class="imagen" src="img/botones/inmobiliaria.png">
                 			<h2>SOY INMOBILIARIA</h2>
                 		</a>
@@ -208,8 +206,7 @@
    									<input type="text" class="form-control" id="usuario3" name="usuario_inmobiliaria" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password3" name="pass_inmobiliaria" placeholder="Contraseña" />
     								<button type="submit" class="btn btn-default">Entrar</button>
-    								<br/><br/>
-    								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
+    								<br/>
     								<br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
   								</p>

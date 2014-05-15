@@ -21,8 +21,11 @@
 		|| basename($_SERVER['PHP_SELF']) == "tabla_mensajes_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_mensajes_propietario.php"
 		|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_incidencias_contrato.php"
 		|| basename($_SERVER['PHP_SELF']) == "actualizar.php" || basename($_SERVER['PHP_SELF']) == "recordar.php"
-		|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php"
-		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php")
+		|| basename($_SERVER['PHP_SELF']) == "banner_inmo.php" || basename($_SERVER['PHP_SELF']) == "panel_inmobiliaria.php"
+		|| basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inmo.php"	|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php" 
+		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php"
+		|| basename($_SERVER['PHP_SELF']) == "registro_propietario_inmo.php"
+		)
 	{
 
   	  $ruta = "../../";   
@@ -123,9 +126,20 @@
 			
 		
 	<!--   Slider   -->
-			
 	
-		 
-    
-    
+	<script type="text/javascript">
+		var browser = navigator.appName
+var ver = navigator.appVersion
+var thestart = parseFloat(ver.indexOf("MSIE"))+1
+var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
+if ((browser=="Microsoft Internet Explorer") && (brow_ver < 10))
+{
+window.location="http://test.tejares11.com/alquilook/vistas/error/actualizar.php";
+}
+	</script>
+	
+	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '96961ea6-43ca-4ac0-bd23-5dda881a83c3', f: true }); done = true; } }; })();</script>
+
+
+ 
 </head> 
