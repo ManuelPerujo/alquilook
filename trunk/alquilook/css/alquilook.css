@@ -50,12 +50,6 @@ h6{
 	font-weight: 400;
 	}	
 
-.slider{
-	font-size:4em;
-	line-height: 60px;
-	}
-	
-
 h2.banner{
 	color:#FFFFFF;
 	font-family:  'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
@@ -319,6 +313,17 @@ ul{
 	color:#FFFFFF;
 }
 
+.rojo{
+	color: #e74c3c;
+}
+
+.verde{
+	color: #27ae60;
+}
+.gris{
+	color: #999999;
+}
+
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------Otros--------------------*/
 
 
@@ -331,6 +336,14 @@ body,html{
 	text-transform: uppercase !important;
 	
 }
+
+
+.imagencentro{
+	margin-left: auto;
+  	margin-right: auto;
+  	float: none;
+}
+
 
 .arriba{
 	padding:15px 0 0 0;
@@ -510,10 +523,6 @@ body {
 }  
 
 
-.carousel {
-  height:450px;
-}
-
 
 .item,
 .active,
@@ -597,10 +606,7 @@ body {
   right: 10%;
   left: 10%;
 }
-.carousel {
-    height:200px;
-  }
-  
+
 
 .iconosmovil{
 	padding:10px 0;
@@ -655,11 +661,7 @@ p.ficha2{
 	height: 30px;
 }
 
-.slider{
-	font-size:20px;
-	line-height: 25px;
-	}
-	
+
 h2.banner{
 	color:#FFFFFF;
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;

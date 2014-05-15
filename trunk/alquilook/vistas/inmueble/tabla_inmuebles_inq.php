@@ -7,7 +7,7 @@
 	include_once '../../funciones/usuarios.php';
     
 ?>
-
+ 
 <body>
     <?php
         include_once '../../plantillas/cabecera.php';

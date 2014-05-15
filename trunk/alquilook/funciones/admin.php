@@ -85,7 +85,7 @@
                 	
 					$direccionURL =  get_Item_from_notificacion($selector);
 					
-					$direccion = "../../controladores/control_notificacion_leida.php?item=".$direccionURL."&id=".$selector." target='_blanck'";
+					$direccion = "../../controladores/control_notificacion_leida.php?item=".$direccionURL."&id=".$selector." target='_blank'";
 					
                 }
                   

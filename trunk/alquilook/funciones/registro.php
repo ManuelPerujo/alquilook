@@ -59,8 +59,9 @@
 				$query2 = "insert into propietario (IdPropietario, IdUsuario) values ('', $id_usuario)";
                 $bd->query($query2);
 				
+
 				$_SESSION['tipo'] = $row['Tipo'];
-				
+
 				return true;
             }
 

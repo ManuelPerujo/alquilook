@@ -23,7 +23,6 @@
 	 	<div class="col-lg-6 col-xs-8">
           <h1>¿Ha olvidado su usuario o contraseña?</h1>
           <hr class="grissimple"/>
-          <h3><i class="fa fa-thumbs-o-up"></i> No hay problema.</h3>
           <h4>Le enviaremos su nombre de <em>usuario</em> y <em>contraseña</em> a la cuenta de email que tiene asociada a Alquilook.</h4>
           <?php 
       		

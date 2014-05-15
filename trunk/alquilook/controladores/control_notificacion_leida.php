@@ -15,7 +15,9 @@
 
 	$bd->query($query);
 
-	header("Location: ".$direccion);
+	echo $direccion;
+	
+	//header("Location: ".$direccion);
 
 
 

@@ -28,77 +28,91 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
                 		<h3><i class="fa fa-cogs"></i> Tipo de contrato y datos de su inmueble (Paso 1 de 3)</h3>
-                			<div class="row">
-                				<div class="col-sm-9">
-									<div class="text-left alert alert-success alert-dismissable">
-						               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				 							<h4><i class="fa fa-info-circle fa-lg"></i> Elija la modalidad de contrato que más le interese y registre su inmueble e inquilino en 3 sencillos pasos.</h4>
-				                	</div>
-				                </div>
-				            </div>
-				            <div class="row">   	
-			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">	
+                			<div class="row">   	
+			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">
+			                		<div class="col-xs-12">
+				                		<label><h5 class="gris">Inserte el precio en euros del alquiler de su inmueble:&nbsp;&nbsp;</h5></label><br />
+				                		<input type="text" class="form-control" name="" placeholder="000,00" />	
+				                		<br />
+				                	</div>	
+				                	<hr class="grissimple" />
+				                	<div class="col-xs-12">
+				                		<label><h5 class="gris">Elija el tipo de contrato que más le interese:</h5></label>
+				                	</div>	
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i> Básico</strong>
+						                        <strong><i class="fa fa-star"></i> MINI</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">5
-						                            <span class="price-cents">%</span>
+						                        <h3 class="panel-title price">X
+						                            <span class="price-cents">€</span>
 						                            <span class="price-month">mes</span>
 						                        </h3>
 						                    </div>
 						                    <ul class="list-group">
-						                        <li class="list-group-item">5 min. de gloryhole</li>
-						                        <li class="list-group-item">100 grs. de adobo</li>
-						                        <li class="list-group-item">100 MB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Básico" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Servicio de Defensa Jurídica</li>
+						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Garantías por pérdidas Económicas</li>
+						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Básico" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i> Medio</strong>
+						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i> ESTÁNDAR</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">7
-						                            <span class="price-cents">%</span>
+						                        <h3 class="panel-title price">X
+						                            <span class="price-cents">€</span>
 						                            <span class="price-month">mes</span>
 						                        </h3>
 						                    </div>
 						                    <ul class="list-group">
-						                       <li class="list-group-item">10 min. de gloryhole</li>
-						                        <li class="list-group-item">250 grs. de adobo</li>
-						                        <li class="list-group-item">300 MB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Medio" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Servicio de Defensa Jurídica</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
+						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Medio" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Premium</strong>
+						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> PREMIUM</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">10
-						                            <span class="price-cents">%</span>
+						                        <h3 class="panel-title price">X
+						                            <span class="price-cents">€</span>
 						                            <span class="price-month">mes</span>
 						                        </h3>
 						                    </div>
 						                    <ul class="list-group">
-						                        <li class="list-group-item">15 min. de gloryhole</li>
-						                        <li class="list-group-item">500 grs. de adobo</li>
-						                        <li class="list-group-item">1 GB para youporn.com</li>
-						                        <li class="list-group-item"><a class="enlace" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
-						                        <li class="list-group-item"> <h4><input type="radio" name="tipoContrato" value="Premium" />&nbsp;&nbsp; Acepto</h4></li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Servicio de Defensa Jurídica</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
+						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Coberturas de un Seguro de Hogar</li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php#gamas" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <hr class="grissimple" />
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Premium" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
                 			<br/>	
+                			<hr class="grissimple" />
+                			<div class="col-xs-12">
+				                		<label><h5 class="gris">Inserte los datos de su inmueble:</h5></label>
+				            </div>
 		                	<div class="col-sm-12">		               		 	                                 
 		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
@@ -144,6 +158,11 @@
 									  <option value="2">2</option>
 									  <option value="3">3</option>
 									</select>  
+		                        <br/>
+		                         <label><h6 class="magenta">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
+			                        <input type="checkbox" name="" value="">&nbsp;&nbsp;Luz<br>
+									<input type="checkbox" name="" value="">&nbsp;&nbsp;Agua<br/>
+									<input type="checkbox" name="" value="">&nbsp;&nbsp;Gas
 		                        <br/><br/>
 		    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
 		                    </form>

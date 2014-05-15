@@ -23,8 +23,8 @@
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-envelope"></i> Conversaci&oacute;n:</h3>
+                		<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_mensajes_admin.php"><i class="fa fa-chevron-left"></i> Volver a mensajes</a>
 	                	<div class="media">
-	                		  <br/>
 							  
 							  <?php 
 							  		
@@ -84,7 +84,7 @@
 							 			<input type="hidden" value="<?php echo $idConversacion; ?>" name="idConversacion" />
 							 			<textarea class="" name="contenido" placeholder="Escriba aquí su mensaje..."></textarea>
 							 			<br/>
-							 			<input type="submit" class="btn btn-primary btn-sm" value="Enviar" />
+							 			<input type="submit" class="btn btn-default btn-sm" value="Enviar" />
 							 		</form>
 							 </div>
 							 <br/>

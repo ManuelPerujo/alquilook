@@ -5,8 +5,8 @@
                 	<img class="imagenbanner" src="<?php echo $ruta?>img/banner/banner2.png">
                 </div>     
                 <div class="col-sm-10 text-left">
-                	<h3 class="banner">"Si mi casa arde, me la pela. El seguro está ya incluido en el rollo este de Alquilook"</h3>
-					<h5 class="banner"><em>Un pirómano</em></h5>
+                	<h3 class="banner">"Id vel sensibus honestatis omittantur, vel cu nobis commune patrioque volantis dracaris."</h3>
+					<h5 class="banner"><em>Juan Gómez</em></h5>
                 </div>                                                       	            	
 			</div>
 		</div>
