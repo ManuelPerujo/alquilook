@@ -5,6 +5,7 @@
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/inmueble.php';
 	include_once '../../funciones/usuarios.php';
+	include_once '../../funciones/admin.php';
     
 ?>
 
@@ -14,7 +15,7 @@
     ?>
     
      <?php
-        include_once '../../plantillas/banner_inq.php';
+        include_once '../../plantillas/banner_inmo.php';
     ?>      
 
 
@@ -25,10 +26,11 @@
             <div class="row-fluid">
             	
                 <?php
-        			include_once '../panel/panel_inquilino.php';
+        			include_once '../panel/panel_inmobiliaria.php';
     			?> 
     			
                 <!--------------------------------------------------------Columna Dcha----------------------->
+                
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
                 	    <div class="col-sm-12">
@@ -38,7 +40,6 @@
 		                		</div>
 		                	</div>
 		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
-		                	
 		                	<?php 
 		                	
 		                		if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == TRUE){
@@ -71,12 +72,17 @@
 								}                
 				
                 			?>
-		                	
+		                			                		                	
 		                	<?php
+		                	
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
-		                			
+		                				
+          			
+		                												
 									$id_usuario = $_SESSION["IdUsuario_sesion"];
-									$arrayInmuebles = get_inmueble_datos($id_usuario);
+
+									$arrayInmuebles = get_inmueble_datos($id_usuario,$_SESSION['tipo']);
+									
 									
 									foreach ($arrayInmuebles as $key => $value) {
 										
@@ -103,5 +109,9 @@
         include_once '../../plantillas/pie.php';
     ?>        
     
+    
+    
+
+   
 </body>
 </html>

@@ -148,6 +148,11 @@ p.mobiliario{
 }
 
 
+.acepto{
+	font-size: 14px;
+	line-height: 13px;
+}
+
 
 /*  Links  */
 a.enlace{
@@ -347,6 +352,9 @@ body,html{
 
 .arriba{
 	padding:15px 0 0 0;
+}
+.arriba2{
+	padding:75px 0 0 0;
 }
 
 
@@ -716,4 +724,9 @@ h6{
 	}	
 
 
+
 }
+
+
+
+
