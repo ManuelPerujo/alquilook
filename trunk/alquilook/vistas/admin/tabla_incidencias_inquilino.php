@@ -14,7 +14,7 @@
         include_once '../../plantillas/banner_admin.php';
     ?>  
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+    <!-- Panel Propietario -->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -23,13 +23,13 @@
         			include_once '../panel/panel_admin.php';
     			?> 
                 
-                <!--------------------------------------------------------Columna Dcha----------------------->
+                <!--  Columna Dcha -->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-key"></i> Incidencias Inquilinos:</h3>
                 		
                 	  <?php 
                 	
-                		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Contenido');
+                		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Contenido', 5=>'EstadoIncidencia');
                         $filtro = array('Tipo' => 'IncidenciasCambioInquilino');
                         $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
                         $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
@@ -41,11 +41,11 @@
                 	?>
                 		
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
+                <!--  Columna Dcha  -->                                                                          
             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+    <!--  Panel Propietario  -->
 
     <?php
         include_once '../../plantillas/pie_admin.php';

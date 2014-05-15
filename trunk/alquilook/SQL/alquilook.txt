@@ -75,6 +75,10 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `NumHabitaciones` int(3) NOT NULL,
   `NumServicios` int(3) NOT NULL,
   `Metros` int(5) NOT NULL,
+  `Valor` int(6) NOT NULL,
+  `Agua` boolean NOT NULL,
+  `Luz` boolean NOT NULL,
+  `Gas` boolean NOT NULL,
   PRIMARY KEY (`IdInmueble`),
   UNIQUE KEY `Inmueble_Unico` (`IdInmueble`),
   CONSTRAINT `ID_INMUEBLE_FK` FOREIGN KEY (`IdPropietario`) REFERENCES `propietario` (`IdPropietario`) ON DELETE CASCADE

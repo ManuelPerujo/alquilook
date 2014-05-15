@@ -549,7 +549,7 @@
 			}
 			
 													
-			$colapse = get_colapse_admin($count);
+			$colapse = get_colapse_admin($value['IdInmueble'],$count);
 			$facturaAgua = up_factura_agua_admin($value['IdInmueble'],$count);
 			$facturaLuz = up_factura_luz_admin($value['IdInmueble'],$count);
 			$facturaGas = up_factura_gas_admin($value['IdInmueble'],$count);
@@ -614,26 +614,51 @@
 			
 	}
 	
-	function get_colapse_admin($count){
+	function get_colapse_admin($idInmueble,$count){
+				
+		$suministros = get_permiso_suministros($idInmueble);
+		
+		$luz = "<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
+                 	<img class='imagenboton3' src='../../img/botones/luz.png'>
+					<p class='ficha'>Electricidad</p>
+				</a>";
+		
+		$agua = "<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
+					<img class='imagenboton3' src='../../img/botones/agua.png'>
+					<p class='ficha'>Agua</p>
+				</a>";
+		
+		$gas = "<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
+					<img class='imagenboton3' src='../../img/botones/gas.png'>
+					<p class='ficha'>Gas</p>
+				</a>";						                       	
+		
+		if($suministros['Luz'] == 0){
+					
+			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png'>
+					<p class='ficha'>Electricidad</p>";	
 			
+		}if($suministros['Agua'] == 0){
+					
+			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png'>
+					<p class='ficha'>Agua</p>";	
+			
+		}if($suministros['Gas'] == 0){
+					
+			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png'>
+					<p class='ficha'>Gas</p>";	
+			
+		}	
+				
 		$mensaje = "<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
-				                       			<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
-                    								<img class='imagenboton3' src='../../img/botones/luz.png'>
-						                       		<p class='ficha'>Electricidad</p>
-						                       	</a>	
+				                       			".$luz."	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                       	<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/agua.png'>
-							                       	<p class='ficha'>Agua</p>
-							                    </a>   	
+						                       	".$agua."   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
-						                    	<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/gas.png'>
-							                       	<p class='ficha'>Gas</p>
-							                    </a>   		
+						                    	".$gas."   		
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
@@ -1211,49 +1236,63 @@
 		return $arrayIdInquilinos;
     }
    
-	function get_datosUsuario_from_IdInmueble($idInmueble){
+	function get_datosUsuario_from_IdInmueble($idInmueble, $pdf){
 		
 		$idUsuario = get_IdUsuarioPropietarioFromInmueble($idInmueble);
-		
-		$mensaje = null;
-		
+				
 		$bd = new core();
 		
 		$query = "select * from usuarios where IdUsuario = '$idUsuario'";
-		$result = $bd->query($query);
 		
-		$row = $result->fetch(PDO::FETCH_ASSOC);
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		$mensaje = "<div class='col-xs-5'>   	
-					                	<h5 class='media-heading mayusculas'>Propietario:</h5>
-						                	Nombre y apellidos:
-						                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
-						                	DNI:
-						                	<p class='ficha mayusculas'>".$row['DNI']."</p>
-						                	Domicilio:
-						                	<p class='ficha mayusculas'>".$row['Domicilio']."</p>
-						                	CP:
-						                	<p class='ficha mayusculas'>".$row['CP']."</p>
-						                	Población:
-						                	<p class='ficha mayusculas'>".$row['Poblacion']."</p>
-						                	Provincia:
-						                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
-		                		 </div>
-		                		 <div class='col-xs-5'>	
-					                	<h5 class='media-heading'>Datos de contacto:</h5>
-						                	Email:
-						                	<p class='ficha'>".$row['Email']."</p>
-						                	Teléfono:
-						                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
-		                		 </div>";
+		if($pdf == FALSE){
+			
+			$mensaje = null;
 		
-		return $mensaje;
+			$mensaje = "<div class='col-xs-5'>   	
+						                	<h5 class='media-heading mayusculas'>Propietario:</h5>
+							                	Nombre y apellidos:
+							                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
+							                	DNI:
+							                	<p class='ficha mayusculas'>".$row['DNI']."</p>
+							                	Domicilio:
+							                	<p class='ficha mayusculas'>".$row['Domicilio']."</p>
+							                	CP:
+							                	<p class='ficha mayusculas'>".$row['CP']."</p>
+							                	Población:
+							                	<p class='ficha mayusculas'>".$row['Poblacion']."</p>
+							                	Provincia:
+							                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
+			                		 </div>
+			                		 <div class='col-xs-5'>	
+						                	<h5 class='media-heading'>Datos de contacto:</h5>
+							                	Email:
+							                	<p class='ficha'>".$row['Email']."</p>
+							                	Teléfono:
+							                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+			                		 </div>";
+			
+			return $mensaje;	
+			
+		}if($pdf == TRUE){
+					
+			$datos = array();
+			
+			foreach ($row as $key => $value) {
+						
+				$datos[$key] = $value;	
+				
+			}	
+			
+			return $datos;
+			
+		}
+		
 		
 	}   
    
-    function get_datosInquilinos_from_IdInmueble($idInmueble){
-    		
-    	$mensaje = null;
+    function get_datosInquilinos_from_IdInmueble($idInmueble,$pdf){
     	
     	$idUsuario = null;
     	
@@ -1263,37 +1302,71 @@
     	
     	$bd = new core();	
     	
-    	foreach ($arrayUsuarios as $key => $value) {
+    	if($pdf == FALSE){
+    				
+    		$mensaje = null;
+    		
+			foreach ($arrayUsuarios as $key => $value) {
 				
-			$idUsuario = $value;	
+				$idUsuario = $value;	
+						
+				$query = "select * from usuarios where IdUsuario = '$idUsuario'";	
+				
+				$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+				
+				$mensaje .= "<hr class='grissimple'/>
+		                		<div class='row'>
+									<div class='col-xs-2'>   	
+						                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png'>
+			                		 </div>
+		                			<div class='col-xs-5'>   	
+						                	<h5 class='media-heading mayusculas'>inquilino:</h5>
+							                	Nombre y apellidos:
+							                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
+							                	DNI:
+							                	<p class='ficha mayusculas'>".$row['DNI']."</p>
+			                		 </div>
+			                		 <div class='col-xs-5'>	
+						                	<h5 class='media-heading'>Datos de contacto:</h5>
+							                	Email:
+							                	<p class='ficha'>".$row['Email']."</p>
+							                	Teléfono:
+							                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+			                		 </div>
+		        				</div>";
+			}
+	
+			return $mensaje;	
+			
+    	}if($pdf == TRUE){
+    				
+    		$mensaje = array();
+    		
+    		$mensaje2 = array();	
+    				
+    		foreach ($arrayUsuarios as $key => $value) {
+												
+				$idUsuario = $value;	
+						
+				$query = "select * from usuarios where IdUsuario = '$idUsuario'";	
+				
+				$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+				
+				foreach ($row as $key2 => $value2) {
+						
+					$mensaje2[$key2] = $value2;
 					
-			$query = "select * from usuarios where IdUsuario = '$idUsuario'";	
-			
-			$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
-			
-			$mensaje .= "<hr class='grissimple'/>
-	                		<div class='row'>
-								<div class='col-xs-2'>   	
-					                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png'>
-		                		 </div>
-	                			<div class='col-xs-5'>   	
-					                	<h5 class='media-heading mayusculas'>inquilino:</h5>
-						                	Nombre y apellidos:
-						                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
-						                	DNI:
-						                	<p class='ficha mayusculas'>".$row['DNI']."</p>
-		                		 </div>
-		                		 <div class='col-xs-5'>	
-					                	<h5 class='media-heading'>Datos de contacto:</h5>
-						                	Email:
-						                	<p class='ficha'>".$row['Email']."</p>
-						                	Teléfono:
-						                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
-		                		 </div>
-	        				</div>";
-		}
-
-		return $mensaje;
+				}
+				
+				$mensaje[] = $mensaje2;
+				
+			}
+	
+			return $mensaje;	
+	    		
+    	}
+    	
+    	
     	
     }
    
@@ -1305,10 +1378,36 @@
     	
     	$query = "select * from inmueble where IdInmueble = '$idInmueble'";
     	
-    	$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);	
+    	$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$suministros = null;
+		
+		if($row['Agua'] == 1){
+				
+			$suministros .= "Agua &nbsp;&nbsp;";
+			
+		}if($row['Luz'] == 1){
+				
+			$suministros .= "Luz &nbsp;&nbsp;";
+			
+		}if($row['Gas'] == 1){
+				
+			$suministros .= "Gas";
+			
+		}if($row['Agua'] == 0 && $row['Luz'] == 0 && $row['Gas'] == 0){
+			
+			$suministros = "Ningún suministro contratado";
+			
+		}	
     	
 		$mensaje = "<div class='col-xs-5'>   	
 					                	<h5 class='media-heading mayusculas'>inmueble:</h5>
+					                		Tipo de Contrato:
+						                	<p class='ficha mayusculas'>".$row['TipoContrato']."</p>
+					                		Mensualidad del Inmueble:
+						                	<p class='ficha mayusculas'>".$row['Valor']." €</p>
+						                	Elección de suministros:
+						                	<p class='ficha mayusculas'>".$suministros."</p>
 						                	Tipo de inmueble:
 						                	<p class='ficha mayusculas'>".$row['TipoInmueble']."</p>
 						                	Dirección Inmueble:
@@ -1570,7 +1669,6 @@
 		return $row['IdUsuario'];
 		
 	}
-	
 	
 	function get_Item_from_notificacion($idNotificacion){
 		

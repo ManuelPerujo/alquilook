@@ -32,7 +32,7 @@
 			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">
 			                		<div class="col-xs-12">
 				                		<label><h5 class="gris">Inserte el precio en euros del alquiler de su inmueble:&nbsp;&nbsp;</h5></label><br />
-				                		<input type="text" class="form-control" name="" placeholder="000,00" />	
+				                		<input type="text" class="form-control" name="mensualidad" id="mensualidad" placeholder="000,00" onchange="multiplicar();"/>	
 				                		<br />
 				                	</div>	
 				                	<hr class="grissimple" />
@@ -45,10 +45,7 @@
 						                        <strong>GAMA "MINI"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">X
-						                            <span class="price-cents">€</span>
-						                            <span class="price-month">mes</span>
-						                        </h3>
+						                        <h3 class="panel-title price" ><input placeholder="00.0" id="precio1"/>€ mes</h3>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -58,7 +55,7 @@
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Básico" />&nbsp;&nbsp; Elijo éste</h5></li>
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Mini" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -68,9 +65,7 @@
 						                        <strong>GAMA "ESTÁNDAR"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">X
-						                            <span class="price-cents">€</span>
-						                            <span class="price-month">mes</span>
+						                        <h3 class="panel-title price"><input placeholder="00.0" id="precio2"/>€ mes
 						                        </h3>
 						                    </div>
 						                    <ul class="list-group">
@@ -81,7 +76,7 @@
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Medio" />&nbsp;&nbsp; Elijo éste</h5></li>
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Estándar" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -91,9 +86,7 @@
 						                        <strong>GAMA "PREMIUM"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h3 class="panel-title price">X
-						                            <span class="price-cents">€</span>
-						                            <span class="price-month">mes</span>
+						                        <h3 class="panel-title price"><input placeholder="00.0" id="precio3"/>€ mes
 						                        </h3>
 						                    </div>
 						                    <ul class="list-group">
@@ -215,9 +208,9 @@
 									</select>  
 		                        <br/>
 		                         <label><h6 class="magenta">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
-			                        <input type="checkbox" name="" value="">&nbsp;&nbsp;Luz<br>
-									<input type="checkbox" name="" value="">&nbsp;&nbsp;Agua<br/>
-									<input type="checkbox" name="" value="">&nbsp;&nbsp;Gas
+			                        <input type="checkbox" name="luz" value="1">&nbsp;&nbsp;Luz<br>
+									<input type="checkbox" name="agua" value="1">&nbsp;&nbsp;Agua<br/>
+									<input type="checkbox" name="gas" value="1">&nbsp;&nbsp;Gas
 		                        <br/><br/>
 		    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
 		                    </form>

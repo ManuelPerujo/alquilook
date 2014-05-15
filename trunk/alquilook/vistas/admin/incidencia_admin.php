@@ -58,26 +58,27 @@
 									    </a>
 										<br/>
 										<div id="gestionar" class="collapse">
-										 		<form class="form-group" method="post" action="">
-										 				<div class="radio">
+										 		<form class="form-group" method="post" action="../../controladores/control_set_estado_incidencia.php" >
+										 				
 														  <label>
-															    <input type="radio" name="opciones" id="opciones_1" value="opcion_1" checked>
+															    <input type="radio" name="opciones" value="Pendiente" checked>
 															    Pendiente
 														  </label>
-														</div>
-														<div class="radio">
+														
+														
 														  <label>
-															    <input type="radio" name="opciones" id="opciones_2" value="opcion_2" checked>
+															    <input type="radio" name="opciones" value="En trámite" >
 															    En trámite
 														  </label>
-														</div>
-														<div class="radio">
+														
+														
 														  <label>
-															    <input type="radio" name="opciones" id="opciones_3" value="opcion_3" checked>
+															    <input type="radio" name="opciones" value="Solucionado" >
 															    Solucionado
 														  </label>
-														</div>
-													<a type="submit" class="btn btn-default btn-sm">OK</a>
+														
+													<input type="hidden" name="idIncidencia" value="<?php echo $idIncidencia; ?>"/>	
+													<input type="submit" class="btn btn-default btn-sm" value="OK"/>
 										 		</form>
 									 	</div>
 						    	 </div>

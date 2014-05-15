@@ -16,7 +16,7 @@ include_once('../funciones/usuarios.php');
         
         extract($_POST);
         
-		
+		$mensualidad = $_POST["mensualidad"]; $luz = $_POST['luz']; $agua = $_POST['agua']; $gas = $_POST['gas'];
         $tipoInmueble = $_POST["tipoInmueble"]; $tipoContrato = $_POST['tipoContrato'];
 		$direccionInmueble = array(1=>$_POST['via_inmueble'], 2=>$_POST['nombre_inmueble'], 3=>$_POST['num_inmueble'], 4=>$_POST['piso_inmueble']);
         $cp = $_POST["cp_inmueble"]; $poblacionInmueble = $_POST["municipio_inmueble"]; 
@@ -46,9 +46,10 @@ include_once('../funciones/usuarios.php');
             }else{
             /*insertamos los datos del nuevo usuario*/
                 $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
-                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros)
+                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros,Valor,Agua,Luz,Gas)
                     values ('', '$idPropietario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
-                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble')"; 
+                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
+                            '$luz','$gas')"; 
                 
 				echo $query2;				            
                 if($bd->query($query2)){
