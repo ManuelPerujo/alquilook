@@ -24,10 +24,10 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
-                		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
+                		<h3><i class="fa fa-envelope-o"></i> Mensajes:</h3>
                 		<hr class="grissimple">
                 		<div class="text-left">
-								 	<a class="enlace2" data-toggle="collapse" data-target="#responder">
+								 	<a class="enlace3" data-toggle="collapse" data-target="#responder">
 								 		<i class="fa fa-pencil"></i> Nuevo mensaje
 								    </a>
 						</div>

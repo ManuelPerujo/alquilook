@@ -11,102 +11,87 @@
 		include_once 'plantillas/cabecera.php';
 	?>
 	
-	<!-------------------------------------------------------------------------------------------------------------------------------Carousel---
-    <div id="myCarousel" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('img/slide.jpg');"></div>
-                <div class="carousel-caption">
-                	<h3 class="slider">Gestiona</h3>
-                    <h3 class="slider">Alquilook</h3>
-                    <h3 class="slider">desde tu móvil</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('img/slide2.jpg');"></div>
-                <div class="carousel-caption">
-                    <h3 class="slider">El pago y cobro</h3>
-                    <h3 class="slider">de suministros</h3>
-                    <h3 class="slider">es tarea nuestra</h3>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('img/slide3.jpg');"></div>
-                <div class="carousel-caption">
-                    <h3 class="slider">Asegúrate</h3>
-                    <h3 class="slider">el cobro de tus</h3>
-                    <h3 class="slider">alquileres</h3>
-                </div>
-            </div>
-        </div>
-
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
-    <!-------------------------------------------------------------------------------------------------------------------------------Carousel------->
-    
     
     <div class="responsive-slider-parallax" data-spy="responsive-slider" data-autoplay="true" data-parallax="true" data-parallax-direction="1">
       <div class="slides-container" data-group="slides">
         <ul>
+        	
           <li>
             <div class="slide-body" data-group="slide">
               <div class="container">
                 <div class="wrapper">
-                  <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h3 class="slider">Responsive<br/>slider</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
+              	  <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="300" data-length="300">
+                    <h3 class="slider">Alquilook<br/>gestiona tu alquiler</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="500" data-length="300"><h2>Alquilar no siempre es fáci.<br/>Nosotros te ayudamos.<br/>No te compliques la vida.</h2></div><br />
+                  </div> 
+                  <div class="caption img-1" data-animate="slideAppearLeftToRight" data-delay="500">
+                    <img src="img/1.png">
                   </div>
-                  <div class="caption img-bigscreen" data-animate="slideAppearLeftToRight" data-delay="200">
-                    <img src="img/bigscreen.png">
-                  </div>
-                  <div class="caption img-smallscreen" data-animate="slideAppearLeftToRight">
-                    <img src="img/smallscreen.png">
+                  <div class="caption img-2" data-animate="slideAppearDownToUp" data-delay="700">
+                    <img src="img/2.png">
                   </div>
                 </div>
               </div>
             </div>
           </li>
+          
           <li>
             <div class="slide-body" data-group="slide">
               <div class="container">
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h3 class="slider">Responsive<br/>slider</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
+                    <h3 class="slider">Te aseguramos<br/>el cobro puntual</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Gestionamos todos los recibos.<br/>Nos encargamos del contrato.<br/>Te ayudamos a elegir el inquilino.</h2></div><br />
                   </div>
-                  <div class="caption img-bigscreen" data-animate="slideAppearUpToDown" data-delay="200">
-                    <img src="img/bigscreen.png">
+                  <div class="caption img-3" data-animate="slideAppearUpToDown" data-delay="200">
+                    <img src="img/3.png">
                   </div>
-                  <div class="caption img-smallscreen" data-animate="slideAppearDownToUp">
-                    <img src="img/smallscreen.png">
+                  <div class="caption img-4" data-animate="slideAppearDownToUp">
+                    <img src="img/4.png">
                   </div>
                 </div>
               </div>
             </div>
           </li>
+          
            <li>
             <div class="slide-body" data-group="slide">
               <div class="container">
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                    <h3 class="slider">Responsive<br/>slider</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h5>fesfgsdgfvdsgdsr</h5></div>
+                    <h3 class="slider">El inmueble siempre<br/>en óptimas condiciones</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Olvídate del casero.<br/>Controla tus pagos desde la web.<br/>Crea incidencias con un solo click.</h2></div><br />
+                  </div> 
+                  <div class="caption img-5" data-animate="slideAppearDownToUp" data-delay="200">
+                    <img src="img/5.png">
                   </div>
-                  <div class="caption img-bigscreen" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/bigscreen.png">
-                  </div>
-                  <div class="caption img-smallscreen" data-animate="slideAppearUpToDown">
-                    <img src="img/smallscreen.png">
+                  <div class="caption img-6" data-animate="slideAppearUpToDown">
+                    <img src="img/6.png">
                   </div>
                 </div>
               </div>
             </div>
           </li>
+          
+          <li>
+            <div class="slide-body" data-group="slide">
+              <div class="container">
+                <div class="wrapper">
+                  <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
+                    <h3 class="slider">Seas propietario<br/>o inquilino</h3>
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>En tu panel de gestión<br/>tienes todo lo que necesitas<br/>y todo lo que te interesa</h2></div><br />
+                  </div> 
+                  <div class="caption img-7" data-animate="slideAppearDownToUp" data-delay="200">
+                    <img src="img/7.png">
+                  </div>
+                  <div class="caption img-8" data-animate="slideAppearUpToDown">
+                    <img src="img/8.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
         </ul>
       </div>
       <a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-chevron-left"></i></a>
@@ -115,11 +100,12 @@
         <a class="page" href="#" data-jump-to="1">1</a>
         <a class="page" href="#" data-jump-to="2">2</a>
         <a class="page" href="#" data-jump-to="3">3</a>
+        <a class="page" href="#" data-jump-to="4">4</a>
       </div>
     </div>
     
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Vídeo-->
+    
     <div class="section">
         <div class="container">
         	<br/><br/><br/>
@@ -132,23 +118,20 @@
                     <h2 class="videoh2">Conozca en</h2>
                     <h1 class="videoh1">45 segundos</h1>
                     <h2 class="videoh2">cómo funciona alquilook.com</h2>
-                    <p class="videop"><i class="fa fa-check"></i> Menos calvicie y estrés</p>
-                    <p class="videop"><i class="fa fa-check"></i> Menos peleas con tu parienta</p>
-                    <p class="videop"><i class="fa fa-check"></i> Más horitas de sueño</p>
+                    <p class="videop"><i class="fa fa-check"></i> Sed iusto nihil populo an</p>
+                    <p class="videop"><i class="fa fa-check"></i> At has veri feugait placerat</p>
+                    <p class="videop"><i class="fa fa-check"></i> Sint faqete perfectus vel</p>
                 </div>
             </div>
         </div>
      </div>           
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Vídeo -->
-
-	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
+   
     <div class="section">
         <div class="container">
         	<br/><br/><br/><br/>
             <div class="row">
-            	<!---------------------------------------------------------------------------------------------Propietario-->
-                    
+            	
                 <div class="col-lg-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario">
                 			<img class="imagen" src="img/botones/propietario.png">
@@ -170,7 +153,7 @@
  								<p class="collapse" id="ingresarpropietario">
    									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-primary">Entrar</button>
+    								<button type="submit" class="btn btn-default">Entrar</button>
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
     								<br/>
@@ -184,9 +167,8 @@
 						
                 <br/><br/>                
                 </div>   
-                <!---------------------------------------------------------------------------------------------Propietario-->
                 
-                <!---------------------------------------------------------------------------------------------Inquilino-->
+                
 				<div class="col-lg-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino">
                 			<img class="imagen" src="img/botones/inquilino.png">
@@ -196,19 +178,17 @@
  								<p class="collapse" id="ingresarinquilino">
    									<input type="text" class="form-control" id="usuario2" name="usuario_inquilino" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password2" name="pass_inquilino" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-primary btn-sm">Entrar</button>
+    								<button type="submit" class="btn btn-default">Entrar</button>
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
   								</p>
   							</form>	   
                 <br/><br/>
                 </div>  
-                <!---------------------------------------------------------------------------------------------Inquilino-->
-                
-                
-                <!---------------------------------------------------------------------------------------------Inmobiliaria-->
+              
+              
                 <div class="col-lg-4 text-center collapse-group">
-                		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria">
+                		<a class="enlace2">
                 			<img class="imagen" src="img/botones/inmobiliaria.png">
                 			<h2>SOY INMOBILIARIA</h2>
                 		</a>
@@ -227,7 +207,7 @@
  								<p class="collapse" id="ingresarinmobiliaria">
    									<input type="text" class="form-control" id="usuario3" name="usuario_inmobiliaria" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password3" name="pass_inmobiliaria" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-primary">Entrar</button>
+    								<button type="submit" class="btn btn-default">Entrar</button>
     								<br/><br/>
     								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
     								<br/>
@@ -241,14 +221,13 @@
 						
                 <br/><br/>                
                 </div>   
-                <!---------------------------------------------------------------------------------------------Inmobiliaria-->    
-                                   	            	
+               
+               
 			</div>
 		</div>
 	</div>	
-	<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
-
-    	
+	
+	
 	<?php
 	   include_once 'plantillas/pie.php';
 	?>

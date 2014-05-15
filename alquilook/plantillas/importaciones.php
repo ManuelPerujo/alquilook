@@ -22,7 +22,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "tabla_incidencias_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_incidencias_contrato.php"
 		|| basename($_SERVER['PHP_SELF']) == "actualizar.php" || basename($_SERVER['PHP_SELF']) == "recordar.php"
 		|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php"
-		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php" || basename($_SERVER['PHP_SELF']) == "test.php")
+		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php")
 	{
 
   	  $ruta = "../../";   
@@ -38,17 +38,18 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es"/>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
     <title>Alquilook</title>
-    <link rel="shortcut icon" href="<?php echo $ruta?>img/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo $ruta?>img/favicon.ico"/>
     
     <!--   Cargar Validacion   -->
     
@@ -64,18 +65,18 @@
     ?>
     
     <!-- Google fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'/>
 
 
     <!-- CSS -->
-    <link href="<?php echo $ruta?>css/bootstrap.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>css/responsive-slider-parallax.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>css/dark.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>css/ekko-lightbox.css" rel="stylesheet">
-    <link href="<?php echo $ruta?>css/ekko-lightbox.min.css" rel="stylesheet">
+    <link href="<?php echo $ruta?>css/bootstrap.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>css/responsive-slider-parallax.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>css/dark.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>css/ekko-lightbox.css" rel="stylesheet"/>
+    <link href="<?php echo $ruta?>css/ekko-lightbox.min.css" rel="stylesheet"/>
     
     <!-- Javascript-->
     

@@ -48,7 +48,7 @@
 								<input type="text" class="form-control" name="telefono_inquilino" placeholder="Teléfono *" /> 
                         		<small>* Campos obligatorios</small>
 		                        <br/><br/>
-		                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus-circle"></i> Finalizar</button>
+		                        <button type="submit" class="btn btn-default btn-sm">Aceptar</button>
 		                    </form>
 		                    <br/><br/>
 		                </div>
