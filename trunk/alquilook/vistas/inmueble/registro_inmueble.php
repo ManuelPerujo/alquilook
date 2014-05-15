@@ -42,7 +42,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i> MINI</strong>
+						                        <strong>GAMA "MINI"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h3 class="panel-title price">X
@@ -65,7 +65,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i> ESTÁNDAR</strong>
+						                        <strong>GAMA "ESTÁNDAR"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h3 class="panel-title price">X
@@ -88,7 +88,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> PREMIUM</strong>
+						                        <strong>GAMA "PREMIUM"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h3 class="panel-title price">X
