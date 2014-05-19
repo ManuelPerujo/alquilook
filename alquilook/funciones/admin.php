@@ -1548,7 +1548,22 @@
 		
 		$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
 		
-		$mensaje = "<div class='media-body'>
+		if($row['Tipo'] = "IncidenciasVarias"){
+				
+			$mensaje = "<div class='media-body'>
+					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
+					    <h6 class='media-heading'>".$row['Fecha']."</h6>
+					    <p class='mayusculas'>Tipo: ".$row['Tipo']."</p>
+					    <a class='media-heading' target='_blank' href='".$row['Direccion_Contenido']."'>Pulse para ver Imagen</a>
+					    <hr class='grissimple'/>
+					    <p class='ficha'>
+					    ".$row['Contenido']."
+					    </p>
+ 				  </div>";
+			
+		}else{
+			
+			$mensaje = "<div class='media-body'>
 					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
 					    <h6 class='media-heading'>".$row['Fecha']."</h6>
 					    <p class='mayusculas'>Tipo: ".$row['Tipo']."</p>
@@ -1557,6 +1572,10 @@
 					    ".$row['Contenido']."
 					    </p>
  				  </div>";
+			
+		}
+		
+		
  				  
  		return $mensaje;		  
 		

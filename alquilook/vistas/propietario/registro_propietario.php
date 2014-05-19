@@ -20,7 +20,24 @@
         <div class="container">
         	<div class="row">&nbsp;</div>
             <div class="row">
-            	<div class="col-md-4 col-xs-2 text-center"></div>
+            	<div class="col-md-4 col-xs-2 text-center"><?php 
+        	
+        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+					
+					$mensaje = $_SESSION['error'];
+					
+					unset($_SESSION['error']);
+																
+					echo "<div class='row'>
+					 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+					       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+									<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+		               		</div>
+						  </div>";
+											
+	            }
+        	
+        	?></div>
                 <div class="col-md-4 col-xs-8 text-left">
                 	<h4>Crear una cuenta</h4>
 

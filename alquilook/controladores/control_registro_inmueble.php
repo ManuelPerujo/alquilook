@@ -10,7 +10,7 @@ if(!$_POST){
 include_once("../funciones/core.php");
 include_once("../funciones/registro.php");
 include_once('../funciones/usuarios.php');
-//include ("funciones/validacion_datos.php");
+include_once('../validacion/validacion_servidor.php');
 
 
         
@@ -26,53 +26,68 @@ include_once('../funciones/usuarios.php');
 		$direccion = valida_direccion($direccionInmueble);
         $id_usuario = $_SESSION["IdUsuario_sesion"];
 		$idPropietario = get_IdPropietario($id_usuario);
+		
+		$arrayValidacion = array();
+		
+		$arrayValidacion['mensualidad'] = $mensualidad; $arrayValidacion['nombre_inmueble'] = $_POST['nombre_inmueble']; 
+		$arrayValidacion['num_inmueble'] = $_POST['num_inmueble']; $arrayValidacion['piso_inmueble'] = $_POST['piso_inmueble'];
+		$arrayValidacion['cp'] = $_POST["cp_inmueble"]; $arrayValidacion['provincia_inmueble'] = $provinciaInmueble;
+		$arrayValidacion['metros_inmueble'] = $metrosInmueble;
+		
+		if(!valida_inmueble($arrayValidacion)){
+			
+			header("Location: ".$_SERVER['HTTP_REFERER']);
+			
+		}else{
+			
+	        $bd = new core();
+	
+	        try{
+	            
+	            $bd->ConectaBD();
+	     
+	            /*comprobamos que no existe el inmueble en la bd */
+	            $query = "select * from inmueble where Direccion = '$direccion' and TipoInmueble = '$tipoInmueble' ";
+	
+	            $result = $bd->conexion->query($query);
+	      
+	            if($result->rowCount()>0) {
+	                header("Location: ../vistas/inmueble/registro_inmueble.php");
+	                
+	            }else{
+	            /*insertamos los datos del nuevo usuario*/
+	                $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
+	                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros,Valor,Agua,Luz,Gas)
+	                    values ('', '$idPropietario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
+	                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
+	                            '$luz','$gas')"; 
+	                
+					echo $query2;				            
+	                if($bd->query($query2)){
+	                	
+	                	$_SESSION['erroRegistro'] = FALSE;
+						$_SESSION['identifica_inmueble_direccion'] = $direccion;
+						$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
+						$_SESSION['ArrayIdEstancia'] = array();
+						$_SESSION['ArrayIdInquilino'] = null;
+						$_SESSION['ArrayIdUsuario'] = array();
+	                	$_SESSION['registro_terminado'] = FALSE;
+											
+						unset($_POST);
+	    				
+	    				header("Location: ../vistas/inmueble/registro_estancia.php");
+	    				
+	    			}
+	                
+	            }
+	
+	        }catch(PDOException $except) {
+	            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
+	        }
+			
+		}
 				
-        $error = true;
-				
-        $bd = new core();
-
-        try{
-            
-            $bd->ConectaBD();
-     
-            /*comprobamos que no existe el inmueble en la bd */
-            $query = "select * from inmueble where Direccion = '$direccion' and TipoInmueble = '$tipoInmueble' ";
-
-            $result = $bd->conexion->query($query);
-      
-            if($result->rowCount()>0) {
-                header("Location: ../vistas/inmueble/registro_inmueble.php");
-                
-            }else{
-            /*insertamos los datos del nuevo usuario*/
-                $query2 = "insert into inmueble (IdInmueble, IdPropietario, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
-                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros,Valor,Agua,Luz,Gas)
-                    values ('', '$idPropietario', null, '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
-                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
-                            '$luz','$gas')"; 
-                
-				echo $query2;				            
-                if($bd->query($query2)){
-                	
-                	$_SESSION['erroRegistro'] = FALSE;
-					$_SESSION['identifica_inmueble_direccion'] = $direccion;
-					$_SESSION['identifica_inmueble_tipo'] = $tipoInmueble;
-					$_SESSION['ArrayIdEstancia'] = array();
-					$_SESSION['ArrayIdInquilino'] = null;
-					$_SESSION['ArrayIdUsuario'] = array();
-                	$_SESSION['registro_terminado'] = FALSE;
-										
-					unset($_POST);
-    				
-    				header("Location: ../vistas/inmueble/registro_estancia.php");
-    				
-    			}
-                
-            }
-
-        }catch(PDOException $except) {
-            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
-        }
+        
     
     
                    

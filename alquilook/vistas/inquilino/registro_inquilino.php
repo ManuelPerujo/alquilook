@@ -4,6 +4,7 @@
     include_once '../../plantillas/importaciones.php';
     include_once '../../funciones/core.php';
 	include_once '../../funciones/registro.php';
+	
 ?>
 
 <body>
@@ -49,7 +50,22 @@
 										
 		               				}
 		               			
-		               		?>
+					        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+										
+										$mensaje = $_SESSION['error'];
+										
+										unset($_SESSION['error']);
+																					
+										echo "<div class='row'>
+										 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+										       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+														<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+							               		</div>
+											  </div>";
+																
+						            }
+				        	
+				        	?>
 		               		<form method="post" action="../../controladores/control_registro_inquilino.php?inq=TRUE">
 		               			
 		               			<!--------------------------------------------------------Inqulino insertado----------------------->
