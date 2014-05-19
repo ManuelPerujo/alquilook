@@ -27,6 +27,24 @@
                 
                 <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
+                	<?php 
+        	
+		        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+							
+							$mensaje = $_SESSION['error'];
+							
+							unset($_SESSION['error']);
+																		
+							echo "<div class='row'>
+							 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+							       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+											<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+				               		</div>
+								  </div>";
+													
+			            }
+		        	
+		        	?>
                 		<h3><i class="fa fa-cogs"></i> Tipo de contrato y datos de su inmueble (Paso 1 de 3)</h3>
                 			<div class="row">   	
 			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">
@@ -55,7 +73,7 @@
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Mini" />&nbsp;&nbsp; Elijo éste</h5></li>
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Mini" checked/>&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -109,7 +127,7 @@
 		                	<div class="col-sm-12">		               		 	                                 
 		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
-									  <option value="Vivienda">Vivienda</option>
+									  <option value="Vivienda" checked>Vivienda</option>
 									  <option value="Local_comercial">Local comercial</option>
 									  <option value="Garaje">Garaje</option>
 									  <option value="Finca Rustica">Finca rústica</option>
@@ -117,7 +135,7 @@
 		                        <br/> 
 		                        <label><h6 class="magenta">Dirección&nbsp;&nbsp;</h6></label>
 		                        	<select class="selector" name="via_inmueble">
-									  <option value="Calle">Calle</option>
+									  <option value="Calle" checked>Calle</option>
 									  <option value="Avenida">Avenida</option>
 									  <option value="Camino">Camino</option>
 									  <option value="Pasaje">Pasaje</option>
@@ -131,8 +149,7 @@
 			                        <input type="text" class="form-control" name="cp_inmueble" placeholder="Código postal" /><br/>
 			                     <label><h6 class="magenta">Provincia&nbsp;&nbsp;</h6></label> 
 			                        <select name="provincia_inmueble">
-										 <option value='0'>(Seleccionar)</option>
-										 <option value='Álava'>Álava</option>
+										 <option value='Álava' checked>Álava</option>
 										 <option value='Albacete'>Albacete</option>
 										 <option value='Alicante'>Alicante/Alacant</option>
 										 <option value='Almería'>Almería</option>
@@ -191,7 +208,7 @@
 		                         <br/>
 		                        <label><h6 class="magenta">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_habitaciones">
-			                          <option value="0">0</option>	
+			                          <option value="0" checked>0</option>	
 									  <option value="1">1</option>
 									  <option value="2">2</option>
 									  <option value="3">3</option>
@@ -201,7 +218,7 @@
 		                         <br/>
 		                        <label><h6 class="magenta">Nº de aseos&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_aseos">
-			                          <option value="0">0</option>
+			                          <option value="0" checked>0</option>
 									  <option value="1">1</option>
 									  <option value="2">2</option>
 									  <option value="3">3</option>

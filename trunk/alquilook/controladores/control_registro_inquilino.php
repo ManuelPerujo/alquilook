@@ -3,7 +3,7 @@ session_start();
 include_once("../funciones/core.php");
 include_once("../funciones/registro.php");
 include_once '../funciones/usuarios.php';
-//include ("funciones/validacion_datos.php");
+include_once('../validacion/validacion_servidor.php');
 
 	
 				
@@ -29,6 +29,18 @@ include_once '../funciones/usuarios.php';
 			
 			$arrayUsuarioContraseña = get_usuarioYcontraseña_inquilino($nombre_inquilino, $apellidos_inquilino);
 			$IdInmueble = $_SESSION["IdInmueble"];
+			
+			$arrayValidacion = array();
+		
+			$arrayValidacion['nombre'] = $nombre_inquilino; $arrayValidacion['apellidos'] = $apellidos_inquilino;
+			$arrayValidacion['dni'] = $dni_inquilino; $arrayValidacion['email'] = $email_inquilino;
+			$arrayValidacion['telefono'] = $telefono_inquilino; 
+							
+			if(!valida_datos_personales($arrayValidacion)){
+				
+				header("Location: ".$_SERVER['HTTP_REFERER']);
+				
+			}
 			
 			$bd = new core();
 	
