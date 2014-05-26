@@ -3,7 +3,7 @@
     session_start();
     include_once '../../plantillas/importaciones.php';
 	include_once '../../plantillas/cabecera.php';
-    include_once '../../plantillas/banner_pro.php';
+    include_once '../../plantillas/banner_inmo.php';
     include_once '../../funciones/registro.php';
 	include_once '../../funciones/core.php';
 ?>
@@ -18,14 +18,14 @@
             <div class="row-fluid">
             	
                 <?php
-        			include_once '../panel/panel_propietario.php';
+        			include_once '../panel/panel_inmobiliaria.php';
     			?> 
     			
                 <!-- Columna Dcha -->
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
                 		<div class="col-sm-8 col-xs-12">
-		                	<h3><i class="fa fa-cogs"></i> Añadir mobiliario por estancias (Paso 2 de 3)</h3>
+		                	<h3><i class="fa fa-archive"></i> Añadir mobiliario por estancias (Paso 3 de 4)</h3>
 		                	
 		                	 <!-- Estancia insertada -->
 
@@ -72,7 +72,7 @@
 									</div> 
 		                       		<div class="row">			
 										  <div class="col-xs-12">
-										  	 <label><h6 class="magenta">Elija el tipo de estancia&nbsp;&nbsp;</h6></label> 
+										  	 <label><h6 class="gris">Elija el tipo de estancia&nbsp;&nbsp;</h6></label> 
 						                        <select class="selector" name="tipoEstancia">
 												  <option value="Salon">Salón</option>
 												  <option value="Cocina">Cocina</option>
@@ -87,7 +87,7 @@
 									<!-- Añadir mobiliario -->	
 									<div class="row"> 
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
+										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
@@ -175,7 +175,7 @@
 									<!-- Añadir electrodomesticos -->	
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
+										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
@@ -271,10 +271,10 @@
 								
 		                        <br/>
 
-		                        <button name="submit" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otra estancia</button>
+		                        <button name="submit" type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otra estancia</button>
 
 		                        &nbsp;&nbsp;&nbsp;
-		                        <a type="button" href="../../controladores/control_registro_estancia.php?estancia=FALSE" class="btn btn-primary btn-sm">Continuar</a>
+		                        <a href="../inquilino/registro_inquilino_inmo.php" class="btn btn-default btn-sm">Continuar</a>
 		                    </form>
 		                    <!-- Fin Insertar habitacion -->
 		                    <br/>

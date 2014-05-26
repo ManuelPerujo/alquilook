@@ -20,7 +20,7 @@
 
 
 
-	 <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+	 <!-- Panel Propietario -->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -29,7 +29,7 @@
         			include_once '../panel/panel_propietario.php';
     			?> 
     			
-                <!--------------------------------------------------------Columna Dcha----------------------->
+                <!-- Columna Dcha -->
                 
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
@@ -39,7 +39,7 @@
 		                			<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>
 		                		</div>
 		                	</div>
-		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
+		                	<!-- Tablas inmuebles -->
 		                	<?php 
 		                	
 		                		if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == TRUE){
@@ -48,7 +48,7 @@
 					                		<br />
 					                		<div class='col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable'>
 									               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-							 							<h3><i class='fa fa-info-circle fa-lg'></i> Para comenzar, haga click en 'Añadir inmueble'</h3>
+							 							<h3><i class='fa fa-info-circle fa-lg'></i>Este es su Panel de Propietario. Aún está vacío.<br/>Para comenzar, haga click en 'Añadir inmueble' en las opciones que hay a la izquierda.</h3>
 								            </div>
 								        </div>";
 										
@@ -98,11 +98,11 @@
 		                			                		                    
 		             </div>            
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
+                <!-- Columna Dcha -->                                                                          
             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+    <!-- Panel Propietario -->
     </div>
     
    <?php

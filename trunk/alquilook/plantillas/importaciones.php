@@ -24,7 +24,8 @@
 		|| basename($_SERVER['PHP_SELF']) == "banner_inmo.php" || basename($_SERVER['PHP_SELF']) == "panel_inmobiliaria.php"
 		|| basename($_SERVER['PHP_SELF']) == "tabla_inmuebles_inmo.php"	|| basename($_SERVER['PHP_SELF']) == "anadir_inquilino_admin.php" 
 		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php"
-		|| basename($_SERVER['PHP_SELF']) == "registro_propietario_inmo.php"
+		|| basename($_SERVER['PHP_SELF']) == "registro_propietario_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_inmueble_inmo.php"
+		|| basename($_SERVER['PHP_SELF']) == "registro_inquilino_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_estancia_inmo.php"
 		)
 	{
 
