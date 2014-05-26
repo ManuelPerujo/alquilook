@@ -27,7 +27,7 @@
 		<br/>
 		<div class="row">
         	<div class="col-xs-12">
-                	<i class="fa fa-user"></i> Hola <?php echo $usuario ?></h6>
+                	<i class="fa fa-key"></i> Hola <?php echo $usuario ?></h6>
             </div>
         </div>
         

@@ -44,7 +44,7 @@
 					
                 ?>
                 
-                <!--------------------------------------------------------Columna Dcha----------------------->
+                <!-- Columna Dcha -->
                 <div class="col-sm-10 col-xs-12">
                 			<h3><i class="fa fa-bell"></i> Alta nueva</h3>
                 			<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_altasnuevas_admin.php"><i class="fa fa-chevron-left"></i> Volver a Altas nuevas</a>
@@ -66,8 +66,9 @@
 					                	<h5 class="media-heading">Datos de mobiliario y electrodomésticos:</h5>
 						                	<?php echo $datosEstancias; ?> 
 		                		 </div>
-		                		 <hr class="grisdoble"/>
+		                		 
 	        				</div>	
+	        				<hr class="grisdoble"/>
 	        				<div class="row">
 								<div class="col-xs-12 text-center">
 									<a href="../../fpdf/pdf_contrato.php?id=<?php echo $idInmueble; ?>" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-file-text"></i> Generar Contrato PDF</a>	
@@ -75,11 +76,11 @@
 								</div>
 							</div>		
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
+                <!-- Columna Dcha -->                                                                          
             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
+    <!-- Panel Propietario -->
 
     <?php
         include_once '../../plantillas/pie_admin.php';
