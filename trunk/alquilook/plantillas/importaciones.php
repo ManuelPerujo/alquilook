@@ -26,6 +26,8 @@
 		|| basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_inquilino.php" || basename($_SERVER['PHP_SELF']) == "tabla_notificaciones_propietario.php"
 		|| basename($_SERVER['PHP_SELF']) == "registro_propietario_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_inmueble_inmo.php"
 		|| basename($_SERVER['PHP_SELF']) == "registro_inquilino_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_estancia_inmo.php"
+		|| basename($_SERVER['PHP_SELF']) == "planes.php" || basename($_SERVER['PHP_SELF']) == "dudas.php"
+		|| basename($_SERVER['PHP_SELF']) == "banner3.php"
 		)
 	{
 
@@ -42,38 +44,32 @@
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="es"/>
+
+<!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>Alquilook</title>
     <link rel="shortcut icon" href="<?php echo $ruta?>img/favicon.ico"/>
     
-    <!--   Cargar Validacion   -->
     
     <?php 
     	if(basename($_SERVER['PHP_SELF']) == "index.php" || basename($_SERVER['PHP_SELF']) == "registro_propietario.php"
 		  || basename($_SERVER['PHP_SELF']) == "perfil_admin.php"){
     ?>
     
-    	<script language="javascript" type="text/javascript" src="<?php echo $ruta?>validacion/validacion.js"></script>
+    	<script type="text/javascript" src="<?php echo $ruta?>validacion/validacion.js"></script>
     
     <?php 
 		}
     ?>
-    
-    <!-- Google fonts -->
+  
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'/>
 
 
-    <!-- CSS -->
+  
     <link href="<?php echo $ruta?>css/bootstrap.css" rel="stylesheet"/>
     <link href="<?php echo $ruta?>css/alquilook.css" rel="stylesheet"/>
     <link href="<?php echo $ruta?>css/responsive-slider-parallax.css" rel="stylesheet"/>
@@ -82,31 +78,28 @@
     <link href="<?php echo $ruta?>css/ekko-lightbox.css" rel="stylesheet"/>
     <link href="<?php echo $ruta?>css/ekko-lightbox.min.css" rel="stylesheet"/>
     
-    <!-- Javascript-->
+   
     
-   	<script src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
-    <script src="<?php echo $ruta?>js/bootstrap.js"></script>
-    <script src="<?php echo $ruta?>js/bootstrap.min.js"></script>
-    <script src="<?php echo $ruta?>js/alquilook.js"></script>
-    <script src="<?php echo $ruta?>js/ekko-lightbox.js"></script>
-    <script src="<?php echo $ruta?>js/ekko-lightbox.min.js"></script>
-    <script src="<?php echo $ruta?>/js_slider/responsive-slider.js"></script>
-    <script src="<?php echo $ruta?>/js/multiplicar.js"></script>
-    <!--      Ajax      -->
+   	<script type="text/javascript" src="<?php echo $ruta?>js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/alquilook.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/ekko-lightbox.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/ekko-lightbox.min.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js_slider/responsive-slider.js"></script>
+    <script type="text/javascript" src="<?php echo $ruta?>js/multiplicar.js"></script>
     
-    
-    <!--   Alertas por error   -->
+   
+   
     <?php 
     	if(isset($_SESSION["error_log"]) && $_SESSION["error_log"] == TRUE){
     		unset($_SESSION["error_log"]);
-    		$message = "Usuario/Contraseña erroneos";
+    		$message = "Usuario/Contraseña erróneos";
 			echo "<script type='text/javascript'>alert('$message');</script>";
     	}
     ?>
     
-  	<!--   Slider   -->
-  	     
-     <script type="text/javascript">
+  	<script type="text/javascript">
 		
 		$( document ).ready( function() {
 		  $('.responsive-slider').responsiveSlider({
@@ -122,25 +115,23 @@
 					return $(this).ekkoLightbox();
 				});
 			});
-	 </script>
-		
 			
-		
-	<!--   Slider   -->
-	
-	<script type="text/javascript">
+			
+			
+			
+			
 		var browser = navigator.appName
-var ver = navigator.appVersion
-var thestart = parseFloat(ver.indexOf("MSIE"))+1
-var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
-if ((browser=="Microsoft Internet Explorer") && (brow_ver < 10))
-{
-window.location="http://test.tejares11.com/alquilook/vistas/error/actualizar.php";
-}
+		var ver = navigator.appVersion
+		var thestart = parseFloat(ver.indexOf("MSIE"))+1
+		var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
+		if ((browser=="Microsoft Internet Explorer") && (brow_ver < 10))
+		{
+			window.location="http://test.tejares11.com/alquilook/vistas/error/actualizar.php";
+		}
 	</script>
 	
 	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '96961ea6-43ca-4ac0-bd23-5dda881a83c3', f: true }); done = true; } }; })();</script>
-
+	
 
  
 </head> 

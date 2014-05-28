@@ -5,8 +5,8 @@
                 	<img class="imagenbanner" src="<?php echo $ruta?>img/banner/propietario.png" alt="">
                 </div>     
                 <div class="col-sm-10 text-left">
-                	<h3 class="banner">"Llevo meses sin saber nada de mi inquilino, y recibo mis cobros puntualmente cada mes. Para mí es lo mejor..."</h3>
-					<h5 class="banner"><em>María Pérez</em><br/><small>Propietaria</small></h5>
+                	<h3 class="banner">"La tranquilidad de ver que mi inmueble es rentable mientras yo no tengo ninguna complicación, no tiene precio..."</h3>
+					<h5 class="banner"><em>Emilio Hidalgo</em><br/><small>Propietario</small></h5>
                 </div>                                                       	            	
 			</div>
 		</div>

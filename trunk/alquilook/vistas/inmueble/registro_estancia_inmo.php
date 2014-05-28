@@ -12,8 +12,7 @@
     
 
 
-	 <!-- Panel Propietario -->
-    <div class="section">
+	<div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -21,15 +20,13 @@
         			include_once '../panel/panel_inmobiliaria.php';
     			?> 
     			
-                <!-- Columna Dcha -->
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
                 		<div class="col-sm-8 col-xs-12">
 		                	<h3><i class="fa fa-archive"></i> Añadir mobiliario por estancias (Paso 3 de 4)</h3>
 		                	
-		                	 <!-- Estancia insertada -->
-
-		                	<?php
+		                	
+							<?php
 		                				                	 
 		                		if(!empty($_SESSION['ArrayIdEstancia'])){
 		                			
@@ -60,9 +57,8 @@
 		               				}
 		               			
 		               		?>
-		                	<!-- Estancia insertada -->
-		                	<!-- Insertar habitacion -->
-		               		 <form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php?estancia=TRUE">  
+		                	
+							<form class="form-group text-left" method="post" action="../../controladores/control_registro_estancia.php?estancia=TRUE">  
 		                       <div class="row fondogris">
 		                       		<div class="row">
 										  		<div class="col-sm-8 text-left alert alert-success alert-dismissable">
@@ -84,7 +80,7 @@
 										  </div>
 									</div>
 									<hr class="formulario" />
-									<!-- Añadir mobiliario -->	
+									
 									<div class="row"> 
 										  <div class="col-xs-12 collapse-group">
 										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
@@ -170,9 +166,9 @@
 											  </div>
 										</div>	  
 									</div>
-									<!-- Fin Añadir mobiliario -->	
+									
 									<hr class="formulario" />
-									<!-- Añadir electrodomesticos -->	
+									
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
 										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
@@ -259,7 +255,7 @@
 											  </div>
 										</div>
 									</div>
-									<!-- Fin Añadir electrodomesticos -->	
+									
 									<hr class="formulario" />
 									<div class="row-fluid">
 											<div class="col-xs-12">
@@ -276,19 +272,19 @@
 		                        &nbsp;&nbsp;&nbsp;
 		                        <a href="../inquilino/registro_inquilino_inmo.php" class="btn btn-default btn-sm">Continuar</a>
 		                    </form>
-		                    <!-- Fin Insertar habitacion -->
+		                    
 		                    <br/>
 		               </div>
 		               <div class="col-sm-4">
 		               	
 		               </div>              
                 </div> 
-                <!-- Columna Dcha -->                                                                          
+           
             </div>
         </div>
     </div>  
-    <!-- Panel Propietario -->
-    </div>
+   
+   </div>
     
    <?php
         include_once '../../plantillas/pie.php';

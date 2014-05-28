@@ -7,16 +7,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo $ruta?>vistas/admin/tabla_usuarios_admin.php"><img class="logo" src="<?php echo $ruta?>img/logo.png"/></a>
+                <a class="navbar-brand" href="<?php echo $ruta?>vistas/admin/tabla_usuarios_admin.php"><img class="logo" src="<?php echo $ruta?>img/logo.png" alt=""/></a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+           <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
 					<li class="menu"><a href="<?php echo $ruta?>controladores/control_salir.php"><i class="fa fa-unlock"></i> Salir</a></li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+         </div>
+     </nav>

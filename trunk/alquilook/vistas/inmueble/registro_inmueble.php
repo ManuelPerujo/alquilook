@@ -16,8 +16,8 @@
 
 
 
-	 <!-- Panel Propietario -->
-    <div class="section">
+	
+	 <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -25,7 +25,6 @@
         			include_once '../panel/panel_propietario.php';
     			?> 
                 
-                <!-- Columna Dcha -->
                 <div class="col-xs-10">
                 	<?php 
         	
@@ -50,7 +49,7 @@
 			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">
 			                		<div class="col-xs-12">
 				                		<label><h5 class="gris">Inserte el precio en euros del alquiler de su inmueble:&nbsp;&nbsp;</h5></label><br />
-				                		<input type="text" class="form-control" name="mensualidad" id="mensualidad" placeholder="000,00" onchange="multiplicar();"/>	
+				                		<input type="text" class="form-control" name="mensualidad" id="mensualidad" placeholder="000.00" onchange="multiplicar();"/>	
 				                		<br />
 				                	</div>	
 				                	<hr class="grissimple" />
@@ -63,7 +62,7 @@
 						                        <strong>GAMA "MINI"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio1"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio1"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -83,7 +82,7 @@
 						                        <strong>GAMA "ESTÁNDAR"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio2"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio2"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -103,7 +102,7 @@
 						                        <strong>GAMA "PREMIUM"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio3"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio3"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -232,13 +231,12 @@
 		                    <br/><br/>
 		                    </div>  	              
                 </div> 
-                <!-- Columna Dcha -->                                                                          
-            </div>
+             
+             </div>
         </div>
     </div> 
     </div> 
-    <!-- Panel Propietario -->
-    
+   
     
    <?php
         include_once '../../plantillas/pie.php';

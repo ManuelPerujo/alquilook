@@ -14,8 +14,6 @@
 	<?php
 		include_once '../../plantillas/banner.php';
 	?>
-<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
-
 <div class="container">
       <div class="row">
       	<div class="col-lg-2 col-xs-1"></div>

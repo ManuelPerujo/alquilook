@@ -13,7 +13,6 @@
 	<?php
 		include_once '../../plantillas/banner.php';
 	?>
-<!-------------------------------------------------------------------------------------------------------------------------------Log in-->
 
 <div class="container">
 	<br/><br/><br/><br/>
@@ -23,27 +22,27 @@
 	 	<div class="col-lg-6 col-xs-8">
           <h1>¿Ha olvidado su usuario o contraseña?</h1>
           <hr class="grissimple"/>
-          <h4>Le enviaremos su nombre de <em>usuario</em> y <em>contraseña</em> a la cuenta de email que tiene asociada a Alquilook.</h4>
+          <h4>No pasa nada, indíquenos su cuenta de email y DNI.</h4>
           <?php 
       		
       			if(isset($_SESSION['datos_recuperados']) && $_SESSION['datos_recuperados'] == TRUE){
 				
 				unset($_SESSION['datos_recuperados']);
 								
-				echo "<div class='row'>
-					  	<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+				echo "
+					  	<div class='text-left alert alert-success alert-dismissable'>
 					  	<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-					  	<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Se ha enviado un email con los datos de su cuenta!</h5>
+					  	<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Le hemos enviado un email con los datos de ingreso</h5>
 				        </div>
-					 </div>";
+					 ";
 								
 				}
       		
       		?>
           	<br/>
              <form role="form" method="POST" action="../../controladores/control_recuerda_datos.php">
-	                <input type="email" name="email" placeholder="Su cuenta de email" class="" id="">
-	                <input type="text" name="dni" placeholder="Su DNI" class="" id="">
+	                <input type="email" name="email" placeholder="Email" class="" id="">&nbsp;&nbsp;
+	                <input type="text" name="dni" placeholder="DNI" class="" id="">&nbsp;&nbsp;
 	                <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
             </form>
           

@@ -15,7 +15,6 @@
         include_once '../../plantillas/banner_inq.php';
     ?>  
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -24,7 +23,6 @@
         			include_once '../panel/panel_inquilino.php';
     			?> 
                 
-                <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-xs-10">
                 		<h3><i class="fa fa-envelope-o"></i> Mensaje:</h3>
                 		<hr class="grissimple">
@@ -60,13 +58,10 @@
                 	?>
                 	<br/>
                 </div>  
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
-            </div>
+              </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-
-    <?php
+     <?php
         include_once '../../plantillas/pie.php';
     ?>        
     

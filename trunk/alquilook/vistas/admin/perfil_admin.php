@@ -6,14 +6,13 @@
 ?>
 
 <body> 
-	<!-------------------------------------------------------------------------------------------------------------------------------Panel Administrador----------------------->
-    <div class="section">
+	<div class="section">
         <div class="container">
                 	<div class="row">
                 		<div class="col-sm-4 col-xs-2"></div>
         				<div class="col-sm-4 col-xs-8 text-center">
 		                	 <div class="login-panel panel panel-default">
-		                	 	<img class="login" src="<?php echo $ruta?>img/logo.png"/></a>
+		                	 	<img class="login" src="<?php echo $ruta?>img/logo.png" alt=""/></a>
 		                   		<div class="panel-body">
 			                        <form role="form" method="post" action="../../controladores/control_login.php" onsubmit="validacion_login_admin();">
 			                            <fieldset>
@@ -32,11 +31,9 @@
 		                <div class="col-sm-4 col-xs-2"></div>
 		             </div>   	
                 </div> 
-                <!------------------------------------------------------------------------------------------------------------------------------Columna Dcha------------------->                                                                          
             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Administrador----------------------->
-
+ 
 </body>
 </html>

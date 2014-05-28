@@ -16,8 +16,7 @@
 
 
 
-	 <!-- Panel Propietario -->
-    <div class="section">
+	 <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -25,8 +24,7 @@
         			include_once '../panel/panel_inmobiliaria.php';
     			?> 
                 
-                <!-- Columna Dcha -->
-                <div class="col-xs-10">
+               <div class="col-xs-10">
                 		<h3><i class="fa fa-home"></i> Tipo de contrato y datos del inmueble (Paso 2 de 4)</h3>
                 			<div class="row">   	
 			                	<form class="form-inline text-left" method="post" action="">
@@ -211,19 +209,17 @@
 									<input type="checkbox" name="gas" value="1">&nbsp;&nbsp;Gas
 		                        <br/><br/>
 		                        <a href="../inmueble/registro_estancia_inmo.php" class="btn btn-default btn-sm">Continuar</a>
-		    					<!-- <button type="submit" class="btn btn-primary btn-sm">Continuar</button> -->
-		                    </form>
+		    					
+		    				</form>
 		                    <br/><br/>
 		                    </div>  	              
                 </div> 
-                <!-- Columna Dcha -->                                                                          
+            
             </div>
         </div>
     </div> 
     </div> 
-    <!-- Panel Propietario -->
-    
-    
+  
    <?php
         include_once '../../plantillas/pie.php';
     ?>        
