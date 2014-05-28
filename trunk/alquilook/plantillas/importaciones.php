@@ -117,17 +117,17 @@
 			});
 			
 			
-			
-			
-			
+		
 		var browser = navigator.appName
 		var ver = navigator.appVersion
 		var thestart = parseFloat(ver.indexOf("MSIE"))+1
 		var brow_ver = parseFloat(ver.substring(thestart+4,thestart+7))
-		if ((browser=="Microsoft Internet Explorer") && (brow_ver < 10))
+		if ((browser=="Microsoft Internet Explorer") && (brow_ver < 9))
 		{
-			window.location="http://test.tejares11.com/alquilook/vistas/error/actualizar.php";
+			window.location="https://browser-update.org/update.html";
 		}
+		
+
 	</script>
 	
 	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://widget.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '96961ea6-43ca-4ac0-bd23-5dda881a83c3', f: true }); done = true; } }; })();</script>
