@@ -20,8 +20,7 @@
 
 
 
-	 <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    <div class="section">
+	<div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -29,9 +28,7 @@
         			include_once '../panel/panel_inquilino.php';
     			?> 
     			
-                <!--------------------------------------------------------Columna Dcha----------------------->
-                
-                <div class="col-xs-10">
+               <div class="col-xs-10">
                 	<div class="row-fluid">	
                 	    <div class="col-sm-12">
                 	    	<div class="row">
@@ -39,8 +36,7 @@
 		                			<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>
 		                		</div>
 		                	</div>
-		                	<!--------------------------------------------------------Tablas inmuebles---------------------------->
-		                			                			                		                	
+		                	
 		                	<?php
 		                		
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
@@ -62,12 +58,10 @@
 		                			                		                    
 		             </div>            
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
-            </div>
+             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    </div>
+   </div>
     
    <?php
         include_once '../../plantillas/pie.php';

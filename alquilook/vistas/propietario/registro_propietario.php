@@ -15,8 +15,7 @@
         include_once '../../plantillas/banner_pro.php';
     ?>      
 
-    <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
-    <div class="section">
+  <div class="section">
         <div class="container">
         	<div class="row">&nbsp;</div>
             <div class="row">
@@ -245,7 +244,6 @@
             <div class="row">&nbsp;</div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Log in-->
 
     <?php
         include_once '../../plantillas/pie.php';

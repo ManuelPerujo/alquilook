@@ -235,8 +235,7 @@
 							      </div>
 		    					</div>
 		    						<a href="../inmueble/registro_inmueble_inmo.php" class="btn btn-default btn-sm">Continuar</a>
-			    				<!-- <input type="submit" class="btn btn-default btn-sm" value="Continuar" /> -->
-			    					<br/><br/>
+			    				<br/><br/>
 			                    </form> 
                 </div>                                           
             </div>
@@ -244,8 +243,7 @@
     </div>  
 </div>
     </div>      
-    <!-- Log in -->
-
+ 
     <?php
         include_once '../../plantillas/pie.php';
     ?>        

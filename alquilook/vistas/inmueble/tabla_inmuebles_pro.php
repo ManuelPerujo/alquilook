@@ -20,8 +20,7 @@
 
 
 
-	 <!-- Panel Propietario -->
-    <div class="section">
+	 <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -29,8 +28,6 @@
         			include_once '../panel/panel_propietario.php';
     			?> 
     			
-                <!-- Columna Dcha -->
-                
                 <div class="col-xs-10">
                 	<div class="row-fluid">	
                 	    <div class="col-sm-12">
@@ -39,7 +36,7 @@
 		                			<h3><i class="fa fa-folder-open"></i> Tus inmuebles</h3>
 		                		</div>
 		                	</div>
-		                	<!-- Tablas inmuebles -->
+		                	
 		                	<?php 
 		                	
 		                		if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == TRUE){
@@ -98,18 +95,16 @@
 		                			                		                    
 		             </div>            
                 </div> 
-                <!-- Columna Dcha -->                                                                          
-            </div>
+             </div>
         </div>
     </div>  
-    <!-- Panel Propietario -->
-    </div>
+   </div>
     
    <?php
         include_once '../../plantillas/pie.php';
     ?>        
     
-    
+    <script src="js_slider/responsive-slider.js"></script>
     
 
    

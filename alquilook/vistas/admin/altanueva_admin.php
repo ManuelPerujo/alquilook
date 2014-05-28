@@ -17,7 +17,6 @@
         include_once '../../plantillas/banner_admin.php';
     ?>  
     
-    <!--  Panel Propietario  -->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -44,14 +43,13 @@
 					
                 ?>
                 
-                <!-- Columna Dcha -->
                 <div class="col-sm-10 col-xs-12">
                 			<h3><i class="fa fa-bell"></i> Alta nueva</h3>
                 			<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_altasnuevas_admin.php"><i class="fa fa-chevron-left"></i> Volver a Altas nuevas</a>
 	                		<hr class="grisdoble"/>
 							<div class="row">
 								<div class="col-xs-2">   	
-					                <img class="imagenboton img-circle" src="<?php echo $ruta?>img/botones/propietario.png">
+					                <img class="imagenboton img-circle" src="<?php echo $ruta?>img/botones/propietario.png" alt="">
 		                		 </div>
 	                			<?php echo $datosUsuario; ?>
 	        				</div>
@@ -59,7 +57,7 @@
 	        				<hr class="grissimple"/>
 	                		<div class="row">
 								<div class="col-xs-2">   	
-					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmueble.png">
+					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmueble.png" alt="">
 		                		 </div>
 	                			 <?php echo $datosInmueble; ?>
 		                		 <div class="col-xs-5">	
@@ -76,12 +74,9 @@
 								</div>
 							</div>		
                 </div> 
-                <!-- Columna Dcha -->                                                                          
             </div>
         </div>
     </div>  
-    <!-- Panel Propietario -->
-
     <?php
         include_once '../../plantillas/pie_admin.php';
     ?>        

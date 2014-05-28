@@ -25,10 +25,10 @@
                     <div data-animate="slideAppearLeftToRight" data-delay="500" data-length="300"><h2>Alquilar no siempre es fácil.<br/>Nosotros te ayudamos.<br/>No te compliques la vida.</h2></div><br />
                   </div> 
                   <div class="caption img-1" data-animate="slideAppearLeftToRight" data-delay="500">
-                    <img src="img/1.png">
+                    <img src="img/1.png" alt="">
                   </div>
                   <div class="caption img-2" data-animate="slideAppearDownToUp" data-delay="700">
-                    <img src="img/2.png">
+                    <img src="img/2.png" alt="">
                   </div>
                 </div>
               </div>
@@ -44,10 +44,10 @@
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Gestionamos todos los recibos.<br/>Nos encargamos del contrato.<br/>Te ayudamos a elegir el inquilino.</h2></div><br />
                   </div>
                   <div class="caption img-3" data-animate="slideAppearUpToDown" data-delay="200">
-                    <img src="img/3.png">
+                    <img src="img/3.png" alt="">
                   </div>
                   <div class="caption img-4" data-animate="slideAppearDownToUp">
-                    <img src="img/4.png">
+                    <img src="img/4.png" alt="">
                   </div>
                 </div>
               </div>
@@ -63,10 +63,10 @@
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Olvídate del casero.<br/>Controla tus pagos desde la web.<br/>Crea incidencias con un solo click.</h2></div><br />
                   </div> 
                   <div class="caption img-5" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/5.png">
+                    <img src="img/5.png" alt="">
                   </div>
                   <div class="caption img-6" data-animate="slideAppearUpToDown">
-                    <img src="img/6.png">
+                    <img src="img/6.png" alt="">
                   </div>
                 </div>
               </div>
@@ -82,10 +82,10 @@
                     <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>En tu panel de gestión<br/>tienes todo lo que necesitas<br/>y todo lo que te interesa</h2></div><br />
                   </div> 
                   <div class="caption img-7" data-animate="slideAppearDownToUp" data-delay="200">
-                    <img src="img/7.png">
+                    <img src="img/7.png" alt="">
                   </div>
                   <div class="caption img-8" data-animate="slideAppearUpToDown">
-                    <img src="img/8.png">
+                    <img src="img/8.png" alt="">
                   </div>
                 </div>
               </div>
@@ -110,8 +110,8 @@
         <div class="container arriba2">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    	<img src="img/portatil.png" class="portatil">
-                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/I9ix0ECNuyE" frameborder="0" allowfullscreen></iframe>
+                    	<img src="img/portatil.png" class="portatil" alt="">
+                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/I9ix0ECNuyE" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
@@ -132,7 +132,7 @@
             	
                 <div class="col-sm-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarpropietario">
-                			<img class="imagen" src="img/botones/propietario.png">
+                			<img class="imagen" src="img/botones/propietario.png" alt="">
                 			<h2>SOY PROPIETARIO</h2>
                 		</a>
                 		
@@ -169,7 +169,7 @@
                 
 				<div class="col-sm-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinquilino">
-                			<img class="imagen" src="img/botones/inquilino.png">
+                			<img class="imagen" src="img/botones/inquilino.png" alt="">
                 			<h2>SOY INQUILINO</h2>
                 		</a>
                 			<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_inquilino();">	
@@ -187,7 +187,7 @@
               
                 <div class="col-sm-4 text-center collapse-group">
                 		<a class="enlace2" data-toggle="collapse" data-target="#ingresarinmobiliaria">
-                			<img class="imagen" src="img/botones/inmobiliaria.png">
+                			<img class="imagen" src="img/botones/inmobiliaria.png" alt="">
                 			<h2>SOY INMOBILIARIA</h2>
                 		</a>
                 		<?php 
@@ -230,10 +230,11 @@
 	?>
 	
 	
-    <script src="js_slider/jquery.js"></script>
+    <script src="js_slider/jquery.js"/></script>
     <script src="js_slider/jquery.event.move.js"></script>
     <script src="js_slider/responsive-slider.js"></script>
 
        
 </body>
+
 </html>

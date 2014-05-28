@@ -17,8 +17,7 @@
 
 
 
-	 <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    <div class="section">
+	<div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -26,8 +25,7 @@
         			include_once '../panel/panel_inmobiliaria.php';
     			?> 
     			
-                <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-xs-10">
+               <div class="col-xs-10">
                 	<div class="row-fluid">	
                 		<div class="col-sm-8">
 		                	<h3><i class="fa fa-key"></i> Añadir inquilinos (Paso 4 de 4)</h3>
@@ -52,7 +50,7 @@
 		               		?>
 		               		<form method="post" action="../../controladores/control_registro_inquilino.php?inq=TRUE">
 		               			
-		               			<!--------------------------------------------------------Inqulino insertado----------------------->
+		               		
 		               			<?php
 		                				                	 
 			                		if(!empty($_SESSION['ArrayIdUsuario'])){
@@ -67,12 +65,8 @@
 									}
 									
 			                	?>
-		               			<!--------------------------------------------------------Inqulino insertado----------------------->
 		               			
-		               			
-		               			
-		               			<!--------------------------------------------------------Añadir inqulino----------------------->	 	
-		                       <div class="row fondogris">
+		               			 <div class="row fondogris">
 				                	<div class="row">
 												  		<div class="col-sm-8 text-left alert alert-success alert-dismissable">
 										               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -95,11 +89,8 @@
 											  </div>
 									</div>  
 								</div>
-								<!--------------------------------------------------------Fin Añadir inquilino----------------------->	
-								
-								
-								<!-------------------------------------------------------- Fin Insertar habitacion----------------------->
-		                        <br/>
+							
+							  <br/>
 		                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otro inquilino</button>
 		                        <a   href="../inmueble/tabla_inmuebles_inmo.php" class="btn btn-default btn-sm">Finalizar</a>
 		                        								
@@ -110,12 +101,10 @@
 		               	
 		               </div>              
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
-            </div>
+              </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    </div>
+   </div>
     
    <?php
         include_once '../../plantillas/pie.php';

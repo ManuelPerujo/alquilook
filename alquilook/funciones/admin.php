@@ -116,12 +116,12 @@
                     $mensaje .= "<td>";
                     if($arrayOpciones['responder'] == TRUE){
                         $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' alt='Responder' /></a>";
                     }if($arrayOpciones['pagar'] == TRUE){
                         
                     }if($arrayOpciones['amistad'] == TRUE){
                         $direccion4 = '../sesion/control_amistad.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' alt='Amistad' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
                     	$direccionVer = '../../controladores/control_ver_mas.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
                         $mensaje .= "<a href=$direccionVer  title='ver mas' target='_blank'><i class='fa fa-eye'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -232,20 +232,20 @@
                     $mensaje .= "<td>";
                     if($arrayOpciones['borrar'] == TRUE){
                         $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' /></a>";    
+                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' alt='...'/></a>";    
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
-                        $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' /></a>";    
+                        $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' alt='...' /></a>";    
                     }if($arrayOpciones['responder'] == TRUE){
                         $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' alt='...' /></a>";
                     }if($arrayOpciones['pagar'] == TRUE){
                         
                     }if($arrayOpciones['amistad'] == TRUE){
                         $direccion4 = '../sesion/control_amistad.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' alt='...' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
-                        $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' /></button>";
+                        $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' alt='...' /></button>";
                     }
                     
                     $mensaje .= "</td>";
@@ -334,20 +334,20 @@
                     $mensaje .= "<td>";
                     if($arrayOpciones['borrar'] == TRUE){
                         $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' /></a>";    
+                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' alt='...' /></a>";    
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
-                        $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' /></a>";    
+                        $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' alt='...' /></a>";    
                     }if($arrayOpciones['responder'] == TRUE){
                         $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' alt='...' /></a>";
                     }if($arrayOpciones['pagar'] == TRUE){
                         
                     }if($arrayOpciones['amistad'] == TRUE){
                         $direccion4 = '../sesion/control_amistad.php?id='.$selector;
-                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                        $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' alt='...' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
-                        $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' /></button>";
+                        $mensaje .= "<button id='ver_mas' onclick='showMensaje($selector);' title='ver mas'><img src='../imagenes/iconos/ver_mas.png' alt='...' /></button>";
                     }if($arrayOpciones['visto'] == TRUE){
                     	
 						$boleean = alta_atendida($selector);
@@ -492,7 +492,7 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-xs-6  media'>
 												  <a class='pull-left'>
-												    <img class='imagenboton2 img-rounded' src='../../img/botones/inquilino.png'>
+												    <img class='imagenboton2 img-rounded' src='../../img/botones/inquilino.png' alt='...'>
 												  </a>
 												  <div class='media-body'>
 												   <h5 class='media-heading'><small class='negro mayusculas'>Inquilino:</small></h5>
@@ -503,13 +503,13 @@
 				                       	<div class='row-fluid iconosmovil text-center'>
 				                       		<div class='col-xs-3 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#mensaje2".$count2."'>
-							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png' alt='...'>
 							                       	<p class='ficha'>Mensaje</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-3 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#opciones2".$count2."'>
-							                       	<img class='imagenboton3' src='../../img/botones/opciones.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/opciones.png' alt='...'>
 							                       	<p class='ficha'>Opciones</p>
 							                    </a>   	
 				                       		</div>
@@ -521,7 +521,7 @@
 				                     <div id='opciones2".$count2."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Opciones</h5></p>
@@ -564,7 +564,7 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenboton img-rounded' src='../../img/botones/propietario.png'>
+												    <img class='imagenboton img-rounded' src='../../img/botones/propietario.png' alt='...'>
 												  </a>
 												  <div class='media-body'>
 												    <h4 class='media-heading'>".$value['Direccion']." (".$value['Provincia'].")</h4>
@@ -619,33 +619,33 @@
 		$suministros = get_permiso_suministros($idInmueble);
 		
 		$luz = "<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
-                 	<img class='imagenboton3' src='../../img/botones/luz.png'>
+                 	<img class='imagenboton3' src='../../img/botones/luz.png' alt='...'>
 					<p class='ficha'>Electricidad</p>
 				</a>";
 		
 		$agua = "<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
-					<img class='imagenboton3' src='../../img/botones/agua.png'>
+					<img class='imagenboton3' src='../../img/botones/agua.png' alt='...'>
 					<p class='ficha'>Agua</p>
 				</a>";
 		
 		$gas = "<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
-					<img class='imagenboton3' src='../../img/botones/gas.png'>
+					<img class='imagenboton3' src='../../img/botones/gas.png' alt='...'>
 					<p class='ficha'>Gas</p>
 				</a>";						                       	
 		
 		if($suministros['Luz'] == 0){
 					
-			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png'>
+			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png' alt='...'>
 					<p class='ficha'>Electricidad</p>";	
 			
 		}if($suministros['Agua'] == 0){
 					
-			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png'>
+			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png' alt='...'>
 					<p class='ficha'>Agua</p>";	
 			
 		}if($suministros['Gas'] == 0){
 					
-			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png'>
+			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png' alt='...'>
 					<p class='ficha'>Gas</p>";	
 			
 		}	
@@ -662,25 +662,25 @@
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
-				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
+				                       				<img class='imagenboton3' src='../../img/botones/contrato.png' alt='...'>
 				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#mensaje".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/mensaje.png' alt='...'>
 							                       	<p class='ficha'>Mensaje</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#opciones".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/opciones.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/opciones.png' alt='...'>
 							                       	<p class='ficha'>Opciones</p>
 							                    </a>   	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#galeria".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/galeria.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/galeria.png' alt='...'>
 							                       	<p class='ficha'>Galería</p>
 							                    </a>   	
 				                       		</div>
@@ -749,7 +749,7 @@
 				                            <div class='row'>
 							                 		<div class='col-xs-12'>
 							                      		<div class='col-sm-1 col-xs-3'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/agua2.png'>
+							                      			<img class='imagenbanner2' src='../../img/botones/agua2.png' alt='...'>
 							                 			</div>  
 							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Recibos de Agua</h5></p>
@@ -791,7 +791,7 @@
 				                      		 <div class='row'>
 							                 		<div class='col-xs-12'>
 							                      		<div class='col-sm-1 col-xs-3'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/luz2.png'>
+							                      			<img class='imagenbanner2' src='../../img/botones/luz2.png' alt='...'>
 							                 			</div>  
 							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Recibos de Electricidad</h5></p>
@@ -833,7 +833,7 @@
 				                            <div class='row'>
 							                 		<div class='col-xs-12'>
 							                      		<div class='col-sm-1 col-xs-3'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/gas2.png'>
+							                      			<img class='imagenbanner2' src='../../img/botones/gas2.png' alt='...'>
 							                 			</div>  
 							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Recibos de Gas</h5></p>
@@ -875,7 +875,7 @@
 				                      		 <div class='row'>
 							                 		<div class='col-xs-12'>
 							                      		<div class='col-sm-1 col-xs-3'>	  
-							                      			<img class='imagenbanner2' src='../../img/botones/contrato2.png'>
+							                      			<img class='imagenbanner2' src='../../img/botones/contrato2.png' alt='...'>
 							                 			</div>  
 							                 			<div class='col-sm-3 col-xs-9'>
 							                 				<p class='ficha'><h5>Documentos</h5></p>
@@ -919,7 +919,7 @@
 		$mensaje = "<div id='galeria".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Galería</h5></p>
@@ -960,7 +960,7 @@
 		$mensaje = "<div id='mensaje".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Escribir a propietario</h5></p>
@@ -990,7 +990,7 @@
 		$mensaje = "<div id='mensaje2".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/mensaje2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Escribir a inquilino</h5></p>
@@ -1024,7 +1024,7 @@
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
 				                      		 <div class='row'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/opciones2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Opciones</h5></p>
@@ -1317,7 +1317,7 @@
 				$mensaje .= "<hr class='grissimple'/>
 		                		<div class='row'>
 									<div class='col-xs-2'>   	
-						                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png'>
+						                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png' alt='...'>
 			                		 </div>
 		                			<div class='col-xs-5'>   	
 						                	<h5 class='media-heading mayusculas'>inquilino:</h5>

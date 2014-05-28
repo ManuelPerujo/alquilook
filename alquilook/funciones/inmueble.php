@@ -65,14 +65,14 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenbanner' src='../../img/botones/inmueble.png'>
+												    <img class='imagenbanner' src='../../img/botones/inmueble.png' alt='...'>
 												  </a>
 												  <div class='media-body'>
 												    <h5 class='media-heading'>".$value['Direccion']."</h5>
 												    <hr class='grissimple'/>
 												    <small>".$value['TipoInmueble']."</small>
 												    <hr class='grissimple'/>
-												    <p class='ficha'>Tipo de contrato: ".$value['TipoContrato']."</p>
+												    <p class='ficha'>Plan de contrato: ".$value['TipoContrato']."</p>
 												    <p class='ficha'>".$value['Metros']." metros</p>
 												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
 												    ".$inquilinos."
@@ -95,7 +95,7 @@
 				                    ."<div id='incidencia".$count."' class='collapse'>
 				                      		 <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/incidencias2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/incidencias2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Crear incidencias</h5></p>
@@ -218,7 +218,7 @@
 		$facturasAgua = "<div id='agua".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/agua2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/agua2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Recibos de Agua</h5></p>
@@ -260,7 +260,7 @@
 		$facturasLuz = "<div id='luz".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/luz2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/luz2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Recibos de Electricidad</h5></p>
@@ -302,7 +302,7 @@
 		$facturasGas = "<div id='gas".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/gas2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/gas2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Recibos de Gas</h5></p>
@@ -345,7 +345,7 @@
 		$documento = "<div id='documento".$count."' class='collapse'>
 				                            <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/contrato2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/contrato2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Documentos</h5></p>
@@ -379,7 +379,7 @@
 			$direccion = $value['Direccion_Contenido'];
 					
 			$elementos .= "<a href='$direccion' data-toggle='lightbox' class='col-xs-2'>
-							 <img src='$direccion' class='img-responsive'>
+							 <img src='$direccion' class='img-responsive' alt='...'>
 						   </a>";	
 			
 		}
@@ -387,7 +387,7 @@
 		$galeria = "<div id='galeria".$count."' class='collapse'>
 				                      		 <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/galeria2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Galería de imágenes</h5></p>
@@ -411,33 +411,33 @@
 		$suministros = get_permiso_suministros($idInmueble);
 		
 		$luz = "<a class='enlace2' data-toggle='collapse' data-target='#luz".$count."'>
-                 	<img class='imagenboton3' src='../../img/botones/luz.png'>
+                 	<img class='imagenboton3' src='../../img/botones/luz.png' alt='...'>
 					<p class='ficha'>Electricidad</p>
 				</a>";
 		
 		$agua = "<a class='enlace2' data-toggle='collapse' data-target='#agua".$count."'>
-					<img class='imagenboton3' src='../../img/botones/agua.png'>
+					<img class='imagenboton3' src='../../img/botones/agua.png' alt='...'>
 					<p class='ficha'>Agua</p>
 				</a>";
 		
 		$gas = "<a class='enlace2' data-toggle='collapse' data-target='#gas".$count."'>
-					<img class='imagenboton3' src='../../img/botones/gas.png'>
+					<img class='imagenboton3' src='../../img/botones/gas.png' alt='...'>
 					<p class='ficha'>Gas</p>
 				</a>";						                       	
 		
 		if($suministros['Luz'] == 0){
 					
-			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png'>
+			$luz = "<img class='imagenboton3' src='../../img/botones/luz2.png' alt='...'>
 					<p class='ficha'>Electricidad</p>";	
 			
 		}if($suministros['Agua'] == 0){
 					
-			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png'>
+			$agua = "<img class='imagenboton3' src='../../img/botones/agua2.png' alt='...'>
 					<p class='ficha'>Agua</p>";	
 			
 		}if($suministros['Gas'] == 0){
 					
-			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png'>
+			$gas = "<img class='imagenboton3' src='../../img/botones/gas2.png' alt='...'>
 					<p class='ficha'>Gas</p>";	
 			
 		}
@@ -454,19 +454,19 @@
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse' data-target='#documento".$count."'>
-				                       				<img class='imagenboton3' src='../../img/botones/contrato.png'>
+				                       				<img class='imagenboton3' src='../../img/botones/contrato.png' alt='...'>
 				                       				<p class='ficha'>Documentos</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#incidencia".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/incidencias.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/incidencias.png' alt='...'>
 							                       	<p class='ficha'>Incidencias</p>
 							                    </a>   	
 						                    </div>
 						                    <div class='col-xs-4 col-sm-2 text-center'>	
 						                    	<a class='enlace2' data-toggle='collapse' data-target='#galeria".$count."'>
-							                       	<img class='imagenboton3' src='../../img/botones/galeria.png'>
+							                       	<img class='imagenboton3' src='../../img/botones/galeria.png' alt='...'>
 							                       	<p class='ficha'>Galería</p>
 							                    </a>   	
 				                       		</div>
@@ -535,7 +535,7 @@
 				
 		$mensaje2 = "<div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
-							                      		<img class='imagenbanner2' src='../../img/botones/historial2.png'>
+							                      		<img class='imagenbanner2' src='../../img/botones/historial2.png' alt='...'>
 							                 		</div>  
 							                 		<div class='col-sm-3 col-xs-9'>
 							                 			<p class='ficha'><h5>Historial de incidencias</h5></p>

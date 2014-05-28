@@ -118,7 +118,7 @@
 								<div class='panel-heading'>
 								     <h6 class='panel-title'>
 						             <a class='enlace3 mayusculas' data-toggle='collapse' data-parent='#accordion".$count."' href='#collapse".$count."'>
-							         <img class='imagenboton2 steel-grey2 img-circle' src='../../img/botones/conversacion.png'>
+							         <img class='imagenboton2 steel-grey2 img-circle' src='../../img/botones/conversacion.png' alt='...'>
 									 &nbsp;&nbsp;&nbsp;
 									 ".$destinatario." &nbsp;&nbsp;|&nbsp;&nbsp; Asunto: " .$titulo." &nbsp;&nbsp;|&nbsp;&nbsp; ".$row['Fecha']."
 									 </a>

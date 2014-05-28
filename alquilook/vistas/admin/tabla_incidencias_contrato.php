@@ -14,7 +14,6 @@
         include_once '../../plantillas/banner_admin.php';
     ?>  
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
     <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
@@ -23,7 +22,6 @@
         			include_once '../panel/panel_admin.php';
     			?> 
                 
-                <!--------------------------------------------------------Columna Dcha----------------------->
                 <div class="col-sm-10 col-xs-12">
                 		<h3><i class="fa fa-gavel"></i> Incidencias Contratos:</h3>
                 		
@@ -41,12 +39,10 @@
                 	?>
                 		
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
             </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-
+ 
     <?php
         include_once '../../plantillas/pie_admin.php';
     ?>        

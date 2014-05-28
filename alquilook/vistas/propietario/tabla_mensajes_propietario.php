@@ -13,8 +13,7 @@
         include_once '../../plantillas/banner_pro.php';
     ?>  
     
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
-    <div class="section">
+   <div class="section">
         <div class="container-fluid">
             <div class="row-fluid">
             	
@@ -22,8 +21,7 @@
         			include_once '../panel/panel_propietario.php';
     			?> 
                 
-                <!--------------------------------------------------------Columna Dcha----------------------->
-                <div class="col-xs-10">
+              <div class="col-xs-10">
                 		<h3><i class="fa fa-envelope-o"></i> Mensajes:</h3>
                 		<hr class="grissimple">
                 		<div class="text-left">
@@ -58,11 +56,9 @@
                 	?>
                 	<br/>
                 </div> 
-                <!--------------------------------------------------------Columna Dcha----------------------->                                                                          
-            </div>
+           </div>
         </div>
     </div>  
-    <!-------------------------------------------------------------------------------------------------------------------------------Panel Propietario----------------------->
 
     <?php
         include_once '../../plantillas/pie.php';
