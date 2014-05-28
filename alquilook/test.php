@@ -48,13 +48,25 @@
 <a href="http://www.museographia.com" target="_blank">
 <img src="http://www.museographia.com/email/email.jpg"/>
 </a></td>
-<td>&nbsp;&nbsp;&nbsp;</td><td bgcolor="#000000"></td><td>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;</td><td bgcolor="#323232"></td><td>&nbsp;&nbsp;&nbsp;</td>
 <td><p style="font-family: Arial, Helvetica, sans-serif;">
-<span style="color: #000000; font-size: 18px; line-height: 21px;">Manuel Perujo Garc&iacute;a</span><br/>
-<span style="color: #000000; font-size: 16px; line-height: 21px;">677 020 458 / 955 925 694 </span><br/>
+<span style="color: #323232; font-size: 18px; line-height: 21px;">Manuel Perujo Garc&iacute;a</span><br/>
+<span style="color: #323232; font-size: 16px; line-height: 21px;">677 020 458 / 955 925 694 </span><br/>
 <span style="font-size: 14px; line-height: 18px;"><a style="style="color:#999999; text-decoration: none;" href="mailto:manuelperujo@museographia.com">manuelperujo@museographia.com</a></span><br/>
 <span style="font-size: 14px; line-height: 18px;"><a href="http://www.museographia.com" target="_blank">www.museographia.com</a></span> 
 </p></td></tr></table>
+
+
+
+
+
+
+
+
+
+
+
+
 
 -->
 
