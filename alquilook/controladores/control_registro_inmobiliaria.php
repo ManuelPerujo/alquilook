@@ -28,7 +28,6 @@
 		
 		$arrayValidacion['usuario'] = $usuario; $arrayValidacion['pass'] = $pass; 
 		$arrayValidacion['email'] = $email; $arrayValidacion['nombre'] = $nombre;
-		$arrayValidacion['dni'] = $cif;
 		$arrayValidacion['apellidos'] = $apellidos; $arrayValidacion['telefono'] = $telefono;
 		$arrayValidacion['domicilio'] = $domicilio; $arrayValidacion['cp'] = $cp;
 		$arrayValidacion['poblacion'] = $poblacion; $arrayValidacion['provincia'] = $provincia;
