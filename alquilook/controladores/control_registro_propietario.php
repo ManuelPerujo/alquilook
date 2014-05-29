@@ -57,10 +57,20 @@ include_once('../validacion/validacion_servidor.php');
 		            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
 		
 		            $result = $bd->conexion->query($query);
+					
+					$query11 = "select IdUsuario from usuarios where Usuario = '$usuario' ";
+		
+		            $result11 = $bd->conexion->query($query11);
 		      
 		            if($result->rowCount()>0) {
 		            	
-		                $_SESSION['error'] = "El usuario ya existe";
+		                $_SESSION['error'] = "Usuario con el mismo DNI ya registrado";
+		                
+		                header("Location: ../vistas/propietario/registro_propietario.php");
+		                
+		            }if($result11->rowCount()>0) {
+		            	
+		                $_SESSION['error'] = "Nombre de Usuario ya en uso";
 		                
 		                header("Location: ../vistas/propietario/registro_propietario.php");
 		                
