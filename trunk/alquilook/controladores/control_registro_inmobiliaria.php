@@ -1,16 +1,17 @@
 <?php
-session_start();
 
-if(!$_POST){
-
-    echo "no pasa POST";
-    exit();
-}
-
-include_once("../funciones/core.php");
-include_once("../funciones/registro.php");
-include_once('../funciones/usuarios.php');
-include_once('../validacion/validacion_servidor.php');
+		session_start();
+		
+		if(!$_POST){
+		
+		    echo "no pasa POST";
+		    exit();
+		}
+		
+		include_once("../funciones/core.php");
+		include_once("../funciones/registro.php");
+		include_once('../funciones/usuarios.php');
+		include_once('../validacion/validacion_servidor.php');
 
 
         
@@ -27,6 +28,7 @@ include_once('../validacion/validacion_servidor.php');
 		
 		$arrayValidacion['usuario'] = $usuario; $arrayValidacion['pass'] = $pass; 
 		$arrayValidacion['email'] = $email; $arrayValidacion['nombre'] = $nombre;
+		$arrayValidacion['dni'] = $cif;
 		$arrayValidacion['apellidos'] = $apellidos; $arrayValidacion['telefono'] = $telefono;
 		$arrayValidacion['domicilio'] = $domicilio; $arrayValidacion['cp'] = $cp;
 		$arrayValidacion['poblacion'] = $poblacion; $arrayValidacion['provincia'] = $provincia;
@@ -55,7 +57,23 @@ include_once('../validacion/validacion_servidor.php');
 	                header("Location: ".$_SERVER['HTTP_REFERER']);
 	                
 	            }else{
-	            /*insertamos los datos del nuevo usuario*/
+	            	
+					$mensaje = "Ha sido dado de alta en Alquilook, sus datos de ingreso son los siguientes:\r\n"; 
+	
+				    $mensaje .= "<br><br>
+					   			 Nombre de Usuario: <b>$usuario</b> \r\n<br>
+					    		 Contraseña: <b>$pass</b> \r\n<br>";
+								 
+					$mensaje .= "<br><br>Para acceder a alquilook pulse el siguiente enlace<br><br>
+								<a href='http://www.alquilook.com'><b>www.alquilook.com</b></a>";			 
+					            
+				    $headers = "MIME-Version: 1.0\r\n";
+				    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+				    $headers .= "From: info@alquilook.com\r\n";
+					
+					mail($email, 'Alquilook: Confirmación registro de Inmobiliaria', $mensaje, $headers);
+					
+	            	/*insertamos los datos del nuevo usuario*/
 	                $query2 = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
 		                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
 		                    values ('', '0', 'Inmobiliaria', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$cif',

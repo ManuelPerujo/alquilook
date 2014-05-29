@@ -52,6 +52,25 @@
 					}
 
 				?>
+				
+				<?php 
+        	
+	        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+						
+						$mensaje = $_SESSION['error'];
+						
+						unset($_SESSION['error']);
+																	
+						echo "<div class='row'>
+						 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+						       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+										<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+			               		</div>
+							  </div>";
+												
+		            }
+	        	
+	        	?>
                 	
                 	<h3><i class="fa fa-building-o"></i> Inmobiliarias</h3>
                 	<hr class="grisdoble">
@@ -71,7 +90,7 @@
 								                        <hr class="grissimple">
 								                        <label><h6 class="negro">Datos de empresa&nbsp;&nbsp;</h6></label><br/>
 								                        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nombre de empresa" />
-								                        <input type="text" class="form-control" id="dni" name="dni_inmobiliaria" placeholder="CIF" /><br/>
+								                        <input type="text" class="form-control" id="dni" name="dni_inmobiliaria" placeholder="DNI/NIF" /><br/>
 								                        <input type="text" class="form-control" id="nombre" name="nombre_contacto" placeholder="Nombre del contacto" />
 								                        <input type="text" class="form-control" id="apellidos" name="apellidos_contacto" placeholder="Apellidos del contacto" /> 
 								                        <input type="tel" class="form-control" id="telefono" name="telefono_contacto" placeholder="Teléfono" /> 
@@ -150,7 +169,17 @@
 					    <hr class="grisdoble">					    
 					    <div class="row">
                 			<div class="col-sm-10 col-xs-12">
-		                		Tabla inmobiliaria con nombre empresa, contacto, telefono, ¿nº inmuebles?
+		                		<?php
+		                	
+			                		$tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
+			                        $filtro = array('UsuarioActivo' => '1', 'Admin' => '0');
+			                        $arrayOrden = array(1 => 'Nombre', 2=> 'asc');
+			                        $arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);  
+			                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+									
+									echo $mensaje; 
+			                		
+			                	?>
 		                	</div>
 					    </div>
 					    <br/><br/>
