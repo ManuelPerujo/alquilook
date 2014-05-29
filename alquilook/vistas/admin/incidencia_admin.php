@@ -24,7 +24,7 @@
     			?> 
                 
                 <div class="col-sm-10 col-xs-12">
-                		<h3><i class="fa fa-warning"></i> Incidencia:</h3>
+                		<h3>Incidencia:</h3>
                 			<div class="row">
                 				<div class="col-xs-12">
 		                				<div class="media">

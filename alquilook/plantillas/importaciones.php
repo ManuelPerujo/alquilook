@@ -28,6 +28,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "registro_inquilino_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_estancia_inmo.php"
 		|| basename($_SERVER['PHP_SELF']) == "planes.php" || basename($_SERVER['PHP_SELF']) == "dudas.php"
 		|| basename($_SERVER['PHP_SELF']) == "banner3.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"
+		|| basename($_SERVER['PHP_SELF']) == "perfil_inmobiliaria_admin.php"
 		)
 	{
 
@@ -37,7 +38,8 @@
 		basename($_SERVER['PHP_SELF']) == "banner_pro.php" || basename($_SERVER['PHP_SELF']) == "banner_inq.php" || 
 		basename($_SERVER['PHP_SELF']) == "cabecera.php" || basename($_SERVER['PHP_SELF']) == "banner_admin.php" || 
 		basename($_SERVER['PHP_SELF']) == "pie.php" || basename($_SERVER['PHP_SELF']) == "cabecera_admin.php" ||
-		basename($_SERVER['PHP_SELF']) == "pie_admin.php"
+		basename($_SERVER['PHP_SELF']) == "pie_admin.php" || basename($_SERVER['PHP_SELF']) == "pie_inqu.php" ||
+		basename($_SERVER['PHP_SELF']) == "pie_inmo.php"
 		){
 	    $ruta = "../";
 	}
