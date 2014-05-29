@@ -77,7 +77,7 @@ include_once('../validacion/validacion_servidor.php');
 		                	$_SESSION['erroRegistro'] = FALSE;
 		                	$_SESSION['bienvenida'] = true;
 	 						
-							// mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
+							mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
 							
 							header("Location: ../vistas/propietario/verificacion_propietario.php");
 							

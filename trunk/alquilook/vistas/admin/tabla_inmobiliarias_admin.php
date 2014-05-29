@@ -22,6 +22,37 @@
     			?> 
                 
                 <div class="col-sm-10 col-xs-12">
+                
+                <?php
+                	
+                	if(isset($_SESSION['error_registro'])){
+											
+						if($_SESSION['error_registro'] == TRUE){
+								
+							echo "<div class='row'>
+							  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+							       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+						 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;La Inmobiliaria que intenta registrar ya existe!</h5>
+					           		</div>
+								  </div>";
+								
+						}if($_SESSION['error_registro'] == FALSE){
+								
+							echo "<div class='row'>
+							  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+							       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+						 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Inmobiliaria registrada!</h5>
+					           		</div>
+								  </div>";
+								
+						}
+						
+						unset($_SESSION['error_registro']);
+		
+					}
+
+				?>
+                	
                 	<h3><i class="fa fa-building-o"></i> Inmobiliarias</h3>
                 	<hr class="grisdoble">
                 		<div class="row">
@@ -32,26 +63,28 @@
 												    </a>
 										</div>
 										<div id="inmo" class="collapse">
-											 		 <form method="post" class="form-inline" action="<?php echo $ruta?>" >
+											 		 <form method="post" class="form-inline" action="<?php echo $ruta?>controladores/control_registro_inmobiliaria.php" >
 											 		 	<label><h6 class="negro">Datos ingreso web&nbsp;&nbsp;</h6></label><br/>
-														<input type="text" class="form-control" id="usuario" name="usuario_propietario" placeholder="Usuario" />                                 
-								                        <input type="password" class="form-control" id="pass" name="pass_propietario" placeholder="Contraseña" /><br/>
-								                        <input type="email" size="45" class="form-control" id="email" name="email_propietario" placeholder="Email" />  
+														<input type="text" class="form-control" id="usuario" name="usuario_inmobiliaria" placeholder="Usuario" />                                 
+								                        <input type="password" class="form-control" id="pass" name="pass_inmobiliaria" placeholder="Contraseña" /><br/>
+								                        <input type="email" size="45" class="form-control" id="email" name="email_inmobiliaria" placeholder="Email" />  
 								                        <hr class="grissimple">
 								                        <label><h6 class="negro">Datos de empresa&nbsp;&nbsp;</h6></label><br/>
 								                        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nombre de empresa" />
-								                        <input type="text" class="form-control" id="dni" name="dni_propietario" placeholder="CIF" /><br/>
-								                        <input type="text" class="form-control" id="nombre" name="nombre_propietario" placeholder="Nombre del contacto" />
-								                        <input type="text" class="form-control" id="apellidos" name="apellidos_propietario" placeholder="Apellidos del contacto" /> 
-								                        <input type="tel" class="form-control" id="telefono" name="telefono_propietario" placeholder="Teléfono" /> 
+								                        <input type="text" class="form-control" id="dni" name="dni_inmobiliaria" placeholder="CIF" /><br/>
+								                        <input type="text" class="form-control" id="nombre" name="nombre_contacto" placeholder="Nombre del contacto" />
+								                        <input type="text" class="form-control" id="apellidos" name="apellidos_contacto" placeholder="Apellidos del contacto" /> 
+								                        <input type="tel" class="form-control" id="telefono" name="telefono_contacto" placeholder="Teléfono" /> 
 								                        <hr class="grissimple">
 								                        <label><h6 class="negro">Datos de contacto&nbsp;&nbsp;</h6></label><br/>
-								                        <input type="text" size="45" class="form-control" id="domicilio" name="domicilio_propietario" placeholder="Dirección postal" />
-								                        <input type="text" class="form-control" id="cp" name="cp_propietario" placeholder="CP" /> 
-								                        <input type="text" class="form-control" id="poblacion" name="poblacion_propietario" placeholder="Población" />
+
+								                        <input type="text" size="45" class="form-control" id="domicilio" name="domicilio_inmobiliaria" placeholder="Dirección postal" />
+								                        <input type="text" class="form-control" id="cp" name="cp_inmobiliaria" placeholder="CP" /> 
+								                        <input type="text" class="form-control" id="poblacion" name="poblacion_inmobiliaria" placeholder="Población" />
+								                        
 								                        <br/>
 								                        <label><h6 class="gris">Provincia&nbsp;&nbsp;</h6></label> 
-									                        <select name="provincia_inmueble">
+									                        <select name="provincia_inmobiliaria">
 																 <option value='Álava' checked>Álava</option>
 																 <option value='Albacete'>Albacete</option>
 																 <option value='Alicante'>Alicante/Alacant</option>
