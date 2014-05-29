@@ -71,7 +71,7 @@
 										unset($_SESSION['error']);
 																					
 										echo "<div class='row'>
-										 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+										 		<div class='text-left alert alert-success alert-dismissable'>
 										       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 														<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
 							               		</div>
