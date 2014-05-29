@@ -36,7 +36,7 @@
 											 		 	<label><h6 class="negro">Datos ingreso web&nbsp;&nbsp;</h6></label><br/>
 														<input type="text" class="form-control" id="usuario" name="usuario_propietario" placeholder="Usuario" />                                 
 								                        <input type="password" class="form-control" id="pass" name="pass_propietario" placeholder="Contraseña" /><br/>
-								                        <input type="email" class="form-control" id="email" name="email_propietario" placeholder="Email" />  
+								                        <input type="email" size="45" class="form-control" id="email" name="email_propietario" placeholder="Email" />  
 								                        <hr class="grissimple">
 								                        <label><h6 class="negro">Datos de empresa&nbsp;&nbsp;</h6></label><br/>
 								                        <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Nombre de empresa" />
@@ -107,7 +107,7 @@
 															</select> 
 														<hr class="grissimple">
 								                        <label><h6 class="negro">Datos bancarios&nbsp;&nbsp;</h6></label><br/>
-								                        <input type="text" class="form-control" id="iban" name="iban" placeholder="IBAN" /> 
+								                        <input type="text" size="45" class="form-control" id="iban" name="iban" placeholder="IBAN" /> 
 								                        <br/><br/>
 								                       	<input type="submit" class="btn btn-default btn-sm" value="Guardar" />
 				                   					</form> 
