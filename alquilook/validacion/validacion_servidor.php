@@ -300,27 +300,28 @@
 			
 		}
 		
-		if(isset($datosInmueble['mensualidad'])){
+		// if(isset($datosInmueble['mensualidad'])){
+// 			
+			// if(!preg_match('^[0-9]{1,5}(\.[0-9]{0,2})?$', $datosInmueble['mensualidad'])) {
+// 				 
+		        // $_SESSION['error'] = "El alquiler s&oacute;lo puede contener n&uacute;meros.";
+// 		        
+				// return false;
+// 				
+		    // }else{
+// 		    	
+		        // if(strlen($datosInmueble['mensualidad'])>10){
+// 		        	
+		            // $_SESSION['error'] = "El precio del alquiler es demasiado alto";
+// 					
+		            // return false;
+// 					
+		        // }
+// 		        
+		    // }
 			
-			if(!preg_match('/^[0-9]{9,9}$/', $datosInmueble['mensualidad'])) {
-				 
-		        $_SESSION['error'] = "El alquiler s&oacute;lo puede contener n&uacute;meros.";
-		        
-				return false;
-				
-		    }else{
-		    	
-		        if(strlen($datosInmueble['mensualidad'])>10){
-		        	
-		            $_SESSION['error'] = "El precio del alquiler es demasiado alto";
-					
-		            return false;
-					
-		        }
-		        
-		    }
-			
-		}if(isset($datosInmueble['nombre_inmueble'])){
+		// }
+		if(isset($datosInmueble['nombre_inmueble'])){
 			
 			if(!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\- ]+$/', $datosInmueble['nombre_inmueble'])) {
 				 
@@ -342,7 +343,7 @@
 			
 		}if(isset($datosInmueble['num_inmueble'])){
 			
-			if(!preg_match('/^[0-9]{9,9}$/', $datosInmueble['num_inmueble'])) {
+			if(!preg_match('/^[0-9]{1,4}$/', $datosInmueble['num_inmueble'])) {
 				 
 		        $_SESSION['error'] = "El campo n&uacutemero no puede contener letras.";
 		        
@@ -411,7 +412,7 @@
 			
 		}if(isset($datosInmueble['metros_inmueble'])){
 			
-			if(!preg_match('/^[0-9]{5,5}$/', $datosInmueble['metros_inmueble'])) {
+			if(!preg_match('/^[0-9]{0,5}$/', $datosInmueble['metros_inmueble'])) {
 				 
 		        $_SESSION['error'] = "El tama&nacute;o debe ser un n&uacute;mero";
 		        

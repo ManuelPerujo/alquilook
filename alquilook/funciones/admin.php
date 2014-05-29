@@ -1548,7 +1548,7 @@
 		
 		$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
 		
-		if($row['Tipo'] = "IncidenciasVarias"){
+		if($row['Tipo'] == "IncidenciasVarias"){
 				
 			$mensaje = "<div class='media-body'>
 					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
