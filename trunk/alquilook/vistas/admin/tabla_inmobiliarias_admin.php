@@ -46,7 +46,7 @@
 								                        <input type="tel" class="form-control" id="telefono" name="telefono_propietario" placeholder="Teléfono" /> 
 								                        <hr class="grissimple">
 								                        <label><h6 class="negro">Datos de contacto&nbsp;&nbsp;</h6></label><br/>
-								                        <input type="text" class="form-control" id="domicilio" name="domicilio_propietario" placeholder="Dirección postal" />
+								                        <input type="text" size="45" class="form-control" id="domicilio" name="domicilio_propietario" placeholder="Dirección postal" />
 								                        <input type="text" class="form-control" id="cp" name="cp_propietario" placeholder="CP" /> 
 								                        <input type="text" class="form-control" id="poblacion" name="poblacion_propietario" placeholder="Población" />
 								                        <br/>
@@ -117,7 +117,7 @@
 					    <hr class="grisdoble">					    
 					    <div class="row">
                 			<div class="col-sm-10 col-xs-12">
-		                		Tabla inmobiliaria con ID, empresa, contacto, telefono, ¿nº inmuebles?
+		                		Tabla inmobiliaria con nombre empresa, contacto, telefono, ¿nº inmuebles?
 		                	</div>
 					    </div>
 					    <br/><br/>

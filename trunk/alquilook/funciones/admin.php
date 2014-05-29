@@ -1250,27 +1250,19 @@
 			
 			$mensaje = null;
 		
-			$mensaje = "<div class='col-xs-5'>   	
-						                	<h5 class='media-heading mayusculas'>Propietario:</h5>
-							                	Nombre y apellidos:
-							                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
-							                	DNI:
-							                	<p class='ficha mayusculas'>".$row['DNI']."</p>
-							                	Domicilio:
-							                	<p class='ficha mayusculas'>".$row['Domicilio']."</p>
-							                	CP:
-							                	<p class='ficha mayusculas'>".$row['CP']."</p>
-							                	Población:
-							                	<p class='ficha mayusculas'>".$row['Poblacion']."</p>
-							                	Provincia:
-							                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
+			$mensaje = "<div class='col-md-5 col-xs-12'>   	
+						                		<h5 class='media-heading mayusculas'>Propietario:</h5>
+							                	<h5 class='negro'><small class='gris'>Nombre y apellidos:</small>&nbsp;".$row['Nombre']." ".$row['Apellidos']."</h5>
+							                	<h5 class='negro'><small class='gris'>DNI:</small>&nbsp;".$row['DNI']."</h5>
+							                	<h5 class='negro'><small class='gris'>Domicilio:</small>&nbsp;".$row['Domicilio']."</h5>
+							                	<h5 class='negro'><small class='gris'>CP:</small>&nbsp;".$row['CP']."</h5>
+							                	<h5 class='negro'><small class='gris'>Población:</small>&nbsp;".$row['Poblacion']."</h5>
+							                	<h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;".$row['Provincia']."</h5>
 			                		 </div>
-			                		 <div class='col-xs-5'>	
-						                	<h5 class='media-heading'>Datos de contacto:</h5>
-							                	Email:
-							                	<p class='ficha'>".$row['Email']."</p>
-							                	Teléfono:
-							                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+			                		 <div class='col-md-5 col-xs-12'>	
+							                	<h5 class='media-heading mayusculas'>Datos de contacto:</h5>
+							                	<h5 class='negro'><small class='gris'>Email:</small>&nbsp;".$row['Email']."</h5>
+							                	<h5 class='negro'><small class='gris'>Teléfono:</small>&nbsp;".$row['Telefono']."</h5>
 			                		 </div>";
 			
 			return $mensaje;	
@@ -1316,22 +1308,19 @@
 				
 				$mensaje .= "<hr class='grissimple'/>
 		                		<div class='row'>
-									<div class='col-xs-2'>   	
-						                <img class='imagenboton img-circle' src='../../img/botones/inquilino.png' alt='...'>
+									<div class='col-md-2 col-xs-12'>   	
+						                <img class='imagenboton' src='../../img/botones/inquilino.png' alt='...'>
+						                <br/><br/>
 			                		 </div>
-		                			<div class='col-xs-5'>   	
-						                	<h5 class='media-heading mayusculas'>inquilino:</h5>
-							                	Nombre y apellidos:
-							                	<p class='ficha mayusculas'>".$row['Nombre']." ".$row['Apellidos']."</p>
-							                	DNI:
-							                	<p class='ficha mayusculas'>".$row['DNI']."</p>
+		                			<div class='col-md-5 col-xs-12'>
+							                <h5 class='media-heading mayusculas'>Inquilino:</h5>
+						                	<h5 class='negro'><small class='gris'>Nombre y apellidos:</small>&nbsp;".$row['Nombre']." ".$row['Apellidos']."</h5> 
+						                	<h5 class='negro'><small class='gris'>DNI:</small>&nbsp;".$row['DNI']."</h5>
 			                		 </div>
-			                		 <div class='col-xs-5'>	
-						                	<h5 class='media-heading'>Datos de contacto:</h5>
-							                	Email:
-							                	<p class='ficha'>".$row['Email']."</p>
-							                	Teléfono:
-							                	<p class='ficha mayusculas'>".$row['Telefono']."</p>
+			                		 <div class='col-md-5 col-xs-12'>	
+						                	<h5 class='media-heading mayusculas'>Datos de contacto:</h5>
+							                <h5 class='negro'><small class='gris'>Email:</small>&nbsp;".$row['Email']."</h5>
+							                <h5 class='negro'><small class='gris'>Teléfono:</small>&nbsp;".$row['Telefono']."</h5>
 			                		 </div>
 		        				</div>";
 			}
@@ -1400,30 +1389,19 @@
 			
 		}	
     	
-		$mensaje = "<div class='col-xs-5'>   	
-					                	<h5 class='media-heading mayusculas'>inmueble:</h5>
-					                		Tipo de Contrato:
-						                	<p class='ficha mayusculas'>".$row['TipoContrato']."</p>
-					                		Mensualidad del Inmueble:
-						                	<p class='ficha mayusculas'>".$row['Valor']." €</p>
-						                	Elección de suministros:
-						                	<p class='ficha mayusculas'>".$suministros."</p>
-						                	Tipo de inmueble:
-						                	<p class='ficha mayusculas'>".$row['TipoInmueble']."</p>
-						                	Dirección Inmueble:
-						                	<p class='ficha mayusculas'>".$row['Direccion']."</p>
-						                	Municipio:
-						                	<p class='ficha mayusculas'>".$row['Municipio']."</p>
-						                	CP:
-						                	<p class='ficha mayusculas'>".$row['CP']."</p>
-						                	Provincia:
-						                	<p class='ficha mayusculas'>".$row['Provincia']."</p>
-						                	Nº de metros:
-						                	<p class='ficha mayusculas'>".$row['Metros']."</p>
-						                	Nº de habitaciones:
-						                	<p class='ficha mayusculas'>".$row['NumHabitaciones']."</p>
-						                	Nº de aseos:
-						                	<p class='ficha mayusculas'>".$row['NumServicios']."</p>
+		$mensaje = "<div class='col-md-5 col-xs-12'>   	
+					                	<h5 class='media-heading mayusculas'>Inmueble:</h5>
+							            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
+							            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
+							            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
+							            <h5 class='negro'><small class='gris'>Tipo de inmueble:</small>&nbsp;".$row['TipoInmueble']."</h5>
+							            <h5 class='negro'><small class='gris'>Dirección Inmueble:</small>&nbsp;".$row['Direccion']."</h5>
+							            <h5 class='negro'><small class='gris'>Población:</small>&nbsp;".$row['Municipio']."</h5>
+							            <h5 class='negro'><small class='gris'>CP:</small>&nbsp;".$row['CP']."</h5>
+							            <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;".$row['Provincia']."</h5>
+							            <h5 class='negro'><small class='gris'>Nº de metros:</small>&nbsp;".$row['Metros']."</h5>
+							            <h5 class='negro'><small class='gris'>Nº de habitaciones:</small>&nbsp;".$row['NumHabitaciones']."</h5>
+							            <h5 class='negro'><small class='gris'>Nº de aseos:</small>&nbsp;".$row['NumServicios']."</h5>
 		                		 </div>";
 		
 		return $mensaje;

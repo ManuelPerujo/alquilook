@@ -63,7 +63,6 @@
 							<i class="fa fa-envelope"></i> Mensajes
 					  </a>
 					  <a href="<?php echo $ruta ?>vistas/admin/tabla_inmobiliarias_admin.php" class="list-group-item">
-						  	<span class="badge">3</span>
 							<i class="fa fa-building-o"></i> Inmobiliarias
 					  </a>
 				</div>

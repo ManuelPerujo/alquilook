@@ -20,7 +20,7 @@
     			?> 
                 
                 <div class="col-sm-10 col-xs-12">
-                		<h3><i class="fa fa-envelope"></i> Conversaci&oacute;n:</h3>
+                		<h3>Conversaci&oacute;n:</h3>
                 		<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_mensajes_admin.php"><i class="fa fa-chevron-left"></i> Volver a mensajes</a>
 	                	<div class="media">
 							  

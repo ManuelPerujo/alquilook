@@ -44,24 +44,26 @@
                 ?>
                 
                 <div class="col-sm-10 col-xs-12">
-                			<h3><i class="fa fa-bell"></i> Alta nueva</h3>
+                			<h3>Alta nueva</h3>
                 			<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_altasnuevas_admin.php"><i class="fa fa-chevron-left"></i> Volver a Altas nuevas</a>
 	                		<hr class="grisdoble"/>
 							<div class="row">
-								<div class="col-xs-2">   	
+								<div class="col-md-2">   	
 					                <img class="imagenboton img-circle" src="<?php echo $ruta?>img/botones/propietario.png" alt="">
+					                <br/><br/>
 		                		 </div>
 	                			<?php echo $datosUsuario; ?>
 	        				</div>
 	        				<?php echo $datosInquilinos; ?>
 	        				<hr class="grissimple"/>
 	                		<div class="row">
-								<div class="col-xs-2">   	
+								<div class="col-md-2 col-xs-12">   	
 					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmueble.png" alt="">
+					                <br/><br/>
 		                		 </div>
 	                			 <?php echo $datosInmueble; ?>
-		                		 <div class="col-xs-5">	
-					                	<h5 class="media-heading">Datos de mobiliario y electrodomésticos:</h5>
+		                		 <div class="col-md-5 col-xs-12">	
+					                	<h5 class="media-heading mayusculas">Datos de mobiliario y electrodomésticos:</h5>
 						                	<?php echo $datosEstancias; ?> 
 		                		 </div>
 		                		 
