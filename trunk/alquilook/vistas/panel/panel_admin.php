@@ -58,9 +58,13 @@
 						  	<span class="badge"><?php echo $numeroIncidenciasCambioContrato; ?></span>
 							<i class="fa fa-gavel"></i> Inc. Contratos
 					  </a>
-					   <a href="<?php echo $ruta ?>vistas/admin/tabla_mensajes_admin.php" class="list-group-item">
+					  <a href="<?php echo $ruta ?>vistas/admin/tabla_mensajes_admin.php" class="list-group-item">
 						  	<span class="badge"><?php echo $numeroMensajes; ?></span>
 							<i class="fa fa-envelope"></i> Mensajes
+					  </a>
+					  <a href="<?php echo $ruta ?>vistas/admin/tabla_inmobiliarias_admin.php" class="list-group-item">
+						  	<span class="badge">3</span>
+							<i class="fa fa-building-o"></i> Inmobiliarias
 					  </a>
 				</div>
 			</div>
