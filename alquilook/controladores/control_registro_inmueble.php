@@ -62,7 +62,7 @@ include_once('../validacion/validacion_servidor.php');
 	                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
 	                            '$luz','$gas')"; 
 	                
-					echo $query2;				            
+									            
 	                if($bd->query($query2)){
 	                	
 	                	$_SESSION['erroRegistro'] = FALSE;
