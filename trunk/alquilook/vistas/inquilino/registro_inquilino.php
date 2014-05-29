@@ -47,6 +47,22 @@
 										  </div>";
 										
 		               				}
+		               				
+									if(isset($_SESSION['error_dni']) && $_SESSION['error_dni']  == TRUE){
+										
+										unset($_SESSION['error_dni']);
+											
+		               					echo "<div class='row'>
+										  		<div class='col-sm-1'></div>
+										  		<div class='col-sm-10 text-left alert alert-success alert-dismissable'>
+								               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+						 							<strong><i class='fa fa-exclamation-circle fa-lg'></i></strong>
+						 							Usuario ya registrado en el sistema, compruebe el campo DNI
+			                					</div>
+			                					<div class='col-sm-1'></div>
+										  </div>";
+										
+		               				}
 		               			
 					        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
 										

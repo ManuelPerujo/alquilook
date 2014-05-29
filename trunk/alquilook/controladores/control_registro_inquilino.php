@@ -45,34 +45,48 @@ include_once('../validacion/validacion_servidor.php');
 				$bd = new core();
 	
 		        try{
-		                                         
-		            /*insertamos los datos de la nueva estancia*/
+		        	
+					 $query11 = "select IdUsuario from usuarios where DNI = '$dni' ";
+			
+	   	             $result11 = $bd->conexion->query($query);
+		      
+		             if($result11->rowCount()>0) {
+		            	
+		                 $_SESSION['error_dni'] = TRUE;
+		                
+		                 header("Location: ../vistas/inquilino/registro_inquilino.php");
+		                
+		             }else{
+							
+		            	 /*insertamos los datos de la nueva estancia*/
 		            
-		            $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
-		                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
-		                    values ('', '0', 'Inquilino', '$arrayUsuarioContraseña[0]', '$arrayUsuarioContraseña[1]', '$email_inquilino', '$nombre_inquilino',
-		                           '$apellidos_inquilino', '$dni_inquilino', '$telefono_inquilino', 'sin datos', '0', 'sin datos', 'sin datos', '0', '1')";
-		                            
-					$idUsuario = get_lastId($query);
-		            $_SESSION['ArrayIdUsuario'] [] = $idUsuario;
-					
-					$query2 = "insert into inquilino (IdInquilino,IdUsuario,IdInmueble) values ('','$idUsuario', '$IdInmueble');";
-					
-					$idInquilino = get_lastId($query2);
-				    $_SESSION['ArrayIdInquilino'].= $idInquilino."-";
-					
-					$inquilinos = $_SESSION['ArrayIdInquilino'];
-					
-															
-					$query3 = "update inmueble set ArrayIdInquilino = '$inquilinos' where IdInmueble = '$IdInmueble';";
-					
-					$bd->query($query3);
-					
-		            
-					
-					unset($_POST);
-					
-					header("Location: ../vistas/inquilino/registro_inquilino.php");	
+			            $query = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
+			                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
+			                    values ('', '0', 'Inquilino', '$arrayUsuarioContraseña[0]', '$arrayUsuarioContraseña[1]', '$email_inquilino', '$nombre_inquilino',
+			                           '$apellidos_inquilino', '$dni_inquilino', '$telefono_inquilino', 'sin datos', '0', 'sin datos', 'sin datos', '0', '1')";
+			                            
+						$idUsuario = get_lastId($query);
+			            $_SESSION['ArrayIdUsuario'] [] = $idUsuario;
+						
+						$query2 = "insert into inquilino (IdInquilino,IdUsuario,IdInmueble) values ('','$idUsuario', '$IdInmueble');";
+						
+						$idInquilino = get_lastId($query2);
+					    $_SESSION['ArrayIdInquilino'].= $idInquilino."-";
+						
+						$inquilinos = $_SESSION['ArrayIdInquilino'];
+						
+																
+						$query3 = "update inmueble set ArrayIdInquilino = '$inquilinos' where IdInmueble = '$IdInmueble';";
+						
+						$bd->query($query3);
+								            					
+						unset($_POST);
+						
+						header("Location: ../vistas/inquilino/registro_inquilino.php");	
+						
+		            }
+					                                 
+		           
 				
 				}catch(PDOException $except) {
 		            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
