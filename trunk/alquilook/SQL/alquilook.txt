@@ -44,6 +44,9 @@ drop table if exists `inmobiliaria`;
 CREATE TABLE IF NOT EXISTS `inmobiliaria` (
   `IdInmobiliaria` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `IdUsuario` int(6) unsigned NOT NULL,
+  `NumeroCliente` int(6) unsigned NOT NULL,
+  `IBAN` int(24) unsigned NOT NULL,
+  `NombreEmpresa` char(40) NOT NULL,
   PRIMARY KEY (`IdInmobiliaria`),
   UNIQUE KEY `Inmobiliaria_Unica` (`IdInmobiliaria`),
   CONSTRAINT `ID_INMOBILIARIA_FK` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`) ON DELETE CASCADE
@@ -65,6 +68,7 @@ drop table if exists `inmueble`;
 CREATE TABLE IF NOT EXISTS `inmueble` (
   `IdInmueble` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `IdPropietario` int(6) unsigned NOT NULL,
+  `IdInmobiliaria` int(6) unsigned NOT NULL,
   `ArrayIdInquilino` varchar(30),
   `TipoInmueble` char(30) NOT NULL,
   `TipoContrato` char(30) NOT NULL,
@@ -75,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `NumHabitaciones` int(3) NOT NULL,
   `NumServicios` int(3) NOT NULL,
   `Metros` int(5) NOT NULL,
-  `Valor` int(6) NOT NULL,
+  `Valor` DOUBLE PRECISION(6,2) NOT NULL,
   `Agua` boolean NOT NULL,
   `Luz` boolean NOT NULL,
   `Gas` boolean NOT NULL,
@@ -113,15 +117,16 @@ drop table if exists `mobiliario`;
 CREATE TABLE IF NOT EXISTS `mobiliario` (
   `IdMobiliario` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `Tipo` char(30) NOT NULL,
+  `Valor` DOUBLE PRECISION(6,2) NOT NULL,
   PRIMARY KEY (`IdMobiliario`),
   UNIQUE KEY `Mobiliario_Unico` (`IdMobiliario`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-insert into `mobiliario` values (1,'Sofa'),(2,'Mesa'),(3,'Silla'),(4,'Cuadro'),(5,'Cama Individual'),
-				(6,'Cama Doble'),(7,'Mesita Noche'),(8,'Comoda'),(9,'Accesorios Servicio'),
-				(10,'Mueble Aseo'),(11,'Espejo'),(12,'Hidromasaje'),(13,'Television'),(14,'Dvd'),(15,'Equipo Sonido'),
-				(16,'Frigorifico'),(17,'Vitroceramica'),(18,'Horno'),(19,'Microondas'),(20,'Lavadora'),(21,'Lavavajillas'),
-				(22,'Secadora'),(23,'Aspiradora'),(24,'Termo');
+insert into `mobiliario` values (1,'Sofa','10'),(2,'Mesa','10'),(3,'Silla','10'),(4,'Cuadro','10'),(5,'Cama Individual','10'),
+				(6,'Cama Doble','10'),(7,'Mesita Noche','10'),(8,'Comoda','10'),(9,'Accesorios Servicio','10'),
+				(10,'Mueble Aseo','10'),(11,'Espejo','10'),(12,'Hidromasaje','10'),(13,'Television','10'),(14,'Dvd','10'),(15,'Equipo Sonido','10'),
+				(16,'Frigorifico','10'),(17,'Vitroceramica','10'),(18,'Horno','10'),(19,'Microondas','10'),(20,'Lavadora','10'),(21,'Lavavajillas','10'),
+				(22,'Secadora','10'),(23,'Aspiradora','10'),(24,'Termo','10');
 				
 
 drop table if exists `observaciones_estancia`;

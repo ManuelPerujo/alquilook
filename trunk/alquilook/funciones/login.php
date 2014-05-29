@@ -1,6 +1,6 @@
 <?php
 
-function control_login($usuario, $password) {
+function control_login($usuario, $password,$tipo) {
 /* comprueba en la base de datos si es correcto
 el usuario y la contraseña. devuelve el id del usuario
 o falso */
@@ -9,7 +9,7 @@ o falso */
      try{
          
         $bd->ConectaBD();
-        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and UsuarioActivo = '1' and not Tipo = 'Admin'";
+        $query= "select IdUsuario from usuarios where Usuario='$usuario' and Password ='$password' and UsuarioActivo = '1' and Tipo = '$tipo'";
     
         $result = $bd->query($query);
     

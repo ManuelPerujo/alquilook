@@ -39,7 +39,7 @@
         }if(isset($_POST['usuario_inmobiliaria']) && !empty($_POST['usuario_inmobiliaria'])
            && !empty($_POST['pass_inmobiliaria']) && isset($_POST['pass_inmobiliaria'])){
 			
-			$direccion = "../vistas/inquilino/tabla_inmuebles_pro.php";	
+			$direccion = "../vistas/inmueble/tabla_inmuebles_inmo.php";	
         	$usuario = $_POST['usuario_inmobiliaria'];
             $password = $_POST['pass_inmobiliaria'];
 			$tipo = "Inmobiliaria";
@@ -69,7 +69,7 @@
 			
 		}else{
 		
-			$id_usuario = control_login($usuario, $password);
+			$id_usuario = control_login($usuario, $password, $tipo);
 			
 		}
 			  
