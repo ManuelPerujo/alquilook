@@ -285,9 +285,18 @@
         
         $seleccion = implode(",", $arrayAtributos);
         
-        
-        $query1 = "select $idTabla from $tabla1 inner join $tabla2 where incidencia.IdInmueble = inmueble.IdInmueble
-        		  and incidencia.Tipo = 'altaNueva'";
+		$query1 = null;
+		
+        if(basename($_SERVER['PHP_SELF']) == "tabla_altasnuevas_admin.php"){
+        	
+			$query1 = "select $idTabla from $tabla1 inner join $tabla2 where incidencia.IdInmueble = inmueble.IdInmueble
+        		  and incidencia.Tipo = 'altaNueva'";	
+			
+        }if(basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"){
+        	
+			$query1 = "select $idTabla from $tabla1 inner join $tabla2 where usuarios.IdUsuario = inmobiliaria.IdUsuario";	
+			
+        }
         
                 
         if(count($arrayOrden) != 0){
