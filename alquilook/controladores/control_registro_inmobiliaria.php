@@ -45,9 +45,13 @@
 	            $bd->ConectaBD();
 	     
 	            /*comprobamos que no existe el inmueble en la bd */
-	            $query = "select * from usuarios where DNI = '$cif' and Tipo = 'Inmobiliaria' ";
+	            $query = "select * from usuarios where DNI = '$cif' ";
 	
 	            $result = $bd->conexion->query($query);
+				
+				$query11 = "select IdUsuario from usuarios where Usuario = '$usuario' ";
+		
+		        $result11 = $bd->conexion->query($query11);
 	      
 	            if($result->rowCount()>0) {
 	            			
@@ -55,7 +59,13 @@
 	            	
 	                header("Location: ".$_SERVER['HTTP_REFERER']);
 	                
-	            }else{
+	            }if($result11->rowCount()>0) {
+		            	
+		                $_SESSION['error_registro'] = TRUE;	
+	            	
+	                	header("Location: ".$_SERVER['HTTP_REFERER']);
+		                
+		        }else{
 	            	
 					$mensaje = "Ha sido dado de alta en Alquilook, sus datos de ingreso son los siguientes:\r\n"; 
 	
