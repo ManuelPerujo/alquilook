@@ -103,7 +103,7 @@
 				                		<label><h5 class="gris">Inserte los datos de su inmueble:</h5></label>
 				            </div>
 		                	<div class="col-sm-12">		               		 	                                 
-		                       <label><h6 class="magenta">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
+		                       <label><h6 class="gris">Tipo de inmueble&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="tipoInmueble">
 									  <option value="Vivienda">Vivienda</option>
 									  <option value="Local_comercial">Local comercial</option>
@@ -111,7 +111,7 @@
 									  <option value="Finca Rustica">Finca rústica</option>
 									</select>
 		                        <br/> 
-		                        <label><h6 class="magenta">Dirección&nbsp;&nbsp;</h6></label>
+		                        <label><h6 class="gris">Dirección&nbsp;&nbsp;</h6></label>
 		                        	<select class="selector" name="via_inmueble">
 									  <option value="Calle">Calle</option>
 									  <option value="Avenida">Avenida</option>
@@ -125,7 +125,7 @@
 			                        <input type="text" class="form-control" name="piso_inmueble" placeholder="Piso / Puerta" />
 			                        <input type="text" class="form-control" name="municipio_inmueble" placeholder="Municipio" />                                   
 			                        <input type="text" class="form-control" name="cp_inmueble" placeholder="Código postal" /><br/>
-			                     <label><h6 class="magenta">Provincia&nbsp;&nbsp;</h6></label> 
+			                     <label><h6 class="gris">Provincia&nbsp;&nbsp;</h6></label> 
 			                        <select name="provincia_inmueble">
 										 <option value='0'>(Seleccionar)</option>
 										 <option value='Álava'>Álava</option>
@@ -182,10 +182,10 @@
 										 <option value='Zaragoza'>Zaragoza</option>
 									</select>
 		                         <br/>
-		                        <label><h6 class="magenta">Nº de metros&nbsp;&nbsp;</h6></label> 
+		                        <label><h6 class="gris">Nº de metros&nbsp;&nbsp;</h6></label> 
 			                        <input type="text" class="form-control" name="metros_inmueble" placeholder="Metros" />
 		                         <br/>
-		                        <label><h6 class="magenta">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
+		                        <label><h6 class="gris">Nº de habitaciones&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_habitaciones">
 			                          <option value="0">0</option>	
 									  <option value="1">1</option>
@@ -195,7 +195,7 @@
 									  <option value="5">5</option>
 									</select>
 		                         <br/>
-		                        <label><h6 class="magenta">Nº de aseos&nbsp;&nbsp;</h6></label> 
+		                        <label><h6 class="gris">Nº de aseos&nbsp;&nbsp;</h6></label> 
 			                        <select class="selector" name="numero_aseos">
 			                          <option value="0">0</option>
 									  <option value="1">1</option>
@@ -203,7 +203,7 @@
 									  <option value="3">3</option>
 									</select>  
 		                        <br/>
-		                         <label><h6 class="magenta">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
+		                         <label><h6 class="gris">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
 			                        <input type="checkbox" name="luz" value="1">&nbsp;&nbsp;Luz<br>
 									<input type="checkbox" name="agua" value="1">&nbsp;&nbsp;Agua<br/>
 									<input type="checkbox" name="gas" value="1">&nbsp;&nbsp;Gas
@@ -221,7 +221,7 @@
     </div> 
   
    <?php
-        include_once '../../plantillas/pie.php';
+        include_once '../../plantillas/pie_inmo.php';
     ?>        
     
 </body>

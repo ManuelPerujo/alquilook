@@ -107,7 +107,7 @@
    </div>
     
    <?php
-        include_once '../../plantillas/pie.php';
+        include_once '../../plantillas/pie_inmo.php';
     ?>        
     
 </body>

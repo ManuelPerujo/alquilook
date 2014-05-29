@@ -50,7 +50,7 @@
          <div class="row">
         	<div class="col-xs-12"> 
         			<br/> 
-                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/salir.png" alt=""></a>
+                    <a class="imagenboton2" href="<?php echo $ruta?>controladores/control_salir.php"><img class="imagenboton2" src="<?php echo $ruta?>img/botones/salir2.png" alt=""></a>
                     <h6>Salir</h6>
             </div>
         </div>              
