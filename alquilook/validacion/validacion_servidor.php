@@ -300,27 +300,27 @@
 			
 		}
 		
-		if(isset($datosInmueble['mensualidad'])){
-			
-			if(!preg_match('^[0-9]{1,5}(\.[0-9]{0,2})?$', $datosInmueble['mensualidad'])) {
-				 
-		        $_SESSION['error'] = "El precio en euros del alquiler s&oacute;lo puede contener n&uacute;meros.";
-		        
-				return false;
-				
-		    }else{
-		    	
-		        if(strlen($datosInmueble['mensualidad'])>10){
-		        	
-		            $_SESSION['error'] = "El precio en euros del alquiler es demasiado alto";
-					
-		            return false;
-					
-		        }
-		        
-		    }
-			
-		}
+		// if(isset($datosInmueble['mensualidad'])){
+// 			
+			// if(!preg_match('^[0-9]{1,5}(\.[0-9]{0,2})?$', $datosInmueble['mensualidad'])) {
+// 				 
+		        // $_SESSION['error'] = "El precio en euros del alquiler s&oacute;lo puede contener n&uacute;meros.";
+// 		        
+				// return false;
+// 				
+		    // }else{
+// 		    	
+		        // if(strlen($datosInmueble['mensualidad'])>10){
+// 		        	
+		            // $_SESSION['error'] = "El precio en euros del alquiler es demasiado alto";
+// 					
+		            // return false;
+// 					
+		        // }
+// 		        
+		    // }
+// 			
+		// }
 		if(isset($datosInmueble['nombre_inmueble'])){
 			
 			if(!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\- ]+$/', $datosInmueble['nombre_inmueble'])) {
