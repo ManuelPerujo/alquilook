@@ -175,8 +175,8 @@
 			                		$tabla1 = 'usuarios'; $tabla2 = 'inmobiliaria'; $idTabla = 'inmobiliaria.IdUsuario'; 
 					            	$arrayAtributos = array(1=>'NombreEmpresa', 2=>'Telefono', 3=>'Provincia', 4=>'Poblacion');
 									$arrayOrden = array();
-									$arrayOpciones = array('opciones' => TRUE, 'borrar' => FALSE, 'modificar' => FALSE, 'responder' => FALSE,
-									                       'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);
+									$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
+									                       'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);
 					            	$mensaje = get_tablaIncidencias_combinada_filtros_y_opciones($tabla1, $tabla2, $idTabla, $arrayAtributos, $arrayOpciones, $arrayOrden);
 			
 									echo $mensaje; 

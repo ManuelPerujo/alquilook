@@ -30,26 +30,49 @@
 					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmobiliaria.png" alt="">
 					                <br/><br/>
 		                		 </div>
-								<div class="col-md-5 col-xs-12">
-									<h5 class='mayusculas'>Nombre de empresa:</h5>
-									<h5 class='negro'><small class='gris'>Inmuebles registrados:</small>&nbsp;5</h5>
-							        <h5 class='negro'><small class='gris'>CIF:</small>&nbsp;52895985</h5>
-							        <h5 class='negro'><small class='gris'>Nombre del contacto:</small>&nbsp;Nombre Apellido Appellido</h5>
-							        <h5 class='negro'><small class='gris'>Teléfono:</small>&nbsp;666888999</h5>
-							        <h5 class='negro'><small class='gris'>IBAN:</small>&nbsp;ES8899995555666633334444</h5>							                	
-								</div>
-								<div class="col-md-5 col-xs-12">
-									<h5 class='negro'><small class='gris'>Email:</small>&nbsp;cacaca@gmail.com</h5>
-									<h5 class='negro'><small class='gris'>Direeción Postal:</small>&nbsp;C/ Gorrioncé, 25. 4A</h5>
-							        <h5 class='negro'><small class='gris'>CP:</small>&nbsp;47888</h5>
-							        <h5 class='negro'><small class='gris'>Población:</small>&nbsp;Pruna</h5>
-							        <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;Sevilla</h5>	
-								</div>
+								
+								<?php 
+								
+									$mensaje = null;
+								
+									if(isset($_GET["IdUsuario"])){
+		                			
+										$id_usuario = $_GET["IdUsuario"];
+										
+										$mensaje = get_inmobiliaria($id_usuario);
+										
+										echo $mensaje;
+										
+										$idInmobiliaria = get_idInmobiliaria_from_usuario($id_usuario);
+										
+										
+										
+			                		}
+								
+								?>
+								
 	        			</div>
 	        			<hr class="grisdoble" />
 	        			<div class="row">
 								<div class="col-xs-12">
-									Tabla igual que la de altas nuevas
+									
+									<?php 
+										
+										$id_usuario = $_GET["IdUsuario"];
+										
+										$idInmobiliaria = get_idInmobiliaria_from_usuario($id_usuario);
+										
+										$tabla = 'inmueble'; $idTabla = 'IdInmueble'; $arrayAtributos = array(1=>'Direccion', 2=>'Municipio', 3=>'Provincia', 4=>'TipoContrato', 5=>'Valor');
+				                        $filtro = array('IdInmobiliaria' => $idInmobiliaria);
+				                        $arrayOrden = array(1 => 'Valor', 2=> 'desc');
+				                        $arrayOpciones = array('opciones' => FALSE, 'borrar' => FALSE, 'modificar' => FALSE, 'responder' => FALSE,
+				                                               'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);  
+				                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
+										
+										echo $mensaje;
+									
+									?>
+									
 								</div>
 						</div>
                 </div> 
