@@ -44,7 +44,7 @@ drop table if exists `inmobiliaria`;
 CREATE TABLE IF NOT EXISTS `inmobiliaria` (
   `IdInmobiliaria` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `IdUsuario` int(6) unsigned NOT NULL,
-  `IBAN` float(24) unsigned NOT NULL,
+  `IBAN` numeric(24,0) unsigned NOT NULL,
   `NombreEmpresa` char(40) NOT NULL,
   PRIMARY KEY (`IdInmobiliaria`),
   UNIQUE KEY `Inmobiliaria_Unica` (`IdInmobiliaria`),
