@@ -35,7 +35,7 @@
 								              </a>
 								          </h2>
 							            </div>
-							            <div id="collapseInnerOne" class="panel-collapse collapse">
+							            <div id="collapseInnerOne" class="panel-collapse collapse in">
 							              <div class="panel-inner">
 							              	<h6 class="negro mayusculas">Demasiado grande para llamarle “Mini”, en este plan te ofrecemos:</h6>
 			                                <h6><i class="fa fa-check"></i> Gestión completa del Alquiler, en el que incluimos:</h6>
@@ -73,7 +73,7 @@
 							              	</a>
 							              </h2>
 							            </div>
-							            <div id="collapseInnerTwo" class="panel-collapse collapse">
+							            <div id="collapseInnerTwo" class="panel-collapse collapse in">
 							              <div class="panel-inner">
 							                	<h6 class="negro mayusculas">Nuestro plan referencia en el que te ofrecemos:</h6>
 				                                <h6><i class="fa fa-check"></i> Gestión completa del Alquiler, exactamente la misma que en el plan “Mini”.</h6>
@@ -100,7 +100,7 @@
 							              	</a>
 							              </h2>
 							            </div>
-							            <div id="collapseInner3" class="panel-collapse collapse">
+							            <div id="collapseInner3" class="panel-collapse collapse in">
 							              <div class="panel-inner">
 							                	<h6 class="negro mayusculas">Para los más exigentes, tenemos el <em>“todo incluido”</em>:</h6>
 				                                <h6><i class="fa fa-check"></i> Gestión completa del Alquiler, exactamente la misma que en el plan “Mini” y “Estándar”.</h6>

@@ -59,7 +59,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "MINI"</strong>
+						                        <strong>PLAN "MINI"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio1"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
@@ -70,7 +70,7 @@
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/planes.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Mini" checked/>&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
@@ -79,7 +79,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "ESTÁNDAR"</strong>
+						                        <strong>PLAN "ESTÁNDAR"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio2"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
@@ -90,7 +90,7 @@
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item rojo"><i class="fa fa-times"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/planes.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Estándar" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
@@ -99,7 +99,7 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "PREMIUM"</strong>
+						                        <strong>PLAN "PREMIUM"</strong>
 						                    </div>
 						                    <div class="panel-body">
 						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio3"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
@@ -110,7 +110,7 @@
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Garantías por pérdidas Económicas</li>
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Coberturas de un Seguro de Hogar</li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
+						                        <li class="list-group-item"><a class="enlace2" href="../publico/planes.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Premium" />&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
@@ -222,9 +222,9 @@
 									</select>  
 		                        <br/>
 		                         <label><h6 class="magenta">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
-			                        <input type="checkbox" name="luz" value="1">&nbsp;&nbsp;Luz<br>
-									<input type="checkbox" name="agua" value="1">&nbsp;&nbsp;Agua<br/>
-									<input type="checkbox" name="gas" value="1">&nbsp;&nbsp;Gas
+			                        <input type="checkbox" name="luz" value="1">&nbsp;Luz&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="agua" value="1">&nbsp;Agua&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="gas" value="1">&nbsp;Gas
 		                        <br/><br/>
 		    					<button type="submit" class="btn btn-primary btn-sm">Continuar</button>
 		                    </form>

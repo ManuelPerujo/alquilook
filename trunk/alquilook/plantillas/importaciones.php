@@ -67,7 +67,7 @@
 		}
     ?>
   
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:100' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'/>
 
 

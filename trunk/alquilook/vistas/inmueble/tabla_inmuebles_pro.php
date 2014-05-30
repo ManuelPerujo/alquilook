@@ -45,7 +45,7 @@
 					                		<br />
 					                		<div class='col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable'>
 									               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-							 							<h3><i class='fa fa-info-circle fa-lg'></i>Este es su Panel de Propietario. Aún está vacío.<br/>Para comenzar, haga click en 'Añadir inmueble' en las opciones que hay a la izquierda.</h3>
+							 							<h3><i class='fa fa-info-circle fa-lg'></i> Este es su Panel de Propietario. Aún está vacío.<br/>Para comenzar, haga click en 'Añadir inmueble' en las opciones que hay a la izquierda.</h3>
 								            </div>
 								        </div>";
 										
