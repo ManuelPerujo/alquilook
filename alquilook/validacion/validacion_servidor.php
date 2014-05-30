@@ -312,7 +312,7 @@
 		    	
 		        if(strlen($datosInmueble['mensualidad'])>10){
 		        	
-		            $_SESSION['error'] = "El precio del alquiler es demasiado alto";
+		            $_SESSION['error'] = "El precio en euros del alquiler es demasiado alto";
 					
 		            return false;
 					
