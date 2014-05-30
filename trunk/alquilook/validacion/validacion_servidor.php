@@ -304,7 +304,7 @@
 			
 			if(!preg_match('^[0-9]{1,5}(\.[0-9]{0,2})?$', $datosInmueble['mensualidad'])) {
 				 
-		        $_SESSION['error'] = "El alquiler s&oacute;lo puede contener n&uacute;meros.";
+		        $_SESSION['error'] = "El precio en euros del alquiler s&oacute;lo puede contener n&uacute;meros.";
 		        
 				return false;
 				
