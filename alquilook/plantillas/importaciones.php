@@ -28,7 +28,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "registro_inquilino_inmo.php" || basename($_SERVER['PHP_SELF']) == "registro_estancia_inmo.php"
 		|| basename($_SERVER['PHP_SELF']) == "planes.php" || basename($_SERVER['PHP_SELF']) == "dudas.php"
 		|| basename($_SERVER['PHP_SELF']) == "banner3.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"
-		|| basename($_SERVER['PHP_SELF']) == "perfil_inmobiliaria_admin.php"
+		|| basename($_SERVER['PHP_SELF']) == "perfil_inmobiliaria_admin.php" || basename($_SERVER['PHP_SELF']) == "perfil_inmueble_admin.php"
 		)
 	{
 

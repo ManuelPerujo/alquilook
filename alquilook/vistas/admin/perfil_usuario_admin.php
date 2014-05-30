@@ -92,6 +92,7 @@
 									$tipo = $_GET['tipo'];
 									$id_usuario = $_GET["IdUsuario"];
 									
+									
 									$arrayInmuebles = get_inmueble_datos_admin($id_usuario, $tipo);
 									
 									foreach ($arrayInmuebles as $key => $value) {

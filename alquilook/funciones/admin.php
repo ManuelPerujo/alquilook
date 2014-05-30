@@ -87,6 +87,10 @@
 					
 					$direccion = "../../controladores/control_notificacion_leida.php?item=".$direccionURL."&id=".$selector." target='_blank'";
 					
+                }if(basename($_SERVER['PHP_SELF']) == 'perfil_inmobiliaria_admin.php'){
+                	
+					$direccion =  "../../vistas/admin/perfil_inmueble_admin.php?$idTabla=".$selector;
+					
                 }
                   
                 
@@ -231,8 +235,8 @@
                 if($arrayOpciones['opciones'] == TRUE){
                     $mensaje .= "<td>";
                     if($arrayOpciones['borrar'] == TRUE){
-                        $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' alt='...'/></a>";    
+                        $direccionBorrar = '../../controladores/control_borrar_item.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
+                        $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
                         $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' alt='...' /></a>";    
@@ -323,8 +327,20 @@
                 }
                         
                 $mensaje .= "<tbody><tr>";
-                  
-                $direccion =  "../../vistas/admin/altanueva_admin.php?$id[1]=".$selector;
+                
+				$direccion = null;
+                
+				if(basename($_SERVER['PHP_SELF']) == "tabla_altasnuevas_admin.php"){
+        	
+					$direccion =  "../../vistas/admin/altanueva_admin.php?$id[1]=".$selector;	
+					
+		        }if(basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"){
+		        	
+					$direccion =  "../../vistas/admin/perfil_inmobiliaria_admin.php?$id[1]=".$selector;	
+					
+		        }
+				  
+                
                 
                 if(basename($_SERVER['PHP_SELF']) == ""){
                     foreach ($row2 as $key => $value2) {
@@ -342,8 +358,8 @@
                 if($arrayOpciones['opciones'] == TRUE){
                     $mensaje .= "<td>";
                     if($arrayOpciones['borrar'] == TRUE){
-                        $direccion1 = '../sesion/control_erase.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' alt='...' /></a>";    
+                        $direccionBorrar = '../../controladores/control_borrar_item.php?tabla='.$tabla2.'&idTabla='.$idTabla.'&id='.$selector;
+                        $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla1.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
                         $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' alt='...' /></a>";    
@@ -464,6 +480,10 @@
 			
 			$query = "select * from inmueble where IdInmueble = '$idInmueble'";
 			
+		}if($tipo == "Inmobiliaria"){
+			
+			$query = "select * from inmueble where IdInmueble = '$idUsuario'";
+			
 		}
 		
 				
@@ -564,8 +584,8 @@
 			$facturaGas = up_factura_gas_admin($value['IdInmueble'],$count);
 			$contrato = up_documento($value['IdInmueble'], $count);
 			$fotos = up_fotos($value['IdInmueble'], $count);
-			$send_mensaje_propietario = send_mensaje_propietario($value['IdInmueble'], $count);
-			$opciones = opciones($value['IdInmueble'], $count);
+			$send_mensaje_propietario = send_mensaje_propietario($value['IdInmueble'], $count, $tipo);
+			$opciones = opciones($value['IdInmueble'], $count, $tipo);
 			
 				
 				$inmueble = "<div class='row fondogris'>
@@ -951,17 +971,21 @@
 		
 	}
 	
-	function send_mensaje_propietario($idInmueble, $count){
+	function send_mensaje_propietario($idInmueble, $count, $tipo){
 				
 		$idUsuario = null;	
 				
-		if($_GET['tipo'] == 'Propietario'){
+		if($tipo == 'Propietario'){
 					
 			$idUsuario = $_GET['IdUsuario'];
 			
-		}if($_GET['tipo'] == 'Inquilino'){
+		}if($tipo == 'Inquilino'){
 				
 			$idUsuario = get_IdUsuarioPropietarioFromInmueble($idInmueble);	
+			
+		}if($tipo == 'Inmobiliaria'){
+				
+			$idUsuario = get_IdUsuarioInmobiliariaFromInmueble($idInmueble);	
 			
 		}	
 				
@@ -1026,9 +1050,20 @@
 		
 	}
 			
-	function opciones($idInmueble, $count){
+	function opciones($idInmueble, $count, $tipo){
+				
+		$idUsuario = null;	
+				
+		if($tipo = "Inmobiliaria"){
+					
+			$idUsuario = get_IdUsuarioInmobiliariaFromInmueble($idInmueble);	
 			
-		$idUsuario = $_GET['IdUsuario'];
+		}else{
+					
+			$idUsuario = $_GET['IdUsuario'];	
+			
+		}	
+		
 					
 		$mensaje = "<div id='opciones".$count."' class='collapse'>
 				                      		 <div class='row'>
@@ -1695,14 +1730,107 @@
 		return $row2['Direccion_Contenido'];
 	}
 	
+	function get_inmobiliaria($idUsuario){
+		
+		$mensaje = null;
+		
+		$numeroInmobiliarias = null;
+		
+		$idInmobiliaria = get_idInmobiliaria_from_usuario($idUsuario);
+		
+		$bd = new core();
+		
+		$numeroInmobiliarias = get_numeroInmuebles_por_inmobiliaria_from_usuario($idUsuario);
+		
+		$query11 = "select * from inmobiliaria where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result11 = $bd->query($query11); $row11 = $result11->fetch(PDO::FETCH_ASSOC);
+		
+		$query12 = "select DNI,Nombre,Apellidos,Telefono,Email,CP,Domicilio,Poblacion,Provincia from usuarios where IdUsuario = '$idUsuario'";
+		
+		$result12 = $bd->query($query12); $row12 = $result12->fetch(PDO::FETCH_ASSOC); 
+		
+		$mensaje = "<div class='col-md-5 col-xs-12'>
+									<h5 class='mayusculas'>Nombre de empresa:  ".$row11['NombreEmpresa']."</h5>
+									<h5 class='negro'><small class='gris'>Inmuebles registrados:</small>&nbsp;".$numeroInmobiliarias."</h5>
+							        <h5 class='negro'><small class='gris'>CIF:</small>&nbsp; ".$row12['DNI']."</h5>
+							        <h5 class='negro'><small class='gris'>Nombre del contacto:</small>&nbsp; ".$row12['Nombre']." ".$row12['Apellidos']."</h5>
+							        <h5 class='negro'><small class='gris'>Teléfono:</small>&nbsp; ".$row12['Telefono']."</h5>
+							        <h5 class='negro'><small class='gris'>IBAN:</small>&nbsp; ".$row11['IBAN']."</h5>							                	
+								</div>
+								<div class='col-md-5 col-xs-12'>
+									<h5 class='negro'><small class='gris'>Email:</small>&nbsp; ".$row12['Email']."</h5>
+									<h5 class='negro'><small class='gris'>Direeción Postal:</small>&nbsp; ".$row12['Domicilio']."</h5>
+							        <h5 class='negro'><small class='gris'>CP:</small>&nbsp; ".$row12['CP']."</h5>
+							        <h5 class='negro'><small class='gris'>Población:</small>&nbsp; ".$row12['Poblacion']."</h5>
+							        <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp; ".$row12['Provincia']."</h5>	
+								</div>";
+		
+		return $mensaje;
+		
+		
+	}
 	
-	
-	
-	
-	
-	
+	function get_idInmobiliaria_from_usuario($idUsuario){
+		
+		$idInmobiliaria = false;
+		
+		$bd = new core();
+		
+		$query = "select IdInmobiliaria from inmobiliaria where IdUsuario = '$idUsuario'";
+		
+		$result = $bd->query($query); 
+		
+		if($result->rowCount() == 1){
 			
-?>	
+			$row = $result->fetch(PDO::FETCH_ASSOC);
+			
+			return $row['IdInmobiliaria'];
+			
+		}else{
+			
+			return $idInmobiliaria;
+			
+		}
+		
+	}
+	
+	function get_IdUsuarioInmobiliariaFromInmueble($idInmueble){
+		
+		$bd = new core();
+		
+		$query = "select IdInmobiliaria from inmueble where IdInmueble = '$idInmueble'";
+		$result = $bd->query($query);
+		$row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idInmobiliaria = $row['IdInmobiliaria'];
+		
+		$query2 = "select IdUsuario from inmobiliaria where IdInmobiliaria = '$idInmobiliaria'";	
+		$result2 = $bd->query($query2);
+		$row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
+		return $row2['IdUsuario'];	
+		
+	}
+	
+	function get_numeroInmuebles_por_inmobiliaria_from_usuario($idUsuario){
+		
+		$bd = new core();
+		
+		$query = "select IdInmobiliaria from inmobiliaria where IdUsuario = '$idUsuario' ";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idInmobiliaria = $row['IdInmobiliaria'];
+		
+		$query2 = "select IdInmueble from inmueble where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result2 = $bd->query($query2);
+		
+		return $result2->rowCount();
+	}
+			
+?>
 
 
 
