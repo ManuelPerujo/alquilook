@@ -204,9 +204,9 @@
 									</select>  
 		                        <br/>
 		                         <label><h6 class="gris">¿Qué suministros quiere que le gestione Alquilook?</h6></label><br>
-			                        <input type="checkbox" name="luz" value="1">&nbsp;&nbsp;Luz<br>
-									<input type="checkbox" name="agua" value="1">&nbsp;&nbsp;Agua<br/>
-									<input type="checkbox" name="gas" value="1">&nbsp;&nbsp;Gas
+			                        <input type="checkbox" name="luz" value="1">&nbsp;Luz&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="agua" value="1">&nbsp;Agua&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="checkbox" name="gas" value="1">&nbsp;Gas
 		                        <br/><br/>
 		                        <a href="../inmueble/registro_estancia_inmo.php" class="btn btn-default btn-sm">Continuar</a>
 		    					
