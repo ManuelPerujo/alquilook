@@ -19,44 +19,55 @@
 	$titulo = $_POST['titulo'];
 	$fechaEntrada = $_POST['fechaInicio'];
 	$fechaSalida = $_POST['fechaFinal'];
+	$vistaPropietario = $_POST['VistaPropietario'];
+	$vistaInquilino = $_POST['VistaInquilino'];
 	$direccion = "../".$uploadfile;
 	
 	$localtime_assoc = getdate(); $año = $localtime_assoc['year']; $mes = $localtime_assoc['mon']; $dia = $localtime_assoc['mday'];
 	$fechaNotificacion = $año.'-'.$mes.'-'.$dia;
 	
-	$idPropietario = get_IdUsuarioPropietarioFromInmueble($idInmueble);
-	
-	$idUsuarios [] = $idPropietario;
-	
-	$idInquilinos = get_IdUsuariosInquilinos_por_inmueble($idInmueble);
-	
-	foreach ($idInquilinos as $key => $value) {
+	if($vistaPropietario == 1){
 		
-		$idUsuarios [] = $value;
+		$idPropietario = get_IdUsuarioPropietarioFromInmueble($idInmueble);
+	
+		$idUsuarios [] = $idPropietario;	
+		
+	}if($vistaInquilino == 1){
+		
+		$idInquilinos = get_IdUsuariosInquilinos_por_inmueble($idInmueble);
+	
+		foreach ($idInquilinos as $key => $value) {
+			
+			$idUsuarios [] = $value;
+			
+		}	
 		
 	}
-	
 			
 	if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile) && !empty($fechaEntrada) && !empty($fechaSalida)) {
 			    				
 		$bd = new core();
 		
-		$query = "insert into documento (IdDocumento,IdInmueble,Titulo,FechaEntrada,FechaSalida,Direccion_Contenido,Estado)
-				 values ('','$idInmueble','$titulo','$fechaEntrada','$fechaSalida','$direccion', '0')";
+		$query = "insert into documento (IdDocumento,IdInmueble,Titulo,FechaEntrada,FechaSalida,Direccion_Contenido,Estado,VistaPropietario,VistaInquilino)
+				 values ('','$idInmueble','$titulo','$fechaEntrada','$fechaSalida','$direccion', '0', '$vistaPropietario', '$vistaInquilino')";
 		
 		$idItem = get_lastId($query);		 
 		
-		foreach ($idUsuarios as $key => $value) {
+		if(count($idUsuarios) != 0){
 			
-			$idUsuario = $value;
+			foreach ($idUsuarios as $key => $value) {
 			
-			$query2 = "insert into notificacion (IdNotificacion,IdUsuario,IdItem,Tipo,Contenido,Fecha,Estado)
-				  values ('','$idUsuario','$idItem','documento','Tiene un documento nuevo', '$fechaNotificacion','0')";	
-			
-			$bd->query($query2);
-			
+				$idUsuario = $value;
+				
+				$query2 = "insert into notificacion (IdNotificacion,IdUsuario,IdItem,Tipo,Contenido,Fecha,Estado)
+					  values ('','$idUsuario','$idItem','documento','Tiene un documento nuevo', '$fechaNotificacion','0')";	
+				
+				$bd->query($query2);
+				
+			}	
+						
 		}
-		
+						
 		$_SESSION['up_exito'] = TRUE;
 		
 	}if(empty($fechaEntrada) || empty($fechaSalida)){

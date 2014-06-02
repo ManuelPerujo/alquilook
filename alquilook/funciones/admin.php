@@ -917,6 +917,10 @@
 													            <label>Subir nuevo recibo</label>
 													            <input type='file' name='userfile' />
 													            <br/>
+													            <label>Permisos para ver documentos:</label><br/>
+													            <input type='checkbox' name='VistaPropietario' value='1'>&nbsp;&nbsp;Propietario<br>
+																<input type='checkbox' name='VistaInquilino' value='1'>&nbsp;&nbsp;Inquilino 
+													            <br/><br/>
 													            <label>Periodo de factura</label><br/>
 													            <input type='date' name='fechaInicio'/> &nbsp;&nbsp;&nbsp; <input type='date' name='fechaFinal' />
 													 			<br/><br/>

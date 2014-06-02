@@ -9,16 +9,8 @@ include_once('../validacion/validacion_servidor.php');
 				
 	if(get_inmuebleTieneInquilino($_SESSION["IdInmueble"]) && $_GET['inq'] == 'FALSE'){
 		
-		header("Location: control_fin_registro.php");
+			header("Location: control_fin_registro.php");
 		
-	}if((!$_POST || $_GET['inq'] == 'FALSE') || ($_GET['inq'] == 'TRUE' && !$_POST)){
-	
-		    $_SESSION['errorInquilino'] = TRUE;
-			echo get_inmuebleTieneInquilino($_SESSION["IdInmueble"]);
-			echo $_GET['inq'];
-			unset($_GET);	
-			// header("Location: ../vistas/inquilino/registro_inquilino.php");
-			
 	}if($_GET['inq'] == 'TRUE' && $_POST){
 		
 			extract($_POST);
@@ -46,9 +38,9 @@ include_once('../validacion/validacion_servidor.php');
 	
 		        try{
 		        	
-					 $query11 = "select IdUsuario from usuarios where DNI = '$dni' ";
+					 $query11 = "select IdUsuario from usuarios where DNI = '$dni_inquilino' ";
 			
-	   	             $result11 = $bd->conexion->query($query);
+	   	             $result11 = $bd->query($query11);
 		      
 		             if($result11->rowCount()>0) {
 		            	
