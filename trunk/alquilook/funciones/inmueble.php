@@ -55,7 +55,7 @@
 			$facturaAgua = get_facturas_agua($value['IdInmueble'],$count);
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
-			$documentos = get_documentos($value['IdInmueble'], $count);
+			$documentos = get_documentos($value['IdInmueble'], $count, $tipo);
 			$galeria = get_galeria($value['IdInmueble'], $count);
 			$historialIncidencias = get_tabla_historial_incidencias($value['IdInmueble']);
 				
@@ -317,7 +317,7 @@
 		
 	}
 
-	function get_documentos($idInmueble,$count){
+	function get_documentos($idInmueble,$count, $tipo){
 		
 		$documentos = null;
 		
@@ -325,8 +325,16 @@
 						
 		$bd = new core();
 		
-		$query = "select * from documento where IdInmueble = '$idInmueble'";
-		
+		if($tipo == "Propietario"){
+				
+			$query = "select * from documento where IdInmueble = '$idInmueble' and VistaPropietario = '1'";		
+			
+		}if($tipo == "Inquilino"){
+					
+			$query = "select * from documento where IdInmueble = '$idInmueble' and VistaInquilino = '1'";	
+			
+		}
+						
 		$result = $bd->query($query);
 		
 		$row = $result->fetchAll(PDO::FETCH_ASSOC);
