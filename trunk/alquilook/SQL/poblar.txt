@@ -4,8 +4,8 @@ INSERT INTO `usuarios` (`IdUsuario`, `Admin`, `Tipo`, `Usuario`, `Password`, `Em
 (1, 0, 'Propietario', 'fran', 'fran', 'fnavarrofalcon@gmail.com', 'Francisco JesÃºs', 'Navarro FalcÃ³n', '30228587D', '646033444', 'dasdasd', 14523, 'Sevilla', 'Sevilla', 8706, 1),
 (2, 0, 'Inquilino', 'kualum', '93026415', 'kuala@lumpur.es', 'kuala', 'lumpur', '23907645T', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1),
 (3, 1, 'Admin', 'admin', 'admin', 'admin@admin.es', 'administrator', 'de la pradera', '21345678K', '123456789', 'ayyy gorrionse', 12345, 'sevilla', 'sevilla', 1, 1),
-(4, 0, 'Inquilino', 'peplum', '67f89bd7', 'pepito@gmail.com', 'pepito', 'lumpur', '12345678P', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1);
-
+(4, 0, 'Inquilino', 'peplum', '67f89bd7', 'pepito@gmail.com', 'pepito', 'lumpur', '12345678P', '23670934', 'sin datos', 0, 'sin datos', 'sin datos', 0, 1),
+(5, 0, 'Inmobiliaria', 'condemor', 'condemor', 'fnavarrofalcon@gmail.com', 'Francisco JesÃºs', 'FalcÃ³n', '90404813R', '646033444', 'camino del bujarra 2', 25896, 'Sevilla', 'Sevilla', 0, 1);
 
 INSERT INTO `propietario` (`IdPropietario`, `IdUsuario`) VALUES
 (1, 1);
@@ -16,9 +16,13 @@ INSERT INTO `inquilino` (`IdInquilino`, `IdUsuario`, `IdInmueble`) VALUES
 (2, 4, 2);
 
 
-INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `ArrayIdInquilino`, `TipoInmueble`, `TipoContrato`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`) VALUES
-(1, 1, '1-', 'Vivienda', 'Basico', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500),
-(2, 1, '2-', 'Local_comercial', 'Medio', 'calle balbosa 234 2b', 41019, 'sevilla', 'sevilla', 2, 1, 120);
+
+INSERT INTO `inmobiliaria` (`IdInmobiliaria`, `IdUsuario`, `IBAN`, `NombreEmpresa`) VALUES
+(1, 5, 999999999999999999999999, 'los coleguis');
+
+INSERT INTO `inmueble` (`IdInmueble`, `IdPropietario`, `IdInmobiliaria`, `ArrayIdInquilino`, `TipoInmueble`, `TipoContrato`, `Direccion`, `CP`, `Municipio`, `Provincia`, `NumHabitaciones`, `NumServicios`, `Metros`, `Valor`, `Agua`, `Luz`, `Gas`) VALUES
+(1, 1, 1, '1-', 'Vivienda', 'Basico', 'calle tejares 11 2', 41001, 'sevilla', 'sevilla', 4, 2, 1500, 0.00, 0, 0, 0),
+(2, 1, 1, '2-', 'Local_comercial', 'Medio', 'calle balbosa 234 2b', 41019, 'sevilla', 'sevilla', 2, 1, 120, 0.00, 0, 0, 0);
 
 
 INSERT INTO `incidencia` (`IdIncidencia`, `IdInmueble`, `Tipo`, `SubTipo`, `Fecha`, `Contenido`, `Direccion_Contenido`, `Estado`) VALUES

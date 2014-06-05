@@ -25,9 +25,29 @@
     			?> 
                 
                <div class="col-xs-10">
+               	
+               			<?php 
+        	
+			        		if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+								
+								$mensaje = $_SESSION['error'];
+								
+								unset($_SESSION['error']);
+																			
+								echo "<div class='row'>
+								 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+								       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+												<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+					               		</div>
+									  </div>";
+														
+				            }
+			        	
+			        	?>
+			        	
                 		<h3><i class="fa fa-home"></i> Tipo de contrato y datos del inmueble (Paso 2 de 4)</h3>
                 			<div class="row">   	
-			                	<form class="form-inline text-left" method="post" action="">
+			                	<form class="form-inline text-left" method="post" action="<?php echo $ruta ?>controladores/control_registro_inmueble.php">
 			                		<div class="col-xs-12">
 				                		<label><h5 class="gris">Inserte el precio en euros del alquiler de su inmueble:&nbsp;&nbsp;</h5></label><br />
 				                		<input type="text" class="form-control" name="mensualidad" id="mensualidad" placeholder="000,00" onchange="multiplicar();"/>	
@@ -73,7 +93,7 @@
 						                        <hr class="grissimple" />
 						                        <li class="list-group-item"><a class="enlace2" href="../publico/condiciones.php" target="_blank"><i class="fa fa-gavel"></i>&nbsp;Ver condiciones</a></li>
 						                        <hr class="grissimple" />
-						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Estándar" />&nbsp;&nbsp; Elijo éste</h5></li>
+						                        <li class="list-group-item"> <h5><input type="radio" name="tipoContrato" value="Estándar" checked/>&nbsp;&nbsp; Elijo éste</h5></li>
 						                    </ul>
 						                </div>
 			            			</div>
@@ -208,7 +228,8 @@
 									<input type="checkbox" name="agua" value="1">&nbsp;Agua&nbsp;&nbsp;&nbsp;&nbsp;
 									<input type="checkbox" name="gas" value="1">&nbsp;Gas
 		                        <br/><br/>
-		                        <a href="../inmueble/registro_estancia_inmo.php" class="btn btn-default btn-sm">Continuar</a>
+		                        
+		                        <input type="submit" class="btn btn-primary btn-sm" value="Continuar" />
 		    					
 		    				</form>
 		                    <br/><br/>

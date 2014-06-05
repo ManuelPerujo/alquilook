@@ -1,24 +1,24 @@
 <?php
-session_start();
-
-if(!$_POST || count($_POST) == 0){
-
-    echo "no pasa POST";
-    exit();
-}
-
-include_once("../funciones/core.php");
-include_once('../validacion/validacion_servidor.php');
-
+		session_start();
+		
+		if(!$_POST || count($_POST) == 0){
+		
+		    echo "no pasa POST";
+		    exit();
+		}
+		
+		include_once("../funciones/core.php");
+		include_once('../validacion/validacion_servidor.php');
+		include_once('../funciones/registro.php');
 
         
         extract($_POST);
         
 				
-        $usuario = $_POST["usuario_propietario"];  $pass = $_POST["pass_propietario"];  $email = $_POST["email_propietario"];
+        $usuario = $_POST["usuario_propietario"]; $pass = $_POST["pass_propietario"]; $email = $_POST["email_propietario"];
         $nombre = $_POST["nombre_propietario"]; $apellidos = $_POST["apellidos_propietario"]; $dni = $_POST["dni_propietario"];
-        $telefono = $_POST["telefono_propietario"]; $domicilio = $_POST["domicilio_propietario"];  $cp = $_POST["cp_propietario"];
-        $provincia = $_POST["provincia_propietario"];  $poblacion = $_POST["poblacion_propietario"]; $aceptaCondiciones = $_POST['aceptaCondiciones'];
+        $telefono = $_POST["telefono_propietario"]; $domicilio = $_POST["domicilio_propietario"]; $cp = $_POST["cp_propietario"];
+        $provincia = $_POST["provincia_propietario"]; $poblacion = $_POST["poblacion_propietario"]; $aceptaCondiciones = $_POST['aceptaCondiciones'];
         
 		unset($_POST);
 		
@@ -30,17 +30,44 @@ include_once('../validacion/validacion_servidor.php');
 						
 		if(!valida_datos_personales($arrayValidacion) || !valida_datos_usuario($arrayValidacion)){
 			
-			header("Location: ../vistas/propietario/registro_propietario.php");
+			if($_SESSION['tipo'] == 'Inmobiliaria'){
+						
+				header("Location: ../vistas/propietario/registro_propietario_inmo.php");	
+				
+			}else{
+					
+				header("Location: ../vistas/propietario/registro_propietario.php");
+				
+			}
+			
 			
 		}else{
 					
-			$codigoActivacion = rand(0, 9999);
+			if($_SESSION['tipo'] == 'Inmobiliaria'){
 						
-			$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
-	
-	
-		    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1'; 
-		                
+				$mensaje = "Los datos de usuario solicitados son\r\n<br><br>
+					    		Nombre de Usuario: <b>$usuario</b> \r\n<br>
+					    		Contraseña: <b>$pass</b> \r\n<br>";
+					    		
+				$mensaje .= "<br><br>Para acceder a alquilook pulse el siguiente enlace<br><br>
+								<a href='http://www.alquilook.com'><b>www.alquilook.com</b></a>";
+								
+				$codigoActivacion = '0';
+				
+				$usuarioActivo = '1';					    		 	
+				
+			}else{
+				
+				$usuarioActivo = '0';
+					
+				$codigoActivacion = rand(0, 9999);
+						
+				$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
+				
+			    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1';		
+				
+			}	
+								                
 		    $headers = "MIME-Version: 1.0\r\n";
 		    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 		    $headers .= "From: info@alquilook.com\r\n";
@@ -75,23 +102,41 @@ include_once('../validacion/validacion_servidor.php');
 		                header("Location: ../vistas/propietario/registro_propietario.php");
 		                
 		            }else{
-		            /*insertamos los datos del nuevo usuario*/
+		            	
+		            	/*insertamos los datos del nuevo usuario*/
 		                $query2 = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
 		                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
 		                    values ('', '0', 'Propietario', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
-		                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '0')"; 
+		                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', $codigoActivacion, '$usuarioActivo')"; 
 		                
-										            
-		                if($bd->conexion->exec($query2)){
 		                	
 		                	$_SESSION['erroRegistro'] = FALSE;
-		                	$_SESSION['bienvenida'] = true;
+		                	
 	 						
 							mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
 							
-							header("Location: ../vistas/propietario/verificacion_propietario.php");
+							if($_SESSION['tipo'] == "Inmobiliaria"){
+									
+								$idUsuario = get_lastId($query2);
+								
+								$_SESSION['registro_propietario'] = $idUsuario; 
+								
+								$query3 = "insert into propietario (IdPropietario, IdUsuario) values ('', '$idUsuario')";
+								
+								$bd->query($query3);
+										
+								header("Location: ../vistas/inmueble/registro_inmueble_inmo.php");	
+								
+							}else{
+								
+								$bd->query($query2);
+								
+								$_SESSION['bienvenida'] = true;
+								
+								header("Location: ../vistas/propietario/verificacion_propietario.php");	
+								
+							}
 							
-		                }
 		                
 		            }
 		
@@ -111,15 +156,4 @@ include_once('../validacion/validacion_servidor.php');
 		}
 		
         		
-        
-    
-    
-                   
-    
-
-
-
-
-
-
 ?>

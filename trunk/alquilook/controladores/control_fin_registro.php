@@ -11,6 +11,7 @@
 	unset($_SESSION['ArrayIdInquilino']);
     unset($_SESSION['registro_terminado']);
 	unset($_SESSION['ArrayIdUsuario']);
+	unset($_SESSION['registro_propietario']);
 	
 	$IdInmueble = $_SESSION["IdInmueble"];
 	unset($_SESSION["IdInmueble"]);
@@ -38,7 +39,20 @@
 	$bd->query($query);		
 	
 	$_SESSION['nuevo_inmueble'] = TRUE;
+	
+	if($_SESSION['tipo'] == 'Inmobiliaria'){
 		
-	header("Location: ../vistas/propietario/verificacion_propietario.php");
+		header("Location: ../vistas/inmueble/tabla_inmuebles_inmo.php");
+		
+	}else{
+		
+		header("Location: ../vistas/propietario/verificacion_propietario.php");
+		
+	}	
+	
+
+
+
+
 
 ?>
