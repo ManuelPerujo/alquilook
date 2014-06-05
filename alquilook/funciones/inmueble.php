@@ -1,5 +1,74 @@
 <?php 
-
+	
+	function get_inmueble_inmobiliaria($idUsuario){
+		
+		$inmuebles = null;
+		
+		$bd = new core();
+		
+		$idInmobiliaria = get_idInmobiliaria_from_usuario($idUsuario);
+		
+		$query = "select IdInmueble from inmueble where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+			
+			$idInmueble = $value['IdInmueble']; 
+			
+			$query2 = "select * from inmueble where IdInmueble = '$idInmueble'";
+			
+			$result2 = $bd->query($query2); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+			
+			$idUsuarioInmueble = get_IdUsuarioPropietarioFromInmueble($idInmueble); 
+			
+			$query1 = "select Nombre,Apellidos,DNI,Telefono,Email from usuarios where IdUsuario = '$idUsuarioInmueble'";
+			
+			$result1 = $bd->query($query1); $row1 = $result1->fetch(PDO::FETCH_ASSOC);
+			
+			$inmuebles .= "<div class='row'>
+                	    			<div class='col-sm-5 col-xs-12'>
+		                					<div class='media'>
+												  <a class='pull-left'>
+												    <img class='imagenbanner2' src='../../img/botones/inmueble.png' alt='...'>
+												  </a>
+												  <div class='media-body'>
+												    <h5 class='media-heading'>".$row2['Direccion']."</h5>
+												    <hr class='grissimple'/>
+												    <small>".$row2['TipoInmueble']."</small>
+												    <hr class='grissimple'/>
+												    <h6 class='media-heading negro'><small class='gris'>Plan de contrato:&nbsp;&nbsp;".$row2['TipoContrato']."</small>&nbsp;Mini</h6>
+												    <h6 class='media-heading negro'><small class='gris'>Precio:</small>&nbsp;".$row2['Valor']." €</h6>
+												    <h6 class='media-heading negro'><small class='gris'>Metros:</small>&nbsp;".$row2['Metros']." metros</h6>
+												    <h6 class='media-heading negro'><small class='gris'>Estancias:</small>&nbsp;".$row2['NumHabitaciones']." habitaciones<small class='gris'>&nbsp;/</small>&nbsp;".$row2['NumServicios']." aseos</h6>
+												  </div>
+				                       		</div>
+				                    </div>
+				                    <div class='col-sm-5 col-xs-12'>
+		                					<div class='media'>
+												  <a class='pull-left'>
+												    <img class='imagenbanner2' src='../../img/botones/propietario.png' alt='...'>
+												  </a>
+												  <div class='media-body'>
+												    <h5 class='media-heading'>".$row1['Nombre']." ".$row1['Apellidos']."</h5>
+												    <hr class='grissimple'/>
+												    <small>Propietario</small>
+												    <hr class='grissimple'/>
+												    <h6 class='media-heading negro'><small class='gris'>DNI:</small>&nbsp;".$row1['DNI']."</h6>
+												    <h6 class='media-heading negro'><small class='gris'>Teléfono:</small>&nbsp;".$row1['Telefono']."</h6>
+												    <h6 class='media-heading negro'><small class='gris'>Email:</small>&nbsp;".$row1['Email']."</h6>
+												  </div>
+				                       		</div>
+				                    </div>
+				                    <hr class='grisdoble'/>
+		                	</div></br></br>";
+			
+		}
+		
+		return $inmuebles;
+		
+	}
+	
 	function get_inmueble_datos($idUsuario,$tipo){
 		
 		$arrayInmuebles = array();

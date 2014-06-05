@@ -88,7 +88,9 @@
 			                			
 										foreach ($_SESSION['ArrayIdUsuario'] as $key => $value) {
 												
-											echo get_inquilino($value);
+											$idInmueble = $_SESSION['IdInmueble'];	
+												
+											echo get_inquilino($value, $idInmueble);
 											
 										}				
 										

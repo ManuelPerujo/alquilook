@@ -8,19 +8,8 @@ include_once("../funciones/usuarios.php");
 
 if($_GET['estancia'] == 'TRUE'){
 			
-			if(substr(basename($_SERVER['HTTP_REFERER']), 0,25) == 'editar_estancia_admin.php'){
-				
-				$IdInmueble = $_GET['idInmueble'];
-				
-			}else{
-				
-				$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);	
-		    	$IdInmueble = $_SESSION["IdInmueble"];	
-				
-			}						
-			
-			
-			    
+			$IdInmueble = $_SESSION['IdInmueble'];
+						    
 	        extract($_POST);
 	        
 	        $tipoEstancia = $_POST["tipoEstancia"];
@@ -58,6 +47,32 @@ if($_GET['estancia'] == 'TRUE'){
 	            $_SESSION['errorEstancia'] = TRUE;
 	            
 				$arrayVacio = null;
+				
+				$valorMobiliario = null;
+				
+				$query11 = "select ValorMobiliario from inmueble where IdInmueble = '$IdInmueble'";
+				
+				$result11 = $bd->query($query11); $row11 = $result11->fetch(PDO::FETCH_ASSOC);
+				
+				$valorMobiliario = $row11['ValorMobiliario'];
+				
+				foreach ($arrayArticulos as $key => $value) {
+					
+					if($value != 0){
+						
+						$query = "select Valor from mobiliario where Tipo = '$key'"; 
+						
+						$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+						
+						$valorMobiliario += ($value * $row['Valor']);
+						
+					}
+					
+				}
+				
+				$query22 = "update inmueble set ValorMobiliario = '$valorMobiliario' where IdInmueble = '$IdInmueble'";
+				
+				$bd->query($query22);
 					
 				foreach ($arrayArticulos as $key => $value) {
 					
@@ -67,7 +82,9 @@ if($_GET['estancia'] == 'TRUE'){
 						break;
 						
 					}else{
+						
 						$arrayVacio = TRUE;
+						
 					}
 					
 				}
@@ -101,8 +118,6 @@ if($_GET['estancia'] == 'TRUE'){
 					$query3 = crea_articulo($IdInmueble, $IdEstancia, $arrayArticulos);
 					
 					$bd->query($query3);
-					
-					echo $query1;
 						
 					unset($_SESSION['errorEstancia']);
 							
@@ -131,7 +146,16 @@ if($_GET['estancia'] == 'TRUE'){
 					
 				}else{
 					
-					header("Location: ../vistas/inmueble/registro_estancia.php");
+					if($_SESSION['tipo'] == 'Inmobiliaria'){
+						
+						header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
+						
+					}else{
+						
+						header("Location: ../vistas/inmueble/registro_estancia.php");	
+						
+					}
+					
 					
 				}
 				
@@ -145,11 +169,19 @@ if($_GET['estancia'] == 'TRUE'){
 
 	
 
-}
-if($_GET['estancia'] == 'FALSE'){
+}if($_GET['estancia'] == 'FALSE'){
 		
-		$_SESSION["IdInmueble"] = get_IdInmueble($_SESSION['identifica_inmueble_direccion'], $_SESSION['identifica_inmueble_tipo']);
-		header("Location: ../vistas/inquilino/registro_inquilino.php");
+		if($_SESSION['tipo'] == 'Inmobiliaria'){
+					
+			header("Location: ../vistas/inquilino/registro_inquilino_inmo.php");	
+			
+		}else{
+					
+			header("Location: ../vistas/inquilino/registro_inquilino.php");		
+			
+		}
+		
+		
 			
 }
     

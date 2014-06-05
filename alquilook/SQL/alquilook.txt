@@ -44,7 +44,7 @@ drop table if exists `inmobiliaria`;
 CREATE TABLE IF NOT EXISTS `inmobiliaria` (
   `IdInmobiliaria` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `IdUsuario` int(6) unsigned NOT NULL,
-  `IBAN` numeric(24,0) unsigned NOT NULL,
+  `IBAN` char(24) NOT NULL,
   `NombreEmpresa` char(40) NOT NULL,
   PRIMARY KEY (`IdInmobiliaria`),
   UNIQUE KEY `Inmobiliaria_Unica` (`IdInmobiliaria`),
@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `NumServicios` int(3) NOT NULL,
   `Metros` int(5) NOT NULL,
   `Valor` DOUBLE PRECISION(6,2) NOT NULL,
+  `ValorMobiliario` DOUBLE PRECISION(6,2) NOT NULL,
   `Agua` boolean NOT NULL,
   `Luz` boolean NOT NULL,
   `Gas` boolean NOT NULL,
@@ -121,11 +122,11 @@ CREATE TABLE IF NOT EXISTS `mobiliario` (
   UNIQUE KEY `Mobiliario_Unico` (`IdMobiliario`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
-insert into `mobiliario` values (1,'Sofa','10'),(2,'Mesa','10'),(3,'Silla','10'),(4,'Cuadro','10'),(5,'Cama Individual','10'),
-				(6,'Cama Doble','10'),(7,'Mesita Noche','10'),(8,'Comoda','10'),(9,'Accesorios Servicio','10'),
-				(10,'Mueble Aseo','10'),(11,'Espejo','10'),(12,'Hidromasaje','10'),(13,'Television','10'),(14,'Dvd','10'),(15,'Equipo Sonido','10'),
-				(16,'Frigorifico','10'),(17,'Vitroceramica','10'),(18,'Horno','10'),(19,'Microondas','10'),(20,'Lavadora','10'),(21,'Lavavajillas','10'),
-				(22,'Secadora','10'),(23,'Aspiradora','10'),(24,'Termo','10');
+insert into `mobiliario` values (1,'Sofa','10'),(2,'Mesa','20'),(3,'Silla','30'),(4,'Cuadro','10'),(5,'Cama Individual','20'),
+				(6,'Cama Doble','30'),(7,'Mesita Noche','10'),(8,'Comoda','20'),(9,'Accesorios Servicio','30'),
+				(10,'Mueble Aseo','10'),(11,'Espejo','20'),(12,'Hidromasaje','30'),(13,'Television','10'),(14,'Dvd','20'),(15,'Equipo Sonido','30'),
+				(16,'Frigorifico','10'),(17,'Vitroceramica','20'),(18,'Horno','130'),(19,'Microondas','10'),(20,'Lavadora','20'),(21,'Lavavajillas','30'),
+				(22,'Secadora','10'),(23,'Aspiradora','20'),(24,'Termo','30');
 				
 
 drop table if exists `observaciones_estancia`;

@@ -282,7 +282,7 @@
 		}		
 	}
 
-	function get_inquilino($idUsuario){
+	function get_inquilino($idUsuario, $idInmueble){
 		
 		$elementos = null;
 						
@@ -306,7 +306,7 @@
 	
 			                		<div class='col-sm-6'>
 					                	<div class='alert alert-success alert-dismissable'>
-										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$idUsuario."'>&times;</a>
+										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$idUsuario."&idInmueble=".$idInmueble."'>&times;</a>
 										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i>Datos de Usuario</h5>
 										  <p class='ficha'>".
 										  $elementos."
@@ -357,9 +357,9 @@
 		$bd = new core();
 		
 		$query = "select ArrayIdInquilino from inmueble where IdInmueble = '$idInmueble'";
-		$resutl = $bd->query($query);
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		if($resutl->rowCount() != 0){
+		if($result->rowCount() != 0 && $row['ArrayIdInquilino'] != 'null'){
 					
 			return true;	
 			

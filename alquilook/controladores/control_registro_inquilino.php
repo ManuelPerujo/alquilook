@@ -1,17 +1,19 @@
 <?php
-session_start();
-include_once("../funciones/core.php");
-include_once("../funciones/registro.php");
-include_once '../funciones/usuarios.php';
-include_once('../validacion/validacion_servidor.php');
+
+	session_start();
+	include_once("../funciones/core.php");
+	include_once("../funciones/registro.php");
+	include_once '../funciones/usuarios.php';
+	include_once('../validacion/validacion_servidor.php');
 
 	
-				
-	if(get_inmuebleTieneInquilino($_SESSION["IdInmueble"]) && $_GET['inq'] == 'FALSE'){
+	$IdInmueble = $_SESSION['IdInmueble'];
 		
+	if(get_inmuebleTieneInquilino($IdInmueble) && $_GET['inq'] == 'FALSE'){
+			 
 			header("Location: control_fin_registro.php");
 		
-	}if($_GET['inq'] == 'TRUE' && $_POST){
+	}if($_GET['inq'] == 'TRUE' && isset($_POST)){
 		
 			extract($_POST);
 	        
@@ -20,8 +22,7 @@ include_once('../validacion/validacion_servidor.php');
 	        $telefono_inquilino = $_POST["telefono_inquilino"]; 
 			
 			$arrayUsuarioContraseña = get_usuarioYcontraseña_inquilino($nombre_inquilino, $apellidos_inquilino);
-			$IdInmueble = $_SESSION["IdInmueble"];
-			
+						
 			$arrayValidacion = array();
 		
 			$arrayValidacion['nombre'] = $nombre_inquilino; $arrayValidacion['apellidos'] = $apellidos_inquilino;
@@ -74,7 +75,16 @@ include_once('../validacion/validacion_servidor.php');
 								            					
 						unset($_POST);
 						
-						header("Location: ../vistas/inquilino/registro_inquilino.php");	
+						if($_SESSION['tipo'] == 'Inmobiliaria'){
+									
+							header("Location: ../vistas/inquilino/registro_inquilino_inmo.php");	
+							
+						}else{
+							
+							header("Location: ../vistas/inquilino/registro_inquilino.php");	
+							
+						}
+							
 						
 		            }
 					                                 
@@ -86,6 +96,12 @@ include_once('../validacion/validacion_servidor.php');
 				
 			}
 			
+	}if(!get_inmuebleTieneInquilino($IdInmueble) && $_GET['inq'] == 'FALSE'){
+			
+		unset($_GET);		
+		$_SESSION['errorInquilino'] = TRUE;
+		header("Location: ".$_SERVER['HTTP_REFERER']);	
+		
 	}	
     	
         			

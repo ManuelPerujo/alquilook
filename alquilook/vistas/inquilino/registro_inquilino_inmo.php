@@ -7,6 +7,7 @@
 ?>
 
 <body>
+	
     <?php
         include_once '../../plantillas/cabecera.php';
     ?>
@@ -56,13 +57,28 @@
 			                		if(!empty($_SESSION['ArrayIdUsuario'])){
 			                			
 										foreach ($_SESSION['ArrayIdUsuario'] as $key => $value) {
+													
+											$idInmueble = $_SESSION['IdInmueble'];	
 												
-											echo get_inquilino($value);
+											echo get_inquilino($value, $idInmueble);
 											
 										}				
 										
 																											
-									}
+									}if(isset($_SESSION['error']) && $_SESSION['error'] != null){
+										
+										$mensaje = $_SESSION['error'];
+										
+										unset($_SESSION['error']);
+																					
+										echo "<div class='row'>
+										 		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
+										       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+														<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;".$mensaje."</h5>
+							               		</div>
+											  </div>";
+																
+						            }
 									
 			                	?>
 		               			
@@ -92,7 +108,7 @@
 							
 							  <br/>
 		                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otro inquilino</button>
-		                        <a   href="../inmueble/tabla_inmuebles_inmo.php" class="btn btn-default btn-sm">Finalizar</a>
+		                        <a   href="../../controladores/control_registro_inquilino.php?inq=FALSE" class="btn btn-default btn-sm">Finalizar</a>
 		                        								
 		                    </form>
 		                    <br/>
