@@ -19,18 +19,8 @@
 	$localtime_assoc = getdate(); $año = $localtime_assoc['year']; $mes = $localtime_assoc['mon']; $dia = $localtime_assoc['mday'];
 	$fechaMensaje = $año.'-'.$mes.'-'.$dia;
 	
-	$tipo = null;
-	
-	if($_SESSION["tipo"] == "Propietario"){
+	$tipo = "altaNueva";
 		
-		$tipo = "Propietario";
-		
-	}if($_SESSION["tipo"] == "Inmobiliaria"){
-		
-		$tipo = "Inmobiliaria";
-		
-	}
-	
 	$bd = new core();
 	
 	$query = "insert into incidencia (IdIncidencia,IdInmueble,Tipo,SubTipo,Fecha,Contenido,Direccion_Contenido,Estado,EstadoIncidencia)

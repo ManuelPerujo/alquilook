@@ -13,9 +13,7 @@
 	
 	$query4 = "update conversacion set Estado = '0' where IdConversacion = '$idConversacion'";
 	
-	$query2 = "update mensaje set Estado = '0' where IdMensaje = '$idUltimoMensaje'";
-	
-	$bd->query($query2); $bd->query($query4);
+	$bd->query($query4);
 	
 	$idDestinatario = get_IdRemitente_mensaje($idUltimoMensaje);
 			

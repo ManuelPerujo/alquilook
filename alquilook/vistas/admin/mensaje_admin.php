@@ -58,7 +58,7 @@
 	
 										$bd->query($query3);
 										
-									}else{
+									}if(permiso_mensaje_up($idConversacion, $_SESSION['IdUsuario_sesion']) == TRUE){
 										
 										up_mensaje_leido($idConversacion);	
 										
