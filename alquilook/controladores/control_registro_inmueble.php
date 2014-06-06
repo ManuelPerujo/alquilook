@@ -5,6 +5,7 @@
 		
 		    echo "no pasa POST";
 		    exit();
+			
 		}
 
 		include_once("../funciones/core.php");
@@ -111,12 +112,12 @@
 						unset($_POST);
 	    				
 	    				if($_SESSION['tipo'] == 'Inmobiliaria'){
-						echo $_SESSION['tipo'];						
-						//	header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
+	    					
+							header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
 							
 						}else{
 								
-						//	header("Location: ../vistas/inmueble/registro_estancia.php");	
+							header("Location: ../vistas/inmueble/registro_estancia.php");	
 							
 						}
 	    				
