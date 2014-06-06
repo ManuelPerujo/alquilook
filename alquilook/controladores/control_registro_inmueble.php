@@ -96,7 +96,7 @@
 	                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
 	                            '$luz','$gas')"; 
 	                
-						echo $query2;			            
+									            
 	                	$IdInmueble = get_lastId($query2);
 	                	
 						$_SESSION['IdInmueble'] = $IdInmueble;
@@ -111,12 +111,12 @@
 						unset($_POST);
 	    				
 	    				if($_SESSION['tipo'] == 'Inmobiliaria'){
-			
-							header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
+						echo $_SESSION['tipo'];						
+						//	header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
 							
 						}else{
 								
-							header("Location: ../vistas/inmueble/registro_estancia.php");	
+						//	header("Location: ../vistas/inmueble/registro_estancia.php");	
 							
 						}
 	    				
