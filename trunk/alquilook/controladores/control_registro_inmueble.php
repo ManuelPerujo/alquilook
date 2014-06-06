@@ -11,6 +11,7 @@
 		include_once("../funciones/registro.php");
 		include_once('../funciones/usuarios.php');
 		include_once('../validacion/validacion_servidor.php');
+		include_once('../funciones/admin.php');
 
 		$luz = 0; $gas = 0; $agua = 0;
         
