@@ -136,11 +136,11 @@
 								<br/><h2 class="media-heading">Ejemplo:</h2>
 								Para un alquiler de una vivienda amueblada y con una superficie aproximada de 90 m2,  por un importe de renta mensual de 500 Euros, nosotros te cobramos aproximadamente (IVA INCLUIDO):
 									<ul>
-									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;30 €<small class="negro"> al mes, por la Gama “MINI".</small></h2></li>
-									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;50 €<small class="negro"> al mes, por la Gama “ESTÁNDAR".</small></h2></li>
-									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;65 €<small class="negro"> al mes, por la Gama “PREMIUM".</small></h2></li>
+									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;30 €<small class="negro"> al mes, por el Plan “MINI".</small></h2></li>
+									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;50 €<small class="negro"> al mes, por el Plan “ESTÁNDAR".</small></h2></li>
+									   	<li><h2 class="media-heading"><i class="fa fa-caret-right"></i>&nbsp;65 €<small class="negro"> al mes, por el Plan “PREMIUM".</small></h2></li>
 									</ul>
-								Ya solo te queda elegir la Gama en función de tus necesidades.	
+								Ya solo te queda elegir el Plan en función de tus necesidades.	
 							</div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         </div>
                         <div id="16" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Si por cualquier motivo piensas en cambiar de Gama, tendríamos que rescindir o anticipar la finalización del Contrato actual con el Inquilino y hacer uno nuevo. La rescisión del contrato conlleva unos gastos de Cancelación, por lo que te recomendamos que pienses bien la Gama que mejor te venga y/o esperar a finalizar el contrato.
+                                Si por cualquier motivo piensas en cambiar de Plan, tendríamos que rescindir o anticipar la finalización del Contrato actual con el Inquilino y hacer uno nuevo. La rescisión del contrato conlleva unos gastos de Cancelación, por lo que te recomendamos que pienses bien el Plan que mejor te venga y/o esperar a finalizar el contrato.
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                         <div id="17" class="panel-collapse collapse">
                             <div class="panel-body">
 								Si el inquilino se va del inmueble y lo has acordado en él, o no te convence nuestro servicio, no te complicaremos la vida como algunas Operadoras Móviles (llamar 20 veces, explicarte otras tantas, mandar faxes, excusas varias, etc.). Solo tendrás que firmar el  Documento de Cancelación del Servicio, que está disponible en tu Zona Privada de la Web y abonar los gastos de cancelación. Y ¿a qué se deben estos gastos? Como te puedes imaginar, trabajamos con Pólizas de Seguros de las Aseguradoras más importantes, y ya que las pólizas son anuales, si cancelas el servicio, nosotros tenemos que abonar el importe anual completo de la Póliza de Seguro.                             
-								<br/><br/>Para que lo sepas desde el principio, el Gasto de Cancelación del servicio va en función de la Gama Contratada: 100 Euros en el caso de la Gama “Mini”, 200 Euros si la Gama es la “Estándar” y 350 Euros si la Gama es “Premium”.                            
+								<br/><br/>Para que lo sepas desde el principio, el Gasto de Cancelación del servicio va en función del Plan Contratada: 100 Euros en el caso del Plan “Mini”, 200 Euros si el Plan es la “Estándar” y 350 Euros si el Plan es “Premium”.                            
                             </div>
                         </div>
                     </div>

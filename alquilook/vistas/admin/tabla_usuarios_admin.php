@@ -26,16 +26,16 @@
                 	<br/>
                 	<form class="form-inline text-left" method="post" action="../../controladores/control_filtro_usuarios.php">
                 		
-                		<input class="form-control" type="text" placeholder="filtro" name="busqueda" size="35" />
-                		
+                		<input class="form-control" type="text" placeholder="Inserte un nombre o DNI" name="busqueda" size="35" />
+                		&nbsp;&nbsp;
                 		<select class="selector" name="tipoBusqueda">
 							  <option value="Tipo" checked>Tipo</option>
 							  <option value="Nombre">Nombre</option>
 							  <option value="Apellidos">Apellidos</option>
 							  <option value="DNI">DNI</option>
 						</select>
-                		
-                		<button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Consultar</button>
+                		&nbsp;&nbsp;
+                		<button type="submit" class="btn btn-default btn-sm">Filtrar</button>
                 			
                 	</form>	
                 	
@@ -66,7 +66,7 @@
 								echo "<div class='row'>
 								  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
 								       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-							 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Inserte alg&ucute;n valor en el filtro.</h5>
+							 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Inserte alg&uacute;n valor en el filtro.</h5>
 				                		</div>
 									  </div>";
 								
