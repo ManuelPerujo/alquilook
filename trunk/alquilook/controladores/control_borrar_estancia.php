@@ -38,13 +38,13 @@
 		
 		
 		$key = array_search($idInquilino, $arrayInquilinos);
-		$keySesion = array_search($idInquilino, $_SESSION['ArrayIdInquilino']);
+		$keySesion = array_search($idInquilino, $arrayInquilinosSesion); 
 		
 		unset($arrayInquilinos[$key]);
 		unset($arrayInquilinosSesion[$keySesion]);
 		
 		$arrayInquilinosSesion = implode("-", $arrayInquilinosSesion);
-		$_SESSION['ArrayIdInquilino'] = $arrayInquilinosSesion."-";
+		$_SESSION['ArrayIdInquilino'] = $arrayInquilinosSesion."-"; echo "  arraySession: ".$_SESSION['ArrayIdInquilino'];
 		
 		if($_SESSION['ArrayIdInquilino'] == '-'){
 			
@@ -60,6 +60,7 @@
 		
 		$query4 = "select ArrayIdInquilino from inmueble where IdInmueble = '$idInmueble'";
 		$result2 = $bd->query($query4); $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+		
 		
 		if($row2['ArrayIdInquilino'] == '-'){
 			
