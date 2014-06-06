@@ -47,7 +47,7 @@
 			        	
                 		<h3><i class="fa fa-home"></i> Tipo de contrato y datos del inmueble (Paso 2 de 4)</h3>
                 			<div class="row">   	
-			                	<form class="form-inline text-left" method="post" action="<?php echo $ruta ?>controladores/control_registro_inmueble.php">
+			                	<form class="form-inline text-left" method="post" action="../../controladores/control_registro_inmueble.php">
 			                		<div class="col-xs-12">
 				                		<label><h5 class="gris">Inserte el precio en euros del alquiler de su inmueble:&nbsp;&nbsp;</h5></label><br />
 				                		<input type="text" class="form-control" name="mensualidad" id="mensualidad" placeholder="000,00" onchange="multiplicar();"/>	
@@ -60,10 +60,10 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "MINI"</strong>
+						                        <strong>PLAN "MINI"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio1"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio1"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -80,10 +80,10 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "ESTÁNDAR"</strong>
+						                        <strong>PLAN "ESTÁNDAR"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio2"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio2"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -100,10 +100,10 @@
 			                		<div class="col-sm-3">
 						                <div class="panel panel-default text-center">
 						                    <div class="panel-heading mayusculas">
-						                        <strong>GAMA "PREMIUM"</strong>
+						                        <strong>PLAN "PREMIUM"</strong>
 						                    </div>
 						                    <div class="panel-body">
-						                        <h2 class="panel-title" ><input style="width:30%; border: none;" placeholder="00.0" id="precio3"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
+						                        <h2 class="panel-title" ><input style="width:40%; border: none;" placeholder="00.0" id="precio3"/>€&nbsp;/<small class="negro">&nbsp;mes</small></h2>
 						                    </div>
 						                    <ul class="list-group">
 						                        <li class="list-group-item verde"><i class="fa fa-check"></i> Gestión completa del Alquiler</li>
@@ -229,7 +229,7 @@
 									<input type="checkbox" name="gas" value="1">&nbsp;Gas
 		                        <br/><br/>
 		                        
-		                        <input type="submit" class="btn btn-primary btn-sm" value="Continuar" />
+		                        <input type="submit" class="btn btn-default btn-sm" value="Continuar" />
 		    					
 		    				</form>
 		                    <br/><br/>

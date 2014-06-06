@@ -123,7 +123,7 @@
 												   		Compromiso de Calidad, en caso de siniestro tras tu primera llamada, en menos de una hora un profesional se pondrá en contacto contigo y en menos de 24 horas visitarán tu inmueble, si no cumplimos, te compensaremos con 150 Euros.	
 												   	</li>
 												   	<li><i class="fa fa-caret-right"></i>&nbsp; 
-														Como ya imaginarás, contratando la Gama Premium te ahorras tu actual seguro de Hogar de la vivienda. Así que puedes darlo de baja, ¿para qué pagar dos veces el mismo servicio?.									   	
+														Como ya imaginarás, contratando el Plan Premium te ahorras tu actual seguro de Hogar de la vivienda. Así que puedes darlo de baja, ¿para qué pagar dos veces el mismo servicio?.									   	
 												   	</li>
 												</ul>
 												Todas las condiciones expuestas están definidas en el apartado de Condiciones Legales del Contrato de Servicios.

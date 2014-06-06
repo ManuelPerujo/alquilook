@@ -76,8 +76,8 @@
 					 					<hr class='propietario'/>
 					 					<h3>Ha registrado correctamente su inmueble e inquilino/os</h3>	 					
 					 					<h5>Estamos generando su contrato. En breve contactaremos con usted.</h5>
-					 					<h5>Mientras, puede acceder al panel de propietario para ver su inmueble.</h5>
-					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-sm'>Mi panel</button></a>
+					 					<h5>Mientras, puede acceder a su panel de gestión.</h5>
+					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-lg'>Mis inmuebles</button></a>
 					 					
 					 				</p>";
 							

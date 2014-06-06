@@ -63,7 +63,7 @@
 		                       		<div class="row">
 										  		<div class="col-sm-8 text-left alert alert-success alert-dismissable">
 								               		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-						 							<h4><i class="fa fa-info-circle fa-lg"></i> Si va a alquilar el inmueble vacío,<br/>no rellene nada abajo y pulse <em>Continuar</em>...</h4>
+						 							<h4><i class="fa fa-info-circle fa-lg"></i> Si va a alquilar el inmueble vacío,<br/>no haga nada y pulse <em>Continuar</em>...</h4>
 			                					</div>
 									</div> 
 		                       		<div class="row">			
@@ -83,7 +83,7 @@
 									
 									<div class="row"> 
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-plus"></i> Añadir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
@@ -171,7 +171,7 @@
 									
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
+										  	 <a class="enlace" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-plus"></i> Añadir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
@@ -267,7 +267,7 @@
 								
 		                        <br/>
 
-		                        <button name="submit" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otra estancia</button>
+		                        <button name="submit" type="submit" class="btn btn-primary btn-sm">Guardar</button>
 
 		                        &nbsp;&nbsp;&nbsp;
 		                        <a type="button" href="../../controladores/control_registro_estancia.php?estancia=FALSE" class="btn btn-primary btn-sm">Continuar</a>

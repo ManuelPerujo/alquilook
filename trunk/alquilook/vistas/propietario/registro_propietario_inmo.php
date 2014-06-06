@@ -127,9 +127,9 @@
 															</small>
 															<br/>
 															<hr class="grissimple"/>
-															GAMA “MINI”:<br/>
+															PLAN “MINI”:<br/>
 															<small>
-										            			 Demasiado grande para llamarle “Mini”, en esta gama te ofrecemos: Gestión completa del Alquiler, en el que incluimos:
+										            			 Demasiado grande para llamarle “Mini”, en este plan te ofrecemos: Gestión completa del Alquiler, en el que incluimos:
 															</small>
 																	<ul>
 																	    <li><i class="fa fa-caret-right"></i>&nbsp;Te ayudamos a elegir un buen inquilino.</li>
@@ -152,14 +152,14 @@
 																	    <li><i class="fa fa-caret-right"></i>&nbsp;Conflictos relacionados con la propiedad del inmueble.</li>
 																	</ul>
 															<hr class="grissimple"/>
-															GAMA “ESTÁNDAR”:<br/>
+															PLAN “ESTÁNDAR”:<br/>
 															<small>
-										            			 Nuestra gama referencia en la que te ofrecemos:
+										            			 Nuestro plan referencia en la que te ofrecemos:
 															</small>
 															<br/>
-															Gestión completa del Alquiler, exactamente la misma que en la Gama “Mini”.
+															Gestión completa del Alquiler, exactamente la misma que en el Plan “Mini”.
 															<br/>
-															Servicio de Defensa Jurídica, exactamente el mismo que en la Gama “Mini”.	
+															Servicio de Defensa Jurídica, exactamente el mismo que en el Plan “Mini”.	
 															<br/>
 															Garantías por pérdidas Económicas:
 																	<ul>
@@ -171,16 +171,16 @@
 																	    </li>
 																	</ul>
 															<hr class="grissimple"/>
-															GAMA “PREMIUM”:<br/>
+															PLAN “PREMIUM”:<br/>
 															<small>
 										            			 Para los más exigentes, tenemos el “todo incluido”:
 															</small>
 															<br/>
-															Gestión completa del Alquiler, exactamente la misma que en la Gama “Mini” y Gama “Estándar”.
+															Gestión completa del Alquiler, exactamente la misma que en el Plan “Mini” y Plan “Estándar”.
 															<br/>
-															Servicio de Defensa Jurídica, exactamente el mismo que en la Gama “Mini” y Gama “Estándar”.
+															Servicio de Defensa Jurídica, exactamente el mismo que en el Plan “Mini” y Plan “Estándar”.
 															<br/>
-															Garantías por pérdidas Económicas, exactamente las mismas que en la Gama “Estándar”.
+															Garantías por pérdidas Económicas, exactamente las mismas que en el Plan “Estándar”.
 															<br/>
 															Y aquí esta el PLUS, las coberturas de un Seguro de Hogar:
 															<br/>
@@ -200,7 +200,7 @@
 																	   		Compromiso de Calidad, en caso de siniestro tras tu primera llamada, en menos de una hora un profesional se pondrá en contacto contigo y en menos de 24 horas visitarán tu inmueble, si no cumplimos, te compensaremos con 150 Euros.	
 																	   	</li>
 																	   	<li><i class="fa fa-caret-right"></i>&nbsp; 
-																			Como ya imaginarás, contratando la Gama Premium te ahorras tu actual seguro de Hogar de la vivienda. Así que puedes darlo de baja, ¿para qué pagar dos veces el mismo servicio?.									   	
+																			Como ya imaginarás, contratando el Plan Premium te ahorras tu actual seguro de Hogar de la vivienda. Así que puedes darlo de baja, ¿para qué pagar dos veces el mismo servicio?.									   	
 																	   	</li>
 																	</ul>
 										            	</p>
@@ -211,9 +211,9 @@
 										            			<br/>
 										            			Para un alquiler de una vivienda amueblada y con una superficie aproximada de 90 m2,  por un importe de renta mensual de 500 Euros, nosotros te cobramos aproximadamente (IVA INCLUIDO):
 										            			<ul>
-																   	<li><i class="fa fa-caret-right"></i>&nbsp;30 € al mes, por la Gama “MINI".</li>
-																   	<li><i class="fa fa-caret-right"></i>&nbsp;50 € al mes, por la Gama “ESTÁNDAR".</li>
-																   	<li><i class="fa fa-caret-right"></i>&nbsp;65 € al mes, por la Gama “PREMIUM".</li>
+																   	<li><i class="fa fa-caret-right"></i>&nbsp;30 € al mes, por el Plan “MINI".</li>
+																   	<li><i class="fa fa-caret-right"></i>&nbsp;50 € al mes, por el Plan “ESTÁNDAR".</li>
+																   	<li><i class="fa fa-caret-right"></i>&nbsp;65 € al mes, por el Plan “PREMIUM".</li>
 																</ul>
 										            		</small>
 										            	</p>	
@@ -224,16 +224,16 @@
 															</small>
 										            	</p>
 										            	<p class="acepto">
-										            		 ¿Y SI QUIERO CAMBIAR DE GAMA?:&nbsp;
+										            		 ¿Y SI QUIERO CAMBIAR DE PLAN?:&nbsp;
 										            		<small>
-										            			Si por cualquier motivo piensas en cambiar de Gama, tendríamos que rescindir o anticipar la finalización del Contrato actual con el Inquilino y hacer uno nuevo. La rescisión del contrato conlleva unos gastos de Cancelación, por lo que te recomendamos que pienses bien la Gama que mejor te venga y/o esperar a finalizar el contrato.
+										            			Si por cualquier motivo piensas en cambiar de Plan, tendríamos que rescindir o anticipar la finalización del Contrato actual con el Inquilino y hacer uno nuevo. La rescisión del contrato conlleva unos gastos de Cancelación, por lo que te recomendamos que pienses bien el Plan que mejor te venga y/o esperar a finalizar el contrato.
 															</small>
 										            	</p>
 										            	<p class="acepto">
 										            		 QUIERO CANCELAR EL SERVICIO:&nbsp;
 										            		<small>
 										            			Si el inquilino se va del inmueble y lo has acordado en él, o no te convence nuestro servicio, no te complicaremos la vida como algunas Operadoras Móviles (llamar 20 veces, explicarte otras tantas, mandar faxes, excusas varias, etc.). Solo tendrás que firmar el  Documento de Cancelación del Servicio, que está disponible en tu Zona Privada de la Web y abonar los gastos de cancelación. Y ¿a qué se deben estos gastos? Como te puedes imaginar, trabajamos con Pólizas de Seguros de las Aseguradoras más importantes, y ya que las pólizas son anuales, si cancelas el servicio, nosotros tenemos que abonar el importe anual completo de la Póliza de Seguro. 
-																<br/>Para que lo sepas desde el principio, el Gasto de Cancelación del servicio va en función de la Gama Contratada: 100 Euros en el caso de la Gama “Mini”, 200 Euros si la Gama es la “Estándar” y 350 Euros si la Gama es “Premium”.
+																<br/>Para que lo sepas desde el principio, el Gasto de Cancelación del servicio va en función del Plan Contratada: 100 Euros en el caso del Plan “Mini”, 200 Euros si el Plan es el “Estándar” y 350 Euros si el Plan es “Premium”.
 															</small>
 										            	</p>
 										            	<p class="acepto">
@@ -249,7 +249,7 @@
 										        </div>
 							      </div>
 		    					</div>
-		    					<input type="submit" class="btn btn-primary btn-sm" value="Continuar" />
+		    					<input type="submit" class="btn btn-default btn-sm" value="Continuar" />
 			    				<br/><br/>
 			                    </form> 
 			             </div>                                           

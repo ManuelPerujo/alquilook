@@ -141,7 +141,7 @@
                 				
 								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
 									<br/>
-                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
+                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-home'></i> Mis Inmuebles</a>";
 								
                 			}else{
                 				
@@ -195,7 +195,7 @@
                 				
 								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
 									<br/>
-                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_pro.php'><i class='fa fa-user'></i> Mis Inmuebles</a>";
+                					<a class='enlace2' href='vistas/inmueble/tabla_inmuebles_inmo.php'><i class='fa fa-home'></i> Mis Inmuebles</a>";
 								
                 			}else{
                 				

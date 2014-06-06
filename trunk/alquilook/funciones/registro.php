@@ -307,7 +307,7 @@
 			                		<div class='col-sm-6'>
 					                	<div class='alert alert-success alert-dismissable'>
 										  	<a class='close' type='button' href='../../controladores/control_borrar_estancia.php?id=".$idUsuario."&idInmueble=".$idInmueble."'>&times;</a>
-										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i>Datos de Usuario</h5>
+										    <h5 class='panel-title magenta'> <i class='fa fa-info'></i> Datos</h5>
 										  <p class='ficha'>".
 										  $elementos."
 									  	  </p>
