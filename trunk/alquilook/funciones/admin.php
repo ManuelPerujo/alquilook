@@ -1,5 +1,87 @@
 <?php 
-
+	
+	function get_tabla_usuarios_by_id($arrayId,$arrayAtributos,$arrayOpciones){
+        
+		$mensaje = null;
+		
+        $mensaje .= "<table class='table table-striped table-hover'>";
+        $mensaje .= "<tr>";
+        
+        foreach ($arrayAtributos as $key => $value) {
+        	
+            $mensaje .= "<th>$value</th>";
+			
+        }if($arrayOpciones['opciones'] == TRUE){
+        	
+            $mensaje .= "<th>Opciones</th>";    
+        }
+		
+        $mensaje .= "</tr>";
+        
+        if(count($arrayId) != 0){
+              
+            $bd = new core();
+            $bd->ConectaBD();
+        
+            $atributos = implode(",", $arrayAtributos);    
+            
+            foreach ($arrayId as $key) {
+                foreach ($key as $key2 => $value) {
+                
+                    $selector = $value;
+                    
+                    $query = "select $atributos from usuarios where IdUsuario = '$selector' ";
+                    $result = $bd->query($query);
+                            
+                    if($result->rowCount() != 0){
+                        $row2 = $result->fetch(PDO::FETCH_ASSOC);
+                        
+                        $mensaje .= "<tr>";
+             			
+						if(basename($_SERVER['PHP_SELF']) == 'tabla_usuarios_admin.php'){
+                	
+							$direccion =  "../admin/perfil_usuario_admin.php?IdUsuario=".$selector."&tipo=".$row2['Tipo'];
+							
+		                }
+						
+                        foreach ($row2 as $key => $value2) {
+                        	                            
+                            $mensaje .= "<td><a href=$direccion>$value2</a></td>"; 
+							               
+                        }
+                    
+                        if($arrayOpciones['opciones'] == TRUE){
+                            $mensaje .= "<td>";
+                            if($arrayOpciones['borrar'] == TRUE){
+                                $direccion1 = '../sesion/control_erase.php?tabla=usuarios&idTabla=IdUsuario&id='.$selector;
+                                $mensaje .= "<a href=$direccion1 title='eliminar'><img src='../imagenes/iconos/eliminar.jpg' /></a>";    
+                            }if($arrayOpciones['modificar'] == TRUE){
+                                $direccion2 = '../sesion/control_up.php?tabla=usuarios&idTabla=IdUsuario&id='.$selector.'&seleccion='.$seleccion;
+                                $mensaje .= "<a href=$direccion2 title='editar'><img src='../imagenes/iconos/editar.jpg' /></a>";    
+                            }if($arrayOpciones['responder'] == TRUE){
+                                $direccion3 = '../sesion/control_buzon_responder.php?id='.$selector;
+                                $mensaje .= "<a href=$direccion3 title='responder'><img src='../imagenes/iconos/responder.jpg' /></a>";
+                            }if($arrayOpciones['pagar'] == TRUE){
+                                
+                            }if($arrayOpciones['amistad'] == TRUE){
+                                $direccion4 = '../sesion/control_amistad.php?id='.$selector;
+                                $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' /></a>";
+                            }
+                            
+                            $mensaje .= "</td>";              
+                        }
+                        $mensaje .= "</tr>";  
+                    }else{
+                        $_SESSION['busqueda_vacia'] = TRUE;    
+                    }         
+                } 
+            }        
+        }
+        $mensaje .= "</table>";
+		
+		return $mensaje;
+    }
+	
 	function get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden){
         
 		$mensaje = null;
@@ -1440,6 +1522,7 @@
 		$mensaje = "<div class='col-md-5 col-xs-12'>   	
 					                	<h5 class='media-heading mayusculas'>Inmueble:</h5>
 							            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
+							            <h5 class='negro'><small class='gris'>Valor del Inmueble:</small>&nbsp;".$row['ValorMobiliario']." €</h5>
 							            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
 							            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
 							            <h5 class='negro'><small class='gris'>Tipo de inmueble:</small>&nbsp;".$row['TipoInmueble']."</h5>
@@ -1532,7 +1615,7 @@
 			
 			$idConversacion = $value['IdConversacion'];
 		
-			$query2 = "select * from mensaje where IdConversacion = '$idConversacion' and Estado = '0' and IdDestinatario = '$idUsuario'";
+			$query2 = "select IdMensaje from mensaje where IdConversacion = '$idConversacion' and Estado = '0' and IdDestinatario = '$idUsuario'";
 			
 			$result2 = $bd->query($query2); 
 			
@@ -1623,7 +1706,9 @@
 			
 		}
 		
-		$query3 = "select Estado,IdMensaje from mensaje where IdConversacion = '$idConversacion' ";
+		$idUsuario = $_SESSION['IdUsuario_sesion'];
+		
+		$query3 = "select Estado,IdMensaje from mensaje where IdConversacion = '$idConversacion' and IdDestinatario = '$idUsuario'";
 		
 		$result2 = $bd->query($query3); $row2 = $result2->fetchAll(PDO::FETCH_ASSOC);
 		
@@ -1833,6 +1918,29 @@
 		
 		return $result2->rowCount();
 	}
+	
+	function permiso_mensaje_up($idConversacion, $idUsuario){
+		
+		$permiso = true;
+		
+		$bd = new core();
+		
+		$query = "select IdRemitente from mensaje where IdConversacion = '$idConversacion' order by IdMensaje desc limit 1";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		if($row['IdRemitente'] == $idUsuario){
+				
+			$permiso = false;
+			
+			return $permiso;
+			
+		}
+		
+		return $permiso;
+		
+	}
+	
 			
 ?>
 
