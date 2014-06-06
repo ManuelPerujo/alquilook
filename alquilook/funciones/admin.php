@@ -1489,7 +1489,7 @@
     	
     }
    
-    function get_datosInmueble($idInmueble){
+    function get_datosInmueble($idInmueble,$pdf){
     		
     	$mensaje = null;
     	
@@ -1519,24 +1519,40 @@
 			
 		}	
     	
-		$mensaje = "<div class='col-md-5 col-xs-12'>   	
-					                	<h5 class='media-heading mayusculas'>Inmueble:</h5>
-							            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
-							            <h5 class='negro'><small class='gris'>Valor del Inmueble:</small>&nbsp;".$row['ValorMobiliario']." €</h5>
-							            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
-							            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
-							            <h5 class='negro'><small class='gris'>Tipo de inmueble:</small>&nbsp;".$row['TipoInmueble']."</h5>
-							            <h5 class='negro'><small class='gris'>Dirección Inmueble:</small>&nbsp;".$row['Direccion']."</h5>
-							            <h5 class='negro'><small class='gris'>Población:</small>&nbsp;".$row['Municipio']."</h5>
-							            <h5 class='negro'><small class='gris'>CP:</small>&nbsp;".$row['CP']."</h5>
-							            <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;".$row['Provincia']."</h5>
-							            <h5 class='negro'><small class='gris'>Nº de metros:</small>&nbsp;".$row['Metros']."</h5>
-							            <h5 class='negro'><small class='gris'>Nº de habitaciones:</small>&nbsp;".$row['NumHabitaciones']."</h5>
-							            <h5 class='negro'><small class='gris'>Nº de aseos:</small>&nbsp;".$row['NumServicios']."</h5>
-		                		 </div>";
+    	if($pdf == false){
+    		
+			$mensaje = "<div class='col-md-5 col-xs-12'>   	
+			               	<h5 class='media-heading mayusculas'>Inmueble:</h5>
+				            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
+				            <h5 class='negro'><small class='gris'>Valor del Inmueble:</small>&nbsp;".$row['ValorMobiliario']." €</h5>
+				            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
+				            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
+				            <h5 class='negro'><small class='gris'>Tipo de inmueble:</small>&nbsp;".$row['TipoInmueble']."</h5>
+				            <h5 class='negro'><small class='gris'>Dirección Inmueble:</small>&nbsp;".$row['Direccion']."</h5>
+				            <h5 class='negro'><small class='gris'>Población:</small>&nbsp;".$row['Municipio']."</h5>
+				            <h5 class='negro'><small class='gris'>CP:</small>&nbsp;".$row['CP']."</h5>
+				            <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;".$row['Provincia']."</h5>
+				            <h5 class='negro'><small class='gris'>Nº de metros:</small>&nbsp;".$row['Metros']."</h5>
+				            <h5 class='negro'><small class='gris'>Nº de habitaciones:</small>&nbsp;".$row['NumHabitaciones']."</h5>
+				            <h5 class='negro'><small class='gris'>Nº de aseos:</small>&nbsp;".$row['NumServicios']."</h5>
+		       		 </div>";
 		
-		return $mensaje;
-		
+			return $mensaje;	
+			
+    	}if($pdf == TRUE){
+    				
+    		$datos = array();
+			
+			foreach ($row as $key => $value) {
+						
+				$datos[$key] = $value;	
+				
+			}	
+			
+			return $datos;	
+    		
+    	}
+    	
     }
    
     function get_datosEstancias_from_IdInmueble($idInmueble){

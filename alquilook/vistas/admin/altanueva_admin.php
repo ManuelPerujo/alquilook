@@ -37,7 +37,7 @@
                 	
 					$datosInquilinos = get_datosInquilinos_from_IdInmueble($idInmueble,$pdf);
 					
-					$datosInmueble = get_datosInmueble($idInmueble);
+					$datosInmueble = get_datosInmueble($idInmueble,$pdf);
 					
 					$datosEstancias = get_datosEstancias_from_IdInmueble($idInmueble);
 					

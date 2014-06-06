@@ -137,7 +137,7 @@
                 		</a>
                 		
                 		<?php 
-                			if(isset($_SESSION["IdUsuario_sesion"])){
+                			if(isset($_SESSION["IdUsuario_sesion"]) && $_SESSION['tipo'] == 'Propietario'){
                 				
 								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
 									<br/>
@@ -191,7 +191,7 @@
                 			<h2>SOY INMOBILIARIA</h2>
                 		</a>
                 		<?php 
-                			if(isset($_SESSION["IdUsuario_sesion"])){
+                			if(isset($_SESSION["IdUsuario_sesion"]) && $_SESSION['tipo'] == 'Inmobiliaria'){
                 				
 								echo "<a class='enlace2' href='controladores/control_salir.php' ><i class='fa fa-unlock'></i> Salir</a>
 									<br/>
