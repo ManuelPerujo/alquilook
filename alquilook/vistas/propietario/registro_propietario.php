@@ -52,8 +52,63 @@
                         <input type="tel" class="form-control" id="telefono" name="telefono_propietario" placeholder="Teléfono *" /> 
                         <input type="text" class="form-control" id="domicilio" name="domicilio_propietario" placeholder="Domicilio del propietario *" />
                         <input type="text" class="form-control" id="cp" name="cp_propietario" placeholder="CP *" /> 
-                        <input type="text" class="form-control" id="poblacion" name="poblacion_propietario" placeholder="Población *" />
-                        <input type="text" class="form-control" id="provincia" name="provincia_propietario" placeholder="Provincia *" />                       
+                        <input type="text" class="form-control" id="poblacion" name="poblacion_propietario" placeholder="Población *" /> 
+                        <label><h6 class="gris">Provincia&nbsp;&nbsp;</h6></label> 
+			                        <select id="provincia" name="provincia_propietario">
+										 <option value='Álava' checked>Álava</option>
+										 <option value='Albacete'>Albacete</option>
+										 <option value='Alicante'>Alicante/Alacant</option>
+										 <option value='Almería'>Almería</option>
+										 <option value='Asturias'>Asturias</option>
+										 <option value='Ávila'>Ávila</option>
+										 <option value='Badajoz'>Badajoz</option>
+										 <option value='Barcelona'>Barcelona</option>
+										 <option value='Burgos'>Burgos</option>
+										 <option value='Cáceres'>Cáceres</option>
+										 <option value='Cádiz'>Cádiz</option>
+										 <option value='Cantabria'>Cantabria</option>
+										 <option value='Castellón'>Castellón/Castelló</option>
+										 <option value='Ceuta'>Ceuta</option>
+										 <option value='Ciudad Real'>Ciudad Real</option>
+										 <option value='Córdoba'>Córdoba</option>
+										 <option value='Cuenca'>Cuenca</option>
+										 <option value='Girona'>Girona</option>
+										 <option value='Las Palmas'>Las Palmas</option>
+										 <option value='Granada'>Granada</option>
+										 <option value='Guadalajara'>Guadalajara</option>
+										 <option value='Guipuzcoa'>Guipúzcoa</option>
+										 <option value='Huelva'>Huelva</option>
+										 <option value='Huesca'>Huesca</option>
+										 <option value='Illes Balears'>Illes Balears</option>
+										 <option value='Jaén'>Jaén</option>
+										 <option value='A Coruña'>A Coruña</option>
+										 <option value='La Rioja'>La Rioja</option>
+										 <option value='León'>León</option>
+										 <option value='Lleida'>Lleida</option>
+										 <option value='Lugo'>Lugo</option>
+										 <option value='Madrid'>Madrid</option>
+										 <option value='Málaga'>Málaga</option>
+										 <option value='Melilla'>Melilla</option>
+										 <option value='Murcia'>Murcia</option>
+										 <option value='Navarra'>Navarra</option>
+										 <option value='Ourense'>Ourense</option>
+										 <option value='Palencia'>Palencia</option>
+										 <option value='Pontevedra'>Pontevedra</option>
+										 <option value='Salamanca'>Salamanca</option>
+										 <option value='Segovia'>Segovia</option>
+										 <option value='Sevilla'>Sevilla</option>
+										 <option value='Soria'>Soria</option>
+										 <option value='Tarragona'>Tarragona</option>
+										 <option value='Santa Cruz de Tenerife'>Santa Cruz de Tenerife</option>
+										 <option value='Teruel'>Teruel</option>
+										 <option value='Toledo'>Toledo</option>
+										 <option value='Valencia'>Valencia/Valéncia</option>
+										 <option value='Valladolid'>Valladolid</option>
+										 <option value='Vizcaya'>Vizcaya</option>
+										 <option value='Zamora'>Zamora</option>
+										 <option value='Zaragoza'>Zaragoza</option>
+									</select>  
+						<br/>                  
                         <small>* Campos obligatorios</small>
                         <br/><br/>
                         <label>
