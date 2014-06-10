@@ -12,7 +12,7 @@
                 		<div class="col-sm-4 col-xs-2"></div>
         				<div class="col-sm-4 col-xs-8 text-center">
 		                	 <div class="login-panel panel panel-default">
-		                	 	<img class="login" src="<?php echo $ruta?>img/logo.png" alt=""/></a>
+		                	 	<a href="http://www.alquilook.com"><img class="login" src="<?php echo $ruta?>img/logo.png" alt=""/></a>
 		                   		<div class="panel-body">
 			                        <form role="form" method="post" action="../../controladores/control_login.php" onsubmit="validacion_login_admin();">
 			                            <fieldset>
