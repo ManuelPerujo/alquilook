@@ -91,7 +91,7 @@
 									</div> 
 									<div class="row">  
 										  <div class="col-xs-12">
-										  	 <label><h6 class="magenta"><a class="enlace3" data-toggle="collapse"  data-target="#inquilino"><i class="fa fa-pencil-square-o"></i> Definir inquilino</a>&nbsp;&nbsp;</h6></label>
+										  	 <label><h6 class="magenta"><a class="enlace3" data-toggle="collapse"  data-target="#inquilino"><i class="fa fa-plus"></i> Añadir inquilino</a>&nbsp;&nbsp;</h6></label>
 										  </div>
 									</div>
 									<div class="row-fluid">  
@@ -107,7 +107,7 @@
 								</div>
 							
 							  <br/>
-		                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otro inquilino</button>
+		                        <button type="submit" class="btn btn-default btn-sm">Guardar</button>
 		                        <a   href="../../controladores/control_registro_inquilino.php?inq=FALSE" class="btn btn-default btn-sm">Finalizar</a>
 		                        								
 		                    </form>

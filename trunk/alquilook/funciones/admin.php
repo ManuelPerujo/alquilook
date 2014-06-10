@@ -684,9 +684,9 @@
 												    <hr class='formulario'/>
 												    <h5 class='media-heading'><small class='negro mayusculas'>Propietario</small>: ".$row4['Nombre']." ".$row4['Apellidos']."</h5>
 												    <hr class='formulario'/>
-												    <p class='ficha'>".$row4['DNI']."</p>
-												    <p class='ficha'><a class='enlace2' href='mailto:'>".$row4['Email']."</a></p>
-												    <p class='ficha'>".$row4['Telefono']."</p>
+												    <p class='ficha'><i class='fa fa-user'></i> ".$row4['DNI']."</p>
+												    <p class='ficha'><a class='enlace3' href='mailto:'><i class='fa fa-envelope'></i> ".$row4['Email']."</a></p>
+												    <p class='ficha'><i class='fa fa-phone'></i> ".$row4['Telefono']."</p>
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -1679,7 +1679,7 @@
 					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
 					    <h6 class='media-heading'>".$row['Fecha']."</h6>
 					    <p class='mayusculas'>Tipo: ".$row['Tipo']."</p>
-					    <a class='media-heading' target='_blank' href='".$row['Direccion_Contenido']."'>Pulse para ver Imagen</a>
+					    <a class='media-heading enlace3' target='_blank' href='".$row['Direccion_Contenido']."'><i class='fa fa-paperclip'></i> Imagen adjunta</a>
 					    <hr class='grissimple'/>
 					    <p class='ficha'>
 					    ".$row['Contenido']."

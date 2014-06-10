@@ -83,7 +83,7 @@
 									
 									<div class="row"> 
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
+										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-plus"></i> Añadir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
@@ -171,7 +171,7 @@
 									
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
+										  	 <a class="enlace3" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-plus"></i> Añadir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
@@ -267,7 +267,7 @@
 								
 		                        <br/>
 
-		                        <button name="submit" type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Guardar y añadir otra estancia</button>
+		                        <button name="submit" type="submit" class="btn btn-default btn-sm">Guardar</button>
 
 		                        &nbsp;&nbsp;&nbsp;
 		                        <a href="../inquilino/registro_inquilino_inmo.php" class="btn btn-default btn-sm">Continuar</a>
