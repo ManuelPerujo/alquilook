@@ -472,6 +472,10 @@ body {
 	width: 150px;
 }
 
+.imagenbanner3{
+	width: 100px;
+	float: left !important;
+}
 
 .imagenbanner{
 	width: 125px;
@@ -623,8 +627,13 @@ p.ficha2{
 	width: 100px;
 }
 
+.imagenbanner3{
+	width: 60px;
+	float: left !important;
+}
+
 .imagenbanner{
-	width: 100px;
+	width: 60px;
 	float: left !important;
 }
 

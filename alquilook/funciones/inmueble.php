@@ -134,7 +134,7 @@
 				                        <div class='row-fluid'>
 				                       		<div class='col-sm-6 media'>
 												  <a class='pull-left'>
-												    <img class='imagenbanner' src='../../img/botones/inmueble.png' alt='...'>
+												    <img class='imagenbanner3' src='../../img/botones/inmueble.png' alt='...'>
 												  </a>
 												  <div class='media-body'>
 												    <h5 class='media-heading'>".$value['Direccion']."</h5>
