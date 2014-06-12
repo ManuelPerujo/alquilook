@@ -106,7 +106,7 @@
 		$( document ).ready( function() {
 		  $('.responsive-slider').responsiveSlider({
 		    autoplay: true,
-		    interval: 5000,
+		    interval: 7000,
     		transitionTime: 300
 		  });
 		});

@@ -44,6 +44,7 @@
 			 					<hr class='propietario'/>
 			 					<h3>Sólo falta un paso más...</h3>
 			 					<h5>Vaya a su email para verificar su cuenta de Alquilook.</h5>
+			 					<h6>(No olvide revisar la bandeja de correo no deseado o spam)</h6>
 			 					</p>";
 								
                         }if(isset($_GET) && count($_GET) != 0){

@@ -141,7 +141,9 @@ p.ficha2{
 	color: #666666;
 }	
 
-
+.wa{
+	margin:-15px 0 0 0;
+}	
 
 p.mobiliario{
 	line-height:25px;
@@ -358,6 +360,9 @@ body,html{
 	padding:75px 0 0 0;
 }
 
+.arriba3{
+	margin:-5px 0 0 0;
+}
 
 .lineaabajo{
 	padding:5px 0 0 0;
@@ -585,17 +590,6 @@ body {
 /*     Móviles     */
 
 @media (max-width: 767px) {
-
-.carousel-caption {
-  position: absolute;
-  width: 30%;
-  color: #FFFFFF;
-  padding: 0 10px;
-  margin-top: 5%;
-  top:1px;
-  right: 10%;
-  left: 10%;
-}
 
 
 .iconosmovil{
