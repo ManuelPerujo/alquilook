@@ -12,10 +12,9 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-
+					<li class="menu"><a href="<?php echo $ruta?>index.php"><i class="fa fa-home fa-2x arriba3"></i></a></li>
                     <li class="menu"><a href="<?php echo $ruta?>vistas/publico/planes.php">PLANES</a></li>
                     <li class="menu"><a href="<?php echo $ruta?>vistas/publico/dudas.php">DUDAS</a></li>
-
                     <li class="menu"><a href="<?php echo $ruta?>vistas/publico/contacto.php">CONTACTO</a></li>
                 </ul>
             </div>

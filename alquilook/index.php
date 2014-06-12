@@ -21,7 +21,7 @@
               <div class="container">
                 <div class="wrapper">
               	  <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="300" data-length="300">
-                    <h3 class="slider">Alquilook<br/>gestiona tu alquiler</h3>
+                    <h3 class="slider">Alquilar está bien,<br/>pero mejor con garantías.</h3>
                     <div data-animate="slideAppearLeftToRight" data-delay="500" data-length="300"><h2>Alquilar no siempre es fácil.<br/>Nosotros te ayudamos.<br/>No te compliques la vida.</h2></div><br />
                   </div> 
                   <div class="caption img-1" data-animate="slideAppearLeftToRight" data-delay="500">
@@ -41,7 +41,7 @@
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
                     <h3 class="slider">Te aseguramos<br/>el cobro puntual</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Gestionamos todos los recibos.<br/>Nos encargamos del contrato.<br/>Te ayudamos a elegir el inquilino.</h2></div><br />
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Gestionamos todos los recibos.<br/>Nos encargamos del contrato.<br/>Te ayudamos a elegir el inquilino.</h2></div><br/>
                   </div>
                   <div class="caption img-3" data-animate="slideAppearUpToDown" data-delay="200">
                     <img src="img/3.png" alt="">
@@ -60,7 +60,7 @@
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
                     <h3 class="slider">El inmueble siempre<br/>en óptimas condiciones</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Olvídate del casero.<br/>Controla tus pagos desde la web.<br/>Crea incidencias con un solo click.</h2></div><br />
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>Olvídate del casero.<br/>Controla tus pagos desde la web.<br/>Crea incidencias con un solo click.</h2></div><br/>
                   </div> 
                   <div class="caption img-5" data-animate="slideAppearDownToUp" data-delay="200">
                     <img src="img/5.png" alt="">
@@ -79,7 +79,7 @@
                 <div class="wrapper">
                   <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
                     <h3 class="slider">Seas propietario<br/>o inquilino</h3>
-                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>En tu panel de gestión<br/>tienes todo lo que necesitas<br/>y todo lo que te interesa</h2></div><br />
+                    <div data-animate="slideAppearLeftToRight" data-delay="800" data-length="300"><h2>En tu panel de gestión<br/>tienes todo lo que necesitas<br/>y todo lo que te interesa</h2></div><br/>
                   </div> 
                   <div class="caption img-7" data-animate="slideAppearDownToUp" data-delay="200">
                     <img src="img/7.png" alt="">
@@ -110,14 +110,14 @@
         <div class="container arriba2">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    	<img src="img/portatil.png" class="portatil" alt="">
-                        <iframe class="video" width="560" height="315" src="//www.youtube.com/embed/I9ix0ECNuyE" allowfullscreen></iframe>
+                    	<img src="img/portatil.png" class="portatil" alt="...">
+                        <iframe class="video" width="560" height="315" src="//player.vimeo.com/video/98013604?portrait=0&title=0&byline=0&badge=0&loop=1" frameborder="0"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <div class="col-md-6 text-left">
                     <h2 class="videoh2">Conozca en</h2>
-                    <h1 class="videoh1">75 segundos</h1>
-                    <h2 class="videoh2">cómo funciona alquilook.com</h2>
-                    <p class="videop"><i class="fa fa-check"></i> Tranqulidad para el propietario</p>
+                    <h1 class="videoh1">87 segundos</h1>
+                    <h2 class="videoh2">cómo funciona Alquilook</h2>
+                    <p class="videop"><i class="fa fa-check"></i> Tranquilidad para el propietario</p>
                     <p class="videop"><i class="fa fa-check"></i> Facilidades para el inqulino</p>
                     <p class="videop"><i class="fa fa-check"></i> Gestión online para todos</p>
                 </div>

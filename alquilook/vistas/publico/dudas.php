@@ -21,9 +21,9 @@
 	 	<div class="row"> 
  
            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-            	<h3><i class="fa fa-question"></i>  Dudas</h3>
+            	<h3><i class="fa fa-question-circle"></i>  Dudas</h3>
             	<p class="gris">
-            		Respondemos a las posibles preguntas frecuentes que pueden surgirte, si hay alguna duda que no te queda resuelta, no dudes en consultarnos en la sección de Contacto:
+            		Respondemos a las posibles preguntas frecuentes que pueden surgirte, si hay alguna duda que no te queda resuelta, no dudes en consultarnos en la sección de <a class="enlace" href="<?php echo $ruta?>vistas/publico/contacto.php">Contacto:</a>
             	</p>
                		
                 <div class="panel-group" id="accordion">
@@ -38,8 +38,8 @@
                         </div>
                         <div id="7" class="panel-collapse collapse">
                             <div class="panel-body">
-                                Directamente NO, es más, para que vamos a buscarte un Inquilino si para esto hay muchas inmobiliarias que hacen muy bien su trabajo e incluso tú directamente puedes encontrarlo. Lo que SÍ hacemos es asesorarte a elegir un buen Inquilino.
-							</div>
+                            	No es nuestra labor directa, sabemos que hay muchas inmobiliarias que hacen muy bien su trabajo, e incluso tú directamente puedes encontrar al inquilino. No obstante si quieres que también te ayudemos con esto, lo haremos a través de la red de inmobiliarias colaboradoras y por supuesto, te asesoraremos en la elección de un buen inquilino. Si este es tu caso, contacta directamente con nosotros a través del Chat, Whatsapp, Teléfono o <a class="enlace" href="<?php echo $ruta?>vistas/publico/contacto.php">formulario de contacto</a>; no es necesario que te registres.    
+                            </div>
                         </div>
                     </div>
                     
@@ -205,6 +205,37 @@
 							</div>
                         </div>
                     </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#19">
+                    				¿Qué inmobiliarias colaboran con Alquilook? 
+                  				</a>
+                            </h5>
+                        </div>
+                        <div id="19" class="panel-collapse collapse">
+                            <div class="panel-body">
+								Tenemos una red de inmobiliarias de ámbito nacional trabajando codo con codo con Alquilook, éstas se encargarán, si lo necesitas, de visitar tu vivienda y asesorarte para encontrar fácilmente un buen inquilino. Podrás encontrar nuestro sello de “ALQUILOOK Inmobiliaria Colaboradora” en las mismas.
+							</div>
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">
+                                <a class="enlace2 accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#20">
+                    				Si eres una inmobiliaria…
+                  				</a>
+                            </h5>
+                        </div>
+                        <div id="20" class="panel-collapse collapse">
+                            <div class="panel-body">
+								Si eres el representante legal de una inmobiliaria y estas interesado en colaborar con Alquilook, simplemente contacta con nosotros a través del <a class="enlace" href="<?php echo $ruta?>vistas/publico/contacto.php">formulario de contacto</a> de esta web. Te informaremos de cómo funcionamos y las condiciones. Estamos formando una extensa red nacional; colaborar con Alquilook será un PLUS. Infórmate, te estamos esperando!
+							</div>
+                        </div>
+                    </div>
+                    
 				 </div>
 			</div>
 	
