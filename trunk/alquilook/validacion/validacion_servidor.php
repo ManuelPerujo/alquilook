@@ -260,7 +260,7 @@
 			
 			if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $datosUsuario['email'])) {
 				 
-		        $_SESSION['error'] = "El correo electr&oacute;nico parece estar mal escrito. Si es correcto y a&uacute;n as&iacute; no lo acepta ,p&oacute;ngase en contacto con nosotros.";
+		        $_SESSION['error'] = "El correo electr&oacute;nico parece estar mal escrito. Si es correcto y a&uacute;n as&iacute; no lo acepta, p&oacute;ngase en contacto con nosotros.";
 		        
 				return false;
 				

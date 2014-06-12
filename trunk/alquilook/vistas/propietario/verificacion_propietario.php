@@ -33,7 +33,7 @@
 				 					<hr class='propietario'/>
 				 					<h3>Se ha cometido un error durante el registro</h3>
 				 					<h5>Por favor, vuelva a intentarlo</h5>
-				 					<a href='../propietario/registro_propietario.php'><button class='btn btn-primary btn-sm'>Registro</button></a>
+				 					<a href='../propietario/registro_propietario.php'><button class='btn btn-primary btn-lg'>Registro</button></a>
 				 				</p>";	
 								
                     	}if(isset($_SESSION['bienvenida']) && $_SESSION['bienvenida'] == true){
@@ -65,7 +65,7 @@
 					 					<hr class='propietario'/>
 					 					<h3>Se ha registrado correctamente</h3>	 					
 					 					<h5>Haga click a continuación para ir a su panel de propietario.</h5>
-					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-sm'>Mi panel</button></a>
+					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-lg'>Mi panel</button></a>
 					 					
 					 				</p>";
 					 		}		
@@ -78,7 +78,7 @@
 					 					<h3>Ha registrado correctamente su inmueble e inquilino/os</h3>	 					
 					 					<h5>Estamos generando su contrato. En breve contactaremos con usted.</h5>
 					 					<h5>Mientras, puede acceder a su panel de gestión.</h5>
-					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-lg'>Mis inmuebles</button></a>
+					 					<a href='../inmueble/tabla_inmuebles_pro.php'><button class='btn btn-primary btn-lg'>Mi panel</button></a>
 					 					
 					 				</p>";
 							
