@@ -14,8 +14,6 @@
 	$query = "update notificacion set Estado = '1' where IdNotificacion = '$idNotificacion'";
 
 	$bd->query($query);
-
-	echo $direccion;
 	
 	header("Location: ".$direccion);
 

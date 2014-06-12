@@ -31,7 +31,16 @@
 							
 			if(!valida_datos_personales($arrayValidacion)){
 				
-				header("Location: ".$_SERVER['HTTP_REFERER']);
+				
+				if($_SESSION['tipo'] == 'Inmobiliaria'){
+
+					header("Location: ../vistas/inquilino/registro_inquilino_inmo.php");	
+							
+				}else{
+					
+					header("Location: ../vistas/inquilino/registro_inquilino.php");	
+							
+				}
 				
 			}else{
 						
@@ -45,9 +54,17 @@
 		      
 		             if($result11->rowCount()>0) {
 		            	
-		                 $_SESSION['error_dni'] = TRUE;
+		                 $_SESSION['error'] = "Existe ya un usuario con el mismo DNI";
 		                
-		                 header("Location: ../vistas/inquilino/registro_inquilino.php");
+		                 if($_SESSION['tipo'] == 'Inmobiliaria'){
+									
+							header("Location: ../vistas/inquilino/registro_inquilino_inmo.php");	
+							
+						}else{
+							
+							header("Location: ../vistas/inquilino/registro_inquilino.php");	
+							
+						}
 		                
 		             }else{
 							

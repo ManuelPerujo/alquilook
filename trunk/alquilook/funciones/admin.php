@@ -564,7 +564,7 @@
 			
 		}if($tipo == "Inmobiliaria"){
 			
-			$query = "select * from inmueble where IdInmueble = '$idUsuario'";
+			$query = "select * from inmueble where IdInmobiliaria = '$idUsuario'";
 			
 		}
 		
@@ -1144,9 +1144,13 @@
 					
 			$idUsuario = get_IdUsuarioInmobiliariaFromInmueble($idInmueble);	
 			
-		}else{
+		}if($tipo = "Propietario"){
 					
 			$idUsuario = $_GET['IdUsuario'];	
+			
+		}if($tipo = "Inquilino"){
+				
+			$idUsuario = get_IdUsuarioPropietarioFromInmueble($idInmueble);
 			
 		}	
 		

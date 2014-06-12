@@ -13,7 +13,7 @@
 		
 	$uploaddir = '../documentos/fotosIncidencias/';
 	$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-	$direccion = $uploadfile;
+	$direccion = "../".$uploadfile;
 		
 	move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile);
 	
