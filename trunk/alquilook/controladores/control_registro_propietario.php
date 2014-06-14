@@ -1,25 +1,22 @@
 <?php
+		
 		session_start();
 		
-		if(!$_POST || count($_POST) == 0){
-		
-		    echo "no pasa POST";
-		    exit();
-		}
 		
 		include_once("../funciones/core.php");
 		include_once('../validacion/validacion_servidor.php');
 		include_once('../funciones/registro.php');
 
-        
+
         extract($_POST);
-        
-				
+        $tipo = $_POST["tipo"];
         $usuario = $_POST["usuario_propietario"]; $pass = $_POST["pass_propietario"]; $email = $_POST["email_propietario"];
         $nombre = $_POST["nombre_propietario"]; $apellidos = $_POST["apellidos_propietario"]; $dni = $_POST["dni_propietario"];
         $telefono = $_POST["telefono_propietario"]; $domicilio = $_POST["domicilio_propietario"]; $cp = $_POST["cp_propietario"];
         $provincia = $_POST["provincia_propietario"]; $poblacion = $_POST["poblacion_propietario"]; $aceptaCondiciones = $_POST['aceptaCondiciones'];
         
+		
+		
 		unset($_POST);
 		
 		$arrayValidacion = array();
@@ -30,11 +27,11 @@
 						
 		if(!valida_datos_personales($arrayValidacion) || !valida_datos_usuario($arrayValidacion)){
 			
-			if($_SESSION['tipo'] == 'Inmobiliaria'){
+			if(isset($tipo) && $tipo == 'Inmobiliaria'){
 						
 				header("Location: ../vistas/propietario/registro_propietario_inmo.php");	
 				
-			}else{
+			}if($tipo == 'propietario'){
 					
 				header("Location: ../vistas/propietario/registro_propietario.php");
 				
@@ -43,7 +40,7 @@
 			
 		}else{
 					
-			if($_SESSION['tipo'] == 'Inmobiliaria'){
+			if(isset($tipo) && $tipo == 'inmobiliaria'){
 						
 				$mensaje = "Los datos de usuario solicitados son\r\n<br><br>
 					    		Nombre de Usuario: <b>$usuario</b> \r\n<br>
@@ -56,7 +53,7 @@
 				
 				$usuarioActivo = '1';					    		 	
 				
-			}else{
+			}if($tipo == 'propietario'){
 				
 				$usuarioActivo = '0';
 					
@@ -64,22 +61,22 @@
 						
 				$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
 				
-			    $mensaje .= 'http://127.0.0.1/alquilook/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1';		
+			    $mensaje .= 'www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1';		
 				
 			}	
-								                
+						                
 		    $headers = "MIME-Version: 1.0\r\n";
 		    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
 		    $headers .= "From: info@alquilook.com\r\n";
 			
 	        $bd = new core();
-	
+
 			if($aceptaCondiciones == 'ok'){
 				
 				try{
 	            
 		            $bd->ConectaBD();
-		     
+		     	
 		            /*comprobamos que no existe el usuario en la bd */
 		            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
 		
@@ -88,20 +85,37 @@
 					$query11 = "select IdUsuario from usuarios where Usuario = '$usuario' ";
 		
 		            $result11 = $bd->conexion->query($query11);
+					
 		      
 		            if($result->rowCount()>0) {
 		            	
 		                $_SESSION['error'] = "Usuario con el mismo DNI ya registrado";
 		                
-		                header("Location: ../vistas/propietario/registro_propietario.php");
-		                
+						if(isset($tipo) && $tipo == 'inmobiliaria'){
+						
+							header("Location: ../vistas/propietario/registro_propietario_inmo.php");
+							
+						}if($tipo == 'propietario'){
+						
+							header("Location: ../vistas/propietario/registro_propietario.php");
+							
+						}		
+					
 		            }if($result11->rowCount()>0) {
 		            	
 		                $_SESSION['error'] = "Nombre de Usuario ya en uso";
 		                
-		                header("Location: ../vistas/propietario/registro_propietario.php");
-		                
-		            }else{
+		               if(isset($tipo) && $tipo == 'inmobiliaria'){
+						
+							header("Location: ../vistas/propietario/registro_propietario_inmo.php");
+							
+						}if($tipo == 'propietario'){
+						
+							header("Location: ../vistas/propietario/registro_propietario.php");
+							
+						}
+		            
+		            }if($result->rowCount() == 0 && $result11->rowCount() == 0){
 		            	
 		            	/*insertamos los datos del nuevo usuario*/
 		                $query2 = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
@@ -115,7 +129,7 @@
 	 						
 							mail($email, 'Alquilook: Confirmación registro de usuario', $mensaje, $headers);	
 							
-							if($_SESSION['tipo'] == "Inmobiliaria"){
+							if(isset($tipo) && $tipo == "inmobiliaria"){
 									
 								$idUsuario = get_lastId($query2);
 								
@@ -127,7 +141,7 @@
 										
 								header("Location: ../vistas/inmueble/registro_inmueble_inmo.php");	
 								
-							}else{
+							}if($tipo == 'propietario'){
 								
 								$bd->query($query2);
 								
@@ -139,8 +153,9 @@
 							
 		                
 		            }
+					
 		
-		        }catch(PDOException $except) {
+		        }catch(PDOException $except){
 		            echo "Capturada una excepcion PDO: " . $except->getFile() .":". $except->getLine()."<br/>";
 		        }	
 				

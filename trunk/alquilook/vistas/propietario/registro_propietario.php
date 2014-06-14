@@ -42,7 +42,7 @@
 			            }
 					 ?>
                		 <form method="post" action="<?php echo $ruta?>controladores/control_registro_propietario.php" >                                    
-
+						<input type="hidden" name="tipo" value="propietario" />
                         <input type="text" class="form-control" id="usuario" name="usuario_propietario" placeholder="Usuario *" />                                    
                         <input type="password" class="form-control" id="pass" name="pass_propietario" placeholder="Contraseña *" />
                         <input type="email" class="form-control" id="email" name="email_propietario" placeholder="Email *" /> 

@@ -164,10 +164,8 @@
 					
                 }if(basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_propietario.php' 
                     || basename($_SERVER['PHP_SELF']) == 'tabla_notificaciones_inquilino.php'){
-                	
-					$direccionURL =  get_Item_from_notificacion($selector);
 					
-					$direccion = "../../controladores/control_notificacion_leida.php?item=".$direccionURL."&id=".$selector." target='_blank'";
+					$direccion = "../../controladores/control_notificacion_leida.php?&id=".$selector." target='_blank'";
 					
                 }if(basename($_SERVER['PHP_SELF']) == 'perfil_inmobiliaria_admin.php'){
                 	
@@ -564,7 +562,7 @@
 			
 		}if($tipo == "Inmobiliaria"){
 			
-			$query = "select * from inmueble where IdInmobiliaria = '$idUsuario'";
+			$query = "select * from inmueble where IdInmueble = '$idUsuario'";
 			
 		}
 		
