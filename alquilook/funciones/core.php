@@ -21,10 +21,10 @@
     public function __construct(){
 
         //inicializamos los valores de la base de datos:
-        $this->HOST="127.0.0.1";
-        $this->USUARIO="alquilook";
-        $this->PASS="alquilook";
-        $this->BD="alquilook";
+        $this->HOST="bbdd.alquilook.com";
+        $this->USUARIO="ddb48740";
+        $this->PASS="Alqui2014look";
+        $this->BD="ddb48740";
 
         $this->DSN="mysql:host=$this->HOST;dbname=$this->BD";
 
