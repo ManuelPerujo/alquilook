@@ -1,6 +1,7 @@
 <?php 
 
     session_start();
+	
     include_once '../../plantillas/importaciones.php';
 	include_once '../../funciones/core.php';
 	include_once '../../funciones/inmueble.php';

@@ -20,7 +20,7 @@
             $usuario = $_POST['usuario_propietario'];
             $password = $_POST['pass_propietario'];
             $tipo = "Propietario";
-			    
+			     
         }if(isset($_POST['usuario_inquilino']) && !empty($_POST['usuario_inquilino'])
 		    && isset($_POST['pass_inquilino']) && !empty($_POST['pass_inquilino'])){
             
