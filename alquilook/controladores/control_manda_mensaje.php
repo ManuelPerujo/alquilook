@@ -11,19 +11,7 @@
 	
 	$idDestinatario = null;
 	
-	if(isset($_POST['idUsuarioInquilino'])){
-		
-		$idUsuario = $_SESSION['IdUsuario_sesion'];
-		
-		$idDestinatario = $_POST['idUsuarioInquilino'];
-		
-	}if(isset($_POST['idUsuarioPropietario'])){
-		
-		$idUsuario = $_SESSION['IdUsuario_sesion'];
-		
-		$idDestinatario = $_POST['idUsuarioPropietario'];
-		
-	}if($_SESSION['tipo'] == 'Admin'){
+	if($_SESSION['tipo'] == 'Admin'){
 		
 		if(isset($_POST['idUsuarioPropietario'])){
 			
@@ -39,7 +27,13 @@
 			
 		}
 		
-	}else{
+	}if($_SESSION['tipo'] == 'Propietario'){
+                
+        $idUsuario = $_SESSION['IdUsuario_sesion'];
+                
+    	$idDestinatario = get_idAdmin();        
+                
+    }if($_SESSION['tipo'] == 'Inquilino'){
                 
         $idUsuario = $_SESSION['IdUsuario_sesion'];
                 

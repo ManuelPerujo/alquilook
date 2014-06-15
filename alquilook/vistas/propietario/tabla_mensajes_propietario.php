@@ -26,7 +26,7 @@
                 		<hr class="grissimple">
                 		<div class="text-left">
 								 	<a class="enlace3" data-toggle="collapse" data-target="#responder">
-								 		<i class="fa fa-pencil"></i> Nuevo mensaje
+								 		<i class="fa fa-pencil"></i> Nueva Conversación
 								    </a>
 						</div>
 						<div id="responder" class="collapse">

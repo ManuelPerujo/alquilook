@@ -1,11 +1,6 @@
 <?php 
-	
-	if(isset($_SESSION['IdUsuario_sesion']) || isset($_SESSION["tipo"])){
-		
-		session_start();	
-		
-	}
-	
+
+	session_start();
 	include_once 'plantillas/importaciones.php';
 	
 ?>

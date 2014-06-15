@@ -75,20 +75,27 @@
 		                	
 		                		if(isset($_SESSION["IdUsuario_sesion"])){
 		                				
-          			
+          							if(borrar_registro_incompleto($_SESSION["IdUsuario_sesion"], $_SESSION['tipo']) == TRUE){
+          										
+          								echo "<div class='row'>
+					                		<br />
+					                		<div class='col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable'>
+									               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 							<h3><i class='fa fa-info-circle fa-lg'></i> Se ha borrado un inmueble sin inquilinos producto de un registro fallido</h3>
+								            </div>
+								        </div>";	
+          								
+          							}
 		                												
 									$id_usuario = $_SESSION["IdUsuario_sesion"];
 
 									$arrayInmuebles = get_inmueble_datos($id_usuario,$_SESSION['tipo']);
-									
 									
 									foreach ($arrayInmuebles as $key => $value) {
 										
 										echo $value;
 										unset($arrayInmuebles);
 									}
-									
-		                			
 										
 		                		} 
 		                		

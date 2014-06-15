@@ -2,7 +2,8 @@
     session_start();
     include_once '../../plantillas/importaciones.php';
 	include_once '../../funciones/core.php';
-	include_once '../../funciones/admin.php';    
+	include_once '../../funciones/admin.php';
+	include_once '../../funciones/inmueble.php';    
 ?>
 
 <body>
@@ -32,12 +33,28 @@
 		                		 </div>
 								
 								<?php 
-								
+									
+									$id_usuario = $_GET["IdUsuario"];
+									
+									$tipo = "Inmobiliaria";
+									
+									if(borrar_registro_incompleto($id_usuario, $tipo) == TRUE){
+          										
+          								echo "<div class='row'>
+					                		<br />
+					                		<div class='col-sm-8 col-xs-12 text-center alert alert-success alert-dismissable'>
+									               		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+							 							<h3><i class='fa fa-info-circle fa-lg'></i> Se ha borrado un inmueble sin inquilinos producto de un registro fallido</h3>
+								            </div>
+								        </div>";	
+          								
+          							}
+									
 									$mensaje = null;
 								
 									if(isset($_GET["IdUsuario"])){
 		                			
-										$id_usuario = $_GET["IdUsuario"];
+										
 										
 										$mensaje = get_inmobiliaria($id_usuario);
 										

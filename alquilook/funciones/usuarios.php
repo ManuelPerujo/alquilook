@@ -167,7 +167,7 @@
 		
 		$idInmueble = null;
 		
-		if($tipo == 'propietario'){
+		if($tipo == 'Propietario'){
 			
 			$idInmueble = array();
 				
@@ -187,11 +187,19 @@
 			
 			return $idInmueble;
 			
-		}if($tipo == 'inquilino'){
+		}if($tipo == 'Inquilino'){
 				
 			$idInmueble = get_IdInmuebleFromInquilino($idUsuario);
 			
 			return $idInmueble;
+				
+		}if($tipo == 'Inmobiliaria'){
+				
+			$idInmobiliaria = get_idInmobiliaria_from_usuario($idUsuario);
+			
+			$arrayIdInmuebles = get_arrayInmueblesFromInmobiliaria($idInmobiliaria);
+			
+			return $arrayIdInmuebles;
 				
 		}
 		

@@ -5,7 +5,8 @@
 		include_once '../funciones/admin.php';
 		include_once '../funciones/inmueble.php';
 		include_once '../funciones/registro.php';
-		require_once('fpdf/fpdf.php');
+		include_once '../fpdf/fpdf.php';
+		
 		
 		$idInmueble = $_GET['id'];
 		$pdf = TRUE;
