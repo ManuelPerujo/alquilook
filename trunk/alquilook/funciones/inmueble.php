@@ -647,8 +647,20 @@
 	}
 
 	function borrar_registro_incompleto($idUsuario, $tipo){
-		
-		$arrayIdInmueble = get_IdInmuebles_por_Usuario($idUsuario, $tipo);
+				
+		$arrayIdInmueble = null;	
+			
+		if($tipo == "Inmobiliaria"){
+			
+			$idInmobiliaria = get_idInmobiliaria_from_usuario($idUsuario);
+			
+			$arrayIdInmueble = get_arrayInmueblesFromInmobiliaria($idInmobiliaria);
+			
+		}if($tipo == "Propietario"){
+					
+			$arrayIdInmueble = get_IdInmuebles_por_Usuario($idUsuario, $tipo);	
+			
+		}	
 		
 		$bd = new core();
 		
@@ -658,7 +670,7 @@
 				
 			$idInmueble = $value;	
 				
-			if(inmueble_tiene_inquilinos($idInmueble)){
+			if(inmueble_tiene_inquilinos($idInmueble) == FALSE){
 					
 				$query = "delete from inmueble where IdInmueble = '$idInmueble'";
 				
@@ -676,7 +688,7 @@
 
 	function inmueble_tiene_inquilinos($idInmueble){
 			
-		$resultado = false;
+		$resultado = TRUE;
 		
 		$bd = new core();
 		
@@ -684,9 +696,9 @@
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		if($row['ArrayIdInquilino'] == null || $row['ArrayIdInquilino'] == null == "null"){
+		if($row['ArrayIdInquilino'] == 'null'){
 					
-			$resultado = TRUE;
+			$resultado = FALSE;
 			
 			return $resultado;	
 			
@@ -696,7 +708,25 @@
 		
 	}
 
-	
+	function get_arrayInmueblesFromInmobiliaria($idInmobiliaria){
+		
+		$arrayId = array();
+		
+		$bd = new core();
+		
+		$query = "select IdInmueble from inmueble where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result = $bd->query($query); $row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+			
+			$arrayId [] = $value['IdInmueble'];
+			
+		}
+		
+		return $arrayId;	
+		
+	}
 	
 	
 	

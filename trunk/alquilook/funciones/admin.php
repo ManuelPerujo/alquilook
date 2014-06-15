@@ -1810,7 +1810,7 @@
 		
 		$bd = new core();
 		
-		$query = "select IdUsuario from usuarios where Tipo = 'Admin' and Usuario = 'admin'";
+		$query = "select IdUsuario from usuarios where Tipo = 'Admin'";
 		
 		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
