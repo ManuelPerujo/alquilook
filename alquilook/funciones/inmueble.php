@@ -603,7 +603,7 @@
 		$bd = new core();
 		
 		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'EstadoIncidencia');
-        $filtro = array('IdInmueble' => $idInmueble);
+        $filtro = array('IdInmueble' => $idInmueble, 'not Tipo' => 'altaNueva');
         $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
         $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
                          'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);
@@ -727,6 +727,23 @@
 		return $arrayId;	
 		
 	}
+	
+	function get_IdUsuario_from_Inmobiliaria($idInmobiliaria){
+	
+		$idUsuario = null;
+		
+		$bd = new core();
+		
+		$query = "select IdUsuario from inmobiliaria where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		$idUsuario = $row['IdUsuario'];
+		
+		return $idUsuario;
+		
+	}
+	
 	
 	
 	

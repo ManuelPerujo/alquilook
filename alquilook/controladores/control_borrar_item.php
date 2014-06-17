@@ -2,7 +2,8 @@
 	
 	session_start();
 	
-	include_once'../funciones/core.php';
+	include_once '../funciones/core.php';
+	include_once '../funciones/inmueble.php';
 	
 	if($_GET){
 		
@@ -34,12 +35,20 @@
 				
 			}	
 			
+		}if(basename($_SERVER['HTTP_REFERER']) == 'tabla_inmobiliarias_admin.php'){
+			
+			/* Averiguo la ruta del archivo para eliminar tanto de la base de datos como de los archivos */
+			
+			$query = "delete from usuarios where IdUsuario = '$id'";
+
+			$bd->query($query);
+			
 		}
 		
-		
+		echo basename($_SERVER['HTTP_REFERER']);
 		
 		$query2 = "delete from $tabla where $idTabla = '$id' ";
-		
+
 		$bd->query($query2);
 		
 		header("Location: ".$_SERVER['HTTP_REFERER']);

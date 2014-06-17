@@ -20,7 +20,7 @@
     $bd = new core();
     $bd->ConectaBD();
     
-    $query = ("select IdUsuario from usuarios where $select_busqueda like '".$busqueda."%'");
+    $query = ("select IdUsuario from usuarios where $select_busqueda like '".$busqueda."%' and not Tipo = 'Inmobiliaria'");
     $result = $bd->query($query);
     
     if($result->rowCount() != 0){
