@@ -22,9 +22,9 @@
 
         //inicializamos los valores de la base de datos:
         $this->HOST="bbdd.alquilook.com";
-        $this->USUARIO="ddb48740";
+        $this->USUARIO="ddb48883";
         $this->PASS="Alqui2014look";
-        $this->BD="ddb48740";
+        $this->BD="ddb48883";
 
         $this->DSN="mysql:host=$this->HOST;dbname=$this->BD";
 

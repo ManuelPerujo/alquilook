@@ -397,10 +397,19 @@
 									
             foreach ($row as $key ) {
             	
-                $selector = $key[$id[1]];        
-                $query2 = "select $seleccion from $tabla1 inner join $tabla2 where $idTabla = '$selector' ";
-                $result2 = $bd->query($query2);
+                $selector = $key[$id[1]];
+				
+				if(basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"){
+							
+					$query2 = "select $seleccion from $tabla1 inner join $tabla2 where usuarios.IdUsuario = '$selector' and inmobiliaria.IdUsuario = '$selector'";	
+					
+				}else{
+					
+					$query2 = "select $seleccion from $tabla1 inner join $tabla2 where $idTabla = '$selector' ";	
+					
+				}
                 
+                $result2 = $bd->query($query2);
 								   
                 if($result2->rowCount() != 0){
                     $row2 = $result2->fetch(PDO::FETCH_ASSOC);

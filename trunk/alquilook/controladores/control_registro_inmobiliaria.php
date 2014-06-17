@@ -19,7 +19,7 @@
         
 		$usuario = $_POST["usuario_inmobiliaria"]; $pass = $_POST['pass_inmobiliaria']; 
 		$email = $_POST['email_inmobiliaria']; $empresa = $_POST["empresa"];
-		$cif = $_POST['dni_inmobiliaria'];	$nombre = $_POST["nombre_contacto"]; $apellidos = $_POST["apellidos_contacto"]; 
+		$dni = $_POST['dni_inmobiliaria'];	$nombre = $_POST["nombre_contacto"]; $apellidos = $_POST["apellidos_contacto"]; 
         $telefono = $_POST["telefono_contacto"]; $domicilio = $_POST["domicilio_inmobiliaria"];
         $cp = $_POST["cp_inmobiliaria"];  $poblacion = $_POST["poblacion_inmobiliaria"]; 
 		$provincia = $_POST["provincia_inmobiliaria"]; $iban = $_POST["iban"];
@@ -45,7 +45,7 @@
 	            $bd->ConectaBD();
 	     
 	            /*comprobamos que no existe el inmueble en la bd */
-	            $query = "select * from usuarios where DNI = '$cif' ";
+	            $query = "select IdUsuario from usuarios where DNI = '$dni' ";
 	
 	            $result = $bd->conexion->query($query);
 				
@@ -57,15 +57,15 @@
 	            			
 	            	$_SESSION['error_registro'] = TRUE;	
 	            	
-	                header("Location: ".$_SERVER['HTTP_REFERER']);
+	                header("Location: ".$_SERVER['PHP_SELF']);
 	                
 	            }if($result11->rowCount()>0) {
 		            	
-		                $_SESSION['error_registro'] = TRUE;	
+		            $_SESSION['error_registro'] = TRUE;	
 	            	
-	                	header("Location: ".$_SERVER['HTTP_REFERER']);
+	                header("Location: ".$_SERVER['PHP_SELF']);
 		                
-		        }else{
+		        }if($result->rowCount() == 0 && $result11->rowCount() == 0){
 	            	
 					$mensaje = "Ha sido dado de alta en Alquilook, sus datos de ingreso son los siguientes:\r\n"; 
 	
@@ -85,7 +85,7 @@
 	            	/*insertamos los datos del nuevo usuario*/
 	                $query2 = "insert into usuarios (IdUsuario, Admin, Tipo, Usuario, Password, Email, Nombre, Apellidos, DNI,
 		                                                Telefono, Domicilio, CP, Poblacion, Provincia, CodigoActivacion, UsuarioActivo)
-		                    values ('', '0', 'Inmobiliaria', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$cif',
+		                    values ('', '0', 'Inmobiliaria', '$usuario', '$pass', '$email', '$nombre', '$apellidos', '$dni',
 		                            '$telefono', '$domicilio', '$cp', '$poblacion', '$provincia', 'null', '1')"; 
 	                
 					$idUsuario = get_lastId($query2);
