@@ -614,7 +614,8 @@
 												  </a>
 												  <div class='media-body'>
 												   <h5 class='media-heading'><small class='negro mayusculas'>Inquilino:</small></h5>
-												    <h5>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
+												    <h5>".$row2['Nombre']." ".$row2['Apellidos']." ".$row2['DNI']."</h5>
+												    <h5>".$row2['Telefono']." ".$row2['Email']."</h5>
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -654,7 +655,7 @@
 									                 				</a>
 									                 			</div>	
 									                 			<div class='col-xs-6'>
-									                 				<a class='btn btn-default btn-sm' onclick='return confirm('¿Está seguro de eliminar este elemento?');' href='../../controladores/control_borrar_usuario.php?idUsuario=".$value2."&tipo=Inquilino'>
+									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_estancia.php?id=".$value2."&tipo=Inquilino&idInmueble=".$value['IdInmueble'].">
 									                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
 									                 				</a>
 									                 			</div>         
@@ -1184,12 +1185,12 @@
 									                 				</a>
 								                 				</div>
 								                 				<div class='col-xs-2'>
-									                 				<a class='btn btn-default btn-sm' onclick='return confirm('¿Está seguro de eliminar este elemento?');' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
-									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Propietario 
-									                 				</a> 
-								                 				</div> 
-								                 				<div class='col-xs-2'> 
-									                 				<a class='btn btn-default btn-sm' onclick='return confirm('¿Está seguro de eliminar este elemento?');' href='../../controladores/control_borrar_inmueble.php?idInmueble=".$idInmueble."'>
+									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
+									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Propietario
+									                 				</a>
+								                 				</div>
+								                 				<div class='col-xs-2'>
+									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_inmueble.php?idInmueble=".$idInmueble."'>
 									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Inmueble
 									                 				</a>
 								                 				</div>

@@ -1,12 +1,7 @@
 
 
-function myFunction() {
-    var txt;
-    var r = confirm("Press a button!");
-    if (r == true) {
-        txt = "You pressed OK!";
-    } else {
-        txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = txt;
+function confirmarBorrado() {
+    
+    confirm("Esta seguro de eliminar el elemento seleccionado?");
+    
 }
