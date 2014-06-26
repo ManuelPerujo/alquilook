@@ -601,7 +601,7 @@
 				$send_mensaje_inquilino = send_mensaje_inquilino($value2, $count2);
 				
 								
-				$query2 = "select usuarios.Nombre, usuarios.Apellidos from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' limit 1";
+				$query2 = "select usuarios.Nombre,usuarios.Apellidos,usuarios.Telefono,usuarios.Email,usuarios.DNI from usuarios inner join inquilino where usuarios.IdUsuario = '$value2' limit 1";
 				$result2 = $bd->query($query2);
 				$row2 = $result2->fetch(PDO::FETCH_ASSOC);
 				
