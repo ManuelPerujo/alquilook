@@ -602,7 +602,7 @@
 		
 		$bd = new core();
 		
-		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'EstadoIncidencia');
+		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Fase');
         $filtro = array('IdInmueble' => $idInmueble, 'not Tipo' => 'altaNueva');
         $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
         $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,

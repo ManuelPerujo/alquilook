@@ -27,7 +27,7 @@
                 		
                 	  <?php 
                 	
-                		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Contenido', 5=>'EstadoIncidencia');
+                		$tabla = 'incidencia'; $idTabla = 'IdIncidencia'; $arrayAtributos = array(1=>'Fecha', 2=>'Tipo', 3=>'SubTipo', 4=>'Contenido', 5=>'Fase');
                         $filtro = array('Tipo' => 'IncidenciasCambioInquilino');
                         $arrayOrden = array(1 => 'Fecha', 2=> 'desc');
                         $arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE,
