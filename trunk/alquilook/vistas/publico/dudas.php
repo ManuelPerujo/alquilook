@@ -53,7 +53,7 @@
                         </div>
                         <div id="8" class="panel-collapse collapse">
                             <div class="panel-body">
-                               Para garantizar nuestros planes, previo a la firma del Contrato de Arrendamiento, te pediremos cierta documentación relacionada con el Inquilino, para establecer el nivel de Riesgo de este.  El resultado que obtengamos de este análisis hará que ACEPTEMOS  o RECHACEMOS a dicho Inquilino.  Como dice el refrán “Más vale prevenir que curar”.
+                               Para garantizar nuestros planes, previo a la firma del Contrato de Arrendamiento, te pediremos cierta documentación relacionada con el Inquilino, para establecer el nivel de Riesgo de éste.  El resultado que obtengamos de este análisis hará que ACEPTEMOS  o RECHACEMOS a dicho Inquilino.  Como dice el refrán “Más vale prevenir que curar”.
 							</div>
                         </div>
                     </div>

@@ -688,7 +688,7 @@
 												  <div class='media-body'>
 												    <h4 class='media-heading'>".$value['Direccion']." (".$value['Provincia'].")</h4>
 												    <h5 class='media-heading'><small class='negro'>Tipo Contrato: </small>".$value['TipoContrato']."</h5>
-												    <h6 class='media-heading'>".$value['Metros']." metros | ".$value['NumHabitaciones']." Habitaciones | ".$value['NumServicios']." Aseos</h6>
+												    <h6 class='media-heading'>".$value['Metros']." m<sup>2</sup> | ".$value['NumHabitaciones']." Habitaciones | ".$value['NumServicios']." Aseos</h6>
 												    <hr class='formulario'/>
 												    <h5 class='media-heading'><small class='negro mayusculas'>Propietario</small>: ".$row4['Nombre']." ".$row4['Apellidos']."</h5>
 												    <hr class='formulario'/>
@@ -875,7 +875,7 @@
 							                 			</div>
 							                 			<div class='col-sm-8 col-xs-12'>
 								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_agua.php'>
-													 			<label>Subir nuevo recibo</label>
+													 			<label>Subir nuevo documento</label>
 													            <input type='file' name='userfile' />
 													            <br/>
 													            <label>Periodo de factura</label><br/>
@@ -1310,7 +1310,7 @@
 			                        <input type='text' class='form-control' name='cp_inmueble' placeholder='Código postal' value='$cp' />
 			                        <input type='text' class='form-control' name='provincia_inmueble' placeholder='Provincia' value='$provincia' /> 
 		                         <br/>
-		                        <label><h6>Nº de metros&nbsp;&nbsp;</h6></label> 
+		                        <label><h6>Nº de m<sup>2</sup>&nbsp;&nbsp;</h6></label> 
 			                        <input type='text' class='form-control' name='metros_inmueble' placeholder='Metros' value='$metros' />
 		                         <br/>
 		                        <label><h6>Nº de habitaciones&nbsp;&nbsp;</h6></label> 
@@ -1535,18 +1535,18 @@
     		
 			$mensaje = "<div class='col-md-5 col-xs-12'>   	
 			               	<h5 class='media-heading mayusculas'>Inmueble:</h5>
-				            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
-				            <h5 class='negro'><small class='gris'>Valor del Inmueble:</small>&nbsp;".$row['ValorMobiliario']." €</h5>
-				            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
-				            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
 				            <h5 class='negro'><small class='gris'>Tipo de inmueble:</small>&nbsp;".$row['TipoInmueble']."</h5>
-				            <h5 class='negro'><small class='gris'>Dirección Inmueble:</small>&nbsp;".$row['Direccion']."</h5>
+				            <h5 class='negro'><small class='gris'>Tipo de plan:</small>&nbsp;".$row['TipoContrato']."</h5>
+				            <h5 class='negro'><small class='gris'>Mensualidad del Inmueble:</small>&nbsp;".$row['Valor']." €</h5>
+				            <h5 class='negro'><small class='gris'>Dirección del inmueble:</small>&nbsp;".$row['Direccion']."</h5>
 				            <h5 class='negro'><small class='gris'>Población:</small>&nbsp;".$row['Municipio']."</h5>
 				            <h5 class='negro'><small class='gris'>CP:</small>&nbsp;".$row['CP']."</h5>
 				            <h5 class='negro'><small class='gris'>Provincia:</small>&nbsp;".$row['Provincia']."</h5>
-				            <h5 class='negro'><small class='gris'>Nº de metros:</small>&nbsp;".$row['Metros']."</h5>
+				            <h5 class='negro'><small class='gris'>Elección de suministros:</small>&nbsp;".$suministros."</h5>
+				            <h5 class='negro'><small class='gris'>Nº de m<sup>2</sup>:</small>&nbsp;".$row['Metros']."</h5>
 				            <h5 class='negro'><small class='gris'>Nº de habitaciones:</small>&nbsp;".$row['NumHabitaciones']."</h5>
 				            <h5 class='negro'><small class='gris'>Nº de aseos:</small>&nbsp;".$row['NumServicios']."</h5>
+				            <h5 class='negro'><small class='gris'>Valor del mobiliario:</small>&nbsp;".$row['ValorMobiliario']." €</h5>
 		       		 </div>";
 		
 			return $mensaje;	

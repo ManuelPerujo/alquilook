@@ -25,7 +25,6 @@
                 	<div class="row">
                 	    		<div class="col-sm-12">
 		                			<h3><i class="fa fa-user"></i> Perfil usuario</h3>
-		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
 		            <div class="row">
@@ -35,11 +34,11 @@
                 	    			
                 	    				if($_GET['tipo'] == 'Propietario'){
                 	    					
-											echo "<h4><i class='fa fa-pencil'></i> Editar Propietario</h4>";
+											echo "<i class='fa fa-pencil'></i> Editar Propietario<br/><br/>";
 											
                 	    				}if($_GET['tipo'] == 'Inquilino'){
                 	    					
-											echo "<h4><i class='fa fa-pencil'></i> Editar Inquilino</h4>";
+											echo "<i class='fa fa-pencil'></i> Editar Inquilino<br/><br/>";
 											
                 	    				}
                 	    			

@@ -422,7 +422,7 @@
 		    	
 		        if(strlen($datosInmueble['metros_inmueble'])>5){
 		        	
-		            $_SESSION['error'] = "El tama&ntilde;o de metros cuadrados no es correcto.";
+		            $_SESSION['error'] = "El tama&ntilde;o de m<sup>2</sup> no es correcto.";
 					
 		            return false;
 					

@@ -19,11 +19,14 @@
         <div class="container">
         	<div class="row">&nbsp;</div>
             <div class="row">
-            	<div class="col-md-4 col-xs-2 text-center">
-            		
+            	<div class="col-md-4 col-xs-12 text-left">
+            		<div class="alert alert-danger alert-dismissable">
+  						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  						<h3 class="media-heading"><i class="fa fa-lightbulb-o"></i> Antes de registrarte...</h3>...ten en cuenta lo siguiente:<br/>Si tienes un inmueble pero no tienes aún inquilino, escríbenos <a class="enlace" href="<?php echo $ruta?>vistas/publico/contacto.php">aquí</a> un mensaje y te ayudaremos con la tarea de búsqueda.
+					</div>
         	
-        	</div>
-                <div class="col-md-4 col-xs-8 text-left">
+        		</div>
+                <div class="col-md-4 col-xs-12 text-left">
                 	<h4>Crear una cuenta</h4>
 					<?php 
         				if(isset($_SESSION['error']) && $_SESSION['error'] != null){
@@ -295,7 +298,7 @@
     					<input type="submit" class="btn btn-primary btn-sm" value="Continuar" />
                     </form> 
                 </div>
-                <div class="col-md-4 col-xs-2 text-center"></div>                                            
+                <div class="col-md-4 col-xs-12 text-center"></div>                                            
             </div>
             <div class="row">&nbsp;</div>
         </div>

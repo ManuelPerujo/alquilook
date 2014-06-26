@@ -11,7 +11,7 @@
         include_once '../../plantillas/cabecera_admin.php';
     ?>   
     <?php
-        include_once '../../plantillas/banner_admin.php';
+        include_once '../../plantillas/banner_admin_inmo.php';
     ?>  
     
    <div class="section">
@@ -25,7 +25,7 @@
                 <div class="col-sm-10 col-xs-12">
                 	<h3>Ficha de Inmobiliaria e inmuebles</h3>
                 	<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_inmobiliarias_admin.php"><i class="fa fa-chevron-left"></i> Volver a Inmobiliarias</a>
-                	<hr class="grisdoble"/>
+                	<hr class="grissimple"/>
 					    <div class="row">
 								<div class="col-md-2 col-xs-12">   	
 					                <img class="imagenboton" src="<?php echo $ruta?>img/botones/inmobiliaria.png" alt="">
@@ -69,7 +69,7 @@
 								?>
 								
 	        			</div>
-	        			<hr class="grisdoble" />
+	        			<hr class="grissimple" />
 	        			<div class="row">
 								<div class="col-xs-12">
 									
@@ -98,7 +98,7 @@
     </div>  
   
     <?php
-        include_once "../../plantillas/pie_admin.php";
+        include_once "../../plantillas/pie_admin_inmo.php";
     ?>        
     
 </body>

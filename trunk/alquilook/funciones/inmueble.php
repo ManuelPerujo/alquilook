@@ -39,7 +39,7 @@
 												    <hr class='grissimple'/>
 												    <h6 class='media-heading negro'><small class='gris'>Plan de contrato:&nbsp;&nbsp;".$row2['TipoContrato']."</small>&nbsp;Mini</h6>
 												    <h6 class='media-heading negro'><small class='gris'>Precio:</small>&nbsp;".$row2['Valor']." €</h6>
-												    <h6 class='media-heading negro'><small class='gris'>Metros:</small>&nbsp;".$row2['Metros']." metros</h6>
+												    <h6 class='media-heading negro'><small class='gris'>M<sup>2</sup>:</small>&nbsp;".$row2['Metros']." metros</h6>
 												    <h6 class='media-heading negro'><small class='gris'>Estancias:</small>&nbsp;".$row2['NumHabitaciones']." habitaciones<small class='gris'>&nbsp;/</small>&nbsp;".$row2['NumServicios']." aseos</h6>
 												  </div>
 				                       		</div>
@@ -142,7 +142,7 @@
 												    <small>".$value['TipoInmueble']."</small>
 												    <hr class='grissimple'/>
 												    <p class='ficha'>Plan de contrato: ".$value['TipoContrato']."</p>
-												    <p class='ficha'>".$value['Metros']." metros</p>
+												    <p class='ficha'>".$value['Metros']." m<sup>2</sup></p>
 												    <p class='ficha'>".$value['NumHabitaciones']." habitaciones / ".$value['NumServicios']." aseo</p>
 												    ".$inquilinos."
 												  </div>
@@ -184,7 +184,7 @@
 																		     	<form class='form-group text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_incidencias_varias.php'>
 																					<input type='text' name='' placeholder='Asunto'/><br/><br/>
 																					<textarea name='contenido' placeholder='Descripción de incidencia'></textarea><br/><br/>
-																					<i class='fa fa-paperclip'></i> Adjuntar un archivo:
+																					<i class='fa fa-paperclip'></i> Adjuntar una imagen (máximo 3 MB):
 																					<input type='file' name='userfile' /><br/>
 																					<input type='hidden' name='idInmueble' value='".$value['IdInmueble']."' />
 																					<input type='submit' class='btn btn-default btn-sm' value='Enviar' />

@@ -25,12 +25,11 @@
                 	<div class="row">
                 	    		<div class="col-sm-12">
 		                			<h3><i class="fa fa-home"></i> Inmueble</h3>
-		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
 		            <div class="row">
                 	    		<div class="col-xs-12">
-		                			<h4><i class="fa fa-pencil"></i> Editar inmueble - (Paso 1 de 2)</h4>
+		                			<i class="fa fa-pencil"></i> Editar inmueble - (Paso 1 de 2)
 		                		</div>
 		            </div>
 		           <div class="row-fluid">

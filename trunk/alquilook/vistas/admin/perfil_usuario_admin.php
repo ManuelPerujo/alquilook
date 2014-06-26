@@ -25,7 +25,9 @@
                 	<div class="col-sm-10 col-xs-12">
                 	<div class="row">
                 	    		<div class="col-sm-12">
-		                			<h3><i class="fa fa-group"></i> Usuario e inmueble</h3>
+		                			<h3>Usuario e inmueble</h3>
+		                			<a class="enlace3" href="<?php echo $ruta?>vistas/admin/tabla_usuarios_admin.php"><i class="fa fa-chevron-left"></i> Volver a Usuarios</a>
+		                			<br/><br/>
 		                		</div>
 		            </div>
 		            		                  

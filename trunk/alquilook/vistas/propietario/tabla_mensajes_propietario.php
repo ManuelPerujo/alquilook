@@ -22,11 +22,11 @@
     			?> 
                 
               <div class="col-xs-10">
-                		<h3><i class="fa fa-envelope-o"></i> Mensajes:</h3>
+                		<h3><i class="fa fa-comment-o"></i> Mensajes:</h3>
                 		<hr class="grissimple">
                 		<div class="text-left">
 								 	<a class="enlace3" data-toggle="collapse" data-target="#responder">
-								 		<i class="fa fa-pencil"></i> Nueva Conversación
+								 		<i class="fa fa-plus"></i> Nuevo Mensaje
 								    </a>
 						</div>
 						<div id="responder" class="collapse">

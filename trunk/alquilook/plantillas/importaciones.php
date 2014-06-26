@@ -29,6 +29,7 @@
 		|| basename($_SERVER['PHP_SELF']) == "planes.php" || basename($_SERVER['PHP_SELF']) == "dudas.php"
 		|| basename($_SERVER['PHP_SELF']) == "banner3.php" || basename($_SERVER['PHP_SELF']) == "tabla_inmobiliarias_admin.php"
 		|| basename($_SERVER['PHP_SELF']) == "perfil_inmobiliaria_admin.php" || basename($_SERVER['PHP_SELF']) == "perfil_inmueble_admin.php"
+		|| basename($_SERVER['PHP_SELF']) == "pie_admin_inmo" || basename($_SERVER['PHP_SELF']) == "banner_admin_inmo.php"
 		)
 	{
 
