@@ -149,13 +149,13 @@
                 		
  							<form method="post" action="<?php echo $ruta?>controladores/control_login.php" onsubmit="validacion_login_propietario();">	
  								<p class="collapse" id="ingresarpropietario">
+ 									<a class="enlace3" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-user"></i> Registrarse</a><br/><br/>
    									<input type="text" class="form-control" id="usuario1" name="usuario_propietario" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password1" name="pass_propietario" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-default">Entrar</button>
+    								<button type="submit" class="btn btn-default btn-lg">Entrar</button>
     								<br/><br/>
-    								<a class="enlace2" href="<?php echo $ruta?>vistas/propietario/registro_propietario.php"><i class="fa fa-edit"></i> Registrarse</a>
-    								<br/>
-    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
+    								
+    								<a class="enlace3" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-warning"></i> No recuerdo mis datos</a>
   								</p>
   							</form>
   						
@@ -176,9 +176,9 @@
  								<p class="collapse" id="ingresarinquilino">
    									<input type="text" class="form-control" id="usuario2" name="usuario_inquilino" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password2" name="pass_inquilino" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-default">Entrar</button>
+    								<button type="submit" class="btn btn-default btn-lg">Entrar</button>
     								<br/><br/>
-    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
+    								<a class="enlace3" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-warning"></i> No recuerdo mis datos</a>
   								</p>
   							</form>	   
                 <br/><br/>
@@ -205,10 +205,10 @@
  								<p class="collapse" id="ingresarinmobiliaria">
    									<input type="text" class="form-control" id="usuario3" name="usuario_inmobiliaria" placeholder="Usuario" /> 
     								<input type="password" class="form-control" id="password3" name="pass_inmobiliaria" placeholder="Contraseña" />
-    								<button type="submit" class="btn btn-default">Entrar</button>
+    								<button type="submit" class="btn btn-default btn-lg">Entrar</button>
     								<br/>
     								<br/>
-    								<a class="enlace2" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-question-circle"></i> No recuerdo mis datos</a>
+    								<a class="enlace3" href="<?php echo $ruta?>vistas/error/recordar.php"><i class="fa fa-warning"></i> No recuerdo mis datos</a>
   								</p>
   							</form>
   						

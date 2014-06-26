@@ -26,12 +26,11 @@
                 	<div class="row">
                 	    		<div class="col-sm-12">
 		                			<h3><i class="fa fa-home"></i> Mobiliario</h3>
-		                			<hr class="grisdoble"/>
 		                		</div>
 		            </div>
 		            <div class="row">
                 	    		<div class="col-xs-12">
-		                			<h4><i class="fa fa-pencil"></i> Editar habitaciones - (Paso 2 de 2)</h4>
+		                			<i class="fa fa-pencil"></i> Editar habitaciones - (Paso 2 de 2)
 		                		</div>
 		            </div>
 		            
@@ -68,7 +67,7 @@
 									<hr class="formulario" />
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace2" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-pencil-square-o"></i> Definir mobiliario</a>
+										  	 <a class="enlace2" data-toggle="collapse" data-target="#ingresarmobiliario"><i class="fa fa-plus"></i> Añadir mobiliario</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarmobiliario">
@@ -156,7 +155,7 @@
 									<hr class="formulario" />
 									<div class="row">  
 										  <div class="col-xs-12 collapse-group">
-										  	 <a class="enlace2" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-pencil-square-o"></i> Definir electrodomésticos</a>
+										  	 <a class="enlace2" data-toggle="collapse" data-target="#ingresarelectrodomesticos"><i class="fa fa-plus"></i> Añadir electrodomésticos</a>
 										  </div>
 									</div>
 									<div class="row collapse" id="ingresarelectrodomesticos"> 
@@ -245,7 +244,7 @@
 								
 		                        <br/>
 
-		                        <button name="submit" type="submit" class="btn btn-default btn-sm"><i class="fa fa-plus-circle"></i> Añadir estancia</button>
+		                        <button name="submit" type="submit" class="btn btn-default btn-sm">Guardar</button>
 		                        &nbsp;&nbsp;&nbsp;
 		                        <?php
 		                         

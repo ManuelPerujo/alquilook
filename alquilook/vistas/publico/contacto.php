@@ -52,7 +52,7 @@
     <div class="row">
     	<div class="col-lg-2"></div>
 	 	<div class="col-lg-4 col-xs-12">
-	 		  <h3><img width="25px" height="25px" src="<?php echo $ruta?>img/wa2.png" alt="..."/> 647 291 950</h3>
+	 		  <h3><img width="25px" height="25px" src="<?php echo $ruta?>img/wa2.png" alt="..."/> 647 291 950&nbsp;<small class="negro">(Escríbenos por Whatsapp)</small></h3>
 	 		  <hr class="grissimple"/>
 	          <h3 class="media-heading"><i class="fa fa-map-marker"></i> ¿Dónde estamos?</h3>
 	          <p>

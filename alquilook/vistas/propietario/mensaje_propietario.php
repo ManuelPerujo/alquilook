@@ -25,7 +25,7 @@
     			?> 
                 
                 <div class="col-xs-10">
-                		<h3><i class="fa fa-envelope-o"></i> Conversaci&oacute;n:</h3>
+                		<br/>
                 		<a class="enlace3" href="<?php echo $ruta?>vistas/propietario/tabla_mensajes_propietario.php"><i class="fa fa-chevron-left"></i> Volver a mensajes</a>
 	                	<div class="media">
 							  

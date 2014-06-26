@@ -10,7 +10,7 @@
         include_once '../../plantillas/cabecera_admin.php';
     ?>   
     <?php
-        include_once '../../plantillas/banner_admin.php';
+        include_once '../../plantillas/banner_admin_inmo.php';
     ?>  
     
    <div class="section">
@@ -30,6 +30,7 @@
 						if($_SESSION['error_registro'] == TRUE){
 								
 							echo "<div class='row'>
+									<br/>
 							  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
 							       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 						 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;La Inmobiliaria que intenta registrar ya existe!</h5>
@@ -39,6 +40,7 @@
 						}if($_SESSION['error_registro'] == FALSE){
 								
 							echo "<div class='row'>
+									<br/>
 							  		<div class='col-sm-6 text-left alert alert-success alert-dismissable'>
 							       		<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
 						 				<h5><i class='fa fa-thumbs-up fa-lg'></i> &nbsp;&nbsp;Inmobiliaria registrada!</h5>
@@ -73,7 +75,7 @@
 	        	?>
                 	
                 	<h3><i class="fa fa-building-o"></i> Inmobiliarias</h3>
-                	<hr class="grisdoble">
+                	<hr class="grissimple">
                 		<div class="row">
                 			<div class="col-sm-5 col-xs-12">
 				 						<div class="text-left">
@@ -166,9 +168,9 @@
 										</div>
 							</div>
 					    </div>
-					    <hr class="grisdoble">					    
+					    <hr class="grissimple">					    
 					    <div class="row">
-                			<div class="col-sm-10 col-xs-12">
+                			<div class="col-xs-12">
                 				
 		                		<?php
 		                	
@@ -192,7 +194,7 @@
     </div>  
   
     <?php
-        include_once '../../plantillas/pie_admin.php';
+        include_once '../../plantillas/pie_admin_inmo.php';
     ?>        
     
 </body>
