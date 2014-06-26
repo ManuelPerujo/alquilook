@@ -22,8 +22,8 @@
 		$idEstancia = $_GET['id'];
 		$query = "delete from estancia where IdEstancia = '$idEstancia'";	
 		
-	}if(basename($_SERVER['HTTP_REFERER']) == 'registro_inquilino.php'){
-		
+	}if(basename($_SERVER['HTTP_REFERER']) == 'registro_inquilino.php' || substr(basename($_SERVER['HTTP_REFERER']), 0,24) == 'perfil_usuario_admin.php'){
+		echo "entra aqui";
 		$idUsuario = $_GET['id'];
 		$idInmueble = $_GET['idInmueble'];
 		
@@ -44,7 +44,7 @@
 		unset($arrayInquilinosSesion[$keySesion]);
 		
 		$arrayInquilinosSesion = implode("-", $arrayInquilinosSesion);
-		$_SESSION['ArrayIdInquilino'] = $arrayInquilinosSesion."-"; echo "  arraySession: ".$_SESSION['ArrayIdInquilino'];
+		$_SESSION['ArrayIdInquilino'] = $arrayInquilinosSesion."-"; 
 		
 		if($_SESSION['ArrayIdInquilino'] == '-'){
 			
@@ -64,7 +64,7 @@
 		
 		if($row2['ArrayIdInquilino'] == '-'){
 			
-			$query5 = "update inmueble set ArrayIdInquilino = 'null' where IdInmueble = '$idInmueble'";
+			$query5 = "update inmueble set ArrayIdInquilino = '' where IdInmueble = '$idInmueble'";
 			$bd->query($query5);
 			
 		}
@@ -110,13 +110,12 @@
 		
 		if($row2['ArrayIdInquilino'] == '-'){
 			
-			$query5 = "update inmueble set ArrayIdInquilino = 'null' where IdInmueble = '$idInmueble'";
+			$query5 = "update inmueble set ArrayIdInquilino = '' where IdInmueble = '$idInmueble'";
 			$bd->query($query5);
 			
 		}
 	}
 	
-		
 	$bd->query($query);
 	    
     header("Location: ".$_SERVER['HTTP_REFERER']);

@@ -65,7 +65,16 @@
     
     <?php 
 		}
+     
+    	if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php"){
     ?>
+    
+    	<script type="text/javascript" src="<?php echo $ruta?>js/popup_confirmacion.js"></script>
+    
+    <?php 
+		}
+    ?>
+    
   
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,400' rel='stylesheet' type='text/css'/>
