@@ -9,7 +9,7 @@
 	
 	$bd = new core();
 	
-	$query = "update incidencia set EstadoIncidencia = '$estado' where IdIncidencia = '$idIncidencia'";
+	$query = "update incidencia set Fase = '$estado' where IdIncidencia = '$idIncidencia'";
 	
 	$bd->query($query);
 	

@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `incidencia` (
   `Contenido` TEXT NOT NULL,
   `Direccion_Contenido` TEXT NOT NULL,
   `Estado` boolean NOT NULL,
-  `EstadoIncidencia` char(30) NOT NULL,
+  `Fase` char(30) NOT NULL,
   PRIMARY KEY (`IdIncidencia`),
   UNIQUE KEY `Incidencia_Unica` (`IdIncidencia`),
   CONSTRAINT `ID_INCIDENCIA_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
