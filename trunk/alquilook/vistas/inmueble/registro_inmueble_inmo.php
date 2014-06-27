@@ -163,8 +163,9 @@
 						                		<label><h6 class="negro">Nº de m<sup>2</sup>&nbsp;&nbsp;</h6></label> 
 						                		<input type="text" size="11" class="form-control" name="metros_inmueble" placeholder="0 metros" />
 						                		<br/>
-						                		<label><h6 class="negro">Nº de m<sup>2</sup>&nbsp;&nbsp;</h6></label> 
+						                		<label><h6 class="negro">€ / mes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6></label> 
 						                		<input type="text" size="11" class="form-control" name="mensualidad" id="mensualidad" placeholder="000.00 €" onchange="multiplicar();"/>
+						                		&nbsp;&nbsp;<button type="button" class="btn btn-default btn-sm margenok">OK</button>
 						                        <br/>
 				                	</div>	
 				                	<hr class="grissimple" />
