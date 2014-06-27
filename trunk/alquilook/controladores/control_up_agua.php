@@ -45,10 +45,10 @@
 		
 		$idItem = get_lastId($query);		 
 		
-		$mensaje = "Ha recibido una nueva notificación!\r\n"; 
+		$mensaje = "Ha recibido una nueva notificación en Alquilook\r\n"; 
 	
 		$mensaje .= "<br><br>
-		   			 Para acceder a la notificación acceda a su perfil de usuario a través del siguiente enlace<br>";
+		   			 Para acceder a la notificación acceda a su perfil de usuario a través del siguiente enlace";
 								 
 		$mensaje .= "<br><br><a href='http://www.alquilook.com'><b>www.alquilook.com</b></a>";			 
 					            
