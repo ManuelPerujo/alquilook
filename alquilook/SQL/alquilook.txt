@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `IdInmueble` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `IdPropietario` int(6) unsigned NOT NULL,
   `IdInmobiliaria` int(6) unsigned NOT NULL,
+  `Inmobiliaria` char(40) NOT NULL,
   `ArrayIdInquilino` varchar(30),
   `TipoInmueble` char(30) NOT NULL,
   `TipoContrato` char(30) NOT NULL,

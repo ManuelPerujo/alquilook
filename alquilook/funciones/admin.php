@@ -1983,6 +1983,18 @@
 		
 	}
 	
+	function get_nombreInmobiliaria($idInmobiliaria){
+		
+		$bd = new core();
+		
+		$query = "select NombreEmpresa from inmobiliaria where IdInmobiliaria = '$idInmobiliaria'";
+		
+		$result = $bd->query($query); $result = $row->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['NombreEmpresa'];
+		
+	}
+	
 			
 ?>
 
