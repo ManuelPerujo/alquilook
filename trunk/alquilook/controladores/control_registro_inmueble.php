@@ -62,12 +62,15 @@
 			
 				$idInmobiliaria = get_idInmobiliaria_from_usuario($_SESSION["IdUsuario_sesion"]);
 				
+				$inmobiliaria = get_nombreInmobiliaria($idInmobiliaria);
+				
 				$id_usuario = $_SESSION["registro_propietario"];
 				$idPropietario = get_IdPropietario($id_usuario);
 				
 			}else{
 					
 				$idInmobiliaria = '0';	
+				$inmobiliaria = '';
 				
 				$id_usuario = $_SESSION["IdUsuario_sesion"];
 				$idPropietario = get_IdPropietario($id_usuario);
@@ -91,9 +94,9 @@
 	            }else{
 	            	
 	          		/*insertamos los datos del nuevo usuario*/
-	                $query2 = "insert into inmueble (IdInmueble, IdPropietario, IdInmobiliaria, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
+	                $query2 = "insert into inmueble (IdInmueble, IdPropietario, IdInmobiliaria, Inmobiliaria, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
 	                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros,Valor,Agua,Luz,Gas)
-	                    values ('', '$idPropietario', '$idInmobiliaria', 'null', '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
+	                    values ('', '$idPropietario', '$idInmobiliaria', '$inmobiliaria','null', '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
 	                            '$provinciaInmueble', '$numHabitaciones', '$numServicios', '$metrosInmueble','$mensualidad','$agua',
 	                            '$luz','$gas')"; 
 	                

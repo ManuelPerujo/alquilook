@@ -28,7 +28,7 @@
 		            <?php 
 		            	
 		            	$tabla1 = 'incidencia'; $tabla2 = 'inmueble'; $idTabla = 'inmueble.IdInmueble'; 
-		            	$arrayAtributos = array(1=>'Fecha', 2=>'Direccion', 3=>'Provincia', 4=>'Municipio');
+		            	$arrayAtributos = array(1=>'Fecha', 2=>'Direccion', 3=>'Provincia', 4=>'Municipio', 5=>'Inmobiliaria');
 						$arrayOrden = array(1 => 'incidencia.Fecha', 2=> 'asc');
 						$arrayOpciones = array('opciones' => TRUE, 'borrar' => FALSE, 'modificar' => FALSE, 'responder' => FALSE,
 						                       'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => TRUE);

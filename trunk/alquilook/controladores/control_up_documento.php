@@ -6,7 +6,7 @@
 	include_once'../funciones/admin.php';
 	include_once'../funciones/registro.php';
 	include_once'../funciones/usuarios.php';
-	
+		
 
 	$uploaddir = '../documentos/contratos/';
 	$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
@@ -78,6 +78,7 @@
 				$email = get_emailUsuario($idUsuario);
 			
 				mail($email, 'Alquilook: Nueva notificación', $mensaje, $headers);
+				
 				
 			}	
 						
