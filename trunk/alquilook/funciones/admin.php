@@ -1969,9 +1969,20 @@
 		
 	}
 	
+	function get_emailUsuario($idUsuario){
+		
+		$bd = new core();
+		
+		$query = "select Email from usuarios where IdUsuario = '$idUsuario'";
+		
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
+		
+		return $row['Email'];
+		
+	}
+	
 			
 ?>
-
 
 
 
