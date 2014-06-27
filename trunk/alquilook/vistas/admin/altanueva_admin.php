@@ -71,7 +71,7 @@
 	        				<hr class="grisdoble"/>
 	        				<div class="row">
 								<div class="col-xs-12 text-center">
-									<a href="../../fpdf/pdf_contrato.php?id=<?php echo $idInmueble; ?>" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-file-text"></i> Generar Contrato PDF</a>	
+									<a href="../../fpdf/pdf_contrato.php?id=<?php echo $idInmueble; ?>" class="btn btn-default btn-lg" target="_blank">Generar Contrato PDF</a>	
 				        			<br/><br/>
 								</div>
 							</div>		

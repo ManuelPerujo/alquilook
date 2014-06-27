@@ -279,7 +279,7 @@
 			$direccion = $value['Direccion_Contenido'];
 					
 			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
-							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>VER ARCHIVO</span></p></a>";	
 			
 					
 		}
@@ -322,7 +322,7 @@
 			$direccion = $value['Direccion_Contenido'];
 					
 			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
-							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>VER ARCHIVO</span></p></a>";	
 			
 		}
 		
@@ -364,7 +364,7 @@
 			$direccion = $value['Direccion_Contenido'];
 					
 			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
-							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+							 <p class='ficha'>".$fecha."&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>VER ARCHIVO</span></p></a>";	
 			
 		}
 		
@@ -415,7 +415,7 @@
 			$direccion = $value['Direccion_Contenido'];
 					
 			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
-							 <p class='ficha'>".$titulo."&nbsp;&nbsp;&nbsp;(".$fecha.")&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-file-text-o'></i></p></a>";	
+							 <p class='ficha'>".$titulo."&nbsp;&nbsp;&nbsp;(".$fecha.")&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>VER ARCHIVO</span></p></a>";	
 			
 		}
 		

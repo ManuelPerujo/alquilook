@@ -208,7 +208,7 @@
                         $mensaje .= "<a href=$direccion4 title='agregar a amigos'><img src='../imagenes/iconos/amistad.jpg' alt='Amistad' /></a>";
                     }if($arrayOpciones['ver_mas'] == TRUE){
                     	$direccionVer = '../../controladores/control_ver_mas.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccionVer  title='ver mas' target='_blank'><i class='fa fa-eye'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";
+                        $mensaje .= "<a href=$direccionVer  title='ver mas' target='_blank'><span class='badge2'>VER ARCHIVO</span></a>&nbsp;&nbsp;&nbsp;&nbsp;";
                     }if($arrayOpciones['modificar'] == TRUE){
                         $direccion2 = '../sesion/control_up.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector.'&seleccion='.$seleccion;
                         $mensaje .= "<a href=$direccion2 title='editar'><i class='fa fa-pencil'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";    
@@ -225,7 +225,7 @@
 							
 						}if($boleean == 1){
 									
-							$mensaje .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge3'>LEÍDOS</span>";	
+							$mensaje .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge3'>LEÍDO</span>";	
 							
 						}
 						
