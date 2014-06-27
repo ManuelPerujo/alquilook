@@ -120,7 +120,10 @@ p{
 
 }	
 
-	
+.margenok{
+	margin:-10px 0 0 0;
+}
+
 p.ficha{
 	font-family: 'Lato', "Trebuchet MS", Arial, Helvetica, sans-serif !important;
 	font-size:1em;
