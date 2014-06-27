@@ -1989,9 +1989,11 @@
 		
 		$query = "select NombreEmpresa from inmobiliaria where IdInmobiliaria = '$idInmobiliaria'";
 		
-		$result = $bd->query($query); $result = $row->fetch(PDO::FETCH_ASSOC);
+		$result = $bd->query($query); $row = $result->fetch(PDO::FETCH_ASSOC);
 		
-		return $row['NombreEmpresa'];
+		$nombre = $row['NombreEmpresa'];
+		
+		return $nombre;
 		
 	}
 	

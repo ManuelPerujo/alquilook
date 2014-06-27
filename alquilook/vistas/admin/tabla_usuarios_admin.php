@@ -88,7 +88,7 @@
                 			$tabla = 'usuarios'; $idTabla = 'IdUsuario'; $arrayAtributos = array(1=>'Tipo',2=>'Nombre',3=>'Apellidos',4=>'DNI');
 	                        $filtro = array('UsuarioActivo' => '1', 'Admin' => '0','not Tipo' => 'Inmobiliaria');
 	                        $arrayOrden = array(1 => 'Nombre', 2=> 'asc');
-	                        $arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => TRUE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);  
+	                        $arrayOpciones = array('opciones' => FALSE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => FALSE, 'visto' => FALSE);  
 	                        $mensaje = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$filtro,$arrayOpciones,$arrayOrden);
 							
 							echo $mensaje;

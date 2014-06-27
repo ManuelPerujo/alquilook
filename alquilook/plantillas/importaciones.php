@@ -67,7 +67,7 @@
     <?php 
 		}
      
-    	if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php"){
+    	if(basename($_SERVER['PHP_SELF']) == "perfil_usuario_admin.php" || basename($_SERVER['PHP_SELF']) == "tabla_usuarios_admin.php"){
     ?>
     
     	<script type="text/javascript" src="<?php echo $ruta?>js/popup_confirmacion.js"></script>

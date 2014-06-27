@@ -7,7 +7,7 @@
 		    exit();
 			
 		}
-
+		echo "hola mundo";
 		include_once("../funciones/core.php");
 		include_once("../funciones/registro.php");
 		include_once('../funciones/usuarios.php');
@@ -59,15 +59,17 @@
 		}else{
 			
 			if($_SESSION['tipo'] == 'Inmobiliaria'){
-			
+				
 				$idInmobiliaria = get_idInmobiliaria_from_usuario($_SESSION["IdUsuario_sesion"]);
-				
+			
 				$inmobiliaria = get_nombreInmobiliaria($idInmobiliaria);
-				
+			
 				$id_usuario = $_SESSION["registro_propietario"];
 				$idPropietario = get_IdPropietario($id_usuario);
 				
-			}else{
+				
+				
+			}if($_SESSION['tipo'] == 'Propietario'){
 					
 				$idInmobiliaria = '0';	
 				$inmobiliaria = '';
@@ -89,11 +91,11 @@
 	      
 	            if($result->rowCount()>0) {
 	            	
-	                header("Location: ../vistas/inmueble/registro_inmueble.php");
+	                header("Location: ".$_SERVER['HTTP_REFERER']);
 	                
 	            }else{
-	            	
-	          		/*insertamos los datos del nuevo usuario*/
+	            
+	          		/*insertamos los datos del nuevo inmueble*/
 	                $query2 = "insert into inmueble (IdInmueble, IdPropietario, IdInmobiliaria, Inmobiliaria, ArrayIdInquilino, TipoInmueble, TipoContrato, Direccion, CP,
 	                								Municipio,Provincia,NumHabitaciones,NumServicios,Metros,Valor,Agua,Luz,Gas)
 	                    values ('', '$idPropietario', '$idInmobiliaria', '$inmobiliaria','null', '$tipoInmueble', '$tipoContrato', '$direccion', '$cp', '$poblacionInmueble',
@@ -118,7 +120,7 @@
 	    					
 							header("Location: ../vistas/inmueble/registro_estancia_inmo.php");
 							
-						}else{
+						}if($_SESSION['tipo'] == 'Propietario'){
 								
 							header("Location: ../vistas/inmueble/registro_estancia.php");	
 							
