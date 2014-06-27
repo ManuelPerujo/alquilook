@@ -55,6 +55,17 @@
 		
 		if(count($idUsuarios) != 0){
 			
+			$mensaje = "Ha recibido una nueva notificación!\r\n"; 
+	
+			$mensaje .= "<br><br>
+	   					 Para acceder a la notificación acceda a su perfil de usuario a través del siguiente enlace<br>";
+								 
+			$mensaje .= "<br><br><a href='http://www.alquilook.com'><b>www.alquilook.com</b></a>";			 
+					            
+			$headers = "MIME-Version: 1.0\r\n";
+			$headers .= "Content-type: text/html; charset=UTF-8\r\n";
+			$headers .= "From: info@alquilook.com\r\n";
+			
 			foreach ($idUsuarios as $key => $value) {
 			
 				$idUsuario = $value;
@@ -63,6 +74,10 @@
 					  values ('','$idUsuario','$idItem','documento','Tiene un documento nuevo', '$fechaNotificacion','0')";	
 				
 				$bd->query($query2);
+				
+				$email = get_emailUsuario($idUsuario);
+			
+				mail($email, 'Alquilook: Nueva notificación', $mensaje, $headers);
 				
 			}	
 						
