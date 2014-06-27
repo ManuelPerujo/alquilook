@@ -15,7 +15,15 @@
 		
 		$id = $_GET['id'];
 		
-		if(basename($_SERVER['HTTP_REFERER']) == 'tabla_usuarios_admin.php?'.$_SERVER['QUERY_STRING']){
+		if(basename($_SERVER['HTTP_REFERER']) == 'tabla_usuarios_admin.php?'){
+			
+			/* Averiguo la ruta del archivo para eliminar tanto de la base de datos como de los archivos */
+		
+			$query = "delete from $tabla where $idTabla = '$id' ";
+			
+			$bd->query($query);
+						
+		}if(basename($_SERVER['HTTP_REFERER']) == 'tabla_usuarios_admin.php?'.$_SERVER['QUERY_STRING']){
 			
 			/* Averiguo la ruta del archivo para eliminar tanto de la base de datos como de los archivos */
 		
@@ -45,8 +53,7 @@
 			
 		}
 		
-		echo basename($_SERVER['HTTP_REFERER']);
-		
+				
 		$query2 = "delete from $tabla where $idTabla = '$id' ";
 
 		$bd->query($query2);
