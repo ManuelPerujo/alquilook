@@ -61,8 +61,8 @@
 						
 				$mensaje = "Para terminar el registro de su perfil pulse el siguiente link:\r\n"; 
 				
-			    $mensaje .= 'www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1';		
-				
+			    $mensaje .= 'http://www.alquilook.com/vistas/propietario/verificacion_propietario.php?var1='.$codigoActivacion.'&var2='.$usuario.'&bienvenida=1';		
+
 			}	
 						                
 		    $headers = "MIME-Version: 1.0\r\n";
