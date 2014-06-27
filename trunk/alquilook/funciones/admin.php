@@ -214,18 +214,18 @@
                         $mensaje .= "<a href=$direccion2 title='editar'><i class='fa fa-pencil'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;";    
                     }if($arrayOpciones['borrar'] == TRUE){
                         $direccionBorrar = '../../controladores/control_borrar_item.php?tabla='.$tabla.'&idTabla='.$idTabla.'&id='.$selector;
-                        $mensaje .= "<a href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
+                        $mensaje .= "<a class='enlace3' href=$direccionBorrar title='eliminar'><i class='fa fa-trash-o'></i></a>";    
                     }if($arrayOpciones['visto'] == TRUE){
                     	
 						$boleean = is_leido($tabla, $idTabla, $selector);
 						
 						if($boleean == 0){
 							
-							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-envelope'></i>";
+							$mensaje .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>NUEVO</span>";
 							
 						}if($boleean == 1){
 									
-							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-eye'></i>";	
+							$mensaje .= "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge3'>LEÍDOS</span>";	
 							
 						}
 						
@@ -613,9 +613,11 @@
 												    <img class='imagenboton2 img-rounded' src='../../img/botones/inquilino.png' alt='...'>
 												  </a>
 												  <div class='media-body'>
-												   <h5 class='media-heading'><small class='negro mayusculas'>Inquilino:</small></h5>
-												    <h5>".$row2['Nombre']." ".$row2['Apellidos']." ".$row2['DNI']."</h5>
-												    <h5>".$row2['Telefono']." ".$row2['Email']."</h5>
+												   <h5 class='media-heading'><small class='negro mayusculas'>Inquilino:</small> ".$row2['Nombre']." ".$row2['Apellidos']."</h5>
+												    <h6><i class='fa fa-user'></i> ".$row2['DNI']."</h6>
+												    <h6><a class='enlace2' href='mailto:".$row2['Email']."'><i class='fa fa-envelope'></i> ".$row2['Email']."</a></h6>
+												    <h6><i class='fa fa-phone'></i> ".$row2['Telefono']."</h6>
+													
 												  </div>
 				                       		</div>	
 				                       	</div>	
@@ -693,7 +695,7 @@
 												    <h5 class='media-heading'><small class='negro mayusculas'>Propietario</small>: ".$row4['Nombre']." ".$row4['Apellidos']."</h5>
 												    <hr class='formulario'/>
 												    <p class='ficha'><i class='fa fa-user'></i> ".$row4['DNI']."</p>
-												    <p class='ficha'><a class='enlace3' href='mailto:'><i class='fa fa-envelope'></i> ".$row4['Email']."</a></p>
+												    <p class='ficha'><a class='enlace3' href='mailto:".$row4['Email']."'><i class='fa fa-envelope'></i> ".$row4['Email']."</a></p>
 												    <p class='ficha'><i class='fa fa-phone'></i> ".$row4['Telefono']."</p>
 												  </div>
 				                       		</div>	
