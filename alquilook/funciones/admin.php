@@ -468,11 +468,11 @@
 						
 						if($boleean == 0){
 							
-							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-bell'></i>";
+							$mensaje .= "<span class='badge2'>NUEVA</span>";
 							
 						}if($boleean == 1){
 									
-							$mensaje .= "&nbsp;&nbsp;&nbsp;<i class='fa fa-eye'></i>";	
+							$mensaje .= "<span class='badge3'>VISTA</span>";	
 							
 						}
 						
@@ -1693,7 +1693,11 @@
 					    <h5 class='media-heading'>".$row2['Nombre']." ".$row2['Apellidos']."</h5>
 					    <h6 class='media-heading'>".$row['Fecha']."</h6>
 					    <p class='mayusculas'>Tipo: ".$row['Tipo']."</p>
-					    <a class='media-heading enlace3' target='_blank' href='".$row['Direccion_Contenido']."'><i class='fa fa-paperclip'></i> Imagen adjunta</a>
+					    <div class='row'>
+						    <a href='".$row['Direccion_Contenido']."' data-toggle='lightbox' class='col-xs-2'>
+								 <img src='".$row['Direccion_Contenido']."' class='img-responsive' alt='...'>
+							   </a>
+						</div>	
 					    <hr class='grissimple'/>
 					    <p class='ficha'>
 					    ".$row['Contenido']."
