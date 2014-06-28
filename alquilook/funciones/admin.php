@@ -657,7 +657,7 @@
 									                 				</a>
 									                 			</div>	
 									                 			<div class='col-xs-6'>
-									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_estancia.php?id=".$value2."&tipo=Inquilino&idInmueble=".$value['IdInmueble'].">
+									                 				<a class='btn btn-default btn-sm' onclick='return confirmarBorrado();' href='../../controladores/control_borrar_estancia.php?id=".$value2."&tipo=Inquilino&idInmueble=".$value['IdInmueble'].">
 									                 					<i class='fa fa-trash-o'></i> Borrar Inquilino
 									                 				</a>
 									                 			</div>         
@@ -1187,12 +1187,12 @@
 									                 				</a>
 								                 				</div>
 								                 				<div class='col-xs-2'>
-									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
+									                 				<a class='btn btn-default btn-sm' onclick='return confirmarBorrado();' href='../../controladores/control_borrar_usuario.php?idUsuario=".$idUsuario."&tipo=Propietario&idInmueble=".$idInmueble."'>
 									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Propietario
 									                 				</a>
 								                 				</div>
 								                 				<div class='col-xs-2'>
-									                 				<a class='btn btn-default btn-sm' onclick='confirmarBorrado();' href='../../controladores/control_borrar_inmueble.php?idInmueble=".$idInmueble."'>
+									                 				<a class='btn btn-default btn-sm' onclick='return confirmarBorrado();' href='../../controladores/control_borrar_inmueble.php?idInmueble=".$idInmueble."'>
 									                 					<i class='fa fa-trash-o'></i> Borrar<br/>Inmueble
 									                 				</a>
 								                 				</div>
