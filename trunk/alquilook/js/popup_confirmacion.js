@@ -2,6 +2,12 @@
 
 function confirmarBorrado() {
     
-    confirm("¿Está seguro de eliminar el elemento seleccionado?");
+    
+	if (!confirm("¿Está seguro de eliminar el elemento seleccionado?")){
+		
+		return false;
+		
+	}
+    	
     
 }
