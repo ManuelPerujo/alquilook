@@ -193,6 +193,22 @@ CREATE TABLE IF NOT EXISTS `documento` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+drop table if exists `documento_economico`;
+CREATE TABLE IF NOT EXISTS `documento_economico` (
+  `IdDocumento_economico` int(6) unsigned NOT NULL AUTO_INCREMENT,	
+  `IdInmueble` int(6) unsigned NOT NULL,
+  `Titulo` char(80) NOT NULL,
+  `Fecha` DATE NOT NULL,
+  `Direccion_Contenido` TEXT NOT NULL,
+  `Estado` boolean NOT NULL,
+  `VistaPropietario` boolean NOT NULL,
+  `VistaInquilino` boolean NOT NULL,
+  PRIMARY KEY (`IdDocumento_economico`),
+  UNIQUE KEY `Documento_Economico_Unico` (`IdDocumento_economico`),
+  CONSTRAINT `ID_DOCUMENTO_ECONOMICO_FK` FOREIGN KEY (`IdInmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
 drop table if exists `conversacion`;
 CREATE TABLE IF NOT EXISTS `conversacion` (
   `IdConversacion` int(6) unsigned NOT NULL AUTO_INCREMENT,	

@@ -675,6 +675,7 @@
 			$facturaLuz = up_factura_luz_admin($value['IdInmueble'],$count);
 			$facturaGas = up_factura_gas_admin($value['IdInmueble'],$count);
 			$contrato = up_documento($value['IdInmueble'], $count);
+			$historial = up_historial($value['IdInmueble'], $count);
 			$fotos = up_fotos($value['IdInmueble'], $count);
 			$send_mensaje_propietario = send_mensaje_propietario($value['IdInmueble'], $count, $tipo);
 			$opciones = opciones($value['IdInmueble'], $count, $tipo);
@@ -713,6 +714,7 @@
 				                    .$facturaAgua
 				                    .$facturaGas
 				                    .$contrato
+				                    .$historial
 				                    .$send_mensaje_propietario
 				                    .$opciones
 				                    .$fotos
@@ -785,6 +787,12 @@
 				                       			<a class='enlace2' data-toggle='collapse'  data-target='#contrato".$count."'>
 				                       				<img class='imagenboton3' src='../../img/botones/contrato.png' alt='...'>
 				                       				<p class='ficha'>Documentos</p>
+				                       			</a>	
+				                       		</div>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       			<a class='enlace2' data-toggle='collapse'  data-target='#historial".$count."'>
+				                       				<img class='imagenboton3' src='../../img/botones/historialeco.png' alt='...'>
+				                       				<p class='ficha'>Historial Económico</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
@@ -1015,6 +1023,55 @@
 													            <br/><br/>
 													            <label>Periodo de factura</label><br/>
 													            <input type='date' name='fechaInicio'/> &nbsp;&nbsp;&nbsp; <input type='date' name='fechaFinal' />
+													 			<br/><br/>
+													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
+													 			<input type='hidden' name='MAX_FILE_SIZE' value='3000' />
+													 			<input type='submit' class='btn btn-default btn-sm' value='Subir'/>
+													 			<br/><br/>
+													 		</form>
+													 	</div>
+													 </div>	
+													 <div class='col-xs-12'>
+								                        	".$mensajeTabla."
+							                 		</div>	            
+				                     		</div>
+				                     </div>	";	
+		
+		return $mensaje;
+		
+	}
+	
+	function up_historial($idInmueble, $count){
+				
+		$tabla = 'documento_economico'; $idTabla = 'IdDocumento_economico'; $arrayAtributos = array(1=>'Titulo',2=>'Fecha');
+		$arrayFiltro = array('IdInmueble' => $idInmueble);
+		$arrayOrden = array(1 => 'Fecha', 2=> 'desc');
+		$arrayOpciones = array('opciones' => TRUE, 'borrar' => TRUE, 'modificar' => FALSE, 'responder' => FALSE, 'pagar' => FALSE, 'amistad' => FALSE, 'ver_mas' => TRUE, 'visto' => FALSE);	
+		$mensajeTabla = get_tablas_filtros_y_opciones($tabla,$idTabla,$arrayAtributos,$arrayFiltro,$arrayOpciones,$arrayOrden);	
+				
+		$mensaje = "<div id='historial".$count."' class='collapse'>
+				                      		 <div class='row'>
+							                 		<div class='col-xs-12'>
+							                      		<div class='col-sm-1 col-xs-3'>	  
+							                      			<img class='imagenbanner2' src='../../img/botones/historialeco2.png' alt='...'>
+							                 			</div>  
+							                 			<div class='col-sm-3 col-xs-9'>
+							                 				<p class='ficha'><h5>Historial Económico</h5></p>
+							                 			</div>
+							                 			<div class='col-sm-8 col-xs-12'>
+								                 			<form class='form-inline  text-left' enctype='multipart/form-data' method='post' action='../../controladores/control_up_historial.php'>
+													 			<label>Nombre del archivo</label><br/>
+													            <input type='text' name='titulo' placeholder='Nombre del archivo'/>
+													            <br/><br/>
+													            <label>Subir nuevo recibo</label>
+													            <input type='file' name='userfile' />
+													            <br/>
+													            <label>Permisos para ver documentos:</label><br/>
+													            <input type='checkbox' name='VistaPropietario' value='1'>&nbsp;&nbsp;Propietario<br>
+																<input type='checkbox' name='VistaInquilino' value='1'>&nbsp;&nbsp;Inquilino 
+													            <br/><br/>
+													            <label>Fecha</label><br/>
+													            <input type='date' name='fecha'/>
 													 			<br/><br/>
 													 			<input type='hidden' name='idInmueble' value='$idInmueble' />
 													 			<input type='hidden' name='MAX_FILE_SIZE' value='3000' />
