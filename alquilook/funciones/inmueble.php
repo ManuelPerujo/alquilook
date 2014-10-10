@@ -125,6 +125,7 @@
 			$facturaLuz = get_facturas_luz($value['IdInmueble'],$count);
 			$facturaGas = get_facturas_gas($value['IdInmueble'],$count);
 			$documentos = get_documentos($value['IdInmueble'], $count, $tipo);
+			$historial = get_historial($value['IdInmueble'], $count, $tipo);
 			$galeria = get_galeria($value['IdInmueble'], $count);
 			$historialIncidencias = get_tabla_historial_incidencias($value['IdInmueble']);
 				
@@ -161,6 +162,7 @@
 				                    .$facturaAgua
 				                    .$facturaGas
 				                    .$documentos
+				                    .$historial
 				                    ."<div id='incidencia".$count."' class='collapse'>
 				                      		 <div class='row lineaabajo'>
                 	    							<div class='col-sm-1 col-xs-3'>	  
@@ -437,6 +439,57 @@
 		
 	}
 
+	function get_historial($idInmueble,$count, $tipo){
+		
+		$documentos = null;
+		
+		$elementos = null;	
+						
+		$bd = new core();
+		
+		if($tipo == "Propietario"){
+				
+			$query = "select * from documento_economico where IdInmueble = '$idInmueble' and VistaPropietario = '1'";		
+			
+		}if($tipo == "Inquilino"){
+					
+			$query = "select * from documento_economico where IdInmueble = '$idInmueble' and VistaInquilino = '1'";	
+			
+		}
+						
+		$result = $bd->query($query);
+		
+		$row = $result->fetchAll(PDO::FETCH_ASSOC);
+		
+		foreach ($row as $key => $value) {
+				
+			$titulo = $value['Titulo'];	
+			$fecha = $value['Fecha'];
+			$direccion = $value['Direccion_Contenido'];
+					
+			$elementos .= "<a class='enlace2' href='".$direccion."' target='_blank'>
+							 <p class='ficha'>".$titulo."&nbsp;&nbsp;&nbsp;(".$fecha.")&nbsp;&nbsp;&nbsp;&nbsp;<span class='badge2'>VER ARCHIVO</span></p></a>";	
+			
+		}
+		
+		$documento = "<div id='historial".$count."' class='collapse'>
+				                            <div class='row lineaabajo'>
+                	    							<div class='col-sm-1 col-xs-3'>	  
+							                      		<img class='imagenbanner2' src='../../img/botones/historialeco2.png' alt='...'>
+							                 		</div>  
+							                 		<div class='col-sm-3 col-xs-9'>
+							                 			<p class='ficha'><h5>Historial Económico</h5></p>
+							                 		</div>
+							                 		<div class='col-sm-8 col-xs-12'>".
+							                        	$elementos
+							                 		."</div>	                        
+				                     		</div>
+				              </div>";
+		
+		return $documento;
+		
+	}
+
 	function get_galeria($idInmueble,$count){
 		
 		$galeria = null;
@@ -533,6 +586,12 @@
 				                       			<a class='enlace2' data-toggle='collapse' data-target='#documento".$count."'>
 				                       				<img class='imagenboton3' src='../../img/botones/contrato.png' alt='...'>
 				                       				<p class='ficha'>Documentos</p>
+				                       			</a>	
+				                       		</div>
+				                       		<div class='col-xs-4 col-sm-2 text-center'>
+				                       			<a class='enlace2' data-toggle='collapse' data-target='#historial".$count."'>
+				                       				<img class='imagenboton3' src='../../img/botones/historialeco.png' alt='...'>
+				                       				<p class='ficha'>Historial Económico</p>
 				                       			</a>	
 				                       		</div>
 				                       		<div class='col-xs-4 col-sm-2 text-center'>
